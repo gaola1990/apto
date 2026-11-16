@@ -67,6 +67,16 @@ dialog::backdrop{background:rgba(20,30,28,.45)}
 .acciones{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 a{color:var(--marca)}
 .vacio{padding:28px 12px;text-align:center;color:var(--suave)}
+input[type=number]{width:100%;padding:9px 10px;border:1px solid var(--linea);border-radius:8px;font:inherit;background:#fff;color:inherit}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.prod{border:1px solid var(--linea);border-radius:8px;padding:8px 10px;margin-top:6px;font-size:13.5px;display:flex;gap:8px;justify-content:space-between;align-items:flex-start}
+.prod small{display:block;color:var(--suave);overflow-wrap:anywhere}
+.prod button{padding:3px 8px;font-size:12.5px}
+.req{list-style:none;padding:0;margin:8px 0}
+.req li{display:grid;grid-template-columns:92px 1fr;gap:4px 10px;padding:8px 0;border-bottom:1px solid var(--linea);font-size:14.5px;align-items:start}
+.req small{display:block;color:var(--suave)}
+.req .et{text-align:center}
+.req input{width:16px;height:16px;accent-color:var(--marca);vertical-align:-2px;margin-right:6px}
 </style>
 </head>
 <body>
@@ -95,6 +105,21 @@ a{color:var(--marca)}
       <option value="3">Hasta 2.000 UTM</option>
       <option value="4">Hasta 5.000 UTM</option>
     </select>
+    <h2 style="margin-top:20px">Mis productos</h2>
+    <div class="nota">Agrega lo que vendes con sus características. Al abrir una compra te digo si tienes lo que piden.</div>
+    <div id="catalogo"></div>
+    <details id="nuevoProd">
+      <summary class="nota" style="cursor:pointer;margin-top:10px">+ Agregar producto</summary>
+      <label for="pnombre">Nombre del producto</label>
+      <input type="text" id="pnombre" placeholder="ej: banda elástica de resistencia">
+      <label for="pcaract">Características (medidas, color, material, marca)</label>
+      <textarea id="pcaract" placeholder="ej: rollo de 45 m de largo por 15 cm de ancho, color negro"></textarea>
+      <div class="dos">
+        <div><label for="pgar">Garantía (meses)</label><input type="number" id="pgar" min="0" inputmode="numeric"></div>
+        <div><label for="pent">Entrega (días)</label><input type="number" id="pent" min="0" inputmode="numeric"></div>
+      </div>
+      <button class="principal" id="pguardar" style="margin-top:12px">Guardar producto</button>
+    </details>
     <details style="margin-top:14px">
       <summary class="nota" style="cursor:pointer">Conexión a Mercado Público</summary>
       <label for="ticket">Ticket de la API (opcional)</label>
@@ -106,6 +131,11 @@ a{color:var(--marca)}
 
   <section aria-label="Oportunidades">
     <div class="cifras" id="cifras"></div>
+    <div class="tarjeta" style="margin-bottom:14px">
+      <h2>¿Cumplo lo que piden?</h2>
+      <div class="nota">Radar Pyme compara tu producto con cada requisito de la compra y te dice qué cumples y qué te falta. Pruébalo con una compra de ejemplo:</div>
+      <div class="acciones" id="ejemplos" style="margin-top:10px"></div>
+    </div>
     <div class="tarjeta">
       <div class="barra">
         <h2 style="margin:0;flex:1">Oportunidades para ti</h2>
@@ -325,7 +355,7 @@ async function abrir(codigo){
     "<dt>Adjudicación estimada</dt><dd>" + fechaCorta((d.Fechas || {}).FechaAdjudicacion) + "</dd>" +
     "<dt>Qué piden</dt><dd>" + esc((d.Descripcion || "").slice(0, 420)) + ((d.Descripcion || "").length > 420 ? "…" : "") + "</dd>" +
     "<dt>Productos (" + items.length + ")</dt><dd>" + (items.slice(0, 8).map(i => esc(i.NombreProducto) + " <span class='nota'>× " + esc(i.Cantidad) + " " + esc(i.UnidadMedida || "") + "</span>").join("<br>") || "—") + (items.length > 8 ? "<br><span class='nota'>y " + (items.length - 8) + " más</span>" : "") + "</dd>" +
-    "</dl><h2>Mi plan para ofertar</h2>" + plan(d, base) +
+    "</dl>" + tengo(items) + "<h2>Mi plan para ofertar</h2>" + plan(d, base) +
     '<div class="acciones"><button class="principal" id="bg">' + (guardadas[codigo] ? "★ Guardada" : "☆ Guardar") + '</button>' +
     '<button class="sec" id="bcal">Agregar cierre a mi calendario</button>' +
     '<a class="sec" style="text-decoration:none;display:inline-block;border:1px solid var(--linea);border-radius:8px;padding:8px 12px" target="_blank" rel="noopener" href="' + FICHA + encodeURIComponent(codigo) + '">Abrir ficha oficial ↗</a></div>' +
@@ -342,6 +372,139 @@ function calendario(codigo, nombre, cierre){
     "SUMMARY:Cierre licitación " + codigo,"DESCRIPTION:" + nombre.replace(/[,;\n]/g, " ") + " - " + FICHA + codigo,
     "BEGIN:VALARM","TRIGGER:-P1D","ACTION:DISPLAY","DESCRIPTION:Mañana cierra la licitación","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics], {type:"text/calendar"})); a.download = "cierre-" + codigo + ".ics"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
+// ---------- Mis productos y revisión "¿Cumplo?" ----------
+let catalogo = leer("rp_catalogo", []);
+let docs = leer("rp_docs", {});
+const UNI = {mm:["largo",1],cm:["largo",10],m:["largo",1000],mt:["largo",1000],mts:["largo",1000],metro:["largo",1000],metros:["largo",1000],
+  g:["peso",1],gr:["peso",1],kg:["peso",1000],kilos:["peso",1000],ml:["volumen",1],cc:["volumen",1],l:["volumen",1000],lt:["volumen",1000],lts:["volumen",1000],litros:["volumen",1000],
+  lm:["luz",1],lumen:["luz",1],lumenes:["luz",1],lumens:["luz",1],w:["potencia",1],watts:["potencia",1],pulgada:["pulgadas",1],pulgadas:["pulgadas",1],gb:["memoria",1],tb:["memoria",1024]};
+const RX_MED = new RegExp("(\\d{1,3}(?:\\.\\d{3})+|\\d+(?:[.,]\\d+)?)\\s*(" + Object.keys(UNI).sort((a, b) => b.length - a.length).join("|") + ")(?![a-z])", "g");
+const STOP = new Set(["para","con","por","los","las","del","una","uno","tipo","modelo","marca","color","tamaño"]);
+function medidas(texto){
+  const s = String(texto ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const out = []; let m; RX_MED.lastIndex = 0;
+  while((m = RX_MED.exec(s))){
+    const n = /^\d{1,3}(\.\d{3})+$/.test(m[1]) ? +m[1].replace(/\./g, "") : +m[1].replace(",", ".");
+    const [fam, f] = UNI[m[2]];
+    if(n > 0) out.push({fam, val: n * f, txt: m[0].replace(/\s+/g, " ")});
+  }
+  return out;
+}
+const fichaDe = p => p.nombre + " " + p.caract;
+const parecido = (a, b) => Math.abs(a - b) / b <= 0.02;
+
+// Compras de ejemplo: requisitos preparados a mano para mostrar la revision. No son compras reales.
+const EJEMPLOS = [
+  {codigo:"EJEMPLO-1", nombre:"Adquisición de 2 bandas elásticas de resistencia para sala de rehabilitación",
+   pide:"Dos rollos de banda elástica de resistencia, color negro, de 15 cm de ancho y al menos 45 m de largo, con garantía mínima de 6 meses y entrega en 10 días.",
+   reqs:[
+    {t:"palabra", e:"Es una banda elástica de resistencia", v:["banda elastica","bandas elasticas"]},
+    {t:"palabra", e:"Color negro", v:["negro","negra"]},
+    {t:"medida", e:"Ancho de 15 cm", n:15, u:"cm", modo:"igual"},
+    {t:"medida", e:"Largo de 45 m o más", n:45, u:"m", modo:"min"},
+    {t:"garantia", e:"Garantía de 6 meses o más", min:6},
+    {t:"entrega", e:"Entrega en 10 días o menos", max:10},
+    {t:"doc", e:"Ficha técnica del producto"},
+    {t:"doc", e:"Compromiso de garantía firmado"},
+    {t:"doc", e:"Cotización con impuestos incluidos"}],
+   muestra:{nombre:"Banda elástica de resistencia en rollo", caract:"Rollo de 45,7 m de largo por 15 cm de ancho, color negro, resistencia extra fuerte, sin látex", garantia:"", entrega:"5"}},
+  {codigo:"EJEMPLO-2", nombre:"Adquisición de 1 proyector para sala de reuniones",
+   pide:"Un proyector de al menos 4.000 lúmenes con entrada HDMI, garantía mínima de 12 meses y entrega en 15 días.",
+   reqs:[
+    {t:"palabra", e:"Es un proyector", v:["proyector"]},
+    {t:"medida", e:"Brillo de 4.000 lúmenes o más", n:4000, u:"lumenes", modo:"min"},
+    {t:"palabra", e:"Entrada HDMI", v:["hdmi"]},
+    {t:"garantia", e:"Garantía de 12 meses o más", min:12},
+    {t:"entrega", e:"Entrega en 15 días o menos", max:15},
+    {t:"doc", e:"Ficha técnica del producto"},
+    {t:"doc", e:"Compromiso de garantía firmado"}],
+   muestra:{nombre:"Proyector para sala", caract:"3.600 lúmenes, resolución SVGA, entradas HDMI y VGA, parlante integrado", garantia:"12", entrega:"7"}}
+];
+
+function evaluar(r, p, codigo, i){
+  if(r.t === "palabra"){
+    const t = " " + norm(fichaDe(p)) + " ";
+    return r.v.some(v => t.includes(" " + v + " ") || t.includes(v)) ? {est:"ok", nota:"La ficha de tu producto lo indica."} : {est:"duda", nota:"No lo encontré en la ficha de tu producto. Si lo cumple, agrégalo a sus características."};
+  }
+  if(r.t === "medida"){
+    const [fam, f] = UNI[r.u], meta = r.n * f;
+    const ms = medidas(fichaDe(p)).filter(m => m.fam === fam);
+    if(!ms.length) return {est:"duda", nota:"La ficha de tu producto no indica esta medida."};
+    const sirve = ms.find(m => r.modo === "igual" ? parecido(m.val, meta) : r.modo === "min" ? m.val >= meta * 0.999 : m.val <= meta * 1.001);
+    return sirve ? {est:"ok", nota:"Tu ficha indica " + sirve.txt + "."} : {est:"no", nota:"No encontré una medida que cumpla. Tu ficha indica: " + ms.map(m => m.txt).join(", ") + "."};
+  }
+  if(r.t === "garantia"){
+    if(p.garantia === "" || p.garantia == null) return {est:"duda", nota:"No indicaste la garantía de tu producto."};
+    return +p.garantia >= r.min ? {est:"ok", nota:"Tu producto tiene " + p.garantia + " meses de garantía."} : {est:"no", nota:"Tu producto tiene " + p.garantia + " meses y piden " + r.min + "."};
+  }
+  if(r.t === "entrega"){
+    if(p.entrega === "" || p.entrega == null) return {est:"duda", nota:"No indicaste tu plazo de entrega."};
+    return +p.entrega <= r.max ? {est:"ok", nota:"Entregas en " + p.entrega + " días."} : {est:"no", nota:"Entregas en " + p.entrega + " días y piden " + r.max + " o menos."};
+  }
+  return (docs[codigo] || {})[i] ? {est:"ok", nota:"Lo tienes listo."} : {est:"falta", nota:"Debes adjuntarlo a tu oferta. Márcalo cuando lo tengas."};
+}
+const ET = {ok:["ok","Cumple"], no:["ro","No cumple"], duda:["al","Revisar"], falta:["al","Falta"]};
+function revision(ej){
+  const caja = $("rev"); if(!caja) return;
+  const yaMuestra = catalogo.some(p => p.nombre === ej.muestra.nombre);
+  const boton = yaMuestra ? "" : '<button class="sec" id="bmuestra">Probar con un producto de muestra</button>';
+  if(!catalogo.length){ caja.innerHTML = '<p class="nota">Agrega un producto en «Mis productos» para revisarlo contra estos requisitos, o usa uno de muestra.</p>' + boton; }
+  else{
+    const puntos = x => ej.reqs.filter((r, i) => evaluar(r, x, ej.codigo, i).est === "ok").length;
+    const p = catalogo.find(x => x.id === caja.dataset.p) || catalogo.reduce((a, b) => puntos(b) > puntos(a) ? b : a); // parte por el producto que mas calza
+    const res = ej.reqs.map((r, i) => evaluar(r, p, ej.codigo, i));
+    const ok = res.filter(x => x.est === "ok").length, no = res.filter(x => x.est === "no").length, total = ej.reqs.length;
+    const otro = res[0].est !== "ok"; // el primer requisito es el tipo de producto
+    const cl = no || otro ? "ro" : ok === total ? "ok" : "al";
+    const tit = otro ? "Este producto no parece ser lo que piden" : no ? "Con este producto no cumples lo que piden" : ok === total ? "Cumples todo: puedes ofertar con este producto" : "Vas bien, pero te falta completar " + (total - ok) + (total - ok === 1 ? " requisito" : " requisitos");
+    caja.innerHTML = '<label for="revp">Producto que quiero ofrecer</label><select id="revp">' + catalogo.map(x => '<option value="' + esc(x.id) + '"' + (x.id === p.id ? " selected" : "") + ">" + esc(x.nombre) + "</option>").join("") + "</select>" +
+      '<div class="veredicto ' + cl + '"><b>' + tit + "</b><br>Cumples " + ok + " de " + total + " requisitos.</div>" +
+      '<ul class="req">' + ej.reqs.map((r, i) => '<li><span class="et ' + ET[res[i].est][0] + '">' + ET[res[i].est][1] + "</span><div>" +
+        (r.t === "doc" ? '<label style="margin:0;font-weight:400;font-size:inherit"><input type="checkbox" data-i="' + i + '"' + (res[i].est === "ok" ? " checked" : "") + ">" + esc(r.e) + "</label>" : esc(r.e)) +
+        "<small>" + esc(res[i].nota) + "</small></div></li>").join("") + "</ul>" + boton;
+    $("revp").onchange = () => { caja.dataset.p = $("revp").value; revision(ej); };
+    caja.querySelectorAll(".req input").forEach(ch => ch.onchange = () => { (docs[ej.codigo] = docs[ej.codigo] || {})[ch.dataset.i] = ch.checked; guardar("rp_docs", docs); revision(ej); });
+  }
+  if($("bmuestra")) $("bmuestra").onclick = () => { const n = {id: Date.now().toString(36), ...ej.muestra}; catalogo.push(n); guardar("rp_catalogo", catalogo); pintarCatalogo(); caja.dataset.p = n.id; revision(ej); };
+}
+function abrirEjemplo(i){
+  const ej = EJEMPLOS[i];
+  $("det").innerHTML = '<h3 id="dtitulo">' + esc(ej.nombre) + '</h3><div class="nota"><span class="et al">Compra de ejemplo</span> Sirve para mostrar la revisión. No es una compra real.</div>' +
+    '<dl class="tabla"><dt>Qué piden</dt><dd>' + esc(ej.pide) + "</dd></dl><h2>¿Cumplo lo que piden?</h2><div id=\"rev\"></div>" +
+    '<p class="nota" style="margin-bottom:0">En esta versión los requisitos de los ejemplos se prepararon a mano. La meta del proyecto es leerlos automáticamente desde las bases y fichas técnicas de cada compra.</p>';
+  $("dlg").showModal(); revision(ej);
+}
+// En compras reales: cruza los productos que pide la compra con el catalogo, por palabras y medidas.
+function tengo(items){
+  if(!items.length) return "";
+  if(!catalogo.length) return '<h2>¿Tengo lo que piden?</h2><p class="nota">Agrega tus productos en «Mis productos» y aquí verás cuáles de los ' + items.length + " que piden tienes.</p>";
+  let cuenta = 0;
+  const filas = items.slice(0, 12).map(it => {
+    const texto = norm([it.NombreProducto, it.Descripcion, it.Categoria].join(" ")), palabras = texto.split(" ");
+    let mejor = null, nota = 0;
+    for(const p of catalogo){
+      const ws = norm(p.nombre).split(" ").filter(w => w.length > 3 && !STOP.has(w)).map(armar);
+      if(!ws.length) continue;
+      if(!calza(ws[0], texto, palabras)) continue; // la primera palabra del nombre (el tipo de producto) tiene que estar
+      const r = ws.filter(w => calza(w, texto, palabras)).length / ws.length;
+      if(r > nota){ nota = r; mejor = p; }
+    }
+    const linea = esc(it.NombreProducto) + " <span class='nota'>× " + esc(it.Cantidad) + " " + esc(it.UnidadMedida || "") + "</span>";
+    if(!mejor || nota < 0.5) return '<li><span class="et gr">No lo veo</span><div>' + linea + "<small>No está en tu catálogo.</small></div></li>";
+    cuenta++;
+    const pide = medidas([it.NombreProducto, it.Descripcion].join(" ")), tuyas = medidas(fichaDe(mejor));
+    const faltan = pide.filter(a => !tuyas.some(b => b.fam === a.fam && parecido(b.val, a.val))).map(a => a.txt);
+    const extra = faltan.length ? " Pide estas medidas que no vi en tu ficha: " + [...new Set(faltan)].join(", ") + "." : pide.length ? " Las medidas que menciona coinciden con tu ficha." : "";
+    return '<li><span class="et ' + (faltan.length ? "al" : "ok") + '">' + (faltan.length ? "Revisar" : "Lo tienes") + "</span><div>" + linea + "<small>Calza con tu producto «" + esc(mejor.nombre) + "»." + esc(extra) + "</small></div></li>";
+  }).join("");
+  return "<h2>¿Tengo lo que piden?</h2><p style='margin:0;font-size:14.5px'><b>De los " + Math.min(items.length, 12) + " productos revisados, tienes " + cuenta + " en tu catálogo.</b></p><ul class=\"req\">" + filas + "</ul>" +
+    '<p class="nota">Revisión automática por palabras y medidas. La garantía, los plazos y los documentos exigidos están en las bases: léelas antes de ofertar.</p>';
+}
+function pintarCatalogo(){
+  $("catalogo").innerHTML = catalogo.map(p => '<div class="prod"><div><b>' + esc(p.nombre) + "</b><small>" + esc(p.caract.slice(0, 110)) + (p.caract.length > 110 ? "…" : "") + "</small><small>" +
+    (p.garantia !== "" ? "Garantía " + esc(p.garantia) + " meses" : "Sin garantía indicada") + " · " + (p.entrega !== "" ? "entrega en " + esc(p.entrega) + " días" : "sin plazo indicado") + '</small></div><button class="sec" data-id="' + esc(p.id) + '" aria-label="Quitar ' + esc(p.nombre) + '">Quitar</button></div>').join("");
 }
 
 // ---------- Carga ----------
@@ -375,6 +538,16 @@ function iniciar(){
   $("lista").onkeydown = e => { if(e.key === "Enter" || e.key === " "){ const a = e.target.closest(".op"); if(a){ e.preventDefault(); abrir(a.dataset.c); } } };
   $("dlg").onclick = e => { if(e.target === $("dlg")) $("dlg").close(); };
   perfil.vistaGuardadas = false;
+  pintarCatalogo();
+  $("catalogo").onclick = e => { const b = e.target.closest("button[data-id]"); if(!b) return; catalogo = catalogo.filter(p => p.id !== b.dataset.id); guardar("rp_catalogo", catalogo); pintarCatalogo(); };
+  $("pguardar").onclick = () => {
+    const nombre = $("pnombre").value.trim(); if(!nombre){ $("pnombre").focus(); return; }
+    catalogo.push({id: Date.now().toString(36), nombre, caract: $("pcaract").value.trim(), garantia: $("pgar").value.trim(), entrega: $("pent").value.trim()});
+    guardar("rp_catalogo", catalogo); pintarCatalogo();
+    ["pnombre","pcaract","pgar","pent"].forEach(k => $(k).value = ""); $("nuevoProd").open = false;
+  };
+  $("ejemplos").innerHTML = EJEMPLOS.map((e, i) => '<button class="sec" data-i="' + i + '">' + esc(e.nombre.replace(/^Adquisición de \d+ /, "").replace(/ para .*/, "")) + "</button>").join("");
+  $("ejemplos").onclick = e => { const b = e.target.closest("button[data-i]"); if(b) abrirEjemplo(+b.dataset.i); };
   cargar();
 }
 let espera;

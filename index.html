@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Radar Pyme</title>
+<title>Apto</title>
 <style>
 :root{
   --fondo:#f6f4ef; --tarjeta:#ffffff; --tinta:#1c2321; --suave:#5d6965; --linea:#e2ded4;
@@ -81,14 +81,14 @@ input[type=number]{width:100%;padding:9px 10px;border:1px solid var(--linea);bor
 </head>
 <body>
 <header><div class="in">
-  <h1>Radar Pyme</h1>
+  <h1>Apto</h1>
   <p>Las compras del Estado que le sirven a tu negocio, ordenadas y con un plan para ofertar.</p>
 </div></header>
 
 <main>
   <section class="tarjeta" aria-label="Perfil de mi negocio">
     <h2>Mi negocio</h2>
-    <div class="nota">Elige uno o más rubros. El radar revisa todas las licitaciones abiertas y te muestra solo las tuyas.</div>
+    <div class="nota">Elige uno o más rubros. Apto revisa todas las licitaciones abiertas y te muestra solo las tuyas.</div>
     <label>Rubros</label>
     <div class="chips" id="rubros"></div>
     <label for="extra">Productos o servicios propios (separados por coma)</label>
@@ -133,7 +133,7 @@ input[type=number]{width:100%;padding:9px 10px;border:1px solid var(--linea);bor
     <div class="cifras" id="cifras"></div>
     <div class="tarjeta" style="margin-bottom:14px">
       <h2>¿Cumplo lo que piden?</h2>
-      <div class="nota">Radar Pyme compara tu producto con cada requisito de la compra y te dice qué cumples y qué te falta. Pruébalo con una compra de ejemplo:</div>
+      <div class="nota">Apto compara tu producto con cada requisito de la compra y te dice qué cumples y qué te falta. Pruébalo con una compra de ejemplo:</div>
       <div class="acciones" id="ejemplos" style="margin-top:10px"></div>
     </div>
     <div class="tarjeta">
@@ -368,7 +368,7 @@ function calendario(codigo, nombre, cierre){
   if(!cierre) return;
   const f = x => { const p = n => String(n).padStart(2, "0"); return x.getFullYear() + p(x.getMonth() + 1) + p(x.getDate()) + "T" + p(x.getHours()) + p(x.getMinutes()) + "00"; };
   const fin = new Date(cierre), ini = new Date(fin - 36e5);
-  const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//RadarPyme//ES","BEGIN:VEVENT","UID:" + codigo + "@radarpyme","DTSTAMP:" + f(new Date()),"DTSTART:" + f(ini),"DTEND:" + f(fin),
+  const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Apto//ES","BEGIN:VEVENT","UID:" + codigo + "@apto","DTSTAMP:" + f(new Date()),"DTSTART:" + f(ini),"DTEND:" + f(fin),
     "SUMMARY:Cierre licitación " + codigo,"DESCRIPTION:" + nombre.replace(/[,;\n]/g, " ") + " - " + FICHA + codigo,
     "BEGIN:VALARM","TRIGGER:-P1D","ACTION:DISPLAY","DESCRIPTION:Mañana cierra la licitación","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
   const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics], {type:"text/calendar"})); a.download = "cierre-" + codigo + ".ics"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);

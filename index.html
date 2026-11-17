@@ -6,9 +6,11 @@
 <title>Apto</title>
 <style>
 :root{
-  --fondo:#f6f4ef; --tarjeta:#ffffff; --tinta:#1c2321; --suave:#5d6965; --linea:#e2ded4;
-  --marca:#0f6b5c; --marca-suave:#e3f1ee; --alerta:#b4541a; --alerta-suave:#fbeadd;
-  --ok:#22764a; --ok-suave:#e2f3e8; --rojo:#a8322b; --rojo-suave:#f8e3e1;
+  /* Identidad Apto: azul = competencia y confianza; verde, ambar y rojo solo para el veredicto */
+  --fondo:#f6f8fb; --tarjeta:#ffffff; --tinta:#1b2430; --suave:#5a6577; --linea:#dfe4ec;
+  --marca:#1d4e9e; --marca-suave:#e6eef9; --alerta:#7a5200; --alerta-suave:#fdf1d2;
+  --ok:#17663f; --ok-suave:#e3f3ea; --rojo:#a23224; --rojo-suave:#f9e4e1;
+  --verde-apto:#1e7f52; --ambar-apto:#f2b630; --rojo-apto:#b83a2b;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -45,12 +47,12 @@ button:focus-visible,.chip:focus-visible,input:focus-visible,select:focus-visibl
 .et.al{background:var(--alerta-suave);color:var(--alerta)}
 .et.ok{background:var(--ok-suave);color:var(--ok)}
 .et.ro{background:var(--rojo-suave);color:var(--rojo)}
-.et.gr{background:#eeece6;color:var(--suave)}
+.et.gr{background:#ebeef3;color:var(--suave)}
 .cierre{text-align:right;font-size:13px;white-space:nowrap}
 .cierre b{display:block;font-size:17px;font-variant-numeric:tabular-nums}
-mark{background:#fff0b3;border-radius:3px;padding:0 1px}
+mark{background:#fce7a6;border-radius:3px;padding:0 1px}
 dialog{border:0;border-radius:14px;padding:0;width:min(760px,calc(100vw - 24px));max-height:calc(100vh - 24px);color:inherit}
-dialog::backdrop{background:rgba(20,30,28,.45)}
+dialog::backdrop{background:rgba(27,36,48,.45)}
 .det{padding:20px}
 .det h3{margin:0 30px 4px 0;font-size:19px;line-height:1.3;overflow-wrap:anywhere}
 .cerrar{position:absolute;top:10px;right:12px;border:0;background:none;font-size:26px;cursor:pointer;color:var(--suave)}
@@ -58,7 +60,7 @@ dialog::backdrop{background:rgba(20,30,28,.45)}
 .tabla dt{color:var(--suave)} .tabla dd{margin:0;overflow-wrap:anywhere}
 @media(max-width:560px){.tabla{grid-template-columns:1fr}.tabla dd{margin-bottom:6px}}
 .veredicto{border-radius:10px;padding:12px;margin:12px 0;font-size:14.5px}
-.veredicto.ok{background:var(--ok-suave)} .veredicto.al{background:var(--alerta-suave)} .veredicto.ro{background:var(--rojo-suave)}
+.veredicto.ok{background:var(--ok-suave);border-left:4px solid var(--verde-apto)} .veredicto.al{background:var(--alerta-suave);border-left:4px solid var(--ambar-apto)} .veredicto.ro{background:var(--rojo-suave);border-left:4px solid var(--rojo-apto)}
 .veredicto ul{margin:6px 0 0;padding-left:18px}
 .pasos{list-style:none;padding:0;margin:8px 0}
 .pasos li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--linea);font-size:14.5px}

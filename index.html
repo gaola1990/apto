@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Apto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
 <style>
 :root{
   /* Identidad Apto: azul = competencia y confianza; verde, ambar y rojo solo para el veredicto */
@@ -13,22 +16,22 @@
   --verde-apto:#1e7f52; --ambar-apto:#f2b630; --rojo-apto:#b83a2b;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.5 "Atkinson Hyperlegible Next",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 header{background:var(--marca);color:#fff;padding:18px 16px}
 header .in,main{max-width:1180px;margin:0 auto}
-header h1{margin:0;font-size:22px;letter-spacing:-.01em}
+header h1{margin:0;font-size:26px;font-weight:700;letter-spacing:0}
 header p{margin:2px 0 0;opacity:.85;font-size:14px}
 main{padding:16px;display:grid;gap:16px;grid-template-columns:320px 1fr}
 @media(max-width:860px){main{grid-template-columns:1fr}}
 .tarjeta{background:var(--tarjeta);border:1px solid var(--linea);border-radius:12px;padding:16px}
 h2{font-size:15px;margin:0 0 10px;text-transform:uppercase;letter-spacing:.06em;color:var(--suave)}
-label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 4px}
 input[type=text],select,textarea{width:100%;padding:9px 10px;border:1px solid var(--linea);border-radius:8px;font:inherit;background:#fff;color:inherit}
 textarea{min-height:64px;resize:vertical}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{border:1px solid var(--linea);background:#fff;border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer;color:inherit}
 .chip[aria-pressed=true]{background:var(--marca);border-color:var(--marca);color:#fff}
-button.principal{background:var(--marca);color:#fff;border:0;border-radius:8px;padding:10px 14px;font:inherit;font-weight:600;cursor:pointer}
+button.principal{background:var(--marca);color:#fff;border:0;border-radius:8px;padding:10px 14px;font:inherit;font-weight:700;cursor:pointer}
 button.sec{background:#fff;border:1px solid var(--linea);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer;color:inherit}
 button:focus-visible,.chip:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--marca);outline-offset:2px}
 .nota{font-size:12.5px;color:var(--suave)}
@@ -41,9 +44,9 @@ button:focus-visible,.chip:focus-visible,input:focus-visible,select:focus-visibl
 .barra select{width:auto}
 .op{border:1px solid var(--linea);border-radius:10px;padding:12px;margin-bottom:8px;background:#fff;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:6px 12px}
 .op:hover{border-color:var(--marca)}
-.op h3{margin:0;font-size:15px;line-height:1.35;font-weight:600;overflow-wrap:anywhere}
+.op h3{margin:0;font-size:15px;line-height:1.35;font-weight:700;overflow-wrap:anywhere}
 .op .meta{font-size:12.5px;color:var(--suave);display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.et{display:inline-block;border-radius:6px;padding:1px 7px;font-size:12px;font-weight:600;background:var(--marca-suave);color:var(--marca)}
+.et{display:inline-block;border-radius:6px;padding:1px 7px;font-size:12px;font-weight:700;background:var(--marca-suave);color:var(--marca)}
 .et.al{background:var(--alerta-suave);color:var(--alerta)}
 .et.ok{background:var(--ok-suave);color:var(--ok)}
 .et.ro{background:var(--rojo-suave);color:var(--rojo)}

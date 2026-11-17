@@ -17,10 +17,83 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.5 "Atkinson Hyperlegible Next",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-header{background:var(--marca);color:#fff;padding:18px 16px}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+header{position:sticky;top:0;z-index:30;background:rgba(246,248,251,.8);-webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid rgba(27,36,48,.07);padding:10px 16px}
 header .in,main{max-width:1180px;margin:0 auto}
-header h1{margin:0;font-size:26px;font-weight:700;letter-spacing:0}
-header p{margin:2px 0 0;opacity:.85;font-size:14px}
+header .in{display:flex;align-items:center;gap:16px}
+header h1{margin:0;font-size:24px;font-weight:700;letter-spacing:-.01em;color:var(--marca)}
+header nav{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:14px}
+header nav a{color:var(--tinta);text-decoration:none}
+header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radius:999px;font-weight:700}
+@media(max-width:560px){header nav a:not(.cta){display:none}}
+/* ---------- Portada ---------- */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.hero{max-width:1180px;margin:0 auto;padding:72px 16px 24px;text-align:center}
+.eyebrow{color:var(--marca);font-weight:700;font-size:15px;margin:0 0 12px}
+.big{font-size:clamp(38px,6.6vw,78px);line-height:1.03;letter-spacing:-.03em;margin:0;font-weight:700;text-transform:none;color:var(--tinta)}
+.big span,.sec-t em{color:var(--marca);font-style:normal}
+.lead{font-size:clamp(17px,2.2vw,21px);color:var(--suave);max-width:640px;margin:20px auto 0}
+.botones{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.btn{background:var(--marca);color:#fff;text-decoration:none;padding:13px 24px;border-radius:999px;font-weight:700;box-shadow:0 8px 22px rgba(29,78,158,.28);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(29,78,158,.36)}
+.btn.sec2{background:transparent;color:var(--marca);box-shadow:none}
+.escena{position:relative;height:330px;max-width:780px;margin:52px auto 0}
+.flot{position:absolute;background:#fff;border-radius:20px;padding:16px 18px;text-align:left;font-size:14.5px;box-shadow:0 2px 6px rgba(27,36,48,.06),0 28px 56px rgba(27,36,48,.16);animation:flotar 7s ease-in-out infinite}
+.flot .t{font-weight:700;font-size:16px;line-height:1.3;margin:8px 0 4px}
+.flot .s{color:var(--suave);font-size:13px}
+.f1{left:0;top:40px;width:min(370px,64%)}
+.f2{right:0;top:0;width:min(310px,52%);animation-delay:-2.3s}
+.f3{left:34%;bottom:0;width:230px;animation-delay:-4.6s;display:flex;gap:12px;align-items:center}
+.f3 .dia{background:var(--rojo-suave);color:var(--rojo);border-radius:12px;padding:6px 10px;text-align:center;font-weight:700;line-height:1.1}
+@keyframes flotar{50%{transform:translateY(-12px)}}
+.barra-p{height:8px;border-radius:99px;background:var(--linea);overflow:hidden;margin-top:10px}
+.barra-p i{display:block;height:100%;width:0;border-radius:99px;background:var(--verde-apto);transition:width 1.8s cubic-bezier(.2,.8,.2,1) .7s}
+.in .barra-p i,.sin-js .barra-p i{width:67%}
+@media(max-width:620px){.escena{height:auto;display:grid;gap:14px;margin-top:36px}.flot{position:static;width:auto}}
+.seccion{max-width:1180px;margin:0 auto;padding:72px 16px 8px}
+.sec-t{font-size:clamp(30px,4.6vw,54px);line-height:1.07;letter-spacing:-.025em;text-transform:none;color:var(--tinta);margin:0 0 30px;font-weight:700;max-width:860px}
+.sec-t span{color:var(--suave)}
+.mosaico{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.tile{grid-column:span 2;background:#fff;border-radius:26px;padding:28px;position:relative;overflow:hidden;box-shadow:0 1px 2px rgba(27,36,48,.04),0 14px 36px rgba(27,36,48,.08);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.tile:hover{transform:translateY(-5px);box-shadow:0 2px 4px rgba(27,36,48,.05),0 24px 52px rgba(27,36,48,.14)}
+.tile h3{font-size:clamp(21px,2.3vw,27px);line-height:1.15;letter-spacing:-.015em;margin:8px 0}
+.tile p{margin:0;color:var(--suave)}
+.k{font-size:14px;font-weight:700;color:var(--marca);margin:0}
+.t-big{grid-column:span 4;grid-row:span 2;background:var(--marca);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;min-height:380px}
+.t-big .k,.t-big p{color:rgba(255,255,255,.88)}
+.t-big::before,.t-big::after{content:"";position:absolute;border-radius:50%;border:56px solid rgba(255,255,255,.07)}
+.t-big::before{width:380px;height:380px;right:-110px;top:-120px;animation:girar 18s linear infinite}
+.t-big::after{width:200px;height:200px;right:150px;top:40px;border-width:28px}
+@keyframes girar{50%{transform:translate(-20px,24px) scale(1.06)}}
+.num{display:block;font-size:clamp(68px,11vw,150px);line-height:.95;letter-spacing:-.045em;font-variant-numeric:tabular-nums;margin:6px 0 10px}
+.t-tall{grid-row:span 2}
+.t-wide{grid-column:span 4;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.chips2{display:flex;gap:8px;flex-wrap:wrap}
+.chips2 span{background:var(--marca-suave);color:var(--marca);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:700}
+.sem{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
+.sem li{display:grid;grid-template-columns:12px 1fr;gap:0 10px;align-items:center;padding:12px 14px;border-radius:16px;font-weight:700;animation:latido 6s ease-in-out infinite}
+.sem small{grid-column:2;font-weight:400;color:var(--suave);font-size:13px}
+.sem i{width:12px;height:12px;border-radius:50%}
+.s-ok{background:var(--ok-suave);color:var(--ok)} .s-ok i{background:var(--verde-apto)}
+.s-al{background:var(--alerta-suave);color:var(--alerta);animation-delay:2s!important} .s-al i{background:var(--ambar-apto)}
+.s-ro{background:var(--rojo-suave);color:var(--rojo);animation-delay:4s!important} .s-ro i{background:var(--rojo-apto)}
+@keyframes latido{0%,24%,100%{transform:none;box-shadow:none}10%{transform:scale(1.04);box-shadow:0 10px 22px rgba(27,36,48,.13)}}
+.linea{list-style:none;padding:0;margin:20px 0 0;display:flex;justify-content:space-between;position:relative;font-size:13px;color:var(--suave)}
+.linea::before{content:"";position:absolute;left:18px;right:18px;top:6px;height:2px;background:var(--linea)}
+.linea li{position:relative;padding-top:22px;text-align:center}
+.linea li::before{content:"";position:absolute;top:0;left:50%;margin-left:-7px;width:14px;height:14px;border-radius:50%;background:var(--marca);box-shadow:0 0 0 4px var(--marca-suave)}
+.linea li:last-child::before{background:var(--rojo-apto);box-shadow:0 0 0 4px var(--rojo-suave)}
+.linea b{display:block;color:var(--tinta)}
+.pasos3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.paso{background:#fff;border-radius:22px;padding:26px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07)}
+.paso b{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--marca);color:#fff;font-size:18px}
+.paso h3{font-size:21px;margin:14px 0 6px;letter-spacing:-.01em}
+.paso p{margin:0;color:var(--suave)}
+@media(max-width:860px){.mosaico{grid-template-columns:1fr 1fr}.tile,.t-tall{grid-column:span 1}.t-big,.t-wide{grid-column:span 2}.t-big{min-height:300px}.pasos3{grid-template-columns:1fr}}
+@media(max-width:560px){.mosaico{grid-template-columns:1fr}.tile,.t-big,.t-tall,.t-wide{grid-column:span 1}.t-tall{grid-row:auto}.tile{padding:22px}}
+footer{max-width:1180px;margin:0 auto;padding:28px 16px 40px;font-size:13px;color:var(--suave);text-align:center}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.barra-p i{width:67%}}
 main{padding:16px;display:grid;gap:16px;grid-template-columns:320px 1fr}
 @media(max-width:860px){main{grid-template-columns:1fr}}
 .tarjeta{background:var(--tarjeta);border:1px solid var(--linea);border-radius:12px;padding:16px}
@@ -82,13 +155,64 @@ input[type=number]{width:100%;padding:9px 10px;border:1px solid var(--linea);bor
 .req small{display:block;color:var(--suave)}
 .req .et{text-align:center}
 .req input{width:16px;height:16px;accent-color:var(--marca);vertical-align:-2px;margin-right:6px}
+/* ---------- Herramienta: profundidad y movimiento ---------- */
+.tarjeta,.cifra{border-color:transparent;border-radius:20px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 32px rgba(27,36,48,.07)}
+.op{transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,border-color .25s}
+.op:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(27,36,48,.10)}
+.chip{transition:background .2s,color .2s,transform .15s}
+.chip:active,button:active{transform:scale(.97)}
+dialog{border-radius:24px;box-shadow:0 40px 90px rgba(27,36,48,.35)}
+dialog[open]{animation:aparece .4s cubic-bezier(.2,.8,.2,1)}
+dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+@keyframes aparece{from{opacity:0;transform:translateY(20px) scale(.97)}}
+.cifra b{transition:color .3s}
 </style>
 </head>
 <body>
+<script>document.documentElement.classList.add("js")</script>
 <header><div class="in">
   <h1>Apto</h1>
-  <p>Las compras del Estado que le sirven a tu negocio, ordenadas y con un plan para ofertar.</p>
+  <nav aria-label="Secciones"><a href="#como">Qué hace</a><a href="#pasos">Cómo funciona</a><a class="cta" href="#app">Pruébalo</a></nav>
 </div></header>
+
+<section class="hero" aria-label="Presentación">
+  <p class="eyebrow rv">Compras públicas para pymes</p>
+  <h2 class="big rv" style="--d:.08s">¿Puedes venderle al Estado?<br><span>Apto te lo dice.</span></h2>
+  <p class="lead rv" style="--d:.16s">Revisa las licitaciones abiertas, te muestra las que calzan con tu negocio y te dice qué cumples y qué te falta para ofertar a tiempo.</p>
+  <div class="botones rv" style="--d:.24s"><a class="btn" href="#app">Pruébalo gratis</a><a class="btn sec2" href="#pasos">Cómo funciona ›</a></div>
+  <div class="escena rv" style="--d:.32s" aria-hidden="true">
+    <div class="flot f1"><span class="et ok">Calza con tu negocio</span><div class="t">Adquisición de 2 bandas elásticas de resistencia</div><div class="s">Compra de ejemplo · Hasta 100 UTM</div></div>
+    <div class="flot f2"><b>Cumples 6 de 9 requisitos</b><div class="barra-p"><i></i></div><div class="s" style="margin-top:8px">Te falta: compromiso de garantía, cotización y garantía del producto.</div></div>
+    <div class="flot f3"><div class="dia">3<br><small>días</small></div><div><b>Cierra pronto</b><div class="s">Te lo recordamos en tu calendario</div></div></div>
+  </div>
+</section>
+
+<section class="seccion" id="como" aria-label="Qué hace Apto">
+  <h2 class="sec-t rv">Todo para ofertar. <span>En un solo lugar.</span></h2>
+  <div class="mosaico">
+    <article class="tile t-big rv" id="tnum"><p class="k">Licitaciones abiertas ahora</p><b class="num" id="hnum">0</b><p>Apto las revisa todas por ti y te deja solo las que sirven a tu negocio.</p></article>
+    <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Cumples, revisa o no cumples. Y por qué.</h3>
+      <ul class="sem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-al"><i></i>Revisar<small>Garantía sin indicar</small></li><li class="s-ro"><i></i>No cumple<small>3.600 de 4.000 lúmenes</small></li></ul></article>
+    <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
+      <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
+    <article class="tile rv" style="--d:.15s"><p class="k">Sin experiencia previa</p><h3>Hecho para quien nunca ha licitado.</h3><p>Te explica en simple qué piden y qué te falta.</p></article>
+    <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado ni trabajamos para los compradores: estamos del lado de quien vende.</p></div>
+      <div class="chips2"><span>API pública de ChileCompra</span><span>Datos abiertos</span><span>Gratis para empezar</span></div></article>
+  </div>
+</section>
+
+<section class="seccion" id="pasos" aria-label="Cómo funciona">
+  <h2 class="sec-t rv">Tres pasos. <span>Cero planillas.</span></h2>
+  <div class="pasos3">
+    <div class="paso rv"><b>1</b><h3>Cuéntanos qué vendes</h3><p>Elige tu rubro y agrega tus productos con sus características.</p></div>
+    <div class="paso rv" style="--d:.1s"><b>2</b><h3>Mira tus compras</h3><p>De miles de licitaciones, Apto te deja las que calzan contigo.</p></div>
+    <div class="paso rv" style="--d:.2s"><b>3</b><h3>Revisa si cumples</h3><p>Requisito por requisito, con lo que te falta y el plan para llegar a tiempo.</p></div>
+  </div>
+</section>
+
+<section class="seccion" id="app" aria-label="Herramienta" style="padding-bottom:0">
+  <h2 class="sec-t rv">Pruébalo ahora. <span>Con datos reales de Mercado Público.</span></h2>
+</section>
 
 <main>
   <section class="tarjeta" aria-label="Perfil de mi negocio">
@@ -158,6 +282,8 @@ input[type=number]{width:100%;padding:9px 10px;border:1px solid var(--linea);bor
     </div>
   </section>
 </main>
+
+<footer>Apto · prototipo. Datos: API pública de ChileCompra. No es un sitio oficial del Estado de Chile.</footer>
 
 <dialog id="dlg" aria-labelledby="dtitulo">
   <button class="cerrar" aria-label="Cerrar" onclick="dlg.close()">×</button>
@@ -528,7 +654,33 @@ async function cargar(){
   }catch(e){ if(!datos.length) origen = "Sin conexión con Mercado Público"; }
   avisar(); pintar();
 }
-function avisar(){ $("fuente").textContent = origen + ". Fuente: API pública de ChileCompra."; }
+function avisar(){
+  $("fuente").textContent = origen + ". Fuente: API pública de ChileCompra.";
+  const n = datos.filter(d => { const x = diasPara(d.cierre); return x === null || x >= 0; }).length;
+  $("hnum").dataset.meta = n;
+  if($("tnum").classList.contains("in") || !visto) contar($("hnum"), n);
+}
+
+// ---------- Portada: aparicion al hacer scroll y contador ----------
+function contar(el, n){
+  const ini = +(el.dataset.v || 0); el.dataset.v = n;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches || ini === n){ el.textContent = n.toLocaleString("es-CL"); return; }
+  const t0 = performance.now(), dur = 1600;
+  const paso = t => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(ini + (n - ini) * e).toLocaleString("es-CL"); if(p < 1) requestAnimationFrame(paso); };
+  requestAnimationFrame(paso);
+}
+const visto = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+  if(!e.isIntersecting) return;
+  e.target.classList.add("in"); visto.unobserve(e.target);
+  if(e.target.id === "tnum" && $("hnum").dataset.meta) contar($("hnum"), +$("hnum").dataset.meta);
+}), {threshold: .15, rootMargin: "0px 0px -40px 0px"}) : null;
+document.querySelectorAll(".rv").forEach(el => visto ? visto.observe(el) : el.classList.add("in"));
+// Respaldo: lo que ya esta en pantalla aparece al cargar, y si el navegador no avisa del scroll, se muestra todo.
+requestAnimationFrame(() => requestAnimationFrame(() => document.querySelectorAll(".rv").forEach(el => { if(el.getBoundingClientRect().top < innerHeight) el.classList.add("in"); })));
+function mostrarTodo(){ document.querySelectorAll(".rv:not(.in)").forEach(el => el.classList.add("in")); if($("hnum").dataset.meta) contar($("hnum"), +$("hnum").dataset.meta); }
+let quietos = 0;
+addEventListener("scroll", () => { clearTimeout(quietos); quietos = setTimeout(() => document.querySelectorAll(".rv:not(.in)").forEach(el => { if(el.getBoundingClientRect().top < innerHeight - 40){ el.classList.add("in"); if(el.id === "tnum" && $("hnum").dataset.meta) contar($("hnum"), +$("hnum").dataset.meta); } }), 120); }, {passive: true});
+setTimeout(() => { if(!document.querySelector(".rv.in")) mostrarTodo(); }, 3000);
 
 // ---------- Controles ----------
 function iniciar(){

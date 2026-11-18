@@ -155,6 +155,10 @@ input[type=number]{width:100%;padding:9px 10px;border:1px solid var(--linea);bor
 .req small{display:block;color:var(--suave)}
 .req .et{text-align:center}
 .req input{width:16px;height:16px;accent-color:var(--marca);vertical-align:-2px;margin-right:6px}
+.simple{background:var(--marca-suave);border-radius:14px;padding:14px 16px;margin:8px 0 14px;font-size:14.5px}
+.simple ul{margin:4px 0 10px;padding-left:18px}
+.cumplo input[type=file]{width:100%;padding:8px;border:1px dashed var(--linea);border-radius:10px;background:#fff;font:inherit;font-size:14px}
+.c-out{margin-top:12px}
 /* ---------- Herramienta: profundidad y movimiento ---------- */
 .tarjeta,.cifra{border-color:transparent;border-radius:20px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 32px rgba(27,36,48,.07)}
 .op{transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,border-color .25s}
@@ -312,7 +316,8 @@ const RUBROS = {
   "Eventos y flores": ["evento","produccion","amplificacion","carpas","flores","arreglos florales","coronas","decoracion"],
   "Capacitación": ["capacitacion","curso","taller","relator","diplomado"],
   "Áreas verdes": ["areas verdes","poda","jardines","riego","paisajismo","corte de pasto"],
-  "Mobiliario": ["mobiliario","muebles","sillas","escritorios","estanterias"]
+  "Mobiliario": ["mobiliario","muebles","sillas","escritorios","estanterias"],
+  "Equipamiento clínico": ["equipamiento clinico","equipo medico","equipos medicos","camilla","monitor multiparametro","esfigmomanometro","rehabilitacion"]
 };
 const REGIONES = ["Arica y Parinacota","Tarapacá","Antofagasta","Atacama","Coquimbo","Valparaíso","Metropolitana","O'Higgins","Maule","Ñuble","Biobío","Araucanía","Los Ríos","Los Lagos","Aysén","Magallanes"];
 // Tramos segun el tipo de licitacion (sale del codigo). nivel 1 = mas chica.
@@ -334,6 +339,8 @@ let perfil = leer("rp_perfil", {rubros:[], extra:"", excluir:"", region:"", tama
 let guardadas = leer("rp_guardadas", {});
 let hechos = leer("rp_pasos", {});
 let datos = [], resultados = [], mostrar = 40, origen = "";
+let RES = {}, motorLocal = false;           // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
+const MOTOR = "http://127.0.0.1:8787";
 const cacheDet = {};
 
 function tipoDe(codigo){
@@ -375,8 +382,9 @@ function calcular(){
     if(!ts.length) continue;
     if(no.some(t => calza(t, d.texto, d.palabras))) continue;
     const hits = ts.filter(t => calza(t, d.texto, d.palabras));
-    if(!hits.length) continue;
-    const pts = hits.reduce((a, h) => a + (h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0);
+    const ia = RES[d.codigo], porRubro = !!(ia && perfil.rubros.includes(ia.rubro)); // la IA nocturna clasifico el rubro
+    if(!hits.length && !porRubro) continue;
+    const pts = hits.reduce((a, h) => a + (h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0) + (porRubro ? 3 : 0);
     resultados.push({...d, dias, pts, hits});
   }
   const porCierre = (a, b) => (a.dias ?? 999) - (b.dias ?? 999);
@@ -419,7 +427,7 @@ function pintar(){
     const [cl, tx] = etiquetaCierre(r.dias);
     return '<article class="op" tabindex="0" role="button" data-c="' + esc(r.codigo) + '">' +
       "<div><h3>" + (guardadas[r.codigo] ? "★ " : "") + resaltar(r.nombre, r.hits) + "</h3>" +
-      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span></div></div>" +
+      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + "</div></div>" +
       '<div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL",{day:"numeric",month:"short"}) : "—") + '</b><span class="et ' + cl + '">' + tx + "</span></div></article>";
   }).join("");
   $("mas").hidden = resultados.length <= mostrar;
@@ -486,11 +494,12 @@ async function abrir(codigo){
     "<dt>Adjudicación estimada</dt><dd>" + fechaCorta((d.Fechas || {}).FechaAdjudicacion) + "</dd>" +
     "<dt>Qué piden</dt><dd>" + esc((d.Descripcion || "").slice(0, 420)) + ((d.Descripcion || "").length > 420 ? "…" : "") + "</dd>" +
     "<dt>Productos (" + items.length + ")</dt><dd>" + (items.slice(0, 8).map(i => esc(i.NombreProducto) + " <span class='nota'>× " + esc(i.Cantidad) + " " + esc(i.UnidadMedida || "") + "</span>").join("<br>") || "—") + (items.length > 8 ? "<br><span class='nota'>y " + (items.length - 8) + " más</span>" : "") + "</dd>" +
-    "</dl>" + tengo(items) + "<h2>Mi plan para ofertar</h2>" + plan(d, base) +
+    "</dl>" + enSimple(codigo) + tengo(items) + bloqueCumplo() + "<h2>Mi plan para ofertar</h2>" + plan(d, base) +
     '<div class="acciones"><button class="principal" id="bg">' + (guardadas[codigo] ? "★ Guardada" : "☆ Guardar") + '</button>' +
     '<button class="sec" id="bcal">Agregar cierre a mi calendario</button>' +
     '<a class="sec" style="text-decoration:none;display:inline-block;border:1px solid var(--linea);border-radius:8px;padding:8px 12px" target="_blank" rel="noopener" href="' + FICHA + encodeURIComponent(codigo) + '">Abrir ficha oficial ↗</a></div>' +
     '<p class="nota" style="margin-bottom:0">El plan es una guía general. Las bases de cada licitación mandan: revisa siempre sus requisitos.</p>';
+  activarCumplo(D);
   D.querySelectorAll(".pasos input").forEach(ch => ch.onchange = () => { (hechos[codigo] = hechos[codigo] || {})[ch.dataset.i] = ch.checked; guardar("rp_pasos", hechos); });
   $("bg").onclick = () => { if(guardadas[codigo]) delete guardadas[codigo]; else guardadas[codigo] = 1; guardar("rp_guardadas", guardadas); $("bg").textContent = guardadas[codigo] ? "★ Guardada" : "☆ Guardar"; pintar(); };
   $("bcal").onclick = () => calendario(codigo, d.Nombre || base.nombre, (d.Fechas || {}).FechaCierre || base.cierre);
@@ -652,7 +661,84 @@ function pintarCatalogo(){
 function preparar(filas){
   datos = filas.map(f => { const t = norm(f[1]); return {codigo:f[0], nombre:f[1] || "", cierre:f[2], texto:t, palabras:t.split(" "), tipo:tipoDe(f[0])}; });
 }
+// ---------- Resumenes nocturnos y motor ¿Cumplo? (IA local de Apto) ----------
+function enSimple(c){
+  const x = RES[c]; if(!x) return "";
+  const lista = a => "<ul>" + a.slice(0, 8).map(t => "<li>" + esc(t) + "</li>").join("") + "</ul>";
+  return '<h2>En simple</h2><div class="simple"><p style="margin:0 0 8px">' + esc(x.resumen) + "</p>" +
+    (x.piden && x.piden.length ? "<b>Qué piden</b>" + lista(x.piden) : "") +
+    (x.requisitos && x.requisitos.length ? "<b>Requisitos que se ven en la publicación</b>" + lista(x.requisitos)
+      : '<p class="nota" style="margin:4px 0">El detalle está en las bases técnicas: descárgalas en la ficha oficial y revísalas aquí con Apto.</p>') +
+    '<p class="nota" style="margin:6px 0 0">Resumen hecho por la IA de Apto con datos públicos de Mercado Público (' + esc(x.procesado || "") + "). Confírmalo siempre en las bases.</p></div>";
+}
+function bloqueCumplo(){
+  return "<h2>¿Cumplo con la ficha técnica real?</h2>" + (motorLocal ? formCumplo()
+    : '<p class="nota">Descarga la ficha técnica desde la ficha oficial y Apto la revisa contra tu producto, requisito por requisito. Esta función usa el motor de IA de Apto y por ahora está disponible solo en demostraciones.</p>');
+}
+function formCumplo(){
+  const ac = ".pdf,.docx,.png,.jpg,.jpeg,.webp";
+  return '<div class="cumplo"><label>Ficha técnica de la compra (PDF, Word o imagen)</label><input type="file" class="c-eett" accept="' + ac + '">' +
+    '<label>Producto que quieres ofrecer</label><select class="c-prod"><option value="">Ninguno: solo ver los requisitos</option>' +
+    catalogo.map(p => '<option value="' + esc(p.id) + '">' + esc(p.nombre) + "</option>").join("") + "</select>" +
+    '<label>Ficha de tu producto (opcional)</label><input type="file" class="c-of" accept="' + ac + '">' +
+    '<button class="principal c-ir" style="margin-top:12px">Revisar con IA</button><div class="c-out" aria-live="polite"></div>' +
+    '<p class="nota">Los archivos se procesan en el motor de Apto con IA local y se borran al terminar. No se envían a servicios en la nube.</p></div>';
+}
+function resultadoIA(r){
+  const reqs = r.requisitos || [];
+  if(!r.veredicto) return '<div class="veredicto al"><b>Requisitos que encontró Apto en la ficha</b><br>Elige un producto o sube su ficha para revisar si cumples.</div><ul class="req">' +
+    reqs.map(q => '<li><span class="et ' + (q.critico ? "" : "gr") + '">' + (q.critico ? "Esencial" : "Detalle") + "</span><div>" + esc(q.texto) + "</div></li>").join("") + "</ul>";
+  const M = {cumple: "ok", no_cumple: "no", no_indica: "duda"};
+  const esen = reqs.filter(q => q.critico), sec = reqs.filter(q => !q.critico);
+  const okE = esen.filter(q => q.estado === "cumple").length, falt = esen.filter(q => q.estado === "no_indica").length;
+  const T = {CUMPLE: ["ok", "Puedes ofertar: cumples lo esencial"], NO_CUMPLE: ["ro", "Con este producto no cumples lo esencial"],
+    TE_FALTA: ["al", "Antes de ofertar, te falta" + (falt === 1 ? " 1 cosa esencial" : "n " + falt + " cosas esenciales")]}[r.veredicto];
+  const fila = (q, tab) => '<li><span class="et ' + tab[M[q.estado] || "duda"][0] + '">' + tab[M[q.estado] || "duda"][1] + "</span><div>" + esc(q.texto) + "<small>" + esc(q.motivo || "") + "</small></div></li>";
+  return '<div class="veredicto ' + T[0] + '"><b>' + T[1] + "</b><br>Cumples " + okE + " de " + esen.length + " requisitos esenciales. Revisión hecha con IA: confírmala con las bases.</div>" +
+    '<h2 style="margin-top:16px">Lo esencial</h2><ul class="req">' + esen.map(q => fila(q, ET)).join("") + "</ul>" +
+    (sec.length ? '<h2 style="margin-top:16px">Detalles recomendados</h2><ul class="req">' + sec.map(q => fila(q, ETS)).join("") + "</ul>" : "");
+}
+function activarCumplo(raiz){
+  const b = raiz.querySelector(".c-ir"); if(!b) return;
+  b.onclick = async () => {
+    const out = raiz.querySelector(".c-out"), f = raiz.querySelector(".c-eett").files[0];
+    if(!f){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">Elige primero la ficha técnica de la compra.</p>'; return; }
+    const fd = new FormData(); fd.append("eett", f, f.name);
+    const of = raiz.querySelector(".c-of").files[0]; if(of) fd.append("oferta", of, of.name);
+    const p = catalogo.find(x => x.id === raiz.querySelector(".c-prod").value);
+    if(p) fd.append("producto", p.nombre + ". " + p.caract + (p.garantia !== "" ? ". Garantía: " + p.garantia + " meses" : "") + (p.entrega !== "" ? ". Plazo de entrega: " + p.entrega + " días" : ""));
+    b.disabled = true; out.innerHTML = '<p class="nota">Enviando a la IA de Apto…</p>';
+    try{
+      const r = await fetch(MOTOR + "/cumplo", {method: "POST", body: fd}); const j = await r.json();
+      if(!r.ok) throw new Error(j.error || "Error del motor");
+      let e;
+      do{
+        await new Promise(ok => setTimeout(ok, 2500));
+        e = await (await fetch(MOTOR + "/cumplo/" + j.id)).json();
+        if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + " Puede tardar unos minutos.</p>";
+      } while(!e.listo);
+      out.innerHTML = e.error ? '<p class="nota" style="color:var(--rojo)">' + esc(e.error) + "</p>" : resultadoIA(e.resultado);
+    }catch(err){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">No se pudo conectar con el motor de Apto. ' + esc(err.message) + "</p>"; }
+    b.disabled = false;
+  };
+}
+function abrirFichaReal(){
+  $("det").innerHTML = '<h3 id="dtitulo">Revisa una ficha técnica real</h3><p class="nota">Descarga la ficha técnica de cualquier compra desde Mercado Público, súbela aquí y elige tu producto. La IA de Apto lista los requisitos y te dice cuáles cumples.</p>' + formCumplo();
+  $("dlg").showModal(); activarCumplo($("det"));
+}
+function conectarIA(){
+  fetch("resumenes.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ RES = j.items; pintar(); } }).catch(() => {});
+  const ctl = new AbortController(); setTimeout(() => ctl.abort(), 1500);
+  fetch(MOTOR + "/estado", {signal: ctl.signal}).then(r => r.json()).then(j => {
+    if(!j.ok) return;
+    motorLocal = true;
+    $("ejemplos").insertAdjacentHTML("beforeend", '<button class="principal" id="bficha">Revisar una ficha técnica real</button>');
+    $("bficha").onclick = abrirFichaReal;
+  }).catch(() => {});
+}
+
 async function cargar(){
+  conectarIA();
   const copia = window.SNAPSHOT;
   if(copia && copia.listado){ preparar(copia.listado); origen = "Copia guardada del " + new Date(copia.fecha).toLocaleString("es-CL",{dateStyle:"medium",timeStyle:"short"}); avisar(); pintar(); }
   try{

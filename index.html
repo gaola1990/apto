@@ -49,7 +49,7 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 @keyframes flotar{50%{transform:translateY(-12px)}}
 .barra-p{height:8px;border-radius:99px;background:var(--linea);overflow:hidden;margin-top:10px}
 .barra-p i{display:block;height:100%;width:0;border-radius:99px;background:var(--verde-apto);transition:width 1.8s cubic-bezier(.2,.8,.2,1) .7s}
-.in .barra-p i,.sin-js .barra-p i{width:67%}
+.in .barra-p i,.sin-js .barra-p i{width:50%}
 @media(max-width:620px){.escena{height:auto;display:grid;gap:14px;margin-top:36px}.flot{position:static;width:auto}}
 .seccion{max-width:1180px;margin:0 auto;padding:72px 16px 8px}
 .sec-t{font-size:clamp(30px,4.6vw,54px);line-height:1.07;letter-spacing:-.025em;text-transform:none;color:var(--tinta);margin:0 0 30px;font-weight:700;max-width:860px}
@@ -93,7 +93,7 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 @media(max-width:860px){.mosaico{grid-template-columns:1fr 1fr}.tile,.t-tall{grid-column:span 1}.t-big,.t-wide{grid-column:span 2}.t-big{min-height:300px}.pasos3{grid-template-columns:1fr}}
 @media(max-width:560px){.mosaico{grid-template-columns:1fr}.tile,.t-big,.t-tall,.t-wide{grid-column:span 1}.t-tall{grid-row:auto}.tile{padding:22px}}
 footer{max-width:1180px;margin:0 auto;padding:28px 16px 40px;font-size:13px;color:var(--suave);text-align:center}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.barra-p i{width:67%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.barra-p i{width:50%}}
 main{padding:16px;display:grid;gap:16px;grid-template-columns:320px 1fr}
 @media(max-width:860px){main{grid-template-columns:1fr}}
 .tarjeta{background:var(--tarjeta);border:1px solid var(--linea);border-radius:12px;padding:16px}
@@ -182,7 +182,7 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
   <div class="botones rv" style="--d:.24s"><a class="btn" href="#app">Pruébalo gratis</a><a class="btn sec2" href="#pasos">Cómo funciona ›</a></div>
   <div class="escena rv" style="--d:.32s" aria-hidden="true">
     <div class="flot f1"><span class="et ok">Calza con tu negocio</span><div class="t">Adquisición de 2 bandas elásticas de resistencia</div><div class="s">Compra de ejemplo · Hasta 100 UTM</div></div>
-    <div class="flot f2"><b>Cumples 6 de 9 requisitos</b><div class="barra-p"><i></i></div><div class="s" style="margin-top:8px">Te falta: compromiso de garantía, cotización y garantía del producto.</div></div>
+    <div class="flot f2"><b>Cumples 4 de 8 requisitos esenciales</b><div class="barra-p"><i></i></div><div class="s" style="margin-top:8px">Antes de ofertar, te falta indicar la garantía y adjuntar 3 documentos.</div></div>
     <div class="flot f3"><div class="dia">3<br><small>días</small></div><div><b>Cierra pronto</b><div class="s">Te lo recordamos en tu calendario</div></div></div>
   </div>
 </section>
@@ -191,8 +191,8 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
   <h2 class="sec-t rv">Todo para ofertar. <span>En un solo lugar.</span></h2>
   <div class="mosaico">
     <article class="tile t-big rv" id="tnum"><p class="k">Licitaciones abiertas ahora</p><b class="num" id="hnum">0</b><p>Apto las revisa todas por ti y te deja solo las que sirven a tu negocio.</p></article>
-    <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Cumples, revisa o no cumples. Y por qué.</h3>
-      <ul class="sem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-al"><i></i>Revisar<small>Garantía sin indicar</small></li><li class="s-ro"><i></i>No cumple<small>3.600 de 4.000 lúmenes</small></li></ul></article>
+    <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Cumples, te falta o no cumples. Y por qué.</h3>
+      <ul class="sem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-al"><i></i>Te falta indicarlo<small>Garantía de 6 meses</small></li><li class="s-ro"><i></i>No cumple<small>3.600 de 4.000 lúmenes</small></li></ul></article>
     <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
     <article class="tile rv" style="--d:.15s"><p class="k">Sin experiencia previa</p><h3>Hecho para quien nunca ha licitado.</h3><p>Te explica en simple qué piden y qué te falta.</p></article>
@@ -528,29 +528,31 @@ const parecido = (a, b) => Math.abs(a - b) / b <= 0.02;
 
 // Compras de ejemplo: requisitos preparados a mano para mostrar la revision. No son compras reales.
 const EJEMPLOS = [
-  {codigo:"EJEMPLO-1", nombre:"Adquisición de 2 bandas elásticas de resistencia para sala de rehabilitación",
+  {codigo:"EJEMPLO-1b", nombre:"Adquisición de 2 bandas elásticas de resistencia para sala de rehabilitación",
    pide:"Dos rollos de banda elástica de resistencia, color negro, de 15 cm de ancho y al menos 45 m de largo, con garantía mínima de 6 meses y entrega en 10 días.",
    reqs:[
-    {t:"palabra", e:"Es una banda elástica de resistencia", v:["banda elastica","bandas elasticas"]},
-    {t:"palabra", e:"Color negro", v:["negro","negra"]},
-    {t:"medida", e:"Ancho de 15 cm", n:15, u:"cm", modo:"igual"},
-    {t:"medida", e:"Largo de 45 m o más", n:45, u:"m", modo:"min"},
-    {t:"garantia", e:"Garantía de 6 meses o más", min:6},
-    {t:"entrega", e:"Entrega en 10 días o menos", max:10},
-    {t:"doc", e:"Ficha técnica del producto"},
-    {t:"doc", e:"Compromiso de garantía firmado"},
-    {t:"doc", e:"Cotización con impuestos incluidos"}],
+    {t:"palabra", e:"Es una banda elástica de resistencia", v:["banda elastica","bandas elasticas"], c:1},
+    {t:"medida", e:"Ancho de 15 cm", n:15, u:"cm", modo:"igual", c:1},
+    {t:"medida", e:"Largo de 45 m o más", n:45, u:"m", modo:"min", c:1},
+    {t:"garantia", e:"Garantía de 6 meses o más", min:6, c:1},
+    {t:"entrega", e:"Entrega en 10 días o menos", max:10, c:1},
+    {t:"doc", e:"Ficha técnica del producto", c:1},
+    {t:"doc", e:"Compromiso de garantía firmado", c:1},
+    {t:"doc", e:"Cotización con impuestos incluidos", c:1},
+    {t:"palabra", e:"Color negro (o equivalente)", v:["negro","negra"]},
+    {t:"palabra", e:"El precio incluye el despacho", v:["despacho","envio incluido","flete incluido","incluye envio"]}],
    muestra:{nombre:"Banda elástica de resistencia en rollo", caract:"Rollo de 45,7 m de largo por 15 cm de ancho, color negro, resistencia extra fuerte, sin látex", garantia:"", entrega:"5"}},
-  {codigo:"EJEMPLO-2", nombre:"Adquisición de 1 proyector para sala de reuniones",
+  {codigo:"EJEMPLO-2b", nombre:"Adquisición de 1 proyector para sala de reuniones",
    pide:"Un proyector de al menos 4.000 lúmenes con entrada HDMI, garantía mínima de 12 meses y entrega en 15 días.",
    reqs:[
-    {t:"palabra", e:"Es un proyector", v:["proyector"]},
-    {t:"medida", e:"Brillo de 4.000 lúmenes o más", n:4000, u:"lumenes", modo:"min"},
-    {t:"palabra", e:"Entrada HDMI", v:["hdmi"]},
-    {t:"garantia", e:"Garantía de 12 meses o más", min:12},
-    {t:"entrega", e:"Entrega en 15 días o menos", max:15},
-    {t:"doc", e:"Ficha técnica del producto"},
-    {t:"doc", e:"Compromiso de garantía firmado"}],
+    {t:"palabra", e:"Es un proyector", v:["proyector"], c:1},
+    {t:"medida", e:"Brillo de 4.000 lúmenes o más", n:4000, u:"lumenes", modo:"min", c:1},
+    {t:"palabra", e:"Entrada HDMI", v:["hdmi"], c:1},
+    {t:"garantia", e:"Garantía de 12 meses o más", min:12, c:1},
+    {t:"entrega", e:"Entrega en 15 días o menos", max:15, c:1},
+    {t:"doc", e:"Ficha técnica del producto", c:1},
+    {t:"doc", e:"Compromiso de garantía firmado", c:1},
+    {t:"palabra", e:"Incluye control remoto", v:["control remoto"]}],
    muestra:{nombre:"Proyector para sala", caract:"3.600 lúmenes, resolución SVGA, entradas HDMI y VGA, parlante integrado", garantia:"12", entrega:"7"}}
 ];
 
@@ -576,7 +578,8 @@ function evaluar(r, p, codigo, i){
   }
   return (docs[codigo] || {})[i] ? {est:"ok", nota:"Lo tienes listo."} : {est:"falta", nota:"Debes adjuntarlo a tu oferta. Márcalo cuando lo tengas."};
 }
-const ET = {ok:["ok","Cumple"], no:["ro","No cumple"], duda:["al","Revisar"], falta:["al","Falta"]};
+const ET = {ok:["ok","Cumple"], no:["ro","No cumple"], duda:["al","Te falta indicarlo"], falta:["al","Te falta adjuntarlo"]};
+const ETS = {ok:["ok","Cumple"], no:["gr","No lo cumple"], duda:["gr","No lo indica"], falta:["gr","No lo adjunta"]}; // requisitos secundarios: no cambian el veredicto
 function revision(ej){
   const caja = $("rev"); if(!caja) return;
   const yaMuestra = catalogo.some(p => p.nombre === ej.muestra.nombre);
@@ -586,15 +589,22 @@ function revision(ej){
     const puntos = x => ej.reqs.filter((r, i) => evaluar(r, x, ej.codigo, i).est === "ok").length;
     const p = catalogo.find(x => x.id === caja.dataset.p) || catalogo.reduce((a, b) => puntos(b) > puntos(a) ? b : a); // parte por el producto que mas calza
     const res = ej.reqs.map((r, i) => evaluar(r, p, ej.codigo, i));
-    const ok = res.filter(x => x.est === "ok").length, no = res.filter(x => x.est === "no").length, total = ej.reqs.length;
+    // Lo esencial (c:1) decide el veredicto; lo secundario queda como recomendacion (aprendizaje de la prueba con ofertas reales).
+    const esen = ej.reqs.map((r, i) => i).filter(i => ej.reqs[i].c), sec = ej.reqs.map((r, i) => i).filter(i => !ej.reqs[i].c);
+    const okE = esen.filter(i => res[i].est === "ok").length, noE = esen.filter(i => res[i].est === "no").length;
+    const faltan = esen.filter(i => res[i].est === "duda" || res[i].est === "falta").length, secPend = sec.filter(i => res[i].est !== "ok").length;
     const otro = res[0].est !== "ok"; // el primer requisito es el tipo de producto
-    const cl = no || otro ? "ro" : ok === total ? "ok" : "al";
-    const tit = otro ? "Este producto no parece ser lo que piden" : no ? "Con este producto no cumples lo que piden" : ok === total ? "Cumples todo: puedes ofertar con este producto" : "Vas bien, pero te falta completar " + (total - ok) + (total - ok === 1 ? " requisito" : " requisitos");
+    const cl = noE || otro ? "ro" : faltan ? "al" : "ok";
+    const tit = otro ? "Este producto no parece ser lo que piden" : noE ? "Con este producto no cumples lo esencial" :
+      faltan ? "Antes de ofertar, te falta" + (faltan === 1 ? " 1 cosa esencial" : "n " + faltan + " cosas esenciales") : "Puedes ofertar: cumples lo esencial";
+    const sub = "Cumples " + okE + " de " + esen.length + " requisitos esenciales." + (secPend ? " Además, " + secPend + (secPend === 1 ? " detalle recomendado" : " detalles recomendados") + " por mejorar." : "");
+    const fila = (i, tabla) => '<li><span class="et ' + tabla[res[i].est][0] + '">' + tabla[res[i].est][1] + "</span><div>" +
+        (ej.reqs[i].t === "doc" ? '<label style="margin:0;font-weight:400;font-size:inherit"><input type="checkbox" data-i="' + i + '"' + (res[i].est === "ok" ? " checked" : "") + ">" + esc(ej.reqs[i].e) + "</label>" : esc(ej.reqs[i].e)) +
+        "<small>" + esc(res[i].nota) + "</small></div></li>";
     caja.innerHTML = '<label for="revp">Producto que quiero ofrecer</label><select id="revp">' + catalogo.map(x => '<option value="' + esc(x.id) + '"' + (x.id === p.id ? " selected" : "") + ">" + esc(x.nombre) + "</option>").join("") + "</select>" +
-      '<div class="veredicto ' + cl + '"><b>' + tit + "</b><br>Cumples " + ok + " de " + total + " requisitos.</div>" +
-      '<ul class="req">' + ej.reqs.map((r, i) => '<li><span class="et ' + ET[res[i].est][0] + '">' + ET[res[i].est][1] + "</span><div>" +
-        (r.t === "doc" ? '<label style="margin:0;font-weight:400;font-size:inherit"><input type="checkbox" data-i="' + i + '"' + (res[i].est === "ok" ? " checked" : "") + ">" + esc(r.e) + "</label>" : esc(r.e)) +
-        "<small>" + esc(res[i].nota) + "</small></div></li>").join("") + "</ul>" + boton;
+      '<div class="veredicto ' + cl + '"><b>' + tit + "</b><br>" + sub + "</div>" +
+      '<h2 style="margin-top:16px">Lo esencial</h2><ul class="req">' + esen.map(i => fila(i, ET)).join("") + "</ul>" +
+      (sec.length ? '<h2 style="margin-top:16px">Detalles recomendados</h2><p class="nota" style="margin:0">No te dejan fuera, pero suman puntos o evitan consultas.</p><ul class="req">' + sec.map(i => fila(i, ETS)).join("") + "</ul>" : "") + boton;
     $("revp").onchange = () => { caja.dataset.p = $("revp").value; revision(ej); };
     caja.querySelectorAll(".req input").forEach(ch => ch.onchange = () => { (docs[ej.codigo] = docs[ej.codigo] || {})[ch.dataset.i] = ch.checked; guardar("rp_docs", docs); revision(ej); });
   }

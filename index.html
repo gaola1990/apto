@@ -90,6 +90,17 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 .paso b{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--marca);color:#fff;font-size:18px}
 .paso h3{font-size:21px;margin:14px 0 6px;letter-spacing:-.01em}
 .paso p{margin:0;color:var(--suave)}
+.planes{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:900px}
+.plan{background:#fff;border-radius:22px;padding:28px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07);display:flex;flex-direction:column}
+.plan.dest{outline:2px solid var(--marca);box-shadow:0 1px 2px rgba(27,36,48,.04),0 18px 40px rgba(29,78,158,.18)}
+.plan .k{margin:0;color:var(--marca);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.plan h3{font-size:24px;margin:8px 0 4px;letter-spacing:-.01em}
+.plan .pr{font-size:34px;font-weight:700;margin:10px 0 2px}.plan .pr small{font-size:15px;font-weight:400;color:var(--suave)}
+.plan ul{list-style:none;padding:0;margin:16px 0 0}.plan li{padding:8px 0 8px 26px;border-top:1px solid var(--linea);position:relative}
+.plan li:before{content:"✓";position:absolute;left:2px;color:var(--marca);font-weight:700}
+.plan li.no{color:var(--suave)}.plan li.no:before{content:"–";color:var(--suave)}
+.nota-pl{color:var(--suave);font-size:14px;margin:14px 0 0}
+@media(max-width:700px){.planes{grid-template-columns:1fr}}
 @media(max-width:860px){.mosaico{grid-template-columns:1fr 1fr}.tile,.t-tall{grid-column:span 1}.t-big,.t-wide{grid-column:span 2}.t-big{min-height:300px}.pasos3{grid-template-columns:1fr}}
 @media(max-width:560px){.mosaico{grid-template-columns:1fr}.tile,.t-big,.t-tall,.t-wide{grid-column:span 1}.t-tall{grid-row:auto}.tile{padding:22px}}
 footer{max-width:1180px;margin:0 auto;padding:28px 16px 40px;font-size:13px;color:var(--suave);text-align:center}
@@ -176,7 +187,7 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 <script>document.documentElement.classList.add("js")</script>
 <header><div class="in">
   <h1>Apto</h1>
-  <nav aria-label="Secciones"><a href="#como">Qué hace</a><a href="#pasos">Cómo funciona</a><a class="cta" href="#app">Pruébalo</a></nav>
+  <nav aria-label="Secciones"><a href="#como">Qué hace</a><a href="#pasos">Cómo funciona</a><a href="#planes">Planes</a><a class="cta" href="#app">Pruébalo</a></nav>
 </div></header>
 
 <section class="hero" aria-label="Presentación">
@@ -201,7 +212,7 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
     <article class="tile rv" style="--d:.15s"><p class="k">Sin experiencia previa</p><h3>Hecho para quien nunca ha licitado.</h3><p>Te explica en simple qué piden y qué te falta.</p></article>
     <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado ni trabajamos para los compradores: estamos del lado de quien vende.</p></div>
-      <div class="chips2"><span>API pública de ChileCompra</span><span>Datos abiertos</span><span>Gratis para empezar</span></div></article>
+      <div class="chips2"><span>API pública de ChileCompra</span><span>Datos abiertos</span><span>Desde 0,5 UF al mes</span></div></article>
   </div>
 </section>
 
@@ -212,6 +223,19 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
     <div class="paso rv" style="--d:.1s"><b>2</b><h3>Mira tus compras</h3><p>De miles de licitaciones, Apto te deja las que calzan contigo.</p></div>
     <div class="paso rv" style="--d:.2s"><b>3</b><h3>Revisa si cumples</h3><p>Requisito por requisito, con lo que te falta y el plan para llegar a tiempo.</p></div>
   </div>
+</section>
+
+<section class="seccion" id="planes" aria-label="Planes">
+  <h2 class="sec-t rv">Dos planes. <span>Elige cuánto te acompañamos.</span></h2>
+  <div class="planes">
+    <article class="plan rv"><p class="k">Plan Radar</p><h3>Dónde puedes participar</h3>
+      <p class="pr">0,5 UF <small>al mes</small></p>
+      <ul><li>Tu catálogo de productos</li><li>Aviso diario de las licitaciones que calzan con lo que vendes</li><li>Cada compra explicada en simple</li><li>2 revisiones "¿Cumplo?" al mes para probar</li><li class="no">Revisión "¿Cumplo?" sin límite</li></ul></article>
+    <article class="plan dest rv" style="--d:.1s"><p class="k">Plan Apto</p><h3>Dónde participar y si cumples</h3>
+      <p class="pr">1,5 UF <small>al mes</small></p>
+      <ul><li>Todo lo del Plan Radar</li><li>Revisión "¿Cumplo?" sin límite</li><li>Compara la ficha técnica con tu producto: características, plazo de entrega y garantía</li><li>Te dice qué te falta indicar antes de postular</li><li>Plan para ofertar con las fechas reales</li></ul></article>
+  </div>
+  <p class="nota-pl rv">Precios de referencia del prototipo, más IVA. Aún no se cobra: hoy puedes probar Apto gratis.</p>
 </section>
 
 <section class="seccion" id="app" aria-label="Herramienta" style="padding-bottom:0">

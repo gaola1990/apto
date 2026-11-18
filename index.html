@@ -265,6 +265,14 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
     <h2 style="margin-top:20px">Mis productos</h2>
     <div class="nota">Agrega lo que vendes con sus características. Al abrir una compra te digo si tienes lo que piden.</div>
     <div id="catalogo"></div>
+    <details id="porRut">
+      <summary class="nota" style="cursor:pointer;margin-top:10px">⚡ Armar mi catálogo con lo que ya le vendí al Estado</summary>
+      <label for="rutcat">RUT de mi empresa</label>
+      <input type="text" id="rutcat" placeholder="ej: 76.123.456-7" autocomplete="off">
+      <div class="nota">Apto busca en datos públicos de Mercado Público los productos que tu empresa ya ganó y los agrega a tu catálogo y a tus palabras clave. Funciona con el motor de Apto encendido.</div>
+      <button class="principal" id="rutbtn" style="margin-top:10px">Buscar mis productos</button>
+      <div id="rutout"></div>
+    </details>
     <details id="nuevoProd">
       <summary class="nota" style="cursor:pointer;margin-top:10px">+ Agregar producto</summary>
       <label for="pnombre">Nombre del producto</label>
@@ -307,6 +315,7 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
       </div>
       <div id="lista"><div class="vacio">Cargando licitaciones…</div></div>
       <div style="text-align:center"><button class="sec" id="mas" hidden>Ver más</button></div>
+      <div class="acciones" style="justify-content:center;margin-top:8px"><button class="sec" id="calguard">📅 Todos los plazos de mis guardadas al calendario</button></div>
     </div>
   </section>
 </main>
@@ -363,7 +372,7 @@ let perfil = leer("rp_perfil", {rubros:[], extra:"", excluir:"", region:"", tama
 let guardadas = leer("rp_guardadas", {});
 let hechos = leer("rp_pasos", {});
 let datos = [], resultados = [], mostrar = 40, origen = "";
-let RES = {}, motorLocal = false;           // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
+let RES = {}, PRE = {}, motorLocal = false;          // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
 const MOTOR = "http://127.0.0.1:8787";
 const cacheDet = {};
 
@@ -518,24 +527,91 @@ async function abrir(codigo){
     "<dt>Adjudicación estimada</dt><dd>" + fechaCorta((d.Fechas || {}).FechaAdjudicacion) + "</dd>" +
     "<dt>Qué piden</dt><dd>" + esc((d.Descripcion || "").slice(0, 420)) + ((d.Descripcion || "").length > 420 ? "…" : "") + "</dd>" +
     "<dt>Productos (" + items.length + ")</dt><dd>" + (items.slice(0, 8).map(i => esc(i.NombreProducto) + " <span class='nota'>× " + esc(i.Cantidad) + " " + esc(i.UnidadMedida || "") + "</span>").join("<br>") || "—") + (items.length > 8 ? "<br><span class='nota'>y " + (items.length - 8) + " más</span>" : "") + "</dd>" +
+    precioRef(items) +
     "</dl>" + enSimple(codigo) + tengo(items) + bloqueCumplo() + "<h2>Mi plan para ofertar</h2>" + plan(d, base) +
     '<div class="acciones"><button class="principal" id="bg">' + (guardadas[codigo] ? "★ Guardada" : "☆ Guardar") + '</button>' +
-    '<button class="sec" id="bcal">Agregar cierre a mi calendario</button>' +
+    '<button class="sec" id="bcal">Agregar todos los plazos a mi calendario</button>' +
     '<a class="sec" style="text-decoration:none;display:inline-block;border:1px solid var(--linea);border-radius:8px;padding:8px 12px" target="_blank" rel="noopener" href="' + FICHA + encodeURIComponent(codigo) + '">Abrir ficha oficial ↗</a></div>' +
     '<p class="nota" style="margin-bottom:0">El plan es una guía general. Las bases de cada licitación mandan: revisa siempre sus requisitos.</p>';
   activarCumplo(D);
   D.querySelectorAll(".pasos input").forEach(ch => ch.onchange = () => { (hechos[codigo] = hechos[codigo] || {})[ch.dataset.i] = ch.checked; guardar("rp_pasos", hechos); });
   $("bg").onclick = () => { if(guardadas[codigo]) delete guardadas[codigo]; else guardadas[codigo] = 1; guardar("rp_guardadas", guardadas); $("bg").textContent = guardadas[codigo] ? "★ Guardada" : "☆ Guardar"; pintar(); };
-  $("bcal").onclick = () => calendario(codigo, d.Nombre || base.nombre, (d.Fechas || {}).FechaCierre || base.cierre);
+  $("bcal").onclick = () => calendario(codigo, d.Nombre || base.nombre, (d.Fechas || {}).FechaCierre || base.cierre, d.Fechas || {});
 }
-function calendario(codigo, nombre, cierre){
-  if(!cierre) return;
+// Precio de referencia: a cuánto se adjudicó el mismo producto en licitaciones anteriores (agregados públicos).
+function precioRef(items){
+  const filas = [];
+  for(const i of items){
+    const p = PRE[String(i.CodigoProducto || "")]; if(!p) continue;
+    filas.push(esc(i.NombreProducto) + ": <b>" + plata(p.med) + "</b>" + (p.u ? " por " + esc(p.u) : "") +
+      " <span class='nota'>(mediana de " + p.n + " adjudicaciones; entre " + plata(p.min) + " y " + plata(p.max) + ")</span>");
+    if(filas.length >= 5) break;
+  }
+  return filas.length ? "<dt>Precio de referencia</dt><dd>" + filas.join("<br>") + "<br><span class='nota'>A cuánto se adjudicó este mismo producto en compras anteriores. Úsalo como guía, no como regla.</span></dd>" : "";
+}
+
+// Todos los plazos de la compra en un solo archivo de calendario, con avisos antes de cada uno.
+function eventosPlazos(codigo, nombre, F, cierre){
   const f = x => { const p = n => String(n).padStart(2, "0"); return x.getFullYear() + p(x.getMonth() + 1) + p(x.getDate()) + "T" + p(x.getHours()) + p(x.getMinutes()) + "00"; };
-  const fin = new Date(cierre), ini = new Date(fin - 36e5);
-  const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Apto//ES","BEGIN:VEVENT","UID:" + codigo + "@apto","DTSTAMP:" + f(new Date()),"DTSTART:" + f(ini),"DTEND:" + f(fin),
-    "SUMMARY:Cierre licitación " + codigo,"DESCRIPTION:" + nombre.replace(/[,;\n]/g, " ") + " - " + FICHA + codigo,
-    "BEGIN:VALARM","TRIGGER:-P1D","ACTION:DISPLAY","DESCRIPTION:Mañana cierra la licitación","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
-  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics], {type:"text/calendar"})); a.download = "cierre-" + codigo + ".ics"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  const desc = String(nombre || "").replace(/[,;\n]/g, " ") + " - " + FICHA + codigo;
+  const hitos = [
+    [F.FechaVisitaTerreno, "Visita a terreno", "-P1D"],
+    [F.FechaFinal, "Último día para enviar preguntas", "-P1D"],
+    [F.FechaPubRespuestas, "Se publican las respuestas del comprador", "PT0M"],
+    [F.FechaCierre || cierre, "CIERRE: subir la oferta", "-P2D"],
+    [F.FechaAdjudicacion, "Adjudicación estimada", "PT0M"]
+  ].filter(h => h[0] && !isNaN(new Date(h[0])));
+  return hitos.map((h, i) => {
+    const fin = new Date(h[0]), ini = new Date(fin - 36e5);
+    const ev = ["BEGIN:VEVENT","UID:" + codigo + "-" + i + "@apto","DTSTAMP:" + f(new Date()),"DTSTART:" + f(ini),"DTEND:" + f(fin),
+      "SUMMARY:" + h[1] + " · " + codigo,"DESCRIPTION:" + desc,
+      "BEGIN:VALARM","TRIGGER:" + h[2],"ACTION:DISPLAY","DESCRIPTION:" + h[1],"END:VALARM"];
+    if(i === hitos.length - 1 || h[1].startsWith("CIERRE")) ev.push("BEGIN:VALARM","TRIGGER:-PT3H","ACTION:DISPLAY","DESCRIPTION:" + h[1],"END:VALARM");
+    return ev.concat("END:VEVENT").join("\r\n");
+  });
+}
+function descargarIcs(eventos, archivo){
+  if(!eventos.length) return;
+  const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Apto//ES"].concat(eventos, "END:VCALENDAR").join("\r\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([ics], {type:"text/calendar"})); a.download = archivo; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+function calendario(codigo, nombre, cierre, F){
+  descargarIcs(eventosPlazos(codigo, nombre, F || {}, cierre), "plazos-" + codigo + ".ics");
+}
+// Calendario con los plazos de todas las compras guardadas (consulta el detalle de cada una).
+async function calendarioGuardadas(){
+  const cods = Object.keys(guardadas);
+  if(!cods.length){ alert("Primero guarda alguna compra con ☆ Guardar."); return; }
+  let ev = [];
+  for(const c of cods){
+    const base = datos.find(x => x.codigo === c) || {nombre:c};
+    try{ const d = await pedirDetalle(c); ev = ev.concat(eventosPlazos(c, d.Nombre || base.nombre, d.Fechas || {}, base.cierre)); }
+    catch(e){ if(base.cierre) ev = ev.concat(eventosPlazos(c, base.nombre, {}, base.cierre)); }
+  }
+  descargarIcs(ev, "apto-mis-plazos.ics");
+}
+
+// Catalogo automatico: el motor local busca lo que la empresa ya le vendio al Estado (datos publicos).
+async function catalogoPorRut(){
+  const out = $("rutout"), rut = $("rutcat").value.trim();
+  if(!motorLocal){ out.innerHTML = '<p class="nota">Esta función usa el motor de Apto, que en el prototipo funciona en el computador del equipo. Por ahora agrega tus productos a mano.</p>'; return; }
+  if(!rut){ $("rutcat").focus(); return; }
+  $("rutbtn").disabled = true; out.innerHTML = '<p class="nota">Enviando…</p>';
+  try{
+    const r = await fetch(MOTOR + "/catalogo", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({rut})});
+    const j = await r.json(); if(!r.ok) throw new Error(j.error || "No se pudo iniciar.");
+    let e;
+    do{ await new Promise(s => setTimeout(s, 2500)); e = await (await fetch(MOTOR + "/trabajo/" + j.id)).json(); if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + " Puede tardar unos minutos.</p>"; }while(!e.listo);
+    if(e.error) throw new Error(e.error);
+    const R = e.resultado, nuevos = R.productos.filter(p => !catalogo.some(c => norm(c.nombre) === norm(p)));
+    nuevos.forEach(p => catalogo.push({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), nombre: p, caract: "Agregado desde tus ventas al Estado. Completa medidas, garantía y entrega.", garantia: "", entrega: ""}));
+    guardar("rp_catalogo", catalogo); pintarCatalogo();
+    const ya = perfil.extra.split(",").map(norm).filter(Boolean);
+    const pal = R.palabras.map(norm).filter(p => p && !ya.includes(p));
+    if(pal.length){ perfil.extra = ya.concat(pal).join(", "); $("extra").value = perfil.extra; cambio(); }
+    out.innerHTML = '<p class="nota">Listo: revisamos ' + R.compras + " ventas al Estado. Agregamos " + nuevos.length + " productos a tu catálogo y " + pal.length + " palabras clave a tu búsqueda.</p>";
+  }catch(err){ out.innerHTML = '<p class="nota">' + esc(err.message) + "</p>"; }
+  $("rutbtn").disabled = false;
 }
 
 // ---------- Mis productos y revisión "¿Cumplo?" ----------
@@ -752,6 +828,7 @@ function abrirFichaReal(){
 }
 function conectarIA(){
   fetch("resumenes.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ RES = j.items; pintar(); } }).catch(() => {});
+  fetch("precios.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.productos) PRE = j.productos; }).catch(() => {});
   const ctl = new AbortController(); setTimeout(() => ctl.abort(), 1500);
   fetch(MOTOR + "/estado", {signal: ctl.signal}).then(r => r.json()).then(j => {
     if(!j.ok) return;
@@ -811,6 +888,8 @@ function iniciar(){
   $("orden").onchange = pintar;
   $("vista").onchange = () => { perfil.vistaGuardadas = $("vista").value === "guardadas"; mostrar = 40; pintar(); };
   $("mas").onclick = () => { mostrar += 40; pintar(); };
+  $("calguard").onclick = calendarioGuardadas;
+  $("rutbtn").onclick = catalogoPorRut;
   $("lista").onclick = e => { const a = e.target.closest(".op"); if(a) abrir(a.dataset.c); };
   $("lista").onkeydown = e => { if(e.key === "Enter" || e.key === " "){ const a = e.target.closest(".op"); if(a){ e.preventDefault(); abrir(a.dataset.c); } } };
   $("dlg").onclick = e => { if(e.target === $("dlg")) $("dlg").close(); };

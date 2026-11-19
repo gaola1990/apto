@@ -34,8 +34,10 @@ const ahora = Date.now(), DIA = 864e5;
 const datos = LISTA.map(([codigo, nombre, cierre]) => {
   const x = DET[codigo], r = RES[codigo];
   const t = B.expandir(B.norm(nombre + " " + (x ? x.t : "") + " " + (r ? (r.resumen || "") : "")));
-  return {codigo, nombre, cierre, texto: t, palabras: t.split(" "), clases: x ? x.c || [] : []};
+  return {codigo, nombre, cierre, texto: t, palabras: t.split(" "), clases: x ? x.c || [] : [], monto: (x && x.m) || (r && r.monto) || 0};
 }).filter(d => !d.cierre || new Date(d.cierre).getTime() > ahora + 12 * 36e5); // con al menos medio día para ofertar
+// solo en --demo: montos de ejemplo donde aún no hay presupuesto, para ver cómo luce el correo (nunca en envíos reales)
+if(DEMO) datos.forEach((d, i) => { if(!d.monto) d.monto = [850000, 2400000, 5600000, 1200000, 12800000, 3300000][i % 6]; });
 B.vocabulario(datos.map(d => d.palabras));
 
 function competencia(clases){
@@ -64,45 +66,13 @@ function paraCliente(perfil, guardadas){
   }
   return {lista: out.sort((a, b) => b.pts - a.pts || new Date(a.cierre) - new Date(b.cierre)), cats};
 }
-const fecha = f => f ? new Date(f).toLocaleDateString("es-CL", {day: "numeric", month: "short"}) : "sin fecha";
-function filaHTML(d){
-  return '<tr><td style="padding:10px 0;border-bottom:1px solid #e6eaf0">' +
-    '<a href="' + SITIO + "?c=" + encodeURIComponent(d.codigo) + '" style="color:#1D4E9E;font-weight:700;text-decoration:none">' + esc(d.nombre.trim().slice(0, 140)) + "</a>" +
-    '<div style="color:#5b6573;font-size:13px">Cierra el ' + fecha(d.cierre) + " · " + esc(d.codigo) +
-    (d.comp !== null && d.comp <= 2 ? ' · <b style="color:#1D4E9E">Poca competencia</b>' : "") + "</div></td></tr>";
+const P = require(path.join(__dirname, "plantillas_correo.js"));
+// valor de la UF del día (mindicador.cl, gratis); si no responde, un valor de referencia
+async function valorUF(){
+  try{ const j = await (await fetch("https://mindicador.cl/api/uf", {signal: AbortSignal.timeout(15000)})).json(); const v = j.serie && j.serie[0] && j.serie[0].valor; if(v > 10000) return v; }catch(e){}
+  return Number(process.env.UF_CLP || 39800);
 }
-function marco(titulo, cuerpo, token){
-  return '<div style="font-family:Arial,sans-serif;max-width:600px;margin:auto;color:#1B2430">' +
-    '<div style="font-size:22px;font-weight:700;color:#1D4E9E;margin-bottom:6px">Apto</div>' +
-    '<h2 style="font-size:20px;margin:0 0 12px">' + titulo + "</h2>" + cuerpo +
-    '<p style="margin:22px 0"><a href="' + SITIO + '" style="background:#1D4E9E;color:#fff;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:700">Ver todas en Apto</a></p>' +
-    '<p style="color:#8a93a0;font-size:12px;margin-top:26px">Recibes este correo porque tienes una cuenta en Apto. ' +
-    '<a href="' + SITIO + "baja.html?t=" + token + '" style="color:#8a93a0">Dejar de recibir avisos</a> · Puedes cambiar la frecuencia en Mi cuenta.</p></div>';
-}
-function correoActivo(c, nuevas){
-  const top = nuevas.slice(0, 10);
-  const asunto = nuevas.length === 1 ? "1 compra nueva para ti en Mercado Público" : nuevas.length + " compras nuevas para ti en Mercado Público";
-  const cuerpo = '<p style="margin:0 0 10px">Según lo que vendes y lo que has guardado, estas compras del Estado calzan contigo:</p>' +
-    '<table style="width:100%;border-collapse:collapse">' + top.map(filaHTML).join("") + "</table>" +
-    (nuevas.length > 10 ? '<p style="color:#5b6573">y ' + (nuevas.length - 10) + " más en Apto.</p>" : "");
-  return {asunto, html: marco(asunto, cuerpo, c.baja_token),
-          texto: asunto + "\n\n" + top.map(d => "- " + d.nombre.trim() + " (cierra " + fecha(d.cierre) + ")\n  " + SITIO + "?c=" + d.codigo).join("\n") + "\n\nDejar de recibir avisos: " + SITIO + "baja.html?t=" + c.baja_token};
-}
-function correoRecuerdo(c, lista, cats){
-  // a quien no sigue con nosotros no le decimos DÓNDE postular: solo cuántas compras y cuánto dinero había para él
-  let ca = 0; if(CA) cats.forEach(k => { if(CA.clases[k]) ca += CA.clases[k].s; });
-  const montos = lista.map(d => (DET[d.codigo] && DET[d.codigo].m) || (RES[d.codigo] && RES[d.codigo].monto) || 0).filter(m => m > 0).sort((a, b) => a - b);
-  const $ = n => "$" + Math.round(n).toLocaleString("es-CL");
-  const resumenMontos = montos.length >= 3 ? "<p>De las que informan presupuesto (" + montos.length + "), el monto va desde <b>" + $(montos[0]) + "</b> hasta <b>" + $(montos[montos.length - 1]) +
-    "</b>, con un promedio de <b>" + $(montos.reduce((a, b) => a + b, 0) / montos.length) + "</b> y un total de <b>" + $(montos.reduce((a, b) => a + b, 0)) + "</b>.</p>" : "";
-  const asunto = "Hoy hay " + lista.length + " compras del Estado para lo que vendes";
-  const cuerpo = "<p>Hoy el Estado tiene <b>" + lista.length + " licitaciones abiertas</b> que calzan con lo que vendes" +
-    (ca ? ", y el mes pasado se pidieron <b>" + ca.toLocaleString("es-CL") + " Compras Ágiles</b> en tus productos" : "") + ".</p>" + resumenMontos +
-    "<p>Con Apto verías cuáles son, si cumples lo que piden y qué te falta antes de postular.</p>" +
-    '<p style="background:#eef2f8;border-radius:12px;padding:14px 16px;margin-top:18px">Vuelve con <b>' + DESCUENTO + " % de descuento</b> en tu primer mes. Usa el código <b>" + CODIGO + "</b>.</p>";
-  return {asunto, html: marco(asunto, cuerpo, c.baja_token),
-          texto: asunto + ".\n" + resumenMontos.replace(/<[^>]+>/g, "") + "\nVuelve con " + DESCUENTO + " % de descuento en tu primer mes: código " + CODIGO + "\n" + SITIO + "\n\nDejar de recibir avisos: " + SITIO + "baja.html?t=" + c.baja_token};
-}
+
 async function clientes(){
   if(DEMO) return [{user_id: "demo", email: "cliente@ejemplo.cl", perfil: {extra: "notebook, toner, mant. de pc", rubros: []}, guardadas: {}, avisos: "diario",
                     avisados: [], baja_token: "demo-token-1", last_sign_in_at: new Date().toISOString()},
@@ -118,7 +88,7 @@ async function clientes(){
 }
 
 (async () => {
-  const lista = [];
+  const lista = [], ufClp = await valorUF();
   for(const c of await clientes()){
     const ultimoIngreso = c.last_sign_in_at ? new Date(c.last_sign_in_at).getTime() : 0;
     const planVencido = c.plan_hasta && new Date(c.plan_hasta).getTime() < ahora;
@@ -127,7 +97,8 @@ async function clientes(){
     if(inactivo){
       if(c.ultimo_recuerdo && ahora - new Date(c.ultimo_recuerdo).getTime() < 30 * DIA) continue;
       if(calzan.length < 3) continue; // sin suficientes compras no vale la pena escribirle
-      lista.push({user_id: c.user_id, email: c.email, tipo: "recuerdo", codigos: [], ...correoRecuerdo(c, calzan, cats)});
+      lista.push({user_id: c.user_id, email: c.email, tipo: "recuerdo", codigos: [], ...P.correoRecuerdo({lista: calzan, ca: [...cats].reduce((a, k) => a + ((CA && CA.clases[k] && CA.clases[k].s) || 0), 0), token: c.baja_token, sitio: SITIO, ufClp,
+        descuento: Number(DESCUENTO), codigo: CODIGO, vence: new Date(ahora + 7 * DIA)})});
     } else {
       const cada = c.avisos === "diario" ? 20 * 36e5 : 6.5 * DIA;
       if(c.ultimo_aviso && ahora - new Date(c.ultimo_aviso).getTime() < cada) continue;
@@ -135,7 +106,7 @@ async function clientes(){
       const nuevas = calzan.filter(d => !ya.has(d.codigo));
       if(!nuevas.length) continue;
       const codigos = nuevas.slice(0, 50).map(d => d.codigo);
-      lista.push({user_id: c.user_id, email: c.email, tipo: "novedades", codigos, avisados_nuevo: [...(c.avisados || []), ...codigos].slice(-500), ...correoActivo(c, nuevas)});
+      lista.push({user_id: c.user_id, email: c.email, tipo: "novedades", codigos, avisados_nuevo: [...(c.avisados || []), ...codigos].slice(-500), ...P.correoActivo({nuevas, token: c.baja_token, sitio: SITIO, plan: c.plan || "apto", ufClp})});
     }
   }
   fs.writeFileSync(SALIDA, JSON.stringify(lista));

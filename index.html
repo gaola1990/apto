@@ -372,7 +372,7 @@ let perfil = leer("rp_perfil", {rubros:[], extra:"", excluir:"", region:"", tama
 let guardadas = leer("rp_guardadas", {});
 let hechos = leer("rp_pasos", {});
 let datos = [], resultados = [], mostrar = 40, origen = "";
-let RES = {}, PRE = {}, motorLocal = false;          // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
+let RES = {}, PRE = {}, DET = {}, CATMAP = {}, motorLocal = false;         // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
 const MOTOR = "http://127.0.0.1:8787";
 const cacheDet = {};
 
@@ -406,6 +406,7 @@ function calcular(){
   const ts = terminos();
   const no = perfil.excluir.split(",").map(norm).filter(Boolean).map(armar);
   const tope = +perfil.tamano;
+  const cats = misCategorias(ts);
   resultados = [];
   for(const d of datos){
     const dias = diasPara(d.cierre);
@@ -414,11 +415,12 @@ function calcular(){
     if(perfil.vistaGuardadas){ if(guardadas[d.codigo]) resultados.push({...d, dias, pts:0, hits:[]}); continue; }
     if(!ts.length) continue;
     if(no.some(t => calza(t, d.texto, d.palabras))) continue;
-    const hits = ts.filter(t => calza(t, d.texto, d.palabras));
+    const hits = ts.filter(t => calza(t, d.texto, d.palabras));   // B: nombre + descripción + productos
     const ia = RES[d.codigo], porRubro = !!(ia && perfil.rubros.includes(ia.rubro)); // la IA nocturna clasifico el rubro
-    if(!hits.length && !porRubro) continue;
-    const pts = hits.reduce((a, h) => a + (h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0) + (porRubro ? 3 : 0);
-    resultados.push({...d, dias, pts, hits});
+    const det = DET[d.codigo], porCat = !!(det && det.c && det.c.some(c => cats.has(c))); // C: categoría de producto
+    if(!hits.length && !porRubro && !porCat) continue;
+    const pts = hits.reduce((a, h) => a + (h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0) + (porRubro ? 3 : 0) + (porCat ? 4 : 0);
+    resultados.push({...d, dias, pts, hits, porCat});
   }
   const porCierre = (a, b) => (a.dias ?? 999) - (b.dias ?? 999);
   resultados.sort($("orden").value === "cierre" || perfil.vistaGuardadas ? porCierre : (a, b) => b.pts - a.pts || porCierre(a, b));
@@ -460,7 +462,7 @@ function pintar(){
     const [cl, tx] = etiquetaCierre(r.dias);
     return '<article class="op" tabindex="0" role="button" data-c="' + esc(r.codigo) + '">' +
       "<div><h3>" + (guardadas[r.codigo] ? "★ " : "") + resaltar(r.nombre, r.hits) + "</h3>" +
-      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + "</div></div>" +
+      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.porCat ? '<span class="et">Calza por categoría</span>' : "") + "</div></div>" +
       '<div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL",{day:"numeric",month:"short"}) : "—") + '</b><span class="et ' + cl + '">' + tx + "</span></div></article>";
   }).join("");
   $("mas").hidden = resultados.length <= mostrar;
@@ -608,7 +610,9 @@ async function catalogoPorRut(){
     guardar("rp_catalogo", catalogo); pintarCatalogo();
     const ya = perfil.extra.split(",").map(norm).filter(Boolean);
     const pal = R.palabras.map(norm).filter(p => p && !ya.includes(p));
-    if(pal.length){ perfil.extra = ya.concat(pal).join(", "); $("extra").value = perfil.extra; cambio(); }
+    if(pal.length){ perfil.extra = ya.concat(pal).join(", "); $("extra").value = perfil.extra; }
+    perfil.cats = [...new Set((perfil.cats || []).concat(R.categorias || []))];
+    cambio();
     out.innerHTML = '<p class="nota">Listo: revisamos ' + R.compras + " ventas al Estado. Agregamos " + nuevos.length + " productos a tu catálogo y " + pal.length + " palabras clave a tu búsqueda.</p>";
   }catch(err){ out.innerHTML = '<p class="nota">' + esc(err.message) + "</p>"; }
   $("rutbtn").disabled = false;
@@ -760,6 +764,30 @@ function pintarCatalogo(){
 // ---------- Carga ----------
 function preparar(filas){
   datos = filas.map(f => { const t = norm(f[1]); return {codigo:f[0], nombre:f[1] || "", cierre:f[2], texto:t, palabras:t.split(" "), tipo:tipoDe(f[0])}; });
+  enriquecer();
+}
+// Forma B del radar: además del nombre, calza con la descripción y los productos de la compra (detalles.json, nocturno)
+// y con el resumen de la IA. Medido con 999 licitaciones adjudicadas: el nombre solo encuentra 25 %, B 67 %, B o C 72 %.
+function enriquecer(){
+  for(const d of datos){
+    const x = DET[d.codigo], r = RES[d.codigo];
+    if(!x && !r) continue;
+    const t = norm(d.nombre + " " + (x ? x.t : "") + " " + (r ? (r.resumen || "") + " " + (r.piden || []).join(" ") : ""));
+    d.texto = t; d.palabras = t.split(" ");
+  }
+}
+// Forma C: categorías de producto de Mercado Público (código ONU) que calzan con lo que vende el usuario.
+// Salen de las palabras de su perfil (comparadas con los productos adjudicados de cada categoría) y de su catálogo por RUT.
+function misCategorias(ts){
+  const s = new Set(perfil.cats || []);
+  if(!ts.length) return s;
+  // las frases se separan en sus palabras con contenido ("insumos de aseo" -> insumos, aseo)
+  const sueltas = ts.flatMap(t => t.frase ? t.t.split(" ").filter(w => w.length >= 4 && !/^(para|con|del|los|las|una|unos|insumos?|materiales?|equipos?|articulos?|productos?|servicios?|varios|otros|general)$/.test(w)).map(armar) : [t]).filter(t => !t.exacto);
+  for(const [c, pal] of Object.entries(CATMAP)){
+    const txt = pal.slice(0, 6).join(" "), ps = pal.slice(0, 6);
+    if(sueltas.some(t => calza(t, txt, ps))) s.add(c);
+  }
+  return s;
 }
 // ---------- Resumenes nocturnos y motor ¿Cumplo? (IA local de Apto) ----------
 function enSimple(c){
@@ -827,7 +855,9 @@ function abrirFichaReal(){
   $("dlg").showModal(); activarCumplo($("det"));
 }
 function conectarIA(){
-  fetch("resumenes.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ RES = j.items; pintar(); } }).catch(() => {});
+  fetch("resumenes.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ RES = j.items; enriquecer(); pintar(); } }).catch(() => {});
+  fetch("detalles.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ DET = j.items; enriquecer(); pintar(); } }).catch(() => {});
+  fetch("categorias.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.categorias){ CATMAP = j.categorias; pintar(); } }).catch(() => {});
   fetch("precios.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.productos) PRE = j.productos; }).catch(() => {});
   const ctl = new AbortController(); setTimeout(() => ctl.abort(), 1500);
   fetch(MOTOR + "/estado", {signal: ctl.signal}).then(r => r.json()).then(j => {

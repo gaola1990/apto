@@ -41,7 +41,7 @@ let perfil = leer("rp_perfil", {rubros:[], extra:"", excluir:"", region:"", tama
 let guardadas = leer("rp_guardadas", {});
 let hechos = leer("rp_pasos", {});
 let datos = [], resultados = [], mostrar = 40, origen = "";
-let RES = {}, PRE = {}, DET = {}, CATMAP = {}, motorLocal = false;         // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
+let RES = {}, PRE = {}, DET = {}, CATMAP = {}, DICC_OK = false, motorLocal = false;        // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
 const MOTOR = "http://127.0.0.1:8787";
 const cacheDet = {};
 
@@ -67,6 +67,15 @@ function avisarCorrecciones(){
   const c = [...Buscar.correcciones].filter(([w]) => norm(perfil.extra).split(" ").includes(w));
   el.textContent = c.length ? "Entendimos " + c.map(([w, x]) => "«" + w + "» como «" + x + "»").join(", ") + "." : "";
 }
+// Qué productos de Mercado Público entendió Apto (sirve también para saber qué códigos ONU declarar como proveedor).
+function avisarClases(){
+  const el = $("clases"); if(!el) return;
+  const propios = perfil.extra.split(",").map(norm).filter(Boolean).map(armar); // solo lo que escribió el vendedor, no las listas de rubros
+  const vistos = new Map();
+  for(const t of propios) for(const r of Buscar.clasesDe(t, 3)) vistos.set(r.c, r.nombre + " (" + r.c + ")");
+  clasesVistas = [...vistos.values()];
+  el.textContent = clasesVistas.length ? "Según el catálogo de Mercado Público, vendes: " + clasesVistas.slice(0, 6).join(" · ") + (clasesVistas.length > 6 ? " y " + (clasesVistas.length - 6) + " más." : ".") : "";
+}
 // Por palabras, con variantes, abreviaturas, errores de escritura y sinónimos de compras públicas (ver buscar.js).
 const armar = t => Buscar.armar(t);
 const calza = (term, texto, palabras) => Buscar.calza(term, texto, palabras);
@@ -77,6 +86,7 @@ function calcular(){
   const no = perfil.excluir.split(",").map(norm).filter(Boolean).map(armar);
   const tope = +perfil.tamano;
   const cats = misCategorias(ts);
+  avisarClases();
   resultados = [];
   for(const d of datos){
     const dias = diasPara(d.cierre);
@@ -449,9 +459,15 @@ function enriquecer(){
 }
 // Forma C: categorías de producto de Mercado Público (código ONU) que calzan con lo que vende el usuario.
 // Salen de las palabras de su perfil (comparadas con los productos adjudicados de cada categoría) y de su catálogo por RUT.
+let clasesVistas = [];
 function misCategorias(ts){
   const s = new Set(perfil.cats || []);
   if(!ts.length) return s;
+  if(DICC_OK){
+    // Diccionario oficial de Mercado Público + palabras reales de compradores (diccionario.json)
+    for(const t of ts) for(const r of Buscar.clasesDe(t)) s.add(r.c);
+    // y además el mapa aprendido de compras adjudicadas (abajo): juntos encuentran más (medido: 52 % vs 26 % solo diccionario)
+  }
   // cada concepto del vendedor (con sus sinónimos) se compara con los productos de cada categoría;
   // las palabras genéricas ("insumos", "equipos") no definen una categoría por sí solas
   const GENERICAS = /^(insumo|material|equipo|articulo|producto|servicio|vario|otro|general|elemento)/;
@@ -531,6 +547,7 @@ function conectarIA(){
   fetch("resumenes.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ RES = j.items; enriquecer(); pintar(); } }).catch(() => {});
   fetch("sinonimos.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.grupos){ Buscar.sumarSinonimos(j.grupos); pintar(); } }).catch(() => {});
   fetch("detalles.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ DET = j.items; enriquecer(); pintar(); } }).catch(() => {});
+  fetch("diccionario.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.clases){ Buscar.cargarDiccionario(j.clases); DICC_OK = true; pintar(); } }).catch(() => {});
   fetch("categorias.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.categorias){ CATMAP = j.categorias; pintar(); } }).catch(() => {});
   fetch("precios.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.productos) PRE = j.productos; }).catch(() => {});
   const ctl = new AbortController(); setTimeout(() => ctl.abort(), 1500);

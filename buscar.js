@@ -205,7 +205,9 @@ function armar(t){
   t = norm(t);
   if(!indice) indexar();
   let conceptos;
+  const tr = t.split(" ").map(raiz).join(" ");                         // "arreglos florales" -> "arreglo floral"
   if(t.includes(" ") && indice.has(t)) conceptos = [alternativas(t)];   // la frase entera es un sinónimo conocido
+  else if(t.includes(" ") && indice.has(tr)) conceptos = [alternativas(tr)];
   else {
     const ws = t.split(" ").filter(w => w && !VACIAS.has(w) && !VACIAS.has(ABREV[w])); // "serv", "adq" son tan genéricas como "servicio"
     conceptos = (ws.length ? ws : [t]).map(alternativas);
@@ -220,5 +222,43 @@ function calzaAlt(a, texto, palabras){
   return palabras.some(p => p.startsWith(a.raiz) && !malos.some(m => p.startsWith(m)));
 }
 function calza(term, texto, palabras){ return term.conceptos.every(alts => alts.some(a => calzaAlt(a, texto, palabras))); }
-g.Buscar = {norm, armar, calza, calzaAlt, raiz, sumarSinonimos, SIN, ABREV, expandir, expandirPalabras, vocabulario, corregir, correcciones};
+// Diccionario de productos de Mercado Público (diccionario.json): clase ONU -> nombre, palabras oficiales y palabras reales.
+// Un término del vendedor apunta a las clases donde aparecen TODOS sus conceptos (con sinónimos y correcciones).
+let DICC = null;
+function cargarDiccionario(clases){
+  DICC = Object.entries(clases || {}).map(([c, [nombre, oficiales, reales]]) => {
+    const n = norm(nombre).split(" "), o = oficiales.split(" ").filter(Boolean), r = reales.split(" ").filter(Boolean);
+    return {c, nombre, n, nt: n.join(" "), o, ot: o.join(" "), r, rt: r.join(" ")};
+  });
+}
+// Puntaje de una clase para un concepto: la palabra tal cual vale más que un sinónimo, y aparecer en el NOMBRE de la
+// clase vale más que en la lista de productos oficiales, que a su vez vale más que en las palabras reales.
+function puntajeConcepto(alts, k){
+  let mejor = 0;
+  alts.forEach((a, i) => {
+    const peso = i === 0 ? 1 : 0.6;                     // alts[0] es la palabra que escribió el vendedor
+    const p = calzaAlt(a, k.nt, k.n) ? 5 : calzaAlt(a, k.ot, k.o) ? 3 : calzaAlt(a, k.rt, k.r) ? 1.5 : 0;
+    if(p * peso > mejor) mejor = p * peso;
+  });
+  return mejor;
+}
+function clasesDe(term, maximo = 5){
+  if(!DICC) return [];
+  let res = [];
+  for(const k of DICC){
+    const ps = term.conceptos.map(alts => puntajeConcepto(alts, k));
+    const hechos = ps.filter(p => p > 0).length;
+    if(!hechos) continue;
+    // todos los conceptos suman completo; si falta alguno (p. ej. "arriendo" de "arriendo de carpas") la clase vale menos
+    const total = ps.reduce((a, b) => a + b, 0) * (hechos === ps.length ? 1 : 0.5);
+    res.push({c: k.c, nombre: k.nombre, puntos: total});
+  }
+  if(!res.length) return [];
+  res.sort((x, y) => y.puntos - x.puntos);
+  const tope = res[0].puntos;
+  if(tope < 3) return [];                              // solo coincidencias débiles: mejor no adivinar
+  return res.filter(r => r.puntos >= tope * 0.7).slice(0, maximo);
+}
+
+g.Buscar = {cargarDiccionario, clasesDe,norm, armar, calza, calzaAlt, raiz, sumarSinonimos, SIN, ABREV, expandir, expandirPalabras, vocabulario, corregir, correcciones};
 })(typeof window !== "undefined" ? window : globalThis);

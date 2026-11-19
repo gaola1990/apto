@@ -85,6 +85,24 @@ function senalDesconocidas(propios){
   enviarSenales(filas);
 }
 
+// ---------- Competencia esperada (competencia.json: ofertas que recibieron licitaciones parecidas ya adjudicadas) ----------
+let COMP = null;
+function competencia(codigo){
+  const det = DET[codigo];
+  if(!COMP || !det || !det.c) return null;
+  let n = 0, suma = 0, pocas = 0;
+  for(const c of det.c){ const x = COMP.clases[c]; if(x){ n += x.n; suma += x.med * x.n; pocas += x.pocas * x.n; } }
+  return n >= 5 ? {med: Math.round(10 * suma / n) / 10, n, pocas: Math.round(pocas / n)} : null;
+}
+function competenciaFicha(codigo, organismo){
+  const k = competencia(codigo), o = COMP && organismo ? COMP.organismos[organismo] : null;
+  if(!k && !o) return "";
+  const partes = [];
+  if(k) partes.push("En licitaciones parecidas se presentaron en promedio <b>" + k.med.toLocaleString("es-CL") + " ofertas</b> (" + k.n + " licitaciones; " + k.pocas + " % tuvo 2 o menos).");
+  if(o) partes.push("Este comprador recibe en promedio " + o.med.toLocaleString("es-CL") + " ofertas (" + o.n + " licitaciones).");
+  return "<dt>Competencia esperada</dt><dd>" + partes.join("<br>") + "<br><span class='nota'>Con pocas ofertas, tus probabilidades de ganar son mayores. Datos públicos de licitaciones adjudicadas.</span></dd>";
+}
+
 // ---------- Compra Ágil (datos abiertos mensuales de ChileCompra, solo cifras agregadas) ----------
 // No hay Compras Ágiles abiertas en la API pública: se muestra cuánto se pidió el mes pasado en lo que vende el usuario,
 // quién compra y los códigos que debe declarar para que los compradores lo inviten a cotizar.
@@ -152,11 +170,14 @@ function calcular(){
     const ia = RES[d.codigo], porRubro = !!(ia && perfil.rubros.includes(ia.rubro)); // la IA nocturna clasifico el rubro
     const det = DET[d.codigo], porCat = !!(det && det.c && det.c.some(c => cats.has(c))); // C: categoría de producto
     if(!hits.length && !porRubro && !porCat) continue;
-    const pts = hits.reduce((a, h) => a + (h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0) + (porRubro ? 3 : 0) + (porCat ? 4 : 0);
-    resultados.push({...d, dias, pts, hits, porCat});
+    const comp = competencia(d.codigo);
+    const pts = hits.reduce((a, h) => a + (h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0) + (porRubro ? 3 : 0) + (porCat ? 4 : 0) + (comp && comp.med <= 2 ? 1 : 0);
+    resultados.push({...d, dias, pts, hits, porCat, comp});
   }
   const porCierre = (a, b) => (a.dias ?? 999) - (b.dias ?? 999);
-  resultados.sort($("orden").value === "cierre" || perfil.vistaGuardadas ? porCierre : (a, b) => b.pts - a.pts || porCierre(a, b));
+  const porCompetencia = (a, b) => ((a.comp ? a.comp.med : 99) - (b.comp ? b.comp.med : 99)) || b.pts - a.pts;
+  const orden = $("orden").value;
+  resultados.sort(perfil.vistaGuardadas || orden === "cierre" ? porCierre : orden === "competencia" ? porCompetencia : (a, b) => b.pts - a.pts || porCierre(a, b));
 }
 
 // ---------- Pintar ----------
@@ -207,7 +228,7 @@ function pintar(){
     const [cl, tx] = etiquetaCierre(r.dias);
     return '<article class="op" tabindex="0" role="button" data-c="' + esc(r.codigo) + '">' +
       "<div><h3>" + (guardadas[r.codigo] ? "★ " : "") + resaltar(r.nombre, r.hits) + "</h3>" +
-      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.porCat ? '<span class="et">Calza por categoría</span>' : "") + "</div></div>" +
+      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.porCat ? '<span class="et">Calza por categoría</span>' : "") + (r.comp && r.comp.med <= 2 ? '<span class="et poca">Poca competencia</span>' : "") + "</div></div>" +
       '<div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL",{day:"numeric",month:"short"}) : "—") + '</b><span class="et ' + cl + '">' + tx + "</span></div></article>";
   }).join("");
   $("mas").hidden = resultados.length <= mostrar;
@@ -271,6 +292,7 @@ async function abrir(codigo){
     "<dt>Lugar</dt><dd>" + esc([c.ComunaUnidad, (c.RegionUnidad || "").trim()].filter(Boolean).join(", ") || "—") + "</dd>" +
     "<dt>Presupuesto estimado</dt><dd>" + plata(d.MontoEstimado) + (d.MontoEstimado && d.Moneda && d.Moneda !== "CLP" ? " " + esc(d.Moneda) : "") + "</dd>" +
     "<dt>Cierre</dt><dd>" + fechaCorta((d.Fechas || {}).FechaCierre || base.cierre) + "</dd>" +
+    competenciaFicha(codigo, c.NombreOrganismo) +
     "<dt>Adjudicación estimada</dt><dd>" + fechaCorta((d.Fechas || {}).FechaAdjudicacion) + "</dd>" +
     "<dt>Qué piden</dt><dd>" + esc((d.Descripcion || "").slice(0, 420)) + ((d.Descripcion || "").length > 420 ? "…" : "") + "</dd>" +
     "<dt>Productos (" + items.length + ")</dt><dd>" + (items.slice(0, 8).map(i => esc(i.NombreProducto) + " <span class='nota'>× " + esc(i.Cantidad) + " " + esc(i.UnidadMedida || "") + "</span>").join("<br>") || "—") + (items.length > 8 ? "<br><span class='nota'>y " + (items.length - 8) + " más</span>" : "") + "</dd>" +
@@ -616,6 +638,7 @@ function conectarIA(){
   fetch("detalles.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ DET = j.items; enriquecer(); pintar(); } }).catch(() => {});
   fetch("diccionario.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.clases){ Buscar.cargarDiccionario(j.clases); DICC_OK = true; pintar(); } }).catch(() => {});
   fetch("aprendido.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j){ Buscar.cargarAprendido(j); pintar(); } }).catch(() => {});
+  fetch("competencia.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.clases){ COMP = j; pintar(); } }).catch(() => {});
   fetch("compra_agil.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.clases){ CA = j; pintar(); } }).catch(() => {});
   fetch("categorias.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.categorias){ CATMAP = j.categorias; pintar(); } }).catch(() => {});
   fetch("precios.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.productos) PRE = j.productos; }).catch(() => {});

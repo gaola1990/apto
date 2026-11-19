@@ -85,6 +85,32 @@ function senalDesconocidas(propios){
   enviarSenales(filas);
 }
 
+// ---------- Compra Ágil (datos abiertos mensuales de ChileCompra, solo cifras agregadas) ----------
+// No hay Compras Ágiles abiertas en la API pública: se muestra cuánto se pidió el mes pasado en lo que vende el usuario,
+// quién compra y los códigos que debe declarar para que los compradores lo inviten a cotizar.
+let CA = null;
+function pintarCompraAgil(clases){
+  const el = $("compraAgil"); if(!el) return;
+  const filas = CA ? clases.map(c => [c, CA.clases[c]]).filter(([, x]) => x) : [];
+  if(!filas.length){ el.hidden = true; return; }
+  const sol = filas.reduce((a, [, x]) => a + x.s, 0);
+  const cot = filas.reduce((a, [, x]) => a + x.s * x.cot, 0) / sol;
+  const org = new Map(), reg = new Map();
+  filas.forEach(([, x]) => { x.org.forEach(([o, n]) => org.set(o, (org.get(o) || 0) + n)); x.reg.forEach(([r, n]) => reg.set(r, (reg.get(r) || 0) + n)); });
+  const top = m => [...m].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, n]) => esc(k.replace(/^Región (de |del |de la )?/, "")) + " (" + n + ")").join(", ");
+  const mes = new Date(CA.mes + "-15").toLocaleDateString("es-CL", {month: "long", year: "numeric"});
+  el.hidden = false;
+  el.innerHTML = '<h2>Compra Ágil en lo que vendes</h2>' +
+    '<div class="nota">Compras menores que los organismos piden directo a proveedores inscritos. Datos de ' + esc(mes) + ' (ChileCompra, datos abiertos).</div>' +
+    '<div class="cifras" style="margin-top:10px">' +
+    '<div class="cifra"><b>' + sol.toLocaleString("es-CL") + '</b><span>solicitudes en el mes</span></div>' +
+    '<div class="cifra"><b>' + cot.toLocaleString("es-CL", {maximumFractionDigits: 1}) + '</b><span>cotizaciones por solicitud (competencia)</span></div>' +
+    '<div class="cifra"><b>' + plata(filas.sort((a, b) => b[1].s - a[1].s)[0][1].monto) + '</b><span>monto típico adjudicado</span></div></div>' +
+    '<p class="nota" style="margin:10px 0 4px"><b>Quiénes más piden:</b> ' + top(org) + '<br><b>Dónde:</b> ' + top(reg) + '</p>' +
+    '<p class="nota" style="margin:6px 0 0"><b>Para que te inviten a cotizar</b>, declara estos rubros en tu registro de proveedor de Mercado Público: ' +
+    filas.slice(0, 5).map(([c]) => "<b>" + esc(c) + "</b>").join(", ") + '. Los compradores envían las Compras Ágiles a quienes tienen esos rubros.</p>';
+}
+
 // Si el vendedor escribió mal una palabra, se le dice cómo la entendimos (y puede corregirla él).
 function avisarCorrecciones(){
   const el = $("corregido"); if(!el) return;
@@ -98,6 +124,7 @@ function avisarClases(){
   const vistos = new Map();
   for(const t of propios) for(const r of Buscar.clasesDe(t, 3)) vistos.set(r.c, r.nombre + " (" + r.c + ")");
   clasesVistas = [...vistos.values()];
+  pintarCompraAgil([...vistos.keys()]);
   clearTimeout(avisarClases.t); avisarClases.t = setTimeout(() => senalDesconocidas(propios), 4000); // cuando deja de escribir
   el.textContent = clasesVistas.length ? "Según el catálogo de Mercado Público, vendes: " + clasesVistas.slice(0, 6).join(" · ") + (clasesVistas.length > 6 ? " y " + (clasesVistas.length - 6) + " más." : ".") : "";
 }
@@ -577,6 +604,7 @@ function conectarIA(){
   fetch("detalles.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ DET = j.items; enriquecer(); pintar(); } }).catch(() => {});
   fetch("diccionario.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.clases){ Buscar.cargarDiccionario(j.clases); DICC_OK = true; pintar(); } }).catch(() => {});
   fetch("aprendido.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j){ Buscar.cargarAprendido(j); pintar(); } }).catch(() => {});
+  fetch("compra_agil.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.clases){ CA = j; pintar(); } }).catch(() => {});
   fetch("categorias.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.categorias){ CATMAP = j.categorias; pintar(); } }).catch(() => {});
   fetch("precios.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.productos) PRE = j.productos; }).catch(() => {});
   const ctl = new AbortController(); setTimeout(() => ctl.abort(), 1500);

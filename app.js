@@ -590,7 +590,7 @@ function formCumplo(){
     catalogo.map(p => '<option value="' + esc(p.id) + '">' + esc(p.nombre) + "</option>").join("") + "</select>" +
     '<label>Ficha de tu producto (opcional)</label><input type="file" class="c-of" accept="' + ac + '">' +
     '<button class="principal c-ir" style="margin-top:12px">Revisar con IA</button><div class="c-out" aria-live="polite"></div>' +
-    '<p class="nota">Los archivos se procesan en el motor de Apto con IA local y se borran al terminar. No se envían a servicios en la nube.</p></div>';
+    '<p class="nota">Los archivos se procesan en el motor de Apto con IA propia y se borran al terminar. No se envían a servicios de IA de terceros. <a href="privacidad.html">Privacidad</a></p></div>';
 }
 function resultadoIA(r){
   const reqs = r.requisitos || [];

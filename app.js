@@ -61,11 +61,19 @@ function terminos(){
   perfil.extra.split(",").map(norm).filter(Boolean).forEach(t => lista.push(t));
   return [...new Set(lista.map(norm))].map(armar);
 }
-// Por palabras, con variantes y sinónimos de compras públicas (ver buscar.js).
+// Si el vendedor escribió mal una palabra, se le dice cómo la entendimos (y puede corregirla él).
+function avisarCorrecciones(){
+  const el = $("corregido"); if(!el) return;
+  const c = [...Buscar.correcciones].filter(([w]) => norm(perfil.extra).split(" ").includes(w));
+  el.textContent = c.length ? "Entendimos " + c.map(([w, x]) => "«" + w + "» como «" + x + "»").join(", ") + "." : "";
+}
+// Por palabras, con variantes, abreviaturas, errores de escritura y sinónimos de compras públicas (ver buscar.js).
 const armar = t => Buscar.armar(t);
 const calza = (term, texto, palabras) => Buscar.calza(term, texto, palabras);
 function calcular(){
+  Buscar.correcciones.clear();
   const ts = terminos();
+  avisarCorrecciones();
   const no = perfil.excluir.split(",").map(norm).filter(Boolean).map(armar);
   const tope = +perfil.tamano;
   const cats = misCategorias(ts);
@@ -425,7 +433,7 @@ function pintarCatalogo(){
 
 // ---------- Carga ----------
 function preparar(filas){
-  datos = filas.map(f => { const t = norm(f[1]); return {codigo:f[0], nombre:f[1] || "", cierre:f[2], texto:t, palabras:t.split(" "), tipo:tipoDe(f[0])}; });
+  datos = filas.map(f => { const t = Buscar.expandir(norm(f[1])); return {codigo:f[0], nombre:f[1] || "", cierre:f[2], texto:t, palabras:t.split(" "), tipo:tipoDe(f[0])}; });
   enriquecer();
 }
 // Forma B del radar: además del nombre, calza con la descripción y los productos de la compra (detalles.json, nocturno)
@@ -434,9 +442,10 @@ function enriquecer(){
   for(const d of datos){
     const x = DET[d.codigo], r = RES[d.codigo];
     if(!x && !r) continue;
-    const t = norm(d.nombre + " " + (x ? x.t : "") + " " + (r ? (r.resumen || "") + " " + (r.piden || []).join(" ") : ""));
+    const t = Buscar.expandir(norm(d.nombre + " " + (x ? x.t : "") + " " + (r ? (r.resumen || "") + " " + (r.piden || []).join(" ") : "")));
     d.texto = t; d.palabras = t.split(" ");
   }
+  Buscar.vocabulario(datos.map(d => d.palabras)); // vocabulario real para corregir errores de escritura
 }
 // Forma C: categorías de producto de Mercado Público (código ONU) que calzan con lo que vende el usuario.
 // Salen de las palabras de su perfil (comparadas con los productos adjudicados de cada categoría) y de su catálogo por RUT.

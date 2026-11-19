@@ -89,16 +89,20 @@ function correoActivo(c, nuevas){
           texto: asunto + "\n\n" + top.map(d => "- " + d.nombre.trim() + " (cierra " + fecha(d.cierre) + ")\n  " + SITIO + "?c=" + d.codigo).join("\n") + "\n\nDejar de recibir avisos: " + SITIO + "baja.html?t=" + c.baja_token};
 }
 function correoRecuerdo(c, lista, cats){
+  // a quien no sigue con nosotros no le decimos DÓNDE postular: solo cuántas compras y cuánto dinero había para él
   let ca = 0; if(CA) cats.forEach(k => { if(CA.clases[k]) ca += CA.clases[k].s; });
-  const asunto = "Si hubieras seguido con Apto, hoy verías " + lista.length + " compras abiertas para ti";
+  const montos = lista.map(d => (DET[d.codigo] && DET[d.codigo].m) || (RES[d.codigo] && RES[d.codigo].monto) || 0).filter(m => m > 0).sort((a, b) => a - b);
+  const $ = n => "$" + Math.round(n).toLocaleString("es-CL");
+  const resumenMontos = montos.length >= 3 ? "<p>De las que informan presupuesto (" + montos.length + "), el monto va desde <b>" + $(montos[0]) + "</b> hasta <b>" + $(montos[montos.length - 1]) +
+    "</b>, con un promedio de <b>" + $(montos.reduce((a, b) => a + b, 0) / montos.length) + "</b> y un total de <b>" + $(montos.reduce((a, b) => a + b, 0)) + "</b>.</p>" : "";
+  const asunto = "Hoy hay " + lista.length + " compras del Estado para lo que vendes";
   const cuerpo = "<p>Hoy el Estado tiene <b>" + lista.length + " licitaciones abiertas</b> que calzan con lo que vendes" +
-    (ca ? ", y el mes pasado se pidieron <b>" + ca.toLocaleString("es-CL") + " Compras Ágiles</b> en tus productos" : "") + ". Estas son algunas:</p>" +
-    '<table style="width:100%;border-collapse:collapse">' + lista.slice(0, 5).map(filaHTML).join("") + "</table>" +
+    (ca ? ", y el mes pasado se pidieron <b>" + ca.toLocaleString("es-CL") + " Compras Ágiles</b> en tus productos" : "") + ".</p>" + resumenMontos +
+    "<p>Con Apto verías cuáles son, si cumples lo que piden y qué te falta antes de postular.</p>" +
     '<p style="background:#eef2f8;border-radius:12px;padding:14px 16px;margin-top:18px">Vuelve con <b>' + DESCUENTO + " % de descuento</b> en tu primer mes. Usa el código <b>" + CODIGO + "</b>.</p>";
   return {asunto, html: marco(asunto, cuerpo, c.baja_token),
-          texto: asunto + ".\n\nVuelve con " + DESCUENTO + " % de descuento en tu primer mes: código " + CODIGO + "\n" + SITIO + "\n\nDejar de recibir avisos: " + SITIO + "baja.html?t=" + c.baja_token};
+          texto: asunto + ".\n" + resumenMontos.replace(/<[^>]+>/g, "") + "\nVuelve con " + DESCUENTO + " % de descuento en tu primer mes: código " + CODIGO + "\n" + SITIO + "\n\nDejar de recibir avisos: " + SITIO + "baja.html?t=" + c.baja_token};
 }
-
 async function clientes(){
   if(DEMO) return [{user_id: "demo", email: "cliente@ejemplo.cl", perfil: {extra: "notebook, toner, mant. de pc", rubros: []}, guardadas: {}, avisos: "diario",
                     avisados: [], baja_token: "demo-token-1", last_sign_in_at: new Date().toISOString()},

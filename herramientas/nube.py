@@ -73,7 +73,8 @@ def main(minutos):
             if x:
                 items = (x.get("Items") or {}).get("Listado", [])
                 det[c] = {"t": compacto((x.get("Descripcion") or "") + " " + " ".join((i.get("NombreProducto") or "") + " " + (i.get("Descripcion") or "") for i in items)),
-                          "c": sorted({str(i.get("CodigoCategoria") or "")[:6] for i in items if i.get("CodigoCategoria")})}
+                          "c": sorted({str(i.get("CodigoCategoria") or "")[:6] for i in items if i.get("CodigoCategoria")}),
+                          "m": x.get("MontoEstimado") or 0}
                 for i in items:
                     if i.get("CodigoProducto"):
                         fd.write(json.dumps({"cat": str(i.get("CodigoCategoria") or "")[:6], "prod": str(i["CodigoProducto"]),

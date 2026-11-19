@@ -67,7 +67,7 @@ function terminos(){
 let noSirve = leer("rp_nosirve", {});
 const enviadas = new Set();
 function enviarSenales(filas){
-  if(!sesion || !filas.length) return;
+  if(!sesion || !filas.length || perfil.aprender === false) return;   // el usuario puede desactivarlo en Mi cuenta
   const nuevas = filas.filter(f => { const k = f.tipo + "|" + f.termino + "|" + (f.clase || ""); if(enviadas.has(k)) return false; enviadas.add(k); return true; });
   if(nuevas.length) sb("/rest/v1/senales", {method: "POST", headers: {"Prefer": "resolution=ignore-duplicates,return=minimal"}, body: JSON.stringify(nuevas)}).catch(() => {});
 }
@@ -706,11 +706,22 @@ function pintarCuenta(){
   const C = $("cuenta"); if(!C) return;
   if(sesion){
     C.innerHTML = '<div class="nota">Conectado como <b>' + esc(sesion.correo || "") + '</b>. Tus datos se guardan en tu cuenta y los ves en cualquier dispositivo.</div>' +
-      '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button></div><p class="nota" id="cuentaNota"></p>';
+      '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="aprenderOk"' + (perfil.aprender !== false ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
+      '<span>Ayudar a mejorar Apto <span class="nota" style="display:block">Cuando guardas o descartas una compra, Apto registra de forma anónima qué palabras calzan con qué productos. <a href="privacidad.html">Más información</a></span></span></label>' +
+      '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button><button class="sec" id="borrarDatos">Borrar mis datos</button></div><p class="nota" id="cuentaNota"></p>';
     $("salir").onclick = async () => { try{ await sb("/auth/v1/logout", {method: "POST"}); }catch(e){} guardarSesion(null); pintarCuenta(); };
+    $("aprenderOk").onchange = e => { perfil.aprender = e.target.checked; cambio(); nota(e.target.checked ? "Gracias: Apto aprenderá de forma anónima con tu uso." : "Listo: Apto ya no registrará tu uso."); };
+    $("borrarDatos").onclick = async () => {
+      if(!confirm("Se borrarán tu perfil, tu catálogo, tus compras guardadas y tus señales de aprendizaje de tu cuenta. ¿Continuar?")) return;
+      try{
+        await sb("/rest/v1/senales?user_id=eq." + sesion.id, {method: "DELETE"});
+        await sb("/rest/v1/cuentas?user_id=eq." + sesion.id, {method: "DELETE"});
+        nota("Listo: borramos tus datos de la cuenta. Para borrar también tu correo de acceso, escríbenos.");
+      }catch(e){ nota("No se pudo borrar: " + e.message); }
+    };
     return;
   }
-  C.innerHTML = '<div class="nota">Entra con tu correo para guardar tu catálogo y tus compras en tu cuenta. Sin contraseña: te enviamos un código.</div>' +
+  C.innerHTML = '<div class="nota">Entra con tu correo para guardar tu catálogo y tus compras en tu cuenta. Sin contraseña: te enviamos un código. <a href="privacidad.html">Privacidad</a></div>' +
     '<label for="correo">Correo</label><input type="email" id="correo" autocomplete="email" placeholder="tu@empresa.cl">' +
     '<div class="acciones" style="margin-top:8px"><button class="principal" id="pedirCodigo">Enviarme un código</button></div>' +
     '<div id="pasoCodigo" hidden><label for="codigo">Código que llegó a tu correo</label><input type="text" id="codigo" inputmode="numeric" autocomplete="one-time-code" maxlength="10" placeholder="123456">' +

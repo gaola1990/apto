@@ -1,0 +1,25 @@
+# Pruebas de Apto en cada cambio: si alguna falla, GitHub avisa por correo al dueño del repositorio.
+name: Pruebas
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sintaxis
+        run: node --check app.js && node --check buscar.js
+      - name: Datos personales y archivos rotos
+        run: python herramientas/guardian.py
+      - name: Pruebas del buscador y del diccionario
+        run: node herramientas/pruebas.js

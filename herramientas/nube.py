@@ -5,6 +5,13 @@
 El ticket propio se guarda como secreto del repositorio (MP_TICKET); si no está, se usa el ticket de ejemplo público.
 Sin dependencias externas.  python herramientas/nube.py [--minutos 40]"""
 import os, re, sys, json, time, argparse, unicodedata, urllib.request, datetime
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from guardian import CORREO, TELEFONO
+
+
+def limpiar(t):
+    """Quita correos y teléfonos de contacto de los textos de compradores antes de guardarlos."""
+    return TELEFONO.sub(" ", CORREO.sub(" ", t or ""))
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 API = "https://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json"
@@ -70,7 +77,7 @@ def main(minutos):
                 for i in items:
                     if i.get("CodigoProducto"):
                         fd.write(json.dumps({"cat": str(i.get("CodigoCategoria") or "")[:6], "prod": str(i["CodigoProducto"]),
-                                             "t": ((i.get("NombreProducto") or "") + " " + (i.get("Descripcion") or ""))[:400]}, ensure_ascii=False) + "\n")
+                                             "t": limpiar((i.get("NombreProducto") or "") + " " + (i.get("Descripcion") or ""))[:400]}, ensure_ascii=False) + "\n")
                 nuevas += 1
             time.sleep(0.5 if os.environ.get("MP_TICKET") else 1.5)
     json.dump({"fecha": datetime.datetime.now().isoformat(timespec="minutes"), "items": det}, open(ruta_det, "w", encoding="utf8"),

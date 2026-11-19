@@ -665,7 +665,11 @@ async function cargar(){
   avisar(); pintar();
 }
 function avisar(){
-  $("fuente").textContent = origen + ". Fuente: API pública de ChileCompra.";
+  // si la API en vivo no respondió y la copia guardada es vieja, se avisa (la copia la renueva GitHub cada 4 horas)
+  const copia = window.SNAPSHOT, horas = copia && copia.fecha ? (Date.now() - new Date(copia.fecha)) / 36e5 : 0;
+  const viejo = origen.startsWith("Copia") && horas > 12 ? " ⚠ Los datos tienen " + Math.round(horas) + " horas: pueden faltar compras nuevas." : "";
+  $("fuente").textContent = origen + ". Fuente: API pública de ChileCompra." + viejo;
+  $("fuente").style.color = viejo ? "var(--rojo, #B83A2B)" : "";
   const n = datos.filter(d => { const x = diasPara(d.cierre); return x === null || x >= 0; }).length;
   $("hnum").dataset.meta = n;
   if($("tnum").classList.contains("in") || !visto) contar($("hnum"), n);

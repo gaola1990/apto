@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://github.com; connect-src 'self'; object-src 'none'; base-uri 'self'">
+<meta name="robots" content="noindex">
+<title>Apto · Estado</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
+<style>
+  body{font-family:"Atkinson Hyperlegible Next",system-ui,sans-serif;background:#F6F8FB;color:#1B2430;margin:0;line-height:1.5}
+  main{max-width:860px;margin:0 auto;padding:36px 16px 64px}
+  h1{color:#1D4E9E;font-size:30px;margin:0 0 4px} a{color:#1D4E9E} .nota{color:#5b6573;font-size:14px}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(27,36,48,.04),0 8px 24px rgba(27,36,48,.06);margin-top:18px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #e6eaf0;font-size:15px;vertical-align:top} th{background:#eef2f8;font-size:13px}
+  .ok{color:#1E7F52;font-weight:700} .al{color:#8a5b00;font-weight:700} .ro{color:#B83A2B;font-weight:700}
+  .insignias{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px} .insignias img{height:20px}
+  @media(max-width:560px){th:nth-child(4),td:nth-child(4){display:none}}
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← Volver a Apto</a></p>
+  <h1>Estado de Apto</h1>
+  <p class="nota" id="resumen">Revisando…</p>
+  <div class="insignias">
+    <a href="https://github.com/gaola1990/apto/actions/workflows/datos.yml"><img alt="Estado de la actualización de datos" src="https://github.com/gaola1990/apto/actions/workflows/datos.yml/badge.svg"></a>
+    <a href="https://github.com/gaola1990/apto/actions/workflows/pruebas.yml"><img alt="Estado de las pruebas" src="https://github.com/gaola1990/apto/actions/workflows/pruebas.yml/badge.svg"></a>
+  </div>
+  <table>
+    <thead><tr><th>Dato</th><th>Actualizado</th><th>Estado</th><th>Detalle</th></tr></thead>
+    <tbody id="filas"></tbody>
+  </table>
+  <p class="nota" style="margin-top:14px">Las licitaciones y su detalle se actualizan cada 4 horas en GitHub Actions; los resúmenes, el diccionario y el aprendizaje cada noche con IA local; Compra Ágil una vez al mes.</p>
+</main>
+<script src="estado.js"></script>
+</body>
+</html>

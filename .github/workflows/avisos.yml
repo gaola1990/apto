@@ -24,7 +24,6 @@ jobs:
       GMAIL_CLAVE_APP: ${{ secrets.GMAIL_CLAVE_APP }}
       ENVIAR: ${{ vars.AVISOS_ACTIVOS }}
       DESCUENTO: "10"
-      AVISOS_SALIDA: ${{ runner.temp }}/apto-avisos.json
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

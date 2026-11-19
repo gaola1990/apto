@@ -1,0 +1,38 @@
+# Actualiza las licitaciones abiertas y su detalle cada 4 horas, aunque el PC de Apto esté apagado.
+# Lo que necesita IA (resúmenes, ¿Cumplo?) sigue en el PC con IA local.
+name: Datos de Mercado Público
+
+on:
+  schedule:
+    - cron: "15 */4 * * *"   # cada 4 horas (UTC)
+  workflow_dispatch: {}       # también se puede correr a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datos
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Bajar licitaciones y detalles
+        env:
+          MP_TICKET: ${{ secrets.MP_TICKET }}
+        run: python herramientas/nube.py --minutos 40
+      - name: Publicar si hubo cambios
+        run: |
+          git config user.name "apto-datos"
+          git config user.email "apto-datos@users.noreply.github.com"
+          git add datos.js detalles.json datos-abiertos/descripciones.jsonl
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Datos de Mercado Público (automático)"
+          for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && exit 0; sleep 10; done
+          exit 1

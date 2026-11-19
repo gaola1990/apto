@@ -242,7 +242,22 @@ function puntajeConcepto(alts, k){
   });
   return mejor;
 }
+// Lo aprendido con el uso (aprendido.json, lo arma cada noche motor/aprender.py) y lo bloqueado por revisión humana.
+let APR = new Map(), BLOQ = new Set();
+function cargarAprendido(j){
+  APR = new Map(); BLOQ = new Set();
+  for(const [t, c, fuente, ev] of (j && j.relaciones) || []){ if(!APR.has(t)) APR.set(t, []); APR.get(t).push({c, fuente, ev}); }
+  for(const [t, c] of (j && j.bloqueadas) || []) BLOQ.add(t + "|" + c);
+}
 function clasesDe(term, maximo = 5){
+  const aprendidas = (APR.get(term.t) || []).filter(a => !BLOQ.has(term.t + "|" + a.c));
+  let base = clasesDeDiccionario(term, maximo).filter(r => !BLOQ.has(term.t + "|" + r.c));
+  // si el uso ya enseñó qué significa la palabra, las coincidencias débiles del catálogo ("carpas" = peces) se descartan
+  if(aprendidas.length) base = base.filter(r => r.puntos > 3 && !aprendidas.some(a => a.c === r.c));
+  const extra = aprendidas.map(a => ({c: a.c, nombre: (DICC && (DICC.find(k => k.c === a.c) || {}).nombre) || a.c, puntos: 6, aprendido: true}));
+  return extra.concat(base).slice(0, maximo + extra.length);
+}
+function clasesDeDiccionario(term, maximo){
   if(!DICC) return [];
   let res = [];
   for(const k of DICC){
@@ -260,5 +275,5 @@ function clasesDe(term, maximo = 5){
   return res.filter(r => r.puntos >= tope * 0.7).slice(0, maximo);
 }
 
-g.Buscar = {cargarDiccionario, clasesDe,norm, armar, calza, calzaAlt, raiz, sumarSinonimos, SIN, ABREV, expandir, expandirPalabras, vocabulario, corregir, correcciones};
+g.Buscar = {cargarDiccionario, cargarAprendido, clasesDe, norm, armar, calza, calzaAlt, raiz, sumarSinonimos, SIN, ABREV, expandir, expandirPalabras, vocabulario, corregir, correcciones};
 })(typeof window !== "undefined" ? window : globalThis);

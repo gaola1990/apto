@@ -61,6 +61,30 @@ function terminos(){
   perfil.extra.split(",").map(norm).filter(Boolean).forEach(t => lista.push(t));
   return [...new Set(lista.map(norm))].map(armar);
 }
+// ---------- Aprendizaje: señales de uso (solo con cuenta; se guardan como conteos, sin datos de la empresa) ----------
+// Guardar una compra = "mis palabras calzan con estos productos"; 👎 = "no calzan"; palabra sin resultados = "no la conozco".
+// El diccionario aprende una relación solo cuando la confirman varios vendedores distintos (ver motor/aprender.py).
+let noSirve = leer("rp_nosirve", {});
+const enviadas = new Set();
+function enviarSenales(filas){
+  if(!sesion || !filas.length) return;
+  const nuevas = filas.filter(f => { const k = f.tipo + "|" + f.termino + "|" + (f.clase || ""); if(enviadas.has(k)) return false; enviadas.add(k); return true; });
+  if(nuevas.length) sb("/rest/v1/senales", {method: "POST", headers: {"Prefer": "resolution=ignore-duplicates,return=minimal"}, body: JSON.stringify(nuevas)}).catch(() => {});
+}
+const terminoValido = t => t.length >= 2 && t.length <= 60 && /^[a-z0-9ñ ]+$/.test(t);
+function senal(tipo, codigo){
+  const d = datos.find(x => x.codigo === codigo), det = DET[codigo];
+  if(!d || !det || !det.c || !det.c.length) return;
+  const propios = perfil.extra.split(",").map(norm).filter(terminoValido);
+  const calzan = propios.filter(t => calza(armar(t), d.texto, d.palabras));
+  enviarSenales(calzan.flatMap(t => det.c.slice(0, 4).map(clase => ({termino: t, clase, tipo}))));
+}
+function senalDesconocidas(propios){
+  const filas = propios.filter(t => terminoValido(t.t) && !Buscar.clasesDe(t, 1).length && !datos.some(d => calza(t, d.texto, d.palabras)))
+    .map(t => ({termino: t.t, clase: null, tipo: "desconocido"}));
+  enviarSenales(filas);
+}
+
 // Si el vendedor escribió mal una palabra, se le dice cómo la entendimos (y puede corregirla él).
 function avisarCorrecciones(){
   const el = $("corregido"); if(!el) return;
@@ -74,6 +98,7 @@ function avisarClases(){
   const vistos = new Map();
   for(const t of propios) for(const r of Buscar.clasesDe(t, 3)) vistos.set(r.c, r.nombre + " (" + r.c + ")");
   clasesVistas = [...vistos.values()];
+  clearTimeout(avisarClases.t); avisarClases.t = setTimeout(() => senalDesconocidas(propios), 4000); // cuando deja de escribir
   el.textContent = clasesVistas.length ? "Según el catálogo de Mercado Público, vendes: " + clasesVistas.slice(0, 6).join(" · ") + (clasesVistas.length > 6 ? " y " + (clasesVistas.length - 6) + " más." : ".") : "";
 }
 // Por palabras, con variantes, abreviaturas, errores de escritura y sinónimos de compras públicas (ver buscar.js).
@@ -93,6 +118,7 @@ function calcular(){
     if(dias !== null && dias < 0) continue;
     if(d.tipo.n > tope) continue;
     if(perfil.vistaGuardadas){ if(guardadas[d.codigo]) resultados.push({...d, dias, pts:0, hits:[]}); continue; }
+    if(noSirve[d.codigo]) continue;   // el vendedor dijo que no le sirve
     if(!ts.length) continue;
     if(no.some(t => calza(t, d.texto, d.palabras))) continue;
     const hits = ts.filter(t => calza(t, d.texto, d.palabras));   // B: nombre + descripción + productos
@@ -212,12 +238,14 @@ async function abrir(codigo){
     precioRef(items) +
     "</dl>" + enSimple(codigo) + tengo(items) + bloqueCumplo() + "<h2>Mi plan para ofertar</h2>" + plan(d, base) +
     '<div class="acciones"><button class="principal" id="bg">' + (guardadas[codigo] ? "★ Guardada" : "☆ Guardar") + '</button>' +
+    '<button class="sec" id="bno" title="Apto aprende de esto para mostrarte compras más parecidas a lo que vendes">👎 No me sirve</button>' +
     '<button class="sec" id="bcal">Agregar todos los plazos a mi calendario</button>' +
     '<a class="sec" style="text-decoration:none;display:inline-block;border:1px solid var(--linea);border-radius:8px;padding:8px 12px" target="_blank" rel="noopener" href="' + FICHA + encodeURIComponent(codigo) + '">Abrir ficha oficial ↗</a></div>' +
     '<p class="nota" style="margin-bottom:0">El plan es una guía general. Las bases de cada licitación mandan: revisa siempre sus requisitos.</p>';
   activarCumplo(D);
   D.querySelectorAll(".pasos input").forEach(ch => ch.onchange = () => { (hechos[codigo] = hechos[codigo] || {})[ch.dataset.i] = ch.checked; guardar("rp_pasos", hechos); });
-  $("bg").onclick = () => { if(guardadas[codigo]) delete guardadas[codigo]; else guardadas[codigo] = 1; guardar("rp_guardadas", guardadas); $("bg").textContent = guardadas[codigo] ? "★ Guardada" : "☆ Guardar"; pintar(); };
+  $("bg").onclick = () => { if(guardadas[codigo]) delete guardadas[codigo]; else { guardadas[codigo] = 1; senal("guardar", codigo); } guardar("rp_guardadas", guardadas); $("bg").textContent = guardadas[codigo] ? "★ Guardada" : "☆ Guardar"; pintar(); };
+  $("bno").onclick = () => { noSirve[codigo] = 1; guardar("rp_nosirve", noSirve); senal("no_sirve", codigo); $("dlg").close(); pintar(); };
   $("bcal").onclick = () => calendario(codigo, d.Nombre || base.nombre, (d.Fechas || {}).FechaCierre || base.cierre, d.Fechas || {});
 }
 // Precio de referencia: a cuánto se adjudicó el mismo producto en licitaciones anteriores (agregados públicos).
@@ -548,6 +576,7 @@ function conectarIA(){
   fetch("sinonimos.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.grupos){ Buscar.sumarSinonimos(j.grupos); pintar(); } }).catch(() => {});
   fetch("detalles.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ DET = j.items; enriquecer(); pintar(); } }).catch(() => {});
   fetch("diccionario.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.clases){ Buscar.cargarDiccionario(j.clases); DICC_OK = true; pintar(); } }).catch(() => {});
+  fetch("aprendido.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j){ Buscar.cargarAprendido(j); pintar(); } }).catch(() => {});
   fetch("categorias.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.categorias){ CATMAP = j.categorias; pintar(); } }).catch(() => {});
   fetch("precios.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.productos) PRE = j.productos; }).catch(() => {});
   const ctl = new AbortController(); setTimeout(() => ctl.abort(), 1500);

@@ -1,0 +1,14 @@
+# Nunca se publican: configuracion local, claves, respaldos ni documentos de clientes
+config.json
+*.env
+.env*
+*.key
+*.pem
+*.bak*
+trabajos/
+avisos/
+logs/
+cache/
+*.docx
+*.pdf
+*.xlsx

@@ -276,7 +276,7 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
       <summary class="nota" style="cursor:pointer;margin-top:10px">⚡ Armar mi catálogo con lo que ya le vendí al Estado</summary>
       <label for="rutcat">RUT de mi empresa</label>
       <input type="text" id="rutcat" placeholder="ej: 76.123.456-7" autocomplete="off">
-      <div class="nota">Apto busca en datos públicos de Mercado Público los productos que tu empresa ya ganó y los agrega a tu catálogo y a tus palabras clave. Funciona con el motor de Apto encendido.</div>
+      <div class="nota">Apto busca en datos públicos de Mercado Público los productos que tu empresa ya ganó y los agrega a tu catálogo y a tus palabras clave. Tarda uno o dos minutos.</div>
       <button class="principal" id="rutbtn" style="margin-top:10px">Buscar mis productos</button>
       <div id="rutout"></div>
     </details>
@@ -291,12 +291,6 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
         <div><label for="pent">Entrega (días)</label><input type="number" id="pent" min="0" inputmode="numeric"></div>
       </div>
       <button class="principal" id="pguardar" style="margin-top:12px">Guardar producto</button>
-    </details>
-    <details style="margin-top:14px">
-      <summary class="nota" style="cursor:pointer">Conexión a Mercado Público</summary>
-      <label for="ticket">Ticket de la API (opcional)</label>
-      <input type="text" id="ticket" autocomplete="off" placeholder="Si lo dejas vacío se usa el ticket de prueba">
-      <div class="nota">El ticket propio se pide gratis en api.mercadopublico.cl y se guarda solo en este navegador.</div>
     </details>
     <button class="principal flotante" id="irResultados" type="button" hidden></button>
     <h2 style="margin-top:22px">Mi cuenta</h2>
@@ -340,7 +334,7 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611191159"></script>
-<script src="app.js?v=202611191159"></script>
+<script src="buscar.js?v=202611191209"></script>
+<script src="app.js?v=202611191209"></script>
 </body>
 </html>

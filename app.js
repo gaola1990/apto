@@ -239,13 +239,23 @@ function pintar(){
 const cifra = (n, t) => '<div class="cifra"><b>' + n + "</b><span>" + t + "</span></div>";
 
 // ---------- Detalle y plan de oferta ----------
+// El detalle lo pide primero el motor de Apto (con nuestro ticket y memoria de 6 horas); si no está disponible,
+// se consulta directo a Mercado Público con el ticket de ejemplo. El cliente nunca configura nada.
 async function pedirDetalle(codigo){
   if(cacheDet[codigo]) return cacheDet[codigo];
-  const url = API + "?codigo=" + encodeURIComponent(codigo) + "&ticket=" + encodeURIComponent(perfil.ticket.trim() || TICKET_PRUEBA);
+  if(motorLocal){
+    try{
+      const r = await fetch(MOTOR + "/detalle/" + encodeURIComponent(codigo));
+      const j = await r.json();
+      if(j && j.Listado && j.Listado[0]) return (cacheDet[codigo] = j.Listado[0]);
+    }catch(e){}
+  }
+  const url = API + "?codigo=" + encodeURIComponent(codigo) + "&ticket=" + TICKET_PRUEBA;
   for(let i = 0; i < 3; i++){
-    const r = await fetch(url);
-    const j = await r.json().catch(() => ({}));
-    if(j.Listado && j.Listado[0]) return (cacheDet[codigo] = j.Listado[0]);
+    try{
+      const j = await (await fetch(url)).json();
+      if(j.Listado && j.Listado[0]) return (cacheDet[codigo] = j.Listado[0]);
+    }catch(e){}
     await new Promise(ok => setTimeout(ok, 2200)); // la API rechaza consultas simultaneas: se reintenta
   }
   throw new Error("sin respuesta");
@@ -655,7 +665,10 @@ function conectarIA(){
     if(!m || !/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(m.url)) throw 0;
     return probar(m.url, 12000).then(ok => { if(ok) activar(m.url, false); else throw 0; });
   });
-  probar(MOTOR_PC, 1500).then(ok => { if(ok) return activar(MOTOR_PC, false); throw 0; })
+  // al motor del PC solo se le habla directo en pruebas locales: en la página pública el navegador le pediría
+  // al cliente un permiso de "red local", y el cliente no debe configurar nada
+  const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  (local ? probar(MOTOR_PC, 1500) : Promise.resolve(false)).then(ok => { if(ok) return activar(MOTOR_PC, false); throw 0; })
     .catch(() => porTunel())
     .catch(() => setTimeout(() => porTunel().catch(() => {}), 30000)); // el túnel pudo cambiar de dirección: se reintenta
 }
@@ -666,7 +679,7 @@ async function cargar(){
   if(copia && copia.listado){ preparar(copia.listado); origen = "Copia guardada del " + new Date(copia.fecha).toLocaleString("es-CL",{dateStyle:"medium",timeStyle:"short"}); avisar(); pintar(); }
   try{
     const ctl = new AbortController(); const reloj = setTimeout(() => ctl.abort(), 45000);
-    const r = await fetch(API + "?estado=activas&ticket=" + encodeURIComponent(perfil.ticket.trim() || TICKET_PRUEBA), {signal: ctl.signal});
+    const r = await fetch(API + "?estado=activas&ticket=" + TICKET_PRUEBA, {signal: ctl.signal});
     clearTimeout(reloj);
     const j = await r.json();
     if(j.Listado && j.Listado.length){ preparar(j.Listado.map(x => [x.CodigoExterno, x.Nombre, x.FechaCierre])); origen = "Datos en vivo de Mercado Público, " + new Date().toLocaleTimeString("es-CL",{hour:"2-digit",minute:"2-digit"}); }
@@ -710,7 +723,7 @@ function iniciar(){
   $("rubros").innerHTML = Object.keys(RUBROS).map(r => '<button type="button" class="chip" aria-pressed="' + perfil.rubros.includes(r) + '">' + esc(r) + "</button>").join("");
   $("rubros").onclick = e => { const b = e.target.closest(".chip"); if(!b) return; const r = b.textContent; const i = perfil.rubros.indexOf(r); if(i >= 0) perfil.rubros.splice(i, 1); else perfil.rubros.push(r); b.setAttribute("aria-pressed", i < 0); cambio(); };
   $("region").innerHTML = '<option value="">Todo Chile</option>' + REGIONES.map(r => "<option>" + esc(r) + "</option>").join("");
-  ["extra","excluir","region","tamano","ticket"].forEach(k => { $(k).value = perfil[k] || (k === "tamano" ? "5" : ""); $(k).oninput = () => { perfil[k] = $(k).value; cambio(); }; });
+  ["extra","excluir","region","tamano"].forEach(k => { $(k).value = perfil[k] || (k === "tamano" ? "5" : ""); $(k).oninput = () => { perfil[k] = $(k).value; cambio(); }; });
   $("orden").onchange = pintar;
   $("vista").onchange = () => { perfil.vistaGuardadas = $("vista").value === "guardadas"; mostrar = 40; pintar(); };
   $("mas").onclick = () => { mostrar += 40; pintar(); };

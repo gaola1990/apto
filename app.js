@@ -61,16 +61,9 @@ function terminos(){
   perfil.extra.split(",").map(norm).filter(Boolean).forEach(t => lista.push(t));
   return [...new Set(lista.map(norm))].map(armar);
 }
-function armar(t){
-  if(t.includes(" ")) return {t, frase:true};
-  let raiz = t.length > 5 ? t.replace(/(es|s)$/, "") : t;
-  return {t, frase:false, raiz, exacto: raiz.length < 4};
-}
-function calza(term, texto, palabras){
-  if(term.frase) return (" " + texto + " ").includes(" " + term.t + " ") || texto.includes(term.t);
-  if(term.exacto) return palabras.includes(term.raiz);
-  return palabras.some(p => p.startsWith(term.raiz));
-}
+// Por palabras, con variantes y sinónimos de compras públicas (ver buscar.js).
+const armar = t => Buscar.armar(t);
+const calza = (term, texto, palabras) => Buscar.calza(term, texto, palabras);
 function calcular(){
   const ts = terminos();
   const no = perfil.excluir.split(",").map(norm).filter(Boolean).map(armar);
@@ -98,8 +91,8 @@ function calcular(){
 // ---------- Pintar ----------
 function resaltar(nombre, hits){
   let h = esc(nombre);
-  hits.forEach(t => {
-    const base = t.frase ? t.t : t.raiz;
+  hits.flatMap(t => t.conceptos.flat()).forEach(a => {
+    const base = a.multi ? a.w : a.raiz;
     const patron = base.replace(/[aeiounñ]/g, c => ({a:"[aá]",e:"[eé]",i:"[ií]",o:"[oó]",u:"[uúü]",n:"[nñ]","ñ":"[nñ]"}[c])).replace(/ /g, "\\s+");
     try{ h = h.replace(new RegExp("(^|[^\\p{L}])(" + patron + "[\\p{L}]*)", "giu"), "$1<mark>$2</mark>"); }catch(e){}
   });
@@ -450,11 +443,13 @@ function enriquecer(){
 function misCategorias(ts){
   const s = new Set(perfil.cats || []);
   if(!ts.length) return s;
-  // las frases se separan en sus palabras con contenido ("insumos de aseo" -> insumos, aseo)
-  const sueltas = ts.flatMap(t => t.frase ? t.t.split(" ").filter(w => w.length >= 4 && !/^(para|con|del|los|las|una|unos|insumos?|materiales?|equipos?|articulos?|productos?|servicios?|varios|otros|general)$/.test(w)).map(armar) : [t]).filter(t => !t.exacto);
+  // cada concepto del vendedor (con sus sinónimos) se compara con los productos de cada categoría;
+  // las palabras genéricas ("insumos", "equipos") no definen una categoría por sí solas
+  const GENERICAS = /^(insumo|material|equipo|articulo|producto|servicio|vario|otro|general|elemento)/;
+  const alts = ts.flatMap(t => t.conceptos.flat()).filter(a => !a.exacto && !GENERICAS.test(a.raiz || a.w));
   for(const [c, pal] of Object.entries(CATMAP)){
     const txt = pal.slice(0, 6).join(" "), ps = pal.slice(0, 6);
-    if(sueltas.some(t => calza(t, txt, ps))) s.add(c);
+    if(alts.some(a => Buscar.calzaAlt(a, txt, ps))) s.add(c);
   }
   return s;
 }
@@ -525,6 +520,7 @@ function abrirFichaReal(){
 }
 function conectarIA(){
   fetch("resumenes.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ RES = j.items; enriquecer(); pintar(); } }).catch(() => {});
+  fetch("sinonimos.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.grupos){ Buscar.sumarSinonimos(j.grupos); pintar(); } }).catch(() => {});
   fetch("detalles.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.items){ DET = j.items; enriquecer(); pintar(); } }).catch(() => {});
   fetch("categorias.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.categorias){ CATMAP = j.categorias; pintar(); } }).catch(() => {});
   fetch("precios.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.productos) PRE = j.productos; }).catch(() => {});

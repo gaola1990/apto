@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Apto</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://api.mercadopublico.cl http://127.0.0.1:8787; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://api.mercadopublico.cl https://izxhfajflqmfhgligblu.supabase.co http://127.0.0.1:8787; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -246,7 +246,9 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 
 <main>
   <section class="tarjeta" aria-label="Perfil de mi negocio">
-    <h2>Mi negocio</h2>
+    <h2>Mi cuenta</h2>
+    <div id="cuenta"></div>
+    <h2 style="margin-top:20px">Mi negocio</h2>
     <div class="nota">Elige uno o más rubros. Apto revisa todas las licitaciones abiertas y te muestra solo las tuyas.</div>
     <label>Rubros</label>
     <div class="chips" id="rubros"></div>

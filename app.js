@@ -35,7 +35,7 @@ const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm = s => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ ]+/g, " ").replace(/\s+/g, " ").trim();
 function leer(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } }
-function guardar(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+function guardar(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} try{ subirCuenta(); }catch(e){} }
 
 let perfil = leer("rp_perfil", {rubros:[], extra:"", excluir:"", region:"", tamano:"5", ticket:""});
 let guardadas = leer("rp_guardadas", {});
@@ -608,4 +608,80 @@ function iniciar(){
 }
 let espera;
 function cambio(){ const {vistaGuardadas, ...p} = perfil; guardar("rp_perfil", p); mostrar = 40; clearTimeout(espera); espera = setTimeout(pintar, 180); }
+
+// ---------- Mi cuenta: acceso con código de un solo uso por correo (Supabase Auth, sin contraseña) ----------
+// El código llega al correo, vence en 10 minutos y sirve una vez. Cada empresa solo puede leer y escribir su propia
+// fila (reglas RLS en la base de datos). La clave publicable es pública por diseño: no da acceso a datos de nadie.
+const SB = "https://izxhfajflqmfhgligblu.supabase.co", SB_KEY = "sb_publishable_bhXkro91FvseczW7qIU0bw_W2psbU40";
+let sesion = leer("apto_sesion", null), subida = 0;
+async function sb(ruta, opciones = {}, conSesion = true){
+  if(conSesion && sesion && Date.now() > sesion.vence - 60e3) await renovar();
+  const h = {"apikey": SB_KEY, "Content-Type": "application/json", ...(opciones.headers || {})};
+  if(conSesion && sesion) h.Authorization = "Bearer " + sesion.access_token;
+  const r = await fetch(SB + ruta, {...opciones, headers: h});
+  const txt = await r.text(); let j = null; try{ j = txt ? JSON.parse(txt) : null; }catch(e){}
+  if(!r.ok) throw new Error((j && (j.msg || j.message || j.error_description)) || "Error " + r.status);
+  return j;
+}
+function guardarSesion(j){
+  sesion = j ? {access_token: j.access_token, refresh_token: j.refresh_token, vence: Date.now() + (j.expires_in || 3600) * 1000, correo: (j.user || {}).email || (sesion || {}).correo, id: (j.user || {}).id || (sesion || {}).id} : null;
+  try{ sesion ? localStorage.setItem("apto_sesion", JSON.stringify(sesion)) : localStorage.removeItem("apto_sesion"); }catch(e){}
+}
+async function renovar(){
+  try{ guardarSesion(await sb("/auth/v1/token?grant_type=refresh_token", {method: "POST", body: JSON.stringify({refresh_token: sesion.refresh_token})}, false)); }
+  catch(e){ guardarSesion(null); pintarCuenta(); }
+}
+const datosCuenta = () => { const {vistaGuardadas, ticket, ...p} = perfil; return {perfil: p, catalogo, guardadas, pasos: hechos}; }; // el ticket de la API queda solo en este navegador
+function subirCuenta(){
+  if(!sesion) return;
+  clearTimeout(subida);
+  subida = setTimeout(() => sb("/rest/v1/cuentas", {method: "POST", headers: {"Prefer": "resolution=merge-duplicates,return=minimal"},
+    body: JSON.stringify({user_id: sesion.id, ...datosCuenta()})}).then(() => nota("Guardado en tu cuenta.")).catch(e => nota("No se pudo guardar en tu cuenta: " + e.message)), 1500);
+}
+async function bajarCuenta(){
+  const filas = await sb("/rest/v1/cuentas?select=perfil,catalogo,guardadas,pasos");
+  if(filas && filas.length){
+    const c = filas[0];
+    const ticket = perfil.ticket; perfil = {...perfil, ...c.perfil, ticket}; catalogo = c.catalogo || []; guardadas = c.guardadas || {}; hechos = c.pasos || {};
+    try{ localStorage.setItem("rp_perfil", JSON.stringify(perfil)); localStorage.setItem("rp_catalogo", JSON.stringify(catalogo)); localStorage.setItem("rp_guardadas", JSON.stringify(guardadas)); localStorage.setItem("rp_pasos", JSON.stringify(hechos)); }catch(e){}
+    ["extra","excluir","region","tamano"].forEach(k => $(k).value = perfil[k] || (k === "tamano" ? "5" : ""));
+    document.querySelectorAll("#rubros .chip").forEach(b => b.setAttribute("aria-pressed", perfil.rubros.includes(b.textContent)));
+    pintarCatalogo(); pintar();
+    nota("Recuperamos tus datos guardados.");
+  } else { subirCuenta(); nota("Tu catálogo y tus compras guardadas ahora quedan en tu cuenta."); }
+}
+const nota = t => { const n = $("cuentaNota"); if(n) n.textContent = t; };
+function pintarCuenta(){
+  const C = $("cuenta"); if(!C) return;
+  if(sesion){
+    C.innerHTML = '<div class="nota">Conectado como <b>' + esc(sesion.correo || "") + '</b>. Tus datos se guardan en tu cuenta y los ves en cualquier dispositivo.</div>' +
+      '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button></div><p class="nota" id="cuentaNota"></p>';
+    $("salir").onclick = async () => { try{ await sb("/auth/v1/logout", {method: "POST"}); }catch(e){} guardarSesion(null); pintarCuenta(); };
+    return;
+  }
+  C.innerHTML = '<div class="nota">Entra con tu correo para guardar tu catálogo y tus compras en tu cuenta. Sin contraseña: te enviamos un código.</div>' +
+    '<label for="correo">Correo</label><input type="email" id="correo" autocomplete="email" placeholder="tu@empresa.cl">' +
+    '<div class="acciones" style="margin-top:8px"><button class="principal" id="pedirCodigo">Enviarme un código</button></div>' +
+    '<div id="pasoCodigo" hidden><label for="codigo">Código que llegó a tu correo</label><input type="text" id="codigo" inputmode="numeric" autocomplete="one-time-code" maxlength="10" placeholder="123456">' +
+    '<div class="acciones" style="margin-top:8px"><button class="principal" id="entrar">Entrar</button></div></div><p class="nota" id="cuentaNota"></p>';
+  $("pedirCodigo").onclick = async () => {
+    const correo = $("correo").value.trim().toLowerCase();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)){ nota("Revisa el correo."); $("correo").focus(); return; }
+    $("pedirCodigo").disabled = true;
+    try{ await sb("/auth/v1/otp", {method: "POST", body: JSON.stringify({email: correo, create_user: true})}, false);
+      $("pasoCodigo").hidden = false; $("codigo").focus(); nota("Si el correo es válido, te llegará un código en un minuto. Revisa también spam. Vence en 10 minutos."); }
+    catch(e){ nota(/rate|seconds|limit/i.test(e.message) ? "Ya te enviamos un código hace poco. Espera un minuto antes de pedir otro." : "No se pudo enviar el código. Intenta de nuevo."); }
+    setTimeout(() => { if($("pedirCodigo")) $("pedirCodigo").disabled = false; }, 60000);
+  };
+  $("entrar").onclick = async () => {
+    const token = $("codigo").value.replace(/\D/g, "");
+    if(token.length < 6){ nota("El código tiene 6 dígitos."); return; }
+    try{ guardarSesion(await sb("/auth/v1/verify", {method: "POST", body: JSON.stringify({type: "email", email: $("correo").value.trim().toLowerCase(), token})}, false));
+      pintarCuenta(); await bajarCuenta(); }
+    catch(e){ nota("Código incorrecto o vencido. Pide uno nuevo si pasaron más de 10 minutos."); }
+  };
+}
+
 iniciar();
+pintarCuenta();
+if(sesion) bajarCuenta().catch(() => {});

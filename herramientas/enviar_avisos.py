@@ -15,6 +15,7 @@ SITIO = "https://gaola1990.github.io/apto/"
 def registrar(x):
     ahora = datetime.datetime.now(datetime.timezone.utc).isoformat()
     datos = {"ultimo_aviso": ahora, "avisados": x.get("avisados_nuevo", [])} if x["tipo"] == "novedades" else {"ultimo_recuerdo": ahora}
+    datos["plantillas"] = x.get("plantillas_nuevo", [])  # para no repetir la misma plantilla
     r = urllib.request.Request(f"{URL}/rest/v1/cuentas?user_id=eq.{x['user_id']}", json.dumps(datos).encode(), method="PATCH",
                                headers={"apikey": KEY, "Authorization": "Bearer " + KEY, "Content-Type": "application/json", "Prefer": "return=minimal"})
     urllib.request.urlopen(r, timeout=30)

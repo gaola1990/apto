@@ -108,4 +108,5 @@ function correoRecuerdo({lista, ca, token, sitio, ufClp, descuento, codigo, venc
   return {asunto, html: marco({preheader, cabecera, cuerpo, sitio, token}), texto};
 }
 
-module.exports = {correoActivo, correoRecuerdo, cuentaRegresiva};
+module.exports = {correoActivo, correoRecuerdo, cuentaRegresiva, marco, tarjeta, boton, etiqueta, esc, pesos, millones,
+                  colores: {AZUL, AZUL_OSC, AMBAR, VERDE, TINTA, SUAVE, FONDO}, FUENTE};

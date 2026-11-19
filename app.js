@@ -42,7 +42,9 @@ let guardadas = leer("rp_guardadas", {});
 let hechos = leer("rp_pasos", {});
 let datos = [], resultados = [], mostrar = 40, origen = "";
 let RES = {}, PRE = {}, DET = {}, CATMAP = {}, DICC_OK = false, motorLocal = false;        // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
-const MOTOR = "http://127.0.0.1:8787";
+const MOTOR_PC = "http://127.0.0.1:8787";
+let MOTOR = MOTOR_PC, motorNube = false;
+const esperaMotor = () => motorNube ? " En la nube una revisión tarda entre 3 y 8 minutos: puedes seguir navegando y volver." : " Puede tardar unos minutos.";
 const cacheDet = {};
 
 function tipoDe(codigo){
@@ -372,7 +374,7 @@ async function catalogoPorRut(){
     const r = await fetch(MOTOR + "/catalogo", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({rut})});
     const j = await r.json(); if(!r.ok) throw new Error(j.error || "No se pudo iniciar.");
     let e;
-    do{ await new Promise(s => setTimeout(s, 2500)); e = await (await fetch(MOTOR + "/trabajo/" + j.id)).json(); if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + " Puede tardar unos minutos.</p>"; }while(!e.listo);
+    do{ await new Promise(s => setTimeout(s, 2500)); e = await (await fetch(MOTOR + "/trabajo/" + j.id)).json(); if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>"; }while(!e.listo);
     if(e.error) throw new Error(e.error);
     const R = e.resultado, nuevos = R.productos.filter(p => !catalogo.some(c => norm(c.nombre) === norm(p)));
     nuevos.forEach(p => catalogo.push({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), nombre: p, caract: "Agregado desde tus ventas al Estado. Completa medidas, garantía y entrega.", garantia: "", entrega: ""}));
@@ -621,7 +623,7 @@ function activarCumplo(raiz){
       do{
         await new Promise(ok => setTimeout(ok, 2500));
         e = await (await fetch(MOTOR + "/cumplo/" + j.id)).json();
-        if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + " Puede tardar unos minutos.</p>";
+        if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>";
       } while(!e.listo);
       out.innerHTML = e.error ? '<p class="nota" style="color:var(--rojo)">' + esc(e.error) + "</p>" : resultadoIA(e.resultado);
     }catch(err){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">No se pudo conectar con el motor de Apto. ' + esc(err.message) + "</p>"; }
@@ -642,13 +644,20 @@ function conectarIA(){
   fetch("compra_agil.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.clases){ CA = j; pintar(); } }).catch(() => {});
   fetch("categorias.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.categorias){ CATMAP = j.categorias; pintar(); } }).catch(() => {});
   fetch("precios.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.productos) PRE = j.productos; }).catch(() => {});
-  const ctl = new AbortController(); setTimeout(() => ctl.abort(), 1500);
-  fetch(MOTOR + "/estado", {signal: ctl.signal}).then(r => r.json()).then(j => {
-    if(!j.ok) return;
-    motorLocal = true;
-    $("ejemplos").insertAdjacentHTML("beforeend", '<button class="principal" id="bficha">Revisar una ficha técnica real</button>');
-    $("bficha").onclick = abrirFichaReal;
-  }).catch(() => {});
+  // Motor ¿Cumplo?: primero el del PC de Apto (GPU, rápido); si no está encendido, el de la nube (Hugging Face, CPU, más lento)
+  const probar = (url, ms) => { const ctl = new AbortController(); setTimeout(() => ctl.abort(), ms); return fetch(url + "/estado", {signal: ctl.signal}).then(r => r.json()).then(j => j && j.ok); };
+  const activar = (url, nube) => {
+    MOTOR = url; motorLocal = true; motorNube = nube;
+    if(!$("bficha")){ $("ejemplos").insertAdjacentHTML("beforeend", '<button class="principal" id="bficha">Revisar una ficha técnica real</button>'); $("bficha").onclick = abrirFichaReal; }
+  };
+  // si no se está en el PC de Apto, se usa el mismo motor a través del túnel de Cloudflare (dirección en motor.json)
+  const porTunel = () => fetch("motor.json", {cache: "no-store"}).then(r => r.json()).then(m => {
+    if(!m || !/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(m.url)) throw 0;
+    return probar(m.url, 12000).then(ok => { if(ok) activar(m.url, false); else throw 0; });
+  });
+  probar(MOTOR_PC, 1500).then(ok => { if(ok) return activar(MOTOR_PC, false); throw 0; })
+    .catch(() => porTunel())
+    .catch(() => setTimeout(() => porTunel().catch(() => {}), 30000)); // el túnel pudo cambiar de dirección: se reintenta
 }
 
 async function cargar(){

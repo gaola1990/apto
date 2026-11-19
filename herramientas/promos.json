@@ -1,0 +1,11 @@
+[
+  {"id": "promo-lanzamiento-2026-11", "tipo": "promo", "icono": "🎁", "titulo": "Prueba Apto gratis durante el piloto",
+   "texto": "Mientras dure el piloto puedes usar todas las funciones sin pagar. Crea tu cuenta y guarda tus compras.",
+   "detalle": "Después, Plan Radar desde 0,5 UF y Plan Apto desde 1,5 UF al mes.", "fecha": "2026-11-19T12:00:00-03:00", "hasta": "2026-12-31T23:59:00-03:00", "enlace": "#planes"},
+  {"id": "novedad-escritura-2026-11", "tipo": "novedad", "icono": "🗣️", "titulo": "Nuevo: Apto entiende cómo escribes",
+   "texto": "Busca «pc», «mant.» o «computadres» y Apto igual encuentra tus compras: entiende sinónimos, abreviaturas y errores.",
+   "fecha": "2026-11-19T10:00:00-03:00", "enlace": "#app"},
+  {"id": "novedad-cumplo-2026-11", "tipo": "novedad", "icono": "✅", "titulo": "¿Cumplo? disponible desde cualquier lugar",
+   "texto": "Sube la ficha técnica de una compra y Apto te dice requisito por requisito si cumples y qué te falta.",
+   "fecha": "2026-11-19T12:00:00-03:00", "enlace": "#app"}
+]

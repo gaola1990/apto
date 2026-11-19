@@ -37,13 +37,15 @@ jobs:
         run: |
           pip install -q duckdb
           python herramientas/compra_agil.py
+      - name: Estudios y reportes para las notificaciones
+        run: node herramientas/estudios.js
       - name: Guardián (sin datos personales ni archivos rotos)
         run: python herramientas/guardian.py
       - name: Publicar si hubo cambios
         run: |
           git config user.name "apto-datos"
           git config user.email "apto-datos@users.noreply.github.com"
-          git add datos.js detalles.json datos-abiertos/descripciones.jsonl datos-abiertos/adjudicadas.jsonl compra_agil.json competencia.json
+          git add datos.js detalles.json datos-abiertos/descripciones.jsonl datos-abiertos/adjudicadas.jsonl compra_agil.json competencia.json notificaciones.json
           if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
           git commit -m "Datos de Mercado Público (automático)"
           for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && exit 0; sleep 10; done

@@ -677,6 +677,9 @@ async function cargar(){
   conectarIA();
   const copia = window.SNAPSHOT;
   if(copia && copia.listado){ preparar(copia.listado); origen = "Copia guardada del " + new Date(copia.fecha).toLocaleString("es-CL",{dateStyle:"medium",timeStyle:"short"}); avisar(); pintar(); }
+  // enlace directo a una compra (lo usan los correos de aviso): ?c=código
+  const cDirecto = new URLSearchParams(location.search).get("c");
+  if(cDirecto && datos.some(d => d.codigo === cDirecto)) setTimeout(() => abrir(cDirecto), 600);
   try{
     const ctl = new AbortController(); const reloj = setTimeout(() => ctl.abort(), 45000);
     const r = await fetch(API + "?estado=activas&ticket=" + TICKET_PRUEBA, {signal: ctl.signal});
@@ -779,9 +782,10 @@ function subirCuenta(){
     body: JSON.stringify({user_id: sesion.id, ...datosCuenta()})}).then(() => nota("Guardado en tu cuenta.")).catch(e => nota("No se pudo guardar en tu cuenta: " + e.message)), 1500);
 }
 async function bajarCuenta(){
-  const filas = await sb("/rest/v1/cuentas?select=perfil,catalogo,guardadas,pasos");
+  const filas = await sb("/rest/v1/cuentas?select=perfil,catalogo,guardadas,pasos,avisos");
   if(filas && filas.length){
     const c = filas[0];
+    avisosPref = c.avisos || "semanal"; if($("avisosSel")) $("avisosSel").value = avisosPref;
     const ticket = perfil.ticket; perfil = {...perfil, ...c.perfil, ticket}; catalogo = c.catalogo || []; guardadas = c.guardadas || {}; hechos = c.pasos || {};
     try{ localStorage.setItem("rp_perfil", JSON.stringify(perfil)); localStorage.setItem("rp_catalogo", JSON.stringify(catalogo)); localStorage.setItem("rp_guardadas", JSON.stringify(guardadas)); localStorage.setItem("rp_pasos", JSON.stringify(hechos)); }catch(e){}
     ["extra","excluir","region","tamano"].forEach(k => $(k).value = perfil[k] || (k === "tamano" ? "5" : ""));
@@ -791,13 +795,22 @@ async function bajarCuenta(){
   } else { subirCuenta(); nota("Tu catálogo y tus compras guardadas ahora quedan en tu cuenta."); }
 }
 const nota = t => { const n = $("cuentaNota"); if(n) n.textContent = t; };
+let avisosPref = "semanal";
 function pintarCuenta(){
   const C = $("cuenta"); if(!C) return;
   if(sesion){
     C.innerHTML = '<div class="nota">Conectado como <b>' + esc(sesion.correo || "") + '</b>. Tus datos se guardan en tu cuenta y los ves en cualquier dispositivo.</div>' +
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="aprenderOk"' + (perfil.aprender !== false ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
       '<span>Ayudar a mejorar Apto <span class="nota" style="display:block">Cuando guardas o descartas una compra, Apto registra de forma anónima qué palabras calzan con qué productos. <a href="privacidad.html">Más información</a></span></span></label>' +
+      '<label for="avisosSel" style="margin-top:10px">Avisos de compras nuevas por correo</label>' +
+      '<select id="avisosSel"><option value="diario">Cada mañana</option><option value="semanal">Una vez por semana</option><option value="no">No quiero avisos</option></select>' +
       '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button><button class="sec" id="borrarDatos">Borrar mis datos</button></div><p class="nota" id="cuentaNota"></p>';
+    $("avisosSel").value = avisosPref;
+    $("avisosSel").onchange = async e => {
+      try{ await sb("/rest/v1/cuentas?user_id=eq." + sesion.id, {method: "PATCH", headers: {"Prefer": "return=minimal"}, body: JSON.stringify({avisos: e.target.value})});
+        avisosPref = e.target.value; nota(e.target.value === "no" ? "Listo: no te enviaremos avisos." : "Listo: te avisaremos " + (e.target.value === "diario" ? "cada mañana." : "una vez por semana.")); }
+      catch(err){ nota("No se pudo guardar: " + err.message); }
+    };
     $("salir").onclick = async () => { try{ await sb("/auth/v1/logout", {method: "POST"}); }catch(e){} guardarSesion(null); pintarCuenta(); };
     $("aprenderOk").onchange = e => { perfil.aprender = e.target.checked; cambio(); nota(e.target.checked ? "Gracias: Apto aprenderá de forma anónima con tu uso." : "Listo: Apto ya no registrará tu uso."); };
     $("borrarDatos").onclick = async () => {

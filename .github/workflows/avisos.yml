@@ -1,0 +1,40 @@
+# Avisos por correo de Apto (retención): cada mañana a las 8:30 de Chile.
+# - Clientes activos: compras nuevas que calzan con lo que venden (diario o semanal, según eligieron).
+# - Clientes inactivos: una vez al mes, "si hubieras seguido con Apto…" con un código de descuento.
+# Necesita los secretos SUPABASE_SERVICE_KEY, GMAIL_USUARIO y GMAIL_CLAVE_APP, y la variable AVISOS_ACTIVOS = 1
+# para enviar de verdad (sin ella corre en modo prueba y no envía nada). El cliente no configura nada.
+name: Avisos por correo
+
+on:
+  schedule:
+    - cron: "30 11 * * *"   # 8:30 en Chile (UTC-3)
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  avisos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SUPABASE_URL: https://izxhfajflqmfhgligblu.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      GMAIL_USUARIO: ${{ secrets.GMAIL_USUARIO }}
+      GMAIL_CLAVE_APP: ${{ secrets.GMAIL_CLAVE_APP }}
+      ENVIAR: ${{ vars.AVISOS_ACTIVOS }}
+      DESCUENTO: "10"
+      AVISOS_SALIDA: ${{ runner.temp }}/apto-avisos.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Armar y enviar avisos
+        run: |
+          if [ -z "$SUPABASE_SERVICE_KEY" ]; then echo "Avisos aún sin configurar (falta el secreto SUPABASE_SERVICE_KEY)."; exit 0; fi
+          node herramientas/avisos.js
+          python herramientas/enviar_avisos.py

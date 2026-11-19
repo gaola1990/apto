@@ -175,8 +175,20 @@ function etiquetaCierre(dias){
   if(dias < 3) return ["al", "quedan " + Math.floor(dias) + " d"];
   return ["ok", "quedan " + Math.floor(dias) + " días"];
 }
+// En el celular la lista queda debajo del formulario: un botón flotante avisa que hay compras y lleva a ellas.
+function botonResultados(){
+  const b = $("irResultados"); if(!b) return;
+  const lista = $("lista"), visible = lista && lista.getBoundingClientRect().top < innerHeight * 0.8;
+  const n = perfil.vistaGuardadas ? 0 : resultados.length;
+  b.hidden = !n || visible || innerWidth > 860;
+  b.textContent = "Ver " + n.toLocaleString("es-CL") + (n === 1 ? " compra para ti ↓" : " compras para ti ↓");
+}
+addEventListener("scroll", () => botonResultados(), {passive: true});
+document.addEventListener("click", e => { if(e.target.id === "irResultados") $("lista").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"}); });
+addEventListener("resize", () => botonResultados());
 function pintar(){
   calcular();
+  setTimeout(botonResultados, 0);
   const semana = resultados.filter(r => r.dias !== null && r.dias <= 7).length;
   const chicas = resultados.filter(r => r.tipo.n <= 2).length;
   $("cifras").innerHTML =

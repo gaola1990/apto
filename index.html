@@ -102,6 +102,8 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 .plan li:before{content:"✓";position:absolute;left:2px;color:var(--marca);font-weight:700}
 .plan li.no{color:var(--suave)}.plan li.no:before{content:"–";color:var(--suave)}
 .nota-pl{color:var(--suave);font-size:14px;margin:14px 0 0}
+.flotante{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:30;border-radius:999px;padding:12px 22px;box-shadow:0 10px 26px rgba(29,78,158,.35);max-width:calc(100% - 32px);white-space:nowrap}
+.flotante[hidden]{display:none}
 @media(max-width:700px){.planes{grid-template-columns:1fr}}
 @media(max-width:860px){.mosaico{grid-template-columns:1fr 1fr}.tile,.t-tall{grid-column:span 1}.t-big,.t-wide{grid-column:span 2}.t-big{min-height:300px}.pasos3{grid-template-columns:1fr}}
 @media(max-width:560px){.mosaico{grid-template-columns:1fr}.tile,.t-big,.t-tall,.t-wide{grid-column:span 1}.t-tall{grid-row:auto}.tile{padding:22px}}
@@ -212,7 +214,7 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
       <ul class="sem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-al"><i></i>Te falta indicarlo<small>Garantía de 6 meses</small></li><li class="s-ro"><i></i>No cumple<small>3.600 de 4.000 lúmenes</small></li></ul></article>
     <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
-    <article class="tile rv" style="--d:.15s"><p class="k">Sin experiencia previa</p><h3>Hecho para quien nunca ha licitado.</h3><p>Te explica en simple qué piden y qué te falta.</p></article>
+    <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto entiende sinónimos, abreviaturas y errores, y busca en el catálogo oficial de Mercado Público.</p></article>
     <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado ni trabajamos para los compradores: estamos del lado de quien vende.</p></div>
       <div class="chips2"><span>API pública de ChileCompra</span><span>Datos abiertos</span><span>Desde 0,5 UF al mes</span></div></article>
   </div>
@@ -221,8 +223,8 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 <section class="seccion" id="pasos" aria-label="Cómo funciona">
   <h2 class="sec-t rv">Tres pasos. <span>Cero planillas.</span></h2>
   <div class="pasos3">
-    <div class="paso rv"><b>1</b><h3>Cuéntanos qué vendes</h3><p>Elige tu rubro y agrega tus productos con sus características.</p></div>
-    <div class="paso rv" style="--d:.1s"><b>2</b><h3>Mira tus compras</h3><p>De miles de licitaciones, Apto te deja las que calzan contigo.</p></div>
+    <div class="paso rv"><b>1</b><h3>Cuéntanos qué vendes</h3><p>Escríbelo como quieras, o pon tu RUT y Apto arma tu catálogo con lo que ya le vendiste al Estado.</p></div>
+    <div class="paso rv" style="--d:.1s"><b>2</b><h3>Mira tus compras</h3><p>De miles de licitaciones y Compras Ágiles, Apto te deja las que calzan contigo.</p></div>
     <div class="paso rv" style="--d:.2s"><b>3</b><h3>Revisa si cumples</h3><p>Requisito por requisito, con lo que te falta y el plan para llegar a tiempo.</p></div>
   </div>
 </section>
@@ -246,16 +248,14 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 
 <main>
   <section class="tarjeta" aria-label="Perfil de mi negocio">
-    <h2>Mi cuenta</h2>
-    <div id="cuenta"></div>
-    <h2 style="margin-top:20px">Mi negocio</h2>
-    <div class="nota">Elige uno o más rubros. Apto revisa todas las licitaciones abiertas y te muestra solo las tuyas.</div>
-    <label>Rubros</label>
-    <div class="chips" id="rubros"></div>
-    <label for="extra">Productos o servicios propios (separados por coma)</label>
-    <textarea id="extra" placeholder="ej: arreglos florales, coronas, decoración"></textarea>
+    <h2>Mi negocio</h2>
+    <div class="nota">Escribe lo que vendes y Apto revisa todas las licitaciones abiertas para mostrarte solo las tuyas.</div>
+    <label for="extra">¿Qué vendes? (separado por coma)</label>
+    <textarea id="extra" placeholder="ej: notebook, tóner, mant. de pc, arreglos florales"></textarea>
     <p class="nota" id="corregido" aria-live="polite" style="margin:4px 0 0"></p>
     <p class="nota" id="clases" aria-live="polite" style="margin:4px 0 0"></p>
+    <label>O elige uno o más rubros</label>
+    <div class="chips" id="rubros"></div>
     <label for="excluir">No me interesa (separado por coma)</label>
     <input type="text" id="excluir" placeholder="ej: hospital, maquinaria pesada">
     <label for="region">Mi región</label>
@@ -297,6 +297,9 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
       <input type="text" id="ticket" autocomplete="off" placeholder="Si lo dejas vacío se usa el ticket de prueba">
       <div class="nota">El ticket propio se pide gratis en api.mercadopublico.cl y se guarda solo en este navegador.</div>
     </details>
+    <button class="principal flotante" id="irResultados" type="button" hidden></button>
+    <h2 style="margin-top:22px">Mi cuenta</h2>
+    <div id="cuenta"></div>
     <p class="nota" id="fuente" style="margin:14px 0 0"></p>
   </section>
 

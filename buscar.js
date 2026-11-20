@@ -275,5 +275,6 @@ function clasesDeDiccionario(term, maximo){
   return res.filter(r => r.puntos >= tope * 0.7).slice(0, maximo);
 }
 
-g.Buscar = {cargarDiccionario, cargarAprendido, clasesDe, norm, armar, calza, calzaAlt, raiz, sumarSinonimos, SIN, ABREV, expandir, expandirPalabras, vocabulario, corregir, correcciones};
+const nombreDe = c => { const k = DICC && DICC.find(x => x.c === c); return k ? k.nombre : ""; }; // nombre de una categoría (código ONU)
+g.Buscar = {nombreDe, cargarDiccionario, cargarAprendido, clasesDe, norm, armar, calza, calzaAlt, raiz, sumarSinonimos, SIN, ABREV, expandir, expandirPalabras, vocabulario, corregir, correcciones};
 })(typeof window !== "undefined" ? window : globalThis);

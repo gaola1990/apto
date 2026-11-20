@@ -4,7 +4,7 @@
   const LEIDAS = "rp_leidas", VISTAS = "rp_vistas";
   const get = (k, d) => { try{ return JSON.parse(localStorage.getItem(k)) || d; }catch(e){ return d; } };
   const set = (k, v) => { try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} };
-  let publicas = [], filtro = "todo";
+  let publicas = [], noticias = null, filtro = "todo";
   const el = id => document.getElementById(id);
   const hace = f => { const m = (Date.now() - new Date(f)) / 6e4; return m < 60 ? "hace " + Math.max(1, Math.round(m)) + " min" : m < 1440 ? "hace " + Math.round(m / 60) + " h" : "hace " + Math.round(m / 1440) + " d"; };
   const e = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
@@ -31,8 +31,84 @@
     }
     return out;
   }
-  const todas = () => personales().concat(publicas);
-  const coincide = n => filtro === "todo" || (filtro === "personal" && n.tipo === "personal") || (filtro === "estudios" && (n.tipo === "estudio" || n.tipo === "reporte")) || (filtro === "promos" && (n.tipo === "promo" || n.tipo === "novedad"));
+  // Lo que vende el cliente, como categorías de Mercado Público: lo que escribió (y sus sinónimos), su catálogo por RUT
+  // y las compras que guardó o en las que participa. Con esto los estudios y noticias son solo de su rubro.
+  function misClases(){
+    const s = new Set();
+    try{ if(typeof misCategorias === "function" && typeof terminos === "function") misCategorias(terminos()).forEach(c => s.add(c)); }catch(e){}
+    if(typeof perfil !== "undefined") (perfil.cats || []).forEach(c => s.add(c));
+    if(typeof guardadas !== "undefined" && typeof DET !== "undefined") Object.keys(guardadas).forEach(k => ((DET[k] && DET[k].c) || []).forEach(c => s.add(c)));
+    return s;
+  }
+  const nombre = c => (typeof Buscar !== "undefined" && Buscar.nombreDe && Buscar.nombreDe(c)) || "categoría " + c;
+  const num = n => Math.round(n).toLocaleString("es-CL");
+  const plata = n => n >= 1e6 ? "$" + (n / 1e6).toLocaleString("es-CL", {maximumFractionDigits: 1}) + " millones" : "$" + num(n);
+  const titulo = t => t.toLowerCase().replace(/(^|\s)\S/g, x => x.toUpperCase());
+
+  // Estudios, reportes y noticias del rubro del cliente (se arman aquí, con los datos que la página ya cargó)
+  function deSuRubro(cl){
+    const out = [], hoy = new Date().toISOString().slice(0, 10);
+    if(!cl.size) return out;
+    // 1) Su mercado: compras abiertas en sus categorías y cuáles concentran más
+    if(typeof datos !== "undefined" && typeof DET !== "undefined"){
+      const cuenta = new Map(); let abiertas = 0, semana = 0;
+      datos.forEach(d => {
+        const c = ((DET[d.codigo] && DET[d.codigo].c) || []).filter(x => cl.has(x)); if(!c.length) return;
+        const h = d.cierre ? (new Date(d.cierre) - Date.now()) / 864e5 : null; if(h !== null && h < 0) return;
+        abiertas++; if(h !== null && h <= 7) semana++;
+        c.forEach(x => cuenta.set(x, (cuenta.get(x) || 0) + 1));
+      });
+      if(abiertas) out.push({id: "rubro-mercado-" + hoy, tipo: "estudio", tuyo: true, icono: "📊", titulo: "Tu rubro hoy: " + num(abiertas) + (abiertas === 1 ? " compra abierta" : " compras abiertas"),
+        texto: [...cuenta].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c, n]) => nombre(c) + " (" + n + ")").join(" · "),
+        detalle: semana + (semana === 1 ? " cierra" : " cierran") + " en los próximos 7 días.", fecha: new Date().toISOString(), accion: "lista"});
+    }
+    // 2) Competencia en sus categorías (licitaciones ya adjudicadas)
+    if(typeof COMP !== "undefined" && COMP){
+      const f = [...cl].map(c => [c, COMP.clases[c]]).filter(([, x]) => x && x.n >= 3);
+      if(f.length){
+        const n = f.reduce((a, [, x]) => a + x.n, 0), med = f.reduce((a, [, x]) => a + x.med * x.n, 0) / n;
+        const mejor = f.slice().sort((a, b) => a[1].med - b[1].med)[0];
+        out.push({id: "rubro-competencia-" + String(COMP.fecha).slice(0, 10), tipo: "estudio", tuyo: true, icono: "🎯", titulo: "Competencia en lo que vendes",
+          texto: "En tus categorías llegan en promedio " + med.toLocaleString("es-CL", {maximumFractionDigits: 1}) + " ofertas por licitación. Donde menos compiten: " + nombre(mejor[0]) + " (~" + mejor[1].med.toLocaleString("es-CL") + ").",
+          detalle: "Según " + num(n) + " licitaciones adjudicadas de tu rubro.", fecha: COMP.fecha});
+      }
+    }
+    // 3) Compra Ágil del mes en sus categorías: cuánto se pidió, a cuántos cotizan y quién compra
+    if(typeof CA !== "undefined" && CA){
+      const f = [...cl].map(c => CA.clases[c]).filter(Boolean);
+      const s = f.reduce((a, x) => a + x.s, 0);
+      if(s){
+        const cot = f.reduce((a, x) => a + x.s * x.cot, 0) / s, monto = f.reduce((a, x) => a + x.s * (x.monto || 0), 0) / s;
+        const org = new Map(); f.forEach(x => (x.org || []).forEach(([o, n]) => org.set(o, (org.get(o) || 0) + n)));
+        const top = [...org].sort((a, b) => b[1] - a[1]).slice(0, 2).map(([o]) => titulo(o));
+        const mes = new Date(CA.mes + "-15").toLocaleDateString("es-CL", {month: "long"});
+        out.push({id: "rubro-ca-" + CA.mes, tipo: "reporte", tuyo: true, icono: "⚡", titulo: "Compra Ágil de tu rubro en " + mes,
+          texto: num(s) + " solicitudes, con " + cot.toLocaleString("es-CL", {maximumFractionDigits: 1}) + " cotizaciones en promedio" + (monto ? " y montos de " + plata(monto) + " en promedio" : "") + ".",
+          detalle: top.length ? "Los que más compraron: " + top.join(" y ") + "." : "", fecha: new Date(CA.mes + "-28T12:00:00").toISOString()});
+      }
+    }
+    // 4) Noticias de su rubro (temas asociados a sus segmentos de productos)
+    if(noticias && noticias.temas){
+      // segmentos con peso: categorías del cliente + compras abiertas que le calzan; quedan los que pesan al menos 40 % del principal
+      const peso = new Map(), suma = (k, n) => peso.set(k, (peso.get(k) || 0) + n);
+      cl.forEach(c => suma(String(c).slice(0, 2), 1));
+      if(typeof resultados !== "undefined" && typeof DET !== "undefined") resultados.forEach(r => ((DET[r.codigo] && DET[r.codigo].c) || []).forEach(c => { if(cl.has(c)) suma(String(c).slice(0, 2), 1); }));
+      const tope = Math.max(...peso.values()), seg = new Set([...peso].filter(([, n]) => n >= tope * 0.4).map(([k]) => k)), vistas = new Set();
+      Object.values(noticias.temas).filter(t => t.seg.some(x => seg.has(x))).forEach(t => t.items.forEach(n => {
+        if(vistas.has(n.l)) return; vistas.add(n.l);
+        out.push({id: "noticia-" + n.l.slice(-40), tipo: "noticia", tuyo: true, icono: "📰", titulo: n.t, texto: t.nombre + " · " + n.s, fecha: n.f, url: n.l});
+      }));
+    }
+    return out;
+  }
+  // Con rubro conocido se muestran solo sus estudios; los nacionales quedan para quien aún no dice qué vende.
+  function todas(){
+    const cl = misClases(), propios = deSuRubro(cl);
+    const notis = propios.filter(n => n.tipo === "noticia").sort((a, b) => new Date(b.fecha) - new Date(a.fecha)).slice(0, 6);
+    const pub = publicas.filter(n => !cl.size || (n.tipo !== "estudio" && n.tipo !== "reporte"));
+    return personales().concat(propios.filter(n => n.tipo !== "noticia"), notis, pub);
+  }
+  const coincide = n => filtro === "todo" || (filtro === "personal" && n.tipo === "personal") || (filtro === "estudios" && (n.tipo === "estudio" || n.tipo === "reporte")) || (filtro === "noticias" && n.tipo === "noticia") || (filtro === "promos" && (n.tipo === "promo" || n.tipo === "novedad"));
 
   function contar(){
     const leidas = new Set(get(LEIDAS, [])), n = todas().filter(x => !leidas.has(x.id)).length;
@@ -45,7 +121,7 @@
     el("notifLista").innerHTML = lista.length ? lista.map((n, i) =>
       '<li class="notif' + (leidas.has(n.id) ? "" : " nueva") + '" style="--i:' + i + '"><button type="button" data-id="' + e(n.id) + '">' +
       '<span class="ni">' + e(n.icono || "•") + '</span><span class="nt"><b>' + e(n.titulo) + "</b><span>" + e(n.texto) + "</span>" +
-      (n.detalle ? '<small>' + e(n.detalle) + "</small>" : "") + '<em>' + hace(n.fecha) + "</em></span></button></li>").join("")
+      (n.detalle ? '<small>' + e(n.detalle) + "</small>" : "") + '<em>' + (n.tuyo && n.tipo !== "noticia" ? "De tu rubro · " : "") + hace(n.fecha) + "</em></span></button></li>").join("")
       : '<li class="vacio">No hay notificaciones aquí por ahora.</li>';
     document.querySelectorAll("#notifFiltros button").forEach(b => b.setAttribute("aria-pressed", b.dataset.f === filtro));
   }
@@ -69,6 +145,7 @@
   function iniciar(){
     if(listo || !el("notifBtn")) return; listo = true;
     fetch("notificaciones.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { publicas = (j && j.items) || []; contar(); }).catch(() => {});
+    fetch("noticias.json", {cache: "no-store"}).then(r => r.ok ? r.json() : null).then(j => { noticias = j; contar(); }).catch(() => {});
     el("notifBtn").onclick = ev => { ev.stopPropagation(); el("notifPanel").hidden ? abrirPanel() : cerrarPanel(); };
     el("notifTodas").onclick = () => { set(LEIDAS, todas().map(n => n.id).concat(get(LEIDAS, [])).slice(0, 400)); pintar(); contar(); };
     el("notifFiltros").onclick = ev => { const b = ev.target.closest("button[data-f]"); if(b){ filtro = b.dataset.f; pintar(); } };
@@ -76,7 +153,8 @@
       const b = ev.target.closest("button[data-id]"); if(!b) return;
       const n = todas().find(x => x.id === b.dataset.id); leer(b.dataset.id); cerrarPanel();
       if(!n) return;
-      if(n.codigo && typeof abrir === "function") abrir(n.codigo);
+      if(n.url) window.open(n.url, "_blank", "noopener");
+      else if(n.codigo && typeof abrir === "function") abrir(n.codigo);
       else if(n.accion === "lista") el("lista").scrollIntoView({behavior: "smooth", block: "start"});
       else if(n.enlace && n.enlace.startsWith("?c=") && typeof abrir === "function") abrir(n.enlace.slice(3));
       else if(n.enlace) location.hash = n.enlace.replace(/^#/, "");

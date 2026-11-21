@@ -64,6 +64,58 @@ header nav a.cta:hover{background:#B8261B}
 .tile p{margin:0;color:var(--suave)}
 .k{font-size:14px;font-weight:700;color:var(--marca);margin:0}
 .t-big{grid-column:span 4;grid-row:span 2;background:var(--marca);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;min-height:380px}
+/* tarjeta de demostración: una "ventana" que repite en ciclo (15 s) los tres pasos; todo con CSS, sin video pesado */
+.t-demo{justify-content:space-between!important;gap:12px}
+.ventana{background:#fff;color:#1B2430;border-radius:16px;overflow:hidden;box-shadow:0 18px 40px rgba(8,30,70,.35);position:relative;z-index:1;flex:1;min-height:238px;display:flex;flex-direction:column}
+.vbar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#EEF2F8;border-bottom:1px solid #DDE4EE;position:relative;min-height:36px}
+.vbar i{width:9px;height:9px;border-radius:50%;background:#C9D3E3;flex:none}
+.vtit{position:absolute;left:62px;font-size:13px;font-weight:700;color:var(--marca);opacity:0;white-space:nowrap}
+.vt1{animation:vt1 15s infinite}.vt2{animation:vt2 15s infinite}.vt3{animation:vt3 15s infinite}
+.vcuerpo{position:relative;flex:1;padding:14px}
+.vesc{position:absolute;inset:14px;opacity:0;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.ve1{animation:ve1 15s infinite}.ve2{animation:ve2 15s infinite}.ve3{animation:ve3 15s infinite}
+.vcampo{border:2px solid var(--marca);border-radius:12px;padding:12px 14px;font-size:clamp(14px,1.5vw,17px);background:#fff;min-height:48px;display:flex;align-items:center}
+.tipeo{display:inline-block;white-space:nowrap;clip-path:inset(0 100% 0 0);animation:tipea 15s steps(36,end) infinite}
+.ventendi{opacity:0;animation:entendi 15s infinite}
+.vop{margin:0!important;padding:10px 12px;opacity:0;transform:translateY(10px);pointer-events:none;box-shadow:0 1px 3px rgba(27,36,48,.1)}
+.vop h3{font-size:clamp(13px,1.35vw,15px)!important;margin:0 0 4px!important;line-height:1.2}
+.vop1{animation:vop1 15s infinite}.vop2{animation:vop2 15s infinite}.vop3{animation:vop3 15s infinite}
+.vsem{margin:0!important;display:grid;gap:6px}
+.vsem li{opacity:0;transform:translateX(-10px);display:flex!important;align-items:center;gap:8px;padding:7px 12px!important;border-radius:10px;font-size:14px;margin:0!important}
+.vsem li small{display:inline!important;margin:0 0 0 auto!important;font-size:13px;opacity:.85}
+.vsem li i{flex:none}
+.vsem li:nth-child(1){animation:vr1 15s infinite}.vsem li:nth-child(2){animation:vr2 15s infinite}.vsem li:nth-child(3){animation:vr3 15s infinite}
+.vfin{opacity:0;background:#E8EFFB;border-radius:12px;padding:8px 12px;display:flex;flex-direction:column;gap:1px;font-size:clamp(12.5px,1.3vw,14.5px);line-height:1.3;animation:vfin 15s infinite}
+.vfin b{color:var(--marca)}.vfin span{color:#4B5668}
+.vpasos{display:flex;gap:8px;position:relative;z-index:1;flex-wrap:wrap}
+.vpasos span{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff;opacity:.7}
+.vp1{animation:vp1 15s infinite}.vp2{animation:vp2 15s infinite}.vp3{animation:vp3 15s infinite}
+.vnota{position:relative;z-index:1;font-size:12px;opacity:.75}
+/* tiempos (15 s): paso 1 de 0 a 30 %, paso 2 de 31 a 61 %, paso 3 de 62 a 94 %, y se reinicia */
+@keyframes vt1{0%,29%{opacity:1}31%,100%{opacity:0}}
+@keyframes vt2{0%,30%{opacity:0}32%,60%{opacity:1}62%,100%{opacity:0}}
+@keyframes vt3{0%,61%{opacity:0}63%,93%{opacity:1}96%,100%{opacity:0}}
+@keyframes ve1{0%,29%{opacity:1}31%,100%{opacity:0}}
+@keyframes ve2{0%,30%{opacity:0}32%,60%{opacity:1}62%,100%{opacity:0}}
+@keyframes ve3{0%,61%{opacity:0}63%,93%{opacity:1}96%,100%{opacity:0}}
+@keyframes tipea{0%,3%{clip-path:inset(0 100% 0 0)}20%,100%{clip-path:inset(0 0 0 0)}}
+@keyframes entendi{0%,22%{opacity:0}25%,29%{opacity:1}31%,100%{opacity:0}}
+@keyframes vop1{0%,32%{opacity:0;transform:translateY(10px)}36%,60%{opacity:1;transform:none}62%,100%{opacity:0}}
+@keyframes vop2{0%,38%{opacity:0;transform:translateY(10px)}42%,60%{opacity:1;transform:none}62%,100%{opacity:0}}
+@keyframes vop3{0%,44%{opacity:0;transform:translateY(10px)}48%,60%{opacity:1;transform:none}62%,100%{opacity:0}}
+@keyframes vr1{0%,64%{opacity:0;transform:translateX(-10px)}68%,93%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes vr2{0%,70%{opacity:0;transform:translateX(-10px)}74%,93%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes vr3{0%,76%{opacity:0;transform:translateX(-10px)}80%,93%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes vfin{0%,83%{opacity:0}87%,93%{opacity:1}96%,100%{opacity:0}}
+@keyframes vp1{0%,29%{opacity:1;background:#fff;color:var(--marca)}31%,100%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}}
+@keyframes vp2{0%,30%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}32%,60%{opacity:1;background:#fff;color:var(--marca)}62%,100%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}}
+@keyframes vp3{0%,61%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}63%,93%{opacity:1;background:#fff;color:var(--marca)}96%,100%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}}
+@media(prefers-reduced-motion:reduce){.vtit,.vesc,.tipeo,.ventendi,.vop,.vsem li,.vfin,.vpasos span{animation:none!important}.ve3,.vt3{opacity:1}.vsem li,.vfin{opacity:1;transform:none}.vp3{opacity:1;background:#fff;color:var(--marca)}}
+/* contador: ahora es una tarjeta chica al lado de "Habla como tú" */
+.t-num{background:var(--marca);color:#fff}
+.t-num .k,.t-num p{color:rgba(255,255,255,.9)!important}
+.t-num .num{font-size:clamp(46px,5.4vw,78px);margin:4px 0 8px}
+.t-num::after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;border:22px solid rgba(255,255,255,.08);right:-40px;top:-40px}
 .t-big .k,.t-big p{color:rgba(255,255,255,.88)}
 .t-big::before,.t-big::after{content:"";position:absolute;border-radius:50%;border:56px solid rgba(255,255,255,.07)}
 .t-big::before{width:380px;height:380px;right:-110px;top:-120px;animation:girar 18s linear infinite}
@@ -71,7 +123,7 @@ header nav a.cta:hover{background:#B8261B}
 @keyframes girar{50%{transform:translate(-20px,24px) scale(1.06)}}
 .num{display:block;font-size:clamp(68px,11vw,150px);line-height:.95;letter-spacing:-.045em;font-variant-numeric:tabular-nums;margin:6px 0 10px}
 .t-tall{grid-row:span 2}
-.t-wide{grid-column:span 4;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.t-wide{grid-column:span 6;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .chips2{display:flex;gap:8px;flex-wrap:wrap}
 .chips2 span{background:var(--marca-suave);color:var(--marca);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:700}
 .sem{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:10px}
@@ -346,12 +398,36 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <section class="seccion" id="como" aria-label="Qué hace Apto">
   <h2 class="sec-t rv">Todo para ofertar. <span>En un solo lugar.</span></h2>
   <div class="mosaico">
-    <article class="tile t-big rv" id="tnum"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Son las compras en las que todavía puedes ofertar (se llaman <i>licitaciones</i>). Apto las revisa todas por ti y te deja solo las que sirven a tu negocio.</p></article>
+    <article class="tile t-big t-demo rv" id="demo" aria-label="Demostración: cómo funciona Apto en tres pasos, en ciclo">
+      <p class="k">Así funciona, en 15 segundos</p>
+      <div class="ventana" aria-hidden="true">
+        <div class="vbar"><i></i><i></i><i></i>
+          <span class="vtit vt1">Paso 1 · Cuéntanos qué vendes</span><span class="vtit vt2">Paso 2 · Mira tus compras</span><span class="vtit vt3">Paso 3 · Revisa si cumples</span></div>
+        <div class="vcuerpo">
+          <div class="vesc ve1">
+            <div class="vcampo"><span class="tipeo">bandas elásticas, pesas, colchonetas</span></div>
+            <div class="ventendi"><span class="et">Entendimos: artículos deportivos</span></div>
+          </div>
+          <div class="vesc ve2">
+            <article class="op vop vop1"><div><h3>Adquisición de 2 bandas elásticas de resistencia</h3><div class="meta"><span class="et">Hasta 100 UTM</span><span class="et calza">Calza: «bandas elásticas»</span></div></div><div class="cierre"><b>24 nov</b><span class="et al">quedan 3 d</span></div></article>
+            <article class="op vop vop2"><div><h3>Implementos para gimnasio municipal</h3><div class="meta"><span class="et">Hasta 100 UTM</span><span class="et calza">Calza: «pesas»</span></div></div><div class="cierre"><b>27 nov</b><span class="et ok">quedan 6 días</span></div></article>
+            <article class="op vop vop3"><div><h3>Colchonetas para taller de movimiento</h3><div class="meta"><span class="et">Hasta 100 UTM</span><span class="et calza">Calza: «colchonetas»</span></div></div><div class="cierre"><b>2 dic</b><span class="et ok">quedan 11 días</span></div></article>
+          </div>
+          <div class="vesc ve3">
+            <ul class="sem vsem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-ok"><i></i>Cumple<small>Largo de 45 m</small></li><li class="s-al"><i></i>Te falta indicarlo<small>Garantía de 6 meses</small></li></ul>
+            <div class="vfin"><b>Te falta 1 dato para ofertar tranquilo.</b><span>Te damos el texto listo para pegar en tu oferta.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="vpasos" aria-hidden="true"><span class="vp1">1 · Cuéntanos</span><span class="vp2">2 · Mira</span><span class="vp3">3 · Revisa</span></div>
+      <p class="vnota">Ejemplo ilustrativo, con datos de muestra.</p>
+    </article>
     <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Te decimos si cumples lo que piden. Y por qué.</h3><p class="glosa">Cada compra pide cosas concretas: medidas, garantía, plazo. Apto las compara con tu producto.</p>
       <ul class="sem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-al"><i></i>Te falta indicarlo<small>Garantía de 6 meses</small></li><li class="s-ro"><i></i>No cumple<small>3.600 de 4.000 lúmenes</small></li></ul></article>
     <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3><p class="glosa">Cuándo puedes preguntar, cuándo responden y cuándo cierra.</p>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
     <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto entiende abreviaturas, sinónimos y errores de escritura, y busca en el catálogo oficial de productos del Estado.</p></article>
+    <article class="tile t-num rv" id="tnum" style="--d:.2s"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Las que todavía puedes ofertar (<i>licitaciones</i>). Apto las revisa todas por ti.</p></article>
     <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>Usamos la información que ChileCompra publica abiertamente para todos. No somos el Estado ni trabajamos para los compradores: estamos del lado de quien vende.</p></div>
       <div class="chips2"><span>Datos oficiales de ChileCompra</span><span>Información abierta</span><span>Desde <b data-uf="0.5"></b> + IVA al mes</span></div></article>
   </div>

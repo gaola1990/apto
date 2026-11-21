@@ -244,6 +244,7 @@ function pintar(){
     cifra(resultados.length.toLocaleString("es-CL"), "calzan con tu negocio") +
     cifra(semana, "cierran en 7 días") +
     cifra(chicas, "de tamaño pyme (hasta 1.000 UTM)");
+  pintarNegocio();
   const L = $("lista");
   if(!datos.length){ L.innerHTML = '<div class="vacio">No se pudieron cargar licitaciones. Revisa tu conexión y recarga.</div>'; return; }
   if(!resultados.length){
@@ -260,6 +261,34 @@ function pintar(){
   }).join("");
   $("mas").hidden = resultados.length <= mostrar;
   $("mas").textContent = "Ver más (" + (resultados.length - mostrar) + " restantes)";
+}
+// ---------- A. El negocio en plata y B. lo que Apto hace por ti ----------
+// Monto de cada compra: el informado por el comprador; si no hay, el mínimo de su tramo (cálculo conservador).
+const UTM_CLP = 69000, UF_CLP = 39800; // valores de referencia (aprox.); el precio real se calcula al momento de cobrar
+const MINIMO_TRAMO = {1: 20, 2: 100, 3: 1000, 4: 2000, 5: 5000}; // UTM
+function montoDe(r){ const det = DET[r.codigo]; return (det && det.m) || (MINIMO_TRAMO[r.tipo.n] || 100) * UTM_CLP; }
+function millones(n){ return n >= 1e9 ? "$" + (n / 1e9).toLocaleString("es-CL", {maximumFractionDigits: 1}) + " mil millones" : n >= 1e6 ? "$" + (n / 1e6).toLocaleString("es-CL", {maximumFractionDigits: 1}) + " millones" : "$" + Math.round(n).toLocaleString("es-CL"); }
+function pintarNegocio(){
+  const el = $("negocio"); if(!el) return;
+  if(perfil.vistaGuardadas || !resultados.length){ el.innerHTML = ""; return; }
+  const montos = resultados.map(montoDe).sort((a, b) => a - b);
+  const total = montos.reduce((a, b) => a + b, 0), tipico = montos[Math.floor(montos.length / 2)];
+  const planApto = 1.5 * UF_CLP;
+  let logueado = false; try{ logueado = !!sesion; }catch(e){} // sesion se declara más abajo
+  el.innerHTML = '<div class="negocio"><p class="grande">💰 Hoy hay ' + resultados.length.toLocaleString("es-CL") + (resultados.length === 1 ? " compra abierta" : " compras abiertas") + " para ti, por al menos " + millones(total) + ".</p>" +
+    "<p>Una compra de tamaño típico para ti vale unos <b>" + millones(tipico) + "</b>. El Plan Apto cuesta 1,5 UF al mes (unos " + millones(planApto) + "): " +
+      (planApto / tipico < 0.01 ? "<b>menos del 1 % de una sola compra</b>." : "<b>el " + Math.ceil(100 * planApto / tipico) + " % de una sola compra</b>.") + "</p>" +
+    '<p class="nota" style="margin-top:6px">Montos informados por los compradores o, si no los publican, el mínimo de cada tramo de tamaño (cálculo conservador).</p></div>' +
+    '<details class="porti"' + (leer("rp_porti_visto", false) ? "" : " open") + '><summary>Lo que Apto hace por ti</summary><ul>' +
+    '<li><span class="ic">📩</span><div><b>Te avisa cada mañana por correo</b> de las compras nuevas que calzan contigo. No tienes que entrar a buscar.<br>' +
+      (logueado ? '<span class="nota">Tus avisos se configuran en "Mi cuenta".</span>' : '<button type="button" class="sec" id="activarAvisos">Activar avisos por correo</button>') + "</div></li>" +
+    '<li><span class="ic">📅</span><div><b>Te recuerda los plazos.</b> Guarda una compra (☆) y toca "Agregar todos los plazos a mi calendario": tu teléfono te avisa antes de cada fecha.</div></li>' +
+    '<li><span class="ic">💲</span><div><b>Te dice cuánto cobrar.</b> En cada compra ves a cuánto se adjudicó ese mismo producto antes, y en la campana 🔔 cuánto bajo el presupuesto ofertan los que ganan.</div></li>' +
+    '<li><span class="ic">✅</span><div><b>Te dice si cumples</b> con ¿Cumplo?: subes la ficha técnica y te muestra qué te falta escribir para que no te rechacen.</div></li>' +
+    '<li><span class="ic">🧭</span><div><b>¿Es tu primera vez?</b> <a href="guia.html">Lee cómo hacer tu primera oferta, paso a paso</a>.</div></li></ul></details>';
+  const det = el.querySelector(".porti"); if(det) det.ontoggle = () => { if(!det.open) guardar("rp_porti_visto", true); };
+  const b = $("activarAvisos");
+  if(b) b.onclick = () => { const c = $("correo") || $("cuenta"); if(c){ c.scrollIntoView({behavior: "smooth", block: "center"}); if(c.focus) setTimeout(() => c.focus(), 400); } };
 }
 const cifra = (n, t) => '<div class="cifra"><b>' + n + "</b><span>" + t + "</span></div>";
 
@@ -339,7 +368,7 @@ async function abrir(codigo){
     '<button class="sec" id="bno" title="Apto aprende de esto para mostrarte compras más parecidas a lo que vendes">👎 No me sirve</button>' +
     '<button class="sec" id="bcal">Agregar todos los plazos a mi calendario</button>' +
     '<a class="sec" style="text-decoration:none;display:inline-block;border:1px solid var(--linea);border-radius:8px;padding:8px 12px" target="_blank" rel="noopener" href="' + FICHA + encodeURIComponent(codigo) + '">Abrir ficha oficial ↗</a></div>' +
-    '<p class="nota" style="margin-bottom:0">El plan es una guía general. Las bases de cada licitación mandan: revisa siempre sus requisitos.</p>';
+    '<p class="nota" style="margin-bottom:0">El plan es una guía general. Las bases de cada licitación mandan: revisa siempre sus requisitos. ¿Primera vez? <a href="guia.html" target="_blank" rel="noopener">Cómo ofertar, paso a paso</a>.</p>';
   activarCumplo(D);
   D.querySelectorAll(".pasos input").forEach(ch => ch.onchange = () => { (hechos[codigo] = hechos[codigo] || {})[ch.dataset.i] = ch.checked; guardar("rp_pasos", hechos); });
   $("bg").onclick = () => { if(guardadas[codigo]) delete guardadas[codigo]; else { guardadas[codigo] = 1; senal("guardar", codigo); } guardar("rp_guardadas", guardadas); $("bg").textContent = guardadas[codigo] ? "★ Guardada" : "☆ Guardar"; pintar(); };
@@ -627,7 +656,7 @@ function bloqueCumplo(){
 }
 function formCumplo(){
   const ac = ".pdf,.docx,.png,.jpg,.jpeg,.webp";
-  return '<div class="cumplo"><label>Ficha técnica de la compra (PDF, Word o imagen)</label><input type="file" class="c-eett" accept="' + ac + '">' +
+  return '<div class="cumplo"><label>Ficha técnica de la compra (PDF, Word o imagen) <a href="guia.html#ficha" target="_blank" rel="noopener" style="font-weight:400">¿Cómo la descargo?</a></label><input type="file" class="c-eett" accept="' + ac + '">' +
     '<label>Producto que quieres ofrecer</label><select class="c-prod"><option value="">Ninguno: solo ver los requisitos</option>' +
     catalogo.map(p => '<option value="' + esc(p.id) + '">' + esc(p.nombre) + "</option>").join("") + "</select>" +
     '<label>Ficha de tu producto (opcional)</label><input type="file" class="c-of" accept="' + ac + '">' +

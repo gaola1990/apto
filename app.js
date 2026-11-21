@@ -366,6 +366,7 @@ async function abrir(codigo){
     "</dl>" + enSimple(codigo) + tengo(items) + bloqueCumplo() + "<h2>Mi plan para ofertar</h2>" + plan(d, base) +
     '<div class="acciones"><button class="principal" id="bg">' + (guardadas[codigo] ? "★ Guardada" : "☆ Guardar") + '</button>' +
     '<button class="sec" id="bno" title="Apto aprende de esto para mostrarte compras más parecidas a lo que vendes">👎 No me sirve</button>' +
+    (c.NombreOrganismo ? '<button class="sec" id="bseg" title="Te avisamos en la campana cuando este comprador publique compras nuevas">' + (siguiendo(c.NombreOrganismo) ? "✓ Sigues a este comprador" : "🏛 Seguir a este comprador") + '</button>' : "") +
     '<button class="sec" id="bcal">Agregar todos los plazos a mi calendario</button>' +
     '<a class="sec" style="text-decoration:none;display:inline-block;border:1px solid var(--linea);border-radius:8px;padding:8px 12px" target="_blank" rel="noopener" href="' + FICHA + encodeURIComponent(codigo) + '">Abrir ficha oficial ↗</a></div>' +
     '<p class="nota" style="margin-bottom:0">El plan es una guía general. Las bases de cada licitación mandan: revisa siempre sus requisitos. ¿Primera vez? <a href="guia.html" target="_blank" rel="noopener">Cómo ofertar, paso a paso</a>.</p>';
@@ -373,8 +374,17 @@ async function abrir(codigo){
   D.querySelectorAll(".pasos input").forEach(ch => ch.onchange = () => { (hechos[codigo] = hechos[codigo] || {})[ch.dataset.i] = ch.checked; guardar("rp_pasos", hechos); });
   $("bg").onclick = () => { if(guardadas[codigo]) delete guardadas[codigo]; else { guardadas[codigo] = 1; senal("guardar", codigo); } guardar("rp_guardadas", guardadas); $("bg").textContent = guardadas[codigo] ? "★ Guardada" : "☆ Guardar"; pintar(); };
   $("bno").onclick = () => { noSirve[codigo] = 1; guardar("rp_nosirve", noSirve); senal("no_sirve", codigo); $("dlg").close(); pintar(); };
+  if($("bseg")) $("bseg").onclick = () => {
+    const n = (c.NombreOrganismo || "").trim(), s = new Set(perfil.compradores || []);
+    if(s.has(n)) s.delete(n); else s.add(n);
+    perfil.compradores = [...s]; cambio();
+    $("bseg").textContent = s.has(n) ? "✓ Sigues a este comprador" : "🏛 Seguir a este comprador";
+    if(window.Notif && Notif.pintar) try{ Notif.pintar(); }catch(e){}
+  };
   $("bcal").onclick = () => calendario(codigo, d.Nombre || base.nombre, (d.Fechas || {}).FechaCierre || base.cierre, d.Fechas || {});
 }
+// Compradores que el vendedor sigue (perfil.compradores): se comparan por nombre exacto del organismo.
+function siguiendo(nombre){ return (perfil.compradores || []).includes((nombre || "").trim()); }
 // Precio de referencia: a cuánto se adjudicó el mismo producto en licitaciones anteriores (agregados públicos).
 function precioRef(items){
   const filas = [];

@@ -25,6 +25,18 @@
       if(h > 0 && h < 72) out.push({id: "cierra-" + d.codigo + "-" + (h < 24 ? "hoy" : "pronto"), tipo: "personal", icono: "⏰", titulo: (h < 24 ? "¡Cierra hoy! " : "Cierra en " + Math.ceil(h / 24) + " días: ") + "una compra que guardaste",
         texto: d.nombre.trim().slice(0, 110), fecha: new Date().toISOString(), codigo: d.codigo});
     });
+    // compradores que sigue: compras abiertas publicadas por ellos (el nombre del organismo viene en detalles.json)
+    const seg = new Set((typeof perfil !== "undefined" && perfil.compradores) || []);
+    if(seg.size && typeof DET !== "undefined"){
+      const porComprador = {};
+      datos.filter(d => d.cierre && new Date(d.cierre) > Date.now() && DET[d.codigo] && seg.has(DET[d.codigo].o)).forEach(d => (porComprador[DET[d.codigo].o] = porComprador[DET[d.codigo].o] || []).push(d));
+      Object.entries(porComprador).forEach(([o, l]) => {
+        l.sort((a, b) => new Date(a.cierre) - new Date(b.cierre));
+        out.push({id: "comprador-" + o.slice(0, 40) + "-" + l.length + "-" + new Date().toDateString(), tipo: "personal", icono: "🏛",
+          titulo: o + " tiene " + l.length + (l.length === 1 ? " compra abierta" : " compras abiertas"),
+          texto: "La que cierra primero: " + l[0].nombre.trim().slice(0, 90), fecha: new Date().toISOString(), codigo: l[0].codigo});
+      });
+    }
     if(r.length && typeof perfil !== "undefined" && (perfil.extra || "").trim()){
       const pocas = r.filter(x => x.comp && x.comp.med <= 2).length, semana = r.filter(x => x.dias !== null && x.dias <= 7).length;
       out.push({id: "reporte-personal-" + new Date().toISOString().slice(0, 10), tipo: "personal", icono: "📈", titulo: "Tu reporte de hoy",

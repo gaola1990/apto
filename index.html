@@ -145,7 +145,8 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 .caja-prueba{background:var(--fondo,#F6F8FB);border:1px solid var(--linea);border-radius:12px;padding:12px;margin:10px 0}
 .plan-btn{margin-top:auto;border:0;border-radius:999px;background:var(--marca);color:#fff;font:inherit;font-weight:700;padding:12px 18px;cursor:pointer;box-shadow:0 8px 22px rgba(29,78,158,.25);transition:transform .15s,box-shadow .2s}
 .plan-btn:not(.dest){background:#fff;color:var(--marca);box-shadow:inset 0 0 0 2px var(--marca)}
-.plan ul+.plan-btn,.plan p.nota+.plan-btn{margin-top:18px}
+.plan>.plan-btn{margin-top:auto}
+.plan>:nth-last-child(2){margin-bottom:20px}
 .plan-btn:hover{transform:translateY(-1px)}
 .plan>ul{margin-bottom:6px}
 .plan{align-items:stretch}

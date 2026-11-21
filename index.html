@@ -165,6 +165,16 @@ header nav a.cta:hover{background:#B8261B}
 .planes .p-mes,.planes .p-anio{animation:cambioPrecio .45s cubic-bezier(.2,.7,.2,1)}
 @keyframes cambioPrecio{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.planes .p-mes,.planes .p-anio{animation:none}}
+.glosa{margin:6px 0 10px;color:var(--suave);font-size:14px}
+.plan-intro{max-width:1180px;margin:0 0 14px;font-size:17px;color:var(--tinta,#1B2430)}
+.plan .paraquien{margin:10px 0 0;color:var(--marca);font-weight:700;font-size:14px}
+.plan .pesos{margin:2px 0 0;color:var(--suave);font-size:14px}
+.plan .pesos b{color:var(--tinta,#1B2430)}
+.glosario{margin:18px 0 0;background:#fff;border-radius:16px;box-shadow:0 1px 2px rgba(27,36,48,.05),0 8px 22px rgba(27,36,48,.06);padding:4px 18px}
+.glosario summary{cursor:pointer;padding:14px 0;font-weight:700;color:var(--marca)}
+.glosario dl{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:8px 18px;margin:0;padding:0 0 14px}
+.glosario dt{font-weight:700}.glosario dd{margin:0;color:var(--suave)}
+@media(max-width:700px){.glosario dl{grid-template-columns:1fr;gap:2px}.glosario dd{margin-bottom:8px}}
 .planes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1180px}
 .plan{background:#fff;border-radius:22px;padding:28px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07);display:flex;flex-direction:column}
 .plan.dest{outline:2px solid var(--marca);box-shadow:0 1px 2px rgba(27,36,48,.04),0 18px 40px rgba(29,78,158,.18)}
@@ -324,7 +334,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <section class="hero" aria-label="Presentación">
   <p class="eyebrow rv">Compras públicas para pymes</p>
   <h2 class="big rv" style="--d:.08s">¿Puedes venderle al Estado?<br><span>Apto te lo dice.</span></h2>
-  <p class="lead rv" style="--d:.16s">Revisa las licitaciones abiertas, te muestra las que calzan con tu negocio y te dice qué cumples y qué te falta para ofertar a tiempo.</p>
+  <p class="lead rv" style="--d:.16s">Cada día el Estado publica miles de compras donde puedes ofrecer tus productos o servicios. Apto te muestra las que calzan con tu negocio y te dice si cumples lo que piden, para que ofertes a tiempo.</p>
   <div class="botones rv" style="--d:.24s"><a class="btn sec2" href="#pasos">Cómo funciona ›</a></div>
   <div class="escena rv" style="--d:.32s" aria-hidden="true">
     <div class="flot f1"><span class="et ok">Calza con tu negocio</span><div class="t">Adquisición de 2 bandas elásticas de resistencia</div><div class="s">Compra de ejemplo · Hasta 100 UTM</div></div>
@@ -336,23 +346,23 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <section class="seccion" id="como" aria-label="Qué hace Apto">
   <h2 class="sec-t rv">Todo para ofertar. <span>En un solo lugar.</span></h2>
   <div class="mosaico">
-    <article class="tile t-big rv" id="tnum"><p class="k">Licitaciones abiertas ahora</p><b class="num" id="hnum">0</b><p>Apto las revisa todas por ti y te deja solo las que sirven a tu negocio.</p></article>
-    <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Cumples, te falta o no cumples. Y por qué.</h3>
+    <article class="tile t-big rv" id="tnum"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Son las compras en las que todavía puedes ofertar (se llaman <i>licitaciones</i>). Apto las revisa todas por ti y te deja solo las que sirven a tu negocio.</p></article>
+    <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Te decimos si cumples lo que piden. Y por qué.</h3><p class="glosa">Cada compra pide cosas concretas: medidas, garantía, plazo. Apto las compara con tu producto.</p>
       <ul class="sem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-al"><i></i>Te falta indicarlo<small>Garantía de 6 meses</small></li><li class="s-ro"><i></i>No cumple<small>3.600 de 4.000 lúmenes</small></li></ul></article>
-    <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
+    <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3><p class="glosa">Cuándo puedes preguntar, cuándo responden y cuándo cierra.</p>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
-    <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto entiende sinónimos, abreviaturas y errores, y busca en el catálogo oficial de Mercado Público.</p></article>
-    <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado ni trabajamos para los compradores: estamos del lado de quien vende.</p></div>
-      <div class="chips2"><span>API pública de ChileCompra</span><span>Datos abiertos</span><span>Desde 0,5 UF al mes</span></div></article>
+    <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto entiende abreviaturas, sinónimos y errores de escritura, y busca en el catálogo oficial de productos del Estado.</p></article>
+    <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>Usamos la información que ChileCompra publica abiertamente para todos. No somos el Estado ni trabajamos para los compradores: estamos del lado de quien vende.</p></div>
+      <div class="chips2"><span>Datos oficiales de ChileCompra</span><span>Información abierta</span><span>Desde <b data-uf="0.5"></b> + IVA al mes</span></div></article>
   </div>
 </section>
 
 <section class="seccion" id="pasos" aria-label="Cómo funciona">
   <h2 class="sec-t rv">Tres pasos y tres planes. <span>Empieza gratis y sigue cuando te sirva.</span></h2>
   <div class="ruta2 rv">
-    <div class="paso-t t1"><p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3><p>Escríbelo como quieras, o pon tu RUT y Apto arma tu catálogo con lo que ya le vendiste al Estado.</p><span class="obt">Obtienes: tu catálogo</span></div>
-    <div class="paso-t t2"><p class="pk">Paso 2</p><h3>Mira tus compras</h3><p>De miles de licitaciones y Compras Ágiles, Apto te deja las que calzan contigo.</p><span class="obt">Obtienes: tus compras</span></div>
-    <div class="paso-t t3"><p class="pk">Paso 3</p><h3>Revisa si cumples</h3><p>Requisito por requisito, con lo que te falta y el plan para llegar a tiempo.</p><span class="obt">Obtienes: tu veredicto</span></div>
+    <div class="paso-t t1"><p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3><p>Escribe qué vendes, con tus palabras. Si nunca has vendido al Estado, no importa. Si ya le vendiste, pon el RUT de tu empresa y armamos tu lista de productos.</p><span class="obt">Obtienes: tu lista de productos</span></div>
+    <div class="paso-t t2"><p class="pk">Paso 2</p><h3>Mira tus compras</h3><p>El Estado publica miles de compras. Apto te muestra solo las que calzan con lo que vendes y te dice cuándo cierran.</p><span class="obt">Obtienes: tus compras</span></div>
+    <div class="paso-t t3"><p class="pk">Paso 3</p><h3>Revisa si cumples</h3><p>Cada compra pide cosas concretas (medidas, garantía, plazo). Apto compara tu producto con lo que piden y te avisa qué te falta, para que no te rechacen por un detalle.</p><span class="obt">Obtienes: tu veredicto</span></div>
     <div class="cadena" aria-hidden="true">
       <div class="med m1" style="--c:#6C9BE0"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h28l-2.5 21a3 3 0 0 1-3 2.6H15.5a3 3 0 0 1-3-2.6L10 17Z"/><path d="M17 17v-3a7 7 0 0 1 14 0v3"/><path d="M19 27h10"/></svg></div></div>
       <div class="med m3" style="--c:#1D4E9E"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6 9 12v11c0 9.5 6.3 16.5 15 19 8.7-2.5 15-9.5 15-19V12L24 6Z"/><path d="m17 24 5 5 9-10"/></svg></div></div>
@@ -367,27 +377,47 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </section>
 
 <section class="seccion" id="planes" aria-label="Planes" style="padding-top:28px">
+  <p class="plan-intro rv"><b>¿Nunca has vendido al Estado?</b> Empieza por el Plan Gratis: no pagas ni das tarjeta. Cuando quieras más, pasas a otro plan.</p>
   <div class="ciclo rv" role="group" aria-label="Periodo de pago">
     <button type="button" class="on" data-ciclo="mes" aria-pressed="true">Mensual</button><button type="button" data-ciclo="anio" aria-pressed="false">Anual <span class="ahorra">2 meses gratis</span></button>
   </div>
   <div class="planes" data-ciclo="mes">
-    <article class="plan rv"><p class="k">Plan Gratis</p><h3>Pruébalo con tu empresa</h3>
+    <article class="plan rv"><p class="k">Plan Gratis</p><h3>Para conocer Apto sin pagar</h3>
       <p class="pr">$0 <small>sin tarjeta</small></p>
-      <ul><li>5 revisiones "¿Cumplo?" en total</li><li>Radar de licitaciones con lo que mejor calza</li><li>Calendario de plazos, "Cuánto cobrar" y precio de referencia</li><li>Guía "Tu primera oferta, paso a paso"</li><li class="no">Avisos diarios por correo</li></ul>
-      <p class="nota" style="margin-top:12px">Una prueba por empresa: se registra con el RUT con el que ofertas.</p>
+      <p class="paraquien">Es para ti si quieres ver cómo funciona antes de decidir.</p>
+      <ul><li>Escribes qué vendes y ves las compras del Estado donde podrías ofertar</li><li>5 veces puedes revisar si tu producto cumple lo que pide una compra</li><li>Ves las fechas importantes y, más o menos, cuánto cobrar</li><li>Una guía paso a paso para tu primera oferta</li><li>Si quieres, te enviamos un correo cada mañana con las compras nuevas</li></ul>
+      <p class="nota" style="margin-top:12px">Te registras con el RUT de tu empresa. Hay una prueba gratis por empresa.</p>
       <button type="button" class="plan-btn dest" data-plan="gratis">Empezar gratis</button></article>
-    <article class="plan rv"><p class="k">Plan Radar</p><h3>Dónde puedes participar</h3>
+    <article class="plan rv"><p class="k">Plan Radar</p><h3>Para que no se te pase ninguna compra</h3>
       <p class="pr"><span class="p-mes">0,5 UF <small>al mes</small></span><span class="p-anio">5 UF <small>al año</small></span></p>
+      <p class="pesos"><span class="p-mes">≈ <b data-uf="0.5"></b> + IVA al mes</span><span class="p-anio">≈ <b data-uf="5"></b> + IVA al año</span></p>
       <p class="dto-t solo-anio"><span class="dto">2 meses gratis</span></p>
-      <ul><li>Tu catálogo de productos</li><li>Aviso diario de las licitaciones que calzan con lo que vendes</li><li>Cada compra explicada en simple</li><li>2 revisiones "¿Cumplo?" al mes para probar</li><li class="no">Revisión "¿Cumplo?" sin límite</li></ul>
+      <p class="paraquien">Es para ti si ya sabes que quieres vender al Estado y quieres ahorrar tiempo.</p>
+      <ul><li>Guardamos tu lista de productos y la usamos para buscar por ti</li><li>Cada día te mostramos las compras nuevas que calzan con lo que vendes</li><li>Cada compra viene explicada en palabras simples</li><li>2 revisiones al mes de si tu producto cumple lo que piden</li><li class="no">Revisiones sin límite</li></ul>
       <button type="button" class="plan-btn" data-plan="radar">Elegir Radar</button></article>
-    <article class="plan dest rv" style="--d:.1s"><p class="k">Plan Apto</p><h3>Dónde participar y si cumples</h3>
+    <article class="plan dest rv" style="--d:.1s"><p class="k">Plan Apto</p><h3>Para ofertar sin que te rechacen</h3>
       <p class="pr"><span class="p-mes">1 UF <small>al mes</small></span><span class="p-anio">10 UF <small>al año</small></span></p>
+      <p class="pesos"><span class="p-mes">≈ <b data-uf="1"></b> + IVA al mes</span><span class="p-anio">≈ <b data-uf="10"></b> + IVA al año</span></p>
       <p class="dto-t solo-anio"><span class="dto">2 meses gratis</span></p>
-      <ul><li>Todo lo del Plan Radar</li><li>Revisión "¿Cumplo?" sin límite</li><li>Compara la ficha técnica con tu producto: características, plazo de entrega y garantía</li><li>Te dice qué te falta indicar antes de postular</li><li>Plan para ofertar con las fechas reales</li></ul>
+      <p class="paraquien">Es para ti si ya vas a ofertar y quieres que tu oferta esté completa.</p>
+      <ul><li>Todo lo del Plan Radar</li><li>Revisas sin límite si tu producto cumple lo que pide cada compra</li><li>Te decimos qué dato te falta escribir (medidas, garantía, plazo de entrega)</li><li>Te damos el texto listo para pegar en tu oferta</li><li>Las fechas reales de cada compra, en tu calendario</li></ul>
       <button type="button" class="plan-btn dest" data-plan="apto">Elegir Apto</button></article>
   </div>
-  <p class="nota-pl rv">Precios de referencia del prototipo, más IVA. Aún no se cobra: si eliges Radar o Apto, empiezas con el plan gratis y te avisamos cuando se active el pago.</p>
+  <p class="nota-pl rv"><b>UF</b> significa Unidad de Fomento: un valor en pesos que sube con la inflación (hoy 1 UF = <b data-ufval></b>, dato del SII al 21-11-2026). Los precios en pesos son aproximados y no incluyen IVA (19 %). Aún no se cobra: si eliges Radar o Apto, empiezas con el plan gratis y te avisamos cuando se active el pago.</p>
+  <details class="glosario rv">
+    <summary>¿Hay palabras que no entiendes? Aquí las explicamos</summary>
+    <dl>
+      <dt>Licitación</dt><dd>Una compra del Estado en la que varias empresas ofrecen su producto o servicio y el Estado elige una.</dd>
+      <dt>Compra Ágil</dt><dd>Una compra pequeña del Estado: el comprador pide cotizaciones rápidas, con menos trámites.</dd>
+      <dt>Mercado Público</dt><dd>El sitio oficial donde el Estado publica todas sus compras. Apto usa esa información abierta.</dd>
+      <dt>Ofertar o postular</dt><dd>Enviar tu propuesta (producto, precio y plazo) para una compra.</dd>
+      <dt>Ficha técnica y requisitos</dt><dd>Lo que la compra pide que cumpla tu producto: medidas, materiales, garantía, plazo de entrega.</dd>
+      <dt>¿Cumplo?</dt><dd>La revisión de Apto: compara tu producto con la ficha técnica y te dice qué cumples y qué te falta.</dd>
+      <dt>Calza con tu negocio</dt><dd>La compra tiene que ver con lo que tú vendes.</dd>
+      <dt>UTM</dt><dd>Unidad Tributaria Mensual: un valor en pesos que usa el Estado para medir el tamaño de una compra. «Hasta 100 UTM» es una compra pequeña.</dd>
+      <dt>RUT de tu empresa</dt><dd>Lo usamos para registrar tu prueba gratis y, si quieres, armar tu lista de productos con lo que ya le vendiste al Estado.</dd>
+    </dl>
+  </details>
 </section>
 
 <div id="entrada" class="entrada-wrap" aria-label="Empieza con tu empresa" inert>
@@ -510,8 +540,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611211919"></script>
-<script src="app.js?v=202611211919"></script>
-<script src="notificaciones.js?v=202611211919"></script>
+<script src="buscar.js?v=202611211953"></script>
+<script src="app.js?v=202611211953"></script>
+<script src="notificaciones.js?v=202611211953"></script>
 </body>
 </html>

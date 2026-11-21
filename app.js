@@ -1111,6 +1111,14 @@ if(sesion) bajarCuenta().catch(() => {});
   visto.observe(svg);
 })();
 
+
+// Precios en pesos junto a la UF: cada [data-uf] muestra uf × valor de la UF, redondeado a la centena; [data-ufval] muestra el valor de 1 UF.
+(function(){
+  const clp = n => "$" + n.toLocaleString("es-CL");
+  document.querySelectorAll("[data-uf]").forEach(el => { el.textContent = clp(Math.round(+el.dataset.uf * UF_CLP / 100) * 100); });
+  document.querySelectorAll("[data-ufval]").forEach(el => { el.textContent = clp(UF_CLP); });
+})();
+
 // Modo demo para grabar el video: ?demo=1 (o ?demo=aseo, ?demo=computacion). Llena un perfil de ejemplo sin guardar nada del visitante.
 (function(){
   const m = /[?&]demo=([\w-]*)/.exec(location.search); if(!m) return;

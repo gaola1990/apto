@@ -853,7 +853,10 @@ setTimeout(() => { if(!document.querySelector(".rv.in")) mostrarTodo(); }, 3000)
 // ---------- Controles ----------
 function iniciar(){
   $("rubros").innerHTML = Object.keys(RUBROS).map(r => '<button type="button" class="chip" aria-pressed="' + perfil.rubros.includes(r) + '">' + esc(r) + "</button>").join("");
-  $("rubros").onclick = e => { const b = e.target.closest(".chip"); if(!b) return; const r = b.textContent; const i = perfil.rubros.indexOf(r); if(i >= 0) perfil.rubros.splice(i, 1); else perfil.rubros.push(r); b.setAttribute("aria-pressed", i < 0); cambio(); };
+  const resumenRubros = () => { const n = perfil.rubros.length; $("rubrosResumen").innerHTML = "<span>" + (n ? esc(perfil.rubros.slice(0, 2).join(", ")) + (n > 2 ? " y " + (n - 2) + " más" : "") : "Elegir rubros") + "</span>"; };
+  $("rubros").onclick = e => { const b = e.target.closest(".chip"); if(!b) return; const r = b.textContent; const i = perfil.rubros.indexOf(r); if(i >= 0) perfil.rubros.splice(i, 1); else perfil.rubros.push(r); b.setAttribute("aria-pressed", i < 0); resumenRubros(); cambio(); };
+  resumenRubros();
+  document.addEventListener("click", e => { const m = $("menuRubros"); if(m && m.open && !m.contains(e.target)) m.open = false; });   // se cierra al tocar fuera
   $("region").innerHTML = '<option value="">Todo Chile</option>' + REGIONES.map(r => "<option>" + esc(r) + "</option>").join("");
   ["extra","excluir","region","tamano"].forEach(k => { $(k).value = perfil[k] || (k === "tamano" ? "5" : ""); $(k).oninput = () => { perfil[k] = $(k).value; cambio(); }; });
   $("plazo").value = perfil.plazo || ""; $("plazo").onchange = () => { perfil.plazo = $("plazo").value; cambio(); };

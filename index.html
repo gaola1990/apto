@@ -143,6 +143,13 @@ label{display:block;font-size:13px;font-weight:700;margin:12px 0 4px}
 input[type=text],select,textarea{width:100%;padding:9px 10px;border:1px solid var(--linea);border-radius:8px;font:inherit;background:#fff;color:inherit}
 textarea{min-height:64px;resize:vertical}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
+.desplegable{border:1px solid var(--linea);border-radius:10px;background:#fff}
+.desplegable>summary{cursor:pointer;padding:9px 12px;font-size:14px;list-style:none;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.desplegable>summary::-webkit-details-marker{display:none}
+.desplegable>summary::after{content:"▾";color:var(--suave);transition:transform .2s}
+.desplegable[open]>summary::after{transform:rotate(180deg)}
+.desplegable[open]>summary{border-bottom:1px solid var(--linea)}
+.desplegable .chips{padding:10px;max-height:260px;overflow:auto}
 .chip{border:1px solid var(--linea);background:#fff;border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer;color:inherit}
 .chip[aria-pressed=true]{background:var(--marca);border-color:var(--marca);color:#fff}
 button.principal{background:var(--marca);color:#fff;border:0;border-radius:8px;padding:10px 14px;font:inherit;font-weight:700;cursor:pointer}
@@ -298,14 +305,19 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 
 <main>
   <section class="tarjeta" aria-label="Perfil de mi negocio">
-    <h2>Mi negocio</h2>
+    <h2>Mi cuenta</h2>
+    <div id="cuenta"></div>
+    <h2 style="margin-top:22px">Mi negocio</h2>
     <div class="nota">Escribe lo que vendes y Apto revisa todas las licitaciones abiertas para mostrarte solo las tuyas.</div>
     <label for="extra">¿Qué vendes? (separado por coma)</label>
     <textarea id="extra" placeholder="ej: notebook, tóner, mant. de pc, arreglos florales"></textarea>
     <p class="nota" id="corregido" aria-live="polite" style="margin:4px 0 0"></p>
     <p class="nota" id="clases" aria-live="polite" style="margin:4px 0 0"></p>
     <label>O elige uno o más rubros</label>
-    <div class="chips" id="rubros"></div>
+    <details class="desplegable" id="menuRubros">
+      <summary id="rubrosResumen">Elegir rubros</summary>
+      <div class="chips" id="rubros"></div>
+    </details>
     <label for="excluir">No me interesa (separado por coma)</label>
     <input type="text" id="excluir" placeholder="ej: hospital, maquinaria pesada">
     <label for="region">Mi región</label>
@@ -343,8 +355,6 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <button class="principal" id="pguardar" style="margin-top:12px">Guardar producto</button>
     </details>
     <button class="principal flotante" id="irResultados" type="button" hidden></button>
-    <h2 style="margin-top:22px">Mi cuenta</h2>
-    <div id="cuenta"></div>
     <p class="nota" id="fuente" style="margin:14px 0 0"></p>
   </section>
 
@@ -397,8 +407,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611211729"></script>
-<script src="app.js?v=202611211729"></script>
-<script src="notificaciones.js?v=202611211729"></script>
+<script src="buscar.js?v=202611211745"></script>
+<script src="app.js?v=202611211745"></script>
+<script src="notificaciones.js?v=202611211745"></script>
 </body>
 </html>

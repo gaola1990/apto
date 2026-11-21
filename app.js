@@ -278,7 +278,7 @@ function pintar(){
 }
 // ---------- A. El negocio en plata y B. lo que Apto hace por ti ----------
 // Monto de cada compra: el informado por el comprador; si no hay, el mínimo de su tramo (cálculo conservador).
-const UTM_CLP = 69000, UF_CLP = 39800; // valores de referencia (aprox.); el precio real se calcula al momento de cobrar
+const UTM_CLP = 69000, UF_CLP = 41378; // UF del 21-11-2026 (SII); la UTM es aproximada; el precio real se calcula al momento de cobrar
 const MINIMO_TRAMO = {1: 20, 2: 100, 3: 1000, 4: 2000, 5: 5000}; // UTM
 function montoDe(r){ const det = DET[r.codigo]; return (det && det.m) || (MINIMO_TRAMO[r.tipo.n] || 100) * UTM_CLP; }
 function millones(n){ return n >= 1e9 ? "$" + (n / 1e9).toLocaleString("es-CL", {maximumFractionDigits: 1}) + " mil millones" : n >= 1e6 ? "$" + (n / 1e6).toLocaleString("es-CL", {maximumFractionDigits: 1}) + " millones" : "$" + Math.round(n).toLocaleString("es-CL"); }

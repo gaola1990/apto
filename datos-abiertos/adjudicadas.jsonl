@@ -2119,3 +2119,5 @@
 {"codigo": "812799-39-LP26", "fecha": "2026-11-19", "oferentes": 3, "tipo": "LP", "clases": ["721317"], "organismo": "I MUNICIPALIDAD DE MEJILLONES", "region": "Región de Antofagasta"}
 {"codigo": "45-56-L126", "fecha": "2026-11-19", "oferentes": 3, "tipo": "L1", "clases": ["561015"], "organismo": "SERVICIO NACIONAL DE CAPACITACION Y EMPLEO", "region": "Región Metropolitana de Santiago"}
 {"codigo": "2591-188-L126", "fecha": "2026-11-18", "oferentes": 2, "tipo": "L1", "clases": ["721317"], "organismo": "ILUSTRE MUNICIPALIDAD DE POZO ALMONTE", "region": "Región de Tarapacá"}
+{"codigo": "1180817-1-LR26", "fecha": "2026-11-20", "oferentes": 5, "tipo": "LR", "clases": ["721317"], "organismo": "SERVICIO DE SALUD AYSEN CARLOS IBANEZ DEL CAMPO", "region": "Región Aysén del General Carlos Ibáñez del Campo"}
+{"codigo": "1469-317-L126", "fecha": "2026-11-20", "oferentes": 2, "tipo": "L1", "clases": ["401017", "421917"], "organismo": "UNIVERSIDAD DE TALCA", "region": "Región del Maule"}

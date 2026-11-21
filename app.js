@@ -829,7 +829,7 @@ function avisar(){
     const enVivo = origen.startsWith("Datos en vivo"), f = enVivo ? new Date() : (copia && copia.fecha ? new Date(copia.fecha) : null);
     if(f && !isNaN(f)){
       const hoy = f.toDateString() === new Date().toDateString(), hora = f.toLocaleTimeString("es-CL", {hour: "2-digit", minute: "2-digit", hour12: false});
-      sello.innerHTML = "Datos de Mercado Público actualizados " + (hoy ? "hoy a las " + hora : "el " + f.toLocaleDateString("es-CL", {day: "numeric", month: "short"}) + " a las " + hora) + ". Se renuevan cada 4 horas. " + '<a href="estado.html">Ver estado de los datos</a>';
+      sello.innerHTML = "Actualizado " + (hoy ? "hoy a las " + hora : f.toLocaleDateString("es-CL", {day: "numeric", month: "short"}) + ", " + hora) + " · cada 4 h · " + '<a href="estado.html">ver estado</a>';
     }
   }
   const n = datos.filter(d => { const x = diasPara(d.cierre); return x === null || x >= 0; }).length;

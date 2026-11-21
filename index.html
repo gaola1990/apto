@@ -121,8 +121,8 @@ header nav a.cta:hover{background:#B8261B}
 .t-revisa{grid-column:span 6;display:block}
 .t-revisa h3{margin:6px 0 6px}
 .t-revisa .rsub{margin:0 0 16px;max-width:760px}
-.rpasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.rpasos li{display:flex;gap:12px;align-items:flex-start}
+.rpasos{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rpasos li{display:flex;gap:12px;align-items:center}
 .rpasos b{flex:none;width:32px;height:32px;border-radius:50%;background:var(--marca);color:#fff;display:grid;place-items:center;font-size:15px}
 .rpasos strong{display:block;line-height:1.25;margin-bottom:3px}
 .rpasos span{display:block;color:var(--suave);font-size:14px;line-height:1.4}
@@ -132,7 +132,8 @@ header nav a.cta:hover{background:#B8261B}
 .rcolores i{flex:none;width:12px;height:12px;border-radius:50%;margin-top:5px;background:currentColor}
 .rcolores li.s-ok{color:#1E7F52}.rcolores li.s-al{color:#8A5A00}.rcolores li.s-ro{color:#B83A2B}
 .rcolores b{display:block;color:inherit}.rcolores span{display:block;color:#3F4A5A;font-size:14px;line-height:1.4}
-.rojo-nota{margin-top:16px;padding:14px 16px;border-radius:14px;background:#E8EFFB;color:#1B2430;font-size:14.5px;line-height:1.5}
+.rojo-nota{margin:16px 0 0;padding:12px 16px;border-radius:14px;background:#E8EFFB;color:#1B2430;font-size:14.5px;line-height:1.5}
+.rojo-nota .mas{margin-top:6px}.rojo-nota .mas summary{cursor:pointer;color:var(--marca);font-weight:700;display:inline-block}.rojo-nota .mas[open] summary{margin-bottom:6px}
 @media(max-width:1000px){.rpasos{grid-template-columns:1fr 1fr}.rcolores{grid-template-columns:1fr}}
 @media(max-width:560px){.rpasos{grid-template-columns:1fr}.t-revisa{grid-column:span 1}}
 /* contador: ahora es una tarjeta chica al lado de "Habla como tú" */
@@ -413,7 +414,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <section class="hero" aria-label="Presentación">
   <p class="eyebrow rv">Compras públicas para pymes</p>
   <h2 class="big rv" style="--d:.08s">¿Puedes venderle al Estado?<br><span>Apto te lo dice.</span></h2>
-  <p class="lead rv" style="--d:.16s">Cada día el Estado publica miles de compras donde puedes ofrecer tus productos o servicios. Apto te muestra las que calzan con tu negocio y te dice si cumples lo que piden, para que ofertes a tiempo.</p>
+  <p class="lead rv" style="--d:.16s">El Estado publica miles de compras cada día. Apto te muestra las que calzan con tu negocio y te dice si cumples lo que piden.</p>
   <div class="botones rv" style="--d:.24s"><a class="btn sec2" href="#pasos">Cómo funciona ›</a></div>
   <div class="escena rv" style="--d:.32s" aria-hidden="true">
     <div class="flot f1"><span class="et ok">Calza con tu negocio</span><div class="t">Adquisición de 2 bandas elásticas de resistencia</div><div class="s">Compra de ejemplo · Hasta 100 UTM</div></div>
@@ -449,30 +450,30 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <div class="vpasos" aria-hidden="true"><span class="vp1">1 · Cuéntanos</span><span class="vp2">2 · Mira</span><span class="vp3">3 · Revisa</span></div>
       <p class="vnota">Ejemplo ilustrativo, con datos de muestra.</p>
     </article>
-    <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Te decimos si cumples lo que piden. Y por qué.</h3><p class="glosa">Cada compra pide cosas concretas: medidas, garantía, plazo. Apto las compara con tu producto.</p>
+    <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Te decimos si cumples. Y por qué.</h3>
       <ul class="sem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-al"><i></i>Te falta indicarlo<small>Garantía de 6 meses</small></li><li class="s-ro"><i></i>No cumple<small>3.600 de 4.000 lúmenes</small></li></ul></article>
-    <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3><p class="glosa">Cuándo puedes preguntar, cuándo responden y cuándo cierra.</p>
+    <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
-    <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto entiende abreviaturas, sinónimos y errores de escritura, y busca en el catálogo oficial de productos del Estado.</p></article>
-    <article class="tile t-num rv" id="tnum" style="--d:.2s"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Las que todavía puedes ofertar (<i>licitaciones</i>). Apto las revisa todas por ti.</p><p class="sello" id="sello">Los datos se actualizan cada 4 horas desde Mercado Público. <a href="estado.html">Ver estado de los datos</a></p></article>
+    <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto te entiende igual.</p></article>
+    <article class="tile t-num rv" id="tnum" style="--d:.2s"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Apto las revisa todas por ti.</p><p class="sello" id="sello">Se actualiza cada 4 horas · <a href="estado.html">ver estado</a></p></article>
     <article class="tile t-revisa rv" id="revisa" style="--d:.1s">
       <p class="k">Cómo revisa Apto si cumples</p>
-      <h3>Así decidimos si cumples, y por qué.</h3>
-      <p class="rsub">Tú subes la ficha técnica de la compra (la que descargas de Mercado Público) y los datos de tu producto. Apto hace esto:</p>
+      <h3>Así revisamos, en cuatro pasos.</h3>
       <ol class="rpasos">
-        <li><b>1</b><div><strong>Lee la ficha técnica</strong><span>y arma la lista de lo que piden: medidas, materiales, garantía, plazo de entrega.</span></div></li>
-        <li><b>2</b><div><strong>Compara cada requisito con tu producto</strong><span>Si piden un número (por ejemplo, 15 cm), revisa que tu producto lo tenga escrito.</span></div></li>
-        <li><b>3</b><div><strong>Marca cada uno con un color</strong><span>y te explica el porqué, con las palabras de la propia ficha.</span></div></li>
-        <li><b>4</b><div><strong>Te da el texto para tu oferta</strong><span>listo para pegar, con lo que todavía te falta completar.</span></div></li>
+        <li><b>1</b><strong>Lee la ficha técnica</strong></li>
+        <li><b>2</b><strong>Compara con tu producto</strong></li>
+        <li><b>3</b><strong>Marca cada requisito con un color</strong></li>
+        <li><b>4</b><strong>Te da el texto para tu oferta</strong></li>
       </ol>
       <ul class="rcolores">
-        <li class="s-ok"><i></i><div><b>Cumple</b><span>Tu producto tiene lo que piden.</span></div></li>
-        <li class="s-al"><i></i><div><b>Te falta indicarlo</b><span>Quizás lo cumples, pero no lo escribiste. Si no lo declaras, pueden rechazar tu oferta.</span></div></li>
-        <li class="s-ro"><i></i><div><b>No cumple</b><span>Tu producto no llega a lo que piden (por ejemplo, 3.600 de 4.000 lúmenes).</span></div></li>
+        <li class="s-ok"><i></i><div><b>Cumple</b><span>Lo tienes.</span></div></li>
+        <li class="s-al"><i></i><div><b>Te falta indicarlo</b><span>Escríbelo en tu oferta.</span></div></li>
+        <li class="s-ro"><i></i><div><b>No cumple</b><span>No llega a lo que piden.</span></div></li>
       </ul>
-      <div class="rojo-nota"><b>Ojo: Apto es una ayuda, no una garantía.</b> La revisión la hace una inteligencia artificial con reglas fijas y puede equivocarse. Siempre manda la <b>ficha técnica oficial</b> y las bases de la compra: léelas antes de enviar tu oferta. Cumplir lo que piden evita que te rechacen por un detalle, pero no asegura que ganes. Apto no decide por ti ni envía tu oferta. Tu ficha se revisa en el computador de Apto y se borra al terminar.</div>
+      <div class="rojo-nota"><b>Apto es una ayuda, no una garantía:</b> siempre manda la ficha técnica oficial.
+        <details class="mas"><summary>Más detalles</summary>La revisión la hace una inteligencia artificial con reglas fijas y puede equivocarse. Lee la ficha técnica y las bases de la compra antes de enviar tu oferta. Cumplir lo que piden evita que te rechacen por un detalle, pero no asegura que ganes. Apto no decide por ti ni envía tu oferta. Tu ficha se revisa en el computador de Apto y se borra al terminar.</details></div>
     </article>
-    <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>Usamos la información que ChileCompra publica abiertamente para todos. No somos el Estado ni trabajamos para los compradores: estamos del lado de quien vende.</p></div>
+    <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado: estamos del lado de quien vende.</p></div>
       <div class="chips2"><span>Datos oficiales de ChileCompra</span><span>Información abierta</span><span>Desde <b data-uf="0.5"></b> + IVA al mes</span></div></article>
   </div>
 </section>
@@ -480,9 +481,9 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <section class="seccion" id="pasos" aria-label="Cómo funciona">
   <h2 class="sec-t rv">Tres pasos y tres planes. <span>Empieza gratis y sigue cuando te sirva.</span></h2>
   <div class="ruta2 rv">
-    <div class="paso-t t1"><p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3><p>Escribe qué vendes, con tus palabras. Si nunca has vendido al Estado, no importa. Si ya le vendiste, pon el RUT de tu empresa y armamos tu lista de productos.</p><span class="obt">Obtienes: tu lista de productos</span></div>
-    <div class="paso-t t2"><p class="pk">Paso 2</p><h3>Mira tus compras</h3><p>El Estado publica miles de compras. Apto te muestra solo las que calzan con lo que vendes y te dice cuándo cierran.</p><span class="obt">Obtienes: tus compras</span></div>
-    <div class="paso-t t3"><p class="pk">Paso 3</p><h3>Revisa si cumples</h3><p>Cada compra pide cosas concretas (medidas, garantía, plazo). Apto compara tu producto con lo que piden y te avisa qué te falta, para que no te rechacen por un detalle.</p><span class="obt">Obtienes: tu veredicto</span></div>
+    <div class="paso-t t1"><p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3><p>Escribe qué vendes, con tus palabras.</p><span class="obt">Obtienes: tu lista</span></div>
+    <div class="paso-t t2"><p class="pk">Paso 2</p><h3>Mira tus compras</h3><p>Te mostramos solo las compras que calzan contigo.</p><span class="obt">Obtienes: tus compras</span></div>
+    <div class="paso-t t3"><p class="pk">Paso 3</p><h3>Revisa si cumples</h3><p>Te decimos si cumples y qué te falta.</p><span class="obt">Obtienes: tu veredicto</span></div>
     <div class="cadena" aria-hidden="true">
       <div class="med m1" style="--c:#6C9BE0"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h28l-2.5 21a3 3 0 0 1-3 2.6H15.5a3 3 0 0 1-3-2.6L10 17Z"/><path d="M17 17v-3a7 7 0 0 1 14 0v3"/><path d="M19 27h10"/></svg></div></div>
       <div class="med m3" style="--c:#1D4E9E"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6 9 12v11c0 9.5 6.3 16.5 15 19 8.7-2.5 15-9.5 15-19V12L24 6Z"/><path d="m17 24 5 5 9-10"/></svg></div></div>
@@ -497,34 +498,31 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </section>
 
 <section class="seccion" id="planes" aria-label="Planes" style="padding-top:28px">
-  <p class="plan-intro rv"><b>¿Nunca has vendido al Estado?</b> Empieza por el Plan Gratis: no pagas ni das tarjeta. Cuando quieras más, pasas a otro plan.</p>
-  <p class="uf-nota rv"><b>¿Qué es la UF?</b> La Unidad de Fomento es un valor en pesos que sube con la inflación. Hoy <b>1 UF = <span data-ufval></span></b> (dato del SII, 21-11-2026). Los precios en pesos que ves abajo son aproximados y <b>no incluyen IVA</b> (19 %).</p>
+  <p class="plan-intro rv"><b>¿Nunca has vendido al Estado?</b> Empieza por el Plan Gratis: sin tarjeta.</p>
+  <p class="uf-nota rv"><b>UF</b> = Unidad de Fomento, un valor en pesos (hoy <b data-ufval></b>). Los precios no incluyen IVA.</p>
   <div class="ciclo rv" role="group" aria-label="Periodo de pago">
     <button type="button" class="on" data-ciclo="mes" aria-pressed="true">Mensual</button><button type="button" data-ciclo="anio" aria-pressed="false">Anual <span class="ahorra">2 meses gratis</span></button>
   </div>
   <div class="planes" data-ciclo="mes">
     <article class="plan rv"><p class="k">Plan Gratis</p><h3>Para conocer Apto sin pagar</h3>
       <p class="pr">$0 <small>sin tarjeta</small></p>
-      <p class="paraquien">Es para ti si quieres ver cómo funciona antes de decidir.</p>
-      <ul><li>Escribes qué vendes y ves las compras del Estado donde podrías ofertar</li><li>5 veces puedes revisar si tu producto cumple lo que pide una compra</li><li>Ves las fechas importantes y, más o menos, cuánto cobrar</li><li>Una guía paso a paso para tu primera oferta</li><li>Si quieres, te enviamos un correo cada mañana con las compras nuevas</li></ul>
-      <p class="nota" style="margin-top:12px">Te registras con el RUT de tu empresa (hay una prueba gratis por empresa). <b>Cuando uses tus 5 revisiones</b>, sigues viendo compras gratis; para revisar más, pasas al Plan Radar (2 al mes) o al Plan Apto (sin límite).</p>
+      <ul><li>Ves las compras que calzan contigo</li><li>5 revisiones de «¿cumplo?»</li><li>Fechas y cuánto cobrar</li><li>Guía para tu primera oferta</li></ul>
+      <p class="nota" style="margin-top:12px">Te registras con el RUT de tu empresa. Al acabarse las 5 revisiones, pasas a otro plan.</p>
       <button type="button" class="plan-btn dest" data-plan="gratis">Empezar gratis</button></article>
     <article class="plan rv"><p class="k">Plan Radar</p><h3>Para que no se te pase ninguna compra</h3>
       <p class="pr"><span class="p-mes">0,5 UF <small>al mes</small></span><span class="p-anio">5 UF <small>al año</small></span></p>
       <p class="pesos"><span class="p-mes">≈ <b data-uf="0.5"></b> + IVA al mes</span><span class="p-anio">≈ <b data-uf="5"></b> + IVA al año</span></p>
       <p class="dto-t solo-anio"><span class="dto">2 meses gratis</span></p>
-      <p class="paraquien">Es para ti si ya sabes que quieres vender al Estado y quieres ahorrar tiempo.</p>
-      <ul><li>Guardamos tu lista de productos y la usamos para buscar por ti</li><li>Cada día te mostramos las compras nuevas que calzan con lo que vendes</li><li>Cada compra viene explicada en palabras simples</li><li>2 revisiones al mes de si tu producto cumple lo que piden</li><li class="no">Revisiones sin límite</li></ul>
+      <ul><li>Te avisamos cada día de compras nuevas</li><li>Cada compra explicada en simple</li><li>2 revisiones al mes</li></ul>
       <button type="button" class="plan-btn" data-plan="radar">Elegir Radar</button></article>
     <article class="plan dest rv" style="--d:.1s"><p class="k">Plan Apto</p><h3>Para ofertar sin que te rechacen</h3>
       <p class="pr"><span class="p-mes">1 UF <small>al mes</small></span><span class="p-anio">10 UF <small>al año</small></span></p>
       <p class="pesos"><span class="p-mes">≈ <b data-uf="1"></b> + IVA al mes</span><span class="p-anio">≈ <b data-uf="10"></b> + IVA al año</span></p>
       <p class="dto-t solo-anio"><span class="dto">2 meses gratis</span></p>
-      <p class="paraquien">Es para ti si ya vas a ofertar y quieres que tu oferta esté completa.</p>
-      <ul><li>Todo lo del Plan Radar</li><li>Revisas sin límite si tu producto cumple lo que pide cada compra</li><li>Te decimos qué dato te falta escribir (medidas, garantía, plazo de entrega)</li><li>Te damos el texto listo para pegar en tu oferta</li><li>Las fechas reales de cada compra, en tu calendario</li></ul>
+      <ul><li>Todo lo del Plan Radar</li><li>Revisiones sin límite</li><li>Te decimos qué dato te falta</li><li>Texto listo para tu oferta</li></ul>
       <button type="button" class="plan-btn dest" data-plan="apto">Elegir Apto</button></article>
   </div>
-  <p class="nota-pl rv">Aún no se cobra: si eliges Radar o Apto, empiezas con el plan gratis y te avisamos cuando se active el pago.</p>
+  <p class="nota-pl rv">Aún no se cobra: si eliges Radar o Apto, empiezas con el plan gratis y te avisamos cuando se active.</p>
   <details class="glosario rv">
     <summary>¿Hay palabras que no entiendes? Aquí las explicamos</summary>
     <dl>
@@ -661,8 +659,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611212044"></script>
-<script src="app.js?v=202611212044"></script>
-<script src="notificaciones.js?v=202611212044"></script>
+<script src="buscar.js?v=202611212052"></script>
+<script src="app.js?v=202611212052"></script>
+<script src="notificaciones.js?v=202611212052"></script>
 </body>
 </html>

@@ -979,7 +979,7 @@ async function cargarPrueba(){
   try{ prueba = await sb("/rest/v1/rpc/estado_prueba", {method: "POST", body: "{}"}); }catch(e){ D.innerHTML = ""; return; }
   const abre = prueba.registrada || prueba.plan === "apto";
   if(abre) desbloquear(entradaAbierta());
-  else if($("herramienta").hidden) pedirEntrada((function(){ try{ return localStorage.getItem("apto_plan_elegido"); }catch(e){ return null; } })() || "gratis", entradaAbierta());
+  // con sesión pero sin RUT no se abre nada solo: el panel se despliega únicamente cuando la persona aprieta un plan
   if(prueba.plan === "apto"){ D.innerHTML = '<div class="caja-prueba"><b>Plan Apto</b> · revisiones ¿Cumplo? sin límite.</div>'; return; }
   if(prueba.registrada){
     const r = prueba.restante;

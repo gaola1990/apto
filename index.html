@@ -161,7 +161,9 @@ header nav a.cta:hover{background:#B8261B}
 .plan.dest{outline:2px solid var(--marca);box-shadow:0 1px 2px rgba(27,36,48,.04),0 18px 40px rgba(29,78,158,.18)}
 .plan .k{margin:0;color:var(--marca);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 .plan h3{font-size:24px;margin:8px 0 4px;letter-spacing:-.01em}
-.plan .pr{font-size:34px;font-weight:700;margin:10px 0 2px}.plan .pr small{font-size:15px;font-weight:400;color:var(--suave)}
+.plan .pr{font-size:34px;font-weight:700;margin:10px 0 2px}.plan .pr .antes{font-size:20px;font-weight:400;color:var(--suave);text-decoration:line-through;margin-right:8px}
+.plan .dto-t{margin:6px 0 0}.plan .dto{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--marca);background:var(--marca-suave,#E8EFFB);border-radius:999px;padding:4px 10px}
+.plan .pr small{font-size:15px;font-weight:400;color:var(--suave)}
 .plan ul{list-style:none;padding:0;margin:16px 0 0}.plan li{padding:8px 0 8px 26px;border-top:1px solid var(--linea);position:relative}
 .plan li:before{content:"✓";position:absolute;left:2px;color:var(--marca);font-weight:700}
 .plan li.no{color:var(--suave)}.plan li.no:before{content:"–";color:var(--suave)}
@@ -367,7 +369,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <ul><li>Tu catálogo de productos</li><li>Aviso diario de las licitaciones que calzan con lo que vendes</li><li>Cada compra explicada en simple</li><li>2 revisiones "¿Cumplo?" al mes para probar</li><li class="no">Revisión "¿Cumplo?" sin límite</li></ul>
       <button type="button" class="plan-btn" data-plan="radar">Elegir Radar</button></article>
     <article class="plan dest rv" style="--d:.1s"><p class="k">Plan Apto</p><h3>Dónde participar y si cumples</h3>
-      <p class="pr">1,5 UF <small>al mes</small></p>
+      <p class="pr"><span class="antes" aria-label="precio anterior 1,5 UF">1,5 UF</span> 1,2 UF <small>al mes</small></p>
+      <p class="dto-t"><span class="dto">20 % de descuento</span></p>
       <ul><li>Todo lo del Plan Radar</li><li>Revisión "¿Cumplo?" sin límite</li><li>Compara la ficha técnica con tu producto: características, plazo de entrega y garantía</li><li>Te dice qué te falta indicar antes de postular</li><li>Plan para ofertar con las fechas reales</li></ul>
       <button type="button" class="plan-btn dest" data-plan="apto">Elegir Apto</button></article>
   </div>
@@ -494,8 +497,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611211909"></script>
-<script src="app.js?v=202611211909"></script>
-<script src="notificaciones.js?v=202611211909"></script>
+<script src="buscar.js?v=202611211912"></script>
+<script src="app.js?v=202611211912"></script>
+<script src="notificaciones.js?v=202611211912"></script>
 </body>
 </html>

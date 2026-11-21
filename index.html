@@ -87,28 +87,44 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 .linea li::before{content:"";position:absolute;top:0;left:50%;margin-left:-7px;width:14px;height:14px;border-radius:50%;background:var(--marca);box-shadow:0 0 0 4px var(--marca-suave)}
 .linea li:last-child::before{background:var(--rojo-apto);box-shadow:0 0 0 4px var(--rojo-suave)}
 .linea b{display:block;color:var(--tinta)}
-/* Cómo funciona: tres medallones encadenados en zigzag, unidos por un hilo punteado */
-.ruta{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:6px 0 4px;align-items:start}
-.ruta-hilo{position:absolute;left:0;top:0;width:100%;height:240px;z-index:0;pointer-events:none;overflow:visible}
-.ruta-hilo path{fill:none;stroke:rgba(29,78,158,.35);stroke-width:2.5;stroke-dasharray:2 9;stroke-linecap:round}
-.nodo{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px}
-.nodo:nth-of-type(2){margin-top:72px}
-.medalla{position:relative;width:156px;height:156px;border-radius:50%;display:grid;place-items:center;
-  background:conic-gradient(from 200deg,var(--c) 0 58%,#CBD5E6 58% 100%);box-shadow:0 14px 30px rgba(27,36,48,.14)}
-.nodo:nth-of-type(2) .medalla{background:conic-gradient(from 20deg,var(--c) 0 58%,#CBD5E6 58% 100%)}
-.disco{width:122px;height:122px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:inset 0 2px 8px rgba(27,36,48,.10),0 2px 6px rgba(27,36,48,.08)}
-.num{position:absolute;top:2px;right:6px;width:36px;height:36px;border-radius:50%;background:var(--c);color:#fff;font-weight:700;font-size:17px;display:grid;place-items:center;border:3px solid #fff;box-shadow:0 4px 10px rgba(27,36,48,.2);z-index:2}
-.nodo .pk{margin:16px 0 0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--marca)}
-.nodo h3{font-size:21px;margin:4px 0 6px;letter-spacing:-.01em}
-.nodo p:not(.pk){margin:0;color:var(--suave);max-width:300px}
+/* Cómo funciona: tres medallones que se superponen, en zigzag; una flecha recorre 1 → 2 → 3 en ciclo (9 s) y resalta el paso activo */
+.ruta2{--u:1px;display:grid;grid-template-columns:1fr calc(490*var(--u)) 1fr;grid-template-areas:"t1 cad t3" ". t2 .";column-gap:18px;row-gap:8px;align-items:start;padding:6px 0 4px}
+.cadena{grid-area:cad;position:relative;width:calc(490*var(--u));height:calc(300*var(--u))}
+.med{position:absolute;width:calc(210*var(--u));height:calc(210*var(--u));border-radius:50%;display:grid;place-items:center;box-shadow:0 14px 30px rgba(27,36,48,.16);animation:medAct 9s infinite}
+.m1{left:0;top:0;z-index:1;background:conic-gradient(from 210deg,var(--c) 0 60%,#CBD5E6 60% 100%)}
+.m2{left:calc(140*var(--u));top:calc(90*var(--u));z-index:3;background:conic-gradient(from 30deg,var(--c) 0 60%,#CBD5E6 60% 100%);animation-delay:-6s}
+.m3{left:calc(280*var(--u));top:0;z-index:2;background:conic-gradient(from 210deg,var(--c) 0 60%,#CBD5E6 60% 100%);animation-delay:-3s}
+.disco{width:calc(160*var(--u));height:calc(160*var(--u));border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:inset 0 2px 8px rgba(27,36,48,.10),0 2px 6px rgba(27,36,48,.08)}
+.disco svg{width:calc(64*var(--u));height:calc(64*var(--u))}
+.nb{position:absolute;z-index:5;width:calc(38*var(--u));height:calc(38*var(--u));border-radius:50%;background:var(--marca);color:#fff;font-weight:700;font-size:calc(17*var(--u));display:grid;place-items:center;border:3px solid #fff;box-shadow:0 4px 10px rgba(27,36,48,.22)}
+.nb1{left:calc(160*var(--u));top:calc(12*var(--u));background:#6C9BE0}.nb2{left:calc(300*var(--u));top:calc(102*var(--u));background:#2F6BC4}.nb3{left:calc(440*var(--u));top:calc(12*var(--u))}
+.flecha{position:absolute;z-index:6;width:calc(46*var(--u));height:calc(46*var(--u));border-radius:50%;background:var(--marca);display:grid;place-items:center;box-shadow:0 0 0 calc(6*var(--u)) rgba(29,78,158,.22),0 8px 18px rgba(29,78,158,.35);left:calc(156*var(--u));top:calc(156*var(--u));animation:viaje 9s infinite}
+.flecha svg{width:62%;height:62%}
+.paso-t{animation:txtAct 9s infinite}
+.t1{grid-area:t1;text-align:right;align-self:start;margin-top:calc(34*var(--u))}
+.t2{grid-area:t2;text-align:center;justify-self:center;max-width:380px;animation-delay:-6s;margin-top:16px}
+.t3{grid-area:t3;text-align:left;align-self:start;margin-top:calc(34*var(--u));animation-delay:-3s}
+.paso-t .pk{margin:0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--marca)}
+.paso-t h3{font-size:21px;margin:4px 0 6px;letter-spacing:-.01em}
+.paso-t p:not(.pk){margin:0;color:var(--suave)}
 .obt{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--marca);background:var(--marca-suave,#E8EFFB);border-radius:999px;padding:5px 12px}
+@keyframes medAct{0%,32%{transform:scale(1.06)}40%,92%{transform:scale(1)}100%{transform:scale(1.06)}}
+@keyframes txtAct{0%,32%{opacity:1}40%,92%{opacity:.45}100%{opacity:1}}
+@keyframes viaje{
+  0%,20%{left:calc(156*var(--u));top:calc(156*var(--u));opacity:1;animation-timing-function:cubic-bezier(.45,0,.2,1)}
+  33%,53%{left:calc(296*var(--u));top:calc(246*var(--u));opacity:1;animation-timing-function:cubic-bezier(.45,0,.2,1)}
+  66%,86%{left:calc(436*var(--u));top:calc(156*var(--u));opacity:1}
+  91%{left:calc(436*var(--u));top:calc(156*var(--u));opacity:0}
+  92%{left:calc(156*var(--u));top:calc(156*var(--u));opacity:0}
+  97%,100%{left:calc(156*var(--u));top:calc(156*var(--u));opacity:1}}
+@media(max-width:1200px){.ruta2{--u:.82px;column-gap:12px}.paso-t h3{font-size:19px}}
 @media(max-width:860px){
-  .ruta{grid-template-columns:1fr;gap:26px}.ruta-hilo{display:none}
-  .nodo,.nodo:nth-of-type(2){margin-top:0;display:grid;grid-template-columns:104px 1fr;column-gap:16px;text-align:left;align-items:center;padding:0}
-  .nodo .medalla{grid-row:1/5;width:104px;height:104px}.nodo .disco{width:80px;height:80px}.nodo .disco svg{width:36px;height:36px}
-  .num{width:28px;height:28px;font-size:14px;top:-2px;right:-2px}
-  .nodo .pk{margin-top:0}.obt{justify-self:start}
+  .ruta2{--u:.72px;grid-template-columns:1fr;grid-template-areas:"cad" "t1" "t2" "t3";row-gap:18px;justify-items:center}
+  .cadena{justify-self:center}
+  .t1,.t2,.t3{text-align:left;justify-self:stretch;margin-top:0!important;max-width:none;padding:14px 16px;background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 8px 22px rgba(27,36,48,.06)}
 }
+@media(max-width:430px){.ruta2{--u:.66px}}
+@media(prefers-reduced-motion:reduce){.med,.paso-t,.flecha{animation:none!important}}
 .pasos3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .paso{background:#fff;border-radius:22px;padding:26px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07)}
 .paso{position:relative;display:flex;flex-direction:column}
@@ -299,25 +315,16 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 
 <section class="seccion" id="pasos" aria-label="Cómo funciona">
   <h2 class="sec-t rv">Tres pasos y tres planes. <span>Empieza gratis y sigue cuando te sirva.</span></h2>
-  <div class="ruta">
-    <svg class="ruta-hilo" viewBox="0 0 100 240" preserveAspectRatio="none" aria-hidden="true"><path d="M16.7 84 C 31 84 36 156 50 156 S 69 84 83.3 84" vector-effect="non-scaling-stroke"/></svg>
-    <div class="nodo rv" style="--c:#6C9BE0">
-      <div class="medalla"><span class="num">1</span><div class="disco"><svg viewBox="0 0 48 48" width="52" height="52" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h28l-2.5 21a3 3 0 0 1-3 2.6H15.5a3 3 0 0 1-3-2.6L10 17Z"/><path d="M17 17v-3a7 7 0 0 1 14 0v3"/><path d="M19 27h10"/></svg></div></div>
-      <p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3>
-      <p>Escríbelo como quieras, o pon tu RUT y Apto arma tu catálogo con lo que ya le vendiste al Estado.</p>
-      <span class="obt">Obtienes: tu catálogo</span>
-    </div>
-    <div class="nodo rv" style="--c:#2F6BC4;--d:.12s">
-      <div class="medalla"><span class="num">2</span><div class="disco"><svg viewBox="0 0 48 48" width="52" height="52" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="21" r="11"/><path d="m29.5 29.5 10 10"/><path d="M16.5 18h9M16.5 23h6"/></svg></div></div>
-      <p class="pk">Paso 2</p><h3>Mira tus compras</h3>
-      <p>De miles de licitaciones y Compras Ágiles, Apto te deja las que calzan contigo.</p>
-      <span class="obt">Obtienes: tus compras</span>
-    </div>
-    <div class="nodo rv" style="--c:#1D4E9E;--d:.24s">
-      <div class="medalla"><span class="num">3</span><div class="disco"><svg viewBox="0 0 48 48" width="52" height="52" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6 9 12v11c0 9.5 6.3 16.5 15 19 8.7-2.5 15-9.5 15-19V12L24 6Z"/><path d="m17 24 5 5 9-10"/></svg></div></div>
-      <p class="pk">Paso 3</p><h3>Revisa si cumples</h3>
-      <p>Requisito por requisito, con lo que te falta y el plan para llegar a tiempo.</p>
-      <span class="obt">Obtienes: tu veredicto</span>
+  <div class="ruta2 rv">
+    <div class="paso-t t1"><p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3><p>Escríbelo como quieras, o pon tu RUT y Apto arma tu catálogo con lo que ya le vendiste al Estado.</p><span class="obt">Obtienes: tu catálogo</span></div>
+    <div class="paso-t t2"><p class="pk">Paso 2</p><h3>Mira tus compras</h3><p>De miles de licitaciones y Compras Ágiles, Apto te deja las que calzan contigo.</p><span class="obt">Obtienes: tus compras</span></div>
+    <div class="paso-t t3"><p class="pk">Paso 3</p><h3>Revisa si cumples</h3><p>Requisito por requisito, con lo que te falta y el plan para llegar a tiempo.</p><span class="obt">Obtienes: tu veredicto</span></div>
+    <div class="cadena" aria-hidden="true">
+      <div class="med m1" style="--c:#6C9BE0"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h28l-2.5 21a3 3 0 0 1-3 2.6H15.5a3 3 0 0 1-3-2.6L10 17Z"/><path d="M17 17v-3a7 7 0 0 1 14 0v3"/><path d="M19 27h10"/></svg></div></div>
+      <div class="med m3" style="--c:#1D4E9E"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6 9 12v11c0 9.5 6.3 16.5 15 19 8.7-2.5 15-9.5 15-19V12L24 6Z"/><path d="m17 24 5 5 9-10"/></svg></div></div>
+      <div class="med m2" style="--c:#2F6BC4"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="21" r="11"/><path d="m29.5 29.5 10 10"/><path d="M16.5 18h9M16.5 23h6"/></svg></div></div>
+      <span class="nb nb1">1</span><span class="nb nb2">2</span><span class="nb nb3">3</span>
+      <span class="flecha"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
     </div>
   </div>
 </section>

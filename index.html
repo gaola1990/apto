@@ -87,6 +87,28 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 .linea li::before{content:"";position:absolute;top:0;left:50%;margin-left:-7px;width:14px;height:14px;border-radius:50%;background:var(--marca);box-shadow:0 0 0 4px var(--marca-suave)}
 .linea li:last-child::before{background:var(--rojo-apto);box-shadow:0 0 0 4px var(--rojo-suave)}
 .linea b{display:block;color:var(--tinta)}
+/* Cómo funciona: tres medallones encadenados en zigzag, unidos por un hilo punteado */
+.ruta{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:6px 0 4px;align-items:start}
+.ruta-hilo{position:absolute;left:0;top:0;width:100%;height:240px;z-index:0;pointer-events:none;overflow:visible}
+.ruta-hilo path{fill:none;stroke:rgba(29,78,158,.35);stroke-width:2.5;stroke-dasharray:2 9;stroke-linecap:round}
+.nodo{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px}
+.nodo:nth-of-type(2){margin-top:72px}
+.medalla{position:relative;width:156px;height:156px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(from 200deg,var(--c) 0 58%,#CBD5E6 58% 100%);box-shadow:0 14px 30px rgba(27,36,48,.14)}
+.nodo:nth-of-type(2) .medalla{background:conic-gradient(from 20deg,var(--c) 0 58%,#CBD5E6 58% 100%)}
+.disco{width:122px;height:122px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:inset 0 2px 8px rgba(27,36,48,.10),0 2px 6px rgba(27,36,48,.08)}
+.num{position:absolute;top:2px;right:6px;width:36px;height:36px;border-radius:50%;background:var(--c);color:#fff;font-weight:700;font-size:17px;display:grid;place-items:center;border:3px solid #fff;box-shadow:0 4px 10px rgba(27,36,48,.2);z-index:2}
+.nodo .pk{margin:16px 0 0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--marca)}
+.nodo h3{font-size:21px;margin:4px 0 6px;letter-spacing:-.01em}
+.nodo p:not(.pk){margin:0;color:var(--suave);max-width:300px}
+.obt{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--marca);background:var(--marca-suave,#E8EFFB);border-radius:999px;padding:5px 12px}
+@media(max-width:860px){
+  .ruta{grid-template-columns:1fr;gap:26px}.ruta-hilo{display:none}
+  .nodo,.nodo:nth-of-type(2){margin-top:0;display:grid;grid-template-columns:104px 1fr;column-gap:16px;text-align:left;align-items:center;padding:0}
+  .nodo .medalla{grid-row:1/5;width:104px;height:104px}.nodo .disco{width:80px;height:80px}.nodo .disco svg{width:36px;height:36px}
+  .num{width:28px;height:28px;font-size:14px;top:-2px;right:-2px}
+  .nodo .pk{margin-top:0}.obt{justify-self:start}
+}
 .pasos3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .paso{background:#fff;border-radius:22px;padding:26px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07)}
 .paso{position:relative;display:flex;flex-direction:column}
@@ -277,10 +299,26 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 
 <section class="seccion" id="pasos" aria-label="Cómo funciona">
   <h2 class="sec-t rv">Tres pasos y tres planes. <span>Empieza gratis y sigue cuando te sirva.</span></h2>
-  <div class="pasos3">
-    <div class="paso rv"><div class="cab"><b>1</b><span class="pk">Paso 1</span></div><h3>Cuéntanos qué vendes</h3><p>Escríbelo como quieras, o pon tu RUT y Apto arma tu catálogo con lo que ya le vendiste al Estado.</p><div class="res"><span>Obtienes: tu catálogo</span></div></div>
-    <div class="paso rv" style="--d:.1s"><div class="cab"><b>2</b><span class="pk">Paso 2</span></div><h3>Mira tus compras</h3><p>De miles de licitaciones y Compras Ágiles, Apto te deja las que calzan contigo.</p><div class="res"><span>Obtienes: tus compras</span></div></div>
-    <div class="paso rv" style="--d:.2s"><div class="cab"><b>3</b><span class="pk">Paso 3</span></div><h3>Revisa si cumples</h3><p>Requisito por requisito, con lo que te falta y el plan para llegar a tiempo.</p><div class="res"><span>Obtienes: tu veredicto</span></div></div>
+  <div class="ruta">
+    <svg class="ruta-hilo" viewBox="0 0 100 240" preserveAspectRatio="none" aria-hidden="true"><path d="M16.7 84 C 31 84 36 156 50 156 S 69 84 83.3 84" vector-effect="non-scaling-stroke"/></svg>
+    <div class="nodo rv" style="--c:#6C9BE0">
+      <div class="medalla"><span class="num">1</span><div class="disco"><svg viewBox="0 0 48 48" width="52" height="52" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h28l-2.5 21a3 3 0 0 1-3 2.6H15.5a3 3 0 0 1-3-2.6L10 17Z"/><path d="M17 17v-3a7 7 0 0 1 14 0v3"/><path d="M19 27h10"/></svg></div></div>
+      <p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3>
+      <p>Escríbelo como quieras, o pon tu RUT y Apto arma tu catálogo con lo que ya le vendiste al Estado.</p>
+      <span class="obt">Obtienes: tu catálogo</span>
+    </div>
+    <div class="nodo rv" style="--c:#2F6BC4;--d:.12s">
+      <div class="medalla"><span class="num">2</span><div class="disco"><svg viewBox="0 0 48 48" width="52" height="52" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="21" r="11"/><path d="m29.5 29.5 10 10"/><path d="M16.5 18h9M16.5 23h6"/></svg></div></div>
+      <p class="pk">Paso 2</p><h3>Mira tus compras</h3>
+      <p>De miles de licitaciones y Compras Ágiles, Apto te deja las que calzan contigo.</p>
+      <span class="obt">Obtienes: tus compras</span>
+    </div>
+    <div class="nodo rv" style="--c:#1D4E9E;--d:.24s">
+      <div class="medalla"><span class="num">3</span><div class="disco"><svg viewBox="0 0 48 48" width="52" height="52" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6 9 12v11c0 9.5 6.3 16.5 15 19 8.7-2.5 15-9.5 15-19V12L24 6Z"/><path d="m17 24 5 5 9-10"/></svg></div></div>
+      <p class="pk">Paso 3</p><h3>Revisa si cumples</h3>
+      <p>Requisito por requisito, con lo que te falta y el plan para llegar a tiempo.</p>
+      <span class="obt">Obtienes: tu veredicto</span>
+    </div>
   </div>
 </section>
 

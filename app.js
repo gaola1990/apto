@@ -1065,6 +1065,47 @@ iniciar();
 pintarCuenta();
 if(sesion) bajarCuenta().catch(() => {});
 
+
+// Serpiente de "Cómo funciona": cuerpo y punta de flecha son UNA sola pieza (un polígono que se recalcula en cada cuadro siguiendo la curva
+// de los aros). Usa el mismo reloj que las animaciones CSS de los medallones para que el resaltado coincida con la cabeza.
+(function(){
+  const svg = document.querySelector(".serp"), ruta = document.getElementById("rutaSerp"), forma = svg && svg.querySelector(".forma");
+  if(!svg || !ruta || !forma || !ruta.getTotalLength) return;
+  const Lt = ruta.getTotalLength(), CICLO = 9000, LCUERPO = Lt * 0.16, MITAD = 3.5, PUNTA = 24, ALA = 11;
+  const reducido = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const pt = s => ruta.getPointAtLength(Math.min(Math.max(s, 0), Lt));
+  const tang = s => { const a = pt(s - 1.5), b = pt(s + 1.5), dx = b.x - a.x, dy = b.y - a.y, m = Math.hypot(dx, dy) || 1; return [dx / m, dy / m]; };
+  const f = n => n.toFixed(1);
+  function dibujar(fase, op){
+    const cabeza = Math.min(fase / 0.7, 1) * Lt, cola = Math.max(0, cabeza - LCUERPO);
+    if(cabeza < 2 || op <= 0){ forma.setAttribute("d", ""); return; }
+    forma.style.opacity = op;
+    const n = Math.max(2, Math.ceil((cabeza - cola) / 6)), izq = [], der = [];
+    for(let i = 0; i <= n; i++){
+      const s = cola + (cabeza - cola) * i / n, p = pt(s), [tx, ty] = tang(s);
+      izq.push([p.x - ty * MITAD, p.y + tx * MITAD]); der.push([p.x + ty * MITAD, p.y - tx * MITAD]);
+    }
+    const ph = pt(cabeza), [hx, hy] = tang(cabeza), nx = -hy, ny = hx;
+    const puntos = [...izq, [ph.x + nx * ALA, ph.y + ny * ALA], [ph.x + hx * PUNTA, ph.y + hy * PUNTA], [ph.x - nx * ALA, ph.y - ny * ALA], ...der.reverse()];
+    const p0 = pt(cola), [tx0, ty0] = tang(cola);   // punta trasera redondeada
+    for(let k = 1; k < 6; k++){ const th = Math.PI * k / 6; puntos.push([p0.x + MITAD * (-(-ty0) * Math.cos(th) - tx0 * Math.sin(th)) * 1, p0.y + MITAD * (-(tx0) * Math.cos(th) - ty0 * Math.sin(th))]); }
+    forma.setAttribute("d", "M" + puntos.map(q => f(q[0]) + " " + f(q[1])).join("L") + "Z");
+  }
+  if(reducido){ dibujar(0.7, 0.55); return; }
+  let t0 = null, vivo = false;
+  const inicio = () => { const a = document.getAnimations().find(x => x.animationName === "med1"); return a && a.startTime != null ? +a.startTime : 0; };
+  function cuadro(){
+    if(!vivo) return;
+    if(t0 === null) t0 = inicio();
+    const fase = ((((document.timeline.currentTime - t0) % CICLO) + CICLO) % CICLO) / CICLO;
+    const op = fase < 0.02 ? fase / 0.02 : fase <= 0.76 ? 1 : fase < 0.88 ? 1 - (fase - 0.76) / 0.12 : 0;
+    dibujar(fase, op);
+    requestAnimationFrame(cuadro);
+  }
+  const visto = new IntersectionObserver(es => { const v = es.some(e => e.isIntersecting); if(v && !vivo){ vivo = true; requestAnimationFrame(cuadro); } else if(!v){ vivo = false; } });
+  visto.observe(svg);
+})();
+
 // Modo demo para grabar el video: ?demo=1 (o ?demo=aseo, ?demo=computacion). Llena un perfil de ejemplo sin guardar nada del visitante.
 (function(){
   const m = /[?&]demo=([\w-]*)/.exec(location.search); if(!m) return;

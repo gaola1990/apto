@@ -101,10 +101,8 @@ header nav a.cta:hover{background:#B8261B}
 .nb1{left:calc(20*var(--u));top:calc(152*var(--u));background:#6C9BE0}.nb2{left:calc(292*var(--u));top:calc(110*var(--u));background:#2F6BC4}.nb3{left:calc(432*var(--u));top:calc(152*var(--u))}
 /* la serpiente: tres trazos del mismo camino (cola fina y clara, cuerpo, cabeza gruesa) que avanzan juntos, y una punta de flecha que gira con la curva */
 .serp{position:absolute;left:0;top:0;width:100%;height:100%;z-index:4;overflow:visible;pointer-events:none;filter:drop-shadow(0 0 1px rgba(255,255,255,.9))}
-.serp .s{fill:none;stroke:#D92D20;stroke-width:7;stroke-linecap:round;stroke-dasharray:170 2000;animation:av1 9s linear infinite}
-.serp .cabeza path{fill:#D92D20;stroke:#D92D20;stroke-width:1.5;stroke-linejoin:round;transform:scale(1.25)}
-.serp .cuerpo,.serp .cabeza{animation:vida 9s linear infinite}
-.paso-t{}
+.serp .forma{fill:#D92D20;stroke:#D92D20;stroke-width:1;stroke-linejoin:round}
+.serp #rutaSerp{stroke:none}
 .t1{grid-area:t1;text-align:right;align-self:start;margin-top:calc(34*var(--u));animation:txt1 9s infinite}
 .t2{grid-area:t2;text-align:center;justify-self:center;max-width:380px;margin-top:16px;animation:txt2 9s infinite}
 .t3{grid-area:t3;text-align:left;align-self:start;margin-top:calc(34*var(--u));animation:txt3 9s infinite}
@@ -113,8 +111,6 @@ header nav a.cta:hover{background:#B8261B}
 .paso-t p:not(.pk){margin:0;color:var(--suave)}
 .obt{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--marca);background:var(--marca-suave,#E8EFFB);border-radius:999px;padding:5px 12px}
 /* la cabeza llega al aro 2 al 19 % del ciclo y al aro 3 al 45 %; termina en el 70 % */
-@keyframes av1{0%{stroke-dashoffset:170}70%,100%{stroke-dashoffset:-830}}
-@keyframes vida{0%{opacity:0}2%,76%{opacity:1}88%,100%{opacity:0}}
 @keyframes med1{0%,19%{transform:scale(1.06)}25%,92%{transform:scale(1)}100%{transform:scale(1.06)}}
 @keyframes med2{0%,15%{transform:scale(1)}21%,44%{transform:scale(1.06)}49%,100%{transform:scale(1)}}
 @keyframes med3{0%,40%{transform:scale(1)}46%,82%{transform:scale(1.06)}88%,100%{transform:scale(1)}}
@@ -128,7 +124,7 @@ header nav a.cta:hover{background:#B8261B}
   .t1,.t2,.t3{text-align:left;justify-self:stretch;margin-top:0!important;max-width:none;padding:14px 16px;background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 8px 22px rgba(27,36,48,.06)}
 }
 @media(max-width:430px){.ruta2{--u:.66px}}
-@media(prefers-reduced-motion:reduce){.med,.paso-t,.serp .s,.serp .cuerpo,.serp .cabeza{animation:none!important}.serp .cabeza{display:none}.serp .s{stroke-dasharray:none;opacity:.35}}
+@media(prefers-reduced-motion:reduce){.med,.paso-t{animation:none!important}}
 .pasos3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .paso{background:#fff;border-radius:22px;padding:26px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07)}
 .paso{position:relative;display:flex;flex-direction:column}
@@ -352,11 +348,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <div class="med m2" style="--c:#2F6BC4"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="21" r="11"/><path d="m29.5 29.5 10 10"/><path d="M16.5 18h9M16.5 23h6"/></svg></div></div>
       <span class="nb nb1">1</span><span class="nb nb2">2</span><span class="nb nb3">3</span>
       <svg class="serp" viewBox="0 0 490 300" aria-hidden="true">
-        <g class="cuerpo">
-          <path class="s s1" d="M12 105 A93 93 0 1 1 197.5 115 A93 93 0 1 0 337.5 185 A93 93 0 1 1 478 105" pathLength="1000"/>
-        </g>
         <path id="rutaSerp" d="M12 105 A93 93 0 1 1 197.5 115 A93 93 0 1 0 337.5 185 A93 93 0 1 1 478 105" fill="none"/>
-        <g class="cabeza"><path d="M-2 -9 L18 0 L-2 9 L3 0Z"><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.7;1"><mpath href="#rutaSerp"/></animateMotion></path></g>
+        <path class="forma" d=""/>
       </svg>
     </div>
   </div>
@@ -501,8 +494,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611211905"></script>
-<script src="app.js?v=202611211905"></script>
-<script src="notificaciones.js?v=202611211905"></script>
+<script src="buscar.js?v=202611211909"></script>
+<script src="app.js?v=202611211909"></script>
+<script src="notificaciones.js?v=202611211909"></script>
 </body>
 </html>

@@ -935,6 +935,31 @@ async function bajarCuenta(){
 }
 const nota = t => { const n = $("cuentaNota"); if(n) n.textContent = t; };
 let avisosPref = "semanal";
+// ---------- Entrada por plan: la herramienta se abre al elegir un plan e ingresar los datos ----------
+// (Solo es la puerta de entrada de la página; el límite de revisiones ¿Cumplo? lo exige el servidor.)
+const NOMBRES_PLAN = {gratis: "Plan Gratis", radar: "Plan Radar", apto: "Plan Apto"};
+function desbloquear(conScroll){
+  const H = $("herramienta"); if(!H || !H.hidden) return;
+  H.hidden = false; $("entrada").hidden = true;
+  const lado = document.querySelector('main section.tarjeta[aria-label="Perfil de mi negocio"]'), titulo = lado && lado.querySelector("h2");
+  if(titulo) titulo.insertAdjacentElement("afterend", $("cuenta"));   // "Mi cuenta" vuelve a su lugar en la columna
+  pintar();
+  if(conScroll) setTimeout(() => $("app").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"}), 60);
+}
+function pedirEntrada(plan, conScroll){
+  const H = $("herramienta"); if(!H) return;
+  if(!H.hidden){ $("app").scrollIntoView({behavior: "smooth", block: "start"}); return; }
+  try{ localStorage.setItem("apto_plan_elegido", plan); }catch(e){}
+  const E = $("entrada"); E.hidden = false;
+  $("entradaPlan").textContent = NOMBRES_PLAN[plan] || NOMBRES_PLAN.gratis;
+  $("entradaNota").textContent = plan === "gratis" ? "Crea tu cuenta con tu correo y registra el RUT de tu empresa. Tienes 5 revisiones ¿Cumplo? gratis, sin tarjeta."
+    : "Los planes de pago aún no se cobran: empiezas con el plan gratis (5 revisiones ¿Cumplo?) y te avisamos cuando se active el " + NOMBRES_PLAN[plan] + ".";
+  $("entradaCuenta").appendChild($("cuenta"));
+  if(conScroll) E.scrollIntoView({behavior: "smooth", block: "start"});
+}
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn"); if(b) pedirEntrada(b.dataset.plan, true); });
+if(/[?&](demo|abierto)=/.test(location.search)) desbloquear(false);   // modo demostración y pruebas internas
+
 // ---------- Plan gratis: 5 revisiones ¿Cumplo? por empresa (RUT) ----------
 // El conteo vive en Supabase (funciones registrar_empresa / consumir_cumplo): una prueba por RUT, y el motor la descuenta con tu sesión.
 const rutLimpio = t => String(t).toUpperCase().replace(/[^0-9K]/g, "");
@@ -949,6 +974,9 @@ let prueba = null;
 async function cargarPrueba(){
   const D = $("prueba"); if(!D || !sesion) return;
   try{ prueba = await sb("/rest/v1/rpc/estado_prueba", {method: "POST", body: "{}"}); }catch(e){ D.innerHTML = ""; return; }
+  const abre = prueba.registrada || prueba.plan === "apto";
+  if(abre) desbloquear(!$("entrada").hidden);
+  else if($("herramienta").hidden) pedirEntrada((function(){ try{ return localStorage.getItem("apto_plan_elegido"); }catch(e){ return null; } })() || "gratis", !$("entrada").hidden);
   if(prueba.plan === "apto"){ D.innerHTML = '<div class="caja-prueba"><b>Plan Apto</b> · revisiones ¿Cumplo? sin límite.</div>'; return; }
   if(prueba.registrada){
     const r = prueba.restante;

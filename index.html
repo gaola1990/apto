@@ -93,6 +93,13 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 .paso h3{font-size:21px;margin:14px 0 6px;letter-spacing:-.01em}
 .paso p{margin:0;color:var(--suave)}
 .caja-prueba{background:var(--fondo,#F6F8FB);border:1px solid var(--linea);border-radius:12px;padding:12px;margin:10px 0}
+.plan-btn{margin-top:auto;border:0;border-radius:999px;background:var(--marca);color:#fff;font:inherit;font-weight:700;padding:12px 18px;cursor:pointer;box-shadow:0 8px 22px rgba(29,78,158,.25);transition:transform .15s,box-shadow .2s}
+.plan-btn:not(.dest){background:#fff;color:var(--marca);box-shadow:inset 0 0 0 2px var(--marca)}
+.plan ul+.plan-btn,.plan p.nota+.plan-btn{margin-top:18px}
+.plan-btn:hover{transform:translateY(-1px)}
+.plan>ul{margin-bottom:6px}
+.plan{align-items:stretch}
+.entrada{max-width:520px;margin:0 auto}
 .planes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1180px}
 .plan{background:#fff;border-radius:22px;padding:28px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07);display:flex;flex-direction:column}
 .plan.dest{outline:2px solid var(--marca);box-shadow:0 1px 2px rgba(27,36,48,.04),0 18px 40px rgba(29,78,158,.18)}
@@ -265,15 +272,18 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <article class="plan rv"><p class="k">Plan Gratis</p><h3>Pruébalo con tu empresa</h3>
       <p class="pr">$0 <small>sin tarjeta</small></p>
       <ul><li>5 revisiones "¿Cumplo?" en total</li><li>Radar de licitaciones con lo que mejor calza</li><li>Calendario de plazos, "Cuánto cobrar" y precio de referencia</li><li>Guía "Tu primera oferta, paso a paso"</li><li class="no">Avisos diarios por correo</li></ul>
-      <p class="nota" style="margin-top:12px">Una prueba por empresa: se registra con el RUT con el que ofertas.</p></article>
+      <p class="nota" style="margin-top:12px">Una prueba por empresa: se registra con el RUT con el que ofertas.</p>
+      <button type="button" class="plan-btn dest" data-plan="gratis">Empezar gratis</button></article>
     <article class="plan rv"><p class="k">Plan Radar</p><h3>Dónde puedes participar</h3>
       <p class="pr">0,5 UF <small>al mes</small></p>
-      <ul><li>Tu catálogo de productos</li><li>Aviso diario de las licitaciones que calzan con lo que vendes</li><li>Cada compra explicada en simple</li><li>2 revisiones "¿Cumplo?" al mes para probar</li><li class="no">Revisión "¿Cumplo?" sin límite</li></ul></article>
+      <ul><li>Tu catálogo de productos</li><li>Aviso diario de las licitaciones que calzan con lo que vendes</li><li>Cada compra explicada en simple</li><li>2 revisiones "¿Cumplo?" al mes para probar</li><li class="no">Revisión "¿Cumplo?" sin límite</li></ul>
+      <button type="button" class="plan-btn" data-plan="radar">Elegir Radar</button></article>
     <article class="plan dest rv" style="--d:.1s"><p class="k">Plan Apto</p><h3>Dónde participar y si cumples</h3>
       <p class="pr">1,5 UF <small>al mes</small></p>
-      <ul><li>Todo lo del Plan Radar</li><li>Revisión "¿Cumplo?" sin límite</li><li>Compara la ficha técnica con tu producto: características, plazo de entrega y garantía</li><li>Te dice qué te falta indicar antes de postular</li><li>Plan para ofertar con las fechas reales</li></ul></article>
+      <ul><li>Todo lo del Plan Radar</li><li>Revisión "¿Cumplo?" sin límite</li><li>Compara la ficha técnica con tu producto: características, plazo de entrega y garantía</li><li>Te dice qué te falta indicar antes de postular</li><li>Plan para ofertar con las fechas reales</li></ul>
+      <button type="button" class="plan-btn dest" data-plan="apto">Elegir Apto</button></article>
   </div>
-  <p class="nota-pl rv">Precios de referencia del prototipo, más IVA. Aún no se cobra: los planes de pago se activan más adelante.</p>
+  <p class="nota-pl rv">Precios de referencia del prototipo, más IVA. Aún no se cobra: si eliges Radar o Apto, empiezas con el plan gratis y te avisamos cuando se active el pago.</p>
 </section>
 
 <section class="seccion" id="como" aria-label="Qué hace Apto">
@@ -299,6 +309,15 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
   </div>
 </section>
 
+<section class="seccion" id="entrada" aria-label="Empieza con tu empresa" hidden>
+  <h2 class="sec-t">Empieza ahora. <span id="entradaPlan"></span></h2>
+  <div class="tarjeta entrada">
+    <p class="nota" id="entradaNota"></p>
+    <div id="entradaCuenta"></div>
+  </div>
+</section>
+
+<div id="herramienta" hidden>
 <section class="seccion" id="app" aria-label="Herramienta" style="padding-bottom:0">
   <h2 class="sec-t rv">Pruébalo ahora. <span>Con datos reales de Mercado Público.</span></h2>
 </section>
@@ -393,6 +412,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     </div>
   </section>
 </main>
+</div>
 
 <div class="notif-panel" id="notifPanel" role="dialog" aria-label="Notificaciones" hidden>
   <div class="np-cab"><b>Notificaciones</b><button type="button" id="notifTodas">Marcar todo como leído</button></div>
@@ -407,8 +427,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611211745"></script>
-<script src="app.js?v=202611211745"></script>
-<script src="notificaciones.js?v=202611211745"></script>
+<script src="buscar.js?v=202611211759"></script>
+<script src="app.js?v=202611211759"></script>
+<script src="notificaciones.js?v=202611211759"></script>
 </body>
 </html>

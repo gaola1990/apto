@@ -156,6 +156,15 @@ header nav a.cta:hover{background:#B8261B}
 .entrada .pk{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--marca)}
 @media(prefers-reduced-motion:reduce){.entrada-wrap,.entrada{transition:none}}
 
+.ciclo{display:inline-flex;gap:4px;background:#fff;border-radius:999px;padding:4px;margin:0 0 18px;box-shadow:0 1px 2px rgba(27,36,48,.06),0 8px 22px rgba(27,36,48,.08)}
+.ciclo button{border:0;background:transparent;font:inherit;font-weight:700;color:var(--suave);padding:8px 18px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+.ciclo button.on{background:var(--marca);color:#fff}
+.ciclo .ahorra{font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-left:6px;padding:2px 7px;border-radius:999px;background:var(--marca-suave,#E8EFFB);color:var(--marca)}
+.ciclo button.on .ahorra{background:rgba(255,255,255,.22);color:#fff}
+.planes[data-ciclo="mes"] .p-anio,.planes[data-ciclo="anio"] .p-mes,.planes[data-ciclo="mes"] .solo-anio{display:none}
+.planes .p-mes,.planes .p-anio{animation:cambioPrecio .45s cubic-bezier(.2,.7,.2,1)}
+@keyframes cambioPrecio{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.planes .p-mes,.planes .p-anio{animation:none}}
 .planes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1180px}
 .plan{background:#fff;border-radius:22px;padding:28px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07);display:flex;flex-direction:column}
 .plan.dest{outline:2px solid var(--marca);box-shadow:0 1px 2px rgba(27,36,48,.04),0 18px 40px rgba(29,78,158,.18)}
@@ -358,19 +367,23 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </section>
 
 <section class="seccion" id="planes" aria-label="Planes" style="padding-top:28px">
-  <div class="planes">
+  <div class="ciclo rv" role="group" aria-label="Periodo de pago">
+    <button type="button" class="on" data-ciclo="mes" aria-pressed="true">Mensual</button><button type="button" data-ciclo="anio" aria-pressed="false">Anual <span class="ahorra">2 meses gratis</span></button>
+  </div>
+  <div class="planes" data-ciclo="mes">
     <article class="plan rv"><p class="k">Plan Gratis</p><h3>Pruébalo con tu empresa</h3>
       <p class="pr">$0 <small>sin tarjeta</small></p>
       <ul><li>5 revisiones "¿Cumplo?" en total</li><li>Radar de licitaciones con lo que mejor calza</li><li>Calendario de plazos, "Cuánto cobrar" y precio de referencia</li><li>Guía "Tu primera oferta, paso a paso"</li><li class="no">Avisos diarios por correo</li></ul>
       <p class="nota" style="margin-top:12px">Una prueba por empresa: se registra con el RUT con el que ofertas.</p>
       <button type="button" class="plan-btn dest" data-plan="gratis">Empezar gratis</button></article>
     <article class="plan rv"><p class="k">Plan Radar</p><h3>Dónde puedes participar</h3>
-      <p class="pr">0,5 UF <small>al mes</small></p>
+      <p class="pr"><span class="p-mes">0,5 UF <small>al mes</small></span><span class="p-anio">5 UF <small>al año</small></span></p>
+      <p class="dto-t solo-anio"><span class="dto">2 meses gratis</span></p>
       <ul><li>Tu catálogo de productos</li><li>Aviso diario de las licitaciones que calzan con lo que vendes</li><li>Cada compra explicada en simple</li><li>2 revisiones "¿Cumplo?" al mes para probar</li><li class="no">Revisión "¿Cumplo?" sin límite</li></ul>
       <button type="button" class="plan-btn" data-plan="radar">Elegir Radar</button></article>
     <article class="plan dest rv" style="--d:.1s"><p class="k">Plan Apto</p><h3>Dónde participar y si cumples</h3>
-      <p class="pr"><span class="antes" aria-label="precio anterior 1,5 UF">1,5 UF</span> 1,2 UF <small>al mes</small></p>
-      <p class="dto-t"><span class="dto">20 % de descuento</span></p>
+      <p class="pr"><span class="p-mes">1 UF <small>al mes</small></span><span class="p-anio">10 UF <small>al año</small></span></p>
+      <p class="dto-t solo-anio"><span class="dto">2 meses gratis</span></p>
       <ul><li>Todo lo del Plan Radar</li><li>Revisión "¿Cumplo?" sin límite</li><li>Compara la ficha técnica con tu producto: características, plazo de entrega y garantía</li><li>Te dice qué te falta indicar antes de postular</li><li>Plan para ofertar con las fechas reales</li></ul>
       <button type="button" class="plan-btn dest" data-plan="apto">Elegir Apto</button></article>
   </div>
@@ -497,8 +510,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611211915"></script>
-<script src="app.js?v=202611211915"></script>
-<script src="notificaciones.js?v=202611211915"></script>
+<script src="buscar.js?v=202611211919"></script>
+<script src="app.js?v=202611211919"></script>
+<script src="notificaciones.js?v=202611211919"></script>
 </body>
 </html>

@@ -287,10 +287,10 @@ function pintarNegocio(){
   if(perfil.vistaGuardadas || !resultados.length){ el.innerHTML = ""; return; }
   const montos = resultados.map(montoDe).sort((a, b) => a - b);
   const total = montos.reduce((a, b) => a + b, 0), tipico = montos[Math.floor(montos.length / 2)];
-  const planApto = 1.2 * UF_CLP;   // 1,5 UF con 20 % de descuento
+  const planApto = 1 * UF_CLP;   // Plan Apto: 1 UF al mes (10 UF al año)
   let logueado = false; try{ logueado = !!sesion; }catch(e){} // sesion se declara más abajo
   el.innerHTML = '<div class="negocio"><p class="grande">💰 Hoy hay ' + resultados.length.toLocaleString("es-CL") + (resultados.length === 1 ? " compra abierta" : " compras abiertas") + " para ti, por al menos " + millones(total) + ".</p>" +
-    "<p>Una compra de tamaño típico para ti vale unos <b>" + millones(tipico) + "</b>. El Plan Apto cuesta 1,2 UF al mes, con 20 % de descuento (unos " + millones(planApto) + "): " +
+    "<p>Una compra de tamaño típico para ti vale unos <b>" + millones(tipico) + "</b>. El Plan Apto cuesta 1 UF al mes (unos " + millones(planApto) + "): " +
       (planApto / tipico < 0.01 ? "<b>menos del 1 % de una sola compra</b>." : "<b>el " + Math.ceil(100 * planApto / tipico) + " % de una sola compra</b>.") + "</p>" +
     '<p class="nota" style="margin-top:6px">Montos informados por los compradores o, si no los publican, el mínimo de cada tramo de tamaño (cálculo conservador).</p></div>' +
     '<details class="porti"' + (leer("rp_porti_visto", false) ? "" : " open") + '><summary>Lo que Apto hace por ti</summary><ul>' +
@@ -959,7 +959,12 @@ function pedirEntrada(plan, conScroll){
   $("entradaCuenta").appendChild($("cuenta"));
   if(conScroll) setTimeout(() => E.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"}), 200);   // espera a que empiece a desplegarse
 }
-document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn"); if(b) pedirEntrada(b.dataset.plan, true); });
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn"); if(b) pedirEntrada(b.dataset.plan, true);
+  const cc = e.target.closest && e.target.closest(".ciclo button"); if(cc){   // Mensual / Anual
+    const g = document.querySelector(".planes"); if(g) g.dataset.ciclo = cc.dataset.ciclo;
+    document.querySelectorAll(".ciclo button").forEach(x => { const on = x === cc; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
+    try{ localStorage.setItem("apto_ciclo", cc.dataset.ciclo); }catch(_){}
+  } });
 if(/[?&](demo|abierto)=/.test(location.search)) desbloquear(false);   // modo demostración y pruebas internas
 
 // ---------- Plan gratis: 5 revisiones ¿Cumplo? por empresa (RUT) ----------

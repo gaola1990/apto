@@ -70,7 +70,7 @@ const R = require(path.join(__dirname, "repertorio.js"));
 // valor de la UF del día (mindicador.cl, gratis); si no responde, un valor de referencia
 async function valorUF(){
   try{ const j = await (await fetch("https://mindicador.cl/api/uf", {signal: AbortSignal.timeout(15000)})).json(); const v = j.serie && j.serie[0] && j.serie[0].valor; if(v > 10000) return v; }catch(e){}
-  return Number(process.env.UF_CLP || 39800);
+  return Number(process.env.UF_CLP || 41378);
 }
 
 async function clientes(){

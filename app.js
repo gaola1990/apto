@@ -824,6 +824,14 @@ function avisar(){
   const viejo = origen.startsWith("Copia") && horas > 12 ? " ⚠ Los datos tienen " + Math.round(horas) + " horas: pueden faltar compras nuevas." : "";
   $("fuente").textContent = origen + ". Fuente: API pública de ChileCompra." + viejo;
   $("fuente").style.color = viejo ? "var(--rojo, #B83A2B)" : "";
+  const sello = $("sello");   // junto al contador de la portada: cuándo se actualizaron los datos
+  if(sello){
+    const enVivo = origen.startsWith("Datos en vivo"), f = enVivo ? new Date() : (copia && copia.fecha ? new Date(copia.fecha) : null);
+    if(f && !isNaN(f)){
+      const hoy = f.toDateString() === new Date().toDateString(), hora = f.toLocaleTimeString("es-CL", {hour: "2-digit", minute: "2-digit", hour12: false});
+      sello.innerHTML = "Datos de Mercado Público actualizados " + (hoy ? "hoy a las " + hora : "el " + f.toLocaleDateString("es-CL", {day: "numeric", month: "short"}) + " a las " + hora) + ". Se renuevan cada 4 horas. " + '<a href="estado.html">Ver estado de los datos</a>';
+    }
+  }
   const n = datos.filter(d => { const x = diasPara(d.cierre); return x === null || x >= 0; }).length;
   $("hnum").dataset.meta = n;
   if($("tnum").classList.contains("in") || !visto) contar($("hnum"), n);

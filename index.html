@@ -138,6 +138,7 @@ header nav a.cta:hover{background:#B8261B}
 /* contador: ahora es una tarjeta chica al lado de "Habla como tú" */
 .t-num{background:var(--marca);color:#fff}
 .t-num .k,.t-num p{color:rgba(255,255,255,.9)!important}
+.t-num .sello{margin-top:8px;font-size:13px;opacity:.9}.t-num .sello a{color:#fff;text-decoration:underline}
 .t-num .num{font-size:clamp(46px,5.4vw,78px);margin:4px 0 8px}
 .t-num::after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;border:22px solid rgba(255,255,255,.08);right:-40px;top:-40px}
 .t-big .k,.t-big p{color:rgba(255,255,255,.88)}
@@ -242,6 +243,8 @@ header nav a.cta:hover{background:#B8261B}
 @keyframes cambioPrecio{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.planes .p-mes,.planes .p-anio{animation:none}}
 .glosa{margin:6px 0 10px;color:var(--suave);font-size:14px}
+.uf-nota{max-width:900px;margin:0 0 14px;color:var(--suave);font-size:15px;line-height:1.45}
+.uf-nota b{color:var(--tinta,#1B2430)}
 .plan-intro{max-width:1180px;margin:0 0 14px;font-size:17px;color:var(--tinta,#1B2430)}
 .plan .paraquien{margin:10px 0 0;color:var(--marca);font-weight:700;font-size:14px}
 .plan .pesos{margin:2px 0 0;color:var(--suave);font-size:14px}
@@ -451,7 +454,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3><p class="glosa">Cuándo puedes preguntar, cuándo responden y cuándo cierra.</p>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
     <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto entiende abreviaturas, sinónimos y errores de escritura, y busca en el catálogo oficial de productos del Estado.</p></article>
-    <article class="tile t-num rv" id="tnum" style="--d:.2s"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Las que todavía puedes ofertar (<i>licitaciones</i>). Apto las revisa todas por ti.</p></article>
+    <article class="tile t-num rv" id="tnum" style="--d:.2s"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Las que todavía puedes ofertar (<i>licitaciones</i>). Apto las revisa todas por ti.</p><p class="sello" id="sello">Los datos se actualizan cada 4 horas desde Mercado Público. <a href="estado.html">Ver estado de los datos</a></p></article>
     <article class="tile t-revisa rv" id="revisa" style="--d:.1s">
       <p class="k">Cómo revisa Apto si cumples</p>
       <h3>Así decidimos si cumples, y por qué.</h3>
@@ -495,6 +498,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 
 <section class="seccion" id="planes" aria-label="Planes" style="padding-top:28px">
   <p class="plan-intro rv"><b>¿Nunca has vendido al Estado?</b> Empieza por el Plan Gratis: no pagas ni das tarjeta. Cuando quieras más, pasas a otro plan.</p>
+  <p class="uf-nota rv"><b>¿Qué es la UF?</b> La Unidad de Fomento es un valor en pesos que sube con la inflación. Hoy <b>1 UF = <span data-ufval></span></b> (dato del SII, 21-11-2026). Los precios en pesos que ves abajo son aproximados y <b>no incluyen IVA</b> (19 %).</p>
   <div class="ciclo rv" role="group" aria-label="Periodo de pago">
     <button type="button" class="on" data-ciclo="mes" aria-pressed="true">Mensual</button><button type="button" data-ciclo="anio" aria-pressed="false">Anual <span class="ahorra">2 meses gratis</span></button>
   </div>
@@ -503,7 +507,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <p class="pr">$0 <small>sin tarjeta</small></p>
       <p class="paraquien">Es para ti si quieres ver cómo funciona antes de decidir.</p>
       <ul><li>Escribes qué vendes y ves las compras del Estado donde podrías ofertar</li><li>5 veces puedes revisar si tu producto cumple lo que pide una compra</li><li>Ves las fechas importantes y, más o menos, cuánto cobrar</li><li>Una guía paso a paso para tu primera oferta</li><li>Si quieres, te enviamos un correo cada mañana con las compras nuevas</li></ul>
-      <p class="nota" style="margin-top:12px">Te registras con el RUT de tu empresa. Hay una prueba gratis por empresa.</p>
+      <p class="nota" style="margin-top:12px">Te registras con el RUT de tu empresa (hay una prueba gratis por empresa). <b>Cuando uses tus 5 revisiones</b>, sigues viendo compras gratis; para revisar más, pasas al Plan Radar (2 al mes) o al Plan Apto (sin límite).</p>
       <button type="button" class="plan-btn dest" data-plan="gratis">Empezar gratis</button></article>
     <article class="plan rv"><p class="k">Plan Radar</p><h3>Para que no se te pase ninguna compra</h3>
       <p class="pr"><span class="p-mes">0,5 UF <small>al mes</small></span><span class="p-anio">5 UF <small>al año</small></span></p>
@@ -520,7 +524,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <ul><li>Todo lo del Plan Radar</li><li>Revisas sin límite si tu producto cumple lo que pide cada compra</li><li>Te decimos qué dato te falta escribir (medidas, garantía, plazo de entrega)</li><li>Te damos el texto listo para pegar en tu oferta</li><li>Las fechas reales de cada compra, en tu calendario</li></ul>
       <button type="button" class="plan-btn dest" data-plan="apto">Elegir Apto</button></article>
   </div>
-  <p class="nota-pl rv"><b>UF</b> significa Unidad de Fomento: un valor en pesos que sube con la inflación (hoy 1 UF = <b data-ufval></b>, dato del SII al 21-11-2026). Los precios en pesos son aproximados y no incluyen IVA (19 %). Aún no se cobra: si eliges Radar o Apto, empiezas con el plan gratis y te avisamos cuando se active el pago.</p>
+  <p class="nota-pl rv">Aún no se cobra: si eliges Radar o Apto, empiezas con el plan gratis y te avisamos cuando se active el pago.</p>
   <details class="glosario rv">
     <summary>¿Hay palabras que no entiendes? Aquí las explicamos</summary>
     <dl>
@@ -657,8 +661,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611212035"></script>
-<script src="app.js?v=202611212035"></script>
-<script src="notificaciones.js?v=202611212035"></script>
+<script src="buscar.js?v=202611212044"></script>
+<script src="app.js?v=202611212044"></script>
+<script src="notificaciones.js?v=202611212044"></script>
 </body>
 </html>

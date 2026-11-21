@@ -362,7 +362,7 @@ async function abrir(codigo){
     "<dt>Adjudicación estimada</dt><dd>" + fechaCorta((d.Fechas || {}).FechaAdjudicacion) + "</dd>" +
     "<dt>Qué piden</dt><dd>" + esc((d.Descripcion || "").slice(0, 420)) + ((d.Descripcion || "").length > 420 ? "…" : "") + "</dd>" +
     "<dt>Productos (" + items.length + ")</dt><dd>" + (items.slice(0, 8).map(i => esc(i.NombreProducto) + " <span class='nota'>× " + esc(i.Cantidad) + " " + esc(i.UnidadMedida || "") + "</span>").join("<br>") || "—") + (items.length > 8 ? "<br><span class='nota'>y " + (items.length - 8) + " más</span>" : "") + "</dd>" +
-    precioRef(items) +
+    precioRef(items) + cuantoCobrar(items, d) +
     "</dl>" + enSimple(codigo) + tengo(items) + bloqueCumplo() + "<h2>Mi plan para ofertar</h2>" + plan(d, base) +
     '<div class="acciones"><button class="principal" id="bg">' + (guardadas[codigo] ? "★ Guardada" : "☆ Guardar") + '</button>' +
     '<button class="sec" id="bno" title="Apto aprende de esto para mostrarte compras más parecidas a lo que vendes">👎 No me sirve</button>' +
@@ -397,6 +397,22 @@ function precioRef(items){
   return filas.length ? "<dt>Precio de referencia</dt><dd>" + filas.join("<br>") + "<br><span class='nota'>A cuánto se adjudicó este mismo producto en compras anteriores. Úsalo como guía, no como regla.</span></dd>" : "";
 }
 
+// Cuánto cobrar: precio de referencia × cantidad de lo que piden, contra el presupuesto del comprador (solo una guía).
+function cuantoCobrar(items, d){
+  let tot = 0, bajo = 0, n = 0;
+  for(const i of items){
+    const p = PRE[String(i.CodigoProducto || "")], q = Number(i.Cantidad) || 0;
+    if(!p || !q || !p.med) continue;
+    tot += p.med * q; bajo += (p.min || p.med) * q; n++;
+  }
+  if(!n) return "";
+  const pres = Number(d.MontoEstimado) || 0;
+  let h = "<dt>Cuánto cobrar (guía)</dt><dd>Con el precio de referencia, " + (n === 1 ? "este producto" : "los " + n + " productos con precio conocido") + " suma <b>" + plata(Math.round(tot)) +
+    "</b> (lo más bajo que se ha visto: " + plata(Math.round(bajo)) + ").";
+  if(pres) h += tot > pres ? " <b>Ojo:</b> supera el presupuesto del comprador (" + plata(pres) + "); con ese precio podrías quedar fuera." :
+    " Es el " + Math.round(tot / pres * 100) + " % del presupuesto del comprador (" + plata(pres) + ").";
+  return h + "<br><span class='nota'>Agrega tu costo, despacho y margen. Es una guía con compras anteriores, no una promesa de ganar.</span></dd>";
+}
 // Todos los plazos de la compra en un solo archivo de calendario, con avisos antes de cada uno.
 function eventosPlazos(codigo, nombre, F, cierre){
   const f = x => { const p = n => String(n).padStart(2, "0"); return x.getFullYear() + p(x.getMonth() + 1) + p(x.getDate()) + "T" + p(x.getHours()) + p(x.getMinutes()) + "00"; };
@@ -947,3 +963,18 @@ function pintarCuenta(){
 iniciar();
 pintarCuenta();
 if(sesion) bajarCuenta().catch(() => {});
+
+// Modo demo para grabar el video: ?demo=1 (o ?demo=aseo, ?demo=computacion). Llena un perfil de ejemplo sin guardar nada del visitante.
+(function(){
+  const m = /[?&]demo=([\w-]*)/.exec(location.search); if(!m) return;
+  const EJ = {"1": ["notebook, computadores, tóner", "Araucanía"], computacion: ["notebook, computadores, tóner", "Araucanía"], aseo: ["servicio de aseo, insumos de limpieza", "Araucanía"], jardines: ["mantención de áreas verdes", "Araucanía"]};
+  const e = EJ[m[1] || "1"] || EJ["1"];
+  try{ localStorage.removeItem("rp_perfil"); }catch(x){}
+  setTimeout(() => {
+    const t = $("extra"), r = $("region"); if(!t) return;
+    t.value = e[0]; perfil.extra = e[0]; t.dispatchEvent(new Event("input", {bubbles: true}));
+    if(r){ const o = [...r.options].find(x => x.textContent.includes(e[1])); if(o){ r.value = o.value; perfil.region = o.value; r.dispatchEvent(new Event("input", {bubbles: true})); } }
+    const b = document.createElement("div"); b.textContent = "Modo demostración · datos de ejemplo"; b.style.cssText = "position:fixed;bottom:10px;left:10px;background:#1D4E9E;color:#fff;padding:4px 10px;border-radius:8px;font-size:12px;z-index:50";
+    document.body.appendChild(b);
+  }, 2500);
+})();

@@ -924,7 +924,7 @@ async function bajarCuenta(){
   const filas = await sb("/rest/v1/cuentas?select=perfil,catalogo,guardadas,pasos,avisos");
   if(filas && filas.length){
     const c = filas[0];
-    avisosPref = c.avisos || "semanal"; if($("avisosSel")) $("avisosSel").value = avisosPref;
+    avisosPref = c.avisos || "no"; if($("avisosOk")) $("avisosOk").checked = avisosPref === "diario";
     const ticket = perfil.ticket; perfil = {...perfil, ...c.perfil, ticket}; catalogo = c.catalogo || []; guardadas = c.guardadas || {}; hechos = c.pasos || {};
     try{ localStorage.setItem("rp_perfil", JSON.stringify(perfil)); localStorage.setItem("rp_catalogo", JSON.stringify(catalogo)); localStorage.setItem("rp_guardadas", JSON.stringify(guardadas)); localStorage.setItem("rp_pasos", JSON.stringify(hechos)); }catch(e){}
     ["extra","excluir","region","tamano"].forEach(k => $(k).value = perfil[k] || (k === "tamano" ? "5" : ""));
@@ -934,7 +934,7 @@ async function bajarCuenta(){
   } else { subirCuenta(); nota("Tu catálogo y tus compras guardadas ahora quedan en tu cuenta."); }
 }
 const nota = t => { const n = $("cuentaNota"); if(n) n.textContent = t; };
-let avisosPref = "semanal";
+let avisosPref = "no";   // los avisos por correo son opt-in: solo "diario" si la persona marca la casilla
 // ---------- Entrada por plan: la herramienta se abre al elegir un plan e ingresar los datos ----------
 // (Solo es la puerta de entrada de la página; el límite de revisiones ¿Cumplo? lo exige el servidor.)
 const NOMBRES_PLAN = {gratis: "Plan Gratis", radar: "Plan Radar", apto: "Plan Apto"};
@@ -1016,15 +1016,15 @@ function pintarCuenta(){
     C.innerHTML = '<div class="nota">Conectado como <b>' + esc(sesion.correo || "") + '</b>. Tus datos se guardan en tu cuenta y los ves en cualquier dispositivo.</div><div id="prueba"></div>' +
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="aprenderOk"' + (perfil.aprender !== false ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
       '<span>Ayudar a mejorar Apto <span class="nota" style="display:block">Cuando guardas o descartas una compra, Apto registra de forma anónima qué palabras calzan con qué productos. <a href="privacidad.html">Más información</a></span></span></label>' +
-      '<label for="avisosSel" style="margin-top:10px">Avisos de compras nuevas por correo</label>' +
-      '<select id="avisosSel"><option value="diario">Cada mañana</option><option value="semanal">Una vez por semana</option><option value="no">No quiero avisos</option></select>' +
+      '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="avisosOk"' + (avisosPref === "diario" ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
+      '<span>Recibir por correo los avisos de compras de Mercado Público <span class="nota" style="display:block">Si lo aceptas, te enviamos cada mañana las compras nuevas que calzan con lo que vendes. Puedes desactivarlo cuando quieras; cada correo trae un enlace para darte de baja.</span></span></label>' +
       '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button><button class="sec" id="borrarDatos">Borrar mis datos</button></div><p class="nota" id="cuentaNota"></p>';
     cargarPrueba();
-    $("avisosSel").value = avisosPref;
-    $("avisosSel").onchange = async e => {
-      try{ await sb("/rest/v1/cuentas?user_id=eq." + sesion.id, {method: "PATCH", headers: {"Prefer": "return=minimal"}, body: JSON.stringify({avisos: e.target.value})});
-        avisosPref = e.target.value; nota(e.target.value === "no" ? "Listo: no te enviaremos avisos." : "Listo: te avisaremos " + (e.target.value === "diario" ? "cada mañana." : "una vez por semana.")); }
-      catch(err){ nota("No se pudo guardar: " + err.message); }
+    $("avisosOk").onchange = async e => {
+      const nuevo = e.target.checked ? "diario" : "no";
+      try{ await sb("/rest/v1/cuentas?user_id=eq." + sesion.id, {method: "PATCH", headers: {"Prefer": "return=minimal"}, body: JSON.stringify({avisos: nuevo})});
+        avisosPref = nuevo; nota(e.target.checked ? "Listo: te enviaremos cada mañana las compras nuevas que calzan contigo." : "Listo: no te enviaremos avisos por correo."); }
+      catch(err){ e.target.checked = !e.target.checked; nota("No se pudo guardar: " + err.message); }
     };
     $("salir").onclick = async () => { try{ await sb("/auth/v1/logout", {method: "POST"}); }catch(e){} guardarSesion(null); pintarCuenta(); };
     $("aprenderOk").onchange = e => { perfil.aprender = e.target.checked; cambio(); nota(e.target.checked ? "Gracias: Apto aprenderá de forma anónima con tu uso." : "Listo: Apto ya no registrará tu uso."); };

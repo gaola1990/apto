@@ -40,7 +40,8 @@ function guardar(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(
 let perfil = leer("rp_perfil", {rubros:[], extra:"", excluir:"", region:"", tamano:"5", ticket:""});
 let guardadas = leer("rp_guardadas", {});
 let hechos = leer("rp_pasos", {});
-let datos = [], resultados = [], mostrar = 40, origen = "";
+const INI = 12;   // la lista parte corta: las mejores compras primero, el resto con "Ver más"
+let datos = [], resultados = [], mostrar = INI, origen = "", ocultas = 0;
 let RES = {}, PRE = {}, DET = {}, CATMAP = {}, DICC_OK = false, motorLocal = false;        // resumenes nocturnos (n8n + IA local) y motor ¿Cumplo? local
 const MOTOR_PC = "http://127.0.0.1:8787";
 let MOTOR = MOTOR_PC, motorNube = false;
@@ -198,12 +199,22 @@ function calcular(){
     const reg = det && det.r ? det.r : "", enRegion = !!(perfil.region && reg && norm(reg) === norm(perfil.region));
     if(perfil.soloRegion && perfil.region && reg && !enRegion) continue;
     const comp = competencia(d.codigo);
-    const pts = hits.reduce((a, h) => a + (h.respaldo ? 1 : h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0) + (porRubro ? 3 : 0) + (porCat ? 4 : 0) + (comp && comp.med <= 2 ? 1 : 0) + (enRegion ? 3 : 0);
-    resultados.push({...d, dias, pts, hits, porCat, comp, reg, enRegion});
+    // Lo que el vendedor escribió pesa más que cualquier extra: la región, el tamaño y la poca competencia solo desempatan entre compras
+    // que ya calzan por su nombre (antes una compra "de tu región" sin ninguna palabra tuya podía quedar sobre una que sí las tenía).
+    const hay = hits.length > 0;
+    const pts = hits.reduce((a, h) => a + (h.respaldo ? 1 : h.frase ? 3 : 2), 0) + (hay ? 3 : 0) + (porRubro ? 3 : 0) + (porCat ? (hay ? 4 : 2) : 0) +
+      (hay ? (d.tipo.n <= 2 ? 1 : 0) + (comp && comp.med <= 2 ? 1 : 0) + (enRegion ? 3 : 0) : (enRegion ? 1 : 0));
+    // calidad del calce: 3 = coincide el nombre/descripción Y la categoría o el rubro; 2 = solo las palabras; 1 = solo categoría o rubro (sin ninguna palabra tuya)
+    const calidad = hay && (porCat || porRubro) ? 3 : hay ? 2 : 1;
+    resultados.push({...d, dias, pts, hits, porCat, comp, reg, enRegion, calidad});
   }
   const porCierre = (a, b) => (a.dias ?? 999) - (b.dias ?? 999);
   const porCompetencia = (a, b) => ((a.comp ? a.comp.med : 99) - (b.comp ? b.comp.med : 99)) || b.pts - a.pts;
   const orden = $("orden").value;
+  ocultas = 0;
+  if(!perfil.vistaGuardadas && !perfil.todas){   // por defecto solo lo que calza bien (si hay al menos 5); "Ver también" muestra el resto
+    for(const nivel of [3, 2]){ const buenas = resultados.filter(r => r.calidad >= nivel); if(buenas.length >= 5){ ocultas = resultados.length - buenas.length; resultados = buenas; break; } }
+  }
   resultados.sort(perfil.vistaGuardadas || orden === "cierre" ? porCierre : orden === "competencia" ? porCompetencia : (a, b) => b.pts - a.pts || porCierre(a, b));
 }
 
@@ -232,7 +243,7 @@ function botonResultados(){
   b.textContent = "Ver " + n.toLocaleString("es-CL") + (n === 1 ? " compra para ti ↓" : " compras para ti ↓");
 }
 addEventListener("scroll", () => botonResultados(), {passive: true});
-document.addEventListener("click", e => { if(e.target.id === "irResultados") $("lista").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"}); });
+document.addEventListener("click", e => { const t = e.target.closest && e.target.closest("[data-todas]"); if(t){ perfil.todas = t.dataset.todas === "1"; cambio(); return; } if(e.target.id === "irResultados") $("lista").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"}); });
 addEventListener("resize", () => botonResultados());
 function pintar(){
   calcular();
@@ -246,6 +257,9 @@ function pintar(){
     cifra(chicas, "de tamaño pyme (hasta 1.000 UTM)");
   pintarNegocio();
   const L = $("lista");
+  const info = $("calceInfo");
+  if(info) info.innerHTML = perfil.vistaGuardadas ? "" : ocultas ? 'Te mostramos las <b>' + resultados.length + '</b> que mejor calzan con lo que vendes. <button type="button" class="enlace" data-todas="1">Ver también las ' + ocultas + " que calzan menos</button>" :
+    perfil.todas && resultados.length ? 'Mostrando todas las que calzan, de mejor a peor. <button type="button" class="enlace" data-todas="0">Ver solo las que calzan mejor</button>' : "";
   if(!datos.length){ L.innerHTML = '<div class="vacio">No se pudieron cargar licitaciones. Revisa tu conexión y recarga.</div>'; return; }
   if(!resultados.length){
     L.innerHTML = '<div class="vacio">' + (perfil.vistaGuardadas ? "Aún no guardas ninguna oportunidad." :
@@ -256,7 +270,7 @@ function pintar(){
     const [cl, tx] = etiquetaCierre(r.dias);
     return '<article class="op" tabindex="0" role="button" data-c="' + esc(r.codigo) + '">' +
       "<div><h3>" + (guardadas[r.codigo] ? "★ " : "") + resaltar(r.nombre, r.hits) + "</h3>" +
-      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.enRegion ? '<span class="et region">En tu región</span>' : r.reg ? '<span class="et">' + esc(r.reg) + "</span>" : "") + (r.porCat ? '<span class="et">Calza por categoría</span>' : "") + (r.comp && r.comp.med <= 2 ? '<span class="et poca">Poca competencia</span>' : "") + "</div></div>" +
+      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.enRegion ? '<span class="et region">En tu región</span>' : r.reg ? '<span class="et">' + esc(r.reg) + "</span>" : "") + (r.hits.length ? '<span class="et calza">Calza: «' + esc(r.hits.slice(0, 2).map(h => h.t || h.w || "").filter(Boolean).join("», «")) + '»</span>' : "") + (r.porCat ? '<span class="et">Calza por categoría</span>' : "") + (r.comp && r.comp.med <= 2 ? '<span class="et poca">Poca competencia</span>' : "") + "</div></div>" +
       '<div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL",{day:"numeric",month:"short"}) : "—") + '</b><span class="et ' + cl + '">' + tx + "</span></div></article>";
   }).join("");
   $("mas").hidden = resultados.length <= mostrar;
@@ -842,8 +856,8 @@ function iniciar(){
     if(rp){ perfil.noCats = []; cambio(); }
   };
   $("orden").onchange = pintar;
-  $("vista").onchange = () => { perfil.vistaGuardadas = $("vista").value === "guardadas"; mostrar = 40; pintar(); };
-  $("mas").onclick = () => { mostrar += 40; pintar(); };
+  $("vista").onchange = () => { perfil.vistaGuardadas = $("vista").value === "guardadas"; mostrar = INI; pintar(); };
+  $("mas").onclick = () => { mostrar += 20; pintar(); };
   $("calguard").onclick = calendarioGuardadas;
   $("rutbtn").onclick = catalogoPorRut;
   $("lista").onclick = e => { const a = e.target.closest(".op"); if(a) abrir(a.dataset.c); };
@@ -864,7 +878,7 @@ function iniciar(){
   cargar();
 }
 let espera;
-function cambio(){ const {vistaGuardadas, ...p} = perfil; guardar("rp_perfil", p); mostrar = 40; clearTimeout(espera); espera = setTimeout(pintar, 180); }
+function cambio(){ const {vistaGuardadas, ...p} = perfil; guardar("rp_perfil", p); mostrar = INI; clearTimeout(espera); espera = setTimeout(pintar, 180); }
 
 // ---------- Mi cuenta: acceso con código de un solo uso por correo (Supabase Auth, sin contraseña) ----------
 // El código llega al correo, vence en 10 minutos y sirve una vez. Cada empresa solo puede leer y escribir su propia

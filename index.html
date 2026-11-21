@@ -149,7 +149,15 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 .plan-btn:hover{transform:translateY(-1px)}
 .plan>ul{margin-bottom:6px}
 .plan{align-items:stretch}
-.entrada{max-width:520px;margin:0 auto}
+/* el panel se despliega hacia abajo al elegir un plan (altura animada con grid 0fr → 1fr) */
+.entrada-wrap{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .6s cubic-bezier(.2,.7,.2,1),visibility 0s linear .6s}
+.entrada-wrap.abierta{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .6s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.entrada-int{min-height:0;overflow:hidden}
+.entrada{width:min(560px,calc(100% - 32px));margin:14px auto 40px;opacity:0;transform:translateY(-14px);transition:opacity .45s ease .1s,transform .55s cubic-bezier(.2,.7,.2,1) .1s}
+.entrada-wrap.abierta .entrada{opacity:1;transform:none}
+.entrada .pk{margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--marca)}
+@media(prefers-reduced-motion:reduce){.entrada-wrap,.entrada{transition:none}}
+
 .planes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1180px}
 .plan{background:#fff;border-radius:22px;padding:28px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07);display:flex;flex-direction:column}
 .plan.dest{outline:2px solid var(--marca);box-shadow:0 1px 2px rgba(27,36,48,.04),0 18px 40px rgba(29,78,158,.18)}
@@ -301,7 +309,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <script>document.documentElement.classList.add("js")</script>
 <header><div class="in">
   <h1>Apto</h1>
-  <nav aria-label="Secciones"><a href="#como">Qué hace</a><a href="#pasos">Cómo funciona</a><a href="#planes">Planes</a><button type="button" class="campana" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">🔔<span class="cuenta" id="notifCuenta" hidden></span></button><a class="cta" href="#app">Pruébalo</a></nav>
+  <nav aria-label="Secciones"><a href="#como">Qué hace</a><a href="#pasos">Cómo funciona</a><a href="#planes">Planes</a><button type="button" class="campana" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">🔔<span class="cuenta" id="notifCuenta" hidden></span></button><a class="cta" href="#planes">Empezar gratis</a></nav>
 </div></header>
 
 <section class="hero" aria-label="Presentación">
@@ -357,6 +365,16 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
   <p class="nota-pl rv">Precios de referencia del prototipo, más IVA. Aún no se cobra: si eliges Radar o Apto, empiezas con el plan gratis y te avisamos cuando se active el pago.</p>
 </section>
 
+<div id="entrada" class="entrada-wrap" aria-label="Empieza con tu empresa" inert>
+  <div class="entrada-int">
+    <div class="tarjeta entrada">
+      <p class="pk" id="entradaPlan"></p>
+      <p class="nota" id="entradaNota"></p>
+      <div id="entradaCuenta"></div>
+    </div>
+  </div>
+</div>
+
 <section class="seccion" id="como" aria-label="Qué hace Apto">
   <h2 class="sec-t rv">Todo para ofertar. <span>En un solo lugar.</span></h2>
   <div class="mosaico">
@@ -368,14 +386,6 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto entiende sinónimos, abreviaturas y errores, y busca en el catálogo oficial de Mercado Público.</p></article>
     <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado ni trabajamos para los compradores: estamos del lado de quien vende.</p></div>
       <div class="chips2"><span>API pública de ChileCompra</span><span>Datos abiertos</span><span>Desde 0,5 UF al mes</span></div></article>
-  </div>
-</section>
-
-<section class="seccion" id="entrada" aria-label="Empieza con tu empresa" hidden>
-  <h2 class="sec-t">Empieza ahora. <span id="entradaPlan"></span></h2>
-  <div class="tarjeta entrada">
-    <p class="nota" id="entradaNota"></p>
-    <div id="entradaCuenta"></div>
   </div>
 </section>
 
@@ -489,8 +499,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611211759"></script>
-<script src="app.js?v=202611211759"></script>
-<script src="notificaciones.js?v=202611211759"></script>
+<script src="buscar.js?v=202611211848"></script>
+<script src="app.js?v=202611211848"></script>
+<script src="notificaciones.js?v=202611211848"></script>
 </body>
 </html>

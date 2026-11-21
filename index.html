@@ -133,6 +133,10 @@ header nav a.cta:hover{background:#B8261B}
 .rcolores li.s-ok{color:#1E7F52}.rcolores li.s-al{color:#8A5A00}.rcolores li.s-ro{color:#B83A2B}
 .rcolores b{display:block;color:inherit}.rcolores span{display:block;color:#3F4A5A;font-size:14px;line-height:1.4}
 .rojo-nota{margin:16px 0 0;padding:12px 16px;border-radius:14px;background:#E8EFFB;color:#1B2430;font-size:14.5px;line-height:1.5}
+.t-tall{display:flex;flex-direction:column;justify-content:center}
+.rnotas{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:12px}
+.rnotas li{position:relative;padding-left:30px;font-size:16px;line-height:1.35;color:#1B2430}
+.rnotas li::before{content:"✓";position:absolute;left:0;top:-1px;width:22px;height:22px;border-radius:50%;background:var(--marca-suave,#E8EFFB);color:var(--marca);font-weight:700;font-size:13px;display:grid;place-items:center}
 .rojo-nota .mas{margin-top:6px}.rojo-nota .mas summary{cursor:pointer;color:var(--marca);font-weight:700;display:inline-block}.rojo-nota .mas[open] summary{margin-bottom:6px}
 @media(max-width:1000px){.rpasos{grid-template-columns:1fr 1fr}.rcolores{grid-template-columns:1fr}}
 @media(max-width:560px){.rpasos{grid-template-columns:1fr}.t-revisa{grid-column:span 1}}
@@ -450,40 +454,22 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <div class="vpasos" aria-hidden="true"><span class="vp1">1 · Cuéntanos</span><span class="vp2">2 · Mira</span><span class="vp3">3 · Revisa</span></div>
       <p class="vnota">Ejemplo ilustrativo, con datos de muestra.</p>
     </article>
-    <article class="tile t-tall rv" style="--d:.1s"><p class="k">Veredicto claro</p><h3>Te decimos si cumples. Y por qué.</h3>
-      <ul class="sem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-al"><i></i>Te falta indicarlo<small>Garantía de 6 meses</small></li><li class="s-ro"><i></i>No cumple<small>3.600 de 4.000 lúmenes</small></li></ul></article>
+    <article class="tile t-tall rv" id="revisa" style="--d:.1s"><p class="k">Antes de ofertar</p><h3>Apto te ayuda. Tú decides.</h3>
+      <ul class="rnotas"><li>Es una ayuda, no una garantía.</li><li>La revisa una IA: puede equivocarse.</li><li>Siempre manda la ficha técnica oficial.</li><li>Cumplir evita rechazos, no asegura ganar.</li><li>Tu ficha se borra al terminar.</li></ul></article>
     <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
     <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto te entiende igual.</p></article>
     <article class="tile t-num rv" id="tnum" style="--d:.2s"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Apto las revisa todas por ti.</p><p class="sello" id="sello">Se actualiza cada 4 horas · <a href="estado.html">ver estado</a></p></article>
-    <article class="tile t-revisa rv" id="revisa" style="--d:.1s">
-      <p class="k">Cómo revisa Apto si cumples</p>
-      <h3>Así revisamos, en cuatro pasos.</h3>
-      <ol class="rpasos">
-        <li><b>1</b><strong>Lee la ficha técnica</strong></li>
-        <li><b>2</b><strong>Compara con tu producto</strong></li>
-        <li><b>3</b><strong>Marca cada requisito con un color</strong></li>
-        <li><b>4</b><strong>Te da el texto para tu oferta</strong></li>
-      </ol>
-      <ul class="rcolores">
-        <li class="s-ok"><i></i><div><b>Cumple</b><span>Lo tienes.</span></div></li>
-        <li class="s-al"><i></i><div><b>Te falta indicarlo</b><span>Escríbelo en tu oferta.</span></div></li>
-        <li class="s-ro"><i></i><div><b>No cumple</b><span>No llega a lo que piden.</span></div></li>
-      </ul>
-      <div class="rojo-nota"><b>Apto es una ayuda, no una garantía:</b> siempre manda la ficha técnica oficial.
-        <details class="mas"><summary>Más detalles</summary>La revisión la hace una inteligencia artificial con reglas fijas y puede equivocarse. Lee la ficha técnica y las bases de la compra antes de enviar tu oferta. Cumplir lo que piden evita que te rechacen por un detalle, pero no asegura que ganes. Apto no decide por ti ni envía tu oferta. Tu ficha se revisa en el computador de Apto y se borra al terminar.</details></div>
-    </article>
-    <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado: estamos del lado de quien vende.</p></div>
-      <div class="chips2"><span>Datos oficiales de ChileCompra</span><span>Información abierta</span><span>Desde <b data-uf="0.5"></b> + IVA al mes</span></div></article>
+    <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado: estamos del lado de quien vende.</p></div></article>
   </div>
 </section>
 
 <section class="seccion" id="pasos" aria-label="Cómo funciona">
   <h2 class="sec-t rv">Tres pasos y tres planes. <span>Empieza gratis y sigue cuando te sirva.</span></h2>
   <div class="ruta2 rv">
-    <div class="paso-t t1"><p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3><p>Escribe qué vendes, con tus palabras.</p><span class="obt">Obtienes: tu lista</span></div>
-    <div class="paso-t t2"><p class="pk">Paso 2</p><h3>Mira tus compras</h3><p>Te mostramos solo las compras que calzan contigo.</p><span class="obt">Obtienes: tus compras</span></div>
-    <div class="paso-t t3"><p class="pk">Paso 3</p><h3>Revisa si cumples</h3><p>Te decimos si cumples y qué te falta.</p><span class="obt">Obtienes: tu veredicto</span></div>
+    <div class="paso-t t1"><p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3><p>Escribe qué vendes, con tus palabras.</p></div>
+    <div class="paso-t t2"><p class="pk">Paso 2</p><h3>Mira tus compras</h3><p>Te mostramos solo las compras que calzan contigo.</p></div>
+    <div class="paso-t t3"><p class="pk">Paso 3</p><h3>Revisa si cumples</h3><p>Te decimos si cumples y qué te falta.</p></div>
     <div class="cadena" aria-hidden="true">
       <div class="med m1" style="--c:#6C9BE0"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h28l-2.5 21a3 3 0 0 1-3 2.6H15.5a3 3 0 0 1-3-2.6L10 17Z"/><path d="M17 17v-3a7 7 0 0 1 14 0v3"/><path d="M19 27h10"/></svg></div></div>
       <div class="med m3" style="--c:#1D4E9E"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6 9 12v11c0 9.5 6.3 16.5 15 19 8.7-2.5 15-9.5 15-19V12L24 6Z"/><path d="m17 24 5 5 9-10"/></svg></div></div>
@@ -498,7 +484,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </section>
 
 <section class="seccion" id="planes" aria-label="Planes" style="padding-top:28px">
-  <p class="plan-intro rv"><b>¿Nunca has vendido al Estado?</b> Empieza por el Plan Gratis: sin tarjeta.</p>
+  <p class="plan-intro rv"><b>¿Nunca has vendido al Estado?</b> Empieza por el Plan Gratis.</p>
   <p class="uf-nota rv"><b>UF</b> = Unidad de Fomento, un valor en pesos (hoy <b data-ufval></b>). Los precios no incluyen IVA.</p>
   <div class="ciclo rv" role="group" aria-label="Periodo de pago">
     <button type="button" class="on" data-ciclo="mes" aria-pressed="true">Mensual</button><button type="button" data-ciclo="anio" aria-pressed="false">Anual <span class="ahorra">2 meses gratis</span></button>
@@ -507,7 +493,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <article class="plan rv"><p class="k">Plan Gratis</p><h3>Para conocer Apto sin pagar</h3>
       <p class="pr">$0 <small>sin tarjeta</small></p>
       <ul><li>Ves las compras que calzan contigo</li><li>5 revisiones de «¿cumplo?»</li><li>Fechas y cuánto cobrar</li><li>Guía para tu primera oferta</li></ul>
-      <p class="nota" style="margin-top:12px">Te registras con el RUT de tu empresa. Al acabarse las 5 revisiones, pasas a otro plan.</p>
+      <p class="nota" style="margin-top:12px">Te registras con el RUT de tu empresa. Al acabarse las revisiones, pasas a otro plan.</p>
       <button type="button" class="plan-btn dest" data-plan="gratis">Empezar gratis</button></article>
     <article class="plan rv"><p class="k">Plan Radar</p><h3>Para que no se te pase ninguna compra</h3>
       <p class="pr"><span class="p-mes">0,5 UF <small>al mes</small></span><span class="p-anio">5 UF <small>al año</small></span></p>

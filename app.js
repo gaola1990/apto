@@ -1112,6 +1112,42 @@ if(sesion) bajarCuenta().catch(() => {});
 })();
 
 
+
+// Demo de "Cómo funciona": cada vuelta de 15 s muestra un producto distinto (deportes, ferretería, imprenta y aseo). Son ejemplos ilustrativos.
+(function(){
+  const demo = document.getElementById("demo"); if(!demo) return;
+  const E = [
+    {rubro: "artículos deportivos", tipea: "bandas elásticas, pesas, colchonetas", entendi: "Entendimos: artículos deportivos",
+     compras: [["Adquisición de 2 bandas elásticas de resistencia", "bandas elásticas", "24 nov", "quedan 3 d", "al"], ["Implementos para gimnasio municipal", "pesas", "27 nov", "quedan 6 días", "ok"], ["Colchonetas para taller de movimiento", "colchonetas", "2 dic", "quedan 11 días", "ok"]],
+     reqs: [["ok", "Cumple", "Ancho de 15 cm"], ["ok", "Cumple", "Largo de 45 m"], ["al", "Te falta indicarlo", "Garantía de 6 meses"]]},
+    {rubro: "ferretería", tipea: "tornillos, clavos, herramientas, pintura", entendi: "Entendimos: ferretería y materiales",
+     compras: [["Herramientas manuales para taller municipal", "herramientas", "25 nov", "quedan 4 días", "al"], ["Pintura látex para mantención de escuela", "pintura", "28 nov", "quedan 7 días", "ok"], ["Tornillos y fijaciones para edificio público", "tornillos", "3 dic", "quedan 12 días", "ok"]],
+     reqs: [["ok", "Cumple", "Tornillos de 2 pulgadas"], ["ro", "No cumple", "Piden llave de 12 mm; ofreces 10 mm"], ["al", "Te falta indicarlo", "Plazo de entrega en días"]]},
+    {rubro: "imprenta", tipea: "pendones, volantes, lienzos, tarjetas", entendi: "Entendimos: imprenta y publicidad",
+     compras: [["Impresión de pendones institucionales", "pendones", "24 nov", "quedan 3 d", "al"], ["Servicio de impresión de folletería", "volantes", "29 nov", "quedan 8 días", "ok"], ["Lienzos para campaña de difusión", "lienzos", "4 dic", "quedan 13 días", "ok"]],
+     reqs: [["ok", "Cumple", "Pendón de 90 × 200 cm"], ["al", "Te falta indicarlo", "Material: lona de 13 onzas"], ["al", "Te falta indicarlo", "Plazo de entrega: 7 días"]]},
+    {rubro: "aseo", tipea: "servicio de aseo, detergente, papel higiénico", entendi: "Entendimos: aseo y limpieza",
+     compras: [["Servicio de aseo para oficinas municipales", "servicio de aseo", "26 nov", "quedan 5 días", "al"], ["Insumos de limpieza para escuela", "detergente", "30 nov", "quedan 9 días", "ok"], ["Papel higiénico y toallas para consultorio", "papel higiénico", "5 dic", "quedan 14 días", "ok"]],
+     reqs: [["ok", "Cumple", "Cloro al 5 %"], ["ro", "No cumple", "Piden 12 rollos por caja; ofreces 8"], ["al", "Te falta indicarlo", "Plazo de entrega: 5 días"]]}
+  ];
+  const q = s => demo.querySelector(s), qa = s => [...demo.querySelectorAll(s)];
+  window.demoEjemplo = function(i){
+    const e = E[((i % E.length) + E.length) % E.length];
+    q(".tipeo").textContent = e.tipea; q(".ventendi .et").textContent = e.entendi;
+    qa(".vop").forEach((c, k) => { const d = e.compras[k]; c.querySelector("h3").textContent = d[0]; c.querySelector(".calza").textContent = "Calza: «" + d[1] + "»"; c.querySelector(".cierre b").textContent = d[2];
+      const t = c.querySelector(".cierre .et"); t.textContent = d[3]; t.className = "et " + d[4]; });
+    qa(".vsem li").forEach((li, k) => { const r = e.reqs[k]; li.className = "s-" + r[0]; li.innerHTML = "<i></i>" + r[1] + "<small>" + r[2] + "</small>"; });
+    const nok = e.reqs.filter(r => r[0] === "ro").length, nal = e.reqs.filter(r => r[0] === "al").length;
+    q(".vfin b").textContent = nok ? "No cumples " + nok + " requisito: revísalo antes de ofertar." : nal > 1 ? "Te faltan " + nal + " datos para ofertar tranquilo." : "Te falta 1 dato para ofertar tranquilo.";
+    q(".vfin span").textContent = "Te damos el texto listo para pegar en tu oferta.";
+    q(".vnota").textContent = "Ejemplo ilustrativo (" + e.rubro + "), con datos de muestra.";
+    demo.dataset.ejemplo = i;
+  };
+  let n = 0;
+  const marca = q(".ve1"); if(marca) marca.addEventListener("animationiteration", ev => { if(ev.target !== marca) return; n = (n + 1) % E.length; window.demoEjemplo(n); });   // cambia justo al reiniciar, cuando todo está invisible
+  window.demoEjemplo(0);
+})();
+
 // Precios en pesos junto a la UF: cada [data-uf] muestra uf × valor de la UF, redondeado a la centena; [data-ufval] muestra el valor de 1 UF.
 (function(){
   const clp = n => "$" + n.toLocaleString("es-CL");

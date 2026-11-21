@@ -155,6 +155,8 @@ function distancia(a, b, tope){ // Damerau-Levenshtein con corte temprano
 function existe(w){
   if(!VOCAB) return true;
   const r = raiz(w);
+  // una palabra del catálogo de productos (galletas, ensaladas) está bien escrita aunque hoy ninguna compra la nombre
+  if(DVOC && (DVOC.has(w) || DVOC.has(r))) return true;
   if(VOCAB.has(w)) return true;
   for(const [p] of VOCAB) if(p.startsWith(r)) return true;
   return false;
@@ -174,7 +176,7 @@ function corregir(w){
 }
 
 // Prefijos que parecen la palabra pero son otra cosa ("computarizado" no es un computador).
-const ENGANOSOS = {computador: ["computariz"], auto: ["automat","autor","autoclav","autonom"], curso: ["cursor"]};
+const ENGANOSOS = {computador: ["computariz"], auto: ["automat","autor","autoclav","autonom"], curso: ["cursor"], flor: ["florid", "florest"]};
 function raiz(w){
   if(w.length <= 3) return w;
   for(const s of ["mientos","miento","ciones","cion","es","s"]){
@@ -215,21 +217,42 @@ function armar(t){
   const a = conceptos[0][0];
   return {t, frase: conceptos.length > 1, conceptos, raiz: a.raiz || a.w, exacto: !!a.exacto};
 }
+const TERMINACION = /^(s|es|a|as|o|os|e|en|ar|ara|aran|er|ir|ado|ada|ados|adas|ido|ida|idos|idas|cion|ciones|miento|mientos|ito|ita|itos|itas|illo|illa|illos|illas|al|ales|ero|era|eros|eras|eria|erias|ura|uras|ante|antes|ente|entes|or|ora|ores|oras|ivo|iva|ivos|ivas|ico|ica|icos|icas|mente|dor|dora|dores|doras|aje|ajes|ista|istas|izado|izada|izacion)?$/;
 function calzaAlt(a, texto, palabras){
   if(a.multi) return (" " + texto + " ").includes(" " + a.w + " ");
   if(a.exacto) return palabras.includes(a.raiz);
   const malos = ENGANOSOS[a.raiz] || [];
-  return palabras.some(p => p.startsWith(a.raiz) && !malos.some(m => p.startsWith(m)));
+  // con raíces cortas, lo que sigue debe ser una terminación del español ("flor" calza con floral o florería, no con
+  // floresta; "cono" con conos, no con conocimiento). Las raíces largas ya son específicas.
+  const corta = a.raiz.length <= 5;
+  return palabras.some(p => p.startsWith(a.raiz) && !malos.some(m => p.startsWith(m)) && (!corta || TERMINACION.test(p.slice(a.raiz.length))));
 }
-function calza(term, texto, palabras){ return term.conceptos.every(alts => alts.some(a => calzaAlt(a, texto, palabras))); }
+// Usos que parecen el producto pero son otra cosa ("balón con droga" es un insumo clínico, no un balón de fútbol)
+const CONTEXTO_MALO = {balon: /\b(stent|cateter|coronari|vascular|angio|dilatacion|procedimiento|oxigeno|droga|medicad|intragastric|traque|urinari|foley|trombe|congenit|hemodinami|cardiolog|balon de contrapulsacion)/,
+  flor: /\bflores de bach|\bazucar flor|\bflor de sal\b/, cono: /\bcono (cervical|de papel)|\bconos? de (luz|sombra)\b/};
+function calza(term, texto, palabras){
+  const malo = CONTEXTO_MALO[term.raiz];
+  if(malo && malo.test(texto)) return false;
+  return term.conceptos.every(alts => alts.some(a => calzaAlt(a, texto, palabras)));
+}
+// Separa lo que escribió el vendedor en productos: comas, punto y coma, paréntesis, barras y saltos de línea.
+// "Coffee break para empresas (pasteles, galletas)" -> coffee break, pasteles, galletas: lo que va después de "para" o
+// "con" dice a quién o cómo vende, no qué vende.
+function separar(texto){
+  // el punto separa solo si empieza otra oración ("mant. de pc" se queda junto)
+  return String(texto || "").split(/[,;()\[\]\/\n·•|]+|\.\s+(?=[A-ZÁÉÍÓÚÑ¿¡])|[¿?¡!]+/).map(norm).filter(Boolean)
+    .map(t => t.replace(/^(y|e|o|tambien|ademas|venta de|servicio de|servicios de)\s+/, "").split(/\s+(para|con)\s+/)[0].trim())
+    .filter(t => t.length >= 2 && t.split(" ").length <= 6 && !/^(no|si|ok|ya|saben|cierto|verdad|etc|a ver\b.*|que sepa.*)$/.test(t));
+}
 // Diccionario de productos de Mercado Público (diccionario.json): clase ONU -> nombre, palabras oficiales y palabras reales.
 // Un término del vendedor apunta a las clases donde aparecen TODOS sus conceptos (con sinónimos y correcciones).
-let DICC = null;
+let DICC = null, DVOC = null;
 function cargarDiccionario(clases){
   DICC = Object.entries(clases || {}).map(([c, [nombre, oficiales, reales]]) => {
     const n = norm(nombre).split(" "), o = oficiales.split(" ").filter(Boolean), r = reales.split(" ").filter(Boolean);
     return {c, nombre, n, nt: n.join(" "), o, ot: o.join(" "), r, rt: r.join(" ")};
   });
+  DVOC = new Set(); DICC.forEach(k => k.n.concat(k.o, k.r).forEach(w => { if(w.length >= 4){ DVOC.add(w); DVOC.add(raiz(w)); } }));
 }
 // Puntaje de una clase para un concepto: la palabra tal cual vale más que un sinónimo, y aparecer en el NOMBRE de la
 // clase vale más que en la lista de productos oficiales, que a su vez vale más que en las palabras reales.
@@ -257,6 +280,47 @@ function clasesDe(term, maximo = 5){
   const extra = aprendidas.map(a => ({c: a.c, nombre: (DICC && (DICC.find(k => k.c === a.c) || {}).nombre) || a.c, puntos: 6, aprendido: true}));
   return extra.concat(base).slice(0, maximo + extra.length);
 }
+// Categorías de un perfil completo. Cada término propone categorías y el resto de lo que escribió el vendedor desempata:
+// "mantenimiento" junto a "poda" y "riego" es mantención de terrenos, no de vehículos; "transporte de pasajeros" junto a
+// "buses" y "escolar" es por carretera, no aéreo. Una palabra suelta que apunta a rubros muy distintos y sin contexto
+// que la respalde se queda solo con su mejor opción.
+function segmento(c){ return String(c).slice(0, 2); }
+function clasesDePerfil(terms, maximo = 5){
+  if(!DICC) return [];
+  const porC = new Map(DICC.map(k => [k.c, k]));
+  const salida = new Map();
+  terms.forEach((t, i) => {
+    const otros = terms.filter((_, j) => j !== i);
+    const cands = clasesDe(t, 12).map(r => {
+      const k = porC.get(r.c);
+      // qué otros términos del vendedor también aparecen en esta categoría (nombre, productos oficiales o palabras reales)
+      const apoyos = k ? otros.map((o, j) => o.conceptos.some(alts => !alts[0].exacto && alts.some(a => calzaAlt(a, k.nt + " " + k.ot + " " + k.rt, k.n.concat(k.o, k.r)))) ? j : -1).filter(j => j >= 0) : [];
+      return {...r, apoyos, ctx: apoyos.length};
+    });
+    // solo cuenta el contexto que DISTINGUE: si "pasajeros" aparece en aéreo, marítimo y carretera, no desempata;
+    // "buses" o "escolar", que solo aparecen en carretera, sí
+    const veces = new Map(); cands.forEach(r => r.apoyos.forEach(j => veces.set(j, (veces.get(j) || 0) + 1)));
+    cands.forEach(r => { r.dist = r.apoyos.filter(j => veces.get(j) < cands.length).length; r.final = r.puntos + 1.5 * Math.min(r.ctx, 3); });
+    if(!cands.length) return;
+    cands.sort((a, b) => b.final - a.final);
+    let quedan = cands.filter(r => r.final >= cands[0].final * 0.8 && (r.aprendido || r.final >= 3));
+    // palabra ambigua: apunta a 3 o más rubros distintos. Quedan las respaldadas por el contexto, o solo la mejor.
+    const segs = new Set(quedan.map(r => segmento(r.c)));
+    if(segs.size >= 3 && !t.frase){ const con = quedan.filter(r => r.ctx > 0); quedan = con.length ? con : quedan.slice(0, 1); }
+    // empate dentro de un mismo rubro (aéreo, ferroviario, marítimo, carretera): si el contexto distingue, gana el contexto
+    const maxDist = Math.max(...quedan.map(r => r.dist));
+    if(maxDist > 0 && quedan.length > 1) quedan = quedan.filter(r => r.dist >= maxDist || r.aprendido);
+    quedan.slice(0, maximo).forEach(r => { const y = salida.get(r.c); if(!y || r.final > y.final) salida.set(r.c, {...r, termino: t.t}); });
+  });
+  // coherencia: con 3 o más términos, una categoría de un rubro (segmento) que ningún otro término respalda y sin
+  // contexto es casi siempre una lectura equivocada ("servicios municipales" -> "impuesto a la renta")
+  const res = [...salida.values()];
+  if(terms.length >= 3){
+    const porSeg = new Map(); res.forEach(r => { if(!porSeg.has(segmento(r.c))) porSeg.set(segmento(r.c), new Set()); porSeg.get(segmento(r.c)).add(r.termino); });
+    return res.filter(r => r.aprendido || r.ctx > 0 || porSeg.get(segmento(r.c)).size >= 2).sort((a, b) => b.final - a.final);
+  }
+  return res.sort((a, b) => b.final - a.final);
+}
 function clasesDeDiccionario(term, maximo){
   if(!DICC) return [];
   let res = [];
@@ -264,7 +328,9 @@ function clasesDeDiccionario(term, maximo){
     const ps = term.conceptos.map(alts => puntajeConcepto(alts, k));
     const hechos = ps.filter(p => p > 0).length;
     if(!hechos) continue;
-    // todos los conceptos suman completo; si falta alguno (p. ej. "arriendo" de "arriendo de carpas") la clase vale menos
+    // todos los conceptos suman completo; si falta alguno (p. ej. "arriendo" de "arriendo de carpas") la clase vale menos.
+    // A medias vale solo si calzan al menos 2 conceptos y la mitad (una frase conversada no calza con nada).
+    if(hechos < ps.length && (hechos < 2 || hechos * 2 < ps.length)) continue;
     const total = ps.reduce((a, b) => a + b, 0) * (hechos === ps.length ? 1 : 0.5);
     res.push({c: k.c, nombre: k.nombre, puntos: total});
   }
@@ -276,5 +342,5 @@ function clasesDeDiccionario(term, maximo){
 }
 
 const nombreDe = c => { const k = DICC && DICC.find(x => x.c === c); return k ? k.nombre : ""; }; // nombre de una categoría (código ONU)
-g.Buscar = {nombreDe, cargarDiccionario, cargarAprendido, clasesDe, norm, armar, calza, calzaAlt, raiz, sumarSinonimos, SIN, ABREV, expandir, expandirPalabras, vocabulario, corregir, correcciones};
+g.Buscar = {nombreDe, clasesDePerfil, separar, cargarDiccionario, cargarAprendido, clasesDe, norm, armar, calza, calzaAlt, raiz, sumarSinonimos, SIN, ABREV, expandir, expandirPalabras, vocabulario, corregir, correcciones};
 })(typeof window !== "undefined" ? window : globalThis);

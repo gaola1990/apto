@@ -61,6 +61,8 @@ def main(minutos):
     det = json.load(open(ruta_det, encoding="utf8")).get("items", {}) if os.path.exists(ruta_det) else {}
     det = {c: v for c, v in det.items() if c in activas}
     faltan = sorted((c for c in activas if c not in det), key=lambda c: activas[c] or "9999")
+    # las que ya tienen detalle pero aún no la región (se agregó el 2026-11-20): se completan de a poco, después de las nuevas
+    faltan += sorted((c for c in activas if c in det and "r" not in det[c]), key=lambda c: activas[c] or "9999")
     os.makedirs(os.path.join(RAIZ, "datos-abiertos"), exist_ok=True)
     ruta_desc = os.path.join(RAIZ, "datos-abiertos", "descripciones.jsonl")
     fin, nuevas = time.time() + minutos * 60, 0
@@ -74,7 +76,9 @@ def main(minutos):
                 items = (x.get("Items") or {}).get("Listado", [])
                 det[c] = {"t": compacto((x.get("Descripcion") or "") + " " + " ".join((i.get("NombreProducto") or "") + " " + (i.get("Descripcion") or "") for i in items)),
                           "c": sorted({str(i.get("CodigoCategoria") or "")[:6] for i in items if i.get("CodigoCategoria")}),
-                          "m": x.get("MontoEstimado") or 0}
+                          "m": x.get("MontoEstimado") or 0,
+                          "r": region(((x.get("Comprador") or {}).get("RegionUnidad") or "")),  # para mostrar primero las de su región
+                          "o": ((x.get("Comprador") or {}).get("NombreOrganismo") or "").strip()[:80]}
                 for i in items:
                     if i.get("CodigoProducto"):
                         fd.write(json.dumps({"cat": str(i.get("CodigoCategoria") or "")[:6], "prod": str(i["CodigoProducto"]),
@@ -84,6 +88,17 @@ def main(minutos):
     json.dump({"fecha": datetime.datetime.now().isoformat(timespec="minutes"), "items": det}, open(ruta_det, "w", encoding="utf8"),
               ensure_ascii=False, separators=(",", ":"))
     print(f"detalles.json: {nuevas} nuevas | con detalle {len(det)} de {len(activas)} abiertas")
+
+
+def region(g):
+    """'Región de la Araucanía ' -> 'Araucanía' (los mismos nombres que usa el perfil del vendedor)."""
+    g = " ".join(str(g).split())
+    for p in ("Región de la ", "Región del ", "Región de ", "Región "):
+        if g.startswith(p):
+            g = g[len(p):]; break
+    g = g.replace("Metropolitana de Santiago", "Metropolitana").replace("Libertador General Bernardo O´Higgins", "O'Higgins").replace("Libertador General Bernardo O'Higgins", "O'Higgins")
+    g = g.replace("Aysén del General Carlos Ibáñez del Campo", "Aysén").replace("Magallanes y de la Antártica Chilena", "Magallanes").replace("Magallanes y de la Antártica", "Magallanes")
+    return g[:1].upper() + g[1:]
 
 
 if __name__ == "__main__":

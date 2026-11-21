@@ -48,9 +48,9 @@ function competencia(clases){
 // Compras que calzan con un cliente: sus palabras, sus rubros, sus categorías (catálogo por RUT y diccionario)
 // y las categorías de las compras que ya guardó ("en función de lo que ya ha postulado").
 function paraCliente(perfil, guardadas){
-  const extra = String(perfil.extra || "").split(",").map(B.norm).filter(Boolean);
+  const extra = B.separar(perfil.extra).filter(Boolean);
   const ts = [...new Set([...extra, ...(perfil.rubros || []).flatMap(r => RUBROS[r] || []).map(B.norm)])].map(B.armar);
-  const no = String(perfil.excluir || "").split(",").map(B.norm).filter(Boolean).map(B.armar);
+  const no = B.separar(perfil.excluir).filter(Boolean).map(B.armar);
   const cats = new Set(perfil.cats || []);
   extra.forEach(t => B.clasesDe(B.armar(t)).forEach(r => cats.add(r.c)));
   Object.keys(guardadas || {}).forEach(c => (DET[c] && DET[c].c || []).forEach(x => cats.add(x)));
@@ -75,9 +75,9 @@ async function valorUF(){
 
 async function clientes(){
   if(DEMO) return [{user_id: "demo", email: "cliente@ejemplo.cl", perfil: {extra: "notebook, toner, mant. de pc", rubros: []}, guardadas: {}, avisos: "diario",
-                    avisados: [], baja_token: cs[0].baja_token, last_sign_in_at: new Date().toISOString()},
+                    avisados: [], baja_token: ["ejemplo", "activo"].join("-"), last_sign_in_at: new Date().toISOString()},
                    {user_id: "demo2", email: "antiguo@ejemplo.cl", perfil: {extra: "aseo, limpieza", rubros: []}, guardadas: {}, avisos: "semanal",
-                    avisados: [], baja_token: cs[1].baja_token, last_sign_in_at: new Date(ahora - 90 * DIA).toISOString()}];
+                    avisados: [], baja_token: ["ejemplo", "antiguo"].join("-"), last_sign_in_at: new Date(ahora - 90 * DIA).toISOString()}];
   const URL = process.env.SUPABASE_URL, KEY = process.env.SUPABASE_SERVICE_KEY;
   if(!URL || !KEY) throw new Error("Faltan SUPABASE_URL y SUPABASE_SERVICE_KEY (secretos de GitHub)");
   const h = {apikey: KEY, Authorization: "Bearer " + KEY};

@@ -211,6 +211,16 @@ dialog[open]{animation:aparece .4s cubic-bezier(.2,.8,.2,1)}
 dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 @keyframes aparece{from{opacity:0;transform:translateY(20px) scale(.97)}}
 .cifra b{transition:color .3s}
+.catq{display:inline-flex;align-items:center;gap:2px;background:var(--marca-suave);border-radius:999px;padding:2px 4px 2px 10px;margin:2px 2px;font-size:.92em}
+.catq button{border:0;background:transparent;cursor:pointer;width:22px;height:22px;border-radius:50%;line-height:1;padding:0;color:inherit;opacity:.65;transition:opacity 120ms ease,background 120ms ease}
+.catq button:hover{opacity:1;background:rgba(0,0,0,.08)}
+.enlace{border:0;background:none;color:var(--marca);text-decoration:underline;cursor:pointer;padding:0;font:inherit}
+label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6px}
+.et.region{background:#dcfce7;color:#166534}
+.pendientes{margin-top:10px;padding:10px 14px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa}
+.pendientes ul{margin:6px 0 0;padding-left:18px}.pendientes li{margin:3px 0}
+.alerta-rechazo{margin-top:10px;padding:10px 14px;border-radius:12px;background:#fef2f2;border:1px solid #fecaca;color:#7f1d1d}
+.alerta-rechazo ul{margin:6px 0 0;padding-left:18px}
 </style>
 </head>
 <body>
@@ -286,6 +296,7 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
     <input type="text" id="excluir" placeholder="ej: hospital, maquinaria pesada">
     <label for="region">Mi región</label>
     <select id="region"></select>
+    <label class="check"><input type="checkbox" id="soloRegion"> Mostrar solo compras de mi región</label>
     <label for="tamano">Tamaño que puedo atender</label>
     <select id="tamano">
       <option value="5">Cualquiera</option>
@@ -338,6 +349,12 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
           <option value="todas">Todas las que calzan</option>
           <option value="guardadas">Solo guardadas</option>
         </select>
+        <select id="plazo" aria-label="Cierra en">
+          <option value="">Cierre: cualquier fecha</option>
+          <option value="3">Cierran en 3 días o menos</option>
+          <option value="7">Cierran esta semana</option>
+          <option value="14">Cierran en 2 semanas</option>
+        </select>
         <select id="orden" aria-label="Orden">
           <option value="calce">Mejor calce primero</option>
           <option value="cierre">Cierran antes primero</option>
@@ -364,8 +381,8 @@ dialog::backdrop{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611192213"></script>
-<script src="app.js?v=202611192213"></script>
-<script src="notificaciones.js?v=202611192213"></script>
+<script src="buscar.js?v=202611211250"></script>
+<script src="app.js?v=202611211250"></script>
+<script src="notificaciones.js?v=202611211250"></script>
 </body>
 </html>

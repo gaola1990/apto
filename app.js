@@ -60,8 +60,17 @@ function plata(n){ return n ? "$" + Math.round(n).toLocaleString("es-CL") : "No 
 function terminos(){
   const lista = [];
   perfil.rubros.forEach(r => (RUBROS[r] || []).forEach(t => lista.push(t)));
-  perfil.extra.split(",").map(norm).filter(Boolean).forEach(t => lista.push(t));
-  return [...new Set(lista.map(norm))].map(armar);
+  Buscar.separar(perfil.extra).filter(Boolean).forEach(t => lista.push(t));
+  const ts = [...new Set(lista.map(norm))].map(armar);
+  // "balones de fútbol" que no aparece en ninguna compra: se busca también por su palabra principal ("balones"),
+  // con menos puntaje. Las compras rara vez detallan tanto como escribe el vendedor.
+  const extra = [];
+  ts.forEach(t => {
+    if(t.conceptos.length < 2 || generico(t) || datos.some(d => calza(t, d.texto, d.palabras))) return;
+    const cabeza = armar(t.t.split(" ")[0]);
+    if(cabeza.t.length >= 4 && !generico(cabeza) && !ts.some(x => x.t === cabeza.t) && !extra.some(x => x.t === cabeza.t)) extra.push({...cabeza, respaldo: true});
+  });
+  return ts.concat(extra);
 }
 // ---------- Aprendizaje: señales de uso (solo con cuenta; se guardan como conteos, sin datos de la empresa) ----------
 // Guardar una compra = "mis palabras calzan con estos productos"; 👎 = "no calzan"; palabra sin resultados = "no la conozco".
@@ -77,7 +86,7 @@ const terminoValido = t => t.length >= 2 && t.length <= 60 && /^[a-z0-9ñ ]+$/.t
 function senal(tipo, codigo){
   const d = datos.find(x => x.codigo === codigo), det = DET[codigo];
   if(!d || !det || !det.c || !det.c.length) return;
-  const propios = perfil.extra.split(",").map(norm).filter(terminoValido);
+  const propios = Buscar.separar(perfil.extra).filter(terminoValido);
   const calzan = propios.filter(t => calza(armar(t), d.texto, d.palabras));
   enviarSenales(calzan.flatMap(t => det.c.slice(0, 4).map(clase => ({termino: t, clase, tipo}))));
 }
@@ -140,13 +149,19 @@ function avisarCorrecciones(){
 // Qué productos de Mercado Público entendió Apto (sirve también para saber qué códigos ONU declarar como proveedor).
 function avisarClases(){
   const el = $("clases"); if(!el) return;
-  const propios = perfil.extra.split(",").map(norm).filter(Boolean).map(armar); // solo lo que escribió el vendedor, no las listas de rubros
+  const propios = Buscar.separar(perfil.extra).filter(Boolean).map(armar); // solo lo que escribió el vendedor, no las listas de rubros
   const vistos = new Map();
-  for(const t of propios) for(const r of Buscar.clasesDe(t, 3)) vistos.set(r.c, r.nombre + " (" + r.c + ")");
+  const quitadas = new Set(perfil.noCats || []);
+  for(const r of Buscar.clasesDePerfil(propios, 3)) if(!quitadas.has(r.c)) vistos.set(r.c, r.nombre);
   clasesVistas = [...vistos.values()];
   pintarCompraAgil([...vistos.keys()]);
   clearTimeout(avisarClases.t); avisarClases.t = setTimeout(() => senalDesconocidas(propios), 4000); // cuando deja de escribir
-  el.textContent = clasesVistas.length ? "Según el catálogo de Mercado Público, vendes: " + clasesVistas.slice(0, 6).join(" · ") + (clasesVistas.length > 6 ? " y " + (clasesVistas.length - 6) + " más." : ".") : "";
+  // cada categoría con una ✕: si Apto entendió mal ("transporte aéreo" para un dueño de buses), el vendedor la quita
+  const lista = [...vistos].slice(0, 10);
+  el.innerHTML = lista.length ? "Según el catálogo de Mercado Público, vendes: " + lista.map(([c, n]) => '<span class="catq">' + esc(n) +
+    ' <button type="button" data-quitar="' + esc(c) + '" aria-label="Quitar ' + esc(n) + '" title="No vendo esto">✕</button></span>').join(" ") +
+    (vistos.size > 10 ? " y " + (vistos.size - 10) + " más." : "") +
+    (quitadas.size ? ' <button type="button" class="enlace" data-reponer="1">Volver a mostrar las ' + quitadas.size + " que quité</button>" : "") : "";
 }
 // Por palabras, con variantes, abreviaturas, errores de escritura y sinónimos de compras públicas (ver buscar.js).
 const armar = t => Buscar.armar(t);
@@ -155,9 +170,9 @@ function calcular(){
   Buscar.correcciones.clear();
   const ts = terminos();
   avisarCorrecciones();
-  const no = perfil.excluir.split(",").map(norm).filter(Boolean).map(armar);
+  const no = Buscar.separar(perfil.excluir).filter(Boolean).map(armar);
   const tope = +perfil.tamano;
-  const cats = misCategorias(ts);
+  const cats = misCategorias(ts), segsMios = new Set([...cats].map(c => String(c).slice(0, 2)));
   avisarClases();
   resultados = [];
   for(const d of datos){
@@ -166,15 +181,25 @@ function calcular(){
     if(d.tipo.n > tope) continue;
     if(perfil.vistaGuardadas){ if(guardadas[d.codigo]) resultados.push({...d, dias, pts:0, hits:[]}); continue; }
     if(noSirve[d.codigo]) continue;   // el vendedor dijo que no le sirve
+    if(+perfil.plazo && dias !== null && dias > +perfil.plazo) continue; // filtro "cierra en"
     if(!ts.length) continue;
     if(no.some(t => calza(t, d.texto, d.palabras))) continue;
-    const hits = ts.filter(t => calza(t, d.texto, d.palabras));   // B: nombre + descripción + productos
     const ia = RES[d.codigo], porRubro = !!(ia && perfil.rubros.includes(ia.rubro)); // la IA nocturna clasifico el rubro
     const det = DET[d.codigo], porCat = !!(det && det.c && det.c.some(c => cats.has(c))); // C: categoría de producto
+    // B: nombre + descripción + productos. Una palabra genérica sola ("mantenimiento") cuenta solo si la compra es de su rubro
+    const enMiSector = !!(det && det.c && det.c.some(c => segsMios.has(String(c).slice(0, 2))));
+    // la búsqueda por palabra principal ("uniformes" de "uniformes deportivos") solo vale dentro de su sector
+    const hits = ts.filter(t => calza(t, d.texto, d.palabras) && (porCat || porRubro || !generico(t)) && (!t.respaldo || porCat || enMiSector));
+    // una compra claramente de otro sector (sus categorías no tocan ningún rubro del vendedor) no entra por una palabra
+    // suelta: "balones" de un deportista no es "balón para procedimiento" de un hospital
+    if(!porCat && !porRubro && hits.length && segsMios.size && det && det.c && det.c.length && !det.c.some(c => segsMios.has(String(c).slice(0, 2))) && !hits.some(h => h.frase)) continue;
     if(!hits.length && !porRubro && !porCat) continue;
+    // región del comprador (la guarda el proceso automático de detalles): las de su región van primero
+    const reg = det && det.r ? det.r : "", enRegion = !!(perfil.region && reg && norm(reg) === norm(perfil.region));
+    if(perfil.soloRegion && perfil.region && reg && !enRegion) continue;
     const comp = competencia(d.codigo);
-    const pts = hits.reduce((a, h) => a + (h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0) + (porRubro ? 3 : 0) + (porCat ? 4 : 0) + (comp && comp.med <= 2 ? 1 : 0);
-    resultados.push({...d, dias, pts, hits, porCat, comp});
+    const pts = hits.reduce((a, h) => a + (h.respaldo ? 1 : h.frase ? 3 : 2), 0) + (d.tipo.n <= 2 ? 1 : 0) + (porRubro ? 3 : 0) + (porCat ? 4 : 0) + (comp && comp.med <= 2 ? 1 : 0) + (enRegion ? 3 : 0);
+    resultados.push({...d, dias, pts, hits, porCat, comp, reg, enRegion});
   }
   const porCierre = (a, b) => (a.dias ?? 999) - (b.dias ?? 999);
   const porCompetencia = (a, b) => ((a.comp ? a.comp.med : 99) - (b.comp ? b.comp.med : 99)) || b.pts - a.pts;
@@ -230,7 +255,7 @@ function pintar(){
     const [cl, tx] = etiquetaCierre(r.dias);
     return '<article class="op" tabindex="0" role="button" data-c="' + esc(r.codigo) + '">' +
       "<div><h3>" + (guardadas[r.codigo] ? "★ " : "") + resaltar(r.nombre, r.hits) + "</h3>" +
-      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.porCat ? '<span class="et">Calza por categoría</span>' : "") + (r.comp && r.comp.med <= 2 ? '<span class="et poca">Poca competencia</span>' : "") + "</div></div>" +
+      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.enRegion ? '<span class="et region">En tu región</span>' : r.reg ? '<span class="et">' + esc(r.reg) + "</span>" : "") + (r.porCat ? '<span class="et">Calza por categoría</span>' : "") + (r.comp && r.comp.med <= 2 ? '<span class="et poca">Poca competencia</span>' : "") + "</div></div>" +
       '<div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL",{day:"numeric",month:"short"}) : "—") + '</b><span class="et ' + cl + '">' + tx + "</span></div></article>";
   }).join("");
   $("mas").hidden = resultados.length <= mostrar;
@@ -389,7 +414,7 @@ async function catalogoPorRut(){
     const R = e.resultado, nuevos = R.productos.filter(p => !catalogo.some(c => norm(c.nombre) === norm(p)));
     nuevos.forEach(p => catalogo.push({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), nombre: p, caract: "Agregado desde tus ventas al Estado. Completa medidas, garantía y entrega.", garantia: "", entrega: ""}));
     guardar("rp_catalogo", catalogo); pintarCatalogo();
-    const ya = perfil.extra.split(",").map(norm).filter(Boolean);
+    const ya = Buscar.separar(perfil.extra).filter(Boolean);
     const pal = R.palabras.map(norm).filter(p => p && !ya.includes(p));
     if(pal.length){ perfil.extra = ya.concat(pal).join(", "); $("extra").value = perfil.extra; }
     perfil.cats = [...new Set((perfil.cats || []).concat(R.categorias || []))];
@@ -558,6 +583,9 @@ function enriquecer(){
   }
   Buscar.vocabulario(datos.map(d => d.palabras)); // vocabulario real para corregir errores de escritura
 }
+// Palabras que por sí solas no dicen qué vende alguien ("mantenimiento", "servicios municipales", "venta")
+const GENERICAS = /^(insum|materia|equip|articul|product|servici|vari|otro|general|element|venta|vend|arriend|alquil|manten|repar|disen|empres|ofici|person|event|municip|tecnic|soport)/; // por raíz
+const generico = t => t.conceptos.every(alts => GENERICAS.test(alts[0].raiz || alts[0].w));
 // Forma C: categorías de producto de Mercado Público (código ONU) que calzan con lo que vende el usuario.
 // Salen de las palabras de su perfil (comparadas con los productos adjudicados de cada categoría) y de su catálogo por RUT.
 let clasesVistas = [];
@@ -566,17 +594,21 @@ function misCategorias(ts){
   if(!ts.length) return s;
   if(DICC_OK){
     // Diccionario oficial de Mercado Público + palabras reales de compradores (diccionario.json)
-    for(const t of ts) for(const r of Buscar.clasesDe(t)) s.add(r.c);
+    for(const r of Buscar.clasesDePerfil(ts)) s.add(r.c); // con el contexto de todo lo que escribió (ver buscar.js)
     // y además el mapa aprendido de compras adjudicadas (abajo): juntos encuentran más (medido: 52 % vs 26 % solo diccionario)
   }
   // cada concepto del vendedor (con sus sinónimos) se compara con los productos de cada categoría;
   // las palabras genéricas ("insumos", "equipos") no definen una categoría por sí solas
-  const GENERICAS = /^(insumo|material|equipo|articulo|producto|servicio|vario|otro|general|elemento)/;
-  const alts = ts.flatMap(t => t.conceptos.flat()).filter(a => !a.exacto && !GENERICAS.test(a.raiz || a.w));
+  // y cada término debe calzar ENTERO (todos sus conceptos): antes bastaba una palabra suelta y "eventos" o "personal"
+  // traían categorías de otro rubro (medido con clientes simulados, 2026-11-20)
+  const utiles = ts.map(t => t.conceptos.filter(alts => !alts[0].exacto && !GENERICAS.test(alts[0].raiz || alts[0].w))).filter(cs => cs.length && cs.length <= 3);
+  // del mapa de adjudicadas solo entran categorías de un rubro que el diccionario ya reconoce para este vendedor
+  const segs = new Set([...s].map(c => String(c).slice(0, 2)));
   for(const [c, pal] of Object.entries(CATMAP)){
     const txt = pal.slice(0, 6).join(" "), ps = pal.slice(0, 6);
-    if(alts.some(a => Buscar.calzaAlt(a, txt, ps))) s.add(c);
+    if((!segs.size || segs.has(c.slice(0, 2))) && utiles.some(cs => cs.every(alts => alts.some(a => Buscar.calzaAlt(a, txt, ps))))) s.add(c);
   }
+  (perfil.noCats || []).forEach(c => s.delete(c)); // las que el vendedor quitó con la ✕
   return s;
 }
 // ---------- Resumenes nocturnos y motor ¿Cumplo? (IA local de Apto) ----------
@@ -605,16 +637,34 @@ function formCumplo(){
 function resultadoIA(r){
   const reqs = r.requisitos || [];
   if(!r.veredicto) return '<div class="veredicto al"><b>Requisitos que encontró Apto en la ficha</b><br>Elige un producto o sube su ficha para revisar si cumples.</div><ul class="req">' +
-    reqs.map(q => '<li><span class="et ' + (q.critico ? "" : "gr") + '">' + (q.critico ? "Esencial" : "Detalle") + "</span><div>" + esc(q.texto) + "</div></li>").join("") + "</ul>";
+    reqs.map(q => '<li><span class="et ' + (q.critico ? "" : "gr") + '">' + (q.critico ? "Esencial" : "Recomendado") + "</span><div>" + esc(q.texto) + "</div></li>").join("") + "</ul>" + bloquePlantilla(r);
   const M = {cumple: "ok", no_cumple: "no", no_indica: "duda"};
-  const esen = reqs.filter(q => q.critico), sec = reqs.filter(q => !q.critico);
+  const esen = reqs.filter(q => q.critico && !q.alerta), sec = reqs.filter(q => !q.critico && !q.alerta), alr = reqs.filter(q => q.alerta);
   const okE = esen.filter(q => q.estado === "cumple").length, falt = esen.filter(q => q.estado === "no_indica").length;
-  const T = {CUMPLE: ["ok", "Puedes ofertar: cumples lo esencial"], NO_CUMPLE: ["ro", "Con este producto no cumples lo esencial"],
-    TE_FALTA: ["al", "Antes de ofertar, te falta" + (falt === 1 ? " 1 cosa esencial" : "n " + falt + " cosas esenciales")]}[r.veredicto];
-  const fila = (q, tab) => '<li><span class="et ' + tab[M[q.estado] || "duda"][0] + '">' + tab[M[q.estado] || "duda"][1] + "</span><div>" + esc(q.texto) + "<small>" + esc(q.motivo || "") + "</small></div></li>";
-  return '<div class="veredicto ' + T[0] + '"><b>' + T[1] + "</b><br>Cumples " + okE + " de " + esen.length + " requisitos esenciales. Revisión hecha con IA: confírmala con las bases.</div>" +
-    '<h2 style="margin-top:16px">Lo esencial</h2><ul class="req">' + esen.map(q => fila(q, ET)).join("") + "</ul>" +
-    (sec.length ? '<h2 style="margin-top:16px">Detalles recomendados</h2><ul class="req">' + sec.map(q => fila(q, ETS)).join("") + "</ul>" : "");
+  const T = {CUMPLE: ["ok", "Puedes ofertar: tu oferta declara todo lo que pide la ficha"], NO_CUMPLE: ["ro", "Con este producto no cumples lo que pide la ficha"],
+    CUMPLE_CON_ALERTA: ["al", "Tu producto cumple la ficha técnica, pero antes de enviar agrega lo que falta abajo"],
+    TE_FALTA: ["al", "Antes de ofertar, te falta" + (falt === 1 ? " declarar 1 cosa" : "n declarar " + falt + " cosas")]}[r.veredicto];
+  const fila = (q, tab) => '<li><span class="et ' + tab[M[q.estado] || "duda"][0] + '">' + tab[M[q.estado] || "duda"][1] + "</span><div>" + esc(q.texto) +
+    (q.frecuente && q.estado !== "cumple" ? ' <span class="et poca">Causa frecuente de rechazo</span>' : "") + "<small>" + esc(q.motivo || "") + "</small></div></li>";
+  const pct = esen.length ? Math.round(100 * okE / esen.length) : 0;
+  // en corto, qué falta o qué no calza (lo primero que necesita saber antes de ofertar)
+  const pend = esen.filter(q => q.estado !== "cumple");
+  const resumen = pend.length ? '<div class="pendientes"><b>Por qué todavía no puedes ofertar:</b><ul>' +
+    pend.map(q => "<li>" + esc((q.motivo || ("Falta especificar: " + q.texto)).replace(/\s*\(la ficha pide:[^)]*\)\.?$/, "")) + "</li>").join("") + "</ul></div>" : "";
+  return '<div class="veredicto ' + T[0] + '"><b>' + T[1] + "</b><br>Tu oferta declara " + okE + " de " + esen.length + " requisitos (" + pct + " %). " +
+    (pct < 100 ? "Las comisiones rechazan ofertas que no escriben el 100 % de la ficha, con número y unidad: completa lo que falta. " : "") +
+    "Revisión hecha con IA y reglas fijas: confírmala con las bases.</div>" + resumen +
+    (alr.some(q => q.estado !== "cumple") ? '<div class="alerta-rechazo"><b>⚠️ Si no lo ingresas en tu oferta, te la van a rechazar:</b><ul>' +
+      alr.filter(q => q.estado !== "cumple").map(q => "<li>" + esc(q.estado === "no_cumple" ? (q.motivo || q.texto) : "Falta indicar: " + q.texto.replace(/^Indicar (que )?/i, "")) + "</li>").join("") + "</ul></div>" : "") +
+    '<h2 style="margin-top:16px">Ficha técnica</h2><ul class="req">' + esen.map(q => fila(q, ET)).join("") + "</ul>" +
+    (alr.length ? '<h2 style="margin-top:16px">Plazo, garantía, envío y armado</h2><ul class="req">' + alr.map(q => fila(q, ET)).join("") + "</ul>" : "") +
+    (sec.length ? '<h2 style="margin-top:16px">Detalles recomendados</h2><ul class="req">' + sec.map(q => fila(q, ETS)).join("") + "</ul>" : "") + bloquePlantilla(r);
+}
+// Texto para pegar en la oferta técnica: cada requisito de la ficha, con huecos [__] donde falta el valor exacto
+function bloquePlantilla(r){
+  if(!r.plantilla) return "";
+  return '<h2 style="margin-top:16px">Texto para tu oferta técnica</h2><p class="nota">Cópialo, completa lo que está entre [corchetes] con el valor exacto de tu producto y pégalo en tu oferta. Así no se te queda nada afuera.</p>' +
+    '<textarea class="c-plantilla" rows="10" style="width:100%;font-family:inherit">' + esc(r.plantilla) + '</textarea><button type="button" class="sec c-copiar" style="margin-top:6px">Copiar texto</button>';
 }
 function activarCumplo(raiz){
   const b = raiz.querySelector(".c-ir"); if(!b) return;
@@ -636,6 +686,8 @@ function activarCumplo(raiz){
         if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>";
       } while(!e.listo);
       out.innerHTML = e.error ? '<p class="nota" style="color:var(--rojo)">' + esc(e.error) + "</p>" : resultadoIA(e.resultado);
+      const cp = out.querySelector(".c-copiar");
+      if(cp) cp.onclick = async () => { const t = out.querySelector(".c-plantilla"); try{ await navigator.clipboard.writeText(t.value); }catch(_){ t.select(); document.execCommand("copy"); } cp.textContent = "¡Copiado!"; setTimeout(() => cp.textContent = "Copiar texto", 1800); };
     }catch(err){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">No se pudo conectar con el motor de Apto. ' + esc(err.message) + "</p>"; }
     b.disabled = false;
   };
@@ -727,6 +779,13 @@ function iniciar(){
   $("rubros").onclick = e => { const b = e.target.closest(".chip"); if(!b) return; const r = b.textContent; const i = perfil.rubros.indexOf(r); if(i >= 0) perfil.rubros.splice(i, 1); else perfil.rubros.push(r); b.setAttribute("aria-pressed", i < 0); cambio(); };
   $("region").innerHTML = '<option value="">Todo Chile</option>' + REGIONES.map(r => "<option>" + esc(r) + "</option>").join("");
   ["extra","excluir","region","tamano"].forEach(k => { $(k).value = perfil[k] || (k === "tamano" ? "5" : ""); $(k).oninput = () => { perfil[k] = $(k).value; cambio(); }; });
+  $("plazo").value = perfil.plazo || ""; $("plazo").onchange = () => { perfil.plazo = $("plazo").value; cambio(); };
+  $("soloRegion").checked = !!perfil.soloRegion; $("soloRegion").onchange = () => { perfil.soloRegion = $("soloRegion").checked; cambio(); };
+  $("clases").onclick = e => {
+    const q = e.target.closest("[data-quitar]"), rp = e.target.closest("[data-reponer]");
+    if(q){ perfil.noCats = [...new Set((perfil.noCats || []).concat(q.dataset.quitar))]; cambio(); }
+    if(rp){ perfil.noCats = []; cambio(); }
+  };
   $("orden").onchange = pintar;
   $("vista").onchange = () => { perfil.vistaGuardadas = $("vista").value === "guardadas"; mostrar = 40; pintar(); };
   $("mas").onclick = () => { mostrar += 40; pintar(); };

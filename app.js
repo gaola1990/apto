@@ -959,8 +959,7 @@ function pedirEntrada(plan, conScroll){
   $("entradaCuenta").appendChild($("cuenta"));
   if(conScroll) setTimeout(() => E.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"}), 200);   // espera a que empiece a desplegarse
 }
-document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn"); if(b) pedirEntrada(b.dataset.plan, true);
-  const c = e.target.closest && e.target.closest("header .cta"); if(c){ e.preventDefault(); pedirEntrada("gratis", true); } });
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn"); if(b) pedirEntrada(b.dataset.plan, true); });
 if(/[?&](demo|abierto)=/.test(location.search)) desbloquear(false);   // modo demostración y pruebas internas
 
 // ---------- Plan gratis: 5 revisiones ¿Cumplo? por empresa (RUT) ----------

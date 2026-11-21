@@ -92,7 +92,8 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 .paso b{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--marca);color:#fff;font-size:18px}
 .paso h3{font-size:21px;margin:14px 0 6px;letter-spacing:-.01em}
 .paso p{margin:0;color:var(--suave)}
-.planes{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:900px}
+.caja-prueba{background:var(--fondo,#F6F8FB);border:1px solid var(--linea);border-radius:12px;padding:12px;margin:10px 0}
+.planes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1180px}
 .plan{background:#fff;border-radius:22px;padding:28px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07);display:flex;flex-direction:column}
 .plan.dest{outline:2px solid var(--marca);box-shadow:0 1px 2px rgba(27,36,48,.04),0 18px 40px rgba(29,78,158,.18)}
 .plan .k{margin:0;color:var(--marca);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
@@ -129,7 +130,7 @@ header nav a.cta{background:var(--marca);color:#fff;padding:7px 15px;border-radi
 @media (prefers-reduced-motion:reduce){.notif-panel,.notif-panel.abierto{transform:none;transition:opacity 150ms ease}.notif-panel.abierto .notif{animation:none}}
 .flotante{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:30;border-radius:999px;padding:12px 22px;box-shadow:0 10px 26px rgba(29,78,158,.35);max-width:calc(100% - 32px);white-space:nowrap}
 .flotante[hidden]{display:none}
-@media(max-width:700px){.planes{grid-template-columns:1fr}}
+@media(max-width:980px){.planes{grid-template-columns:1fr;max-width:520px}}
 @media(max-width:860px){.mosaico{grid-template-columns:1fr 1fr}.tile,.t-tall{grid-column:span 1}.t-big,.t-wide{grid-column:span 2}.t-big{min-height:300px}.pasos3{grid-template-columns:1fr}}
 @media(max-width:560px){.mosaico{grid-template-columns:1fr}.tile,.t-big,.t-tall,.t-wide{grid-column:span 1}.t-tall{grid-row:auto}.tile{padding:22px}}
 footer{max-width:1180px;margin:0 auto;padding:28px 16px 40px;font-size:13px;color:var(--suave);text-align:center}
@@ -275,8 +276,12 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </section>
 
 <section class="seccion" id="planes" aria-label="Planes">
-  <h2 class="sec-t rv">Dos planes. <span>Elige cuánto te acompañamos.</span></h2>
+  <h2 class="sec-t rv">Tres planes. <span>Empieza gratis y sigue cuando te sirva.</span></h2>
   <div class="planes">
+    <article class="plan rv"><p class="k">Plan Gratis</p><h3>Pruébalo con tu empresa</h3>
+      <p class="pr">$0 <small>sin tarjeta</small></p>
+      <ul><li>5 revisiones "¿Cumplo?" en total</li><li>Radar de licitaciones con lo que mejor calza</li><li>Calendario de plazos, "Cuánto cobrar" y precio de referencia</li><li>Guía "Tu primera oferta, paso a paso"</li><li class="no">Avisos diarios por correo</li></ul>
+      <p class="nota" style="margin-top:12px">Una prueba por empresa: se registra con el RUT con el que ofertas.</p></article>
     <article class="plan rv"><p class="k">Plan Radar</p><h3>Dónde puedes participar</h3>
       <p class="pr">0,5 UF <small>al mes</small></p>
       <ul><li>Tu catálogo de productos</li><li>Aviso diario de las licitaciones que calzan con lo que vendes</li><li>Cada compra explicada en simple</li><li>2 revisiones "¿Cumplo?" al mes para probar</li><li class="no">Revisión "¿Cumplo?" sin límite</li></ul></article>
@@ -284,7 +289,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <p class="pr">1,5 UF <small>al mes</small></p>
       <ul><li>Todo lo del Plan Radar</li><li>Revisión "¿Cumplo?" sin límite</li><li>Compara la ficha técnica con tu producto: características, plazo de entrega y garantía</li><li>Te dice qué te falta indicar antes de postular</li><li>Plan para ofertar con las fechas reales</li></ul></article>
   </div>
-  <p class="nota-pl rv">Precios de referencia del prototipo, más IVA. Aún no se cobra: hoy puedes probar Apto gratis.</p>
+  <p class="nota-pl rv">Precios de referencia del prototipo, más IVA. Aún no se cobra: los planes de pago se activan más adelante.</p>
 </section>
 
 <section class="seccion" id="app" aria-label="Herramienta" style="padding-bottom:0">
@@ -392,8 +397,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611211649"></script>
-<script src="app.js?v=202611211649"></script>
-<script src="notificaciones.js?v=202611211649"></script>
+<script src="buscar.js?v=202611211729"></script>
+<script src="app.js?v=202611211729"></script>
+<script src="notificaciones.js?v=202611211729"></script>
 </body>
 </html>

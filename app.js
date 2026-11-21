@@ -744,10 +744,16 @@ function activarCumplo(raiz){
     const of = raiz.querySelector(".c-of").files[0]; if(of) fd.append("oferta", of, of.name);
     const p = catalogo.find(x => x.id === raiz.querySelector(".c-prod").value);
     if(p) fd.append("producto", p.nombre + ". " + p.caract + (p.garantia !== "" ? ". Garantía: " + p.garantia + " meses" : "") + (p.entrega !== "" ? ". Plazo de entrega: " + p.entrega + " días" : ""));
+    if(!sesion){
+      out.innerHTML = '<p class="nota">Para revisar si cumples crea tu cuenta gratis: incluye <b>5 revisiones ¿Cumplo?</b>, el radar y el calendario.</p><button type="button" class="principal" id="irCuenta">Crear mi cuenta gratis</button>';
+      out.querySelector("#irCuenta").onclick = () => { try{ $("dlg").close(); }catch(e){} const c = $("cuenta"); if(c){ c.scrollIntoView({behavior: "smooth", block: "center"}); const k = $("correo"); if(k) k.focus(); } };
+      return;
+    }
     b.disabled = true; out.innerHTML = '<p class="nota">Enviando a la IA de Apto…</p>';
     try{
-      const r = await fetch(MOTOR + "/cumplo", {method: "POST", body: fd}); const j = await r.json();
-      if(!r.ok) throw new Error(j.error || "Error del motor");
+      if(Date.now() > sesion.vence - 60e3) await renovar();
+      const r = await fetch(MOTOR + "/cumplo", {method: "POST", body: fd, headers: {"Authorization": "Bearer " + sesion.access_token}}); const j = await r.json();
+      if(!r.ok){ const er = new Error(j.error || "Error del motor"); er.cuenta = r.status === 401 || r.status === 402; throw er; }
       let e;
       do{
         await new Promise(ok => setTimeout(ok, 2500));
@@ -755,9 +761,11 @@ function activarCumplo(raiz){
         if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>";
       } while(!e.listo);
       out.innerHTML = e.error ? '<p class="nota" style="color:var(--rojo)">' + esc(e.error) + "</p>" : resultadoIA(e.resultado);
+      if(!e.error && e.restante != null) out.insertAdjacentHTML("afterbegin", '<p class="nota">Plan gratis: te quedan <b>' + e.restante + " de 5</b> revisiones ¿Cumplo?.</p>");
+      cargarPrueba();
       const cp = out.querySelector(".c-copiar");
       if(cp) cp.onclick = async () => { const t = out.querySelector(".c-plantilla"); try{ await navigator.clipboard.writeText(t.value); }catch(_){ t.select(); document.execCommand("copy"); } cp.textContent = "¡Copiado!"; setTimeout(() => cp.textContent = "Copiar texto", 1800); };
-    }catch(err){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">No se pudo conectar con el motor de Apto. ' + esc(err.message) + "</p>"; }
+    }catch(err){ out.innerHTML = err.cuenta ? '<p class="nota" style="color:var(--rojo)">' + esc(err.message) + "</p>" : '<p class="nota" style="color:var(--rojo)">No se pudo conectar con el motor de Apto. ' + esc(err.message) + "</p>"; }
     b.disabled = false;
   };
 }
@@ -924,15 +932,61 @@ async function bajarCuenta(){
 }
 const nota = t => { const n = $("cuentaNota"); if(n) n.textContent = t; };
 let avisosPref = "semanal";
+// ---------- Plan gratis: 5 revisiones ¿Cumplo? por empresa (RUT) ----------
+// El conteo vive en Supabase (funciones registrar_empresa / consumir_cumplo): una prueba por RUT, y el motor la descuenta con tu sesión.
+const rutLimpio = t => String(t).toUpperCase().replace(/[^0-9K]/g, "");
+function rutOk(t){
+  const n = rutLimpio(t), cuerpo = n.slice(0, -1), dv = n.slice(-1);
+  if(!/^\d{7,8}$/.test(cuerpo)) return false;
+  let sum = 0, m = 2; for(let i = cuerpo.length - 1; i >= 0; i--){ sum += +cuerpo[i] * m; m = m === 7 ? 2 : m + 1; }
+  const r = 11 - (sum % 11); return (r === 11 ? "0" : r === 10 ? "K" : String(r)) === dv;
+}
+const rutBonito = t => { const n = rutLimpio(t); return n.slice(0, -1).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "-" + n.slice(-1); };
+let prueba = null;
+async function cargarPrueba(){
+  const D = $("prueba"); if(!D || !sesion) return;
+  try{ prueba = await sb("/rest/v1/rpc/estado_prueba", {method: "POST", body: "{}"}); }catch(e){ D.innerHTML = ""; return; }
+  if(prueba.plan === "apto"){ D.innerHTML = '<div class="caja-prueba"><b>Plan Apto</b> · revisiones ¿Cumplo? sin límite.</div>'; return; }
+  if(prueba.registrada){
+    const r = prueba.restante;
+    D.innerHTML = '<div class="caja-prueba"><b>Plan gratis</b> · ' + (r > 0 ? "te quedan <b>" + r + " de 5</b> revisiones ¿Cumplo?." : "usaste tus 5 revisiones ¿Cumplo?. Con el plan Apto las tienes sin límite.") + "</div>"; return;
+  }
+  D.innerHTML = '<div class="caja-prueba"><b>Plan gratis: 5 revisiones ¿Cumplo?</b><p class="nota" style="margin:4px 0 8px">Registra el RUT de tu empresa, el mismo con el que ofertas. Hay una prueba gratis por empresa.</p>' +
+    '<label for="rutEmp">RUT de tu empresa</label><input id="rutEmp" autocomplete="off" placeholder="76.123.456-7">' +
+    '<div class="acciones" style="margin-top:8px"><button class="principal" id="verRut">Verificar mi empresa</button></div><p class="nota" id="rutNota" aria-live="polite"></p></div>';
+  const nota2 = t => { $("rutNota").innerHTML = t; };
+  const registrar = async n => {
+    try{
+      const r = await sb("/rest/v1/rpc/registrar_empresa", {method: "POST", body: JSON.stringify({p_rut: n})});
+      if(r.ok){ nota("Listo: tienes 5 revisiones ¿Cumplo? gratis."); return cargarPrueba(); }
+      nota2({rut_invalido: "Ese RUT no es válido. Revisa el dígito verificador.", rut_en_uso: "Ese RUT ya usó su prueba gratis desde otra cuenta. Si es tu empresa, escríbenos y lo revisamos.",
+        demasiadas_desde_esta_red: "Desde esta conexión ya se registraron varias empresas. Escríbenos y lo revisamos.", otro_rut: "Tu cuenta ya tiene otro RUT registrado."}[r.motivo] || "No se pudo registrar. Intenta de nuevo.");
+    }catch(e){ nota2("No se pudo registrar: " + esc(e.message)); }
+  };
+  $("verRut").onclick = async () => {
+    const v = $("rutEmp").value;
+    if(!rutOk(v)){ nota2("Ese RUT no es válido. Revisa el dígito verificador."); return; }
+    const n = rutBonito(v); nota2("Buscando tu empresa en Mercado Público…");
+    let nombre = "";
+    try{ const r = await fetch(MOTOR + "/proveedor/" + encodeURIComponent(rutLimpio(v)), {signal: AbortSignal.timeout(25000)}); if(r.ok) nombre = (await r.json()).nombre || ""; }catch(e){}
+    if(nombre){
+      nota2("¿<b>" + esc(nombre) + "</b> (" + esc(n) + ") es tu empresa? <button type=\"button\" class=\"principal\" id=\"siEmp\" style=\"margin-left:6px\">Sí, es mi empresa</button>");
+    }else{
+      nota2("No pudimos confirmar el nombre de <b>" + esc(n) + "</b> en Mercado Público ahora (o aún no está inscrita). Puedes registrarla igual: <button type=\"button\" class=\"principal\" id=\"siEmp\" style=\"margin-left:6px\">Registrar este RUT</button>");
+    }
+    $("siEmp").onclick = () => registrar(n);
+  };
+}
 function pintarCuenta(){
   const C = $("cuenta"); if(!C) return;
   if(sesion){
-    C.innerHTML = '<div class="nota">Conectado como <b>' + esc(sesion.correo || "") + '</b>. Tus datos se guardan en tu cuenta y los ves en cualquier dispositivo.</div>' +
+    C.innerHTML = '<div class="nota">Conectado como <b>' + esc(sesion.correo || "") + '</b>. Tus datos se guardan en tu cuenta y los ves en cualquier dispositivo.</div><div id="prueba"></div>' +
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="aprenderOk"' + (perfil.aprender !== false ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
       '<span>Ayudar a mejorar Apto <span class="nota" style="display:block">Cuando guardas o descartas una compra, Apto registra de forma anónima qué palabras calzan con qué productos. <a href="privacidad.html">Más información</a></span></span></label>' +
       '<label for="avisosSel" style="margin-top:10px">Avisos de compras nuevas por correo</label>' +
       '<select id="avisosSel"><option value="diario">Cada mañana</option><option value="semanal">Una vez por semana</option><option value="no">No quiero avisos</option></select>' +
       '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button><button class="sec" id="borrarDatos">Borrar mis datos</button></div><p class="nota" id="cuentaNota"></p>';
+    cargarPrueba();
     $("avisosSel").value = avisosPref;
     $("avisosSel").onchange = async e => {
       try{ await sb("/rest/v1/cuentas?user_id=eq." + sesion.id, {method: "PATCH", headers: {"Prefer": "return=minimal"}, body: JSON.stringify({avisos: e.target.value})});

@@ -75,7 +75,7 @@ const RECUERDO = {
       const cabecera = titular("En las compras abiertas para tu rubro", "~" + ofertas.toLocaleString("es-CL") + " ofertas", "se presentarán este mes. ¿Una será la tuya?");
       const cuerpo = cifras([[lista.length, "compras abiertas"], [prom.toLocaleString("es-CL", {maximumFractionDigits: 1}), "ofertas por compra"], [ofertas.toLocaleString("es-CL"), "ofertas esperadas"]]) +
         caja("Otras empresas de tu rubro <b>sí están postulando</b>. Con Apto sabes en cuáles conviene competir, si cumples lo que piden y qué te falta, antes que ellas.", "#E7EEFA") +
-        cupon(codigo, descuento, 0.5 * ufClp, venceTxt) + P.boton("Volver a competir →", sitio, VERDE);
+        cupon(codigo, descuento, 0.25 * ufClp, venceTxt) + P.boton("Volver a competir →", sitio, VERDE);
       return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, ["Se esperan ~" + ofertas + " ofertas en compras para tu rubro.", "Código " + codigo + ": " + descuento + " % de descuento, vence el " + venceTxt + "."], sitio, token)};
     }},
   // 3) oferta directa: corto, el cupón primero
@@ -86,7 +86,7 @@ const RECUERDO = {
       const asunto = uno(["🎁 " + descuento + " % para que vuelvas a Apto", "Te guardamos un " + descuento + " % de descuento (vence pronto)", "Tu descuento para volver vence el " + venceTxt]);
       const preheader = lista.length + " compras abiertas esperan a tu empresa.";
       const cabecera = titular("Te extrañamos. Vuelve con", descuento + " % de descuento", "en tu primer mes");
-      const cuerpo = cupon(codigo, descuento, 0.5 * ufClp, venceTxt) +
+      const cuerpo = cupon(codigo, descuento, 0.25 * ufClp, venceTxt) +
         parrafo("Hoy hay <b>" + lista.length + " compras abiertas</b> que calzan con lo que vende tu empresa. Con Apto las ves todas, sabes si cumples y no se te pasa ningún plazo.", "text-align:center") +
         P.boton("Usar mi " + descuento + " % de descuento →", sitio, VERDE);
       return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, ["Código " + codigo + ": " + descuento + " % de descuento en tu primer mes. Vence el " + venceTxt + "."], sitio, token)};
@@ -106,7 +106,7 @@ const RECUERDO = {
         ["📅", "Todos los plazos en tu calendario", "Preguntas, respuestas y cierre, con avisos."]];
       const filas = lista5.map(([i, t, d]) => '<tr><td width="38" valign="top" style="' + F + 'font-size:22px;padding:6px 0">' + i + '</td><td style="padding:6px 0"><div style="' + F + 'font-size:15px;font-weight:bold;color:' + TINTA + '">' + t + '</div><div style="' + F + 'font-size:14px;color:' + SUAVE + '">' + P.esc(d) + "</div></td></tr>").join("");
       const cuerpo = tabla(filas) + '<div style="height:16px"></div>' + parrafo("Y hoy hay <b>" + lista.length + " compras abiertas</b> para lo que vendes.", "text-align:center") +
-        cupon(codigo, descuento, 0.5 * ufClp, venceTxt) + P.boton("Probar lo nuevo con " + descuento + " % →", sitio, VERDE);
+        cupon(codigo, descuento, 0.25 * ufClp, venceTxt) + P.boton("Probar lo nuevo con " + descuento + " % →", sitio, VERDE);
       return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, lista5.map(([, t, d]) => "- " + t + ": " + d), sitio, token)};
     }}
 };

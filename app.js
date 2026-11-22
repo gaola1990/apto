@@ -287,10 +287,10 @@ function pintarNegocio(){
   if(perfil.vistaGuardadas || !resultados.length){ el.innerHTML = ""; return; }
   const montos = resultados.map(montoDe).sort((a, b) => a - b);
   const total = montos.reduce((a, b) => a + b, 0), tipico = montos[Math.floor(montos.length / 2)];
-  const planApto = 1 * UF_CLP;   // Plan Apto: 1 UF al mes (10 UF al año)
+  const planApto = 0.5 * UF_CLP;   // Plan Apto: 0,5 UF al mes (5 UF al año)
   let logueado = false; try{ logueado = !!sesion; }catch(e){} // sesion se declara más abajo
   el.innerHTML = '<div class="negocio"><p class="grande">💰 Hoy hay ' + resultados.length.toLocaleString("es-CL") + (resultados.length === 1 ? " compra abierta" : " compras abiertas") + " para ti, por al menos " + millones(total) + ".</p>" +
-    "<p>Una compra de tamaño típico para ti vale unos <b>" + millones(tipico) + "</b>. El Plan Apto cuesta 1 UF al mes (unos " + millones(planApto) + "): " +
+    "<p>Una compra de tamaño típico para ti vale unos <b>" + millones(tipico) + "</b>. El Plan Apto cuesta 0,5 UF al mes (unos " + millones(planApto) + "): " +
       (planApto / tipico < 0.01 ? "<b>menos del 1 % de una sola compra</b>." : "<b>el " + Math.ceil(100 * planApto / tipico) + " % de una sola compra</b>.") + "</p>" +
     '<p class="nota" style="margin-top:6px">Montos informados por los compradores o, si no los publican, el mínimo de cada tramo de tamaño (cálculo conservador).</p></div>' +
     '<details class="porti"' + (leer("rp_porti_visto", false) ? "" : " open") + '><summary>Lo que Apto hace por ti</summary><ul>' +

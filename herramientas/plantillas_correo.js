@@ -65,7 +65,7 @@ function correoActivo({nuevas, token, sitio, plan, ufClp}){
   const resumen = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0"><tr>' +
     [[nuevas.length, "oportunidades"], pocas ? [pocas, "con poca competencia"] : [urgentes.length, "cierran en 3 días"], [total ? millones(total) : "—", "en presupuesto"]].map(([n, t]) =>
       '<td width="33%" align="center" style="padding:12px 4px;background:' + FONDO + ';border-radius:12px;border:3px solid #FFFFFF"><div style="' + FUENTE + 'font-size:20px;font-weight:bold;color:' + AZUL + '">' + n + '</div><div style="' + FUENTE + 'font-size:12px;color:' + SUAVE + '">' + t + "</div></td>").join("") + "</tr></table>";
-  const valor = total && plan ? '<p style="' + FUENTE + 'font-size:14px;line-height:21px;color:' + SUAVE + ';text-align:center;margin:6px 0 0 0">Tu plan cuesta ' + (plan === "apto" ? "1,5" : "0,5") + " UF al mes (~" + pesos((plan === "apto" ? 1.5 : 0.5) * ufClp) + "). Estas compras suman <b style=\"color:" + VERDE + '">' + millones(total) + "</b>.</p>" : "";
+  const valor = total && plan ? '<p style="' + FUENTE + 'font-size:14px;line-height:21px;color:' + SUAVE + ';text-align:center;margin:6px 0 0 0">Tu plan cuesta ' + (plan === "apto" ? "0,5" : "0,25") + " UF al mes (~" + pesos((plan === "apto" ? 0.5 : 0.25) * ufClp) + "). Estas compras suman <b style=\"color:" + VERDE + '">' + millones(total) + "</b>.</p>" : "";
   const cuerpo = resumen + '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">' + orden.map(d => tarjeta(d, sitio)).join("") + "</table>" +
     (nuevas.length > orden.length ? '<p style="' + FUENTE + 'font-size:14px;color:' + SUAVE + ';text-align:center;margin:4px 0 14px 0">y ' + (nuevas.length - orden.length) + " oportunidades más esperándote en Apto</p>" : "") +
     boton("Ver mis compras y si cumplo →", sitio) + valor;
@@ -79,7 +79,7 @@ function correoRecuerdo({lista, ca, token, sitio, ufClp, descuento, codigo, venc
   const montos = lista.map(d => d.monto || 0).filter(Boolean).sort((a, b) => a - b);
   const total = montos.reduce((a, b) => a + b, 0), prom = montos.length ? total / montos.length : 0;
   const pronto = lista.filter(d => d.cierre && new Date(d.cierre).getTime() - Date.now() < 7 * 864e5).length;
-  const costo = 0.5 * ufClp, costoDesc = costo * (1 - descuento / 100);
+  const costo = 0.25 * ufClp, costoDesc = costo * (1 - descuento / 100);
   const veces = prom && costo ? Math.floor(prom / costo) : 0;
   const venceTxt = vence.toLocaleDateString("es-CL", {weekday: "long", day: "numeric", month: "long"});
   const asunto = total ? "💸 Te estás perdiendo " + millones(total) + " en compras del Estado" : "💸 " + lista.length + " compras del Estado esperan a tu empresa";
@@ -92,7 +92,7 @@ function correoRecuerdo({lista, ca, token, sitio, ufClp, descuento, codigo, venc
     '<td width="33%" align="center" style="padding:12px 4px;background:' + FONDO + ';border-radius:12px;border:3px solid #FFFFFF"><div style="' + FUENTE + 'font-size:19px;font-weight:bold;color:' + AZUL + '">' + n + '</div><div style="' + FUENTE + 'font-size:12px;color:' + SUAVE + '">' + t + "</div></td>").join("") + "</tr></table>";
   const rango = montos.length >= 3 ? '<p style="' + FUENTE + 'font-size:15px;line-height:23px;color:' + TINTA + ';margin:0 0 14px 0">Los montos van desde <b>' + millones(montos[0]) + "</b> hasta <b>" + millones(montos[montos.length - 1]) + "</b>.</p>" : "";
   const comparacion = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0"><tr><td style="padding:16px 18px;background:#E6F4EC;border-radius:14px">' +
-    '<div style="' + FUENTE + 'font-size:15px;line-height:23px;color:' + TINTA + '">Apto cuesta desde <b>0,5 UF al mes (~' + pesos(costo) + ")</b>." +
+    '<div style="' + FUENTE + 'font-size:15px;line-height:23px;color:' + TINTA + '">Apto cuesta desde <b>0,25 UF al mes (~' + pesos(costo) + ")</b>." +
     (veces >= 2 ? " Una sola compra promedio vale <b style=\"color:" + VERDE + '">' + veces.toLocaleString("es-CL") + " veces</b> lo que pagas por Apto." : "") +
     (pronto ? "<br>⏰ <b>" + pronto + " de estas compras cierran esta semana.</b>" : "") + "</div></td></tr></table>";
   const oferta = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 8px 0"><tr><td align="center" style="padding:18px;border:2px dashed ' + AMBAR + ';border-radius:14px;background:#FFF8E6">' +
@@ -103,7 +103,7 @@ function correoRecuerdo({lista, ca, token, sitio, ufClp, descuento, codigo, venc
   const cuerpo = tabla + rango + comparacion + oferta + boton("Volver a Apto con " + descuento + " % de descuento →", sitio, VERDE) +
     '<p style="' + FUENTE + 'font-size:13px;line-height:20px;color:' + SUAVE + ';text-align:center;margin:10px 0 0 0">Con Apto ves cuáles son, si cumples lo que piden y qué te falta antes de postular.</p>';
   const texto = asunto + "\n" + preheader + "\n\nHoy hay " + lista.length + " licitaciones abiertas para lo que vendes" + (total ? ", por " + millones(total) : "") + ".\n" +
-    "Apto cuesta desde 0,5 UF al mes. Tu código " + codigo + " te da " + descuento + " % de descuento en tu primer mes y vence el " + venceTxt + ".\n" + sitio +
+    "Apto cuesta desde 0,25 UF al mes. Tu código " + codigo + " te da " + descuento + " % de descuento en tu primer mes y vence el " + venceTxt + ".\n" + sitio +
     "\n\nDejar de recibir avisos: " + sitio + "baja.html?t=" + token;
   return {asunto, html: marco({preheader, cabecera, cuerpo, sitio, token}), texto};
 }

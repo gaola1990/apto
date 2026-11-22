@@ -900,7 +900,6 @@ function iniciar(){
     guardar("rp_catalogo", catalogo); pintarCatalogo();
     ["pnombre","pcaract","pgar","pent"].forEach(k => $(k).value = ""); $("nuevoProd").open = false;
   };
-  $("ejemplos").innerHTML = EJEMPLOS.map((e, i) => '<button class="sec" data-i="' + i + '">' + esc(e.nombre.replace(/^Adquisición de \d+ /, "").replace(/ para .*/, "")) + "</button>").join("");
   $("ejemplos").onclick = e => { const b = e.target.closest("button[data-i]"); if(b) abrirEjemplo(+b.dataset.i); };
   cargar();
 }

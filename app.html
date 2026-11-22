@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apto · Mi panel</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://api.mercadopublico.cl https://izxhfajflqmfhgligblu.supabase.co https://*.trycloudflare.com http://127.0.0.1:8787; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
+<link rel="stylesheet" href="estilos.css?v=202611221649">
+</head>
+<body data-pagina="app">
+<script>document.documentElement.classList.add("js")</script>
+<header><div class="in">
+  <h1><a href="index.html" aria-label="Apto, volver al inicio">Apto</a></h1><span class="ap-plan" id="apPlan"></span>
+  <nav aria-label="Navegación"><a href="index.html">← Volver al inicio</a><a href="index.html#planes">Planes</a></nav>
+</div></header>
+
+<section class="ap-titulo" id="apTitulo"><h2>Tu panel de Apto</h2><p id="apSub">Entra con tu correo para empezar.</p></section>
+
+<div id="entrada" class="entrada-wrap" aria-label="Empieza con tu empresa" inert>
+  <div class="entrada-int">
+    <div class="tarjeta entrada">
+      <p class="pk" id="entradaPlan"></p>
+      <p class="nota" id="entradaNota"></p>
+      <div id="entradaCuenta"></div>
+    </div>
+  </div>
+</div>
+
+<div id="herramienta" hidden>
+<div class="ap-tabs" id="apTabs" role="tablist" aria-label="Secciones del panel">
+  <button type="button" role="tab" data-vista="negocio" aria-selected="false">Mi negocio</button>
+  <button type="button" role="tab" data-vista="oportunidades" aria-selected="true">Oportunidades</button>
+</div>
+<main data-pagina="app" data-vista="oportunidades">
+  <section class="tarjeta" aria-label="Perfil de mi negocio">
+    <h2>Mi cuenta</h2>
+    <div id="cuenta"></div>
+    <h2 style="margin-top:22px">Mi negocio</h2>
+    <div class="nota">Escribe lo que vendes y Apto revisa todas las licitaciones abiertas para mostrarte solo las tuyas.</div>
+    <label for="extra">¿Qué vendes? (separado por coma)</label>
+    <textarea id="extra" placeholder="ej: notebook, tóner, mant. de pc, arreglos florales"></textarea>
+    <p class="nota" id="corregido" aria-live="polite" style="margin:4px 0 0"></p>
+    <p class="nota" id="clases" aria-live="polite" style="margin:4px 0 0"></p>
+    <label>O elige uno o más rubros</label>
+    <details class="desplegable" id="menuRubros">
+      <summary id="rubrosResumen">Elegir rubros</summary>
+      <div class="chips" id="rubros"></div>
+    </details>
+    <label for="excluir">No me interesa (separado por coma)</label>
+    <input type="text" id="excluir" placeholder="ej: hospital, maquinaria pesada">
+    <label for="region">Mi región</label>
+    <select id="region"></select>
+    <label class="check"><input type="checkbox" id="soloRegion"> Mostrar solo compras de mi región</label>
+    <label for="tamano">Tamaño que puedo atender</label>
+    <select id="tamano">
+      <option value="5">Cualquiera</option>
+      <option value="1">Solo las más chicas (hasta 100 UTM)</option>
+      <option value="2">Hasta 1.000 UTM</option>
+      <option value="3">Hasta 2.000 UTM</option>
+      <option value="4">Hasta 5.000 UTM</option>
+    </select>
+    <h2 style="margin-top:20px">Mis productos</h2>
+    <div class="nota">Agrega lo que vendes con sus características. Al abrir una compra te digo si tienes lo que piden.</div>
+    <div id="catalogo"></div>
+    <details id="porRut">
+      <summary class="nota" style="cursor:pointer;margin-top:10px">⚡ Armar mi catálogo con lo que ya le vendí al Estado</summary>
+      <label for="rutcat">RUT de mi empresa</label>
+      <input type="text" id="rutcat" placeholder="ej: 76.123.456-7" autocomplete="off" maxlength="12">
+      <div class="nota">Apto busca en datos públicos de Mercado Público los productos que tu empresa ya ganó y los agrega a tu catálogo y a tus palabras clave. Tarda uno o dos minutos.</div>
+      <button class="principal" id="rutbtn" style="margin-top:10px">Buscar mis productos</button>
+      <div id="rutout"></div>
+    </details>
+    <details id="nuevoProd">
+      <summary class="nota" style="cursor:pointer;margin-top:10px">+ Agregar producto</summary>
+      <label for="pnombre">Nombre del producto</label>
+      <input type="text" id="pnombre" placeholder="ej: banda elástica de resistencia">
+      <label for="pcaract">Características (medidas, color, material, marca)</label>
+      <textarea id="pcaract" placeholder="ej: rollo de 45 m de largo por 15 cm de ancho, color negro"></textarea>
+      <div class="dos">
+        <div><label for="pgar">Garantía (meses)</label><input type="number" id="pgar" min="0" inputmode="numeric"></div>
+        <div><label for="pent">Entrega (días)</label><input type="number" id="pent" min="0" inputmode="numeric"></div>
+      </div>
+      <button class="principal" id="pguardar" style="margin-top:12px">Guardar producto</button>
+    </details>
+    <button class="principal flotante" id="irResultados" type="button" hidden></button>
+    <p class="nota" id="fuente" style="margin:14px 0 0"></p>
+  </section>
+
+  <section aria-label="Oportunidades">
+    <div class="cifras" id="cifras"></div>
+    <div id="negocio"></div>
+    <div class="tarjeta" style="margin-bottom:14px">
+      <h2>¿Cumplo lo que piden?</h2>
+      <div class="nota">Apto compara tu producto con cada requisito de la compra y te dice qué cumples y qué te falta.</div>
+      <div class="acciones" id="ejemplos" hidden></div>
+    </div>
+    <div class="tarjeta" id="compraAgil" hidden style="margin-bottom:14px"></div>
+    <div class="tarjeta">
+      <div class="barra">
+        <h2 style="margin:0;flex:1">Oportunidades para ti</h2>
+        <select id="vista" aria-label="Qué mostrar">
+          <option value="todas">Todas las que calzan</option>
+          <option value="guardadas">Solo guardadas</option>
+        </select>
+        <select id="plazo" aria-label="Cierra en">
+          <option value="">Cierre: cualquier fecha</option>
+          <option value="3">Cierran en 3 días o menos</option>
+          <option value="7">Cierran esta semana</option>
+          <option value="14">Cierran en 2 semanas</option>
+        </select>
+        <select id="orden" aria-label="Orden">
+          <option value="calce">Mejor calce primero</option>
+          <option value="cierre">Cierran antes primero</option>
+          <option value="competencia">Menos competencia primero</option>
+        </select>
+      </div>
+      <div id="dondeApto"></div>
+      <p class="nota" id="calceInfo" aria-live="polite"></p>
+      <div id="lista"><div class="vacio">Cargando licitaciones…</div></div>
+      <div style="text-align:center"><button class="sec" id="mas" hidden>Ver más</button></div>
+      <div class="acciones" style="justify-content:center;margin-top:8px"><button class="sec" id="calguard">📅 Todos los plazos de mis guardadas al calendario</button></div>
+    </div>
+  </section>
+</main>
+</div>
+
+
+<footer>Apto · prototipo. Datos abiertos de ChileCompra. No es un sitio oficial del Estado de Chile. · <a href="privacidad.html">Privacidad</a> · <a href="estado.html">Estado de los datos</a> · <a href="index.html">Inicio</a></footer>
+
+<dialog id="dlg" aria-labelledby="dtitulo">
+  <button class="cerrar" id="cerrarDlg" aria-label="Cerrar">×</button>
+  <div class="det" id="det"></div>
+</dialog>
+
+<script src="datos.js"></script>
+<script src="buscar.js?v=202611221649"></script>
+<script src="app.js?v=202611221649"></script>
+</body>
+</html>

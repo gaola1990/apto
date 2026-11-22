@@ -32,7 +32,7 @@ const ACTIVO = {
       const cabecera = titular("Esta semana encontramos", pocas.length + " compras", "donde casi nadie compite");
       const cuerpo = parrafo("En compras parecidas se presentaron <b>2 ofertas o menos</b>. Postular donde hay poca competencia es la forma más rápida de ganar tu primera (o próxima) compra.") +
         tabla(pocas.slice(0, 6).map(d => P.tarjeta(d, sitio)).join("")) + P.boton("Ver dónde tengo ventaja →", sitio);
-      return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, pocas.slice(0, 6).map(d => "- " + d.nombre.trim() + "\n  " + sitio + "?c=" + d.codigo), sitio, token)};
+      return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, pocas.slice(0, 6).map(d => "- " + d.nombre.trim() + "\n  " + sitio + "app.html?c=" + d.codigo), sitio, token)};
     }},
   // 3) dinero: las más grandes primero
   dinero: {
@@ -44,7 +44,7 @@ const ACTIVO = {
       const cabecera = titular("Compras abiertas para ti por", P.millones(total), "ordenadas de mayor a menor");
       const cuerpo = cifras([[con.length, "con presupuesto"], [P.millones(con[0].monto), "la más grande"], [P.millones(total / con.length), "promedio"]]) +
         tabla(con.slice(0, 6).map(d => P.tarjeta(d, sitio)).join("")) + P.boton("Ver las de mayor monto →", sitio);
-      return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, con.slice(0, 6).map(d => "- " + d.nombre.trim() + " (" + P.millones(d.monto) + ")\n  " + sitio + "?c=" + d.codigo), sitio, token)};
+      return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, con.slice(0, 6).map(d => "- " + d.nombre.trim() + " (" + P.millones(d.monto) + ")\n  " + sitio + "app.html?c=" + d.codigo), sitio, token)};
     }},
   // 4) selección: solo 3, con el porqué (corto y personal)
   top3: {
@@ -57,7 +57,7 @@ const ACTIVO = {
       const filas = tres.map((d, i) => '<tr><td style="padding:0 0 4px 0"><div style="' + F + 'font-size:13px;font-weight:bold;color:' + VERDE + '">#' + (i + 1) + (d.porque ? " · calza con «" + P.esc(d.porque) + "»" : " · calza con lo que vendes") + "</div></td></tr>" + P.tarjeta(d, sitio)).join("");
       const cuerpo = parrafo("Revisamos todas las compras abiertas y estas son las que más se parecen a lo que vendes. Ábrelas y Apto te dice si cumples lo que piden.") + tabla(filas) +
         (nuevas.length > 3 ? parrafo("Tienes otras <b>" + (nuevas.length - 3) + "</b> oportunidades en Apto.", "text-align:center;color:" + SUAVE) : "") + P.boton("Ver mi top 3 →", sitio);
-      return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, tres.map((d, i) => "#" + (i + 1) + " " + d.nombre.trim() + "\n  " + sitio + "?c=" + d.codigo), sitio, token)};
+      return {asunto, html: P.marco({preheader, cabecera, cuerpo, sitio, token}), texto: textoPlano(asunto, preheader, tres.map((d, i) => "#" + (i + 1) + " " + d.nombre.trim() + "\n  " + sitio + "app.html?c=" + d.codigo), sitio, token)};
     }}
 };
 

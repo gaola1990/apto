@@ -31,7 +31,13 @@ const TIPOS = {
   LS:{n:3,t:"Servicios especializados"}, O1:{n:4,t:"Obra pública"}, O2:{n:4,t:"Obra privada"}
 };
 
-const $ = id => document.getElementById(id);
+// El mismo script sirve a la portada (index.html) y al panel (app.html): un elemento que no existe en la página
+// actual se reemplaza por un nodo suelto (sin efecto), así no hace falta proteger cada línea.
+const SUELTOS = {};
+const $ = id => document.getElementById(id) || (SUELTOS[id] || (SUELTOS[id] = document.createElement("div")));
+const PAGINA = document.body.dataset.pagina || "inicio";   // "app" = panel; "inicio" = portada
+// enlaces antiguos (correos de aviso, modo demostración) que apuntaban a la portada: se llevan al panel
+if(PAGINA !== "app" && /[?&](c|demo)=/.test(location.search)) location.replace("app.html" + location.search);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm = s => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9ñ ]+/g, " ").replace(/\s+/g, " ").trim();
 function leer(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } }
@@ -239,11 +245,12 @@ function botonResultados(){
   const b = $("irResultados"); if(!b) return;
   const lista = $("lista"), visible = lista && lista.getBoundingClientRect().top < innerHeight * 0.8;
   const n = perfil.vistaGuardadas ? 0 : resultados.length;
-  b.hidden = !n || visible || innerWidth > 860;
+  const m = document.querySelector("main[data-vista]");
+  b.hidden = !n || visible || innerWidth > 860 || (m && m.dataset.vista === "oportunidades");
   b.textContent = "Ver " + n.toLocaleString("es-CL") + (n === 1 ? " compra para ti ↓" : " compras para ti ↓");
 }
 addEventListener("scroll", () => botonResultados(), {passive: true});
-document.addEventListener("click", e => { const t = e.target.closest && e.target.closest("[data-todas]"); if(t){ perfil.todas = t.dataset.todas === "1"; cambio(); return; } if(e.target.id === "irResultados") $("lista").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"}); });
+document.addEventListener("click", e => { const t = e.target.closest && e.target.closest("[data-todas]"); if(t){ perfil.todas = t.dataset.todas === "1"; cambio(); return; } if(e.target.id === "irResultados"){ verVista("oportunidades"); scrollTo({top: 0}); } });
 addEventListener("resize", () => botonResultados());
 function pintar(){
   calcular();
@@ -303,7 +310,7 @@ function pintarNegocio(){
     '<li><span class="ic">🧭</span><div><b>¿Es tu primera vez?</b> <a href="guia.html">Lee cómo hacer tu primera oferta, paso a paso</a>.</div></li></ul></details>';
   const det = el.querySelector(".porti"); if(det) det.ontoggle = () => { if(!det.open) guardar("rp_porti_visto", true); };
   const b = $("activarAvisos");
-  if(b) b.onclick = () => { const c = $("correo") || $("cuenta"); if(c){ c.scrollIntoView({behavior: "smooth", block: "center"}); if(c.focus) setTimeout(() => c.focus(), 400); } };
+  if(b) b.onclick = () => { verVista("negocio"); const c = $("correo") || $("cuenta"); if(c){ c.scrollIntoView({behavior: "smooth", block: "center"}); if(c.focus) setTimeout(() => c.focus(), 400); } };
 }
 const cifra = (n, t) => '<div class="cifra"><b>' + n + "</b><span>" + t + "</span></div>";
 
@@ -358,6 +365,7 @@ function plan(d, base){
   return '<ul class="pasos">' + pasos.map((p, i) => '<li><input type="checkbox" id="p' + i + '" data-i="' + i + '"' + (h[i] ? " checked" : "") + '><label for="p' + i + '" style="margin:0;font-weight:400;font-size:inherit">' + esc(p[0]) + (p[1] ? "<small>" + esc(p[1]) + "</small>" : "") + "</label></li>").join("") + "</ul>";
 }
 async function abrir(codigo){
+  if(PAGINA !== "app"){ location.href = "app.html?c=" + encodeURIComponent(codigo); return; }   // el detalle de una compra vive en el panel
   const base = datos.find(x => x.codigo === codigo); if(!base) return;
   const D = $("det");
   D.innerHTML = '<h3 id="dtitulo">' + esc(base.nombre) + '</h3><div class="nota">' + esc(codigo) + " · " + esc(base.tipo.t) + '</div><p class="vacio">Consultando el detalle en Mercado Público…</p>';
@@ -754,7 +762,7 @@ function activarCumplo(raiz){
     if(p) fd.append("producto", p.nombre + ". " + p.caract + (p.garantia !== "" ? ". Garantía: " + p.garantia + " meses" : "") + (p.entrega !== "" ? ". Plazo de entrega: " + p.entrega + " días" : ""));
     if(!sesion){
       out.innerHTML = '<p class="nota">Para revisar si cumples crea tu cuenta gratis: incluye <b>5 revisiones ¿Cumplo?</b>, el radar y el calendario.</p><button type="button" class="principal" id="irCuenta">Crear mi cuenta gratis</button>';
-      out.querySelector("#irCuenta").onclick = () => { try{ $("dlg").close(); }catch(e){} const c = $("cuenta"); if(c){ c.scrollIntoView({behavior: "smooth", block: "center"}); const k = $("correo"); if(k) k.focus(); } };
+      out.querySelector("#irCuenta").onclick = () => { try{ $("dlg").close(); }catch(e){} verVista("negocio"); const c = $("cuenta"); if(c){ c.scrollIntoView({behavior: "smooth", block: "center"}); const k = $("correo"); if(k) k.focus(); } };
       return;
     }
     b.disabled = true; out.innerHTML = '<p class="nota">Enviando a la IA de Apto…</p>';
@@ -812,7 +820,7 @@ function conectarIA(){
 }
 
 async function cargar(){
-  conectarIA();
+  if(PAGINA === "app") conectarIA();
   const copia = window.SNAPSHOT;
   if(copia && copia.listado){ preparar(copia.listado); origen = "Copia guardada del " + new Date(copia.fecha).toLocaleString("es-CL",{dateStyle:"medium",timeStyle:"short"}); avisar(); pintar(); }
   // enlace directo a una compra (lo usan los correos de aviso): ?c=código
@@ -965,6 +973,29 @@ function desbloquear(conScroll){
   pintar();
   if(conScroll) setTimeout(() => $("app").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"}), 60);
 }
+function irAlPanel(plan){
+  if(!NOMBRES_PLAN[plan]) plan = "gratis";
+  try{ localStorage.setItem("apto_plan_elegido", plan); }catch(e){}
+  location.href = "app.html?plan=" + encodeURIComponent(plan);
+}
+// Pestañas del panel en pantallas angostas (en escritorio se ven las dos columnas)
+function verVista(v){
+  const m = document.querySelector("main[data-vista]"); if(!m) return;
+  m.dataset.vista = v;
+  document.querySelectorAll("#apTabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.vista === v)));
+}
+function iniciarPanel(){
+  let plan = new URLSearchParams(location.search).get("plan");
+  if(!NOMBRES_PLAN[plan]){ try{ plan = localStorage.getItem("apto_plan_elegido"); }catch(e){} }
+  if(!NOMBRES_PLAN[plan]) plan = "gratis";
+  $("apPlan").textContent = NOMBRES_PLAN[plan];
+  $("apSub").textContent = plan === "apto" ? "Sube las cotizaciones de tus productos y mira dónde puedes postular."
+    : plan === "radar" ? "Dinos qué vendes y te mostramos las compras que te sirven." : "Prueba el Radar: dinos qué vendes y mira las compras que te sirven.";
+  document.title = "Apto · " + NOMBRES_PLAN[plan];
+  document.querySelectorAll("#apTabs button").forEach(b => b.onclick = () => verVista(b.dataset.vista));
+  verVista((perfil.extra && perfil.extra.trim()) || (perfil.rubros && perfil.rubros.length) ? "oportunidades" : "negocio");
+  pedirEntrada(plan, false);
+}
 function pedirEntrada(plan, conScroll){
   const H = $("herramienta"); if(!H) return;
   if(!H.hidden){ $("app").scrollIntoView({behavior: "smooth", block: "start"}); return; }
@@ -976,7 +1007,7 @@ function pedirEntrada(plan, conScroll){
   $("entradaCuenta").appendChild($("cuenta"));
   if(conScroll) setTimeout(() => E.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"}), 200);   // espera a que empiece a desplegarse
 }
-document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn"); if(b) pedirEntrada(b.dataset.plan, true);
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn"); if(b) irAlPanel(b.dataset.plan);
   const cc = e.target.closest && e.target.closest(".ciclo button"); if(cc){   // Mensual / Anual
     const g = document.querySelector(".planes"); if(g) g.dataset.ciclo = cc.dataset.ciclo;
     document.querySelectorAll(".ciclo button").forEach(x => { const on = x === cc; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
@@ -1082,7 +1113,7 @@ function revisarProductos(R, out){
     });
     guardar("rp_catalogo", catalogo); pintarCatalogo(); cambio();
     out.innerHTML = '<p class="nota">Listo: agregamos ' + nuevos + " productos a tu catálogo. Abajo ves dónde postular.</p>";
-    const d = $("dondeApto"); if(d && d.scrollIntoView) d.scrollIntoView({behavior: "smooth", block: "start"});
+    verVista("oportunidades"); const d = $("dondeApto"); if(d && d.scrollIntoView) d.scrollIntoView({behavior: "smooth", block: "start"});
   };
 }
 // Compras abiertas donde puedes ofertar según los productos de tus documentos: más productos tuyos = más arriba; a igual, cierra antes.
@@ -1168,9 +1199,14 @@ function pintarCuenta(){
   };
 }
 
-iniciar();
-pintarCuenta();
-if(sesion) bajarCuenta().catch(() => {});
+if(PAGINA === "app"){
+  iniciar();
+  iniciarPanel();
+  pintarCuenta();
+  if(sesion) bajarCuenta().catch(() => {});
+}else{
+  cargar();   // portada: solo el contador de compras abiertas
+}
 // Demo de "Cómo funciona": cada vuelta de 15 s muestra un producto distinto (deportes, ferretería, imprenta y aseo). Son ejemplos ilustrativos.
 (function(){
   const demo = document.getElementById("demo"); if(!demo) return;

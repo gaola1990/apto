@@ -29,8 +29,8 @@ function tarjeta(d, sitio){
     (d.monto ? etiqueta("💰 " + millones(d.monto), "#E6F4EC", VERDE) : "");
   return '<tr><td style="padding:0 0 12px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E1E6EE;border-radius:14px;background:#FFFFFF">' +
     '<tr><td style="padding:16px 18px">' + '<div>' + tags + "</div>" +
-    '<a href="' + sitio + "?c=" + encodeURIComponent(d.codigo) + '" style="' + FUENTE + 'font-size:16px;line-height:22px;font-weight:bold;color:' + TINTA + ';text-decoration:none">' + esc(d.nombre.trim().slice(0, 130)) + "</a>" +
-    '<div style="' + FUENTE + 'font-size:13px;color:' + SUAVE + ';margin-top:6px">' + esc(d.codigo) + ' · <a href="' + sitio + "?c=" + encodeURIComponent(d.codigo) + '" style="color:' + AZUL + ';font-weight:bold">Ver si cumplo →</a></div>' +
+    '<a href="' + sitio + "app.html?c=" + encodeURIComponent(d.codigo) + '" style="' + FUENTE + 'font-size:16px;line-height:22px;font-weight:bold;color:' + TINTA + ';text-decoration:none">' + esc(d.nombre.trim().slice(0, 130)) + "</a>" +
+    '<div style="' + FUENTE + 'font-size:13px;color:' + SUAVE + ';margin-top:6px">' + esc(d.codigo) + ' · <a href="' + sitio + "app.html?c=" + encodeURIComponent(d.codigo) + '" style="color:' + AZUL + ';font-weight:bold">Ver si cumplo →</a></div>' +
     "</td></tr></table></td></tr>";
 }
 
@@ -69,7 +69,7 @@ function correoActivo({nuevas, token, sitio, plan, ufClp}){
   const cuerpo = resumen + '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">' + orden.map(d => tarjeta(d, sitio)).join("") + "</table>" +
     (nuevas.length > orden.length ? '<p style="' + FUENTE + 'font-size:14px;color:' + SUAVE + ';text-align:center;margin:4px 0 14px 0">y ' + (nuevas.length - orden.length) + " oportunidades más esperándote en Apto</p>" : "") +
     boton("Ver mis compras y si cumplo →", sitio) + valor;
-  const texto = asunto + "\n" + preheader + "\n\n" + orden.map(d => { const cr = cuentaRegresiva(d.cierre); return "- " + d.nombre.trim() + (cr ? " (" + cr.texto.replace("⏰ ", "") + ")" : "") + "\n  " + sitio + "?c=" + d.codigo; }).join("\n") +
+  const texto = asunto + "\n" + preheader + "\n\n" + orden.map(d => { const cr = cuentaRegresiva(d.cierre); return "- " + d.nombre.trim() + (cr ? " (" + cr.texto.replace("⏰ ", "") + ")" : "") + "\n  " + sitio + "app.html?c=" + d.codigo; }).join("\n") +
     "\n\nVer todas: " + sitio + "\nDejar de recibir avisos: " + sitio + "baja.html?t=" + token;
   return {asunto, html: marco({preheader, cabecera, cuerpo, sitio, token}), texto};
 }

@@ -1173,7 +1173,7 @@ if(sesion) bajarCuenta().catch(() => {});
   let actual = null, espera = null, cierre = null;
   function mostrar(el, x){
     clearTimeout(cierre); actual = el;
-    pop.innerHTML = '<b class="en">En simple</b><p>' + esc2(el.dataset.ayuda) + '</p>' + (el.dataset.ejemplo ? '<p><b>Ejemplo:</b> ' + esc2(el.dataset.ejemplo) + '</p>' : "");
+    pop.innerHTML = '<p>' + esc2(el.dataset.ayuda) + '</p>' + (el.dataset.ejemplo ? '<p><b>Ejemplo:</b> ' + esc2(el.dataset.ejemplo) + '</p>' : "");
     el.setAttribute("aria-describedby", "ayudaPop");
     const r = el.getBoundingClientRect(), W = innerWidth, H = innerHeight;
     pop.style.visibility = "hidden"; pop.classList.remove("on"); pop.style.left = "0px"; pop.style.top = "0px";

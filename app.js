@@ -1089,7 +1089,14 @@ function revisarProductos(R, out){
 function dondePostular(){
   const ps = docProds(), tope = +perfil.tamano;
   if(!ps.length) return [];
-  const ts = ps.map(p => ({p, ts: [p.nombre].concat(p.pal || []).map(norm).filter(t => t.length > 2).map(armar).filter(t => !generico(t))}));
+  // Términos de CADA producto: su nombre, su palabra principal y las palabras clave de la IA que comparten una palabra con ese nombre
+  // (antes todas las palabras clave valían para todos los productos y «equipo impresión» llenaba la lista de compras sin relación).
+  const raices = t => norm(t).split(" ").filter(w => w.length > 3).map(w => w.slice(0, 5));
+  const ts = ps.map(p => {
+    const rn = raices(p.nombre), cab = norm(p.nombre).split(" ").find(w => w.length >= 6);
+    const lista = [p.nombre].concat(cab ? [cab] : [], (p.pal || []).filter(w => raices(w).some(r => rn.includes(r)))).map(norm).filter(t => t.length > 2);
+    return {p, ts: [...new Set(lista)].map(armar).filter(t => !generico(t))};
+  }).filter(x => x.ts.length);
   const out = [];
   for(const d of datos){
     const dias = diasPara(d.cierre);

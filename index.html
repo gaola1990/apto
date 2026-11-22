@@ -298,7 +298,11 @@ header nav a.cta:hover{background:#B8261B}
 @keyframes girar{50%{transform:translate(-20px,24px) scale(1.06)}}
 .num{display:block;font-size:clamp(68px,11vw,150px);line-height:.95;letter-spacing:-.045em;font-variant-numeric:tabular-nums;margin:6px 0 10px}
 .t-tall{grid-row:span 2}
-@media(min-width:861px){.t-num{grid-column:span 4}}
+@media(min-width:861px){.t-num{grid-column:span 4;display:flex;align-items:center;justify-content:space-between;gap:36px;padding:30px 40px}
+.t-num .tn-izq{flex:none}.t-num .num{font-size:clamp(64px,8vw,112px);margin:4px 0 0}
+.t-num .tn-der{flex:1;max-width:380px;padding-left:36px;border-left:1px solid rgba(255,255,255,.28);position:relative;z-index:1}
+.t-num .tn-grande{margin:0;font-size:clamp(20px,2.2vw,28px);font-weight:700;line-height:1.2;color:#fff!important}
+.t-num .tn-der .sello{margin-top:12px;font-size:13.5px}}
 .t-wide{grid-column:span 6;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .chips2{display:flex;gap:8px;flex-wrap:wrap}
 .chips2 span{background:var(--marca-suave);color:var(--marca);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:700}
@@ -670,7 +674,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <article class="tile rv" style="--d:.05s" data-ayuda="Cada compra tiene tres fechas: hasta cuándo puedes preguntar, cuándo responden y cuándo cierra. Te las ponemos en tu calendario." data-ejemplo="si cierra el 24 de noviembre, tu oferta tiene que estar subida ese día." tabindex="0"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
     <article class="tile rv" style="--d:.15s" data-ayuda="Escribe como hablas: Apto entiende abreviaturas, sinónimos y errores de escritura." data-ejemplo="si escribes «computadres» o «pc», te muestra compras de computadores." tabindex="0"><p class="k">Habla como tú</p><h3>Escribe como hablas.</h3><p>Aunque abrevies o te equivoques, Apto te entiende.</p></article>
-    <article class="tile t-num rv" id="tnum" style="--d:.2s" data-ayuda="Una licitación es una compra del Estado en la que varias empresas ofrecen su producto y el Estado elige una. Este número son las que hoy aceptan ofertas." data-ejemplo="un municipio que necesita 50 sillas para una escuela." tabindex="0"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Apto las revisa todas por ti.</p><p class="sello" id="sello">Se actualiza cada 4 horas · <a href="estado.html">ver estado</a></p></article>
+    <article class="tile t-num rv" id="tnum" style="--d:.2s" data-ayuda="Una licitación es una compra del Estado en la que varias empresas ofrecen su producto y el Estado elige una. Este número son las que hoy aceptan ofertas." data-ejemplo="un municipio que necesita 50 sillas para una escuela." tabindex="0"><div class="tn-izq"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b></div><div class="tn-der"><p class="tn-grande">Apto las revisa todas por ti.</p><p class="sello" id="sello">Se actualiza cada 4 horas · <a href="estado.html">ver estado</a></p></div></article>
     <article class="tile t-wide rv" style="--d:.1s" data-ayuda="Usamos solo la información que el Estado publica para todos, y no trabajamos para los compradores." data-ejemplo="no vemos las ofertas de otras empresas ni datos internos de ningún organismo." tabindex="0"><div class="dts"><div class="dts-t"><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado: estamos del lado de quien vende.</p><a class="fuente-link" href="https://www.mercadopublico.cl" target="_blank" rel="noopener">Fuente: ChileCompra · Mercado Público ↗</a></div>
       <ol class="flujo"><li><b>1</b><span><strong>ChileCompra</strong> publica las compras en Mercado Público, para todos</span></li><li><b>2</b><span>Apto las descarga cada 4 horas y las ordena</span></li><li><b>3</b><span>Tú ves solo las que te sirven</span></li></ol>
       <p class="dts-n">No usamos información interna ni vemos las ofertas de otras empresas. Cada empresa ve solo sus propios datos.</p></div>

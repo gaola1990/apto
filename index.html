@@ -97,6 +97,23 @@ header nav a.cta:hover{background:#B8261B}
 .f12{right:14%;top:0;z-index:3;animation-delay:-2.2s}
 .f13{right:26%;top:32px;z-index:3;animation-delay:-5.6s}
 .f15{right:1%;top:30px;z-index:3;animation-delay:-1.5s}
+.vwin:hover{z-index:6}
+.vtip{position:absolute;top:86px;width:292px;background:#fff;border-radius:18px;padding:16px 18px 14px;box-shadow:0 2px 6px rgba(27,36,48,.08),0 24px 56px rgba(29,78,158,.28);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none;z-index:7;text-align:left}
+.vw-l .vtip{left:calc(100% - 26px)}.vw-r .vtip{right:calc(100% - 26px)}
+.vcaja:hover ~ .vtip{opacity:1;visibility:visible;transform:none}
+.vtip::before{content:"";position:absolute;top:34px;width:14px;height:14px;background:#fff;transform:rotate(45deg)}
+.vw-l .vtip::before{left:-7px;box-shadow:-3px 3px 6px rgba(27,36,48,.06)}.vw-r .vtip::before{right:-7px;box-shadow:3px -3px 6px rgba(27,36,48,.06)}
+.vtip h5{margin:0 0 12px;font-size:15px;color:var(--marca)}
+.vtip ol{list-style:none;margin:0;padding:0}
+.vtip li{position:relative;display:flex;align-items:center;gap:10px;padding:8px 11px;border:1px solid var(--linea);border-radius:12px;font-size:13.5px;font-weight:700;color:#1B2430;line-height:1.25;background:#fff}
+.vtip li + li{margin-top:16px}
+.vtip li + li::before{content:"";position:absolute;left:23px;top:-16px;width:2px;height:16px;background:#9DB4DC}
+.vtip li + li::after{content:"";position:absolute;left:19px;top:-6px;border:5px solid transparent;border-top:6px solid #9DB4DC;border-bottom:0}
+.vtip li b{flex:none;width:22px;height:22px;border-radius:50%;background:var(--marca);color:#fff;display:grid;place-items:center;font-size:12px}
+.vtip li:last-child{background:#E1F1E8;border-color:#BFE0CE;color:#1E7F52}.vtip li:last-child b{background:#1E7F52}
+.vtip .nota-t{margin:10px 0 0;font-size:12px;color:var(--suave)}
+@media(max-width:1000px),(hover:none){.vtip{display:none}}
+@media(prefers-reduced-motion:reduce){.vtip{transition:none;transform:none}}
 .f3 .dia{background:var(--rojo-suave);color:var(--rojo);border-radius:12px;padding:6px 10px;text-align:center;font-weight:700;line-height:1.1}
 @keyframes flotar{50%{transform:translateY(-12px)}}
 /* ventana central de la portada: presenta a Apto como la solución al trámite de postular (ciclo de 12 s) */
@@ -565,6 +582,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
           <div class="vs vsB"><h4>Compras abiertas para ti</h4><div class="vfila"><span>Bandas elásticas de resistencia</span><small class="am">Cierra en 3 días</small></div><div class="vfila"><span>Pesas y colchonetas, CESFAM</span><small>Poca competencia</small></div><div class="vfila"><span>Artículos deportivos escuela</span><small>Cierra en 9 días</small></div></div>
           <div class="vs vsC"><h4>Cada mañana, en tu correo</h4><div class="vfila"><span>🔔 Compras nuevas para ti</span><small>3 hoy</small></div><div class="vfila"><span>📅 Fechas en tu calendario</span><small>listo</small></div><div class="vfila"><span>💲 Cuánto cobrar</span><small>listo</small></div><div class="vlisto">No se te pasa ninguna ✓</div></div>
         </div></div>
+      <div class="vtip" aria-hidden="true"><h5>Cómo funciona el Radar</h5><ol><li><b>1</b>Dices qué vendes</li><li><b>2</b>Buscamos en Mercado Público</li><li><b>3</b>Te mostramos las compras que te sirven</li><li><b>4</b>Te avisamos cada mañana</li></ol></div>
     </div>
     <div class="vwin vw-r">
       <p class="vw-nombre">Apto<small>Sube las cotizaciones de tus productos y buscamos dónde puedas ganar la venta</small></p>
@@ -574,6 +592,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
           <div class="vs vsB"><h4>Esto leímos de tu cotización</h4><div class="vfila"><span>Resma de papel carta</span><small class="am">$3.200</small></div><div class="vfila"><span>Plastificadora A3</span><small class="am">$37.800</small></div><div class="vfila"><span>Guillotina 30×38</span><small class="am">$25.700</small></div></div>
           <div class="vs vsC"><h4>Dónde postular</h4><div class="vfila"><span>Artículos de escritorio, salud</span><small>2 de tus productos</small></div><div class="vfila"><span>Papelería general, municipio</span><small>2 de tus productos</small></div><div class="vfila"><span>Impresión de material</span><small>1 de tus productos</small></div><div class="vlisto">Listo para ofertar ✓</div></div>
         </div></div>
+      <div class="vtip" aria-hidden="true"><h5>Cómo funciona Apto</h5><ol><li><b>1</b>Subes tus cotizaciones</li><li><b>2</b>Leemos tus productos y precios (tú los revisas)</li><li><b>3</b>Buscamos dónde puedes ganar la venta</li><li><b>4</b>Revisas si cumples y ofertas</li></ol><p class="nota-t">Tu archivo se borra al terminar.</p></div>
     </div>
     <div class="flot f1"><span class="et ok">Sirve para tu negocio</span><div class="t">Adquisición de 2 bandas elásticas de resistencia</div><div class="s">Compra de ejemplo · Compra pequeña</div></div>
     <div class="flot f2"><b>Cumples 4 de 8 requisitos esenciales</b><div class="barra-p"><i></i></div><div class="s" style="margin-top:8px">Antes de ofertar, te falta indicar la garantía y adjuntar 3 documentos.</div></div>

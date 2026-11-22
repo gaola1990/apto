@@ -364,6 +364,13 @@ header nav a.cta:hover{background:#B8261B}
 .np-lista .vacio{padding:24px 12px;text-align:center;color:var(--suave);font-size:14px}
 @media (max-width:560px){.notif-panel{top:58px;right:8px;left:8px;width:auto;max-width:none}}
 @media (prefers-reduced-motion:reduce){.notif-panel,.notif-panel.abierto{transform:none;transition:opacity 150ms ease}.notif-panel.abierto .notif{animation:none}}
+/* botón flotante "Contáctanos" (abre WhatsApp) */
+.contacto-wa{position:fixed;right:16px;bottom:16px;z-index:40;display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1B2430;font-weight:700;font-size:15px;text-decoration:none;padding:11px 18px 11px 14px;border-radius:999px;box-shadow:0 2px 6px rgba(27,36,48,.12),0 12px 30px rgba(27,36,48,.22);transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s}
+.contacto-wa:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,36,48,.14),0 18px 38px rgba(27,36,48,.26)}
+.contacto-wa:focus-visible{outline:3px solid rgba(29,78,158,.5);outline-offset:3px}
+.contacto-wa svg{flex:none}
+@media(max-width:560px){.contacto-wa{padding:12px;right:12px;bottom:12px}.contacto-wa span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+@media(prefers-reduced-motion:reduce){.contacto-wa{transition:none}}
 .flotante{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:30;border-radius:999px;padding:12px 22px;box-shadow:0 10px 26px rgba(29,78,158,.35);max-width:calc(100% - 32px);white-space:nowrap}
 .flotante[hidden]{display:none}
 @media(max-width:980px){.planes{grid-template-columns:1fr;max-width:520px}}
@@ -736,7 +743,9 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
   <div class="np-filtros" id="notifFiltros"><button type="button" data-f="todo" aria-pressed="true">Todo</button><button type="button" data-f="personal">Para ti</button><button type="button" data-f="estudios">Estudios y reportes</button><button type="button" data-f="noticias">Noticias</button><button type="button" data-f="promos">Promociones</button></div>
   <ul class="np-lista" id="notifLista"></ul>
 </div>
-<footer>Apto · prototipo. Datos abiertos de ChileCompra. No es un sitio oficial del Estado de Chile. · <a href="privacidad.html">Privacidad</a> · <a href="estado.html">Estado de los datos</a></footer>
+<a class="contacto-wa" href="https://wa.me/56982944893?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Apto." target="_blank" rel="noopener" aria-label="Contáctanos por WhatsApp"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path fill="#25D366" d="M16 3C9 3 3.3 8.6 3.3 15.5c0 2.4.7 4.7 1.9 6.6L3 29l7.1-2.1c1.8 1 3.8 1.5 5.9 1.5 7 0 12.7-5.6 12.7-12.5S23 3 16 3z"/><path fill="#fff" d="M22.2 18.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7.1-.2.3-.4.5-.6.2-.2.2-.3.3-.6.1-.2.1-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.8 5.1.8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.1-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg><span>Contáctanos</span></a>
+
+<footer>Apto · prototipo. Datos abiertos de ChileCompra. No es un sitio oficial del Estado de Chile. · <a href="privacidad.html">Privacidad</a> · <a href="estado.html">Estado de los datos</a> · <a href="https://wa.me/56982944893?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Apto." target="_blank" rel="noopener">Contáctanos por WhatsApp</a></footer>
 
 <dialog id="dlg" aria-labelledby="dtitulo">
   <button class="cerrar" id="cerrarDlg" aria-label="Cerrar">×</button>

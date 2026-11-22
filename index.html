@@ -117,6 +117,16 @@ header nav a.cta:hover{background:#B8261B}
 @keyframes vp2{0%,30%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}32%,60%{opacity:1;background:#fff;color:var(--marca)}62%,100%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}}
 @keyframes vp3{0%,61%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}63%,93%{opacity:1;background:#fff;color:var(--marca)}96%,100%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}}
 @media(prefers-reduced-motion:reduce){.vtit,.vesc,.tipeo,.ventendi,.vop,.vsem li,.vfin,.vpasos span{animation:none!important}.ve3,.vt3{opacity:1}.vsem li,.vfin{opacity:1;transform:none}.vp3{opacity:1;background:#fff;color:var(--marca)}}
+/* ventanita de ayuda: al acercar el puntero (o enfocar) una tarjeta, explica en simple con un ejemplo */
+.ayuda{position:fixed;z-index:60;width:min(320px,calc(100vw - 24px));background:#fff;color:#1B2430;border-radius:16px;padding:14px 16px 14px;box-shadow:0 18px 44px rgba(8,30,70,.28),0 2px 6px rgba(8,30,70,.12);border-top:4px solid var(--marca);opacity:0;transform:translateY(6px) scale(.98);pointer-events:none;transition:opacity .18s ease,transform .22s cubic-bezier(.2,.8,.2,1);font-size:14.5px;line-height:1.45}
+.ayuda.on{opacity:1;transform:none}
+.ayuda b.en{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--marca);margin-bottom:4px}
+.ayuda p{margin:0}.ayuda p+p{margin-top:8px;padding:8px 10px;background:#E8EFFB;border-radius:10px;color:#1B2430}
+[data-ayuda]:focus-visible{outline:3px solid rgba(29,78,158,.45);outline-offset:3px}
+.ayuda-btn{display:none;position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(29,78,158,.12);color:var(--marca);font:700 15px/1 inherit;cursor:pointer;z-index:3}
+.t-demo .ayuda-btn,.t-num .ayuda-btn{background:rgba(255,255,255,.25);color:#fff}
+@media(hover:none){.ayuda-btn{display:grid;place-items:center}}
+@media(prefers-reduced-motion:reduce){.ayuda{transition:opacity .01s}}
 /* cómo revisa Apto si cumples */
 .t-revisa{grid-column:span 6;display:block}
 .t-revisa h3{margin:6px 0 6px}
@@ -430,7 +440,7 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <section class="seccion" id="como" aria-label="Qué hace Apto">
   <h2 class="sec-t rv">Todo para ofertar. <span>En un solo lugar.</span></h2>
   <div class="mosaico">
-    <article class="tile t-big t-demo rv" id="demo" aria-label="Demostración: cómo funciona Apto en tres pasos, en ciclo">
+    <article class="tile t-big t-demo rv" id="demo" aria-label="Demostración: cómo funciona Apto en tres pasos, en ciclo" data-ayuda="Así se ve usar Apto: escribes qué vendes, te mostramos las compras del Estado que calzan y te decimos si cumples lo que piden." data-ejemplo="si vendes tornillos, ves solo compras donde piden tornillos." tabindex="0">
       <h3 class="vtitulo"><span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>Así funciona, en 15 segundos</h3>
       <div class="ventana" aria-hidden="true">
         <div class="vbar"><i></i><i></i><i></i>
@@ -454,13 +464,13 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
       <div class="vpasos" aria-hidden="true"><span class="vp1">1 · Cuéntanos</span><span class="vp2">2 · Mira</span><span class="vp3">3 · Revisa</span></div>
       <p class="vnota">Ejemplo ilustrativo, con datos de muestra.</p>
     </article>
-    <article class="tile t-tall rv" id="revisa" style="--d:.1s"><p class="k">Antes de ofertar</p><h3>Apto te ayuda. Tú decides.</h3>
+    <article class="tile t-tall rv" id="revisa" style="--d:.1s" data-ayuda="Apto revisa por ti, pero no es perfecto: la decisión y el envío de tu oferta siempre son tuyos." data-ejemplo="si la ficha pide garantía de 12 meses y tú ofreces 6, te avisamos; igual lee la ficha oficial antes de enviar." tabindex="0"><p class="k">Antes de ofertar</p><h3>Apto te ayuda. Tú decides.</h3>
       <ul class="rnotas"><li>Es una ayuda, no una garantía.</li><li>La revisa una IA: puede equivocarse.</li><li>Siempre manda la ficha técnica oficial.</li><li>Cumplir evita rechazos, no asegura ganar.</li><li>Tu ficha se borra al terminar.</li></ul></article>
-    <article class="tile rv" style="--d:.05s"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
+    <article class="tile rv" style="--d:.05s" data-ayuda="Cada compra tiene tres fechas: hasta cuándo puedes preguntar, cuándo responden y cuándo cierra. Te las ponemos en tu calendario." data-ejemplo="si cierra el 24 de noviembre, tu oferta tiene que estar subida ese día." tabindex="0"><p class="k">Plan para ofertar</p><h3>Fechas reales, sin sorpresas.</h3>
       <ol class="linea"><li>Preguntas<b>18 nov</b></li><li>Respuestas<b>20 nov</b></li><li>Cierre<b>24 nov</b></li></ol></article>
-    <article class="tile rv" style="--d:.15s"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto te entiende igual.</p></article>
-    <article class="tile t-num rv" id="tnum" style="--d:.2s"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Apto las revisa todas por ti.</p><p class="sello" id="sello">Se actualiza cada 4 horas · <a href="estado.html">ver estado</a></p></article>
-    <article class="tile t-wide rv" style="--d:.1s"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado: estamos del lado de quien vende.</p></div></article>
+    <article class="tile rv" style="--d:.15s" data-ayuda="Escribe como hablas: Apto entiende abreviaturas, sinónimos y errores de escritura." data-ejemplo="si escribes «computadres» o «pc», te muestra compras de computadores." tabindex="0"><p class="k">Habla como tú</p><h3>Escribe «pc», «mant.» o «computadres».</h3><p>Apto te entiende igual.</p></article>
+    <article class="tile t-num rv" id="tnum" style="--d:.2s" data-ayuda="Una licitación es una compra del Estado en la que varias empresas ofrecen su producto y el Estado elige una. Este número son las que hoy aceptan ofertas." data-ejemplo="un municipio que necesita 50 sillas para una escuela." tabindex="0"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b><p>Apto las revisa todas por ti.</p><p class="sello" id="sello">Se actualiza cada 4 horas · <a href="estado.html">ver estado</a></p></article>
+    <article class="tile t-wide rv" style="--d:.1s" data-ayuda="Usamos solo la información que el Estado publica para todos, y no trabajamos para los compradores." data-ejemplo="no vemos las ofertas de otras empresas ni datos internos de ningún organismo." tabindex="0"><div><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado: estamos del lado de quien vende.</p></div></article>
   </div>
   <details class="glosario rv">
     <summary>¿Hay palabras que no entiendes? Aquí las explicamos</summary>
@@ -504,18 +514,18 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <button type="button" class="on" data-ciclo="mes" aria-pressed="true">Mensual</button><button type="button" data-ciclo="anio" aria-pressed="false">Anual <span class="ahorra">2 meses gratis</span></button>
   </div>
   <div class="planes" data-ciclo="mes">
-    <article class="plan rv"><p class="k">Plan Gratis</p><h3>Para conocer Apto sin pagar</h3>
+    <article class="plan rv" data-ayuda="Para conocer Apto sin pagar: ves las compras que calzan contigo y puedes revisar 5 veces si tu producto cumple." data-ejemplo="escribes «pintura», ves compras de pintura y revisas si tu pintura cumple lo que piden." tabindex="0"><p class="k">Plan Gratis</p><h3>Para conocer Apto sin pagar</h3>
       <p class="pr">$0 <small>sin tarjeta</small></p>
       <ul><li>Ves las compras que calzan contigo</li><li>5 revisiones de «¿cumplo?»</li><li>Fechas y cuánto cobrar</li><li>Guía para tu primera oferta</li></ul>
       <p class="nota" style="margin-top:12px">Te registras con el RUT de tu empresa. Al acabarse las revisiones, pasas a otro plan.</p>
       <button type="button" class="plan-btn dest" data-plan="gratis">Empezar gratis</button></article>
-    <article class="plan rv"><p class="k">Plan Radar</p><h3>Para que no se te pase ninguna compra</h3>
+    <article class="plan rv" data-ayuda="Cada día te avisamos de las compras nuevas que calzan con lo que vendes." data-ejemplo="si vendes pintura, cada mañana ves las compras de pintura que se publicaron ayer." tabindex="0"><p class="k">Plan Radar</p><h3>Para que no se te pase ninguna compra</h3>
       <p class="pr"><span class="p-mes">0,5 UF <small>al mes</small></span><span class="p-anio">5 UF <small>al año</small></span></p>
       <p class="pesos"><span class="p-mes">≈ <b data-uf="0.5"></b> + IVA al mes</span><span class="p-anio">≈ <b data-uf="5"></b> + IVA al año</span></p>
       <p class="dto-t solo-anio"><span class="dto">2 meses gratis</span></p>
       <ul><li>Te avisamos cada día de compras nuevas</li><li>Cada compra explicada en simple</li><li>2 revisiones al mes</li></ul>
       <button type="button" class="plan-btn" data-plan="radar">Elegir Radar</button></article>
-    <article class="plan dest rv" style="--d:.1s"><p class="k">Plan Apto</p><h3>Para ofertar sin que te rechacen</h3>
+    <article class="plan dest rv" style="--d:.1s" data-ayuda="Además de avisarte, revisas sin límite si tu producto cumple y te damos el texto para completar tu oferta." data-ejemplo="te dice «te falta indicar la garantía» y te deja la frase lista para pegar." tabindex="0"><p class="k">Plan Apto</p><h3>Para ofertar sin que te rechacen</h3>
       <p class="pr"><span class="p-mes">1 UF <small>al mes</small></span><span class="p-anio">10 UF <small>al año</small></span></p>
       <p class="pesos"><span class="p-mes">≈ <b data-uf="1"></b> + IVA al mes</span><span class="p-anio">≈ <b data-uf="10"></b> + IVA al año</span></p>
       <p class="dto-t solo-anio"><span class="dto">2 meses gratis</span></p>
@@ -645,8 +655,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611212052"></script>
-<script src="app.js?v=202611212052"></script>
-<script src="notificaciones.js?v=202611212052"></script>
+<script src="buscar.js?v=202611212112"></script>
+<script src="app.js?v=202611212112"></script>
+<script src="notificaciones.js?v=202611212112"></script>
 </body>
 </html>

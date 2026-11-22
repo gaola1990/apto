@@ -252,14 +252,14 @@ function pintar(){
   const chicas = resultados.filter(r => r.tipo.n <= 2).length;
   $("cifras").innerHTML =
     cifra(datos.length.toLocaleString("es-CL"), "licitaciones abiertas hoy") +
-    cifra(resultados.length.toLocaleString("es-CL"), "calzan con tu negocio") +
+    cifra(resultados.length.toLocaleString("es-CL"), "sirven para tu negocio") +
     cifra(semana, "cierran en 7 días") +
     cifra(chicas, "de tamaño pyme (hasta 1.000 UTM)");
   pintarNegocio();
   const L = $("lista");
   const info = $("calceInfo");
-  if(info) info.innerHTML = perfil.vistaGuardadas ? "" : ocultas ? 'Te mostramos las <b>' + resultados.length + '</b> que mejor calzan con lo que vendes. <button type="button" class="enlace" data-todas="1">Ver también las ' + ocultas + " que calzan menos</button>" :
-    perfil.todas && resultados.length ? 'Mostrando todas las que calzan, de mejor a peor. <button type="button" class="enlace" data-todas="0">Ver solo las que calzan mejor</button>' : "";
+  if(info) info.innerHTML = perfil.vistaGuardadas ? "" : ocultas ? 'Te mostramos las <b>' + resultados.length + '</b> que más te sirven. <button type="button" class="enlace" data-todas="1">Ver también las ' + ocultas + " que te sirven menos</button>" :
+    perfil.todas && resultados.length ? 'Mostrando todas, de la que más te sirve a la que menos. <button type="button" class="enlace" data-todas="0">Ver solo las que más te sirven</button>' : "";
   if(!datos.length){ L.innerHTML = '<div class="vacio">No se pudieron cargar licitaciones. Revisa tu conexión y recarga.</div>'; return; }
   if(!resultados.length){
     L.innerHTML = '<div class="vacio">' + (perfil.vistaGuardadas ? "Aún no guardas ninguna oportunidad." :
@@ -270,7 +270,7 @@ function pintar(){
     const [cl, tx] = etiquetaCierre(r.dias);
     return '<article class="op" tabindex="0" role="button" data-c="' + esc(r.codigo) + '">' +
       "<div><h3>" + (guardadas[r.codigo] ? "★ " : "") + resaltar(r.nombre, r.hits) + "</h3>" +
-      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.enRegion ? '<span class="et region">En tu región</span>' : r.reg ? '<span class="et">' + esc(r.reg) + "</span>" : "") + (r.hits.length ? '<span class="et calza">Calza: «' + esc(r.hits.slice(0, 2).map(h => h.t || h.w || "").filter(Boolean).join("», «")) + '»</span>' : "") + (r.porCat ? '<span class="et">Calza por categoría</span>' : "") + (r.comp && r.comp.med <= 2 ? '<span class="et poca">Poca competencia</span>' : "") + "</div></div>" +
+      '<div class="meta"><span class="et gr">' + esc(r.codigo) + '</span><span class="et">' + esc(r.tipo.t) + "</span>" + (RES[r.codigo] ? '<span class="et">En simple</span>' : "") + (r.enRegion ? '<span class="et region">En tu región</span>' : r.reg ? '<span class="et">' + esc(r.reg) + "</span>" : "") + (r.hits.length ? '<span class="et calza">Coincide: «' + esc(r.hits.slice(0, 2).map(h => h.t || h.w || "").filter(Boolean).join("», «")) + '»</span>' : "") + (r.porCat ? '<span class="et">Coincide por categoría</span>' : "") + (r.comp && r.comp.med <= 2 ? '<span class="et poca">Poca competencia</span>' : "") + "</div></div>" +
       '<div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL",{day:"numeric",month:"short"}) : "—") + '</b><span class="et ' + cl + '">' + tx + "</span></div></article>";
   }).join("");
   $("mas").hidden = resultados.length <= mostrar;
@@ -294,7 +294,7 @@ function pintarNegocio(){
       (planApto / tipico < 0.01 ? "<b>menos del 1 % de una sola compra</b>." : "<b>el " + Math.ceil(100 * planApto / tipico) + " % de una sola compra</b>.") + "</p>" +
     '<p class="nota" style="margin-top:6px">Montos informados por los compradores o, si no los publican, el mínimo de cada tramo de tamaño (cálculo conservador).</p></div>' +
     '<details class="porti"' + (leer("rp_porti_visto", false) ? "" : " open") + '><summary>Lo que Apto hace por ti</summary><ul>' +
-    '<li><span class="ic">📩</span><div><b>Te avisa cada mañana por correo</b> de las compras nuevas que calzan contigo. No tienes que entrar a buscar.<br>' +
+    '<li><span class="ic">📩</span><div><b>Te avisa cada mañana por correo</b> de las compras nuevas que te sirven. No tienes que entrar a buscar.<br>' +
       (logueado ? '<span class="nota">Tus avisos se configuran en "Mi cuenta".</span>' : '<button type="button" class="sec" id="activarAvisos">Activar avisos por correo</button>') + "</div></li>" +
     '<li><span class="ic">📅</span><div><b>Te recuerda los plazos.</b> Guarda una compra (☆) y toca "Agregar todos los plazos a mi calendario": tu teléfono te avisa antes de cada fecha.</div></li>' +
     '<li><span class="ic">💲</span><div><b>Te dice cuánto cobrar.</b> En cada compra ves a cuánto se adjudicó ese mismo producto antes, y en la campana 🔔 cuánto bajo el presupuesto ofertan los que ganan.</div></li>' +
@@ -626,7 +626,7 @@ function tengo(items){
     const pide = medidas([it.NombreProducto, it.Descripcion].join(" ")), tuyas = medidas(fichaDe(mejor));
     const faltan = pide.filter(a => !tuyas.some(b => b.fam === a.fam && parecido(b.val, a.val))).map(a => a.txt);
     const extra = faltan.length ? " Pide estas medidas que no vi en tu ficha: " + [...new Set(faltan)].join(", ") + "." : pide.length ? " Las medidas que menciona coinciden con tu ficha." : "";
-    return '<li><span class="et ' + (faltan.length ? "al" : "ok") + '">' + (faltan.length ? "Revisar" : "Lo tienes") + "</span><div>" + linea + "<small>Calza con tu producto «" + esc(mejor.nombre) + "»." + esc(extra) + "</small></div></li>";
+    return '<li><span class="et ' + (faltan.length ? "al" : "ok") + '">' + (faltan.length ? "Revisar" : "Lo tienes") + "</span><div>" + linea + "<small>Coincide con tu producto «" + esc(mejor.nombre) + "»." + esc(extra) + "</small></div></li>";
   }).join("");
   return "<h2>¿Tengo lo que piden?</h2><p style='margin:0;font-size:14.5px'><b>De los " + Math.min(items.length, 12) + " productos revisados, tienes " + cuenta + " en tu catálogo.</b></p><ul class=\"req\">" + filas + "</ul>" +
     '<p class="nota">Revisión automática por palabras y medidas. La garantía, los plazos y los documentos exigidos están en las bases: léelas antes de ofertar.</p>';
@@ -1028,15 +1028,15 @@ function pintarCuenta(){
   if(sesion){
     C.innerHTML = '<div class="nota">Conectado como <b>' + esc(sesion.correo || "") + '</b>. Tus datos se guardan en tu cuenta y los ves en cualquier dispositivo.</div><div id="prueba"></div>' +
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="aprenderOk"' + (perfil.aprender !== false ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
-      '<span>Ayudar a mejorar Apto <span class="nota" style="display:block">Cuando guardas o descartas una compra, Apto registra de forma anónima qué palabras calzan con qué productos. <a href="privacidad.html">Más información</a></span></span></label>' +
+      '<span>Ayudar a mejorar Apto <span class="nota" style="display:block">Cuando guardas o descartas una compra, Apto registra de forma anónima qué palabras van con qué productos. <a href="privacidad.html">Más información</a></span></span></label>' +
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="avisosOk"' + (avisosPref === "diario" ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
-      '<span>Recibir por correo los avisos de compras de Mercado Público <span class="nota" style="display:block">Si lo aceptas, te enviamos cada mañana las compras nuevas que calzan con lo que vendes. Puedes desactivarlo cuando quieras; cada correo trae un enlace para darte de baja.</span></span></label>' +
+      '<span>Recibir por correo los avisos de compras de Mercado Público <span class="nota" style="display:block">Si lo aceptas, te enviamos cada mañana las compras nuevas que sirven para lo que vendes. Puedes desactivarlo cuando quieras; cada correo trae un enlace para darte de baja.</span></span></label>' +
       '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button><button class="sec" id="borrarDatos">Borrar mis datos</button></div><p class="nota" id="cuentaNota"></p>';
     cargarPrueba();
     $("avisosOk").onchange = async e => {
       const nuevo = e.target.checked ? "diario" : "no";
       try{ await sb("/rest/v1/cuentas?user_id=eq." + sesion.id, {method: "PATCH", headers: {"Prefer": "return=minimal"}, body: JSON.stringify({avisos: nuevo})});
-        avisosPref = nuevo; nota(e.target.checked ? "Listo: te enviaremos cada mañana las compras nuevas que calzan contigo." : "Listo: no te enviaremos avisos por correo."); }
+        avisosPref = nuevo; nota(e.target.checked ? "Listo: te enviaremos cada mañana las compras nuevas que te sirven." : "Listo: no te enviaremos avisos por correo."); }
       catch(err){ e.target.checked = !e.target.checked; nota("No se pudo guardar: " + err.message); }
     };
     $("salir").onclick = async () => { try{ await sb("/auth/v1/logout", {method: "POST"}); }catch(e){} guardarSesion(null); pintarCuenta(); };
@@ -1142,7 +1142,7 @@ if(sesion) bajarCuenta().catch(() => {});
   window.demoEjemplo = function(i){
     const e = E[((i % E.length) + E.length) % E.length];
     q(".tipeo").textContent = e.tipea; q(".ventendi .et").textContent = e.entendi;
-    qa(".vop").forEach((c, k) => { const d = e.compras[k]; c.querySelector("h3").textContent = d[0]; c.querySelector(".calza").textContent = "Calza: «" + d[1] + "»"; c.querySelector(".cierre b").textContent = d[2];
+    qa(".vop").forEach((c, k) => { const d = e.compras[k]; c.querySelector("h3").textContent = d[0]; c.querySelector(".calza").textContent = "Coincide: «" + d[1] + "»"; c.querySelector(".cierre b").textContent = d[2];
       const t = c.querySelector(".cierre .et"); t.textContent = d[3]; t.className = "et " + d[4]; });
     qa(".vsem li").forEach((li, k) => { const r = e.reqs[k]; li.className = "s-" + r[0]; li.innerHTML = "<i></i>" + r[1] + "<small>" + r[2] + "</small>"; });
     const nok = e.reqs.filter(r => r[0] === "ro").length, nal = e.reqs.filter(r => r[0] === "al").length;

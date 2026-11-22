@@ -112,7 +112,17 @@ header nav a.cta:hover{background:#B8261B}
 .vtip li b{flex:none;width:22px;height:22px;border-radius:50%;background:var(--marca);color:#fff;display:grid;place-items:center;font-size:12px}
 .vtip li:last-child{background:#E1F1E8;border-color:#BFE0CE;color:#1E7F52}.vtip li:last-child b{background:#1E7F52}
 .vtip .nota-t{margin:10px 0 0;font-size:12px;color:var(--suave)}
-@media(max-width:1000px),(hover:none){.vtip{display:none}}
+@media(max-width:1099px),(hover:none){.vtip{display:none}}
+@media(min-width:1100px){
+.escena{width:min(1240px,100vw - 40px);max-width:none;margin-left:calc(50% - min(620px,50vw - 20px))}
+.vw-l{left:210px}.vw-r{right:210px}.vwin{width:calc(50% - 222px)}
+.vw-nombre small{font-size:13px}
+.vtip{width:196px;padding:14px 14px 12px}
+.vtip li{font-size:12.5px;padding:7px 9px;gap:8px}.vtip li b{width:20px;height:20px;font-size:11px}
+.vtip li + li::before{left:20px}.vtip li + li::after{left:16px}
+.vw-l .vtip{left:auto;right:calc(100% + 12px)}.vw-r .vtip{right:auto;left:calc(100% + 12px)}
+.vw-l .vtip::before{left:auto;right:-7px;box-shadow:3px -3px 6px rgba(27,36,48,.06)}.vw-r .vtip::before{right:auto;left:-7px;box-shadow:-3px 3px 6px rgba(27,36,48,.06)}
+}
 @media(prefers-reduced-motion:reduce){.vtip{transition:none;transform:none}}
 .f3 .dia{background:var(--rojo-suave);color:var(--rojo);border-radius:12px;padding:6px 10px;text-align:center;font-weight:700;line-height:1.1}
 @keyframes flotar{50%{transform:translateY(-12px)}}

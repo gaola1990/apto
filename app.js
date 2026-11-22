@@ -256,6 +256,7 @@ function pintar(){
     cifra(semana, "cierran en 7 días") +
     cifra(chicas, "de tamaño pyme (hasta 1.000 UTM)");
   pintarNegocio();
+  try{ pintarDonde(); }catch(e){}   // prueba se declara más abajo
   const L = $("lista");
   const info = $("calceInfo");
   if(info) info.innerHTML = perfil.vistaGuardadas ? "" : ocultas ? 'Te mostramos las <b>' + resultados.length + '</b> que más te sirven. <button type="button" class="enlace" data-todas="1">Ver también las ' + ocultas + " que te sirven menos</button>" :
@@ -887,6 +888,7 @@ function iniciar(){
   $("mas").onclick = () => { mostrar += 20; pintar(); };
   $("calguard").onclick = calendarioGuardadas;
   $("rutbtn").onclick = catalogoPorRut;
+  if($("dondeApto")) $("dondeApto").onclick = e => { const a = e.target.closest(".op"); if(a) abrir(a.dataset.c); };
   $("lista").onclick = e => { const a = e.target.closest(".op"); if(a) abrir(a.dataset.c); };
   $("lista").onkeydown = e => { if(e.key === "Enter" || e.key === " "){ const a = e.target.closest(".op"); if(a){ e.preventDefault(); abrir(a.dataset.c); } } };
   $("dlg").onclick = e => { if(e.target === $("dlg")) $("dlg").close(); };
@@ -996,10 +998,11 @@ let prueba = null;
 async function cargarPrueba(){
   const D = $("prueba"); if(!D || !sesion) return;
   try{ prueba = await sb("/rest/v1/rpc/estado_prueba", {method: "POST", body: "{}"}); }catch(e){ D.innerHTML = ""; return; }
+  pintarDonde();
   const abre = prueba.registrada || prueba.plan === "apto";
   if(abre) desbloquear(entradaAbierta());
   // con sesión pero sin RUT no se abre nada solo: el panel se despliega únicamente cuando la persona aprieta un plan
-  if(prueba.plan === "apto"){ D.innerHTML = '<div class="caja-prueba"><b>Plan Apto</b> · revisiones ¿Cumplo? sin límite.</div>'; return; }
+  if(prueba.plan === "apto"){ panelApto(D); return; }
   if(prueba.registrada){
     const r = prueba.restante;
     D.innerHTML = '<div class="caja-prueba"><b>Plan gratis</b> · ' + (r > 0 ? "te quedan <b>" + r + " de 5</b> revisiones ¿Cumplo?." : "usaste tus 5 revisiones ¿Cumplo?. Con el plan Apto las tienes sin límite.") + "</div>"; return;
@@ -1030,6 +1033,61 @@ async function cargarPrueba(){
     $("siEmp").onclick = () => registrar(n);
   };
 }
+// ---------- Plan Apto: cargas documentos de tus productos y Apto te dice dónde postular ----------
+// Los documentos (cotizaciones, fichas) los lee el motor de Apto, devuelve los productos y borra los archivos: no se guardan.
+const docProds = () => catalogo.filter(p => p.doc);
+function panelApto(D){
+  D.innerHTML = '<div class="caja-prueba"><b>Plan Apto</b> · revisiones ¿Cumplo? sin límite.</div>' +
+    '<div class="caja-prueba" id="aptoDocs"><b>Mis documentos de producto</b><p class="nota" style="margin:4px 0 8px">Sube una cotización o ficha de lo que vendes (PDF, Word o imagen, hasta 5). Apto lee los productos y te busca dónde postular. No guardamos el archivo.</p>' +
+    '<input type="file" id="docsProd" accept=".pdf,.docx,.png,.jpg,.jpeg,.webp,.txt" multiple aria-label="Documentos de tus productos">' +
+    '<div class="acciones" style="margin-top:8px"><button class="principal" id="docsIr">Leer mis documentos</button></div><div id="docsOut" aria-live="polite"></div></div>';
+  $("docsIr").onclick = async () => {
+    const out = $("docsOut"), fs = [...$("docsProd").files].slice(0, 5);
+    if(!fs.length){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">Elige al menos un documento.</p>'; return; }
+    if(!motorLocal){ out.innerHTML = '<p class="nota">El motor de Apto no responde ahora. Intenta de nuevo en un rato.</p>'; return; }
+    const fd = new FormData(); fs.forEach(f => fd.append("doc", f, f.name));
+    $("docsIr").disabled = true; out.innerHTML = '<p class="nota">Enviando a la IA de Apto…</p>';
+    try{
+      if(Date.now() > sesion.vence - 60e3) await renovar();
+      const r = await fetch(MOTOR + "/productos", {method: "POST", body: fd, headers: {"Authorization": "Bearer " + sesion.access_token}}); const j = await r.json();
+      if(!r.ok) throw new Error(j.error || "Error del motor");
+      let e;
+      do{ await new Promise(ok => setTimeout(ok, 2500)); e = await (await fetch(MOTOR + "/trabajo/" + j.id)).json(); if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>"; }while(!e.listo);
+      if(e.error) throw new Error(e.error);
+      const R = e.resultado, nuevos = R.productos.filter(p => !catalogo.some(c => norm(c.nombre) === norm(p.nombre)));
+      nuevos.forEach(p => catalogo.push({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), nombre: p.nombre, caract: p.caract || "Desde tu documento.",
+        garantia: p.garantia, entrega: p.entrega, codigo: p.codigo, precio: p.precio_neto, doc: true, pal: R.palabras}));
+      guardar("rp_catalogo", catalogo); pintarCatalogo(); cambio();
+      out.innerHTML = '<p class="nota">Listo: encontramos ' + R.productos.length + " productos (" + nuevos.length + ' nuevos en tu catálogo). Abajo ves dónde postular. <span class="nota">El archivo ya se borró.</span></p>';
+      $("docsProd").value = "";
+    }catch(err){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">' + esc(err.message) + "</p>"; }
+    $("docsIr").disabled = false;
+  };
+}
+// Compras abiertas donde puedes ofertar según los productos de tus documentos: más productos tuyos = más arriba; a igual, cierra antes.
+function dondePostular(){
+  const ps = docProds(), tope = +perfil.tamano;
+  if(!ps.length) return [];
+  const ts = ps.map(p => ({p, ts: [p.nombre].concat(p.pal || []).map(norm).filter(t => t.length > 2).map(armar).filter(t => !generico(t))}));
+  const out = [];
+  for(const d of datos){
+    const dias = diasPara(d.cierre);
+    if((dias !== null && dias < 0) || d.tipo.n > tope || noSirve[d.codigo]) continue;
+    const prods = ts.filter(x => x.ts.slice(0, 1).some(t => calza(t, d.texto, d.palabras)) || x.ts.slice(1).some(t => calza(t, d.texto, d.palabras)));
+    if(prods.length) out.push({...d, dias, prods: prods.map(x => x.p), pts: prods.length * 10 + (prods.some(x => calza(x.ts[0], d.texto, d.palabras)) ? 5 : 0)});
+  }
+  return out.sort((a, b) => b.pts - a.pts || (a.dias ?? 999) - (b.dias ?? 999));
+}
+function pintarDonde(){
+  const el = $("dondeApto"); if(!el) return;
+  if(typeof prueba === "undefined" || !prueba || prueba.plan !== "apto" || !docProds().length){ el.innerHTML = ""; return; }
+  const L = dondePostular().slice(0, 15);
+  el.innerHTML = '<div class="negocio"><p class="grande">🎯 Dónde postular con tus productos</p>' + (L.length ? '<p class="nota">Ordenadas: primero las que piden más de tus productos, luego las que cierran antes.</p>' +
+    L.map(r => { const [cl, tx] = etiquetaCierre(r.dias); return '<article class="op" tabindex="0" role="button" data-c="' + esc(r.codigo) + '"><div><h3>' + esc(r.nombre) + '</h3><div class="meta"><span class="et gr">' + esc(r.codigo) + "</span>" +
+      r.prods.map(p => '<span class="et">' + esc(p.nombre) + "</span>").join("") + '</div></div><div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL", {day: "numeric", month: "short"}) : "—") +
+      '</b><span class="et ' + cl + '">' + tx + "</span></div></article>"; }).join("") + '<p class="nota">Abre una compra para ver si cumples con ¿Cumplo?.</p>'
+    : '<p class="nota">Hoy no hay compras abiertas que calcen con tus productos. Te avisamos cuando aparezcan.</p>') + "</div>";
+};
 function pintarCuenta(){
   const C = $("cuenta"); if(!C) return;
   if(sesion){

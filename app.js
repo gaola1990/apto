@@ -713,8 +713,15 @@ function resultadoIA(r){
   const T = {CUMPLE: ["ok", "Puedes ofertar: tu oferta declara todo lo que pide la ficha"], NO_CUMPLE: ["ro", "Con este producto no cumples lo que pide la ficha"],
     CUMPLE_CON_ALERTA: ["al", "Tu producto cumple la ficha técnica, pero antes de enviar agrega lo que falta abajo"],
     TE_FALTA: ["al", "Antes de ofertar, te falta" + (falt === 1 ? " declarar 1 cosa" : "n declarar " + falt + " cosas")]}[r.veredicto];
+  // una línea simple con lo que hay que hacer en cada punto que no está resuelto
+  const que = q => q.estado === "cumple" ? "" : q.estado === "no_cumple"
+    ? '<span class="que">Qué hacer: ofrece un producto que sí cumpla este punto, o no ofertes a esta compra.</span>'
+    : '<span class="que">Qué hacer: escribe en tu oferta «' + esc(q.texto.replace(/^Indicar (que )?/i, "").slice(0, 90)) + '» con el número y la unidad.</span>';
   const fila = (q, tab) => '<li><span class="et ' + tab[M[q.estado] || "duda"][0] + '">' + tab[M[q.estado] || "duda"][1] + "</span><div>" + esc(q.texto) +
-    (q.frecuente && q.estado !== "cumple" ? ' <span class="et poca">Causa frecuente de rechazo</span>' : "") + "<small>" + esc(q.motivo || "") + "</small></div></li>";
+    (q.frecuente && q.estado !== "cumple" ? ' <span class="et poca">Causa frecuente de rechazo</span>' : "") + "<small>" + esc(q.motivo || "") + "</small>" + que(q) + "</div></li>";
+  const nPend = reqs.filter(q => q.estado !== "cumple" && !q.alerta ? q.critico : q.alerta && q.estado !== "cumple").length;
+  const proximo = '<div class="proximo"><b>Tu próximo paso</b><ol>' + (nPend ? "<li>Completa " + (nPend === 1 ? "el punto marcado" : "los " + nPend + " puntos marcados") + " abajo.</li>" : "") +
+    "<li>Copia el texto listo para tu oferta.</li><li>Compáralo con la ficha oficial y envía tu oferta tú mismo.</li></ol></div>";
   const pct = esen.length ? Math.round(100 * okE / esen.length) : 0;
   // en corto, qué falta o qué no calza (lo primero que necesita saber antes de ofertar)
   const pend = esen.filter(q => q.estado !== "cumple");
@@ -722,7 +729,7 @@ function resultadoIA(r){
     pend.map(q => "<li>" + esc((q.motivo || ("Falta especificar: " + q.texto)).replace(/\s*\(la ficha pide:[^)]*\)\.?$/, "")) + "</li>").join("") + "</ul></div>" : "";
   return '<div class="veredicto ' + T[0] + '"><b>' + T[1] + "</b><br>Tu oferta declara " + okE + " de " + esen.length + " requisitos (" + pct + " %). " +
     (pct < 100 ? "Las comisiones rechazan ofertas que no escriben el 100 % de la ficha, con número y unidad: completa lo que falta. " : "") +
-    "Revisión hecha con IA y reglas fijas: confírmala con las bases.</div>" + resumen +
+    "Revisión hecha con IA y reglas fijas: confírmala con las bases.</div>" + proximo + resumen +
     (alr.some(q => q.estado !== "cumple") ? '<div class="alerta-rechazo"><b>⚠️ Si no lo ingresas en tu oferta, te la van a rechazar:</b><ul>' +
       alr.filter(q => q.estado !== "cumple").map(q => "<li>" + esc(q.estado === "no_cumple" ? (q.motivo || q.texto) : "Falta indicar: " + q.texto.replace(/^Indicar (que )?/i, "")) + "</li>").join("") + "</ul></div>" : "") +
     '<h2 style="margin-top:16px">Ficha técnica</h2><ul class="req">' + esen.map(q => fila(q, ET)).join("") + "</ul>" +

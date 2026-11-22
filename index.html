@@ -346,43 +346,31 @@ header nav a.cta:hover{background:#B8261B}
 .linea li::before{content:"";position:absolute;top:0;left:50%;margin-left:-7px;width:14px;height:14px;border-radius:50%;background:var(--marca);box-shadow:0 0 0 4px var(--marca-suave)}
 .linea li:last-child::before{background:var(--rojo-apto);box-shadow:0 0 0 4px var(--rojo-suave)}
 .linea b{display:block;color:var(--tinta)}
-/* Cómo funciona: tres medallones superpuestos en zigzag; una "serpiente" recorre el contorno de los aros de la 1 a la 3 (ciclo de 9 s) y resalta el paso activo */
-.ruta2{--u:1px;display:grid;grid-template-columns:1fr calc(490*var(--u)) 1fr;grid-template-areas:"t1 cad t3" ". t2 .";column-gap:18px;row-gap:8px;align-items:start;padding:6px 0 4px}
-.cadena{grid-area:cad;position:relative;width:calc(490*var(--u));height:calc(300*var(--u))}
-.med{position:absolute;width:calc(210*var(--u));height:calc(210*var(--u));border-radius:50%;display:grid;place-items:center;box-shadow:0 14px 30px rgba(27,36,48,.16)}
-.m1{left:0;top:0;z-index:1;background:conic-gradient(from 210deg,var(--c) 0 60%,#CBD5E6 60% 100%);animation:med1 9s infinite}
-.m2{left:calc(140*var(--u));top:calc(90*var(--u));z-index:3;background:conic-gradient(from 30deg,var(--c) 0 60%,#CBD5E6 60% 100%);animation:med2 9s infinite}
-.m3{left:calc(280*var(--u));top:0;z-index:2;background:conic-gradient(from 210deg,var(--c) 0 60%,#CBD5E6 60% 100%);animation:med3 9s infinite}
-.disco{width:calc(160*var(--u));height:calc(160*var(--u));border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:inset 0 2px 8px rgba(27,36,48,.10),0 2px 6px rgba(27,36,48,.08)}
-.disco svg{width:calc(64*var(--u));height:calc(64*var(--u))}
-.nb{position:absolute;z-index:5;width:calc(38*var(--u));height:calc(38*var(--u));border-radius:50%;background:var(--marca);color:#fff;font-weight:700;font-size:calc(17*var(--u));display:grid;place-items:center;border:3px solid #fff;box-shadow:0 4px 10px rgba(27,36,48,.22)}
-.nb1{left:calc(20*var(--u));top:calc(152*var(--u));background:#6C9BE0}.nb2{left:calc(292*var(--u));top:calc(110*var(--u));background:#2F6BC4}.nb3{left:calc(432*var(--u));top:calc(152*var(--u))}
-/* la serpiente: tres trazos del mismo camino (cola fina y clara, cuerpo, cabeza gruesa) que avanzan juntos, y una punta de flecha que gira con la curva */
-.serp{position:absolute;left:0;top:0;width:100%;height:100%;z-index:4;overflow:visible;pointer-events:none;filter:drop-shadow(0 0 1px rgba(255,255,255,.9))}
-.serp .forma{fill:#D92D20;stroke:#D92D20;stroke-width:1;stroke-linejoin:round}
-.serp #rutaSerp{stroke:none}
-.t1{grid-area:t1;text-align:right;align-self:start;margin-top:calc(34*var(--u));animation:txt1 9s infinite}
-.t2{grid-area:t2;text-align:center;justify-self:center;max-width:380px;margin-top:16px;animation:txt2 9s infinite}
-.t3{grid-area:t3;text-align:left;align-self:start;margin-top:calc(34*var(--u));animation:txt3 9s infinite}
-.paso-t .pk{margin:0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--marca)}
-.paso-t h3{font-size:21px;margin:4px 0 6px;letter-spacing:-.01em}
-.paso-t p:not(.pk){margin:0;color:var(--suave)}
 .obt{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--marca);background:var(--marca-suave,#E8EFFB);border-radius:999px;padding:5px 12px}
-/* la cabeza llega al aro 2 al 19 % del ciclo y al aro 3 al 45 %; termina en el 70 % */
-@keyframes med1{0%,19%{transform:scale(1.06)}25%,92%{transform:scale(1)}100%{transform:scale(1.06)}}
-@keyframes med2{0%,15%{transform:scale(1)}21%,44%{transform:scale(1.06)}49%,100%{transform:scale(1)}}
-@keyframes med3{0%,40%{transform:scale(1)}46%,82%{transform:scale(1.06)}88%,100%{transform:scale(1)}}
-@keyframes txt1{0%,19%{opacity:1}25%,92%{opacity:.45}100%{opacity:1}}
-@keyframes txt2{0%,15%{opacity:.45}21%,44%{opacity:1}49%,100%{opacity:.45}}
-@keyframes txt3{0%,40%{opacity:.45}46%,82%{opacity:1}88%,100%{opacity:.45}}
-@media(max-width:1200px){.ruta2{--u:.82px;column-gap:12px}.paso-t h3{font-size:19px}}
-@media(max-width:860px){
-  .ruta2{--u:.72px;grid-template-columns:1fr;grid-template-areas:"cad" "t1" "t2" "t3";row-gap:18px;justify-items:center}
-  .cadena{justify-self:center}
-  .t1,.t2,.t3{text-align:left;justify-self:stretch;margin-top:0!important;max-width:none;padding:14px 16px;background:#fff;border-radius:18px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 8px 22px rgba(27,36,48,.06)}
+/* Cómo funciona Mercado Público: cinco círculos con su anillo, unidos por una línea con puntos que avanzan */
+.mp5{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;counter-reset:mp}
+.mp5::before{content:"";position:absolute;left:10%;right:10%;top:78px;height:4px;border-radius:2px;background:repeating-linear-gradient(90deg,#9DB4DC 0 10px,transparent 10px 20px);opacity:.7;animation:mpAvanza 1.8s linear infinite}
+@keyframes mpAvanza{to{background-position:20px 0}}
+.mp5 li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;z-index:1}
+.mp5 .aro{position:relative;width:156px;height:156px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 200deg,var(--c) 0 68%,#D5DEEC 68% 100%);box-shadow:0 14px 30px rgba(27,36,48,.14)}
+.mp5 .disco{width:118px;height:118px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:inset 0 2px 8px rgba(27,36,48,.10),0 2px 6px rgba(27,36,48,.08)}
+.mp5 .disco svg{width:48px;height:48px;stroke:var(--c);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.mp5 .num{position:absolute;right:2px;top:6px;width:36px;height:36px;border-radius:50%;background:var(--c);color:#fff;font-weight:700;font-size:16px;display:grid;place-items:center;border:3px solid #fff;box-shadow:0 2px 6px rgba(27,36,48,.2)}
+.mp5 .pk{margin:8px 0 0;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+.mp5 h3{margin:0;font-size:19px;letter-spacing:-.01em;line-height:1.15}
+.mp5 p.t{margin:0;color:var(--suave);font-size:14.5px;line-height:1.35;max-width:210px}
+.mp5 .datos{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:4px}
+.mp5 .datos span{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:#fff;color:var(--c);box-shadow:inset 0 0 0 1.5px var(--c)}
+.mp5 li:hover .aro{transform:translateY(-4px) scale(1.03)}.mp5 .aro{transition:transform .25s}
+.mp-nota{margin:18px 0 0;text-align:center;font-size:13.5px;color:var(--suave)}
+@media(max-width:1000px){
+  .mp5{grid-template-columns:1fr;gap:22px}
+  .mp5::before{left:77px;right:auto;top:20px;bottom:20px;width:4px;height:auto;background:repeating-linear-gradient(180deg,#9DB4DC 0 10px,transparent 10px 20px);animation:none}
+  .mp5 li{flex-direction:row;text-align:left;align-items:center;gap:18px;flex-wrap:wrap}
+  .mp5 .aro{width:112px;height:112px;flex:none}.mp5 .disco{width:84px;height:84px}.mp5 .disco svg{width:36px;height:36px}.mp5 .num{width:30px;height:30px;font-size:14px;right:-2px;top:0}
+  .mp5 .txt{flex:1;min-width:200px}.mp5 .pk{margin-top:0}.mp5 p.t{max-width:none}.mp5 .datos{justify-content:flex-start}
 }
-@media(max-width:430px){.ruta2{--u:.66px}}
-@media(prefers-reduced-motion:reduce){.med,.paso-t{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.mp5::before{animation:none}.mp5 .aro{transition:none}}
 .pasos3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .paso{background:#fff;border-radius:22px;padding:26px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 12px 30px rgba(27,36,48,.07)}
 .paso{position:relative;display:flex;flex-direction:column}
@@ -738,23 +726,16 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
   </details>
 </section>
 
-<section class="seccion" id="pasos" aria-label="Cómo funciona">
-  <h2 class="sec-t rv">Así funciona el Radar. <span>Tres pasos, y el plan Gratis es su prueba.</span></h2>
-  <div class="ruta2 rv">
-    <div class="paso-t t1"><p class="pk">Paso 1</p><h3>Cuéntanos qué vendes</h3><p>Escribe qué vendes, con tus palabras.</p></div>
-    <div class="paso-t t2"><p class="pk">Paso 2</p><h3>Mira tus compras</h3><p>Te mostramos solo las compras que te sirven.</p></div>
-    <div class="paso-t t3"><p class="pk">Paso 3</p><h3>Revisa si cumples</h3><p>Te decimos si cumples y qué te falta.</p></div>
-    <div class="cadena" aria-hidden="true">
-      <div class="med m1" style="--c:#6C9BE0"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17h28l-2.5 21a3 3 0 0 1-3 2.6H15.5a3 3 0 0 1-3-2.6L10 17Z"/><path d="M17 17v-3a7 7 0 0 1 14 0v3"/><path d="M19 27h10"/></svg></div></div>
-      <div class="med m3" style="--c:#1D4E9E"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6 9 12v11c0 9.5 6.3 16.5 15 19 8.7-2.5 15-9.5 15-19V12L24 6Z"/><path d="m17 24 5 5 9-10"/></svg></div></div>
-      <div class="med m2" style="--c:#2F6BC4"><div class="disco"><svg viewBox="0 0 48 48" fill="none" stroke="#1D4E9E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="21" r="11"/><path d="m29.5 29.5 10 10"/><path d="M16.5 18h9M16.5 23h6"/></svg></div></div>
-      <span class="nb nb1">1</span><span class="nb nb2">2</span><span class="nb nb3">3</span>
-      <svg class="serp" viewBox="0 0 490 300" aria-hidden="true">
-        <path id="rutaSerp" d="M12 105 A93 93 0 1 1 197.5 115 A93 93 0 1 0 337.5 185 A93 93 0 1 1 478 105" fill="none"/>
-        <path class="forma" d=""/>
-      </svg>
-    </div>
-  </div>
+<section class="seccion" id="pasos" aria-label="Cómo funciona Mercado Público">
+  <h2 class="sec-t rv">Así funciona Mercado Público. <span>Cinco pasos, de la publicación al pago.</span></h2>
+  <ol class="mp5 rv">
+    <li style="--c:#6C9BE0"><div class="aro"><div class="disco"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40h32M12 40V20l12-9 12 9v20"/><path d="M19 40V28h10v12M18 22h.01M30 22h.01"/></svg></div><span class="num">1</span></div><div class="txt"><p class="pk">Paso 1</p><h3>Se publica</h3><p class="t">ChileCompra reúne en Mercado Público las compras de todo el Estado.</p><div class="datos"><span>Cualquiera puede verlas</span></div></div></li>
+    <li style="--c:#2F6BC4"><div class="aro"><div class="disco"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="8" width="30" height="32" rx="4"/><path d="M16 18h16M16 25h16M16 32h9"/></svg></div><span class="num">2</span></div><div class="txt"><p class="pk">Paso 2</p><h3>Eligen cómo comprar</h3><p class="t">Compra Ágil hasta unos $7 millones; sobre eso, licitación. También hay convenio marco y trato directo.</p><div class="datos"><span>Compra Ágil</span><span>Licitación</span></div></div></li>
+    <li style="--c:#1D4E9E"><div class="aro"><div class="disco"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="25" r="14"/><path d="M24 17v9l6 4M19 7h10"/></svg></div><span class="num">3</span></div><div class="txt"><p class="pk">Paso 3</p><h3>Corren los plazos</h3><p class="t">Cada compra trae sus fechas: preguntas, respuestas y cierre. Una licitación se publica de 5 a 30 días según el monto.</p><div class="datos"><span>5 · 10 · 20 · 30 días</span></div></div></li>
+    <li style="--c:#1E7F52"><div class="aro"><div class="disco"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 24l9 9 19-20"/><rect x="6" y="6" width="36" height="36" rx="8" opacity=".35"/></svg></div><span class="num">4</span></div><div class="txt"><p class="pk">Paso 4</p><h3>Ofertas y adjudicación</h3><p class="t">Subes tu oferta antes del cierre. Si cumples, pueden elegirte y emiten una orden de compra.</p><div class="datos"><span>Orden de compra</span><span>Garantías si las piden</span></div></div></li>
+    <li style="--c:#C99A12"><div class="aro"><div class="disco"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="12" width="38" height="24" rx="5"/><circle cx="24" cy="24" r="6"/><path d="M11 18v.01M37 30v.01"/></svg></div><span class="num">5</span></div><div class="txt"><p class="pk">Paso 5</p><h3>Te pagan</h3><p class="t">Entregas y facturas. El Estado debe pagar dentro de 30 días desde tu factura (Ley 21.131).</p><div class="datos"><span>30 días</span></div></div></li>
+  </ol>
+  <p class="mp-nota rv">Plazos y montos de referencia: cada compra detalla los suyos en sus bases. Apto te los muestra y te los pone en tu calendario.</p>
   <details class="tutorial rv">
     <summary>Mira un ejemplo paso a paso: de lo que piden a tu oferta</summary>
     <ol class="tuto">
@@ -919,8 +900,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611221522"></script>
-<script src="app.js?v=202611221522"></script>
-<script src="notificaciones.js?v=202611221522"></script>
+<script src="buscar.js?v=202611221624"></script>
+<script src="app.js?v=202611221624"></script>
+<script src="notificaciones.js?v=202611221624"></script>
 </body>
 </html>

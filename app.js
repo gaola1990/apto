@@ -1038,7 +1038,8 @@ async function cargarPrueba(){
 const docProds = () => catalogo.filter(p => p.doc);
 function panelApto(D){
   D.innerHTML = '<div class="caja-prueba"><b>Plan Apto</b> · revisiones ¿Cumplo? sin límite.</div>' +
-    '<div class="caja-prueba" id="aptoDocs"><b>Mis documentos de producto</b><p class="nota" style="margin:4px 0 8px">Sube una cotización o ficha de lo que vendes (PDF, Word o imagen, hasta 5). Apto lee los productos y te busca dónde postular. No guardamos el archivo.</p>' +
+    '<div class="caja-prueba" id="aptoDocs"><b>Mis documentos de producto</b><p class="nota" style="margin:4px 0 8px">Sube una cotización o ficha de lo que vendes: PDF, Word, foto o texto, hasta 5 archivos de 25 MB en total. Apto lee los productos y te busca dónde postular.</p>' +
+    '<p class="nota" style="margin:0 0 8px">🔒 <b>Tus documentos no se guardan.</b> Los lee la IA de Apto en su propio computador (sin enviarlos a servicios de terceros) y el archivo se borra apenas termina. Solo queda la lista de productos, en tu cuenta, y tú la revisas antes.</p>' +
     '<input type="file" id="docsProd" accept=".pdf,.docx,.png,.jpg,.jpeg,.webp,.txt" multiple aria-label="Documentos de tus productos">' +
     '<div class="acciones" style="margin-top:8px"><button class="principal" id="docsIr">Leer mis documentos</button></div><div id="docsOut" aria-live="polite"></div></div>';
   $("docsIr").onclick = async () => {
@@ -1054,14 +1055,34 @@ function panelApto(D){
       let e;
       do{ await new Promise(ok => setTimeout(ok, 2500)); e = await (await fetch(MOTOR + "/trabajo/" + j.id)).json(); if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>"; }while(!e.listo);
       if(e.error) throw new Error(e.error);
-      const R = e.resultado, nuevos = R.productos.filter(p => !catalogo.some(c => norm(c.nombre) === norm(p.nombre)));
-      nuevos.forEach(p => catalogo.push({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), nombre: p.nombre, caract: p.caract || "Desde tu documento.",
-        garantia: p.garantia, entrega: p.entrega, codigo: p.codigo, precio: p.precio_neto, doc: true, pal: R.palabras}));
-      guardar("rp_catalogo", catalogo); pintarCatalogo(); cambio();
-      out.innerHTML = '<p class="nota">Listo: encontramos ' + R.productos.length + " productos (" + nuevos.length + ' nuevos en tu catálogo). Abajo ves dónde postular. <span class="nota">El archivo ya se borró.</span></p>';
-      $("docsProd").value = "";
+      $("docsProd").value = ""; out.innerHTML = ""; revisarProductos(e.resultado, out);
     }catch(err){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">' + esc(err.message) + "</p>"; }
     $("docsIr").disabled = false;
+  };
+}
+// Paso de revisión: la IA puede equivocarse al leer; la persona corrige y confirma antes de que los productos entren al catálogo.
+function revisarProductos(R, out){
+  const n = v => (v === "" || v == null) ? "" : v;
+  out.innerHTML = '<p class="nota"><b>Esto leímos de tus documentos.</b> Revisa nombres, precios y plazos: corrige lo que esté mal y desmarca lo que no quieras. El archivo ya se borró.</p><div class="rev-prods">' +
+    R.productos.map((p, k) => '<div class="prod rev-p" data-k="' + k + '"><label class="check"><input type="checkbox" class="rv-ok" checked> <b>Incluir</b></label>' +
+      '<label>Producto<input class="rv-n" value="' + esc(p.nombre) + '"></label>' +
+      '<label>Características<input class="rv-c" value="' + esc(p.caract || "") + '"></label>' +
+      '<label>Precio neto ($)<input class="rv-pr" inputmode="numeric" value="' + esc(n(p.precio_neto || "")) + '"></label>' +
+      '<label>Entrega (días)<input class="rv-e" inputmode="numeric" value="' + esc(n(p.entrega)) + '"></label>' +
+      '<label>Garantía (meses)<input class="rv-g" inputmode="numeric" value="' + esc(n(p.garantia)) + '"></label></div>').join("") +
+    '</div><div class="acciones" style="margin-top:8px"><button class="principal" id="rvOk">Confirmar y ver dónde postular</button></div>';
+  $("rvOk").onclick = () => {
+    let nuevos = 0;
+    out.querySelectorAll(".rev-p").forEach(el => {
+      if(!el.querySelector(".rv-ok").checked) return;
+      const nombre = el.querySelector(".rv-n").value.trim(); if(nombre.length < 3 || catalogo.some(c => norm(c.nombre) === norm(nombre))) return;
+      const v = c => el.querySelector(c).value.trim();
+      catalogo.push({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), nombre, caract: v(".rv-c") || "Desde tu documento.", garantia: v(".rv-g"), entrega: v(".rv-e"),
+        precio: +v(".rv-pr").replace(/[^0-9]/g, "") || 0, doc: true, pal: R.palabras}); nuevos++;
+    });
+    guardar("rp_catalogo", catalogo); pintarCatalogo(); cambio();
+    out.innerHTML = '<p class="nota">Listo: agregamos ' + nuevos + " productos a tu catálogo. Abajo ves dónde postular.</p>";
+    const d = $("dondeApto"); if(d && d.scrollIntoView) d.scrollIntoView({behavior: "smooth", block: "start"});
   };
 }
 // Compras abiertas donde puedes ofertar según los productos de tus documentos: más productos tuyos = más arriba; a igual, cierra antes.
@@ -1073,8 +1094,8 @@ function dondePostular(){
   for(const d of datos){
     const dias = diasPara(d.cierre);
     if((dias !== null && dias < 0) || d.tipo.n > tope || noSirve[d.codigo]) continue;
-    const prods = ts.filter(x => x.ts.slice(0, 1).some(t => calza(t, d.texto, d.palabras)) || x.ts.slice(1).some(t => calza(t, d.texto, d.palabras)));
-    if(prods.length) out.push({...d, dias, prods: prods.map(x => x.p), pts: prods.length * 10 + (prods.some(x => calza(x.ts[0], d.texto, d.palabras)) ? 5 : 0)});
+    const prods = ts.map(x => ({x, t: x.ts.find(t => calza(t, d.texto, d.palabras))})).filter(y => y.t);
+    if(prods.length) out.push({...d, dias, prods: prods.map(y => y.x.p), porque: prods.map(y => ({p: y.x.p.nombre, t: y.t.t})), pts: prods.length * 10 + (prods.some(y => y.t === y.x.ts[0]) ? 5 : 0)});
   }
   return out.sort((a, b) => b.pts - a.pts || (a.dias ?? 999) - (b.dias ?? 999));
 }
@@ -1082,9 +1103,10 @@ function pintarDonde(){
   const el = $("dondeApto"); if(!el) return;
   if(typeof prueba === "undefined" || !prueba || prueba.plan !== "apto" || !docProds().length){ el.innerHTML = ""; return; }
   const L = dondePostular().slice(0, 15);
-  el.innerHTML = '<div class="negocio"><p class="grande">🎯 Dónde postular con tus productos</p>' + (L.length ? '<p class="nota">Ordenadas: primero las que piden más de tus productos, luego las que cierran antes.</p>' +
+  el.innerHTML = '<div class="negocio"><p class="grande">🎯 Dónde postular con tus productos</p>' + (L.length ? '<p class="nota">Ordenadas: primero las que piden más de tus productos (cuenta cuántos de los tuyos calzan), luego las que cierran antes.</p>' +
     L.map(r => { const [cl, tx] = etiquetaCierre(r.dias); return '<article class="op" tabindex="0" role="button" data-c="' + esc(r.codigo) + '"><div><h3>' + esc(r.nombre) + '</h3><div class="meta"><span class="et gr">' + esc(r.codigo) + "</span>" +
-      r.prods.map(p => '<span class="et">' + esc(p.nombre) + "</span>").join("") + '</div></div><div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL", {day: "numeric", month: "short"}) : "—") +
+      r.prods.map(p => '<span class="et">' + esc(p.nombre) + "</span>").join("") + '</div><p class="nota" style="margin:4px 0 0">Por qué te calza: ' +
+      r.porque.map(q => "tu <b>" + esc(q.p) + "</b> coincide con «" + esc(q.t) + "» en esta compra").join("; ") + ".</p></div>" + '<div class="cierre"><b>' + (r.cierre ? new Date(r.cierre).toLocaleDateString("es-CL", {day: "numeric", month: "short"}) : "—") +
       '</b><span class="et ' + cl + '">' + tx + "</span></div></article>"; }).join("") + '<p class="nota">Abre una compra para ver si cumples con ¿Cumplo?.</p>'
     : '<p class="nota">Hoy no hay compras abiertas que calcen con tus productos. Te avisamos cuando aparezcan.</p>') + "</div>";
 };

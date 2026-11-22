@@ -516,17 +516,6 @@ input[type=number]{width:100%;padding:9px 10px;border:1px solid var(--linea);bor
 .dos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .prod{border:1px solid var(--linea);border-radius:8px;padding:8px 10px;margin-top:6px;font-size:13.5px;display:flex;gap:8px;justify-content:space-between;align-items:flex-start}
 .prod small{display:block;color:var(--suave);overflow-wrap:anywhere}
-.servicios{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1180px}
-.svc{background:#fff;border-radius:26px;padding:30px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(27,36,48,.04),0 14px 36px rgba(27,36,48,.08)}
-.svc.dest{outline:2px solid var(--marca)}
-.svc .k{margin:0;color:var(--marca);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.svc h3{font-size:26px;line-height:1.15;margin:8px 0 6px;letter-spacing:-.01em}
-.svc .sub{margin:0 0 6px;color:var(--suave)}
-.svc ul{list-style:none;padding:0;margin:12px 0 18px}.svc li{padding:8px 0 8px 26px;border-top:1px solid var(--linea);position:relative}
-.svc li:before{content:"✓";position:absolute;left:2px;color:var(--marca);font-weight:700}
-.svc-btn{margin-top:auto;display:inline-block;text-align:center;border:0;border-radius:999px;background:var(--marca);color:#fff;font:inherit;font-weight:700;padding:12px 18px;cursor:pointer;text-decoration:none;box-shadow:0 8px 22px rgba(29,78,158,.25)}
-.svc-btn.sec{background:#fff;color:var(--marca);box-shadow:inset 0 0 0 2px var(--marca)}
-@media(max-width:860px){.servicios{grid-template-columns:1fr}}
 .prod button{padding:3px 8px;font-size:12.5px}
 .rev-p{flex-direction:column;align-items:stretch;gap:4px}.rev-p input:not([type=checkbox]){width:100%;box-sizing:border-box}.rev-p label{display:block;min-width:0}.rev-p .check{display:flex;gap:6px;align-items:center}
 .req{list-style:none;padding:0;margin:8px 0}
@@ -574,14 +563,14 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <script>document.documentElement.classList.add("js")</script>
 <header><div class="in">
   <h1>Apto</h1>
-  <nav aria-label="Secciones"><a href="#servicios">Servicios</a><a href="#como">Qué hace</a><a href="#pasos">Cómo funciona</a><a href="#planes">Planes</a><button type="button" class="campana" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">🔔<span class="cuenta" id="notifCuenta" hidden></span></button><a class="cta" href="#planes">Empezar gratis</a></nav>
+  <nav aria-label="Secciones"><a href="#como">Qué hace</a><a href="#pasos">Cómo funciona</a><a href="#planes">Planes</a><button type="button" class="campana" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">🔔<span class="cuenta" id="notifCuenta" hidden></span></button><a class="cta" href="#planes">Empezar gratis</a></nav>
 </div></header>
 
 <section class="hero" aria-label="Presentación">
   <p class="eyebrow rv">Compras públicas para pymes</p>
   <h2 class="big rv" style="--d:.08s">¿Puedes venderle al Estado?<br><span>Apto te lo dice.</span></h2>
   <p class="lead rv" style="--d:.16s">El Estado publica miles de compras cada día. Con el <b>Radar</b> ves las que sirven para tu negocio; con <b>Apto</b> subes tu producto y te decimos dónde postular y si cumples lo que piden.</p>
-  <div class="botones rv" style="--d:.24s"><a class="btn sec2" href="#servicios">Los dos servicios ›</a></div>
+  <div class="botones rv" style="--d:.24s"><a class="btn sec2" href="#pasos">Cómo funciona ›</a></div>
   <p class="fuente-hero rv" style="--d:.28s"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.2 8 11 4.6-1.8 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Datos oficiales de <b>ChileCompra</b> · Mercado Público</p>
   <div class="escena rv" style="--d:.32s" aria-hidden="true">
     <div class="vwin vw-l">
@@ -619,18 +608,6 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <div class="flot xs f13">🎯 <span class="v">11 compras donde postular</span></div>
     <div class="flot xs f15">🏅 <span class="v">Cumples lo que piden</span></div>
     <div class="flot f3"><div class="dia">3<br><small>días</small></div><div><b>Cierra pronto</b><div class="s">Te lo recordamos en tu calendario</div></div></div>
-  </div>
-</section>
-
-<section class="seccion" id="servicios" aria-label="Los dos servicios de Apto">
-  <h2 class="sec-t rv">Dos servicios. <span>Elige el que necesitas.</span></h2>
-  <div class="servicios">
-    <article class="svc rv" tabindex="0"><p class="k">Servicio 1 · Radar</p><h3>Te avisa de las compras que te sirven</h3><p class="sub">Dinos qué vendes y buscamos las publicaciones que se adecuan a tu empresa.</p>
-      <ul><li>Escribes qué vendes, con tus palabras</li><li>Ves las compras abiertas que te sirven</li><li>Fechas, cuánto cobrar y avisos por correo</li></ul>
-      <button type="button" class="svc-btn" data-plan="gratis">Probar el Radar gratis</button></article>
-    <article class="svc dest rv" style="--d:.08s" tabindex="0"><p class="k">Servicio 2 · Apto</p><h3>Subes tu producto y te decimos dónde postular</h3><p class="sub">Sube las cotizaciones de tus productos y buscamos dónde puedas ganar la venta.</p>
-      <ul><li>Subes una cotización o ficha de tu producto</li><li>Apto lee tus productos y precios; tú los revisas</li><li>Te muestra dónde postular, ordenado, y si cumples</li></ul>
-      <a class="svc-btn sec" href="#planes">Ver el plan Apto</a></article>
   </div>
 </section>
 
@@ -873,8 +850,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611221410"></script>
-<script src="app.js?v=202611221410"></script>
-<script src="notificaciones.js?v=202611221410"></script>
+<script src="buscar.js?v=202611221511"></script>
+<script src="app.js?v=202611221511"></script>
+<script src="notificaciones.js?v=202611221511"></script>
 </body>
 </html>

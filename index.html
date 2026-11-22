@@ -41,14 +41,14 @@ header nav a.cta:hover{background:#B8261B}
 .btn{background:var(--marca);color:#fff;text-decoration:none;padding:13px 24px;border-radius:999px;font-weight:700;box-shadow:0 8px 22px rgba(29,78,158,.28);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(29,78,158,.36)}
 .btn.sec2{background:transparent;color:var(--marca);box-shadow:none}
-.escena{position:relative;height:650px;max-width:1080px;margin:44px auto 0}
+.escena{position:relative;height:714px;max-width:1080px;margin:44px auto 0}
 .flot{position:absolute;background:#fff;border-radius:20px;padding:16px 18px;text-align:left;font-size:14.5px;box-shadow:0 2px 6px rgba(27,36,48,.06),0 28px 56px rgba(27,36,48,.16);animation:flotar 7s ease-in-out infinite}
 .flot .t{font-weight:700;font-size:16px;line-height:1.3;margin:8px 0 4px}
 .flot .s{color:var(--suave);font-size:13px}
-.f1{left:1%;top:376px;width:min(270px,30%);z-index:3}
-.f2{right:1%;top:370px;width:min(280px,30%);animation-delay:-2.3s;z-index:3}
+.f1{left:1%;top:440px;width:min(270px,30%);z-index:3}
+.f2{right:1%;top:434px;width:min(280px,30%);animation-delay:-2.3s;z-index:3}
 .f3{left:calc(50% - 115px);bottom:0;width:230px;z-index:3;animation-delay:-4.6s;display:flex;gap:12px;align-items:center}
-.vwin{position:absolute;top:0;width:48%;z-index:2;text-align:left}
+.vwin{position:absolute;top:64px;width:48%;z-index:2;text-align:left}
 .vw-l{left:0}.vw-r{right:0;--ph:-5s}
 .vw-nombre{margin:0 0 10px;text-align:center;font-size:26px;font-weight:700;color:var(--marca);letter-spacing:-.01em;line-height:1.1}.vw-nombre small{display:block;font-size:14px;font-weight:400;color:var(--suave);letter-spacing:0;margin-top:2px}
 .vcaja{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 6px rgba(27,36,48,.08),0 34px 70px rgba(29,78,158,.26)}
@@ -85,12 +85,18 @@ header nav a.cta:hover{background:#B8261B}
 .flot.sm{padding:10px 15px;font-size:13.5px;border-radius:16px}
 .flot.xs{padding:7px 12px;font-size:12px;border-radius:13px;box-shadow:0 2px 5px rgba(27,36,48,.06),0 16px 34px rgba(27,36,48,.13)}
 .flot .v{color:var(--verde-apto)}.flot .az{color:var(--marca)}
-.f4{left:30%;top:398px;z-index:3;animation-delay:-1.1s}
-.f5{left:5%;top:530px;z-index:3;animation-delay:-3.4s}
-.f6{left:23%;top:590px;z-index:3;animation-delay:-5.2s}
-.f7{right:29%;top:392px;z-index:3;animation-delay:-2.7s}
-.f8{right:5%;top:540px;z-index:3;animation-delay:-4.1s}
-.f9{right:21%;top:594px;z-index:3;animation-delay:-.6s}
+.f4{left:30%;top:462px;z-index:3;animation-delay:-1.1s}
+.f5{left:5%;top:594px;z-index:3;animation-delay:-3.4s}
+.f6{left:23%;top:654px;z-index:3;animation-delay:-5.2s}
+.f7{right:29%;top:456px;z-index:3;animation-delay:-2.7s}
+.f8{right:5%;top:604px;z-index:3;animation-delay:-4.1s}
+.f9{right:21%;top:658px;z-index:3;animation-delay:-.6s}
+.f10{left:14%;top:0;z-index:3;animation-delay:-.8s}
+.f11{left:26%;top:32px;z-index:3;animation-delay:-3.1s}
+.f14{left:1%;top:30px;z-index:3;animation-delay:-4.8s}
+.f12{right:14%;top:0;z-index:3;animation-delay:-2.2s}
+.f13{right:26%;top:32px;z-index:3;animation-delay:-5.6s}
+.f15{right:1%;top:30px;z-index:3;animation-delay:-1.5s}
 .f3 .dia{background:var(--rojo-suave);color:var(--rojo);border-radius:12px;padding:6px 10px;text-align:center;font-weight:700;line-height:1.1}
 @keyframes flotar{50%{transform:translateY(-12px)}}
 /* ventana central de la portada: presenta a Apto como la solución al trámite de postular (ciclo de 12 s) */
@@ -99,7 +105,7 @@ header nav a.cta:hover{background:#B8261B}
 .barra-p i{display:block;height:100%;width:0;border-radius:99px;background:var(--verde-apto);transition:width 1.8s cubic-bezier(.2,.8,.2,1) .7s}
 .in .barra-p i,.sin-js .barra-p i{width:50%}
 @media(max-width:620px){.escena{height:auto;display:grid;gap:14px;margin-top:36px}.flot{position:static;width:auto}.flot.sm,.flot.xs{display:none}.vwin{position:static;width:auto;order:-1}}
-@media(max-width:1000px) and (min-width:621px){.f4,.f6,.f7,.f9{display:none}.f5{left:2%}.f8{right:2%}.escena{height:660px}.vwin{width:48.5%}.f1{width:min(250px,34%)}.f2{width:min(240px,34%)}}
+@media(max-width:1000px) and (min-width:621px){.f4,.f6,.f7,.f9,.f10,.f11,.f12,.f13,.f14,.f15{display:none}.f5{left:2%}.f8{right:2%}.escena{height:724px}.vwin{width:48.5%}.f1{width:min(250px,34%)}.f2{width:min(240px,34%)}}
 .seccion{max-width:1180px;margin:0 auto;padding:72px 16px 8px}
 .sec-t{font-size:clamp(30px,4.6vw,54px);line-height:1.07;letter-spacing:-.025em;text-transform:none;color:var(--tinta);margin:0 0 30px;font-weight:700;max-width:860px}
 .sec-t span{color:var(--suave)}
@@ -577,6 +583,12 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <div class="flot sm f7"><span class="v">✓</span> Calza con 2 de tus productos</div>
     <div class="flot xs f8">💲 Cotizado: <span class="az">$37.800 neto</span></div>
     <div class="flot xs f9">🏆 <span class="v">Listo para ofertar</span></div>
+    <div class="flot sm f10">🔔 <span class="v">Te avisamos cada mañana</span></div>
+    <div class="flot xs f11">📊 <span class="v">12 compras para ti</span></div>
+    <div class="flot xs f14">⏰ <span class="v">Cierra en 3 días</span></div>
+    <div class="flot sm f12">📄 <span class="az">4 productos leídos</span></div>
+    <div class="flot xs f13">🎯 <span class="v">11 compras donde postular</span></div>
+    <div class="flot xs f15">🏅 <span class="v">Cumples lo que piden</span></div>
     <div class="flot f3"><div class="dia">3<br><small>días</small></div><div><b>Cierra pronto</b><div class="s">Te lo recordamos en tu calendario</div></div></div>
   </div>
 </section>

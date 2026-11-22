@@ -2128,3 +2128,4 @@
 {"codigo": "2434-22-LP26", "fecha": "2026-11-20", "oferentes": 1, "tipo": "LP", "clases": ["251016"], "organismo": "I MUNICIPALIDAD ESTACION CENTRAL", "region": "Región Metropolitana de Santiago"}
 {"codigo": "2401-127-L126", "fecha": "2026-11-21", "oferentes": 3, "tipo": "L1", "clases": ["801416"], "organismo": "I MUNICIPALIDAD DE RANCAGUA", "region": "Región del Libertador General Bernardo O´Higgins"}
 {"codigo": "4023-29-LE26", "fecha": "2026-11-17", "oferentes": 2, "tipo": "LE", "clases": ["711211"], "organismo": "ILUSTRE MUNICIPALIDAD DE PUTRE", "region": "Región de Arica y Parinacota"}
+{"codigo": "1058085-139-LP26", "fecha": "2026-11-19", "oferentes": 9, "tipo": "LP", "clases": ["511215", "511217", "511316", "511415", "511417", "511421", "511422", "511719", "511815", "511918", "511919"], "organismo": "SERVICIO DE SALUD ORIENTE HOSPITAL DEL SALVADOR", "region": "Región Metropolitana de Santiago"}

@@ -237,28 +237,37 @@ header nav a.cta:hover{background:#B8261B}
 @media(max-width:560px){.t-casos{grid-column:span 1}.casos-btn{width:100%;text-align:center}}
 /* datos del Estado: flujo de tres pasos dentro de "Juego limpio" */
 .dts{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:center}
-.dts-n{margin:18px 0 0!important;font-size:14px;display:flex;gap:8px;align-items:flex-start}.dts-n::before{content:"🔒";font-size:14px}
-.dts .flujo{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;max-width:560px}
-.dts .flujo li{position:relative;display:grid;grid-template-columns:44px 1fr;gap:16px;padding-bottom:30px;font-size:14.5px;line-height:1.3;color:#1B2430}
-.dts .flujo i{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:17px;color:#fff;background:#5B6B82;position:relative;z-index:1;box-shadow:0 0 0 6px #fff}
-.dts .flujo strong{display:block;font-size:17px;color:#1B2430}
-.dts .flujo span{display:block;margin-top:3px;color:#4B5668;font-size:14.5px}
-.dts .flujo .p1::before,.dts .flujo .p2::before{content:"";position:absolute;left:20px;top:44px;bottom:0;width:4px;border-radius:2px}
-.dts .flujo .p1::before{background:linear-gradient(#5B6B82,var(--marca))}.dts .flujo .p2::before{background:var(--marca)}
-.dts .flujo .p2 i{background:var(--marca)}
-.dts .flujo .p3{display:block;padding-bottom:30px}.dts .flujo .p3::after{content:"";position:absolute;left:20px;bottom:0;height:30px;width:4px;background:linear-gradient(var(--marca),#C99A12)}
-.dts .ramas{display:grid;grid-template-columns:1fr 1fr;gap:22px;position:relative;padding:0 0 0 20px}
-.dts .ramas::before,.dts .ramas::after{content:"";position:absolute;left:20px;width:calc(50% + 1px);height:4px;border-radius:2px}
-.dts .ramas::before{top:0;background:linear-gradient(90deg,var(--marca),#1E7F52)}
-.dts .ramas::after{bottom:0;background:linear-gradient(90deg,var(--marca),#1E7F52)}
-.dts .rama{position:relative;padding:28px 0 28px 28px;border-left:4px solid var(--c);display:block}
-.dts .rama i{position:absolute;left:-20px;top:22px;width:36px;height:36px;font-size:15px;background:var(--c);box-shadow:0 0 0 5px #fff}
-.dts .rama strong{padding-top:4px;color:var(--c)}
-.dts .r-radar{--c:var(--marca)}.dts .r-apto{--c:#1E7F52}
-.dts .flujo .p4{padding-bottom:0}
+.mapa{position:relative;max-width:580px;width:100%;justify-self:center;padding:26px 24px 24px;border-radius:26px;background:radial-gradient(120% 80% at 50% 0%,#F4F8FE 0%,#E9F0FB 100%);border:1px solid #DCE6F5;display:flex;flex-direction:column;align-items:center}
+.mp-fila{display:flex;align-items:center;gap:14px;width:100%;max-width:400px;padding:12px 16px 12px 12px;border-radius:20px;background:#fff;box-shadow:0 1px 2px rgba(27,36,48,.05),0 12px 28px rgba(29,78,158,.12);position:relative;z-index:1}
+.mp-fila strong{display:block;font-size:16px;color:#1B2430;line-height:1.2}
+.mp-fila span.t{display:block;font-size:13.5px;color:#4B5668;margin-top:2px;line-height:1.3}
+.mp-ico{flex:none;width:50px;height:50px;border-radius:16px;display:grid;place-items:center;box-shadow:inset 0 -3px 0 rgba(0,0,0,.14)}
+.mp-ico svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mp-gris{background:linear-gradient(135deg,#7C8BA3,#4B5B73)}.mp-azul{background:linear-gradient(135deg,#3E78D1,#1D4E9E)}
+.mp-verde{background:linear-gradient(135deg,#3DAA79,#1E7F52)}.mp-ambar{background:linear-gradient(135deg,#F2C14E,#C99A12)}
+.mp-chip{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:999px;background:#E8EFFB;color:var(--marca)}
+.mp-lin{position:relative;width:4px;height:44px;border-radius:2px;background:linear-gradient(#9AA9C0,#1D4E9E);overflow:visible}
+.mp-lin i{position:absolute;left:-3px;top:0;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px #1D4E9E;animation:mpFluye 2.6s ease-in-out infinite}
+.mp-lin em{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-style:normal;font-size:11.5px;font-weight:700;color:#4B5668;white-space:nowrap;background:#fff;border:1px solid #DCE6F5;padding:2px 9px;border-radius:999px}
+@keyframes mpFluye{0%{top:-4px;opacity:0}15%{opacity:1}85%{opacity:1}100%{top:38px;opacity:0}}
+.mp-fork{display:block;width:100%;height:64px;overflow:visible}
+.mp-fork path{fill:none;stroke-width:4;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.mp-fork .a{stroke:#1D4E9E}.mp-fork .b{stroke:#1E7F52}
+.mp-fork .flujo-a,.mp-fork .flujo-b{stroke:#fff;stroke-width:3;stroke-dasharray:2 18;animation:mpDash 1.6s linear infinite}
+@keyframes mpDash{to{stroke-dashoffset:-20}}
+.mp-ramas{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%}
+.mp-r{position:relative;border-radius:20px;padding:16px 14px 14px;overflow:hidden}
+.mp-r::before{content:"";position:absolute;left:0;right:0;top:0;height:5px}
+.mp-r.radar{background:linear-gradient(180deg,#E3EDFB,#F1F6FD);border:1px solid #CFE0F7}.mp-r.radar::before{background:#1D4E9E}
+.mp-r.apto{background:linear-gradient(180deg,#DDF1E7,#EFF8F3);border:1px solid #C3E4D2}.mp-r.apto::before{background:#1E7F52}
+.mp-r .mp-ico{width:42px;height:42px;border-radius:14px;margin-bottom:10px}.mp-r .mp-ico svg{width:22px;height:22px}
+.mp-r strong{display:block;font-size:17px;line-height:1.1}.mp-r.radar strong{color:#1D4E9E}.mp-r.apto strong{color:#1E7F52}
+.mp-r p{margin:6px 0 0;font-size:13.5px;line-height:1.35;color:#2D3A4D}
+.mp-r .mp-chip{background:#fff;color:#2D3A4D;box-shadow:0 1px 2px rgba(27,36,48,.08)}
+.dts-n{margin:18px 0 0!important;font-size:14px;display:flex;gap:8px;align-items:flex-start}
+@media(max-width:900px){.dts{grid-template-columns:1fr;gap:28px}.mp-ramas{grid-template-columns:1fr}.mp-fork{display:none}.mp-ramas{margin:14px 0;gap:12px}}
+@media(prefers-reduced-motion:reduce){.mp-lin i,.mp-fork .flujo-a,.mp-fork .flujo-b{animation:none}}
 
-.dts .flujo .p4 i{background:#C99A12}
-@media(max-width:900px){.dts{grid-template-columns:1fr;gap:28px}.dts .ramas{grid-template-columns:1fr;gap:0}.dts .ramas::before,.dts .ramas::after{display:none}.dts .rama:last-child{margin-left:0}}
 .dts{width:100%}
 .dts-n{margin:12px 0 0!important;font-size:14px}
 /* flechas que muestran el camino Gratis → Radar → Apto */
@@ -694,16 +703,19 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     <article class="tile t-num rv" id="tnum" style="--d:.2s" data-ayuda="Una licitación es una compra del Estado en la que varias empresas ofrecen su producto y el Estado elige una. Este número son las que hoy aceptan ofertas." data-ejemplo="un municipio que necesita 50 sillas para una escuela." tabindex="0"><div class="tn-izq"><p class="k">Compras del Estado abiertas ahora</p><b class="num" id="hnum">0</b></div><div class="tn-der"><p class="tn-grande">Apto las revisa todas por ti.</p><p class="sello" id="sello">Se actualiza cada 4 horas · <a href="estado.html">ver estado</a></p></div></article>
     <article class="tile t-wide rv" style="--d:.1s" data-ayuda="Usamos solo la información que el Estado publica para todos, y no trabajamos para los compradores." data-ejemplo="no vemos las ofertas de otras empresas ni datos internos de ningún organismo." tabindex="0"><div class="dts"><div class="dts-t"><p class="k">Juego limpio</p><h3>Solo datos públicos.</h3><p>No somos el Estado: estamos del lado de quien vende.</p><a class="fuente-link" href="https://www.mercadopublico.cl" target="_blank" rel="noopener">Fuente: ChileCompra · Mercado Público ↗</a>
       <p class="dts-n">No usamos información interna ni vemos las ofertas de otras empresas. Cada empresa ve solo sus propios datos.</p></div>
-      <ol class="flujo">
-        <li class="p1"><i>1</i><div><strong>ChileCompra</strong><span>Publica las compras del Estado en Mercado Público, para todos.</span></div></li>
-        <li class="p2"><i>2</i><div><strong>Apto las descarga</strong><span>Cada 4 horas, solo datos públicos, y las ordena.</span></div></li>
-        <li class="p3"><div class="ramas">
-          <div class="rama r-radar"><i>R</i><div><strong>Radar</strong><span>Dices qué vendes y te muestra y avisa las compras que te sirven.</span></div></div>
-          <div class="rama r-apto"><i>A</i><div><strong>Apto</strong><span>Subes tus cotizaciones y te dice dónde postular y si cumples.</span></div></div>
-        </div></li>
-        <li class="p4"><i>3</i><div><strong>Tú ofertas</strong><span>En Mercado Público, con tu cuenta. Apto no envía nada por ti.</span></div></li>
-      </ol>
-    </div>
+      <div class="mapa" aria-label="Cómo se relacionan Mercado Público, Radar y Apto">
+        <div class="mp-fila"><span class="mp-ico mp-gris"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg></span><div><strong>ChileCompra</strong><span class="t">Publica las compras del Estado en Mercado Público, para todos.</span></div></div>
+        <div class="mp-lin"><i></i><em>cada 4 horas</em></div>
+        <div class="mp-fila"><span class="mp-ico mp-azul"><svg viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-7.96A6 6 0 0 1 18 9.5a4.5 4.5 0 0 1-.5 8.5M12 11v8m0 0-3-3m3 3 3-3"/></svg></span><div><strong>Apto las descarga</strong><span class="t">Solo datos públicos. Las ordena por ti.</span></div></div>
+        <svg class="mp-fork" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true"><path class="a" d="M200 0 C200 36 100 28 100 64"/><path class="b" d="M200 0 C200 36 300 28 300 64"/><path class="flujo-a" d="M200 0 C200 36 100 28 100 64"/><path class="flujo-b" d="M200 0 C200 36 300 28 300 64"/></svg>
+        <div class="mp-ramas">
+          <div class="mp-r radar"><span class="mp-ico mp-azul"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9M12 7a5 5 0 1 0 5 5M12 12l6-6"/><circle cx="12" cy="12" r="1"/></svg></span><strong>Radar</strong><p>Dices qué vendes y te muestra y avisa las compras que te sirven.</p><span class="mp-chip">Te avisa cada mañana</span></div>
+          <div class="mp-r apto"><span class="mp-ico mp-verde"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4M14 3l5 5v2M14 3v5h5"/><circle cx="16.5" cy="17" r="2.6"/><path d="m18.4 18.9 2 2"/></svg></span><strong>Apto</strong><p>Subes tus cotizaciones y te dice dónde postular y si cumples.</p><span class="mp-chip">Tu archivo se borra</span></div>
+        </div>
+        <svg class="mp-fork" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true"><path class="a" d="M100 0 C100 36 200 28 200 64"/><path class="b" d="M300 0 C300 36 200 28 200 64"/><path class="flujo-a" d="M100 0 C100 36 200 28 200 64"/><path class="flujo-b" d="M300 0 C300 36 200 28 200 64"/></svg>
+        <div class="mp-fila"><span class="mp-ico mp-ambar"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span><div><strong>Tú ofertas</strong><span class="t">En Mercado Público, con tu cuenta.</span><span class="mp-chip">Apto no envía nada por ti</span></div></div>
+      </div>
+          </div>
     </article>
     <article class="tile t-casos rv" style="--d:.1s"><div class="casos-t"><p class="k">Casos reales</p><h3>Estamos buscando a las primeras pymes.</h3><p>Apto está en piloto: todavía no hay casos de clientes y no vamos a inventarlos. Pruébalo con tu empresa y cuéntanos cómo te va.</p></div><a class="casos-btn" href="https://wa.me/56982944893?text=Hola%2C%20quiero%20participar%20en%20el%20piloto%20de%20Apto." target="_blank" rel="noopener">Quiero ser de las primeras</a></article>
   </div>

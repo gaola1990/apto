@@ -1006,7 +1006,7 @@ async function cargarPrueba(){
     D.innerHTML = '<div class="caja-prueba"><b>Plan gratis</b> · ' + (r > 0 ? "te quedan <b>" + r + " de 5</b> revisiones ¿Cumplo?." : "usaste tus 5 revisiones ¿Cumplo?. Con el plan Apto las tienes sin límite.") + "</div>"; return;
   }
   D.innerHTML = '<div class="caja-prueba"><b>Plan gratis: 5 revisiones ¿Cumplo?</b><p class="nota" style="margin:4px 0 8px">Registra el RUT de tu empresa, el mismo con el que ofertas. Hay una prueba gratis por empresa.</p>' +
-    '<label for="rutEmp">RUT de tu empresa</label><input id="rutEmp" autocomplete="off" placeholder="76.123.456-7">' +
+    '<label for="rutEmp">RUT de tu empresa</label><input id="rutEmp" autocomplete="off" inputmode="text" maxlength="12" placeholder="76.123.456-7">' +
     '<div class="acciones" style="margin-top:8px"><button class="principal" id="verRut">Verificar mi empresa</button></div><p class="nota" id="rutNota" aria-live="polite"></p></div>';
   const nota2 = t => { $("rutNota").innerHTML = t; };
   const registrar = async n => {
@@ -1238,6 +1238,20 @@ function pedirOpinion(contenedor, proceso){
     }catch(err){ msg.textContent = "No se pudo enviar: " + err.message; env.disabled = false; }
   };
 }
+
+
+// Los cuadros de RUT aceptan solo dígitos y K, y se escriben con puntos y guion automáticos
+function formatearRut(v){
+  let t = String(v).replace(/[^0-9kK]/g, "").toUpperCase();
+  t = t.replace(/K(?=.)/g, "").slice(0, 9);            // la K solo puede ir al final
+  if(t.length < 2) return t;
+  const cuerpo = t.slice(0, -1).replace(/\B(?=(\d{3})+(?!\d))/g, "."), dv = t.slice(-1);
+  return cuerpo + "-" + dv;
+}
+document.addEventListener("input", e => {
+  const el = e.target; if(!el || (el.id !== "rutEmp" && el.id !== "rutcat")) return;
+  const f = formatearRut(el.value); if(f !== el.value) el.value = f;
+});
 
 // Modo demo para grabar el video: ?demo=1 (o ?demo=aseo, ?demo=computacion). Llena un perfil de ejemplo sin guardar nada del visitante.
 (function(){

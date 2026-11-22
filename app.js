@@ -1171,26 +1171,33 @@ if(sesion) bajarCuenta().catch(() => {});
   const pop = document.createElement("div"); pop.className = "ayuda"; pop.setAttribute("role", "tooltip"); pop.id = "ayudaPop"; document.body.appendChild(pop);
   const esc2 = t => String(t).replace(/[&<>]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;"}[c]));
   let actual = null, espera = null, cierre = null;
-  function mostrar(el, x){
+  // tooltip: burbuja oscura con flechita, pegada al puntero (o al "?" / a la tarjeta si no hay puntero)
+  function ubicar(el, x, y){
+    const r = el.getBoundingClientRect(), W = innerWidth, H = innerHeight, w = pop.offsetWidth, hh = pop.offsetHeight;
+    const px = x != null ? x : r.left + r.width / 2, py = y != null ? y : r.top;
+    const left = Math.max(10, Math.min(W - w - 10, px - w / 2));
+    let bajo = false, top = py - hh - 14;
+    if(top < 64){ bajo = true; top = Math.min(H - hh - 10, py + 22); }   // si no cabe arriba (bajo el encabezado), va debajo
+    pop.classList.toggle("bajo", bajo);
+    pop.style.left = left + "px"; pop.style.top = top + "px";
+    pop.style.setProperty("--ax", Math.max(16, Math.min(w - 16, px - left)) + "px");
+  }
+  function mostrar(el, x, y){
     clearTimeout(cierre); actual = el;
     pop.innerHTML = '<p>' + esc2(el.dataset.ayuda) + '</p>' + (el.dataset.ejemplo ? '<p><b>Ejemplo:</b> ' + esc2(el.dataset.ejemplo) + '</p>' : "");
     el.setAttribute("aria-describedby", "ayudaPop");
-    const r = el.getBoundingClientRect(), W = innerWidth, H = innerHeight;
     pop.style.visibility = "hidden"; pop.classList.remove("on"); pop.style.left = "0px"; pop.style.top = "0px";
-    const w = pop.offsetWidth, hh = pop.offsetHeight;
-    let left = (x != null ? x : r.left + r.width / 2) - w / 2; left = Math.max(12, Math.min(W - w - 12, left));
-    let top = r.top - hh - 10; if(top < 70) top = Math.min(H - hh - 12, r.bottom + 10);   // arriba si cabe (bajo el encabezado), si no abajo
-    pop.style.left = left + "px"; pop.style.top = top + "px"; pop.style.visibility = "";
+    ubicar(el, x, y); pop.style.visibility = "";
     requestAnimationFrame(() => pop.classList.add("on"));
   }
   function ocultar(){ clearTimeout(espera); clearTimeout(cierre); cierre = setTimeout(() => { pop.classList.remove("on"); if(actual) actual.removeAttribute("aria-describedby"); actual = null; }, 80); }
   els.forEach(el => {
-    el.addEventListener("pointerenter", e => { if(e.pointerType === "touch") return; clearTimeout(espera); espera = setTimeout(() => mostrar(el, e.clientX), 220); });
-    el.addEventListener("pointermove", e => { if(actual === el && e.pointerType !== "touch"){ const w = pop.offsetWidth; pop.style.left = Math.max(12, Math.min(innerWidth - w - 12, e.clientX - w / 2)) + "px"; } });
+    el.addEventListener("pointerenter", e => { if(e.pointerType === "touch") return; clearTimeout(espera); const cx = e.clientX, cy = e.clientY; espera = setTimeout(() => mostrar(el, cx, cy), 220); });
+    el.addEventListener("pointermove", e => { if(actual === el && e.pointerType !== "touch") ubicar(el, e.clientX, e.clientY); });
     el.addEventListener("pointerleave", ocultar);
     el.addEventListener("focus", () => mostrar(el)); el.addEventListener("blur", ocultar);
     const b = document.createElement("button"); b.type = "button"; b.className = "ayuda-btn"; b.setAttribute("aria-label", "Explicar en simple"); b.textContent = "?";
-    b.addEventListener("click", e => { e.stopPropagation(); if(actual === el){ ocultar(); } else { mostrar(el); } });
+    b.addEventListener("click", e => { e.stopPropagation(); if(actual === el){ ocultar(); } else { const r = b.getBoundingClientRect(); mostrar(el, r.left + r.width / 2, r.top); } });
     el.appendChild(b);
   });
   document.addEventListener("keydown", e => { if(e.key === "Escape") ocultar(); });

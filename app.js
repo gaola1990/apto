@@ -1159,7 +1159,7 @@ if(sesion) bajarCuenta().catch(() => {});
 // Precios en pesos junto a la UF: cada [data-uf] muestra uf × valor de la UF, redondeado a la centena; [data-ufval] muestra el valor de 1 UF.
 (function(){
   const clp = n => "$" + n.toLocaleString("es-CL");
-  document.querySelectorAll("[data-uf]").forEach(el => { el.textContent = clp(Math.round(+el.dataset.uf * UF_CLP / 100) * 100); });
+  document.querySelectorAll("[data-uf]").forEach(el => { el.textContent = clp(Math.round(+el.dataset.uf * UF_CLP * (el.dataset.iva ? 1.19 : 1) / 100) * 100); });
   document.querySelectorAll("[data-ufval]").forEach(el => { el.textContent = clp(UF_CLP); });
 })();
 

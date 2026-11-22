@@ -763,6 +763,7 @@ function activarCumplo(raiz){
       out.innerHTML = e.error ? '<p class="nota" style="color:var(--rojo)">' + esc(e.error) + "</p>" : resultadoIA(e.resultado);
       if(!e.error && e.restante != null) out.insertAdjacentHTML("afterbegin", '<p class="nota">Plan gratis: te quedan <b>' + e.restante + " de 5</b> revisiones ¿Cumplo?.</p>");
       cargarPrueba();
+      if(!e.error) pedirOpinion(out, "cumplo");
       const cp = out.querySelector(".c-copiar");
       if(cp) cp.onclick = async () => { const t = out.querySelector(".c-plantilla"); try{ await navigator.clipboard.writeText(t.value); }catch(_){ t.select(); document.execCommand("copy"); } cp.textContent = "¡Copiado!"; setTimeout(() => cp.textContent = "Copiar texto", 1800); };
     }catch(err){ out.innerHTML = err.cuenta ? '<p class="nota" style="color:var(--rojo)">' + esc(err.message) + "</p>" : '<p class="nota" style="color:var(--rojo)">No se pudo conectar con el motor de Apto. ' + esc(err.message) + "</p>"; }
@@ -1204,6 +1205,32 @@ if(sesion) bajarCuenta().catch(() => {});
   document.addEventListener("click", e => { if(actual && !e.target.closest("[data-ayuda]")) ocultar(); });
   addEventListener("scroll", () => { if(actual) ocultar(); }, {passive: true});
 })();
+
+
+// ---------- Opinión al terminar un proceso: estrellas de 1 (insatisfecho) a 5 (muy satisfecho) y un comentario opcional ----------
+const ETIQ_ESTRELLAS = ["", "Muy insatisfecho", "Insatisfecho", "Más o menos", "Satisfecho", "Muy satisfecho"];
+function pedirOpinion(contenedor, proceso){
+  if(!sesion || !contenedor || contenedor.querySelector(".opinion")) return;
+  const d = document.createElement("div"); d.className = "opinion";
+  d.innerHTML = '<p class="op-t"><b>¿Qué te pareció el servicio?</b></p>' +
+    '<div class="op-est" role="radiogroup" aria-label="Calificación de 1 a 5 estrellas">' + [1,2,3,4,5].map(n => '<button type="button" role="radio" aria-checked="false" data-n="' + n + '" aria-label="' + n + " de 5: " + ETIQ_ESTRELLAS[n] + '">★</button>').join("") + '</div>' +
+    '<p class="op-eq nota"><span>1 = insatisfecho</span><span>5 = muy satisfecho</span></p>' +
+    '<label class="op-c">Cuéntanos tu opinión (opcional)<textarea maxlength="600" rows="3" placeholder="¿Qué te sirvió? ¿Qué mejorarías? No escribas datos personales."></textarea></label>' +
+    '<div class="acciones"><button type="button" class="op-env" disabled>Enviar opinión</button><button type="button" class="sec op-no">Ahora no</button></div><p class="nota op-msg" role="status"></p>';
+  contenedor.appendChild(d);
+  let n = 0; const est = d.querySelectorAll(".op-est button"), env = d.querySelector(".op-env"), msg = d.querySelector(".op-msg");
+  const pintarEst = v => est.forEach(b => { const on = +b.dataset.n <= v; b.classList.toggle("on", on); b.setAttribute("aria-checked", +b.dataset.n === n); });
+  est.forEach(b => { b.onclick = () => { n = +b.dataset.n; pintarEst(n); env.disabled = false; msg.textContent = ETIQ_ESTRELLAS[n]; }; b.onmouseenter = () => pintarEst(+b.dataset.n); b.onfocus = () => pintarEst(+b.dataset.n); });
+  d.querySelector(".op-est").onmouseleave = () => pintarEst(n);
+  d.querySelector(".op-no").onclick = () => d.remove();
+  env.onclick = async () => {
+    if(!n) return; env.disabled = true;
+    try{
+      await sb("/rest/v1/opiniones", {method: "POST", headers: {"Prefer": "return=minimal"}, body: JSON.stringify({proceso, estrellas: n, comentario: d.querySelector("textarea").value.trim().slice(0, 600) || null})});
+      d.innerHTML = '<p class="op-t"><b>¡Gracias por tu opinión!</b> Nos ayuda a mejorar Apto.</p>';
+    }catch(err){ msg.textContent = "No se pudo enviar: " + err.message; env.disabled = false; }
+  };
+}
 
 // Modo demo para grabar el video: ?demo=1 (o ?demo=aseo, ?demo=computacion). Llena un perfil de ejemplo sin guardar nada del visitante.
 (function(){

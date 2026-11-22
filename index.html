@@ -41,50 +41,55 @@ header nav a.cta:hover{background:#B8261B}
 .btn{background:var(--marca);color:#fff;text-decoration:none;padding:13px 24px;border-radius:999px;font-weight:700;box-shadow:0 8px 22px rgba(29,78,158,.28);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(29,78,158,.36)}
 .btn.sec2{background:transparent;color:var(--marca);box-shadow:none}
-.escena{position:relative;height:510px;max-width:1000px;margin:44px auto 0}
+.escena{position:relative;height:560px;max-width:1080px;margin:44px auto 0}
 .flot{position:absolute;background:#fff;border-radius:20px;padding:16px 18px;text-align:left;font-size:14.5px;box-shadow:0 2px 6px rgba(27,36,48,.06),0 28px 56px rgba(27,36,48,.16);animation:flotar 7s ease-in-out infinite}
 .flot .t{font-weight:700;font-size:16px;line-height:1.3;margin:8px 0 4px}
 .flot .s{color:var(--suave);font-size:13px}
-.f1{left:0;top:30px;width:min(285px,30%);z-index:1}
-.f2{right:0;top:8px;width:min(285px,30%);animation-delay:-2.3s;z-index:1}
-.f3{left:calc(50% - 115px);bottom:0;width:230px;z-index:1;animation-delay:-4.6s;display:flex;gap:12px;align-items:center}
+.f1{left:1%;top:376px;width:min(270px,30%);z-index:3}
+.f2{right:1%;top:370px;width:min(280px,30%);animation-delay:-2.3s;z-index:3}
+.f3{left:calc(50% - 115px);bottom:0;width:230px;z-index:3;animation-delay:-4.6s;display:flex;gap:12px;align-items:center}
+.vwin{position:absolute;top:0;width:48%;z-index:2;text-align:left}
+.vw-l{left:0}.vw-r{right:0;--ph:-5s}
+.vw-nombre{margin:0 0 10px;text-align:center;font-size:26px;font-weight:700;color:var(--marca);letter-spacing:-.01em;line-height:1.1}.vw-nombre small{display:block;font-size:14px;font-weight:400;color:var(--suave);letter-spacing:0;margin-top:2px}
+.vcaja{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 6px rgba(27,36,48,.08),0 34px 70px rgba(29,78,158,.26)}
+.vw-bar{display:flex;gap:6px;padding:11px 14px;background:#EEF2F8;border-bottom:1px solid #DDE4EE}.vw-bar i{width:10px;height:10px;border-radius:50%;background:#C9D3E3}
+.vw-cuerpo{position:relative;height:292px}
+.vs{position:absolute;inset:0;padding:20px 22px;opacity:0}
+.vs h4{margin:0 0 12px;font-size:18px;color:#1B2430}
+.vsA{animation:vsA 12s infinite var(--ph,0s)}.vsB{animation:vsB 12s infinite var(--ph,0s)}.vsC{animation:vsC 12s infinite var(--ph,0s)}
+.vcampo2{border:2px solid var(--marca);border-radius:12px;padding:11px 14px;font-weight:700;color:#1B2430;background:#fff}
+.tipea{display:block;overflow:hidden;white-space:nowrap;width:0;animation:vTipea 12s steps(23,end) infinite var(--ph,0s)}
+.vchip{display:inline-block;margin-top:12px;padding:5px 12px;border-radius:999px;background:#E1F1E8;color:#1E7F52;font-weight:700;font-size:13px;opacity:0;animation:vchip 12s infinite var(--ph,0s)}
+.vfila{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--linea);border-radius:12px;margin-bottom:8px;font-size:14px;font-weight:700;color:#1B2430;opacity:0;transform:translateY(10px)}
+.vfila small{font-weight:700;font-size:12px;border-radius:999px;padding:3px 9px;background:#E1F1E8;color:#1E7F52;white-space:nowrap}.vfila small.am{background:#FBEFD0;color:#7A5A00}.vfila span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vsB .vfila:nth-of-type(1){animation:vB1 12s infinite var(--ph,0s)}.vsB .vfila:nth-of-type(2){animation:vB2 12s infinite var(--ph,0s)}.vsB .vfila:nth-of-type(3){animation:vB3 12s infinite var(--ph,0s)}
+.vsC .vfila:nth-of-type(1){animation:vC1 12s infinite var(--ph,0s)}.vsC .vfila:nth-of-type(2){animation:vC2 12s infinite var(--ph,0s)}.vsC .vfila:nth-of-type(3){animation:vC3 12s infinite var(--ph,0s)}
+.varchivo{display:flex;align-items:center;gap:12px;border:2px dashed #9DB4DC;border-radius:14px;padding:18px 16px;background:#F3F7FD;color:var(--marca);font-weight:700;animation:vArch 12s infinite var(--ph,0s)}
+.varchivo b{width:38px;height:46px;border-radius:8px;background:var(--marca);color:#fff;display:grid;place-items:center;font-size:12px}
+.vlisto{position:absolute;left:22px;right:22px;bottom:16px;text-align:center;padding:10px;border-radius:999px;background:var(--marca);color:#fff;font-weight:700;opacity:0;animation:vListo 12s infinite var(--ph,0s)}
+@keyframes vsA{0%,3%{opacity:0}8%,30%{opacity:1}35%,100%{opacity:0}}
+@keyframes vsB{0%,34%{opacity:0}39%,62%{opacity:1}67%,100%{opacity:0}}
+@keyframes vsC{0%,66%{opacity:0}71%,93%{opacity:1}97%,100%{opacity:0}}
+@keyframes vTipea{0%,8%{width:0}22%,100%{width:100%}}
+@keyframes vchip{0%,23%{opacity:0;transform:translateY(6px)}27%,30%{opacity:1;transform:none}35%,100%{opacity:0}}
+@keyframes vArch{0%,6%{transform:translateY(-14px) scale(.96);opacity:0}14%,30%{transform:none;opacity:1}35%,100%{opacity:0}}
+@keyframes vB1{0%,40%{opacity:0;transform:translateY(10px)}45%,62%{opacity:1;transform:none}67%,100%{opacity:0}}
+@keyframes vB2{0%,46%{opacity:0;transform:translateY(10px)}51%,62%{opacity:1;transform:none}67%,100%{opacity:0}}
+@keyframes vB3{0%,52%{opacity:0;transform:translateY(10px)}57%,62%{opacity:1;transform:none}67%,100%{opacity:0}}
+@keyframes vC1{0%,72%{opacity:0;transform:translateY(10px)}77%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
+@keyframes vC2{0%,77%{opacity:0;transform:translateY(10px)}82%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
+@keyframes vC3{0%,82%{opacity:0;transform:translateY(10px)}87%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
+@keyframes vListo{0%,86%{opacity:0;transform:translateY(8px)}90%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.vsA,.vsB{display:none}.vsC,.vsC .vfila,.vlisto{animation:none!important;opacity:1;transform:none}}
 .f3 .dia{background:var(--rojo-suave);color:var(--rojo);border-radius:12px;padding:6px 10px;text-align:center;font-weight:700;line-height:1.1}
 @keyframes flotar{50%{transform:translateY(-12px)}}
 /* ventana central de la portada: presenta a Apto como la solución al trámite de postular (ciclo de 12 s) */
-.vcent{position:absolute;left:50%;top:62px;width:min(470px,52%);transform:translateX(-50%);z-index:2;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 6px rgba(27,36,48,.08),0 34px 70px rgba(29,78,158,.28);text-align:left}
-.vc-bar{display:flex;gap:6px;padding:11px 14px;background:#EEF2F8;border-bottom:1px solid #DDE4EE}
-.vc-bar i{width:10px;height:10px;border-radius:50%;background:#C9D3E3}
-.vc-cuerpo{position:relative;height:304px}
-.vc-esc{position:absolute;inset:0;padding:20px 24px;opacity:0}
-.vc-a{animation:vcA 12s infinite}.vc-b{animation:vcB 12s infinite}
-.vc-tit{margin:0 0 12px;font-weight:700;font-size:19px;color:#1B2430}
-.vc-caos{position:relative;height:118px}
-.vc-caos span{position:absolute;padding:6px 12px;border-radius:999px;background:#F3E6E3;color:#9B3A2D;font-size:13px;font-weight:700;white-space:nowrap;animation:vcTiembla 1.7s ease-in-out infinite}
-.c1{left:2%;top:6px;--r:-6deg}.c2{left:26%;top:0;--r:4deg;animation-delay:-.4s!important}.c3{left:68%;top:12px;--r:-3deg;animation-delay:-.9s!important}
-.c4{left:8%;top:46px;--r:5deg;animation-delay:-1.2s!important}.c5{left:42%;top:42px;--r:-5deg;animation-delay:-.2s!important}.c6{left:62%;top:70px;--r:3deg;animation-delay:-.7s!important}.c7{left:20%;top:84px;--r:-2deg;animation-delay:-1.4s!important}
-.vc-preg{position:absolute;left:24px;right:24px;bottom:20px;margin:0;font-size:22px;font-weight:700;color:#8793A6}
-.vc-marca{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.vc-marca b{width:46px;height:46px;border-radius:14px;background:var(--marca);color:#fff;font-size:26px;display:grid;place-items:center}
-.vc-marca span{font-size:24px;font-weight:700;color:var(--marca);line-height:1.05}.vc-marca small{display:block;font-size:14px;font-weight:400;color:var(--suave)}
-.vc-checks{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-.vc-checks li{position:relative;padding:9px 12px 9px 44px;border-radius:12px;background:#E1F1E8;color:#1E7F52;font-weight:700;font-size:15px;opacity:0;transform:translateX(-12px)}
-.vc-checks li::before{content:"✓";position:absolute;left:12px;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;background:#1E7F52;color:#fff;display:grid;place-items:center;font-size:13px}
-.vc-checks li:nth-child(1){animation:vcL1 12s infinite}.vc-checks li:nth-child(2){animation:vcL2 12s infinite}.vc-checks li:nth-child(3){animation:vcL3 12s infinite}
-.vc-listo{position:absolute;left:24px;right:24px;bottom:16px;text-align:center;padding:10px;border-radius:999px;background:var(--marca);color:#fff;font-weight:700;opacity:0;animation:vcListo 12s infinite}
-@keyframes vcA{0%,3%{opacity:0;transform:scale(.98)}8%,34%{opacity:1;transform:none}39%,100%{opacity:0;transform:scale(1.03)}}
-@keyframes vcB{0%,38%{opacity:0;transform:scale(.97)}44%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
-@keyframes vcTiembla{0%,100%{transform:rotate(var(--r,0deg)) translateY(0)}50%{transform:rotate(calc(var(--r,0deg)*-1)) translateY(-4px)}}
-@keyframes vcL1{0%,46%{opacity:0;transform:translateX(-12px)}52%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
-@keyframes vcL2{0%,56%{opacity:0;transform:translateX(-12px)}62%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
-@keyframes vcL3{0%,66%{opacity:0;transform:translateX(-12px)}72%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
-@keyframes vcListo{0%,78%{opacity:0;transform:translateY(8px)}84%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
-@media(prefers-reduced-motion:reduce){.vc-a{display:none}.vc-b,.vc-checks li,.vc-listo{animation:none!important;opacity:1;transform:none}.vc-caos span{animation:none}}
 
 .barra-p{height:8px;border-radius:99px;background:var(--linea);overflow:hidden;margin-top:10px}
 .barra-p i{display:block;height:100%;width:0;border-radius:99px;background:var(--verde-apto);transition:width 1.8s cubic-bezier(.2,.8,.2,1) .7s}
 .in .barra-p i,.sin-js .barra-p i{width:50%}
-@media(max-width:620px){.escena{height:auto;display:grid;gap:14px;margin-top:36px}.flot{position:static;width:auto}.vcent{position:static;transform:none;width:auto;order:-1}}
-@media(max-width:1000px) and (min-width:621px){.escena{height:540px}.vcent{width:min(470px,60%)}.f1{width:min(250px,30%)}.f2{width:min(240px,30%)}}
+@media(max-width:620px){.escena{height:auto;display:grid;gap:14px;margin-top:36px}.flot{position:static;width:auto}.vwin{position:static;width:auto;order:-1}}
+@media(max-width:1000px) and (min-width:621px){.escena{height:600px}.vwin{width:48.5%}.f1{width:min(250px,34%)}.f2{width:min(240px,34%)}}
 .seccion{max-width:1180px;margin:0 auto;padding:72px 16px 8px}
 .sec-t{font-size:clamp(30px,4.6vw,54px);line-height:1.07;letter-spacing:-.025em;text-transform:none;color:var(--tinta);margin:0 0 30px;font-weight:700;max-width:860px}
 .sec-t span{color:var(--suave)}
@@ -536,20 +541,23 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
   <div class="botones rv" style="--d:.24s"><a class="btn sec2" href="#servicios">Los dos servicios ›</a></div>
   <p class="fuente-hero rv" style="--d:.28s"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.2 8 11 4.6-1.8 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Datos oficiales de <b>ChileCompra</b> · Mercado Público</p>
   <div class="escena rv" style="--d:.32s" aria-hidden="true">
-    <div class="vcent">
-      <div class="vc-bar"><i></i><i></i><i></i></div>
-      <div class="vc-cuerpo">
-        <div class="vc-esc vc-a">
-          <p class="vc-tit">Postular al Estado…</p>
-          <div class="vc-caos"><span class="c1">Bases</span><span class="c2">Fichas técnicas</span><span class="c3">Anexos</span><span class="c4">Garantías</span><span class="c5">Plazos</span><span class="c6">Formularios</span><span class="c7">Requisitos</span></div>
-          <p class="vc-preg">¿Por dónde empiezo?</p>
-        </div>
-        <div class="vc-esc vc-b">
-          <div class="vc-marca"><b>A</b><span>Apto<small>lo hace simple</small></span></div>
-          <ul class="vc-checks"><li>Compras que te sirven</li><li>Si cumples lo que piden</li><li>Texto listo para tu oferta</li></ul>
-          <div class="vc-listo">Listo para ofertar ✓</div>
-        </div>
-      </div>
+    <div class="vwin vw-l">
+      <p class="vw-nombre">Radar<small>Te avisa de las compras que sirven</small></p>
+      <div class="vcaja"><div class="vw-bar"><i></i><i></i><i></i></div>
+        <div class="vw-cuerpo">
+          <div class="vs vsA"><h4>¿Qué vendes?</h4><div class="vcampo2"><span class="tipea">bandas elásticas, pesas</span></div><span class="vchip">Entendimos: artículos deportivos</span></div>
+          <div class="vs vsB"><h4>Compras abiertas para ti</h4><div class="vfila"><span>Bandas elásticas de resistencia</span><small class="am">Cierra en 3 días</small></div><div class="vfila"><span>Pesas y colchonetas, CESFAM</span><small>Poca competencia</small></div><div class="vfila"><span>Artículos deportivos escuela</span><small>Cierra en 9 días</small></div></div>
+          <div class="vs vsC"><h4>Cada mañana, en tu correo</h4><div class="vfila"><span>🔔 Compras nuevas para ti</span><small>3 hoy</small></div><div class="vfila"><span>📅 Fechas en tu calendario</span><small>listo</small></div><div class="vfila"><span>💲 Cuánto cobrar</span><small>listo</small></div><div class="vlisto">No se te pasa ninguna ✓</div></div>
+        </div></div>
+    </div>
+    <div class="vwin vw-r">
+      <p class="vw-nombre">Apto<small>Subes tu producto y te dice dónde postular</small></p>
+      <div class="vcaja"><div class="vw-bar"><i></i><i></i><i></i></div>
+        <div class="vw-cuerpo">
+          <div class="vs vsA"><h4>Sube tu cotización</h4><div class="varchivo"><b>PDF</b><span>cotizacion.pdf</span></div></div>
+          <div class="vs vsB"><h4>Esto leímos de tu cotización</h4><div class="vfila"><span>Resma de papel carta</span><small class="am">$3.200</small></div><div class="vfila"><span>Plastificadora A3</span><small class="am">$37.800</small></div><div class="vfila"><span>Guillotina 30×38</span><small class="am">$25.700</small></div></div>
+          <div class="vs vsC"><h4>Dónde postular</h4><div class="vfila"><span>Artículos de escritorio, salud</span><small>2 de tus productos</small></div><div class="vfila"><span>Papelería general, municipio</span><small>2 de tus productos</small></div><div class="vfila"><span>Impresión de material</span><small>1 de tus productos</small></div><div class="vlisto">Listo para ofertar ✓</div></div>
+        </div></div>
     </div>
     <div class="flot f1"><span class="et ok">Sirve para tu negocio</span><div class="t">Adquisición de 2 bandas elásticas de resistencia</div><div class="s">Compra de ejemplo · Compra pequeña</div></div>
     <div class="flot f2"><b>Cumples 4 de 8 requisitos esenciales</b><div class="barra-p"><i></i></div><div class="s" style="margin-top:8px">Antes de ofertar, te falta indicar la garantía y adjuntar 3 documentos.</div></div>

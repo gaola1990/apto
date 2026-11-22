@@ -41,7 +41,7 @@ header nav a.cta:hover{background:#B8261B}
 .btn{background:var(--marca);color:#fff;text-decoration:none;padding:13px 24px;border-radius:999px;font-weight:700;box-shadow:0 8px 22px rgba(29,78,158,.28);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(29,78,158,.36)}
 .btn.sec2{background:transparent;color:var(--marca);box-shadow:none}
-.escena{position:relative;height:560px;max-width:1080px;margin:44px auto 0}
+.escena{position:relative;height:650px;max-width:1080px;margin:44px auto 0}
 .flot{position:absolute;background:#fff;border-radius:20px;padding:16px 18px;text-align:left;font-size:14.5px;box-shadow:0 2px 6px rgba(27,36,48,.06),0 28px 56px rgba(27,36,48,.16);animation:flotar 7s ease-in-out infinite}
 .flot .t{font-weight:700;font-size:16px;line-height:1.3;margin:8px 0 4px}
 .flot .s{color:var(--suave);font-size:13px}
@@ -81,6 +81,16 @@ header nav a.cta:hover{background:#B8261B}
 @keyframes vC3{0%,82%{opacity:0;transform:translateY(10px)}87%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
 @keyframes vListo{0%,86%{opacity:0;transform:translateY(8px)}90%,93%{opacity:1;transform:none}97%,100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.vsA,.vsB{display:none}.vsC,.vsC .vfila,.vlisto{animation:none!important;opacity:1;transform:none}}
+.flot.sm,.flot.xs{width:auto;white-space:nowrap;font-weight:700;color:#1B2430}
+.flot.sm{padding:10px 15px;font-size:13.5px;border-radius:16px}
+.flot.xs{padding:7px 12px;font-size:12px;border-radius:13px;box-shadow:0 2px 5px rgba(27,36,48,.06),0 16px 34px rgba(27,36,48,.13)}
+.flot .v{color:var(--verde-apto)}.flot .az{color:var(--marca)}
+.f4{left:30%;top:398px;z-index:3;animation-delay:-1.1s}
+.f5{left:5%;top:530px;z-index:3;animation-delay:-3.4s}
+.f6{left:23%;top:590px;z-index:3;animation-delay:-5.2s}
+.f7{right:29%;top:392px;z-index:3;animation-delay:-2.7s}
+.f8{right:5%;top:540px;z-index:3;animation-delay:-4.1s}
+.f9{right:21%;top:594px;z-index:3;animation-delay:-.6s}
 .f3 .dia{background:var(--rojo-suave);color:var(--rojo);border-radius:12px;padding:6px 10px;text-align:center;font-weight:700;line-height:1.1}
 @keyframes flotar{50%{transform:translateY(-12px)}}
 /* ventana central de la portada: presenta a Apto como la solución al trámite de postular (ciclo de 12 s) */
@@ -88,8 +98,8 @@ header nav a.cta:hover{background:#B8261B}
 .barra-p{height:8px;border-radius:99px;background:var(--linea);overflow:hidden;margin-top:10px}
 .barra-p i{display:block;height:100%;width:0;border-radius:99px;background:var(--verde-apto);transition:width 1.8s cubic-bezier(.2,.8,.2,1) .7s}
 .in .barra-p i,.sin-js .barra-p i{width:50%}
-@media(max-width:620px){.escena{height:auto;display:grid;gap:14px;margin-top:36px}.flot{position:static;width:auto}.vwin{position:static;width:auto;order:-1}}
-@media(max-width:1000px) and (min-width:621px){.escena{height:600px}.vwin{width:48.5%}.f1{width:min(250px,34%)}.f2{width:min(240px,34%)}}
+@media(max-width:620px){.escena{height:auto;display:grid;gap:14px;margin-top:36px}.flot{position:static;width:auto}.flot.sm,.flot.xs{display:none}.vwin{position:static;width:auto;order:-1}}
+@media(max-width:1000px) and (min-width:621px){.f4,.f6,.f7,.f9{display:none}.f5{left:2%}.f8{right:2%}.escena{height:660px}.vwin{width:48.5%}.f1{width:min(250px,34%)}.f2{width:min(240px,34%)}}
 .seccion{max-width:1180px;margin:0 auto;padding:72px 16px 8px}
 .sec-t{font-size:clamp(30px,4.6vw,54px);line-height:1.07;letter-spacing:-.025em;text-transform:none;color:var(--tinta);margin:0 0 30px;font-weight:700;max-width:860px}
 .sec-t span{color:var(--suave)}
@@ -561,6 +571,12 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
     </div>
     <div class="flot f1"><span class="et ok">Sirve para tu negocio</span><div class="t">Adquisición de 2 bandas elásticas de resistencia</div><div class="s">Compra de ejemplo · Compra pequeña</div></div>
     <div class="flot f2"><b>Cumples 4 de 8 requisitos esenciales</b><div class="barra-p"><i></i></div><div class="s" style="margin-top:8px">Antes de ofertar, te falta indicar la garantía y adjuntar 3 documentos.</div></div>
+    <div class="flot sm f4"><span class="v">✓</span> 3 compras nuevas hoy</div>
+    <div class="flot xs f5">✅ <span class="v">Poca competencia</span></div>
+    <div class="flot xs f6">📅 Fechas en tu calendario</div>
+    <div class="flot sm f7"><span class="v">✓</span> Calza con 2 de tus productos</div>
+    <div class="flot xs f8">💲 Cotizado: <span class="az">$37.800 neto</span></div>
+    <div class="flot xs f9">🏆 <span class="v">Listo para ofertar</span></div>
     <div class="flot f3"><div class="dia">3<br><small>días</small></div><div><b>Cierra pronto</b><div class="s">Te lo recordamos en tu calendario</div></div></div>
   </div>
 </section>

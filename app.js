@@ -976,7 +976,7 @@ function pedirEntrada(plan, conScroll){
   $("entradaCuenta").appendChild($("cuenta"));
   if(conScroll) setTimeout(() => E.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center"}), 200);   // espera a que empiece a desplegarse
 }
-document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn"); if(b) pedirEntrada(b.dataset.plan, true);
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest(".plan-btn, .svc-btn[data-plan]"); if(b) pedirEntrada(b.dataset.plan, true);
   const cc = e.target.closest && e.target.closest(".ciclo button"); if(cc){   // Mensual / Anual
     const g = document.querySelector(".planes"); if(g) g.dataset.ciclo = cc.dataset.ciclo;
     document.querySelectorAll(".ciclo button").forEach(x => { const on = x === cc; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });

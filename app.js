@@ -932,7 +932,7 @@ async function bajarCuenta(){
   const filas = await sb("/rest/v1/cuentas?select=perfil,catalogo,guardadas,pasos,avisos");
   if(filas && filas.length){
     const c = filas[0];
-    avisosPref = c.avisos || "no"; if($("avisosOk")) $("avisosOk").checked = avisosPref === "diario";
+    avisosPref = c.avisos || "diario"; if($("avisosOk")) $("avisosOk").checked = avisosPref === "diario";
     const ticket = perfil.ticket; perfil = {...perfil, ...c.perfil, ticket}; catalogo = c.catalogo || []; guardadas = c.guardadas || {}; hechos = c.pasos || {};
     try{ localStorage.setItem("rp_perfil", JSON.stringify(perfil)); localStorage.setItem("rp_catalogo", JSON.stringify(catalogo)); localStorage.setItem("rp_guardadas", JSON.stringify(guardadas)); localStorage.setItem("rp_pasos", JSON.stringify(hechos)); }catch(e){}
     ["extra","excluir","region","tamano"].forEach(k => $(k).value = perfil[k] || (k === "tamano" ? "5" : ""));
@@ -942,7 +942,7 @@ async function bajarCuenta(){
   } else { subirCuenta(); nota("Tu catálogo y tus compras guardadas ahora quedan en tu cuenta."); }
 }
 const nota = t => { const n = $("cuentaNota"); if(n) n.textContent = t; };
-let avisosPref = "no";   // los avisos por correo son opt-in: solo "diario" si la persona marca la casilla
+let avisosPref = "diario";   // los avisos por correo vienen marcados por defecto; la persona puede desmarcarlos cuando quiera
 // ---------- Entrada por plan: la herramienta se abre al elegir un plan e ingresar los datos ----------
 // (Solo es la puerta de entrada de la página; el límite de revisiones ¿Cumplo? lo exige el servidor.)
 const NOMBRES_PLAN = {gratis: "Plan Gratis", radar: "Plan Radar", apto: "Plan Apto"};
@@ -1030,7 +1030,7 @@ function pintarCuenta(){
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="aprenderOk"' + (perfil.aprender !== false ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
       '<span>Ayudar a mejorar Apto <span class="nota" style="display:block">Cuando guardas o descartas una compra, Apto registra de forma anónima qué palabras van con qué productos. <a href="privacidad.html">Más información</a></span></span></label>' +
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="avisosOk"' + (avisosPref === "diario" ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
-      '<span>Recibir por correo los avisos de compras de Mercado Público <span class="nota" style="display:block">Si lo aceptas, te enviamos cada mañana las compras nuevas que sirven para lo que vendes. Puedes desactivarlo cuando quieras; cada correo trae un enlace para darte de baja.</span></span></label>' +
+      '<span>Recibir por correo los avisos de compras de Mercado Público <span class="nota" style="display:block">Te enviamos cada mañana las compras nuevas que sirven para lo que vendes. Puedes desactivarlo cuando quieras; cada correo trae un enlace para darte de baja.</span></span></label>' +
       '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button><button class="sec" id="borrarDatos">Borrar mis datos</button></div><p class="nota" id="cuentaNota"></p>';
     cargarPrueba();
     $("avisosOk").onchange = async e => {

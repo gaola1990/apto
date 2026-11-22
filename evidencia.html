@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://github.com; connect-src 'self'; object-src 'none'; base-uri 'self'">
+<title>Apto · Evidencia</title>
+<meta name="description" content="Lo que Apto hace hoy, cómo lo medimos y qué falta por validar. Cifras reales, con su fecha y su método.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
+<style>
+  body{font-family:"Atkinson Hyperlegible Next",system-ui,sans-serif;background:#F6F8FB;color:#1B2430;margin:0;line-height:1.55}
+  main{max-width:860px;margin:0 auto;padding:36px 16px 64px}
+  h1{color:#1D4E9E;font-size:30px;margin:0 0 6px} h2{font-size:21px;margin:34px 0 8px;color:#16336b} a{color:#1D4E9E}
+  .nota{color:#5b6573;font-size:14px}
+  .cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+  .cifra{background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 1px 2px rgba(27,36,48,.04),0 8px 24px rgba(27,36,48,.06)}
+  .cifra b{display:block;font-size:30px;color:#1D4E9E;line-height:1.1} .cifra span{font-size:14px;color:#3a4553}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(27,36,48,.04),0 8px 24px rgba(27,36,48,.06);margin-top:12px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #e6eaf0;font-size:15px;vertical-align:top} th{background:#eef2f8;font-size:13px}
+  ul{padding-left:20px} li{margin:5px 0}
+  .caja{background:#fff;border-left:4px solid #1D4E9E;border-radius:10px;padding:12px 16px;margin-top:12px}
+  .aviso{border-left-color:#8a5b00}
+  .btn{display:inline-block;background:#1D4E9E;color:#fff;text-decoration:none;padding:11px 18px;border-radius:10px;font-weight:700;margin-top:8px}
+  @media(max-width:560px){th,td{font-size:14px;padding:8px}}
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← Volver a Apto</a></p>
+  <h1>Evidencia</h1>
+  <p class="nota">Lo que Apto hace hoy, cómo lo medimos y qué falta por validar. Cada cifra trae su fecha y su método; las que no hemos medido no aparecen. Mediciones del 22 de noviembre de 2026.</p>
+
+  <h2>Lo que funciona hoy</h2>
+  <div class="cifras">
+    <div class="cifra"><b>5.187</b><span>compras del Estado abiertas revisadas, actualizadas cada 4 horas</span></div>
+    <div class="cifra"><b>2.131</b><span>licitaciones ya adjudicadas, usadas para estimar la competencia</span></div>
+    <div class="cifra"><b>2.051</b><span>clases de productos en el diccionario propio</span></div>
+    <div class="cifra"><b>392</b><span>categorías oficiales de Mercado Público</span></div>
+    <div class="cifra"><b>44 de 44</b><span>pruebas automáticas aprobadas; sin ellas no se publica ningún cambio</span></div>
+  </div>
+  <p class="nota">Fuente de los datos: datos abiertos de ChileCompra. Apto no es un sitio oficial del Estado. Estado de cada fuente en <a href="estado.html">Estado de los datos</a>.</p>
+
+  <h2>Qué tan bien encuentra compras para un producto</h2>
+  <div class="caja">
+    <p><b>87 %.</b> Probamos 50 productos típicos de pymes (pintura, computadores, uniformes, ferretería, aseo, capacitación…). En promedio, 87 de cada 100 resultados entre los 10 primeros contienen la palabra buscada.</p>
+    <p class="nota">Método: se escribe el término, se toman los 10 primeros resultados y se cuenta cuántos nombran el producto en su título, su descripción o sus productos. Es una medida simple y conservadora: no cuenta como acierto un resultado que usa un sinónimo legítimo, y tampoco mide si la compra le sirve de verdad al proveedor. Todavía no la hemos comparado con el juicio de proveedores reales.</p>
+  </div>
+  <div class="caja aviso">
+    <p><b>Dónde falla hoy, sin esconderlo:</b></p>
+    <ul>
+      <li>«Colaciones»: sin resultados.</li>
+      <li>Con precisión baja: tóner, ropa de trabajo, servicio de aseo, ampolletas, flores y jardinería. En parte porque el Estado las nombra de otra manera (por ejemplo «áreas verdes»), y en parte porque nos falta cubrirlas. Es la lista de trabajo del diccionario.</li>
+    </ul>
+  </div>
+
+  <h2>Qué es propio y qué es de terceros</h2>
+  <table>
+    <thead><tr><th>Pieza</th><th>De quién</th></tr></thead>
+    <tbody>
+      <tr><td>Motor de calce: sinónimos, abreviaturas, corrección de errores y puntaje de relevancia</td><td>Propio</td></tr>
+      <tr><td>Diccionario de productos (2.051 clases) y relaciones aprendidas, con revisión de lo bloqueado</td><td>Propio, se actualiza cada noche</td></tr>
+      <tr><td>Reglas del «¿Cumplo?»: toda característica con número y unidad, y qué bloquea y qué solo alerta</td><td>Propio</td></tr>
+      <tr><td>Revisión editable de los productos antes de buscar, y explicación de por qué calza cada compra</td><td>Propio</td></tr>
+      <tr><td>Modelo de lenguaje que lee los documentos</td><td>Modelo abierto de terceros, ejecutado en equipo propio</td></tr>
+      <tr><td>Datos de compras</td><td>ChileCompra (datos abiertos)</td></tr>
+      <tr><td>Alojamiento de la página y cuentas</td><td>GitHub Pages y Supabase</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Tus datos</h2>
+  <ul>
+    <li>Los archivos que subes se leen con inteligencia artificial que corre en nuestro propio equipo, no en servicios de terceros como ChatGPT. Viajan cifrados hasta ese equipo y se borran al terminar la revisión.</li>
+    <li>Tú revisas y corriges los productos que Apto lee antes de que busque.</li>
+    <li>Más detalle en <a href="privacidad.html">Privacidad</a>.</li>
+  </ul>
+
+  <h2>Lo que todavía no está validado</h2>
+  <div class="caja aviso">
+    <ul>
+      <li>Aún no hay empresas externas usando Apto de forma sostenida: la validación con usuarios reales está por comenzar.</li>
+      <li>No tenemos datos de que usar Apto lleve a ganar más compras. Apto te dice dónde puedes postular y si cumples; ganar depende de tu oferta y del Estado.</li>
+      <li>La lectura de documentos depende hoy de un equipo propio que puede estar apagado; cuando lo está, el resto de Apto sigue funcionando.</li>
+      <li>Los datos solo cubren Chile por ahora.</li>
+    </ul>
+  </div>
+
+  <h2>Probarlo con tu empresa</h2>
+  <p>Buscamos pymes que quieran usar Apto de verdad y contarnos qué funciona y qué no. Empiezas gratis, sin tarjeta.</p>
+  <a class="btn" href="https://wa.me/56982944893?text=Hola%2C%20quiero%20probar%20Apto%20en%20mi%20empresa." target="_blank" rel="noopener">Quiero probarlo</a>
+</main>
+</body>
+</html>

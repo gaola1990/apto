@@ -817,6 +817,7 @@ function conectarIA(){
   const probar = (url, ms) => { const ctl = new AbortController(); setTimeout(() => ctl.abort(), ms); return fetch(url + "/estado", {signal: ctl.signal}).then(r => r.json()).then(j => j && j.ok); };
   const activar = (url, nube) => {
     MOTOR = url; motorLocal = true; motorNube = nube;
+    $("motorEstado").textContent = "Lectura de documentos: en línea.";
     if(!$("bficha")){ $("ejemplos").insertAdjacentHTML("beforeend", '<button class="principal" id="bficha">Revisar una ficha técnica real</button>'); $("bficha").onclick = abrirFichaReal; }
   };
   // si no se está en el PC de Apto, se usa el mismo motor a través del túnel de Cloudflare (dirección en motor.json)
@@ -829,7 +830,7 @@ function conectarIA(){
   const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
   (local ? probar(MOTOR_PC, 1500) : Promise.resolve(false)).then(ok => { if(ok) return activar(MOTOR_PC, false); throw 0; })
     .catch(() => porTunel())
-    .catch(() => setTimeout(() => porTunel().catch(() => {}), 30000)); // el túnel pudo cambiar de dirección: se reintenta
+    .catch(() => { $("motorEstado").textContent = "Lectura de documentos: en pausa por ahora. Todo lo demás funciona; vuelve a intentar en unos minutos."; setTimeout(() => porTunel().catch(() => {}), 30000); }); // el túnel pudo cambiar de dirección: se reintenta
 }
 
 async function cargar(){

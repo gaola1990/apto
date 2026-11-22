@@ -145,6 +145,7 @@ header nav a.cta:hover{background:#B8261B}
 .t-big{grid-column:span 4;grid-row:span 2;background:var(--marca);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;min-height:380px}
 /* tarjeta de demostración: una "ventana" que repite en ciclo (15 s) los tres pasos; todo con CSS, sin video pesado */
 .t-demo{justify-content:space-between!important;gap:14px;min-height:480px}
+@media(min-width:861px){.t-half{grid-column:span 3;grid-row:span 1;min-height:470px}.t-half .vtitulo{font-size:clamp(21px,2.2vw,30px)!important}}
 .t-demo .vtitulo{position:relative;z-index:1;margin:0;font-size:clamp(26px,3vw,38px);line-height:1.08;letter-spacing:-.02em;color:#fff;display:flex;align-items:center;gap:14px}
 .vplay{flex:none;width:clamp(38px,3.6vw,48px);height:clamp(38px,3.6vw,48px);border-radius:50%;background:#fff;color:var(--marca);display:grid;place-items:center;box-shadow:0 0 0 6px rgba(255,255,255,.22);animation:latido 2.4s ease-in-out infinite}
 .vplay svg{margin-left:3px}
@@ -164,14 +165,15 @@ header nav a.cta:hover{background:#B8261B}
 .vop{margin:0!important;padding:10px 12px;opacity:0;transform:translateY(10px);pointer-events:none;box-shadow:0 1px 3px rgba(27,36,48,.1)}
 .vop h3{font-size:clamp(13px,1.35vw,15px)!important;margin:0 0 4px!important;line-height:1.2}
 .vop1{animation:vop1 15s infinite}.vop2{animation:vop2 15s infinite}.vop3{animation:vop3 15s infinite}
-.vsem{margin:0!important;display:grid;gap:6px}
-.vsem li{opacity:0;transform:translateX(-10px);display:flex!important;align-items:center;gap:8px;padding:7px 12px!important;border-radius:10px;font-size:14px;margin:0!important}
-.vsem li small{display:inline!important;margin:0 0 0 auto!important;font-size:13px;opacity:.85}
-.vsem li i{flex:none}
-.vsem li.s-ok,.vsem li.s-al,.vsem li.s-ro{animation-delay:0s!important}
+.vsem,.vsem2{margin:0!important;display:grid;gap:6px}
+.vsem li,.vsem2 li{opacity:0;transform:translateX(-10px);display:flex!important;align-items:center;gap:8px;padding:7px 12px!important;border-radius:10px;font-size:14px;margin:0!important}
+.vsem li small,.vsem2 li small{display:inline!important;margin:0 0 0 auto!important;font-size:13px;opacity:.85}
+.vsem li i,.vsem2 li i{flex:none}
+.vsem li.s-ok,.vsem li.s-al,.vsem li.s-ro,.vsem2 li.s-ok{animation-delay:0s!important}
 .vsem li:nth-child(1){animation:vr1 15s infinite}.vsem li:nth-child(2){animation:vr2 15s infinite}.vsem li:nth-child(3){animation:vr3 15s infinite}
-.vfin{opacity:0;background:#E8EFFB;border-radius:12px;padding:8px 12px;display:flex;flex-direction:column;gap:1px;font-size:clamp(12.5px,1.3vw,14.5px);line-height:1.3;animation:vfin 15s infinite}
-.vfin b{color:var(--marca)}.vfin span{color:#4B5668}
+.vsem2 li:nth-child(1){animation:vr1 15s infinite}.vsem2 li:nth-child(2){animation:vr2 15s infinite}.vsem2 li:nth-child(3){animation:vr3 15s infinite}
+.vfin,.vfin2{opacity:0;background:#E8EFFB;border-radius:12px;padding:8px 12px;display:flex;flex-direction:column;gap:1px;font-size:clamp(12.5px,1.3vw,14.5px);line-height:1.3;animation:vfin 15s infinite}
+.vfin b,.vfin2 b{color:var(--marca)}.vfin span,.vfin2 span{color:#4B5668}
 .vpasos{display:flex;gap:8px;position:relative;z-index:1;flex-wrap:wrap}
 .vpasos span{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff;opacity:.7}
 .vp1{animation:vp1 15s infinite}.vp2{animation:vp2 15s infinite}.vp3{animation:vp3 15s infinite}
@@ -195,7 +197,7 @@ header nav a.cta:hover{background:#B8261B}
 @keyframes vp1{0%,29%{opacity:1;background:#fff;color:var(--marca)}31%,100%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}}
 @keyframes vp2{0%,30%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}32%,60%{opacity:1;background:#fff;color:var(--marca)}62%,100%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}}
 @keyframes vp3{0%,61%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}63%,93%{opacity:1;background:#fff;color:var(--marca)}96%,100%{opacity:.7;background:rgba(255,255,255,.16);color:#fff}}
-@media(prefers-reduced-motion:reduce){.vtit,.vesc,.tipeo,.ventendi,.vop,.vsem li,.vfin,.vpasos span{animation:none!important}.ve3,.vt3{opacity:1}.vsem li,.vfin{opacity:1;transform:none}.vp3{opacity:1;background:#fff;color:var(--marca)}}
+@media(prefers-reduced-motion:reduce){.vtit,.vesc,.tipeo,.ventendi,.vop,.vsem li,.vsem2 li,.vfin,.vfin2,.vpasos span{animation:none!important}.ve3,.vt3{opacity:1}.vsem li,.vsem2 li,.vfin,.vfin2{opacity:1;transform:none}.vp3{opacity:1;background:#fff;color:var(--marca)}}
 .que{display:block;margin-top:5px;color:#1B2430;font-weight:700;font-size:13.5px}
 .proximo{margin:12px 0;padding:12px 16px;border-radius:14px;background:#E8EFFB;color:#1B2430}.proximo ol{margin:6px 0 0;padding-left:20px}.proximo li{margin:2px 0}
 #rutEmp{display:block;width:100%;max-width:420px;box-sizing:border-box;padding:13px 14px;font:inherit;font-size:16px;border:1px solid var(--linea);border-radius:12px;background:#fff}
@@ -614,11 +616,11 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 <section class="seccion" id="como" aria-label="Qué hace Apto">
   <h2 class="sec-t rv">Todo para ofertar. <span>En un solo lugar.</span></h2>
   <div class="mosaico">
-    <article class="tile t-big t-demo rv" id="demo" aria-label="Demostración: cómo funciona Apto en tres pasos, en ciclo" data-ayuda="Así se ve usar Apto: escribes qué vendes, te mostramos las compras del Estado que te sirven y te decimos si cumples lo que piden." data-ejemplo="si vendes tornillos, ves solo compras donde piden tornillos." tabindex="0">
-      <h3 class="vtitulo"><span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>Así funciona, en 15 segundos</h3>
+    <article class="tile t-big t-half t-demo rv" id="demo" aria-label="Demostración: cómo funciona el Radar en tres pasos, en ciclo" data-ayuda="Así se ve usar el Radar: escribes qué vendes, te mostramos las compras del Estado que te sirven y te avisamos cada mañana." data-ejemplo="si vendes tornillos, ves solo compras donde piden tornillos." tabindex="0">
+      <h3 class="vtitulo"><span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>Así funciona el Radar, en 15 segundos</h3>
       <div class="ventana" aria-hidden="true">
         <div class="vbar"><i></i><i></i><i></i>
-          <span class="vtit vt1">Paso 1 · Cuéntanos qué vendes</span><span class="vtit vt2">Paso 2 · Mira tus compras</span><span class="vtit vt3">Paso 3 · Revisa si cumples</span></div>
+          <span class="vtit vt1">Paso 1 · Cuéntanos qué vendes</span><span class="vtit vt2">Paso 2 · Mira tus compras</span><span class="vtit vt3">Paso 3 · Te avisamos cada mañana</span></div>
         <div class="vcuerpo">
           <div class="vesc ve1">
             <div class="vcampo"><span class="tipeo">bandas elásticas, pesas, colchonetas</span></div>
@@ -630,12 +632,36 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
             <article class="op vop vop3"><div><h3>Colchonetas para taller de movimiento</h3><div class="meta"><span class="et">Compra pequeña</span><span class="et calza">Coincide: «colchonetas»</span></div></div><div class="cierre"><b>2 dic</b><span class="et ok">quedan 11 días</span></div></article>
           </div>
           <div class="vesc ve3">
-            <ul class="sem vsem"><li class="s-ok"><i></i>Cumple<small>Ancho de 15 cm</small></li><li class="s-ok"><i></i>Cumple<small>Largo de 45 m</small></li><li class="s-al"><i></i>Te falta indicarlo<small>Garantía de 6 meses</small></li></ul>
-            <div class="vfin"><b>Te falta 1 dato para ofertar tranquilo.</b><span>Te damos el texto listo para pegar en tu oferta.</span></div>
+            <ul class="sem vsem2"><li class="s-ok"><i></i>Compras nuevas para ti<small>3 hoy</small></li><li class="s-ok"><i></i>Fechas en tu calendario<small>listo</small></li><li class="s-ok"><i></i>Cuánto cobrar<small>listo</small></li></ul>
+            <div class="vfin2"><b>Cada mañana, en tu correo.</b><span>No se te pasa ninguna compra.</span></div>
           </div>
         </div>
       </div>
-      <div class="vpasos" aria-hidden="true"><span class="vp1">1 · Cuéntanos</span><span class="vp2">2 · Mira</span><span class="vp3">3 · Revisa</span></div>
+      <div class="vpasos" aria-hidden="true"><span class="vp1">1 · Cuéntanos</span><span class="vp2">2 · Mira</span><span class="vp3">3 · Te avisamos</span></div>
+      <p class="vnota">Ejemplo ilustrativo, con datos de muestra.</p>
+    </article>
+    <article class="tile t-big t-half t-demo rv" id="demo2" style="--d:.06s" aria-label="Demostración: cómo funciona Apto en tres pasos, en ciclo" data-ayuda="Así se ve usar Apto: subes la cotización de tus productos, Apto lee los productos y precios, y te muestra dónde puedes postular." data-ejemplo="subes la cotización de tu papelería y ves las compras que piden papel o plastificadoras." tabindex="0">
+      <h3 class="vtitulo"><span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>Así funciona Apto, en 15 segundos</h3>
+      <div class="ventana" aria-hidden="true">
+        <div class="vbar"><i></i><i></i><i></i>
+          <span class="vtit vt1">Paso 1 · Sube tus cotizaciones</span><span class="vtit vt2">Paso 2 · Leemos tus productos</span><span class="vtit vt3">Paso 3 · Mira dónde postular</span></div>
+        <div class="vcuerpo">
+          <div class="vesc ve1">
+            <div class="vcampo"><span class="tipeo">📄 cotizacion-papeleria.pdf</span></div>
+            <div class="ventendi"><span class="et">Leímos 3 productos con precio y plazo</span></div>
+          </div>
+          <div class="vesc ve2">
+            <article class="op vop vop1"><div><h3>Resma de papel carta</h3><div class="meta"><span class="et">Plazo: 5 días</span><span class="et">Despacho incluido</span></div></div><div class="cierre"><b>$3.200</b><span class="et ok">neto</span></div></article>
+            <article class="op vop vop2"><div><h3>Plastificadora A3</h3><div class="meta"><span class="et">Plazo: 5 días</span><span class="et">Despacho incluido</span></div></div><div class="cierre"><b>$37.800</b><span class="et ok">neto</span></div></article>
+            <article class="op vop vop3"><div><h3>Guillotina 30×38 cm</h3><div class="meta"><span class="et">Plazo: 5 días</span><span class="et">Despacho incluido</span></div></div><div class="cierre"><b>$25.700</b><span class="et ok">neto</span></div></article>
+          </div>
+          <div class="vesc ve3">
+            <ul class="sem vsem"><li class="s-ok"><i></i>Artículos de escritorio<small>calza con 2 de tus productos</small></li><li class="s-ok"><i></i>Papelería general<small>calza con 2 de tus productos</small></li><li class="s-ok"><i></i>Impresión de material<small>calza con 1 de tus productos</small></li></ul>
+            <div class="vfin"><b>Listo para ofertar.</b><span>Antes de enviar, revisa si cumples con ¿Cumplo?.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="vpasos" aria-hidden="true"><span class="vp1">1 · Subes</span><span class="vp2">2 · Leemos</span><span class="vp3">3 · Postulas</span></div>
       <p class="vnota">Ejemplo ilustrativo, con datos de muestra.</p>
     </article>
     <article class="tile t-tall rv" id="revisa" style="--d:.1s" data-ayuda="Apto revisa por ti, pero no es perfecto: la decisión y el envío de tu oferta siempre son tuyos." data-ejemplo="si la ficha es una foto borrosa, la IA puede leer mal un número; por eso siempre revisa la ficha oficial." tabindex="0"><p class="k">Antes de ofertar</p><h3>Apto te ayuda. Tú decides.</h3>
@@ -850,8 +876,8 @@ label.check{display:flex;align-items:center;gap:8px;font-weight:400;margin-top:6
 </dialog>
 
 <script src="datos.js"></script>
-<script src="buscar.js?v=202611221511"></script>
-<script src="app.js?v=202611221511"></script>
-<script src="notificaciones.js?v=202611221511"></script>
+<script src="buscar.js?v=202611221522"></script>
+<script src="app.js?v=202611221522"></script>
+<script src="notificaciones.js?v=202611221522"></script>
 </body>
 </html>

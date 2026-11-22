@@ -655,7 +655,7 @@ function enriquecer(){
 }
 // Palabras que por sí solas no dicen qué vende alguien ("mantenimiento", "servicios municipales", "venta")
 const GENERICAS = /^(insum|materia|equip|articul|product|servici|vari|otro|general|element|venta|vend|arriend|alquil|manten|repar|disen|empres|ofici|person|event|municip|tecnic|soport)/; // por raíz
-const generico = t => t.conceptos.every(alts => GENERICAS.test(alts[0].raiz || alts[0].w));
+const generico = t => t.conceptos.every(alts => !/ /.test(alts[0].w || "") && GENERICAS.test(alts[0].raiz || alts[0].w));   // una frase de varias palabras («insumos médicos») no es genérica aunque empiece con una palabra genérica
 // Forma C: categorías de producto de Mercado Público (código ONU) que calzan con lo que vende el usuario.
 // Salen de las palabras de su perfil (comparadas con los productos adjudicados de cada categoría) y de su catálogo por RUT.
 let clasesVistas = [];

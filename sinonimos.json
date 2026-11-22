@@ -1,1 +1,21 @@
-{"grupos": [], "nota": "Sinónimos extra revisados a mano (los fijos están en buscar.js)"}
+{
+ "grupos": [
+  [
+   "materiales de oficina",
+   "articulos de oficina",
+   "insumos de oficina",
+   "utiles de oficina",
+   "articulos de escritorio",
+   "papeleria"
+  ],
+  [
+   "materiales de aseo",
+   "articulos de aseo",
+   "insumos de aseo",
+   "productos de aseo",
+   "articulos de limpieza",
+   "productos de limpieza"
+  ]
+ ],
+ "nota": "Sinónimos extra revisados a mano (los fijos están en buscar.js)"
+}

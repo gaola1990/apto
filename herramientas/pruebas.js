@@ -52,6 +52,13 @@ B.cargarAprendido({relaciones: [["carpas", "901016", "descripciones", 3]], bloqu
 prueba("bloqueado: deja de usarse", !clases("carpas").includes("901016"));
 B.cargarAprendido({});
 
+// 5b) Frases con plural y sinónimos de varias palabras (auditoría 2026-11-22)
+prueba("frase en plural: «insumos médicos» calza con «insumos medicos»", calza("insumos médicos", "SUMINISTRO DE INSUMOS MEDICOS PARA CESFAM"));
+prueba("frase en singular: «insumo médico» calza con «insumos clínicos»", calza("insumo médico", "ADQUISICION DE INSUMOS CLINICOS"));
+prueba("la frase no calza si falta una palabra", !calza("insumos médicos", "ADQUISICION DE INSUMOS DE OFICINA"));
+B.sumarSinonimos([["materiales de oficina", "utiles de oficina", "papeleria"]]);
+prueba("«papelería» calza con «materiales de oficina»", calza("papeleria", "ADQ. MATERIALES DE OFICINA PARA SEREMI"));
+
 // 6) Archivos de datos válidos
 for(const f of ["detalles.json", "precios.json", "categorias.json", "compra_agil.json", "aprendido.json", "sinonimos.json"]){
   const p = path.join(RAIZ, f);

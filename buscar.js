@@ -219,7 +219,12 @@ function armar(t){
 }
 const TERMINACION = /^(s|es|a|as|o|os|e|en|ar|ara|aran|er|ir|ado|ada|ados|adas|ido|ida|idos|idas|cion|ciones|miento|mientos|ito|ita|itos|itas|illo|illa|illos|illas|al|ales|ero|era|eros|eras|eria|erias|ura|uras|ante|antes|ente|entes|or|ora|ores|oras|ivo|iva|ivos|ivas|ico|ica|icos|icas|mente|dor|dora|dores|doras|aje|ajes|ista|istas|izado|izada|izacion)?$/;
 function calzaAlt(a, texto, palabras){
-  if(a.multi) return (" " + texto + " ").includes(" " + a.w + " ");
+  if(a.multi){
+    if((" " + texto + " ").includes(" " + a.w + " ")) return true;
+    // misma frase con plural o variante ("insumo medico" calza con "insumos medicos"): cada palabra por su raíz y una terminación corta
+    if(!a.rx){ const pp = a.w.split(" ").map(w => w.length <= 3 ? w : raiz(w)); a.rx = pp.every(p => /^[a-z0-9]+$/.test(p)) ? new RegExp("(^| )" + pp.map((p, i) => p + (a.w.split(" ")[i].length <= 3 ? "" : "[a-z]{0,3}")).join(" ") + "( |$)") : false; }
+    return !!a.rx && a.rx.test(texto);
+  }
   if(a.exacto) return palabras.includes(a.raiz);
   const malos = ENGANOSOS[a.raiz] || [];
   // con raíces cortas, lo que sigue debe ser una terminación del español ("flor" calza con floral o florería, no con

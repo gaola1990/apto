@@ -208,7 +208,8 @@ function calcular(){
     // Lo que el vendedor escribió pesa más que cualquier extra: la región, el tamaño y la poca competencia solo desempatan entre compras
     // que ya calzan por su nombre (antes una compra "de tu región" sin ninguna palabra tuya podía quedar sobre una que sí las tenía).
     const hay = hits.length > 0;
-    const pts = hits.reduce((a, h) => a + (h.respaldo ? 1 : h.frase ? 3 : 2), 0) + (hay ? 3 : 0) + (porRubro ? 3 : 0) + (porCat ? (hay ? 4 : 2) : 0) +
+    const enNombre = hay && hits.some(h => !h.respaldo && calza(h, d.tn, d.pn));   // lo que buscas está en el título de la compra: va antes que las que solo lo mencionan
+    const pts = hits.reduce((a, h) => a + (h.respaldo ? 1 : h.frase ? 3 : 2), 0) + (enNombre ? 6 : 0) + (hay ? 3 : 0) + (porRubro ? 3 : 0) + (porCat ? (hay ? 4 : 2) : 0) +
       (hay ? (d.tipo.n <= 2 ? 1 : 0) + (comp && comp.med <= 2 ? 1 : 0) + (enRegion ? 3 : 0) : (enRegion ? 1 : 0));
     // calidad del calce: 3 = coincide el nombre/descripción Y la categoría o el rubro; 2 = solo las palabras; 1 = solo categoría o rubro (sin ninguna palabra tuya)
     const calidad = hay && (porCat || porRubro) ? 3 : hay ? 2 : 1;
@@ -477,6 +478,24 @@ async function calendarioGuardadas(){
   descargarIcs(ev, "apto-mis-plazos.ics");
 }
 
+// Espera el resultado de un trabajo del motor (catálogo, ¿Cumplo?, productos). Si el motor se reinició (404), dejó de responder
+// o tarda demasiado, termina con un mensaje claro en vez de quedar girando para siempre.
+async function esperarTrabajo(ruta, id, out){
+  const t0 = Date.now(); let fallos = 0;
+  for(;;){
+    await new Promise(ok => setTimeout(ok, 2500));
+    let e;
+    try{
+      const r = await fetch(MOTOR + ruta + id);
+      e = r.status === 404 ? {listo: true, error: "El motor de Apto se reinició y perdió tu revisión. Vuelve a intentarlo."} : await r.json();
+      fallos = 0;
+    }catch(err){ if(++fallos >= 4) throw new Error("Se perdió la conexión con el motor de Apto. Vuelve a intentarlo en un momento."); continue; }
+    if(e.listo) return e;
+    if(Date.now() - t0 > 20 * 60e3) throw new Error("La revisión tardó demasiado. Vuelve a intentarlo.");
+    out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>";
+  }
+}
+
 // Catalogo automatico: el motor local busca lo que la empresa ya le vendio al Estado (datos publicos).
 async function catalogoPorRut(){
   const out = $("rutout"), rut = $("rutcat").value.trim();
@@ -486,8 +505,7 @@ async function catalogoPorRut(){
   try{
     const r = await fetch(MOTOR + "/catalogo", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({rut})});
     const j = await r.json(); if(!r.ok) throw new Error(j.error || "No se pudo iniciar.");
-    let e;
-    do{ await new Promise(s => setTimeout(s, 2500)); e = await (await fetch(MOTOR + "/trabajo/" + j.id)).json(); if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>"; }while(!e.listo);
+    const e = await esperarTrabajo("/trabajo/", j.id, out);
     if(e.error) throw new Error(e.error);
     const R = e.resultado, nuevos = R.productos.filter(p => !catalogo.some(c => norm(c.nombre) === norm(p)));
     nuevos.forEach(p => catalogo.push({id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), nombre: p, caract: "Agregado desde tus ventas al Estado. Completa medidas, garantía y entrega.", garantia: "", entrega: ""}));
@@ -647,7 +665,7 @@ function pintarCatalogo(){
 
 // ---------- Carga ----------
 function preparar(filas){
-  datos = filas.map(f => { const t = Buscar.expandir(norm(f[1])); return {codigo:f[0], nombre:f[1] || "", cierre:f[2], texto:t, palabras:t.split(" "), tipo:tipoDe(f[0])}; });
+  datos = filas.map(f => { const t = Buscar.expandir(norm(f[1])); return {codigo:f[0], nombre:f[1] || "", cierre:f[2], texto:t, palabras:t.split(" "), tn:t, pn:t.split(" "), tipo:tipoDe(f[0])}; });   // tn/pn: solo el nombre (para dar más peso a lo que está en el título)
   enriquecer();
 }
 // Forma B del radar: además del nombre, calza con la descripción y los productos de la compra (detalles.json, nocturno)
@@ -770,12 +788,7 @@ function activarCumplo(raiz){
       if(Date.now() > sesion.vence - 60e3) await renovar();
       const r = await fetch(MOTOR + "/cumplo", {method: "POST", body: fd, headers: {"Authorization": "Bearer " + sesion.access_token}}); const j = await r.json();
       if(!r.ok){ const er = new Error(j.error || "Error del motor"); er.cuenta = r.status === 401 || r.status === 402; throw er; }
-      let e;
-      do{
-        await new Promise(ok => setTimeout(ok, 2500));
-        e = await (await fetch(MOTOR + "/cumplo/" + j.id)).json();
-        if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>";
-      } while(!e.listo);
+      const e = await esperarTrabajo("/cumplo/", j.id, out);
       out.innerHTML = e.error ? '<p class="nota" style="color:var(--rojo)">' + esc(e.error) + "</p>" : resultadoIA(e.resultado);
       if(!e.error && e.restante != null) out.insertAdjacentHTML("afterbegin", '<p class="nota">Plan gratis: te quedan <b>' + e.restante + " de 5</b> revisiones ¿Cumplo?.</p>");
       cargarPrueba();
@@ -1083,8 +1096,7 @@ function panelApto(D){
       if(Date.now() > sesion.vence - 60e3) await renovar();
       const r = await fetch(MOTOR + "/productos", {method: "POST", body: fd, headers: {"Authorization": "Bearer " + sesion.access_token}}); const j = await r.json();
       if(!r.ok) throw new Error(j.error || "Error del motor");
-      let e;
-      do{ await new Promise(ok => setTimeout(ok, 2500)); e = await (await fetch(MOTOR + "/trabajo/" + j.id)).json(); if(!e.listo) out.innerHTML = '<p class="nota">' + esc(e.paso || "Procesando…") + esperaMotor() + "</p>"; }while(!e.listo);
+      const e = await esperarTrabajo("/trabajo/", j.id, out);
       if(e.error) throw new Error(e.error);
       $("docsProd").value = ""; out.innerHTML = ""; revisarProductos(e.resultado, out);
     }catch(err){ out.innerHTML = '<p class="nota" style="color:var(--rojo)">' + esc(err.message) + "</p>"; }

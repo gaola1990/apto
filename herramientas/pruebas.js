@@ -59,6 +59,14 @@ prueba("la frase no calza si falta una palabra", !calza("insumos médicos", "ADQ
 B.sumarSinonimos([["materiales de oficina", "utiles de oficina", "papeleria"]]);
 prueba("«papelería» calza con «materiales de oficina»", calza("papeleria", "ADQ. MATERIALES DE OFICINA PARA SEREMI"));
 
+// 5c) Sinónimos ambiguos corregidos en la auditoría final (2026-11-22)
+prueba("«pendones» ya no calza con cortinas roller", !calza("pendones", "ADQUISICION E INSTALACION CORTINAS ROLLER PARA OFICINAS"));
+prueba("«pendones» sí calza con roll up y banner", calza("pendones", "ADQUISICION DE ROLL UP PARA EVENTO") && calza("pendones", "IMPRESION DE BANNER INSTITUCIONAL"));
+prueba("«capacitación» ya no calza con centros de formación técnica", !calza("capacitacion", "CONSTRUCCION CENTRO DE FORMACION TECNICA ESTATAL"));
+prueba("«capacitación» sí calza con cursos", calza("capacitacion", "CURSOS CONDUCENTES A DIPLOMADOS"));
+prueba("«flores» ya no calza con la población Las Flores", !calza("flores", "REPOSICION AREA VERDE VILLA LAS FLORES"));
+prueba("«flores» sí calza con arreglos florales", calza("flores", "ADQUISICION DE ARREGLOS FLORALES Y CORONAS DE FLORES"));
+
 // 6) Archivos de datos válidos
 for(const f of ["detalles.json", "precios.json", "categorias.json", "compra_agil.json", "aprendido.json", "sinonimos.json"]){
   const p = path.join(RAIZ, f);

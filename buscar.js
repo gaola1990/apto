@@ -31,8 +31,8 @@ const SIN = [
   ["colacion","almuerzo"],
   ["cesped","pasto"],
   ["jardineria","areas verdes","paisajismo"],
-  ["capacitacion","curso","formacion"],
-  ["pendon","roller","banner"],
+  ["capacitacion","curso"],   // «formación» traía centros de formación técnica y obras universitarias
+  ["pendon","roll up","rollup","banner"],   // «roller» solo era ambiguo: son cortinas roller
   ["medicamento","farmaco"],
   ["insumo medico","insumo clinico"],
   ["kinesiologia","rehabilitacion","fisioterapia"],
@@ -234,7 +234,7 @@ function calzaAlt(a, texto, palabras){
 }
 // Usos que parecen el producto pero son otra cosa ("balón con droga" es un insumo clínico, no un balón de fútbol)
 const CONTEXTO_MALO = {balon: /\b(stent|cateter|coronari|vascular|angio|dilatacion|procedimiento|oxigeno|droga|medicad|intragastric|traque|urinari|foley|trombe|congenit|hemodinami|cardiolog|balon de contrapulsacion)/,
-  flor: /\bflores de bach|\bazucar flor|\bflor de sal\b/, cono: /\bcono (cervical|de papel)|\bconos? de (luz|sombra)\b/};
+  flor: /\bflores de bach|\bazucar flor|\bflor de sal\b|\b(las|villa las|barrio las|terminal las|poblacion las|poblacion villa las) flores\b/, cono: /\bcono (cervical|de papel)|\bconos? de (luz|sombra)\b/};
 function calza(term, texto, palabras){
   const malo = CONTEXTO_MALO[term.raiz];
   if(malo && malo.test(texto)) return false;

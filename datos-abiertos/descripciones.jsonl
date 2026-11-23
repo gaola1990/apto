@@ -23808,3 +23808,856 @@
 {"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA N°6 - FORMACIÓN DE ASISTENTES DEL CUIDADO (RLAC), SEGÚN BASES DE LICITACIÓN. PPTO DISPONIBLE $600.000.-"}
 {"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA N°7 - JORNADA DE FORMACIÓN PROGRAMA RED LOCAL DE APOYOS Y CUIDADOS (RLAC), SEGÚN BASES DE LICITACIÓN. PPTO DISPONIBLE $1.300.000.-"}
 {"cat": "801416", "prod": "80141607", "t": "Producción de eventos DIDECO/CULTURA, ADQUISICION DE SERVICIO DE PRODUCCION Y DESARROLLO DE EVENTO PARA COORDINACION Y EJECUCION ACTIVIDAD DENOMINADA \"SEMANA DE LA MUSICA\", SOLICITUD ADQUISICIONES FOLIO 1425."}
+{"cat": "401515", "prod": "40151510", "t": "Bombas de agua ASIGNACIÓN DE CONTINGENCIA REPARACIÓN INTEGRAL DE LA PLANTA DE TRATAMIENTO DE AGUAS SERVIDAS DE LA ESCUELA PEDRO ANTONIO TEJOS"}
+{"cat": "731521", "prod": "73152102", "t": "Servicio de reparación de equipo de fabricación Servicio integral de mantención preventiva y correctiva para un equipo radiográfico panorámico Dabi Atlante / Alliage Eagle Edge, modelo AXR90"}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos Examen FIT cuantitativo más equipo analizador en préstamo"}
+{"cat": "411162", "prod": "41116205", "t": "Kits de exámenes rápidos Antígeno de H. Pylori en heces (test rápido inmunocromatográfico)"}
+{"cat": "422720", "prod": "42272001", "t": "Laringoscopios o accesorios Equipo Videolaringoscopio portátil, según TTAR N°200 adjunto."}
+{"cat": "421817", "prod": "42181701", "t": "Unidades de electrocardiografía (ECG) Equipo Electrocardiógrafo, según TTAR N°200 adjunto."}
+{"cat": "421924", "prod": "42192404", "t": "Carros médicos o accesorios Carro Z de transporte, según TTAR N°200 adjunto."}
+{"cat": "301519", "prod": "30151901", "t": "Toldos TOLDOS RETRACTIL REFORZADOS CERRADOS SEGÚN ESPECIFICACIONES TECNICAS_DPS"}
+{"cat": "301519", "prod": "30151901", "t": "Toldos TOLDOS RETRACTIL REFORZADOS SEGÚN ESPECIFICACIONES TECNICAS_SNCD"}
+{"cat": "841315", "prod": "84131501", "t": "Seguros de edificios o de su contenido La I. Municipalidad de Contulmo invita a los proveedores inscritos en www.mercadopúblico, a la Licitación por la Contratación de póliza de seguros para edificios municipales y su contenido, por el periodo de un año."}
+{"cat": "801017", "prod": "80101703", "t": "Consultorías para estandarización de especificaciones Según bases administrativas, técnicas y anexos de licitación."}
+{"cat": "901416", "prod": "90141601", "t": "Eventos deportivos profesionales patrocinados por empresas PRODUCCIÓN INTEGRAL DE EVENTO DEPORTIVO ZONAL CENTRO SUR DE VOLEIBOL DAMAS Y VARONES"}
+{"cat": "471319", "prod": "47131907", "t": "Barreras absorbentes La presente adquisición tiene por objeto la compra de 200 unidades de barreras portátiles, 20 barreras de control de inundaciones curva interna y 20 barreras de control de inundaciones curva externa, diseñadas para contención, desviación y control de caud"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO INTEGRAL DE PRODUCCIÓN TÉCNICA, RECREATIVA Y AMBIENTACIÓN LUMÍNICA\nACTIVIDAD CRECIENDO JUNTOS EN CULTURA: VELADA CULTURAL NAVIDEÑA, SAGRADA FAMILIA 2026\n"}
+{"cat": "801016", "prod": "80101604", "t": "Asesorías en gestión de proyectos “SERVICIO DE CONSULTORÍA PARA LA ACTUALIZACIÓN DEL PLAN DE DESARROLLO TURÍSTICO (PLADETUR) DE LA COMUNA DE SAN GREGORIO”."}
+{"cat": "511915", "prod": "51191515", "t": "Hidroclorotiazida 300 COMPRIMIDO O CAPSULA BILASTINA 20MG"}
+{"cat": "421719", "prod": "42171903", "t": "Cajas de medicamentos de servicios médicos de urgencia 40 FRASCO JARABE HEDERA HELIX"}
+{"cat": "511217", "prod": "51121733", "t": "Valsartan 600 COMPRIMIDO O CAPSULA VALSARTAN 80MG"}
+{"cat": "511217", "prod": "51121759", "t": "Olmesartán medoxomilo 600 COMPRIMIDO O CAPSULA OLMESARTAN 40MG / HIDROCLOROTIAZIDA 12,5MG"}
+{"cat": "511421", "prod": "51142123", "t": "Ketorolaco trometamol 200 COMPRIMIDO O CAPSULA KETOROLACO 10MG"}
+{"cat": "511817", "prod": "51181701", "t": "Betametasona 100 AMPOLLA BETAMETASONA 4MG/ML"}
+{"cat": "511218", "prod": "51121819", "t": "Ezetimiba 840 COMPRIMIDO O CAPSULA EZETIMIBA 10MG"}
+{"cat": "421719", "prod": "42171903", "t": "Cajas de medicamentos de servicios médicos de urgencia 700 COMPRIMIDO O CAPSULA RIVAROXABAN 15MG"}
+{"cat": "511517", "prod": "51151702", "t": "Tartrato de brimonidina 6 SOLUCION OFTALMICA BRIMONIDINA 0,2%"}
+{"cat": "511418", "prod": "51141808", "t": "Tartrato de zolpidem 300 COMPRIMIDO O CAPSULA ZOLPIDEM 10MG"}
+{"cat": "511420", "prod": "51142002", "t": "Ácido acetilsalicílico 10.000 COMPRIMIDO O CAPSULA ACIDO ACETILSALICILICO 100 MG"}
+{"cat": "511217", "prod": "51121743", "t": "Besilato de amlodipina 160.000 COMPRIMIDO O CAPSULA AMLODIPINO 5 MG"}
+{"cat": "511218", "prod": "51121818", "t": "Atorvastatina 23.000 COMPRIMIDO O CAPSULA ATORVASTATINA 20 MG"}
+{"cat": "511217", "prod": "51121715", "t": "Enalapril 10.000 COMPRIMIDO O CAPSULA ENALAPRIL 10 MG"}
+{"cat": "511915", "prod": "51191510", "t": "Furosemida 8.000 COMPRIMIDO O CAPSULA FUROSEMIDA 40 MG"}
+{"cat": "511915", "prod": "51191515", "t": "Hidroclorotiazida 33.000 COMPRIMIDO O CAPSULA HIDROCLOROTIAZIDA 50 MG"}
+{"cat": "511217", "prod": "51121710", "t": "Losartan potásico 152.000 COMPRIMIDO CAPSULA LOSARTAN 50 MG"}
+{"cat": "511815", "prod": "51181516", "t": "Glibenclamida o gliburida 42.000 COMPRIMIDO O CAPSULA METFORMINA 850 MG"}
+{"cat": "511815", "prod": "51181516", "t": "Glibenclamida o gliburida 8.400 COMPRIMIDO O CAPSULA METFORMINA LP 1000 MG"}
+{"cat": "432115", "prod": "43211501", "t": "Servidores Item 1 - Servidor y discos - Según bases técnicas de la licitación"}
+{"cat": "432020", "prod": "43202005", "t": "Dispositivos de almacenamiento de memoria flash Item 2 - NAS y unidades de almacenamiento - Según bases técnicas de la licitación"}
+{"cat": "432016", "prod": "43201602", "t": "Gabinete, rack, chasis o bastidores para equipos de red Item 3 - Rack, UPS y accesorios - Según bases técnicas de la licitación"}
+{"cat": "421721", "prod": "42172101", "t": "Desfibriladores externos automatizados (AED) o paletas rígidas COMPRA DE 11 DEA, El servicio incluye el traslado completo, montaje en muro, fijación e instalación operativa de los gabinetes con alarma y de los 11 Desfibriladores Externos Automáticos en los establecimientos de salud de la comuna de Carahue, SEGUN ANEX"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niños entre los 0-1 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niños entre los 2-3 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niños entre los 4-5 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niños entre los 6-7 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niños entre los 8-9 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niños entre los 10-11-12 y 13 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niñas entre los 0-1 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niñas entre los 2-3 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niñas entre los 4-5 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niñas entre los 6-7 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niñas entre los 8-9 años"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes didácticos para niñas entre los 10-11-12 y 13 años"}
+{"cat": "721027", "prod": "72102703", "t": "Servicios de limpieza de suelos “SERVICIO DE LIMPIEZA, PROYECTO CATASTROFE – HABILITACIÓN VILLA ARBOLEDA Y SANTA TERESITA, COMUNA DE ANGOL”"}
+{"cat": "422215", "prod": "42221504", "t": "Catéteres intravenosos periféricos para uso general CATÉTER DIAGNOSTICO 5FR CURVA SOS OMNI NO HIDROFÍLICO 80CM. REF; ANGIODYNAMICS."}
+{"cat": "423119", "prod": "42311903", "t": "Drenaje médico de incisión DRENAJE MULTIPROPÓSITO DE 6,5 FR DE 15 Y 30 CM DE LARGO. REF; \tANGIODYNAMICS"}
+{"cat": "422215", "prod": "42221504", "t": "Catéteres intravenosos periféricos para uso general AGUJA APLICADORA PARA ABLACIÓN POR MICROONDAS DE USO PERCUTÁNEO RANGOS DE ABLACIÓN DE 2.24 A 5.4, REFERENCIA TIPO SOLERO. REF; ANGIODYNAMICS."}
+{"cat": "422949", "prod": "42294935", "t": "Agujas de punción, revestimientos, obturadores o cánulas para endoscopia, o bandejas de procedimiento, kits o productos relacionados SET MICROPUNCIÓN 20G 12CM 0.025 4FR. REF; ANGIODYNAMICS."}
+{"cat": "411220", "prod": "41122004", "t": "Jeringas de toma de muestras JERINGA DE POLICARBONATO 1-3ML PUNTA LUER COMPATIBLE CON DMSO. REF; TH MEDICAL."}
+{"cat": "422720", "prod": "42272011", "t": "Catéteres de succión o sus accesorios CATÉTER DIAGNOSTICO PIGTAIL 5 FR X 100CM, COMPATIBLE CON GUÍA 035. REF; KDL."}
+{"cat": "422215", "prod": "42221504", "t": "Catéteres intravenosos periféricos para uso general CATÉTER DIAGNOSTICO PIGTAL CURVA 5FR X 65 CM, COMPATIBLE CON GUIA 035. REF; ANGIODYNAMICS."}
+{"cat": "422034", "prod": "42203403", "t": "Juegos o catéteres introductores vasculares intervencionales o diagnósticos CATÉTER GUÍA NEUROVASCULAR DE ACCESO DISTAL PARA SOPORTE Y TROMBOASPIRACIÓN 6F, LARGO 15 A 135 CM, LUMEN INTERNO MAYOR O IGUAL A 0.68 MALLADO Y RESISTENTE A TORSIÓN, PUNTA RECTA PREFORMABLE, MARCADOR. REF; VISALMED."}
+{"cat": "391215", "prod": "39121544", "t": "Piezas de luces indicadoras o accesorios DECORACION DE NAVIDAD Y AÑO NUEVO. SEGUN BASES Y OTROS ADJUNTOS."}
+{"cat": "432332", "prod": "43233205", "t": "Software de protección antivirus y de seguridad de transacciones SERVICIO DE RENOVACIÓN DE LICENCIAS Y SERVICIOS ASOCIADOS DE LA SUITE ANTIVIRUS TREND MICRO VISION ONE"}
+{"cat": "432324", "prod": "43232408", "t": "Software de desarrollo de plataforma Web SERVICIO DE IMPLEMENTACIÓN DE NUEVOS REQUERIMIENTOS Y MEJORAS DE\r\nLOS SISTEMAS DE DESARROLLO DE PERSONAS Y FINANZAS DEL GOBIERNO\r\nREGIONAL DE LA ARAUCANÍA"}
+{"cat": "261018", "prod": "26101805", "t": "Kits de reparación del motor Servicio de mantenimiento preventivo de maquinaria extintora (según bases técnicas adjuntas)"}
+{"cat": "811315", "prod": "81131504", "t": "Encuestas por muestreo SERVICIO DE LEVANTAMIENTO DE DATOS SOCIOECONÓMICOS PLANTAS MANUFACTURERAS DE PRODUCTOS PESQUEROS, REGIONES ATACAMA Y COQUIMBO"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos Adquisición de 2.000 bolsas de confites para celebración de navidad año 2026"}
+{"cat": "421924", "prod": "42192404", "t": "Carros médicos o accesorios Carro de Telemedicina. Detalles en resolución y archivos anexos. Completar y adjuntar documentación obligatoria."}
+{"cat": "141115", "prod": "14111507", "t": "Papel para fotocopiadora o impresora Resma carta"}
+{"cat": "141115", "prod": "14111507", "t": "Papel para fotocopiadora o impresora Resma oficio"}
+{"cat": "441220", "prod": "44122011", "t": "Carpetas para archivos Carpeta plástica"}
+{"cat": "441220", "prod": "44122011", "t": "Carpetas para archivos Carpeta plástica"}
+{"cat": "441220", "prod": "44122011", "t": "Carpetas para archivos Carpeta plástica"}
+{"cat": "441018", "prod": "44101801", "t": "Calculadoras o accesorios Calculadora"}
+{"cat": "551218", "prod": "55121807", "t": "Fundas de productos de identificación o accesorios Funda oficio transparente"}
+{"cat": "441220", "prod": "44122001", "t": "Archivadores de fichas Archivador"}
+{"cat": "441221", "prod": "44122103", "t": "Corchetes Caja de corchetes"}
+{"cat": "441217", "prod": "44121708", "t": "Marcadores Marcador pizarra desechable"}
+{"cat": "441217", "prod": "44121708", "t": "Marcadores Marcador pizarra desechable"}
+{"cat": "441217", "prod": "44121708", "t": "Marcadores Marcador pizarra desechable"}
+{"cat": "441035", "prod": "44103504", "t": "Espirales de encuadernación Espiral plástico"}
+{"cat": "422725", "prod": "42272502", "t": "Unidades de absorción para aparatos de anestesia con gas CAL SODADA DE GRADO MÉDICO BIDÓN DE 5 LITROS"}
+{"cat": "421435", "prod": "42143502", "t": "Dispositivos de irrigación nasal o accesorios ADAPTADOR ATOMIZADOR PARA MUCOSA INTRANASAL"}
+{"cat": "421435", "prod": "42143513", "t": "Instrumentos otológicos o accesorios COLLERA TIMPANICA PAPARELLA TIPO (1 mm)"}
+{"cat": "421435", "prod": "42143513", "t": "Instrumentos otológicos o accesorios TUBO TIMPANICO T (1,14mm)"}
+{"cat": "422916", "prod": "42291620", "t": "Trocares quirúrgicos para uso general o accesorios TRÓCAR ÓPTICO DESECHABLE - DIÁMETRO 12 mm /LONGITUD 100 mm."}
+{"cat": "422916", "prod": "42291620", "t": "Trocares quirúrgicos para uso general o accesorios TRÓCAR ÓPTICO DESECHABLE - DIÁMETRO 5 mm /LONGITUD 100 mm."}
+{"cat": "422916", "prod": "42291620", "t": "Trocares quirúrgicos para uso general o accesorios TRÓCAR ÓPTICO DESECHABLE - DIÁMETRO 10 mm /LONGITUD 100 mm."}
+{"cat": "422916", "prod": "42291620", "t": "Trocares quirúrgicos para uso general o accesorios TRÓCAR ÓPTICO DESECHABLE - DIÁMETRO 12 mm /LONGITUD 150 mm."}
+{"cat": "421425", "prod": "42142520", "t": "Punzones dispensadores AGUJA DE VERESS DESECHABLE 2,1 a 2.2mm / 15cm"}
+{"cat": "422949", "prod": "42294953", "t": "Extractores endoscópicos BOLSA DE EXTRACCIÓN ENDOSCÓPICA DESECHABLE"}
+{"cat": "422948", "prod": "42294801", "t": "Endoscopios rígidos o accesorios o productos relacionados FUNDA ESTÉRIL PARA CÁMARA DE LAPAROSCOPIA 15,5cm / 250cm (+/- 1cm)"}
+{"cat": "422948", "prod": "42294801", "t": "Endoscopios rígidos o accesorios o productos relacionados KIT SOLUCIÓN ANTIEMPAÑANTE ESTERIL LAPAROSCOPICA"}
+{"cat": "422722", "prod": "42272219", "t": "Filtros o intercambiadores de humedad o calor del ventilador TRAMPA DE AGUA PARA MÓDULO DE CAPNOGRAFÍA. Adulto / Pediátrico"}
+{"cat": "422722", "prod": "42272219", "t": "Filtros o intercambiadores de humedad o calor del ventilador TRAMPA DE AGUA PARA MÓDULO DE CAPNOGRAFÍA. Neonatal / Pediátrico"}
+{"cat": "422722", "prod": "42272219", "t": "Filtros o intercambiadores de humedad o calor del ventilador TRAMPA DE AGUA PARA MÓDULO DE CAPNOGRAFÍA. Adulto / Pediátrico"}
+{"cat": "423120", "prod": "42312002", "t": "Clips o Grapas de cierre de piel RECARGA DE GRAPAS QUIRÚRGICAS LINEALES, PARA USO EN ENGRAPADORA ENDOSCÓPICA LAPAROSCÓPICA (ITEMS 16.1 AL 16.3)"}
+{"cat": "422945", "prod": "42294509", "t": "Agujas para cirugía oftalmológica CANULA SIMCOE OFTALMOLOGIA Y REPUESTOS (ITEMS 17.1 Y 17.2)"}
+{"cat": "421922", "prod": "42192210", "t": "Sillas de ruedas Ayudas tecnicas  y /o servicios de apoyo- segun bases unicas aprobadas por decreto exento 1769"}
+{"cat": "931316", "prod": "93131608", "t": "Servicios de suministro de alimentos Convenio de suministro de alimentos varios, presupuesto referencial total $69.275.322.-, ofertar bajo anexo N° 3\" oferta económica\" la cual es de carácter obligatoria y excluyente"}
+{"cat": "801016", "prod": "80101604", "t": "Asesorías en gestión de proyectos LP 181-2026 ESTUDIO COMPLEMENTARIO “PARQUE ESTERO VIÑA DEL MAR”, COMUNA DE VIÑA DEL MAR"}
+{"cat": "391210", "prod": "39121002", "t": "Transformadores de suministro de potencia 40-003-001-010-00 GRUPO ELECTROGENO 500 KVA"}
+{"cat": "761216", "prod": "76121602", "t": "Operaciones sanitarias en vertederos SERVICIO MONITOREO POST CIERRE DEL VERTEDERO MUNICIPAL DE FRESIA, HASTA EL 30 NOVIEMBRE DEL 2028, SEGÚN BASES Y ANTECEDENTES ADJUNTOS, DECRETO ALCALDICIO N°2204 DE FECHA 19/11/2026"}
+{"cat": "251319", "prod": "25131902", "t": "Helicóptero de transporte militar TANK, PRESSURE-FEED FINISHING-MATERIAL; EQUIPO DE LAVADO DE COMPRESOR PARA MOTORES; NSN 145269189; P/N TM0188G002; CANTIDAD 02."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias 0710317-9 TRIFLURIDINA/TIPIRACILO CLORHIDRATO 20/8, 19MG    \r\nCOMPRIMIDOS RECUBIERTOS, VENCIMIENTO MAYOR A 12 MESES, ADJUNTAR REGISTRO ISP Y ESPECIFICACION TECNICA.                                                "}
+{"cat": "511023", "prod": "51102322", "t": "Sulfato de abacavir 0680083-3 ABACAVIR SULFATO 600MG, LAMIVUDINA 300MG,DOLUTEGRAVIR SODICO 50 MG, COMPRIMIDOS RECUBIERTOS,SIMILAR TRIUMEQ, VIGENCIA MÍNIMA UN AÑO, ADJUNTAR POLÍTICA DE CANJE.               "}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias 0710069-6 OLAPARIB 150MG COMPRIMIDOS RECUBIERTOS, VIGENCIA \r\nMÍNIMA 1 AÑO, ADJUNTAR POLÍTICA DE CANJE POR VENCIMIENTO.                                     "}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias 0710218-9 IBRUTINIB 140 MG. CAPSULA VIA ORAL "}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias 2130030-6 MYCOBACTERIUM BOVIS (BCG) CEPA DANISH \r\n1331 LIOFILIZADO PARA INSTALACIÓN INTRAVESICAL    \r\n30MG, FRASCO-AMPOLLA, VIGENCIA MÍNIMA 1 AÑO,      \r\nADJUNTAR POLÍTICA DE CANJE.                       "}
+{"cat": "121622", "prod": "12162201", "t": "Ácido ascórbico 1810009-9 VITAMINA C 100 MG, COMPRIMIDOS MASTICABLES SABORIZADO MULTISABOR                                  "}
+{"cat": "511821", "prod": "51182101", "t": "Acetato de desmopresina 1098001-9 DESMOPRESINA (ACETATO TRIHIDRATO) 0,1MG\r\nCOMPRIMIDOS, VIGENCIA MINIMA 1 AÑO.    "}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias 0152086-5  REXIPIPRAZOL 1 MG.COMP.REC. VIGENCIA MINIMA 1 AÑO,\r\n ADJUNTAR POLITICAS DE CANJE                       "}
+{"cat": "511817", "prod": "51181722", "t": "Fluticasona 0240102-4 FLUTICASONA/VILANTEROL 92/22 PVO. INH.VIGENCIA \r\nMINIMA 1 AÑO, ADJUNTAR POLÍTICAS DE CANJE      "}
+{"cat": "511115", "prod": "51111507", "t": "Ciclofosfamida 0710004-3 CICLOSFAMIDA POLVO LIOFILIZADO PARA SOLUCION\r\nINYECTABLE 500MG                            "}
+{"cat": "511119", "prod": "51111902", "t": "Docetaxel 0710110-8 DOCETAXEL 80MG/4ML SOLUCION CONCENTRADA PARA INFUSION FRASCO AMPOLLA. VENCIMIENTO MAYOR A 12 MESES, ADJUNTAR REGISTRO ISP Y ESPECIFICACION TECNICA.   "}
+{"cat": "511116", "prod": "51111617", "t": "Clorhidrato de gemcitabina 0710121-5 GEMCITABINA 1000MG/25 ML CONCENTRADO PARA SOLUCION\r\n/PARA PERFUSION FRASCO AMPOLLA. VENCIMIENTO MAYOR \r\nA 12 MESES, ADJUNTAR REGISTRO ISP Y ESPECIFICACION\r\n TECNICA.                                         "}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias 0710386-4 CABOZANTINIB 60MG COMP, COMPRIMIDOS RECUBIERTOS, \r\nVIGENCIA MAYOR 1 AÑO, ADJUNTAR POLÍTICA DE CANJE."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias 1090013-2 EVEROLIMUS 0,5MG COMPRIMIDOS, VIGENCIA MINIMA 1 AÑO, ADJUNTAR POLITICAS DE CANJE.                   "}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias 1091022-2 EVEROLIMUS 0,25MG COMPRIMIDOS, VIGENCIA MINIMA 1 AÑO.                                             "}
+{"cat": "432115", "prod": "43211501", "t": "Servidores ADQUISICIÓN DE UN SERVIDOR INSTITUCIONAL ON-PREMISE PARA EL GOBIERNO REGIONAL DE TARAPACÁ"}
+{"cat": "422817", "prod": "42281706", "t": "Lubricantes de instrumentos 48 unidades Frasco Aceite lubricante turbina spray 200 ml."}
+{"cat": "421516", "prod": "42151669", "t": "Deshidratantes odontológicos ÁCIDO ORTOFOSFÓRICO 37,5%, PACK 3 JERINGAS DE (3GRS C/U)"}
+{"cat": "421519", "prod": "42151911", "t": "Sets acondicionadores del tejido dental ACONDICIONADO DE TEJIDOS (UNDECICLENATO DE ZINC,). POLVO 170G. + LÍQUIDO 177G."}
+{"cat": "421521", "prod": "42152111", "t": "Endurecedores de material de impresión dental ACRÍLICO RÁPIDO AUTOCURABLE PARA CORONAS MARCHE DE 250GRS., COLORES 45, 46 O 47."}
+{"cat": "421525", "prod": "42152508", "t": "Jeringas dentales, agujas o jeringas con agujas AGUJA DENTAL CARPULE CORTA DE 30G X 22MM. ESTERIL EN OXIDO DE ETILENO. CAJA 100 UNIDADES. DEBERÁ CONTAR CON REGISTRO SANITARIO ISP VIGENTE DE DISPOSITIVO MÉDICO."}
+{"cat": "421525", "prod": "42152508", "t": "Jeringas dentales, agujas o jeringas con agujas AGUJA DENTAL CARPULE LARGA DE 27G (0,4 X 40MM). ESTERIL EN OXIDO DE ETILENO. CAJA 100 UNIDADES. DEBERÁ CONTAR CON REGISTRO SANITARIO ISP VIGENTE DE DISPOSITIVO MÉDICO."}
+{"cat": "421525", "prod": "42152508", "t": "Jeringas dentales, agujas o jeringas con agujas AGUJAS EXTRA CORTAS TIPO CARPULE 30G X 12MM. CAJA 100 UNIDADES. DEBERÁ CONTAR CON REGISTRO SANITARIO ISP VIGENTE DE DISPOSITIVO MÉDICO."}
+{"cat": "421516", "prod": "42151663", "t": "Cuñas o sets odontológicos CUÑAS DE MADERA SURTIDAS, BOLSA 100 UNIDADES."}
+{"cat": "421518", "prod": "42151805", "t": "Discos de acabado o pulido DISCO P/PULIR COMPOSITE SURTIDO SOBRE/SACHET DEL TIPO 3M, PACK 30 UNIDADES."}
+{"cat": "421519", "prod": "42151902", "t": "Equipos de profilaxis dental ESCOBILLA COPA BLANDA O CERDAS SUAVES PARA PROFILAXIS DENTAL."}
+{"cat": "421516", "prod": "42151627", "t": "Espejos o mangos de espejos dentales ESPEJO DENTAL N°5."}
+{"cat": "423116", "prod": "42311601", "t": "Esponjas de gelatina absorbible ESPONJA GELITA HEMOSTÁTICA 1X1X1CM. BLISTER 10 UNIDADES. "}
+{"cat": "421516", "prod": "42151659", "t": "Kit de extracción de fragmentos dentales EXTRACTOR PULPAR AMARILLO, 21MM BLISTER/CAJA 10 UNIDADES."}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales EXTRACTOR PULPAR BLANCO, 21MM BLISTER/CAJA 10 UNIDADES."}
+{"cat": "421516", "prod": "42151659", "t": "Kit de extracción de fragmentos dentales EXTRACTOR PULPAR ROJO, 21MM BLISTER/CAJA 10 UNIDADES."}
+{"cat": "421516", "prod": "42151635", "t": "Expulsores dentales de saliva o aparatos de succión oral o suministros EYECTOR DE SALIVA, BOQUILLA DE PVC, CUERPO FLEXIBLE TRASLÚCIDO. BOLSA 100 UNIDADES.\r\n"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FLUORURO DIAMINO DE PLATA AL 38% EN FRASCO DE 5 ML.\r\n"}
+{"cat": "421524", "prod": "42152454", "t": "Protectores de la pulpa dental FORMOCRESOL EN SOLUCIÓN DE FRASCO 10ML."}
+{"cat": "422917", "prod": "42291706", "t": "Fresas quirúrgicas o sus accesorios FRESAS DE PULIDO DIAMANTADAS CON CABEZA DE BALÓN Y GRANO FINO\r\n"}
+{"cat": "421322", "prod": "42132203", "t": "Guantes médicos de examen o para usos no quirúrgicos GUANTES TALLA XS VINILO PARA PROCEDIMIENTOS. CAJA 100 UNIDADES."}
+{"cat": "421516", "prod": "42151621", "t": "Instrumentos dentales para empastar los contornos GUTAPERCHERO DE DOBLE EXTREMO CON ESPATULA Y CONDENSADOR ACERO INOXIDABLE."}
+{"cat": "421524", "prod": "42152454", "t": "Protectores de la pulpa dental HIDROXIDO DE CALCIO POLVO, FRASCO (30 CÁPSULAS)."}
+{"cat": "421518", "prod": "42151806", "t": "Tiras dentales de acabado o pulido HUINCHA POLIÉSTER CON LIJA GRANO MEDIANO/FINO, CAJA DE 150 UNIDADES.\r\n"}
+{"cat": "421516", "prod": "42151602", "t": "Bandas para matriz dental HUINCHA PORTA MATRIZ 5MM."}
+{"cat": "421516", "prod": "42151602", "t": "Bandas para matriz dental HUINCHA PORTA MATRIZ 7MM."}
+{"cat": "421525", "prod": "42152508", "t": "Jeringas dentales, agujas o jeringas con agujas JERINGA CARPULE ACERO CON CARGA POSTERIOR."}
+{"cat": "421516", "prod": "42151620", "t": "Limas o raspadores dentales LIMA K DE 10 Y 25 MM."}
+{"cat": "421516", "prod": "42151620", "t": "Limas o raspadores dentales LIMA K DE 15-40 DE 25MM CON SECCIÓN CUADRADA. PACK 6 UNIDADES."}
+{"cat": "422917", "prod": "42291706", "t": "Fresas quirúrgicas o sus accesorios LIMPIA FRESAS METÁLICOS."}
+{"cat": "421516", "prod": "42151627", "t": "Espejos o mangos de espejos dentales MANGO DE ESPEJO DENTAL DE ACERO INOXIDABLE, COMPATIBLE CON CABEZALES DE ESPEJO BUCAL ROSCADO ESTÁNDAR."}
+{"cat": "511018", "prod": "51101812", "t": "Miconazol MICONAZOL 2% GEL ORAL 124MG/5ML. DEBERÁ CONTAR CON REGISTRO SANITARIO ISP VIGENTE DE PRODUCTO FARMACÉUTICO. TUBO DE 40 GR."}
+{"cat": "421516", "prod": "42151660", "t": "Aplicadores o absorbentes odontológicos MICROBRUSH AMARILLO, CAJA 100 UNIDADES."}
+{"cat": "421516", "prod": "42151660", "t": "Aplicadores o absorbentes odontológicos MICROBRUSH AZUL, CAJA 100 UNIDADES."}
+{"cat": "421524", "prod": "42152425", "t": "Resinas de base para dentaduras MONÓMERO DE AUTOCURADO 210ML."}
+{"cat": "421524", "prod": "42152443", "t": "Cementos de óxido de zinc de y sin eugenol OXIDO DE ZINC POLVO, FRASCO 60gr."}
+{"cat": "421524", "prod": "42152454", "t": "Protectores de la pulpa dental PARAMONOCLOROFENOL EN SOLUCIÓN, FRASCO 10ML."}
+{"cat": "531315", "prod": "53131502", "t": "Pasta de dientes PASTA DE DIENTES ADULTO 1450 PPM (90 A 200 GRS)."}
+{"cat": "421519", "prod": "42151909", "t": "Pastas o kits de odontología preventiva PASTA PROFILACTICA, DOSIS SURTIDAS 2GRS C/U, CAJA 200 UNIDADES."}
+{"cat": "421522", "prod": "42152220", "t": "Piedras dentales PIEDRA ARKANSA P/COMPOSITE LLAMA A/V, CAJA/PACK 10 UNIDADES."}
+{"cat": "421522", "prod": "42152220", "t": "Piedras dentales PIEDRA ARKANSA P/COMPOSITE REDONDA A/V, CAJA/PACK 10 UNIDADES.\r\n"}
+{"cat": "421525", "prod": "42152512", "t": "Pinzas odontológicas PINZA BIANGULADA PARA EXAMEN DENTAL DE ACERO INOXIDABLE ESTERILIZABLE."}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales PORTA DISCO TIPO SOFLEX, ENVASE UNITARIO."}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales PORTA MATRIZ TOFFLEMIRE DE ACERO QUIRÚRGICO"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales PUNTAS G1 PARA ULTRASONIDO ESTERILIZABLE SCALER WOODPECKER."}
+{"cat": "421426", "prod": "42142615", "t": "Accesorios para jeringas PUNTAS METALICAS DE ACERO INOXIDABLE PARA JERINGA TRIPLE ESTÁNDAR, PACK 10 UNIDADES."}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales PUNTAS P1 PARA ULTRASONIDO ESTERILIZABLE SCALERS WOODPECKER."}
+{"cat": "421524", "prod": "42152428", "t": "Resinas de relleno directo RESINA FLUIDA (FLOW), JERINGA DE 2GRS. PUNTAS COLOR A2 O A3."}
+{"cat": "422917", "prod": "42291706", "t": "Fresas quirúrgicas o sus accesorios SET DE PULIDO DE RESINAS + FRESARIO METALICO TIPO MICRODONT"}
+{"cat": "421519", "prod": "42151904", "t": "Soluciones o comprimidos de revelar SOLUCIÓN REVELADORA DE PLACA BACTERIANA DE 10ML EN DOS TONOS."}
+{"cat": "421415", "prod": "42141502", "t": "Palitos con casquillo de fibra TÓRULA DE ALGODÓN PREFORMADO N°2, LISO FLEXIBLE BOLSA 1.000 UNIDADES."}
+{"cat": "121815", "prod": "12181504", "t": "Petrolatos VASELINA SÓLIDA BLANCA 24GRS."}
+{"cat": "421525", "prod": "42152513", "t": "Vasos de medición odontológicos VASO DESECHABLE DENTAL. BOLSA 100 UNIDADES."}
+{"cat": "511027", "prod": "51102719", "t": "Yodoformo YODOFORMO EN POLVO 10GRS."}
+{"cat": "601411", "prod": "60141102", "t": "Juegos de mesa ADQUISICION MATERIALES DE ENSEÑANZA Y OTROS, VER LISTADO DE MATERIALES Y CANTIDADES EN ESPECIFICACIONES TECNICAS Y ANEXOS ADJUNTOS A LAS PRESENTES BASES."}
+{"cat": "421316", "prod": "42131608", "t": "Uniformes para el personal sanitario Uniformes clinicos para el Hospital de Ancud, perteneciente al Servicio de Salud de Chiloé, como establecimiento público de salud, requiere implementar el uso de uniforme institucional con el fin de conseguir la uniformidad en el entorno laboral. "}
+{"cat": "831116", "prod": "83111602", "t": "Comunicación por satélite o terrestre SERVICIO DE ARRIENDO DE 15 ANTENAS STARLINK MINI, CON ACCESORIOS, INTERNET SATELITAL ITINERANTE ILIMITADO Y ASISTENCIA TÉCNICA POR 5 MESES, PARA UNIDADES DEPENDIENTES DE LA ZONA DE CARABINEROS ANTOFAGASTA, SEGÚN BASES Y ANEXOS."}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad La Municipalidad de San Miguel a través de la Dirección de Seguridad Pública, requiere contratar suministro, instalación, configuración, integración, puesta en marcha, capacitación, garantía, soporte técnico y mantenimiento de cinco (05) puntos de televig"}
+{"cat": "104000", "prod": "104101001", "t": "Licitación Pública de Obra MINVU Licitación Pública de Obra MINVU"}
+{"cat": "104000", "prod": "104101001", "t": "Licitación Pública de Obra MINVU Licitación Pública de Obra MINVU"}
+{"cat": "811418", "prod": "81141807", "t": "Servicio de gasfitería y alcantarillado Servicio de Mantenimiento de Sistema de Agua Potable, Alcantarillado, Colectores y Otros."}
+{"cat": "422215", "prod": "42221513", "t": "Kits de colocación de catéteres cardiovasculares KIT DE ASPIRACIÓN MECÁNICA PARA TROMBO PULMONAR Y EN AURÍCULA DERECHA, DEBE INCLUIR INTRODUCTOR CON CATÉTER DE DIFERENTES MEDIDAS, 16FR, 20FR Y 24FR, LARGO DE 33CM, SISTEMA DE CIERRE PERCUTÁNEO Y FILTRO DE SANGRE, VÁLVULA HEMOSTÁTICA COMPATIBLE CON GUÍA 0"}
+{"cat": "422215", "prod": "42221513", "t": "Kits de colocación de catéteres cardiovasculares KIT DE ASPIRACIÓN MECÁNICA PARA TROMBO VENOSO PROFUNDO, DEBE INCLUIR INTRODUCTOR DE 13 Y 16 FR CON CATÉTER DE 16FR, SISTEMA DE CIERRE PERCUTÁNEO, SISTEMA DE RETORNO DE SANGRE, CATÉTER DISTAL RECTO O CURVO DE 16FR Y CATÉTER DE DISCOS NITINOL DE 19-25MM"}
+{"cat": "422215", "prod": "42221513", "t": "Kits de colocación de catéteres cardiovasculares KIT DE ASPIRACIÓN MECÁNICA PARA TROMBO VENOSO PROFUNDO, DEBE INCLUIR INTRODUCTOR DE 13 Y 16 FR CON CATÉTER DE 16FR, SISTEMA DE CIERRE PERCUTÁNEO, SISTEMA DE RETORNO DE SANGRE, CATÉTER DISTAL RECTO O CURVO DE 16FR Y CATÉTER DE DISCOS NITINOL DE 19-25MM, FI"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Construcción Espacio de Emprendimiento Circular, Comuna de Llanquihue"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Ejecución del Proyecto FRIL, denominado “Mejoramiento Club de Rayuela El Volcán, comuna de Rengo”, código BIP N° 40011495"}
+{"cat": "432121", "prod": "43212105", "t": "Impresoras de láser ARRIENDO DE IMPRESORAS MULTIFUNCIONAL SIMILAR A  KYOCERA, BROTHER O HP CON 2 BANDEJAS CARTA Y OFICIO."}
+{"cat": "432121", "prod": "43212105", "t": "Impresoras de láser IMPRESORAS BASICA LASER MONOCROMATICA CON 1 BANDEJA SIMILAR A HP"}
+{"cat": "411053", "prod": "41105331", "t": "Reactores, kits o sustratos quimiofluorescentes de detección de proteínas CONVENIO DE SUMINISTRO CONTINUO DE REACTIVOS E INSUMOS PARA LA REALIZACION DE PCR: PNEUMOCYSTIS JIROVECI Y HERPES-VARICELLA PARA EL HOSPITAL DE ENFERMEDADES INFECCIOSAS DR. LUCIO CÓRDOVA"}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios SERVICIO DE ASEO INTEGRAL PARA EL CENTRO MÉDICO Y DENTAL DE ANTOFAGASTA. SEGUN REQUERIMIENTO TÉCNICO, UBICADO EN AV. RICA AVENTRA N° 11.855, ANTOFAGASTA."}
+{"cat": "801116", "prod": "80111601", "t": "Personal administrativo temporal SERVICIO DE ORIENTADORES(AS)"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Se consulta por obras civiles mediante Licitación Pública para Generar la construcción de puntos limpios en puntos estratégicos en la comuna de Curaco de Vélez."}
+{"cat": "512015", "prod": "51201501", "t": "Azatioprina LENALIDOMIDA 5 MG CP;100004873-\r\nLENALIDOMIDA 10 MG CP;100004872-\r\nLENALIDOMIDA 15 MG CP;100004871-\r\nLENALIDOMIDA 25MG CP;100003431"}
+{"cat": "511415", "prod": "51141531", "t": "Ácido valproico LACOSAMIDA 50 MG CM REC; 100003944"}
+{"cat": "422220", "prod": "42222008", "t": "Kits o accesorios de bombas de infusión 2257724\tSET DE INFUSION STD BIC"}
+{"cat": "422220", "prod": "42222008", "t": "Kits o accesorios de bombas de infusión 2257725\tSET DE INFUSION BIC FOTOSENSIBLE "}
+{"cat": "422220", "prod": "42222008", "t": "Kits o accesorios de bombas de infusión 2257726\tSET INFUSION SANGRE/HEMOD. BIC"}
+{"cat": "422220", "prod": "42222008", "t": "Kits o accesorios de bombas de infusión 2257719\tSET INFUSION FILTRO 0.2 MICRAS ONCOLOGIA"}
+{"cat": "422220", "prod": "42222008", "t": "Kits o accesorios de bombas de infusión 2257978\tSET INFUSION C/DOBLE PUERTO DE INYECCION"}
+{"cat": "422220", "prod": "42222008", "t": "Kits o accesorios de bombas de infusión 2257979\tSET INFUSION C/CUATRO PUERTOS DE INYECCION"}
+{"cat": "422220", "prod": "42222008", "t": "Kits o accesorios de bombas de infusión 2257980\t  LÍNEA SECUNDARIA LIBRE DE PVC PARA BIC"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles El proyecto contempla la construcción de un galpón para las actividades costumbristas que se realicen en el parque municipal de Ninhue."}
+{"cat": "302018", "prod": "30201803", "t": "Unidades para contenedores ADQUISICIÓN TRANSPORTE E INSTALACIÓN DE BODEGA MODULAR PARA ALMACENAMIENTO DE SUSTANCIAS PELIGROSAS SUSPEL – PRODUCTOS INFLAMABLES, DE ACUERDO A FORMATO ECONOMICO Y DOCUMENTACION ADJUDICADA."}
+{"cat": "432323", "prod": "43232304", "t": "Software del sistema de administración de bases de datos SERVICIO DE ARRENDAMIENTO DE PLATAFORMA DE GESTIÓN Y VENTA DE PERMISOS DE CIRCULACIÓN VEHICULAR, COMUNA DE YERBAS BUENAS."}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Retroexcavadora\t19,5 L - 24 (Traccionales).\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Retroexcavadora 12,5/80 - 18 (Direccionales).\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Cargador Frontal 20,5 X 25 (Traccionales).\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Tractor Desbrozador 18,4 X 38 (Traccionales).\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Tractor Desbrozador 14,9 X 24 (Direccionales).\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Rodillo\t23,1 - 26 (Traccionales).\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Motoniveladora\t17,5 X 25 (Traccionales).\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Camión Tolva 295/80 R22,5 (Traccionales).\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Camión Grua 225/85 R16 (Traccionales)."}
+{"cat": "251725", "prod": "25172504", "t": "Neumáticos para camionetas o automóviles Camioneta 245/70 R16 (MIXTOS M+S).\r\n\r\n\r\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Camión Tolva 295/80 R22,5 (Direccionales)."}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Camión Grua 225/85 R16 (Direccionales)."}
+{"cat": "801117", "prod": "80111701", "t": "Servicios de contratación de personal Costo de Servicio personal médico, Ingresar % mensual de recargo por servicio contratado y completar anexo N°9 \"OFERTA ECONÓMICA\"\t"}
+{"cat": "432315", "prod": "43231512", "t": "Software de gestión de licencias CONTRATACIÓN DE SOLUCIÓN DE OBSERVABILIDAD UNIFICADA DE SOFTWARE (APM/DEM) Y MONITOREO DE INFRAESTRUCTURA HÍBRIDA PARA TGR"}
+{"cat": "511815", "prod": "51181505", "t": "Glipizida VILDAGLIPTINA 50 MG COMPRIMIDOS O COMPRIMIDO RECUBIERTO ENVASADO EN BLISTER. ENVASE RESISTENTE CON SELLO QUE ASEGURE LA INVIOLABILIDAD DEL CONTENIDO. Ofertar por comprimido o comprimido recubierto. VENCIMIENTO: MAYOR O IGUAL A 14 MESES (INDICAR EL VCTO. E"}
+{"cat": "511425", "prod": "51142508", "t": "Diclorhidrato de pramipexol PRAMIPEXOL 1MG COMPRIMIDOS O COMPRIMIDO RECUBIERTO ENVASADO EN BLISTER. ENVASE RESISTENTE CON SELLO QUE ASEGURE LA INVIOLABILIDAD DEL CONTENIDO. Ofertar por comprimido o comprimido recubierto. VENCIMIENTO: MAYOR O IGUAL A 14 MESES"}
+{"cat": "511818", "prod": "51181818", "t": "Progesterona PROGESTERONA MICRONIZADA 100MG CÁPSULA ENVASADO EN BLISTER. ENVASE RESISTENTE CON SELLO QUE ASEGURE LA INVIOLABILIDAD DEL CONTENIDO VENCIMIENTO: MAYOR O IGUAL A 14 MESES (INDICAR EL VCTO. EN DÍA/MES/AÑO O MES/AÑO)"}
+{"cat": "401615", "prod": "40161504", "t": "Filtros de aceite FILTRO DE ACEITE MOTOR Código 600-211-1341"}
+{"cat": "401615", "prod": "40161505", "t": "Filtros de aire FILTRO DE AIRE KIT Código 600-185-6100"}
+{"cat": "401615", "prod": "40161513", "t": "Filtros de combustible PRE-FILTRO COMBUSTIBLE Código 600-319-4540"}
+{"cat": "401615", "prod": "40161513", "t": "Filtros de combustible FILTRO PRINCIPAL COMBUSTIBLE Código 600-319-3841"}
+{"cat": "401615", "prod": "40161505", "t": "Filtros de aire FILTRO CABINA EXTERIOR Código 17M-911-3530"}
+{"cat": "401615", "prod": "40161505", "t": "Filtros de aire FILTRO CABINA INTERIOR Código 20Y-979-6261"}
+{"cat": "401615", "prod": "40161504", "t": "Filtros de aceite FILTRO TREN DE POTENCIA Código 07063-51100"}
+{"cat": "401615", "prod": "40161504", "t": "Filtros de aceite ORING FILTRO TREN POTENCIA Código 07000-12130"}
+{"cat": "261118", "prod": "26111805", "t": "Tensores de correa CORREA A/C Código 17A-911-4680"}
+{"cat": "311519", "prod": "31151905", "t": "Correas de caucho CORREA ALTERNADOR, 760MM Código 6261-81-6810"}
+{"cat": "401615", "prod": "40161515", "t": "Filtros hidráulicos FILTRO DE PILOTAJE HIDRÁULICO Código 20Y-62-51691"}
+{"cat": "401615", "prod": "40161515", "t": "Filtros hidráulicos ORING FILTRO PILOTAJE Código 706-76-71390"}
+{"cat": "401615", "prod": "40161513", "t": "Filtros de combustible FILTRO RESPIRADERO TANQUE COMB. Código 421-60-35170"}
+{"cat": "401615", "prod": "40161515", "t": "Filtros hidráulicos FILTRO RESPIRADERO TANQUE HIDRÁULICO Código 421-60-35170"}
+{"cat": "401615", "prod": "40161505", "t": "Filtros de aire FILTRO RESPIRADERO TREN DE POTENCIA Código 07030-00252"}
+{"cat": "401615", "prod": "40161502", "t": "Filtros de agua FILTRO AGUA O CORROSIÓN Código 600-411-1161"}
+{"cat": "401615", "prod": "40161502", "t": "Filtros de agua FILTRO REFRIGERANTE Código 600-411-5110"}
+{"cat": "401615", "prod": "40161515", "t": "Filtros hidráulicos FILTRO HIDRÁULICO RETORNO TANQUE Código 207-60-71182"}
+{"cat": "401615", "prod": "40161515", "t": "Filtros hidráulicos ORING FILTRO HIDRÁULICO RETORNO TANQUE Código 07000-15195 "}
+{"cat": "151215", "prod": "15121501", "t": "Aceite de motor ACEITE MOTOR 15W40 Código 550048495"}
+{"cat": "151215", "prod": "15121520", "t": "Lubricantes de uso general ACEITE MANDOS FINALES TO30 Código 550048467"}
+{"cat": "151215", "prod": "15121520", "t": "Lubricantes de uso general ACEITE TREN DE POTENCIA TO30 Código 550048467"}
+{"cat": "151215", "prod": "15121501", "t": "Aceite de motor ACEITE DÁMPER TO30 Código 550048467"}
+{"cat": "151215", "prod": "15121504", "t": "Aceite hidráulico ACEITE HIDRÁULICO TO10 Código 550048463"}
+{"cat": "231533", "prod": "23153313", "t": "Cuchillas o conjuntos de cuchillas de maquinaria CUCHILLA CENTRAL Código 175-70-26310B"}
+{"cat": "221015", "prod": "22101522", "t": "Empujadoras de cadenas CANTONERA DERECHA Código 175-71-22282B"}
+{"cat": "221015", "prod": "22101522", "t": "Empujadoras de cadenas CANTONERA IZQUIERDA Código 175-71-22272B"}
+{"cat": "231533", "prod": "23153313", "t": "Cuchillas o conjuntos de cuchillas de maquinaria TUERCAS CUCHILLA Código 2J3505"}
+{"cat": "311616", "prod": "31161611", "t": "Pernos de sujeción PERNO CUCHILLA Código 5J2409"}
+{"cat": "221017", "prod": "22101702", "t": "Cucharas de movimiento de tierra o sus piezas o accesorios PERNO CANTONERA Código D2J2548"}
+{"cat": "311618", "prod": "31161807", "t": "Golillas planas GOLILLA Código 5P8249"}
+{"cat": "231533", "prod": "23153313", "t": "Cuchillas o conjuntos de cuchillas de maquinaria PUNTA RIPPER Código D1757831230"}
+{"cat": "231533", "prod": "23153313", "t": "Cuchillas o conjuntos de cuchillas de maquinaria CANILLERA Código D1957821320"}
+{"cat": "221015", "prod": "22101522", "t": "Empujadoras de cadenas PASADOR Código D924402508P"}
+{"cat": "221015", "prod": "22101522", "t": "Empujadoras de cadenas ZAPATA HD 560MM Código 175-32-31313"}
+{"cat": "311616", "prod": "31161601", "t": "Pernos de anclaje KIT PERNO TUERCA Código 178-32-05000"}
+{"cat": "221017", "prod": "22101702", "t": "Cucharas de movimiento de tierra o sus piezas o accesorios RODILLO SUPERIOR Código 17A-30-00722"}
+{"cat": "221017", "prod": "22101702", "t": "Cucharas de movimiento de tierra o sus piezas o accesorios RODILLO INFERIOR DF Código 17A-30-00624"}
+{"cat": "221015", "prod": "22101522", "t": "Empujadoras de cadenas SEGMENTO SPROCKET Código 17A-27-77110"}
+{"cat": "311616", "prod": "31161601", "t": "Pernos de anclaje PERNO ROD SUPERIOR Código 01011-62005"}
+{"cat": "221017", "prod": "22101702", "t": "Cucharas de movimiento de tierra o sus piezas o accesorios GOLILLA ROD SUPERIOR Código 01643-32060"}
+{"cat": "311616", "prod": "31161601", "t": "Pernos de anclaje PERNO ROD INFERIOR Código 01010-62285"}
+{"cat": "221017", "prod": "22101702", "t": "Cucharas de movimiento de tierra o sus piezas o accesorios GOLILLA ROD INFERIOR Código 01643-32260"}
+{"cat": "311616", "prod": "31161601", "t": "Pernos de anclaje PERNO SPROCKET Código 178-27-11150"}
+{"cat": "221015", "prod": "22101505", "t": "Apisonadoras TUERCA SPROCKET Código 01803-02430"}
+{"cat": "311616", "prod": "31161601", "t": "Pernos de anclaje PERNO MAESTRO Código 175-32-41261"}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Escuela San Francisco."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Escuela Libertad."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Escuela España."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Escuela Cristo Redentor."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Escuela Pablo Neruda."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Escuela Víctor Koerner."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Escuela Gabriela Mistral."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación CEIA Osvaldo Rojas González."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Escuela El Cobre, Escuela Padre Humberto, Muñoz y Escuela Hno. Fernando de la Fuente."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Jardín Infantil Los Cariñositos."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Jardín Infantil Estrellita del Valle."}
+{"cat": "801615", "prod": "80161507", "t": "Servicios Audio Visuales Servicio de amplificación Jardín Infantil Portalitos de Daniela."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Servicios de producción integral para la ejecución de actividades correspondientes a AfroArica, Feria y Plan de Medio."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Servicios de producción de material audiovisual para la difusión de Fondart"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos "}
+{"cat": "491016", "prod": "49101609", "t": "Ornamentos y decoraciones SERVICIO DE ARRIENDO DE ARBOLES DE NAVIDAD PARA PLAZA DE PEÑAFLOR Y PLAZA DE MALLOCO de acuerdo a los requisitos y especificaciones técnicas señaladas en Bases de Licitacion."}
+{"cat": "512412", "prod": "51241208", "t": "Cremas o ungüentos hidrofílicos Ulmo plus gel 30 grs."}
+{"cat": "421322", "prod": "42132205", "t": "Guantes quirúrgicos Guante de procedimiento nitrilo talla L."}
+{"cat": "423115", "prod": "42311513", "t": "Vendaje de gel Hidrogel plata 30 grs."}
+{"cat": "411224", "prod": "41122407", "t": "Bisturíes de laboratorio Hoja de bisturí n° 20."}
+{"cat": "421316", "prod": "42131606", "t": "Mascarillas de aislamiento o quirófano para el personal sanitario Mascarillas Laríngea 2,5 desechable."}
+{"cat": "421316", "prod": "42131606", "t": "Mascarillas de aislamiento o quirófano para el personal sanitario Mascarillas Laríngea de 4.0 desechable."}
+{"cat": "421516", "prod": "42151660", "t": "Aplicadores o absorbentes odontológicos Microaplicador fino (Microbrushs)."}
+{"cat": "421516", "prod": "42151660", "t": "Aplicadores o absorbentes odontológicos Microaplicador grueso."}
+{"cat": "421516", "prod": "42151660", "t": "Aplicadores o absorbentes odontológicos Microaplicador ultrafino."}
+{"cat": "421425", "prod": "42142502", "t": "Agujas para anestesia Trocar de Osteoclisis automático pediátrico."}
+{"cat": "421425", "prod": "42142502", "t": "Agujas para anestesia Trocar de Osteoclisis automático adulto."}
+{"cat": "421720", "prod": "42172017", "t": "Kits para equipos médicos de campo o laboratorio, o productos relacionados Campo quirúrgico estéril 15x15, fenestrado en el centro con adhesivo."}
+{"cat": "421322", "prod": "42132205", "t": "Guantes quirúrgicos Guantes Quirúrgicos estéril n° 6."}
+{"cat": "701515", "prod": "70151508", "t": "Servicios de asistencia forestal Ordenamiento de desechos y preparación de suelos con excavadora"}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos Tiamina 30 mg/ml solución inyectable. Vencimiento mayor a 18 meses desde el envío de la orden de compra."}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos Piridoxina clorhidrato ampolla 100 mg/1ml p/administración im . Vencimiento mayor a 18 meses desde el envío de la orden de compra."}
+{"cat": "511425", "prod": "51142503", "t": "Levodopa Levodopa 200 mg/benserazida 50mg capsulas en blíster. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "511015", "prod": "51101589", "t": "Carbapenems incluidas las tienamicinas Ertapenem 1 g polvo para solución inyectable para administración intravenosa-intramuscular. Vencimiento mayor a 18 meses desde el envío de la orden de compra."}
+{"cat": "111015", "prod": "11101511", "t": "Calcio Calcio acetato 667 mg comprimido en blíster. Vencimiento mayor a 18 meses desde el envío de la orden de compra."}
+{"cat": "511015", "prod": "51101573", "t": "Cefuroxima Cefuroxima 50 mg polvo para solución inyectable. Vencimiento mayor a 18 meses desde el envió de la orden de compra"}
+{"cat": "511015", "prod": "51101511", "t": "Amoxicilina Amoxicilina polvo para suspensión fc x 60 ml 250 m/5ml. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "511618", "prod": "51161812", "t": "Combinación clorfeniramina-acetaminofeno Paracetamol solución para infusión 10 MG/ml bolsa 100 ml. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "511618", "prod": "51161812", "t": "Combinación clorfeniramina-acetaminofeno Paracetamol 1000 mg comprimido. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "511319", "prod": "51131903", "t": "Gelatina Gelatina fluida modificada 4% 500 ml no solución inyectable. Vencimiento mayor a 18 meses desde el envió de la orden de compra"}
+{"cat": "511425", "prod": "51142508", "t": "Diclorhidrato de pramipexol Pramipexole comprimido 1 mg en blíster. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "511018", "prod": "51101807", "t": "Fluconazol Fluconazol 150 mg comprimido en blíster. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "511015", "prod": "51101512", "t": "Cloxacilina Cloxacilina capsulas 500 mg en blíster. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "511419", "prod": "51141907", "t": "Sulpirida Sulpirida 50 mg comprimido. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "512115", "prod": "51211501", "t": "Allopurinol Alopurinol 100 mg comprimidos en blíster. Vencimiento mayor a 18 meses desde el envió de la orden de compra."}
+{"cat": "511421", "prod": "51142106", "t": "Ibuprofeno Ibuprofeno comprimido 400 mg en blíster. Vencimiento mayor a 18 meses desde el envió de la orden."}
+{"cat": "511417", "prod": "51141705", "t": "Nicergolina Nitroglicerina 50 mg/10 ml solución inyectable. Vencimiento mayor a 18 meses desde el envío de la orden."}
+{"cat": "821517", "prod": "82151705", "t": "Cantantes SERVICIO DE CONTRATACIÓN DE ARTISTAS PARA EVENTO FIESTA GASTRONÓMICA ENTRE\r\nSABORES Y TRADICIONES, SEGUN BAG Y EETT"}
+{"cat": "561015", "prod": "56101540", "t": "Diseñadores de vestuario INDUMENTARIA ESCENOGRÁFICA BALLET FOLKLÓRICO MUNICIPAL., CONSTA DE 2 ÍTEMS."}
+{"cat": "561015", "prod": "56101540", "t": "Diseñadores de vestuario INDUMENTARIA ESCENOGRÁFICA CORO MUNICIPAL, CORO VOCES BLANCAS ORQUESTA LATINOAMERICANA, CONSTA DE 7 ÍTEMS."}
+{"cat": "561015", "prod": "56101540", "t": "Diseñadores de vestuario INDUMENTARIA ESCENICA PARA BALLET DEL TEATRO MUNICIPAL, CONSTA DE 11 ÍTEMS."}
+{"cat": "721023", "prod": "72102305", "t": "Servicios de reparación, mantenimiento o reparación de aire acondicionado MANTENCIÓN Y REPARACIÓN AIRE ACONDICIONADO SEGÚN BASES."}
+{"cat": "821016", "prod": "82101601", "t": "Publicidad en radio frases radiales distribuidas en 05 radios, 35 avisos por cada radio po un total de 07 días., se debe ingresar el valor unitario y neto de cada frase, es una adjudicación multiple. "}
+{"cat": "301029", "prod": "30102904", "t": "Postes de madera Polines impregnados de 3 a 4 pulgadas x 2,4 metros. Con entrega y descarga de acuerdo a lo indicado en requerimientos técnicos."}
+{"cat": "311629", "prod": "31162904", "t": "Grampas de cable metálico Grapas galvanizadas de 1 1/2 pulgadas, en cajas de 25 kg. Con entrega y descarga de acuerdo a lo indicado en requerimientos técnicos."}
+{"cat": "101716", "prod": "10171605", "t": "Mezclas NPK (nitrógeno, fósforo y potasio) Fertilizante granulado de liberación controlada, composición NPK (16-8-12), recubrimiento polímero de ceras elásticas, liberación 6 meses, gránulos entre 2,5 y 3,5 mm, o equivalente técnico, bolsas de 25 kg. Entrega y descarga de acuerdo a requerimientos."}
+{"cat": "781117", "prod": "78111701", "t": "Arriendo de vehículos de agua SERVICIO MARÍTIMO DE TRASLADO DE PASAJEROS Y APOYO AL MUESTREO CIENTÍFICO.  (INDICAR VALOR NETO) R54090."}
+{"cat": "422420", "prod": "42242002", "t": "Dispositivos prostéticos de la extremidad superior 927-8961 \tStent medicado con Sirolimus, STRUTS de 80 micras o superior"}
+{"cat": "531027", "prod": "53102709", "t": "Uniformes de personal de ambulancias ADQUISICIÓN UNIFORME SAMU DSSAN 2026 (Incluye 210 Pantalón secado rápido (RIPSTOP), 107 Polera dama/varón manga corta, 97 Polera dama/varón manga larga, 2 Cortaviento y 2 Polar)"}
+{"cat": "781118", "prod": "78111808", "t": "Arriendo de vehículos Se Requiere arrendar 3 camionetas 4x4 con combustible y conductor para realizar visitas domiciliarias (ver Bases Administrativas)"}
+{"cat": "422950", "prod": "42295011", "t": "Cámaras de video endoscópicas o grabadoras, adaptadores o accesorios Videoscopio 5.0/2.8 debe poseer sistema de aspiración, con un diámetro mínimo de 2,8 mm y máximo de 5,0 mm."}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios CONTRATACIÓN DEL SERVICIO DE ASEO PARA OFICINA DE LA COORDINACIÓN REGIONAL DE LA ARAUCANÍA"}
+{"cat": "432315", "prod": "43231512", "t": "Software de gestión de licencias “ADQUISICIÓN DE LICENCIAS DE RESPALDO, ALMACENAMIENTO Y RECUPERACIÓN"}
+{"cat": "432316", "prod": "43231602", "t": "Software de planificación de recursos empresariales (ERP) Contratación de servicio de sistema de gestión empresarial (ERP) en modalidad SaaS, integrado en módulos contables, financieros y de remuneraciones, con implementación, migración de datos históricos, capacitación y soporte, según Bases."}
+{"cat": "411118", "prod": "41111808", "t": "Equipo de examen por rayos X ITEM 1: MTTO. EQUIPO Rx Mamógrafo marca HOLOGIC, segun especificaciones técnicas"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Servicio de producción de actividad \"Encuentro Deportivo - Kinball\""}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Servicio de producción técnica para el desarrollo del “Encuentro de Emprendedores Feria de Navidad” en la comuna de Lo Barnechea."}
+{"cat": "841116", "prod": "84111601", "t": "Auditorias de balances anuales “SERVICIO DE AUDITORÍA FINANCIERA Y DE INVENTARIO DE BIENES MUEBLES DAEM MUNICIPALIDAD DE HUALAIHUÉ”"}
+{"cat": "391116", "prod": "39111603", "t": "Alumbrado público Se requiere la ejecución de la iniciativa de instalación de luminarias de alumbrado público en postes existentes en vías viales públicas de la comuna de La Granja; se considera instalar 6.740 luminarias LED nuevas"}
+{"cat": "491016", "prod": "49101609", "t": "Ornamentos y decoraciones COMPRA ARBOLES NAVIDEÑOS NUEVOS DE 12MTS., ESTRUCTURA, FOLLAJE, ILUMINACION Y ORNAMENTACION, INCLUYE TRANSPORTE, INSTALACION, CONEXION Y PRUEBAS, DESMONTAJE, EMBALAJE, INVENTARIO Y ENTREGA PARA CUSTODIA MUNICIPAL. PARA MARIA ELENA Y QUILLAGUA. (VER BASES "}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE PRODUCCION TECNICA Y ARTISTICA CIRCUITO DE FIESTAS COSTUMBRISTAS DE PRIMAVERA."}
+{"cat": "821215", "prod": "82121506", "t": "Impresión de publicaciones Impresión de 1600 unidades de fotolibro."}
+{"cat": "271115", "prod": "27111507", "t": "Cortadores de metal HERRAMIENTAS Y MATERIALES DE CONSTRUCCIÓN PARA EL PROGRMA APOYO CONSTRUCTIVO"}
+{"cat": "311624", "prod": "31162404", "t": "Grapas de ferretería MATERIALES DE CONSTRUCCIÓN PARA MANTENIMIENTO Y REPARACIONES DE INMUEBLE"}
+{"cat": "731819", "prod": "73181908", "t": "Servicios de soldadura Suministro e instalación de infraestructura metalica de altura para árbol de navidad en Puerto Cisnes"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas Línea 1: Subsidio Sra. Ana Negrón Muñoz;   UF 1.552\r\nPROGRAMA D.S. 10, en La Junta"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas Línea 2: Subsidio Sra. Carmen Vargas Pérez; UF 1.472 - PROGRAMA D.S. 10, en La Junta"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas Línea 3: Subsidio Sra. María Delgado Pinto; UF 1.552 - PROGRAMA D.S. 10, en La Junta"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas Línea 4: Subsidio Sra. Myriam Gallardo Mansilla; UF 1.812 - PROGRAMA D.S. 10, en La Junta"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas Línea 5: Subsidio Sra. Otilia Valdebenito Morales; UF 1.492 - PROGRAMA D.S. 10, en La Junta"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas Línea 6: Subsidio Sra. Silvia Reyes Casanova; UF 1.472 - PROGRAMA D.S. 10, en La Junta"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas Línea 7: Subsidio Sra. Víctor Cardenas Maldonado; UF 1.472 - PROGRAMA D.S. 10, en La Junta"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas Licitación para la contratación de las obras del proyecto “CCONSTRUCCIÓN CANCHA DE PASTO SINTÉTICO POBLACIÓN LOS PATAGONES DE LA JUNTA, COMUNA DE CISNES” Código BIP 40075119-0, según lo indican los antecedentes anexados"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles EJECUCION DEL PROYECTO DENOMINADO “CONSTRUCCIÓN PLAZA DE JUEGOS DE CANCOSA ”.CODIGO BIP N°40072725-0.  CONFORME A LO ESTIPULADO EN LAS BASES ADMINISTRATIVAS GENERALES PLANIMETRIAS Y ANEXOS."}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles EJECUCION DE PROYECTO \"MEJORAMIENTO ESCUELA SAN ANDRES Y MEJORAMIENTO PAVIMIMENTO PARVULOS ESCUELA DE MATILLA, COMUNA DE PICA\". CONFORME A LO SEÑALADO EN LAS BASES, PLANOS Y ANEXOS. "}
+{"cat": "252019", "prod": "25201901", "t": "Sistemas de Control de incendio o sistemas de extinguir SERVICIO DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO PARA RED DE INCENDIOS, DE ACUERDO A EETT Y ANEXOS ADJUNTOS"}
+{"cat": "252019", "prod": "25201901", "t": "Sistemas de Control de incendio o sistemas de extinguir CONVENIO SUMINISTRO DE REPUESTOS PARA REPARACIÓN DE RED DE INCENDIOS, MONTO DISPONIBLE $80.000.000.- NETO. DE ACUERDO A EETT Y ANEXOS ADJUNTOS"}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación MANTENCION PREVENTIVA AMBULANCIA, DE ACUERDO A DOCUMENTOS ADJUNTOS. PRESUPUESTO DISPONIBLE PARA ESTE ITEM $9.500.000.- NETO"}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación MANTENIMIENTO REPAR/CORRECTIVA AMBULANCIA DE ACUERDO A DOCUMENTOS ADJUNTOS. PRESUPUESTO DISPONIBLE PARA ESTE ITEM $20.000.000.- NETO"}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación MANTENCION PREVENTIVA VEHICULO ADMINISTRATIVO DE ACUERDO A DOCUMENTOS ADJUNTOS. PRESUPUESTO DISPONIBLE PARA ESTE ITEM $15.000.000.- NETO"}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación MANTENCION REPAR/CORRECTIVA VEHICULO ADMINISTRATIVO DE ACUERDO A DOCUMENTOS ADJUNTOS. PRESUPUESTO DISPONIBLE PARA ESTE ITEM $30.000.000.- NETO"}
+{"cat": "121626", "prod": "12162601", "t": "Estabilizadores de arcilla inorgánica Aplicación de supresor de polvo, tratamiento superficial de CLORURO DE MAGNESIO HEXAHIDRATADO (bischofita), como solución líquida mediante camión aljibe, en diversos sectores de la Comuna de Cabrero, superficie total de 230.798 m²."}
+{"cat": "221017", "prod": "22101713", "t": "Brazo de retroexcavadora o secciones del brazo ARRIENDO 100 HORAS RETROEXCAVADORA CON OPERARIO"}
+{"cat": "211015", "prod": "21101506", "t": "Máquinas explanadoras o niveladoras ARRIENDO 100 HORAS MOTONIVELADORA CON OPERARIO"}
+{"cat": "801416", "prod": "80141611", "t": "Personalización de regalos o productos promocionales TARJETA GIFT CARDS PARA ALUMNOS DE ESC. MARINA ROJAS SANDOVAL, DE HUELON, PERSONALIZADAS. CADA UNA POR UN VALOR $144.040.- QUE SEA CANJEABLE EN EL RETEIL PARA ZAPATOS, VESTUARIO Y  ALIMENTACIÓN.-"}
+{"cat": "801416", "prod": "80141611", "t": "Personalización de regalos o productos promocionales TARJETA GIFT CARDS PARA ALUMNOS DE LICEO LUIS EDMUNDO CORREA ROJAS DE CUREPTO, PERSONALIZADAS. CADA UNA POR UN VALOR $130.000.- QUE SEA CANJEABLE EN EL RETEIL PARA ZAPATOS, VESTUARIO O ALIMENTACIÓN.-"}
+{"cat": "801416", "prod": "80141611", "t": "Personalización de regalos o productos promocionales TARJETA GIFT CARDS PARA ALUMNOS DE ESC. ANA LUISA ESPINA RIVERA, DEUCA,  PERSONALIZADAS. CADA UNA POR UN VALOR $144.040.- QUE SEA CANJEABLE EN EL RETEIL PARA ZAPATOS, VESTUARIO O ALIMENTACIÓN.-"}
+{"cat": "801416", "prod": "80141611", "t": "Personalización de regalos o productos promocionales TARJETA GIFT CARDS PARA ALUMNOS DE ESC. JUAN JESUS GONZÁLEZ AVENDAÑO, DE CALPUN, PERSONALIZADAS.  POR UN VALOR $144.040.- QUE SEA CANJEABLE EN EL RETEIL PARA ZAPATOS, VESTUARIO O ALIMENTACIÓN.-"}
+{"cat": "801416", "prod": "80141611", "t": "Personalización de regalos o productos promocionales TARJETA GIFT CARDS PARA ALUMNOS DE ESC. FRAY PEDRO ARMENGOL VALENZUELA, GUALLECO, PERSONALIZADAS. CADA UNA POR UN VALOR $144.040.- QUE SEA CANJEABLE EN EL RETEIL PARA ZAPATOS, VESTUARIO O ALIMENTACIÓN.-"}
+{"cat": "141118", "prod": "14111801", "t": "Tickets o rollos de tickets TARJETA GIFT CARDS PARA ALUMNOS DE ESC. ELENA ARMIJO MORALES,HAUQUEN, PERSONALIZADAS. CADA UNA POR UN VALOR $144.040.- QUE SEA CANJEABLE EN EL RETEIL PARA ZAPATOS, VESTUARIO O ALIMENTACIÓN.-"}
+{"cat": "801416", "prod": "80141611", "t": "Personalización de regalos o productos promocionales TARJETA GIFT CARDS PARA ALUMNOS DE ESC. PEDRO A. GONZALEZ CUREPTO;PERSONALIZADAS. POR UN VALOR $144.040.- QUE SEA CANJEABLE EN EL RETEIL PARA ZAPATOS, VESTUARIO O ALIMENTACIÓN.-"}
+{"cat": "411118", "prod": "41111808", "t": "Equipo de examen por rayos X Plan de Mantenimiento Preventivo trimestral (4 al año), y\r\nCorrectivo con repuestos a todo evento, por un período de 24 meses, para equipo Canon Aquilion Prime SP"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juguetes para niños y niñas según requerimientos en detalle adjunto. SE DEBE PRESENTAR MUESTRA DE CADA REGALO OFERTADO SEGUN LO QUE SE INDICA EN ADJUNTO"}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados CAPACITACIÓNTEÓRICO-PRÁCTICA EN TRASTORNO DEL ESPECTRO AUTISTA TEA"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCAR-ARICA)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCDA-IQUIQUE)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCFA-ANTOFAGASTA)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCCF-CALAMA)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCAT-COPIAPÓ)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCSE-LA SERENA)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCQP-TEMUCO)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCVD- VALDIVIA)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCJO-OSORNO)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCTE-PUERTO MONTT)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCPQ-DALCAHUE)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCIE-CONCEPCIÓN)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCBA-BALMACEDA)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCNT-PUERTO NATALES)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCCI-PUNTA ARENAS)"}
+{"cat": "241021", "prod": "24102101", "t": "Equipo para manejo de carga SERVICIO DE HANDLING A NIVEL NACIONAL PARA LAS AERONAVES DE LA FACH-IIª BRIGADA AÉREA AÑO 2027-2028 (SCEL-SANTIAGO)"}
+{"cat": "101217", "prod": "10121702", "t": "Alimento granulado para peces Kilos de alimento para turbot calibre 9mm. Con 54% de proteína, 15% de lípido y pellet con 100% de flotación, presentación de 20 kilos.\r\n\r\nNota:\r\n\r\n-\tEl retiro del alimento será realizado por la universidad de Los Lagos, siembre y cuando la planta esté ub"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados ARRIENDO DE VAN EJECUTIVA CON CAPACIDAD PARA 16 PASAJEROS"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Vehiculo con capacidad para 4-6 pasajeros"}
+{"cat": "201219", "prod": "20121909", "t": "Sistemas de topografía Solución integrada de dron topográfico RTK con control remoto, estación base GNSS, paracaídas de emergencia y software fotogramétrico, incluidos accesorios, licencias y prestaciones obligatorias, según Bases Técnicas adjuntas."}
+{"cat": "421720", "prod": "42172001", "t": "Equipos de primer auxilio de servicios médicos de urgencia “PARCHES ADULTOS Y PEDIÁTRICOS PARA EQUIPOS D.E.A.,DEL ÁREA DE SEGURIDAD Y SALUD EN EL TRABAJO, DE LA UNIVERSIDAD DE LOS  LAGOS”"}
+{"cat": "911115", "prod": "91111502", "t": "Servicios de lavandería SERVICIO DE LAVADO DE ROPA PARA EL CENTRO RECREACIONAL IPS REÑACA"}
+{"cat": "801015", "prod": "80101504", "t": "Asesorías en planificación estratégica El objetivo general del presente estudio es Desarrollar un Plan Maestro de Infraestructura Verde para la ciudad de Arica, que se constituya en una herramienta de planificación y gestión estratégica, orientada a mejorar la calidad de vida de los habitantes"}
+{"cat": "551115", "prod": "55111513", "t": "Textos vocacionales o educativos electrónicos SOBRE ADQUISICIÓN DE RECURSOS BIBLIOGRÁFICOS PARA COLECCIÓN ESPECIAL PARA CENTROS DE LECTURA Y BIBLIOTECAS ESCOLARES (CRA) 2026 DE LA COMUNA DE CHIGUAYANTE"}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios Servicio de Aseo para SEREMI Región Metropolitana"}
+{"cat": "821215", "prod": "82121506", "t": "Impresión de publicaciones ADQUISICIÓN DE INSUMOS Y SERVICIOS DE EMBOLSADO, MECANIZADO, ALMACENAJE Y DISTRIBUCIÓN DE MATERIALES METODOLÓGICOS DEL PROGRAMA CHILE TE CUIDA"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos Bolsa de dulces con temática navideña conforme a lo detallado en las bases de licitación."}
+{"cat": "931516", "prod": "93151607", "t": "Servicios de auditoria gubernamentales Contratación de servicio de auditoría externa para el Gobierno Regional de Valparaíso"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles El proyecto consiste en el diseño y la posterior construcción de un sistema de abastecimiento, acumulación y distribución de agua potable para el Cementerio Municipal de Salamanca, comuna de Salamanca, Provincia de Choapa, Región de Coquimbo, que permita "}
+{"cat": "831020", "prod": "83102001", "t": "Servicios funerarios CONTRATO DE SUMINISTRO  SERVICIOS FUNERARIOS, PARA ATENCIÓN CASOS SOCIALES DEL PROGRAMA ASISTENCIALIDAD, SEGÚN ESPECIFICACIONES TECNICAS Y ANEXOS."}
+{"cat": "761218", "prod": "76121801", "t": "Servicios de reciclaje SERVICIOS DE RECOLECCION Y RETIRO DE RESIDUOS RECICLABLES DE PLASTICO PET, POR UN PERIODO DE 06 MESES, SEGUN BASES ADMINISTRATIVAS"}
+{"cat": "761218", "prod": "76121801", "t": "Servicios de reciclaje SERVICIOS DE RECOLECCION Y RETIRO DE RESIDUOS RECICLABLES DE PLASTICO PET, POR UN PERIODO DE 06 MESES, SEGUN BASES ADMINISTRATIVAS"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Mezcla asfáltica en Caliente   CA24"}
+{"cat": "911116", "prod": "91111602", "t": "Servicios de mantenimiento de patios y piscinas HABILITACIÓN DE PISCINAS, CERCOS, QUINCHOS, LAVADEROS Y OTROS PARA EL CENTRO RECREATIVO PELECO"}
+{"cat": "921215", "prod": "92121504", "t": "Guardias de seguridad "}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles CONSTRUCCION CENTRO PRODUCTIVO PULELFU, COMUNA DE PUYEHUE"}
+{"cat": "921015", "prod": "92101501", "t": "Servicios de vigilancia Servicio de Vigilancia, 24 horas al día de lunes a domingo y festivos, para la Oficina Provincial Vialidad Coyhaique, Laboratorio Regional, Talleres, maquinarias y equipos según especificaciones técnicas."}
+{"cat": "391115", "prod": "39111510", "t": "Lámparas de mesa LINEA N°1:  HERRAMIENTAS E INSUMOS PARA JOYERIA Y ORFERERIA,  PRESUPUESTO DISPONIBLE $ 608.830, SEGUN LISTADO EN FICHA TECNICA ADJUNTA."}
+{"cat": "231216", "prod": "23121614", "t": "Máquinas de coser LINEA N° 2: HERRAMIENTAS Y EQUIPOS PARA CUERO, TALABARTERIA Y MARROQUINERIA,  PRESUPUESTO DISPONIBLE $ 411.076, SEGUN LISTADO EN FICHA TECNICA ADJUNTA."}
+{"cat": "561017", "prod": "56101703", "t": "Escritorios LINEA N° 3: MOBILIARIO, ALMACENAMIENTO Y ORGANIZACION,  PRESUPUESTO DISPONIBLE $ 539.021, SEGUN LISTADO EN FICHA TECNICA ADJUNTA."}
+{"cat": "481016", "prod": "48101615", "t": "Lavaplatos de uso comercial LINEA N° 4: EQUIMAPMIENTO E INSUMOS PARA COCINA, REPOSTERIA Y ELABORACION DE ALIMENTOS,  PRESUPUESTO DISPONIBLE $ 1.457.740, SEGUN LISTADO EN FICHA TECNICA ADJUNTA."}
+{"cat": "432121", "prod": "43212110", "t": "Impresoras multifunción o multifuncionales LINEA N° 5: EQUIPOS PARA IMPRESION, ENCUADERNACIONY FABRICACION DIGITAL,   PRESUPUESTO DISPONIBLE $ 996.979, SEGUN LISTADO EN FICHA TECNICA ADJUNTA."}
+{"cat": "231216", "prod": "23121614", "t": "Máquinas de coser LINEA N° 6:  EQUIPOS PARA COSTURA Y CONFECCION TEXTIL,   PRESUPUESTO DISPONIBLE $ 770.970, SEGUN LISTADO EN FICHA TECNICA ADJUNTA."}
+{"cat": "601113", "prod": "60111306", "t": "Normógrafos LINEA N° 7: HERRAMIENTAS PARA PIROGRABADO Y PERSONALIZACION DE PRODUCTOS, PRESUPUESTO DISPONIBLE $ 44.800, SEGUN LISTADO EN FICHA TECNICA ADJUNTA"}
+{"cat": "761217", "prod": "76121701", "t": "Tratamiento de aguas servidas Servicio de tratamiento de aguas servidas para el Regimiento Escolta Presidencial        N° 1 “Granaderos”. conforme a requerimientos técnicos por un periodo de 12 meses."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales ACEITE LUBRICANTE PARA INSTRUMENTAL ROTATORIO DENTAL. SEGÚN BASES TECNICAS."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales AGUJAS LARGAS (27g) SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales AGUJAS CORTAS (30g) SEGÚN BASES TÉCNICAS."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales AGUJAS EXTRA CORTAS DESECHABLES ESTERILES 30g X 12mm. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales ANESTESIA LIDOCAINA AL 2% CON VASOCONSTRICTOR . SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales ANESTESIA MEPIVACAINA AL 3% SIN VASOCONSTRICTOR. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales ANESTESIA TÓPICA DENTAL. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales BANDA MATRIZ 5mm. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales BANDA MATRIZ 6mm. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales BANDA MATRIZ 7mm. Rollo de 6mm x 3mts.  SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales BLOCK ENCERADO PARA MEZCLA MATERIAL DENTAL. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales CLORHEXIDINA 0.12%. SEGÚN BASES TÉCNICAS."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales CUÑAS DE MADERA DE TAMAÑOS SURTIDOS. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales ESCOBILLA DE PROFILAXIS. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales EUGENOL EN FRASCO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales EXTRACTOR DE NERVIO ESTANDAR. Longitud 21mm Kits de 10 unidades."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FORMOCRESOL. SOLUCIÓN DE USO TOPICO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales GELITA HEMOSTATICA. SEGÚN BASES TECNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales HEMOSTATICO. SOLUCIÓN SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales HILO RETRACTOR. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales HIDROXIDO DE CALCIO FRAGUADO QUIMICO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales HUINCHA METAL CON LIJA FORMATO 4mm. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales HUINCHA POLIESTER PARA PULIR. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales LIMA PARA CONDUCTO TIPO K. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales OXIDO DE ZINC EN POLVO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales PAPEL ARTICULAR PAQUETE. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales PARAMONOCLOROFENOL ALCANFORADO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales PASTA PROFILACTICA. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales SELLANTE PARA FISURAS FOTOCURADO BLANCO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales SEDA DENTAL. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales TIPS (MULTI-BRURSH) PARA APLICACIÓN ACIDO RESINA. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales DISCOS PARA PULIR COMPOSITE GRUESOS 1/2. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales DISCOS PARA PULIR COMPOSITE MEDIANO 1/2. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales DISCOS PARA PULIR COMPOSITE FINOS 1/2. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales DISCOS PARA PULIR COMPOSITE GRUESOS 3/8. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales DISCOS PARA PULIR COMPOSITE MEDIANO 3/8. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales DISCOS PARA PULIR COMPOSITE FINOS 3/8. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales MATERIAL TEMPORAL PARA OBTURACIÓN. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales LOSETA DE VIDRIO MEDIANA. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 010 REDONDA. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 012 REDONDA. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 014 REDONDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 016 REDONDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 018 REDONDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 010 CILINDRICA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 012 CILINDRICA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 014 CILINDRICA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 012 LAMA GRANO FINO."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 014 LAMA GRANO FINO."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD DIAMANTE ISO 014 LAMA GRANO MEDIANO."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ARKANSAS ALTA VELOCIDAD PARA PULIR COMPOSITE PIRAMIDE INVERTIDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ARKANSAS ALTA VELOCIDAD PARA PULIR COMPOSITE LLAMA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ARKANSAS ALTA VELOCIDAD PARA PULIR COMPOSITE REDONDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD ISO 021 BALÓN RUGBY FINA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD ISO 021 BALÓN RUGBY REGULAR ."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA ALTA VELOCIDAD ISO 023 BALÓN RUGBY FINA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA BAJA VELOCIDAD CARBIDE ISO 012 REDONDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA BAJA VELOCIDAD CARBIDE ISO 014 REDONDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA BAJA VELOCIDAD CARBIDE ISO 016 REDONDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA BAJA VELOCIDAD CARBIDE ISO 018 REDONDA."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA PARA BAJA VELOCIDAD PORTA DISCO SOFLEX"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA AGUJA GRANO FINO ISO 014"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. FRESA AGUJA GRANO MEDIANO ISO 014"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. PULIDOR SILICONADO PARA ACRILICO PARA LIMPIEZA DE MANO TIPO BALA GRANO GRUESO."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. PULIDOR SILICONADO PARA ACRILICO PARA LIMPIEZA DE MANO TIPO BALA GRANO MEDIO."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FRESAS QUIRURGICAS. PULIDOR SILICONADO PARA ACRILICO PARA LIMPIEZA DE MANO TIPO BALA GRANO FINO."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales VIDRIO LONOMERO MODIFICADO CON RESINA DE FOTOPOLIMERIZACIÓN. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales COMPOSITE FLOW. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales MICA PROTECTORA DESECHABLE. CAJA 10 UNIDADES. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales GASA TEJIDA. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales TORULAS DE ALGODON LISAS. USO ODONTOLOGICO.  SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales VASELINA SOLIDA. USO ODONTOLOGICO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales VASO DESECHABLE FORMATO 100 A 120CC. POR UNIDAD. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales VASO DAPPEN DE VIDRIO. USO ODONTOLOGICO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales ESPEJO DENTAL N°5 DE ACERO INOXIDABLE. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales PLACAS FOSFORICAS TAMAÑO 0. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales PLACAS FOSFORICAS TAMAÑO 2. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FUNDAS PARA PLACAS RADIOGRAFICAS TAMAÑO 2. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales FUNDAS PARA PLACAS RADIOGRAFICAS TAMAÑO 0. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales SET DE POSICIONADORES PARA RADIOGRAFIAS DENTAL INTRAORAL ADULTO.SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales SET DE POSICIONADORES PARA RADIOGRAFIAS DENTAL INTRAORAL PEDIATRICO. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales PUNTAS PARA SCALER. PUNTA G4 PARA SCALER. SEGÚN BASES TÉCNICAS"}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales PUNTAS ÁRA SCALER. PUNTA P1 PARA SCALER SEGÚN BASES TÉCNICAS"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 1 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 2 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 3 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 4 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 5 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 6 (ANEXO 3)"}
+{"cat": "781801", "prod": "78180103", "t": "Servicios de cambio de fluidos de aceite o de la transmisión SUMINISTRO SEMESTRALDE ARRIENDO DE LOCKERS DE MEDICAMENTOS PARA CESFAM DE SAN NICOLAS"}
+{"cat": "301519", "prod": "30151901", "t": "Toldos Adquisición de toldos, mesas y sillas."}
+{"cat": "251019", "prod": "25101901", "t": "Tractores agrícolas TRACTOR DE 24 HP, SEGÚN BASES ADJUNTAS."}
+{"cat": "211015", "prod": "21101501", "t": "Arados ARADO ROTOVATOR PARA TRACTOR, SEGÚN BASES ADJUNTAS."}
+{"cat": "211015", "prod": "21101514", "t": "Arados de subsuelo DESBROZADORA O RANA PARA TRACTOR, SEGÚN BASES ADJUNTAS."}
+{"cat": "541116", "prod": "54111601", "t": "Relojes de pared Reloj de muralla a pilas de 20 cm de diámetro. Estructura en color blanco. "}
+{"cat": "432020", "prod": "43202005", "t": "Dispositivos de almacenamiento de memoria flash Pendrive de 16 gb, con conectividad USB 2.0."}
+{"cat": "521515", "prod": "52151504", "t": "Tazas o vasos desechables domésticos Vasos de polipapel en color blanco de 8 oz / 240 cc. Aptos para bebidas calientes. Dimensiones aprox: 9,1 cm de altura y 8 cm de diámetro en la parte mas ancha."}
+{"cat": "481017", "prod": "48101711", "t": "Dispensadores de agua embotellada Dispensador de agua embotellada de 5 a 20 litros, con pedestal eléctrico, para gua fría y caliente. Debe contar con gabinete de almacenamiento de gran capacidad y asiento para el barril de agua desmontable, y con bandeja de goteo."}
+{"cat": "502023", "prod": "50202310", "t": "Agua mineral Aguas saborizadas individuales en formato caja de 190 cc o similar, libres de sellos y en sabores surtidos (al menos 3 sabores)."}
+{"cat": "421719", "prod": "42171917", "t": "Estuches o bolsas de primeros auxilios para los servicios médicos de urgencias o accesorios Botiquín de primeros auxilios para 25 personas, con maletín plástico liviano, portátil y resistente. Más detalles en documento adjunto."}
+{"cat": "421827", "prod": "42182702", "t": "Cintas métricas médicas Cinta metálica inextensible para medir. De acero flexible con pintura epoxi, con estándares internacionales de la ISAK. Más detalles en documento adjunto."}
+{"cat": "801416", "prod": "80141611", "t": "Personalización de regalos o productos promocionales Maquina de metal para hacer chapitas con sistema de matrices intercambiables de 25, 37 y 58 mm. Más detalles en documento adjunto."}
+{"cat": "801416", "prod": "80141611", "t": "Personalización de regalos o productos promocionales Chapitas metálicas para sublimable de 37 mm de diámetro, con carcasa de metal, cubierta trasera de metal con alfiler de gancho y película transparente de PVC de alta calidad."}
+{"cat": "441028", "prod": "44102801", "t": "Plastificadoras Termolaminadora plastificadora portátil, laminado en caliente y frio, continuo, con alerta de atasco y liberación de atasco. Para al menos papel tamaño A4."}
+{"cat": "601213", "prod": "60121301", "t": "Guillotinas Guillotina con capacidad de hojas por corte de al menos 12 hojas. Para al menos hojas tamaño A4, debe contar con traba de seguridad, guía de corte de alta precisión, regla e imán."}
+{"cat": "441016", "prod": "44101602", "t": "Máquina encuadernadora Anilladora espiralera redondo, con regulador de margen de perforado de 3 a 6 mm."}
+{"cat": "121717", "prod": "12171703", "t": "Tintas Caja de tinta en botellas de 65 ml, para Epson EcoTank L3150 (T544), que incluya los colores negro, amarillo, magenta y cyan."}
+{"cat": "141115", "prod": "14111509", "t": "Artículos de papelería Paquete de papel fotográfico, blanco, brillante, autoadhesivo, tamaño carta o A4, apto para todas las impresoras, resolución de al menos 5760 dpi y 120 gramos. Más detalles en documento adjunto."}
+{"cat": "141115", "prod": "14111509", "t": "Artículos de papelería Paquete de papel fotográfico glossy, magnético imantado. De color blanco, tamaño A4, en formato de 5 hojas, compatible con cualquier impresora de inyección de tinta. Debe ser para impresión de larga duración (que el color no se desvanezca con el tiempo)."}
+{"cat": "141115", "prod": "14111530", "t": "Notas de papel autoadhesivo Tacos de notas adhesivas, tipo post-it. Tacos de 270 hojas y con 3 colores (90 hojas por color)."}
+{"cat": "312015", "prod": "31201517", "t": "Cinta para empaquetar Pegote / masking tape de 48 mm x 40 metros, de 125 Mic."}
+{"cat": "312015", "prod": "31201517", "t": "Cinta para empaquetar Rollo de cinta adhesiva transparente para embalaje, de 48 mm X 100 metros."}
+{"cat": "141115", "prod": "14111531", "t": "Libros o cuadernos de registro Cuaderno triple de tapa dura, cuadriculado y con espiral. De tamaño carta o A4, con 150 hojas y 7 mm de espesor. Colores varios."}
+{"cat": "601057", "prod": "60105704", "t": "Barras de pegamento libres de ácido Pegamento adhesivo en barra de acabado mate, de 10 gr. Producto lavable y no tóxico."}
+{"cat": "441217", "prod": "44121708", "t": "Marcadores Destacador o resaltador en color verde, con forma de lápiz y con punta de 1 a 3 mm. "}
+{"cat": "441217", "prod": "44121708", "t": "Marcadores Destacador o resaltador en color amarillo, con forma de lápiz y con punta de 1 a 3 mm. "}
+{"cat": "441217", "prod": "44121708", "t": "Marcadores Destacador o resaltador en color celeste, con forma de lápiz y con punta de 1 a 3 mm. "}
+{"cat": "601212", "prod": "60121206", "t": "Pintura de maquillaje Set de lápiz pinta caritas de 12 colores."}
+{"cat": "441218", "prod": "44121802", "t": "Líquido corrector Corrector líquido en formato lápiz, de 7 ml."}
+{"cat": "441216", "prod": "44121618", "t": "Tijeras Tijeras de 21 cm. Mango ergonómico y hojas de acero inoxidable."}
+{"cat": "531415", "prod": "53141501", "t": "Alfileres rectos Cajas de 100 unidades de chinches push pin de colores, redondos. Diámetro de 7 mm aprox. y una longitud total de 24 mm aprox."}
+{"cat": "441221", "prod": "44122104", "t": "Clips para papel Caja de 24 unidades de sujetadores metálicos (binder clips) en color negro, de 41 mm."}
+{"cat": "441221", "prod": "44122104", "t": "Clips para papel Caja de 50 unidades de acoclips de plástico, en colores surtidos."}
+{"cat": "141115", "prod": "14111509", "t": "Artículos de papelería Bolsón de cartulina de 18 hojas en 17 colores."}
+{"cat": "141115", "prod": "14111509", "t": "Artículos de papelería Bolsón de goma eva de 6 pliegos en 6 colores diferentes. Dimensiones 20 x 30 cm."}
+{"cat": "141115", "prod": "14111509", "t": "Artículos de papelería Carpeta de goma eva con superficie de glitter y acabado brillante y una cara autoadhesiva. Carpeta con 6 colores."}
+{"cat": "141115", "prod": "14111509", "t": "Artículos de papelería Pliego de cartón piedra de 54x77 cm cm, con superficie lisa y acabado mate."}
+{"cat": "441217", "prod": "44121707", "t": "Lápices de colores Estuche de 12 lápices de color cortos, hexagonales."}
+{"cat": "601212", "prod": "60121211", "t": "Pintura acrílica escolar Estuche de tempera en 12 colores, frascos de 15 ml."}
+{"cat": "441217", "prod": "44121708", "t": "Marcadores Pack de 4 marcadores de pizarra recargables de punta redonda, en colores verde, azul, rojo y negro."}
+{"cat": "441020", "prod": "44102001", "t": "Lámina para plastificar Paquete de láminas de termolaminado tamaño oficio, de 175 micrones. Paquete de 100 unidades."}
+{"cat": "441020", "prod": "44102001", "t": "Lámina para plastificar Paquete de láminas de termolaminado tamaño oficio, de 175 micrones. Paquete de 100 unidades."}
+{"cat": "441217", "prod": "44121715", "t": "Conjunto de lápiz o bolígrafo Caja de 12 unidades de lápices tinta super gel de 0,7 mm, en color azul."}
+{"cat": "441217", "prod": "44121715", "t": "Conjunto de lápiz o bolígrafo Caja de 12 unidades de lápices tinta super gel de 0,7 mm, en color negro."}
+{"cat": "441220", "prod": "44122022", "t": "Accesorios para carpetas con anillados Espirales plásticos de 8 mm. para encuadernar, de color negro."}
+{"cat": "141115", "prod": "14111509", "t": "Artículos de papelería Pistola de silicona caliente profesional de 12 mm, calentador de 40 W, con diseño compacto y ergonómico, con soporte de plástico para apoyarla en posición vertical y boquilla aislada de alta calidad, con gatillo de flujo del pegamento."}
+{"cat": "123523", "prod": "12352310", "t": "Siliconas Barras de silicona de 12 mm de color transparente."}
+{"cat": "312015", "prod": "31201505", "t": "Cinta adhesiva de doble cara Rollo de cinta de doble contacto nano gel invisible, lavable de 3 metros."}
+{"cat": "701115", "prod": "70111507", "t": "Servicios de traslado de plantas, arbustos y árboles ornamentales Servicio de suministro de especies arbóreas, arbustos, herbáceas, gramíneas y suculentas para el Departamento de Ornato y Áreas Verdes (Postular valor maximo)"}
+{"cat": "601212", "prod": "60121236", "t": "Pinceles Pinceles planos, 5 unidades de los siguientes tamaños: N°6, 8, 10, 12, 14, 16."}
+{"cat": "312016", "prod": "31201616", "t": "Adhesivos líquidos Cola fría para madera. Presentación botella de 1 kilo."}
+{"cat": "231216", "prod": "23121612", "t": "Agujas para máquina de coser Agujas para máquina de coser 90/14. Presentación, envase de 10 unidades."}
+{"cat": "421518", "prod": "42151805", "t": "Discos de acabado o pulido Set de cepillos de pulido de fieltro de lana para dremel. El set debe estar compuesto de al menos 100 piezas surtidas de diferentes tamaños y formas."}
+{"cat": "521518", "prod": "52151802", "t": "Sartenes domésticas Pack trío de sartenes de granito de 20, 24 y 26 cm de diámetro."}
+{"cat": "141215", "prod": "14121504", "t": "Papel para embalaje Rollo de papel film transparente de 500 metros y 20 micras de espesor. Fabricado en polietileno de baja densidad. El peso bruto del rollo debe ser de aprox 2,3 kg."}
+{"cat": "422318", "prod": "42231806", "t": "Alimento nutritivo médico o espesadores de líquido Espesante alimentario de 227 g, a base de almidón de maíz modificado para disolución instantánea, sin sabor. Debe mezclarse fácilmente con todo tipo de alimentos y bebidas frías o calientes, sin requerir calentamiento previo para su preparación."}
+{"cat": "441216", "prod": "44121618", "t": "Tijeras Tijera para podar de 8 pulgadas con cuchillas de acero tipo bypass. Debe tener mango de aluminio con tratamiento térmico y agarre TPR suave. "}
+{"cat": "111115", "prod": "11111501", "t": "Tierra Tierra de hojas, sustrato natural desarrollado a partir de la compostación de hojas y residuos vegetales. La fórmula debe estar compuesta sobre un 40% de materia orgánica, con palitos visibles. Presentación formato de 40 litros."}
+{"cat": "441217", "prod": "44121708", "t": "Marcadores Lápiz para termoplástico color amarillo."}
+{"cat": "422415", "prod": "42241509", "t": "Componentes de órtesis termoplásticos Rollo de velcro sin adhesivo en color negro, de 5 cm X 1 metro. Presentación en caja dispensadora."}
+{"cat": "422516", "prod": "42251616", "t": "Vibradores eléctricos para rehabilitación o terapia Vibrador sensorial orofacial con diferentes texturas que se adapta a las necesidades del tratamiento del paciente. Para uso en niños y adultos. El kit debe incluir: masajeador eléctrico con 4 cabezales, fabricado en aluminio y plástico terapia fonoaudioló"}
+{"cat": "422516", "prod": "42251616", "t": "Vibradores eléctricos para rehabilitación o terapia Dispositivo para la tonificación estética facial y el fortalecimiento de la musculatura suprahioidea para mejorar el tono muscular, la firmeza del cuello y la elasticidad cutánea. Debe contar con un sistema de resortes intercambiables (bajo, medio y alto)"}
+{"cat": "422415", "prod": "42241509", "t": "Componentes de órtesis termoplásticos Espuma con adhesivo de célula abierta (tipo Contour foam) de un grosor de 9.5 mm. Sin látex, resistente y de fácil limpieza."}
+{"cat": "422415", "prod": "42241509", "t": "Componentes de órtesis termoplásticos Cinta termoplástica para confección de órtesis. De 15 cm X 3 m. Tipo ORFICAST regular."}
+{"cat": "422415", "prod": "42241509", "t": "Componentes de órtesis termoplásticos Planchas de termoplástico perforado de 2,4 mm de color beige. Diemnsiones: 45 x 60 cm."}
+{"cat": "422415", "prod": "42241509", "t": "Componentes de órtesis termoplásticos Plastazote de 6 mm sin adhesivo de color beige. Dimensión de 1 x 1 metro."}
+{"cat": "422515", "prod": "42251503", "t": "Juegos terapéuticos Set de 6 masas terapéuticas de 170 g cada una, para ejercitación de manos y dedos, con resistencias progresivas diferenciadas por color."}
+{"cat": "422515", "prod": "42251503", "t": "Juegos terapéuticos Almohadilla sensorial inflable y de gran resistencia, con forma de disco, de 35 cm de diámetro. Diseñado para trabajar equilibrio, coordinación, concentración y postura."}
+{"cat": "422515", "prod": "42251503", "t": "Juegos terapéuticos Set de pelotas terapéuticas antiestrés de 60 mm. Orientado  niños y adultos en rehabilitación. Debe estar cubiertas en TPR y rellenas de espuma EVA y un peso de 13 gr aprox."}
+{"cat": "491617", "prod": "49161706", "t": "Vallas Pack de vallas de agilidad de 5 unidades, fabricadas en PVC ligero y duradero."}
+{"cat": "601318", "prod": "60131803", "t": "Aros o bastones de ritmo Set de aros para circuito de agilidad, con sistema de unión entre aros removible y fabricados en PVC."}
+{"cat": "422949", "prod": "42294934", "t": "Dispositivos endoscópicos de sutura 308050101PINZA BIPOLAR EN BAYONETA DE 21 CM LARGO CON CABLE -ANTIADHERENTES, DESECHABLES USO EN CIRUGIAS MAYORES A 6 HRS."}
+{"cat": "422949", "prod": "42294934", "t": "Dispositivos endoscópicos de sutura 308050100 PINZA BIPOLAR EN BAYONETA DE 19 CM LARGO CON CABLE-ANTIADHERENTES, DESECHABLES USO EN CIRUGIAS MAYORES A 6 HRS."}
+{"cat": "411042", "prod": "41104204", "t": "Equipo de ósmosis invertida Repuestos planta de osmosis"}
+{"cat": "422816", "prod": "42281601", "t": "Soluciones de descontaminación servicio de esterilización de instrumental quirúgico y otros óxido de etileno"}
+{"cat": "851016", "prod": "85101601", "t": "Servicios de enfermería Sumatoria Monto Total de los ítems (Incluido los impuestos, en caso que aplique)"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 1 MONITORES DESFIBRILADORES"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 2 ELECTROCARDIOGRAFOS"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 3 EQUIPOS DE MONITORIZACION HEMODINAMICA/MONITOR SIGNOS VITALES"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 4 EQUIPOS DE MONITORIZACION HEMODINAMICA/MONITOR MULTIPARAMETRO"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 5 CAMAS ELECTRICAS"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 6 CAMILLAS MANUALES"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 7 ECOTOMOGRAFO"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 8 ENVASADORA DOSIS UNITARIA FARMACIA"}
+{"cat": "811418", "prod": "81141804", "t": "Inspección de equipamientos ITEM 9 CANULA ALTO FLUJO"}
+{"cat": "721021", "prod": "72102103", "t": "Servicios de exterminación o fumigación CONVENIO DE FUMIGACIÓN, DESRATIZACIÓN, SANITIZACIÓN Y CONTROL DE PALOMAS PARA EL HOSPITAL DE ENFERMEDADES INFECCIOSAS DR. LUCIO CÓRDOVA"}
+{"cat": "851215", "prod": "85121502", "t": "Consultas de médicos de atención primaria Toma de examen de Gastroscopia y control. 150 PRESTACIONES, $105.000 CADA UNA. Prestaciones a realizarse en Hospital Clínico Herminda Martin."}
+{"cat": "851215", "prod": "85121502", "t": "Consultas de médicos de atención primaria Toma de examen de Colonoscopia y control. 100 PRESTACIONES, $120.000 CADA UNA. Prestaciones a realizarse en Hospital Clínico Herminda Martin."}
+{"cat": "422122", "prod": "42212203", "t": "Pastillero para recordar las píldoras para discapacitados físicos PASTILLERO 2 TOMA AL DIA "}
+{"cat": "422122", "prod": "42212203", "t": "Pastillero para recordar las píldoras para discapacitados físicos PASTILLERO 3 TOMAS AL DIA\n"}
+{"cat": "422122", "prod": "42212203", "t": "Pastillero para recordar las píldoras para discapacitados físicos PASTILLERO 4 TOMAS AL DIA\n"}
+{"cat": "421424", "prod": "42142405", "t": "Estuches para sets de instrumental médico o sus accesorios ESTUCHE ALUMINIZASO CON GEL PACK \n"}
+{"cat": "421926", "prod": "42192602", "t": "Dosificadores de medicamentos y pastillas o accesorios CORTADOR DE MEDICAMENTOS\n"}
+{"cat": "422949", "prod": "42294944", "t": "Kits de accesorios para endoscopía Insumos médicos varios requeridos para los Servicios de Imagenología, Endoscopía y Anatomía Patológica. Ofertar según anexo N°2 Oferta Económica. Monto Total Referencial (Bruto) $313.919.627.-"}
+{"cat": "771115", "prod": "77111506", "t": "Servicios de protección de la radiación Servicios de Control Dosímetros Tipo OSL o TLD, medir radiación para funcionarios del Hospital de Rio Negro 2027-2028-2029"}
+{"cat": "801117", "prod": "80111715", "t": "Profesionales ADQUISICION DE INFORME DE MEMORIA DE CÁLCULO DE BLINDAJE RADIOLOGICO PARA SALA DE MAMOGRAFÍA HOSPITAL RIO NEGRO"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos AMPLIFICACIÓN E ILUMINACIÓN ESCÉNICA"}
+{"cat": "911116", "prod": "91111603", "t": "Servicios de cocina o preparación de comidas SERVICIO DE ALIMENTACIÓN Y USO DE RECINTO"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) H01-0002\tNUTRICION PARENTERAL \r\nV.CENTRAL  2L (AA+GLUCOSA+LIPIDOS+ELECTROLITOS)"}
+{"cat": "511027", "prod": "51102702", "t": "Agua destilada para irrigación H02-0001\t\tAGUA DESTILADA 1000 ML MATRAZ RIGIDO S/SIST.TWIST OFF\r\n\t"}
+{"cat": "511917", "prod": "51191704", "t": "Soluciones multielectrolíticas H02-0003 \tBICARBONATO DE SODIO 2/3 MOLAR 250 ML"}
+{"cat": "511027", "prod": "51102714", "t": "Solución de cloruro sódico para irrigación H02-0004 \tCLORURO DE SODIO 0.9% 500 ML MATRAZ RIGIDO "}
+{"cat": "511027", "prod": "51102714", "t": "Solución de cloruro sódico para irrigación H02-0005 \tCLORURO DE SODIO 0.9% 1000 ML MATRAZ ECOFLAC "}
+{"cat": "511027", "prod": "51102714", "t": "Solución de cloruro sódico para irrigación H02-0006 CLORURO DE SODIO 0.9% 100 ML VIAFLEX \r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n"}
+{"cat": "511027", "prod": "51102714", "t": "Solución de cloruro sódico para irrigación H02-0007 \tCLORURO DE SODIO 0.9% 1000 ML VIAFLEX "}
+{"cat": "511027", "prod": "51102714", "t": "Solución de cloruro sódico para irrigación H02-0008 \tCLORURO DE SODIO 0.9% 250 ML VIAFLEX "}
+{"cat": "511027", "prod": "51102714", "t": "Solución de cloruro sódico para irrigación H02-0009 CLORURO DE SODIO 0.9% 50 ML VIAFLEX "}
+{"cat": "511916", "prod": "51191601", "t": "Dextrosa H02-0013 \tGLUCOSA 10% 500 ML MATRAZ RIGIDO "}
+{"cat": "511916", "prod": "51191601", "t": "Dextrosa H02-0016 GLUCOSA 5% 250 ML VIAFLEX \r\n\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n"}
+{"cat": "511916", "prod": "51191601", "t": "Dextrosa H02-0017 GLUCOSA 5% 100 ML VIAFLEX"}
+{"cat": "511916", "prod": "51191601", "t": "Dextrosa H02-0021\tGLUCOSA 5% 500 ML VIAFLEX "}
+{"cat": "511916", "prod": "51191602", "t": "Electrolitos de cloruro de sodio H02-0025\tGLUCOSALINO ISOTONICO VIAFLEX 500 ML "}
+{"cat": "511916", "prod": "51191602", "t": "Electrolitos de cloruro de sodio H02-0026 \tGLUCOSALINO ISOTONICO VIAFLEX  1000 ML "}
+{"cat": "511915", "prod": "51191509", "t": "Manitol H02-0027\tMANITOL 15 % 500 ML MATRAZ RIGIDO "}
+{"cat": "511916", "prod": "51191604", "t": "Solución de Ringer lactado H02-0028 \tRINGER LACTATO 500 ML MATRAZ RIGIDO "}
+{"cat": "511027", "prod": "51102714", "t": "Solución de cloruro sódico para irrigación H02-0037 \tCLORURO DE SODIO 0.9% 3000 ML PARA CIRUGÍA ENDOSCÓPICA \r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n\t\r\n"}
+{"cat": "511027", "prod": "51102714", "t": "Solución de cloruro sódico para irrigación H03-0000\tHIDROXIETILALMIDON 6% X BOL/FCO 500 ML"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0168 D-CLIP PERMANENTE STANDARD RECTO, LARGO 7, 8.0 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0169 D-CLIP PERMANENTE STANDARD RECTO, LARGO 9, 8.9 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0170  D-CLIP PERMANENTE STANDARD RECTO, LARGO 12, 10.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0171 D-CLIP PERMANENTE STANDARD RECTO, LARGO 15, 12.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0172 D-CLIP PERMANENTE STANDARD SEMICURVO, LARGO 7, 8.0 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0173  D-CLIP PERMANENTE STANDARD SEMICURVO, LARGO 9 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0174  D-CLIP PERMANENTE STANDARD SEMICURVO, LARGO 11, 10.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0175 D-CLIP PERMANENTE STANDARD SEMICURVO, LARGO 15, 12.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0176  D-CLIP PERMANENTE STANDARD SEMICURVO, LARGO 18, 13.3 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0177 D-CLIP PERMANENTE STANDARD CURVO, LARGO 6, 7.6 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0178 D-CLIP PERMANENTE STANDARD CURVO, LARGO 8, 8.4 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0179  D-CLIP PERMANENTE STANDARD CURVO, LARGO 10, 10.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0180 D-CLIP PERMANENTE STANDARD CURVO, LARGO 7, 8.3 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0181 D-CLIP PERMANENTE STANDARD CURVO, LARGO 9, 7.3 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0182 D-CLIP PERMANENTE STANDARD CIERRE LATERAL, LARGO 9, 8.4 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0183 D-CLIP PERMANENTE STANDARD CIERRE LATERAL, LARGO 11, 9 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0184 STANDARD RECTO, LARGO 15, 12.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0185 STANDARD CIERRE LATERAL LARGO 18, 13.3 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0186 STANDARD CURVO 20°, LARGO 5, 8.4 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0187 STANDARD CURVO 20°, LARGO 10, 10.7 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0188 STANDARD CURVO 90°, LARGO 5, 6.1 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0189 STANDARD CURVO 90°, LARGO 7.5, 6.8 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0190 STANDARD BAYONETA RECTO, LARGO 7, 9.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0191 STANDARD BAYONETA RECTO, LARGO 10, 11.9 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0192 STANDARD BAYONETA, LARGO 12, 13.6 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0193 PALETA RECTO, LARGO 11, 12.3 MM, 2.45 N"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0194 BOOSTER CURVO 90°, LARGO 3, 3.8 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0195 GIGANTE RECTO, LARGO 21, 13.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0196 GIGANTE BAYONETA RECTO, LARGO 21, 13.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0197 GIGANTE RECTO, LARGO 25, 13.7 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0198 GIGANTE RECTO, LARGO 30, 16 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0199 TEMPORAL STANDARD RECTO, LARGO 9, 9 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0200 TEMPORAL STANDARD RECTO, LARGO 12, 10.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0201 TEMPORAL STANDARD SEMICURVO, LARGO 9, 8.9 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0202 TEMPORAL STANDARD CURVO, LARGO 11, 10.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0203 FENESTRADO Ø 5.0 MM RECTO, LARGO 2, 6.1 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0204 FENESTRADO Ø 5.0 MM RECTO, LARGO 3, 8.0 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0205 FENESTRADO Ø 5.0 MM RECTO, LARGO 4, 9.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0206  FENESTRADO Ø 5.0 MM RECTO, LARGO 5, 9.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0207 FENESTRADO Ø 5.0 MM RECTO, LARGO 6, 10.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0208 FENESTRADO Ø 5.0 MM RECTO, LARGO 9, 11.6 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0209 FENESTRADO Ø 5.0 MM RECTO, LARGO 12, 12.7 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0210 FENESTRADO Ø 5.0 MM CURVO 90°, LARGO 5, 5.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0211 FENESTRADO Ø 5.0 MM CURVO 90°, LARGO 5, 6.1 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0212 FENESTRADO ASIMÉTRICO Ø 5.0 MM RECTO, LARGO 5, 7.0 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0213 D-MINICLIP 0.5 MM RECTO, LARGO 3, 4.8 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0214 D-MINICLIP 0.5 MM RECTO, LARGO 5, 4.8 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0215 D-MINICLIP RECTO, LARGO 3, 4.8 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0216 D-MINICLIP RECTO, LARGO 5, 6.0 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0217 D-MINICLIP 7.1 MM RECTO, LARGO 7, 7.1 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0218 D-MINICLIP 0.5 MM CURVO, LARGO 3, 4.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0219 D-MINICLIP 0.5 MM CURVO, LARGO 4, 5.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0220 D-MINICLIP CURVO, LARGO 4, 5.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0221 D-MINICLIP CURVO, LARGO 5, 6.3 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0222 D-MINICLIP 5.9 MM CURVO, LARGO 4, 5.9 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0223 D-MINICLIP CURVO, LARGO 5, 6.2 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0224 D-MINICLIP 0.5 MM CURVO, LARGO 7, 7.3 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0225 D-MINICLIP 0.5 MM CURVO, LARGO 4, 5.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0226  D-MINICLIP CURVO, LARGO 4, 5.5 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0227  D-MINICLIP PERMANENTE STANDARD CURVO, LARGO 5, 5.7 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0228 D-MINICLIP PERMANENTE STANDARD CIERRE LATERAL (CURVO 40°), LARGO 5.1, 7.0 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0229 D-MINICLIP PERMANENTE STANDARD RECTO, LARGO 6, 7.1 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0230 D-MINICLIP PERMANENTE STANDARD RECTO, LARGO 4, 8.1 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0231 D-MINICLIP PERMANENTE STANDARD RECTO, LARGO 7, 9.8 MM"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0232 D-MINICLIP TEMPORAL RECTO, LARGO 5, 6.0 MM, 0.69 N"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0233 D-MINICLIP TEMPORAL CURVO, LARGO 4, 5.9 MM, 0.69 N"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0234 D-MINICLIP TEMPORAL RECTO, LARGO 7, 7.1 MM, 0.69 N"}
+{"cat": "422918", "prod": "42291802", "t": "Abrazaderas, pinzas o fórceps quirúrgicos, o accesorios R03-0235 D-MINICLIP TEMPORAL STANDARD SEMICURVO, LARGO 7, 7.3 MM, 0.69 N"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Bicicleta de Ruta alta competición R28, según bases adjuntas"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Set de Tenis de Mesa I, según bases adjuntas"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Set de Tenis de Mesa II, según bases adjuntas"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Set Equipamiento, según bases adjuntas"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Set Voleibol, según bases adjuntas"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Set Canotaje, según bases adjuntas"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Set Mochilas, según bases adjuntas"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Set Carro para el transporte de balones, según bases adjuntas"}
+{"cat": "492118", "prod": "49211806", "t": "Tienda de deporte Set de Basquetbol, según bases adjuntas"}
+{"cat": "471217", "prod": "47121701", "t": "Bolsas de basura SERVICIO SUMINISTRO PRODUCTOS DE ASEO"}
+{"cat": "601017", "prod": "60101729", "t": "Kits de enseñanza de grado intermedio Rincón del movimiento"}
+{"cat": "601047", "prod": "60104702", "t": "Kits solares Laboratorio solar"}
+{"cat": "601017", "prod": "60101729", "t": "Kits de enseñanza de grado intermedio Oficina de contabilidad"}
+{"cat": "601017", "prod": "60101729", "t": "Kits de enseñanza de grado intermedio Espacio para atención de párvulos"}
+{"cat": "561117", "prod": "56111703", "t": "Mueble de almacenaje no modular Módulo de Almacenamiento"}
+{"cat": "561015", "prod": "56101522", "t": "Sillón LEASING OPERATIVO O ARRIENDO DE SILLON DENTAL NUEVO, COMPLETO con unidad de agua, sistema de aspiración, lampara dental, bracket dental y taburetes incluidos"}
+{"cat": "851317", "prod": "85131709", "t": "Investigación genética termociclador de 384 pocillos"}
+{"cat": "471217", "prod": "47121702", "t": "Envases para residuos o forros rígidos BASURERO METÁLICO CON TAPA 20L SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101515", "t": "Camas CAMAROTE 2 CAMAS 1 PLAZA SEGÚN FORMULARIO T-1"}
+{"cat": "471215", "prod": "47121501", "t": "Carros para limpieza CARRO MULTIFUNCIONAL ALUMINIO SEGÚN FORMULARIO T-1"}
+{"cat": "471217", "prod": "47121702", "t": "Envases para residuos o forros rígidos SET CONTENEDOR DE BASURA SEGÚN FORMULARIO T-1"}
+{"cat": "601027", "prod": "60102706", "t": "Espejos de bloques de patrones ESPEJO MURAL (ESTIMULACION) SEGÚN FORMULARIO T-1"}
+{"cat": "241020", "prod": "24102004", "t": "Estanterías para almacenaje ESTANTERIA METALICA INDUSTRIAL  SEGÚN FORMULARIO T-1"}
+{"cat": "241020", "prod": "24102004", "t": "Estanterías para almacenaje ESTANTERIA METALICA INDUSTRIAL 150 X 50 CM SEGÚN FORMULARIO T-1"}
+{"cat": "241020", "prod": "24102004", "t": "Estanterías para almacenaje ESTANTERIA INSUMOS DE ASEO SEGÚN FORMULARIO T-1"}
+{"cat": "422515", "prod": "42251503", "t": "Juegos terapéuticos SET EXTENSOR EJERCITADOR DE MANO SEGÚN FORMULARIO T-1"}
+{"cat": "601411", "prod": "60141101", "t": "Juegos educativos JUEGOS DIDACTICOS SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101530", "t": "Armarios de almacenamiento LOCKER 1 CUERPO 3 PUERTAS SEGÚN FORMULARIO T-1"}
+{"cat": "561017", "prod": "56101703", "t": "Escritorios ESCRITORIO ADMINISTRATIVO CON CAJONERA RODABLE SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101519", "t": "Mesas MESA CASINO 4 PERSONAS SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101519", "t": "Mesas MESA DE CENTRO SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101519", "t": "Mesas MESA ESQUINA SEGÚN FORMULARIO T-1"}
+{"cat": "561018", "prod": "56101812", "t": "mudadores o accesorios MUDADOR ABATIBLE SEGÚN FORMULARIO T-1"}
+{"cat": "471217", "prod": "47121702", "t": "Envases para residuos o forros rígidos PAPELERO SEGÚN FORMULARIO T-1"}
+{"cat": "561210", "prod": "56121014", "t": "Percheros murales PERCHERO SEGÚN FORMULARIO T-1"}
+{"cat": "441119", "prod": "44111905", "t": "Pizarras para plumón y accesorios PIZARRA ACRILICA - 120X90CM SEGÚN FORMULARIO T-1"}
+{"cat": "441119", "prod": "44111905", "t": "Pizarras para plumón y accesorios PIZARRA ACRILICA 120 X 180 CM SEGÚN FORMULARIO T-1"}
+{"cat": "241020", "prod": "24102004", "t": "Estanterías para almacenaje REPISA PORTA ELEMENTOS ASEO SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101539", "t": "Armazones de cama, piezas o accesorios SET DE ROPA DE CAMA 1 PLAZA SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101504", "t": "Sillas SILLA CASINO APILABLE SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101504", "t": "Sillas SILLA VISITA SEGÚN FORMULARIO T-1"}
+{"cat": "561121", "prod": "56112102", "t": "Sillas para trabajar SILLA ERGONÓMICA SEGÚN FORMULARIO T-1"}
+{"cat": "561015", "prod": "56101522", "t": "Sillón SILLÓN 2 CUERPOS SEGÚN FORMULARIO T-1"}
+{"cat": "241016", "prod": "24101611", "t": "Eslingas TRASNPALETA SEGÚN FORMULARIO T-1"}
+{"cat": "561119", "prod": "56111906", "t": "Estantes, cajones o armarios industriales VELADOR DOMESTICO SEGÚN FORMULARIO T-1"}
+{"cat": "301619", "prod": "30161907", "t": "Escaleras PISO ESCALA 2 PELDAÑOS SEGÚN FORMULARIO T-1"}
+{"cat": "411161", "prod": "41116104", "t": "Kits de ensayo químicos o suministros ADQUISICIÓN DE INSUMOS DE LABORATORIO PARA ESTABLECIMIENTOS EDUCACIONALES DEL SLEP CHILOÉ"}
+{"cat": "151015", "prod": "15101505", "t": "Diesel Suministro de combustible Diesel"}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P1511] Aspiración Laparoscópico Desechable "}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P0008]\tVaina de acceso ureteral corta con sistema de aspiración y medición de presión"}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P0009]\tVaina de acceso ureteral larga con sistema de aspiración y medición de presión"}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P1518]\tUreteroscopio Desechable "}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P1519]\tFibra láser Diámetro 270-280, con equipo laser en Comodato "}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P1520]\tFibra láser Diámetro 500-550, con equipo laser en comodato"}
+{"cat": "422420", "prod": "42242004", "t": "Kit de preparación para prótesis de pene [345P1075]\tPrótesis testicular"}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P0014] Set irrigación ureteroscopia con bomba manual "}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [222P148] Set irrigación vesical "}
+{"cat": "422215", "prod": "42221503", "t": "Catéteres venosos centrales [340P1523]\tCatéter doble lumen para nefrolitotomia percutánea "}
+{"cat": "422215", "prod": "42221503", "t": "Catéteres venosos centrales [340P1525]\tCatéter doble jota tumoral "}
+{"cat": "421427", "prod": "42142712", "t": "Sets de extracción de cálculos o accesorios [340P1424]\tCanastillo para extracción de cálculos vía percutánea"}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P0006]\tMini Nefroscopio Desechable (12 - 16 Fr), incluye monitor en comodato"}
+{"cat": "422948", "prod": "42294805", "t": "Laparoscopios o telescopios laparoscópicos [340P0007]\tCitoscopio flexible desechable (≤ 17 FR, canal ≥ 3,6 FR), incluye monitor en comodato"}
+{"cat": "422929", "prod": "42292904", "t": "Sutura quirúrgica o agarradores de alambre o productos relacionados [224P499]\tSutura Barbada, 2-0, 30 cms, PDS, Aguja 26 mm, 1/2 circulo, punta circular "}
+{"cat": "422929", "prod": "42292904", "t": "Sutura quirúrgica o agarradores de alambre o productos relacionados [224P558]\tSutura Barbada, 4-0, 30 cms, PDS, Aguja 26 mm, 1/2 circulo, punta circular "}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Sistema de Vigilancia (CCTV)."}
+{"cat": "721022", "prod": "72102201", "t": "Instalación o servicio de sistemas de energía eléctrica Se requiere contratar los servicios necesarios para la habilitación de 6 sistemas fotovoltaicos para suministro eléctrico de seis módulos de validación de riego tecnificado y la adquisición de 4 casetas de riego para seis módulos de validación, todos ubic"}
+{"cat": "601414", "prod": "60141402", "t": "Centros de vestuario o disfraces Adquisición de “80 Cabezas de monos corpóreos \"Carabineros (40 masculinos y 40 femeninos."}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) 102110006EMULSION LIPIDICA 1970 ML MCT/LCT/OLIVA/OMEGA 3/AAC/GLUCOSA/ZINC BOLSA PRE-LLENADA VIA CENTRAL"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) 102110009 EMULSION PERIFERICA 1904 ML BOLSA 3 COMPARTIMENTOS"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) 102110008 EMULSIÓN PERIFÉRICA 1206 ML BOLSA 3 COMPARTIMENTOS"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) 102110005 EMULSIÓN LIPÍDICA 1518 ML MCT/LCT/OLIVA/OMEGA 3/AAC/GLUCOSA/20-25 KCAL/KG/DÍA PRE-LLENADA VÍA CENTRAL"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) 102110007 EMULSION LIPIDICA 2025 ML MCT/LCT/OLIVA/OMEGA3/AAC/GLUCOSA/20-25 KAL/KG/DÍA PRE-LLENADA VIA CENTRAL"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) 102110004 EMULSION LIPIDICA 1400 ML MCT/SOYA/OLIVA/OMEGA 3/AAC/GLUCOSA, VIA PERIFERICA, 750 MOSMOL"}
+{"cat": "511919", "prod": "51191902", "t": "Suplementos de aminoácidos 102110014 Oligoelementos endovenoso 10 ml (9 componentes, adulto)"}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos 102110019 Vitaminas hidrosolubles endovenosa"}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos 102110020 Vitaminas liposolubles endovenosa adultos 10 ml"}
+{"cat": "511815", "prod": "51181506", "t": "Insulina 260010005 VASOPRESINA 20 UI/1ML"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles CONSTRUCCION PARQUE FERROVIARIO CODIGO BIP 40074779, SEGUN BASES ADMINISTRATIVAS Y ANTECEDENTES ADJUNTOS"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles CONSTRUCCION MUROS DE MITIGACION CALLE PERU CODIGO BIP 40074777 , SEGUN BASES ADMINISTRATIVAS Y ANTECEDENTES ADJUNTOS"}
+{"cat": "411049", "prod": "41104902", "t": "Equipo de filtración en gel 03-002-225-0436 @ ALMOHADA DE GEL PARA POSICIONAMIENTO CRANEAL XS"}
+{"cat": "411049", "prod": "41104902", "t": "Equipo de filtración en gel 03-002-225-0437 @ ALMOHADA DE GEL PARA POSICIONAMIENTO CRANEAL S"}
+{"cat": "411049", "prod": "41104902", "t": "Equipo de filtración en gel 03-002-225-0438 @ ALMOHADA DE GEL PARA POSICIONAMIENTO CRANEAL M"}
+{"cat": "422215", "prod": "42221503", "t": "Catéteres venosos centrales 03-002-222-384 @ CATETER PERCUTANEO NEONATAL DOBLE LUMEN 2 FR CON\r\nINTRODUCTOR"}
+{"cat": "422215", "prod": "42221506", "t": "Catéteres umbilicales 03-002-222-085 @ CATETER INTRAVENOSO UMBILICAL 3.5 FR"}
+{"cat": "422215", "prod": "42221503", "t": "Catéteres venosos centrales 03-002-222-1200 @ CATETER PERCUTANEO NEONATAL UN LUMEN 2 FR"}
+{"cat": "422034", "prod": "42203403", "t": "Juegos o catéteres introductores vasculares intervencionales o diagnósticos 03-002-222-395 @ INTRODUCTOR PEEL A WAY PARA CATETER PERCUTANEO\r\nNEONATAL 1.9-2 FR X 28-30 CM"}
+{"cat": "421817", "prod": "42181707", "t": "Electrodos neonatales de cinta o anillo de electrocardiografía (ECG) 03-002-222-394 @ NARICERA NEONATAL 100% SILICONADA DE LARGA\r\nPERMANENCIA"}
+{"cat": "411041", "prod": "41104112", "t": "Contenedores de recogida de orina 03-002-222-0823 @ SISTEMA CERRADO DE RECOLECCION DE ORINA 4FR"}
+{"cat": "422216", "prod": "42221609", "t": "Juegos de administración de tubos arteriales o intravenosos 03-002-222-424 @ TET PARA ADMINISTRACION SURFACTANTE 3.0"}
+{"cat": "422216", "prod": "42221609", "t": "Juegos de administración de tubos arteriales o intravenosos 03-002-222-425 @ TET PARA ADMINISTRACION SURFACTANTE 3.5"}
+{"cat": "421915", "prod": "42191501", "t": "Sistema de tubo neumático clínico 03-002-222-320 @ TUBO SILICONA 4 X 7 MM (BOLSA 25 MTS)"}
+{"cat": "411041", "prod": "41104112", "t": "Contenedores de recogida de orina 03-002-222-0824 @ SISTEMA CERRADO DE RECOLECCION DE ORINA 6 FR"}
+{"cat": "411041", "prod": "41104112", "t": "Contenedores de recogida de orina 03-002-222-0825 @ SISTEMA CERRADO RECOLECCION DE ORINA 8 FR"}
+{"cat": "423121", "prod": "42312102", "t": "Aparatos de ostomía 03-002-225-175 @ OST BOLSA OSTOMIA PEDIATRICA 1 PZA 8-50 MM"}
+{"cat": "423115", "prod": "42311515", "t": "Vendajes hidrocoloides 03-002-225-0398 @ APOSITO HIDROCOLOIDE GRUESO CGF 20X20 CM"}
+{"cat": "421816", "prod": "42181609", "t": "Kits de monitorización de la tensión arterial 03-002-225-0303 @ SET MONITOREO PRESION ARTERIAL INVASIVO NEONATAL"}
+{"cat": "423119", "prod": "42311901", "t": "Accesorios para el drenaje médico de incisión 03-002-225-0369 @ EQUIPO DRENAJE PLEURAL PEDIÁTRICO, 1000 ML"}
+{"cat": "422949", "prod": "42294919", "t": "Introductores o alambres de guía o alambres deslizadores endoscópicos 03-002-224-0937 @ GUIA DE NITINOL PEDIATRICA 0.018"}
+{"cat": "422949", "prod": "42294919", "t": "Introductores o alambres de guía o alambres deslizadores endoscópicos 03-002-224-0938 @ GUIA DE NITINOL PEDIATRICA 0.025"}
+{"cat": "422949", "prod": "42294919", "t": "Introductores o alambres de guía o alambres deslizadores endoscópicos 03-002-224-0940 @ GUIA HIBRIDA PUNTA DE NITINOL FLEXIBLE Y CUERPO METALICO (AMPLATZ) PEDIATRICA 0.018"}
+{"cat": "422949", "prod": "42294919", "t": "Introductores o alambres de guía o alambres deslizadores endoscópicos 03-002-224-0941 @ GUIA HIBRIDA PUNTA DE NITINOL FLEXIBLE Y CUERPO METALICO (AMPLATZ) PEDIATRICA 0.025"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-224-0637 @ CATETER DOBLE J MULTILARGO 3 FR 8-12 CM"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-224-0638 @ CATETER DOBLE J MULTILARGO 3,7 FR 8-20 CM"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-224-0639 @ CATETER DOBLE J MULTILARGO 4,7 FR 8-20 CM"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-224-0640 @ CATETER DOBLE J MULTILARGO 4,7 FR 21-32 CM"}
+{"cat": "423115", "prod": "42311513", "t": "Vendaje de gel 03-002-225-278 @ HIDROGEL DE POLIACRILATO POLICALCOHOL PARA\r\nUSO EN REFLUJOVESICOURETEREAL JER. 1 ML."}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-222-352 @ SONDA FOLEY TIPO SILASTIC 12 FR CON BALON 5 ML 2 VIAS"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-222-251 @ SONDA FOLEY TIPO SILASTIC 20 FR CON BALON 5 ML 2 VIAS"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-222-247 @ SONDA FOLEY TIPO SILASTIC 8 FR CON BALON 3- 5 ML 2 VIAS"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-222-354 @ SONDA FOLEY TIPO SILASTIC N 6 CON BALON 5 ML"}
+{"cat": "421427", "prod": "42142704", "t": "Sacos o medidores de drenaje urinario 03-002-225-163 @ EQUIPO DRENAJE VESICAL SUPRAPUBICO 10FR X 65CM\r\nCON TROCAR DE 8CM"}
+{"cat": "421427", "prod": "42142704", "t": "Sacos o medidores de drenaje urinario 03-002-225-227 @ EQUIPO DRENAJE VESICAL SUPRAPUBICO 5FR X 50CM\r\nCON TROCAR DE 5CM"}
+{"cat": "421427", "prod": "42142704", "t": "Sacos o medidores de drenaje urinario 03-002-225-063 @ EQUIPO DRENAJE VESICAL SUPRAPUBICO 15 FR"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-222-116 @ CATETER URETERAL 3 FR"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-224-0634 @ CATETER URETERAL 5 FR"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 03-002-222-117 @ CATETER URETERAL 4 FR"}
+{"cat": "921019", "prod": "92101902", "t": "Servicios de ambulancia 10-013-003-0074 @ SERVICIO DE AMBULANCIA AVANZADA CON MOVIL INCLUIDO PARA ECMO"}
+{"cat": "422215", "prod": "42221504", "t": "Catéteres intravenosos periféricos para uso general 03-002-224-0571\t@ BALON MEDICADO PERIFERICO SISTEMA\r\n0.18"}
+{"cat": "421618", "prod": "42161803", "t": "Unidades de hemofiltración venovenosa continua o productos relacionados 03-002-222-0901 @ MICROCATETER DE DOBLE LUMEN"}
+{"cat": "421618", "prod": "42161803", "t": "Unidades de hemofiltración venovenosa continua o productos relacionados 03-002-222-0920 @ MICROCATETER ANGULADO"}
+{"cat": "511319", "prod": "51131903", "t": "Gelatina 01-001-218-050 @ EXPANSOR DE PLASMA (GELATINA) BOLSA COLAP 500 ML"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Recuperación de superficies en salas de audiencias del Juzgado de Familia y Juzgado de Garantía de Arica"}
+{"cat": "721021", "prod": "72102103", "t": "Servicios de exterminación o fumigación SERVICIO DE MANTENCION CORRESPONDIENTE A SANITIZACIÓN Y LIMPIEZA DE ESTANQUES DE ALMACENAMIENTO AGUA POTABLE Y CAMARAS DE ALCANTARILLADO PARA TRIBUNALES DE LA JURISDICCION DE ANTOFAGASTA"}
+{"cat": "721021", "prod": "72102103", "t": "Servicios de exterminación o fumigación SERVICIO DE MANTENCION CORRESPONDIENTE A SANITIZACIÓN Y LIMPIEZA DE ESTANQUES DE ALMACENAMIENTO AGUA POTABLE Y CAMARAS DE ALCANTARILLADO PARA TRIBUNALES DE LA JURISDICCION DE CALAMA"}
+{"cat": "721021", "prod": "72102103", "t": "Servicios de exterminación o fumigación SERVICIO DE MANTENCION CORRESPONDIENTE A SANITIZACIÓN Y LIMPIEZA DE ESTANQUES DE ALMACENAMIENTO AGUA POTABLE Y CAMARAS DE ALCANTARILLADO PARA TRIBUNALES DE LA JURISDICCION DE TOCOPILLA"}
+{"cat": "851220", "prod": "85122005", "t": "Servicios de ortodoncia Servicio de Laboratorio de Ortodoncia para Centro de Referencia dontopediatrico Simón Bolívar."}
+{"cat": "421819", "prod": "42181904", "t": "Unidades de transporte o de señales vitales móviles de multiparámetro o accesorios Monitor multiparamétrico de alta complejidad, con módulo multiparamétrico de transporte y accesorios"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores TOP Y GARANTIA TEMUCO"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores CORTE APELACIONES TEMUCO"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores TOP Y GARANTIA ANGOL"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores LETRAS ANGOL"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores FAMILIA ANGOL"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores \r\nLETRAS TOLTEN"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores LETRAS TRAIGUEN"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores TOP Y GARANTIA VILLARRICA"}
+{"cat": "721015", "prod": "72101506", "t": "Servicios de mantenimiento de ascensores LETRAS VILLARRICA"}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios Servicio de aseo para Juzgado de Letras, garantía y Familia de Quinchao"}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios Servicio de aseo para Juzgado de Letras, garantía y Familia de Chaitén y oficina de Futaleufú"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Dapaglifozina 10 mg . Comprimidos. . . . . . . . . . . .. . . . . (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511416", "prod": "51141619", "t": "Clorhidrato de sertralina Sertralina 50 mg . Comprimidos (Envase clínico).. . . . . . . . . . . .. . . . . (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511315", "prod": "51131503", "t": "Sulfato ferroso Sulfato ferroso 200 mg. Comprimidos (Envase Clínico).. . . . . . . . . . . .. . . . . (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511418", "prod": "51141810", "t": "Zopiclona Zopiclona 7.5 mg. Comprimidos (Envase clínico).. . . . . . . . . . . .. . . . . (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511615", "prod": "51161508", "t": "Sulfato de salbutamol Salbutamol 5 mg/ml. Polvo para nebulizar. . . . . . . . . . . .. . . . . (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "491017", "prod": "49101702", "t": "Trofeos Lote N°1: Trofeos, Medallas y Galvanos Según cuadro N°1 de las Bases Técnicas. (Presupuesto Disponible $9.392.500.)"}
+{"cat": "491017", "prod": "49101701", "t": "Medallas Lote N\"2: Medallas y Galvanos Según cuadro N°2 de las Bases Técnicas.(Presupuesto Disponible $724.800.)"}
+{"cat": "491017", "prod": "49101704", "t": "Galvanos Lote N°3: Galvanos Según cuadro N°3 de las Bases Técnicas.(Presupuesto Disponible $900.000.)"}
+{"cat": "421817", "prod": "42181713", "t": "Sistemas de monitorización Holter o de electrocardiografía (ECG) continua a largo plazo MONITOREO CONTINUO DE PRESION ARTERIAL, SEGUN EETT ADJUNTAS"}
+{"cat": "422720", "prod": "42272004", "t": "Estiletes de intubación Linea N°1, Estilete Intubación Grande. Según Bases Técnicas adjuntas."}
+{"cat": "422936", "prod": "42293603", "t": "Sondas quirúrgicas Linea N°2, Sonda Foley N°22. Según Bases Técnicas adjuntas."}
+{"cat": "422716", "prod": "42271618", "t": "Trazadores de registro para espirómetro Linea N°3, Boquilla Para Espirometría Adulto. Según Bases Técnicas adjuntas."}
+{"cat": "421820", "prod": "42182005", "t": "Oftalmoscopios o otoscopios o juegos de scopios Linea N°4, Cono Otoscopio Adulto. Según Bases Técnicas adjuntas."}
+{"cat": "421820", "prod": "42182005", "t": "Oftalmoscopios o otoscopios o juegos de scopios Linea N°5, Cono Otoscopio Pediátrico. Según Bases Técnicas adjuntas."}
+{"cat": "461820", "prod": "46182005", "t": "Máscaras o filtros de respirador o accesorios Linea N°6, Filtro Viral Bacteriano Desechable. Según Bases Técnicas adjuntas."}
+{"cat": "421317", "prod": "42131701", "t": "Cobertores para cirugía Linea N°7, Paño Cerrado Estéril 40x40cm. Según Bases Técnicas adjuntas"}
+{"cat": "422935", "prod": "42293503", "t": "Dispositivos, curetas o productos relacionados de extracción quirúrgica en vacío Linea N°8, Cureta. Según Bases Técnicas adjuntas"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Servicio de Producción de Evento Conmemoración Funcionarios, según Bases Técnicas y administrativas adjuntas."}
+{"cat": "302019", "prod": "30201903", "t": "Unidades dentales Adquisición de placas para cultivo y tubos BL para laboratorio de microbiología\r\n\r\ndetallar el total neto de la suma de los articulos"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos JUGUETES DE NAVIDAD AÑO 2026, SEGÚN BASES DE LICITACIÓN"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Obras para reposición multicancha balón mano y mejoramiento plaza valle de los reyes, barrio pehuén Maipú, según lo indicado en bases de licitación."}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Obras para reposición multicancha habacuc, según lo indicado en bases de licitación."}
+{"cat": "261116", "prod": "26111601", "t": "Generadores diesel Equipos (Corresponderá a adquisición de maquinaria y equipos esenciales para la correcta operación de las actividades del recinto)"}
+{"cat": "492215", "prod": "49221502", "t": "Arcos de fútbol Equipamiento (Corresponderá a la adquisición a elementos o accesorios complementarios o necesarios para el funcionamiento de las actividades e instalaciones)"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE BANQUETERÍA PARA CENA EGRESO CADETES DE LA ESCUELA NAVAL, DE ACUERDO A LO INDICADO EN LAS ESPECIFICACIONES TÉCNICAS AJUNTAS. CONSIDERAR VISITA A TERRENO OBLIGATORIA EL DÍA 16 NOVIEMBRE A LAS 10:00 HRS. EN ESCUELA NAVAL."}
+{"cat": "781417", "prod": "78141701", "t": "Servicios de remolcador SERVICIO DE REMOLCADORES CABO NEGRO, PARA LAS UNIDADES A FLOTE DE LA ARMADA DE CHILE."}
+{"cat": "251115", "prod": "25111506", "t": "Remolcadores SERVICIO DE REMOLCADORES PUNTA ARENAS, PARA LAS UNIDADES A FLOTE DE LA ARMADA DE CHILE."}

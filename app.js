@@ -499,7 +499,7 @@ async function esperarTrabajo(ruta, id, out){
 // Catalogo automatico: el motor local busca lo que la empresa ya le vendio al Estado (datos publicos).
 async function catalogoPorRut(){
   const out = $("rutout"), rut = $("rutcat").value.trim();
-  if(!motorLocal){ out.innerHTML = '<p class="nota">Esta función usa el motor de Apto, que en el prototipo funciona en el computador del equipo. Por ahora agrega tus productos a mano.</p>'; return; }
+  if(!motorLocal){ out.innerHTML = '<p class="nota">Esta función no está disponible en este momento. Mientras tanto, agrega tus productos a mano.</p>'; return; }
   if(!rut){ $("rutcat").focus(); return; }
   $("rutbtn").disabled = true; out.innerHTML = '<p class="nota">Enviando…</p>';
   try{
@@ -830,7 +830,7 @@ function conectarIA(){
   const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
   (local ? probar(MOTOR_PC, 1500) : Promise.resolve(false)).then(ok => { if(ok) return activar(MOTOR_PC, false); throw 0; })
     .catch(() => porTunel())
-    .catch(() => { $("motorEstado").textContent = "Lectura de documentos: en pausa por ahora. Todo lo demás funciona; vuelve a intentar en unos minutos."; setTimeout(() => porTunel().catch(() => {}), 30000); }); // el túnel pudo cambiar de dirección: se reintenta
+    .catch(() => { $("motorEstado").textContent = "Lectura de documentos: en mantención breve. Todo lo demás sigue funcionando; vuelve a intentar en unos minutos."; setTimeout(() => porTunel().catch(() => {}), 30000); }); // el túnel pudo cambiar de dirección: se reintenta
 }
 
 async function cargar(){

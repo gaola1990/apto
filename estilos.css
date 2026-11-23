@@ -611,6 +611,6 @@ input[type=email]{width:100%;padding:9px 10px;border:1px solid var(--linea);bord
 
 /* Logo: la o es un radar */
 .lg{display:inline-flex;align-items:baseline;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--marca)}
-.lg svg{display:inline-block;vertical-align:baseline;height:.6em;width:.6em;overflow:visible;margin-left:.02em;position:relative;top:.02em}
+.lg svg{display:inline-block;vertical-align:baseline;height:.66em;width:.66em;overflow:visible;margin-left:.02em;position:relative;top:.03em}
 header h1 .lg{font-size:32px}header h1 a{text-decoration:none;color:inherit}
 .pie-marca b .lg{font-size:36px}

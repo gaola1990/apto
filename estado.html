@@ -14,7 +14,7 @@
   table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(27,36,48,.04),0 8px 24px rgba(27,36,48,.06);margin-top:18px}
   th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #e6eaf0;font-size:15px;vertical-align:top} th{background:#eef2f8;font-size:13px}
   .ok{color:#1E7F52;font-weight:700} .al{color:#8a5b00;font-weight:700} .ro{color:#B83A2B;font-weight:700}
-  .insignias{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px} .insignias img{height:20px}
+  .insignias{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px} .chip{display:inline-block;background:#E3F3EA;color:#17663F;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px}
   @media(max-width:560px){th:nth-child(4),td:nth-child(4){display:none}}
 </style>
 </head>
@@ -23,10 +23,7 @@
   <p><a href="./">← Volver a Apto</a></p>
   <h1>Estado de Apto</h1>
   <p class="nota" id="resumen">Revisando…</p>
-  <div class="insignias">
-    <a href="https://github.com/gaola1990/apto/actions/workflows/datos.yml"><img alt="Estado de la actualización de datos" src="https://github.com/gaola1990/apto/actions/workflows/datos.yml/badge.svg"></a>
-    <a href="https://github.com/gaola1990/apto/actions/workflows/pruebas.yml"><img alt="Estado de las pruebas" src="https://github.com/gaola1990/apto/actions/workflows/pruebas.yml/badge.svg"></a>
-  </div>
+  <div class="insignias"><span class="chip">Datos de Mercado Público · cada 4 horas</span><span class="chip">Pruebas automáticas antes de cada publicación</span></div>
   <table>
     <thead><tr><th>Dato</th><th>Actualizado</th><th>Estado</th><th>Detalle</th></tr></thead>
     <tbody id="filas"></tbody>

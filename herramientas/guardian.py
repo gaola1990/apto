@@ -9,7 +9,7 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CORREO = re.compile(r"[\w.+-]+@[\w-]+\.[a-z]{2,}(?:\.[a-z]{2,})?", re.I)
 # Números que se publican a propósito (contacto de Apto). Cualquier otro teléfono sigue bloqueado.
 TELEFONOS_PUBLICOS = {"56982944893"}
-CORREOS_OK = re.compile(r"@(empresa|ejemplo)\.cl$|@users\.noreply\.github\.com$|noreply@anthropic\.com$", re.I)
+CORREOS_OK = re.compile(r"@(empresa|ejemplo)\.cl$|@users\.noreply\.github\.com$|noreply@anthropic\.com$|^apto\.reportes@gmail\.com$", re.I)
 TELEFONO = re.compile(r"(?:\+\s?56[\s-]?9[\s-]?\d{4}[\s-]?\d{4})|(?:(?:fono|tel[eé]fono|tel\.|cel(?:ular)?|whatsapp|wsp|contacto)\s*:?\s*\(?\+?\d[\d\s\-()]{7,})", re.I)
 RUT = re.compile(r"(?<![\d.])(\d{1,2})\.(\d{3})\.(\d{3})-[\dkK](?![\d])")
 PUBLICABLES = ["*.json", "*.js", "*.html", "datos-abiertos/*.jsonl"]

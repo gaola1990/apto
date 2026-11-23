@@ -303,7 +303,7 @@ function pintarNegocio(){
       (planApto / tipico < 0.01 ? "<b>menos del 1 % de una sola compra</b>." : "<b>el " + Math.ceil(100 * planApto / tipico) + " % de una sola compra</b>.") + "</p>" +
     '<p class="nota" style="margin-top:6px">Montos informados por los compradores o, si no los publican, el mínimo de cada tramo de tamaño (cálculo conservador).</p></div>' +
     '<details class="porti"' + (leer("rp_porti_visto", false) ? "" : " open") + '><summary>Lo que Apto hace por ti</summary><ul>' +
-    '<li><span class="ic">📩</span><div><b>Te avisa cada mañana por correo</b> de las compras nuevas que te sirven. No tienes que entrar a buscar.<br>' +
+    '<li><span class="ic">📩</span><div><b>Pronto te avisará cada mañana por correo</b> de las compras nuevas que te sirven, para que no tengas que entrar a buscar.<br>' +
       (logueado ? '<span class="nota">Tus avisos se configuran en "Mi cuenta".</span>' : '<button type="button" class="sec" id="activarAvisos">Activar avisos por correo</button>') + "</div></li>" +
     '<li><span class="ic">📅</span><div><b>Te recuerda los plazos.</b> Guarda una compra (☆) y toca "Agregar todos los plazos a mi calendario": tu teléfono te avisa antes de cada fecha.</div></li>' +
     '<li><span class="ic">💲</span><div><b>Te dice cuánto cobrar.</b> En cada compra ves a cuánto se adjudicó ese mismo producto antes, y en la campana 🔔 cuánto bajo el presupuesto ofertan los que ganan.</div></li>' +
@@ -1168,7 +1168,7 @@ function pintarCuenta(){
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="aprenderOk"' + (perfil.aprender !== false ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
       '<span>Ayudar a mejorar Apto <span class="nota" style="display:block">Cuando guardas o descartas una compra, Apto registra de forma anónima qué palabras van con qué productos. <a href="privacidad.html">Más información</a></span></span></label>' +
       '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400;margin-top:10px"><input type="checkbox" id="avisosOk"' + (avisosPref === "diario" ? " checked" : "") + ' style="width:auto;margin-top:4px">' +
-      '<span>Recibir por correo los avisos de compras de Mercado Público <span class="nota" style="display:block">Te enviamos cada mañana las compras nuevas que sirven para lo que vendes. Puedes desactivarlo cuando quieras; cada correo trae un enlace para darte de baja.</span></span></label>' +
+      '<span>Recibir por correo los avisos de compras de Mercado Público <span class="nota" style="display:block">Muy pronto te enviaremos cada mañana las compras nuevas que sirven para lo que vendes. Puedes desactivarlo cuando quieras; cada correo trae un enlace para darte de baja.</span></span></label>' +
       '<div class="acciones" style="margin-top:8px"><button class="sec" id="salir">Salir</button><button class="sec" id="borrarDatos">Borrar mis datos</button></div><p class="nota" id="cuentaNota"></p>';
     cargarPrueba();
     $("avisosOk").onchange = async e => {

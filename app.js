@@ -359,7 +359,7 @@ function plan(d, base){
     ["Verificar que estoy hábil en el Registro de Proveedores", "Sin deudas previsionales ni tributarias que inhabiliten."],
     ["Calcular costos y precio de la oferta", d.MontoEstimado ? "Presupuesto estimado del comprador: " + plata(d.MontoEstimado) : "El comprador no publicó presupuesto."],
     ["Completar anexos y declaración jurada", "Usa los formatos que entregan las bases."],
-    ["Subir la oferta y confirmar el envío", "Cierre: " + fechaCorta(F.FechaCierre || base.cierre) + ". No lo dejes para la última hora."]
+    ["Subir la oferta y confirmar el envío", "Cierre: " + fechaCorta(F.FechaCierre || base.cierre) + " — no lo dejes para la última hora"]
   ];
   if(F.FechaVisitaTerreno) pasos.splice(1, 0, ["Asistir a la visita a terreno", fechaCorta(F.FechaVisitaTerreno)]);
   const h = hechos[base.codigo] || {};

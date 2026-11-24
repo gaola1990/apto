@@ -2448,3 +2448,4 @@
 {"codigo": "2258-199-LE26", "fecha": "2026-11-20", "oferentes": 1, "tipo": "LE", "clases": ["511816"], "organismo": "SERVICIO DE SALUD ANTOFAGASTA HOSPITAL L", "region": "Región de Antofagasta"}
 {"codigo": "612-38-R226", "fecha": "2026-11-20", "oferentes": 18, "tipo": "LE", "clases": ["432226"], "organismo": "SERVICIO AGRICOLA Y GANADERO", "region": "Región Metropolitana de Santiago"}
 {"codigo": "2026-87-LE26", "fecha": "2026-11-19", "oferentes": 20, "tipo": "LE", "clases": ["421719"], "organismo": "SERVICIO SALUD VINA DEL MAR QUILLOTA", "region": "Región de Valparaíso"}
+{"codigo": "2296-56-LE26", "fecha": "2026-11-20", "oferentes": 5, "tipo": "LE", "clases": ["302017"], "organismo": "I MUNICIPALIDAD DE CONCHALI", "region": "Región Metropolitana de Santiago"}

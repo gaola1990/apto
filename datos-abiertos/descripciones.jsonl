@@ -35478,3 +35478,531 @@
 {"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE PRODUCCION JORNADA DE ADOPCION Y TENENCIA RESPONSABLE DE MASCOTAS SENIOR"}
 {"cat": "841315", "prod": "84131503", "t": "Seguro de automóviles o camiones CONCESIÓN DE PERMISOS DE OCUPACIÓN DE RECINTOS MUNICIPALES YO ESPACIOS PÚBLICOS PARA LA VENTA DE SEGUROS OBLIGATORIOS"}
 {"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles La Municipalidad de Providencia requiere contratar las obras para la “MEJORAMIENTO PLAZA CHILE ESPAÑA”, tiene como objetivo general mejorar integralmente la Plaza Chile España, elevando sus estándares urbanos, y funcionales para consolidarla como un espac"}
+{"cat": "851216", "prod": "85121609", "t": "Servicios quirúrgicos “CONVENIO COMPRA DE SERVICIOS MÉDICOS PARA CIRUGÍAS DE TIROIDES”. Ofertar valores y cantidades en Anexo N°2: Oferta Económica (Obligatorio y Excluyente). Presupuesto Referencial Total $10.640.000.-. 6 meses."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos LÍNEA N°1 \"SERVICIO DE PRODUCCIÓN INTEGRAL Y TÉCNICA DE LA ACTIVIDAD\". Según las bases de licitación."}
+{"cat": "901016", "prod": "90101603", "t": "Servicios de catering LÍNEA N°2 \"SERVICIO DE CATERING\". Según las bases de licitación."}
+{"cat": "801116", "prod": "80111604", "t": "Personal técnico temporal TECNICO EN ENFERMERIA O AUXILIAR DE FARMACIA PARA EXTENSION HORARIA DE LUNES A JUEVES DE 17:00 A 20:00 HORAS Y VIERNES DE 16:00 A 20:00 HORAS"}
+{"cat": "801116", "prod": "80111604", "t": "Personal técnico temporal TECNICO EN ENFERMERIA O AUXILIAR DE FARMACIA PARA EXTENSION HORARIA DE DIAS SABADOS DE 9:00 A 13:00HORAS"}
+{"cat": "111116", "prod": "11111611", "t": "Grava SERVICIO DE EXTRACCIÓN, SELECCIÓN Y ACOPIO DE ÁRIDOS EN LA RUTA 255CH, ENTRE LOS KM 60 AL KM 80, SECTOR SAN GREGORIO,  PARA LA DIRECCIÓN DE VIALIDAD DE LA PROVINCIA DE MAGALLANES, REGIÓN DE MAGALLANES Y DE LA ANTÁRTICA CHILENA."}
+{"cat": "781018", "prod": "78101801", "t": "Servicios de transporte local en camión Servicio de Traslado de instalaciones de la Inspeccion fiscal Obra Puente Chacao"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos CHUPETES DE DIFERENTES DISEÑOS NAVIDEÑOS (BASTONES Y PALETAS REDONDAS DE COLORES NAVIDEÑOS. SEGÚN BASES DE LICITACIÓN"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos BOLSITAS DE GOLOSINAS, SEGÚN BASES DE LICITACIÓN"}
+{"cat": "271120", "prod": "27112013", "t": "Excavadora de hoyos para postes Servicio de Arriendo de excavadora sobre neumático\r\nAño de fabricación no inferior al año 2014, en buenas condiciones mecánicas. Potencia de motor 120 HP, profundidad excavación 4.5 mts, rodado sobre neumáticos, radio de torneado exterior 5.5 metros"}
+{"cat": "491017", "prod": "49101701", "t": "Medallas MEDALLAS DORADAS Y PLATEADAS PARA LA UNIVERSIDAD DEL BIOBIO"}
+{"cat": "901016", "prod": "90101603", "t": "Servicios de catering SERVICIO DE ALIMENTACIÓN Y RECINTO RECREACIONAL, DE ACUERDO A LAS BASES ADMINISTRATIVAS Y ESPECIFICACIONES TÉCNICASAD ADJUNTAS."}
+{"cat": "521521", "prod": "52152105", "t": "Mamaderas o accesorios SUMINISTRO DE MAMADERAS 120 ML, CHUPETES, TAPA ROSCA, CUBRECHUPETE Y TAPA SELLADORA. VER FORMULARIO N°6- OFERTAR VALOR TOTAL NETO (SUMATORIA TOTALES NETOS DE TODOS LOS ÍTEMS)"}
+{"cat": "731017", "prod": "73101701", "t": "Servicios de producción de medicamentos o medicinas “CONVENIO COMPLEMENTARIO POR SUMINISTRO DE MEDICAMENTOS”. OFERTAR EN ANEXO N°2:OFERTA ECONÓMICA. PPTO BRUTO REFERENCIALTOTAL$347.004.342.- "}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Escuela Libertad, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas y accesorios para estudiantes pro retención de Liceo República Argentina, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Mochilas y accesorios para estudiantes Escuela Pablo Neruda, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Escuela El Sauce , según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas, bolsos y accesorios para estudiantes pro retención de CFA Perfecto De La Fuente, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas y bolsos para estudiantes pro retención de  Escuela María Isabel De Brown, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas y accesorios para estudiantes pro retención de Escuela Lo Calvo , según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Liceo San Esteban, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Bolsos para estudiantes pro retención de Liceo Pedro Aguirre Cerda, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas, bolsos y accesorios para estudiantes pro retención del Liceo Max Salas , según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Escuela John Kennedy, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Liceo América, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas y accesorios para estudiantes pro retención de Escuela España, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Escuela Cristo Redentor, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Escuela Gabriela Mistral, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Escuela Pedro Aguirre Cerda, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochilas para estudiantes pro retención de Liceo Amancay, según Bases Administrativas, técnicas y anexos"}
+{"cat": "531115", "prod": "53111501", "t": "Botas de hombre Calzado trekking hombre"}
+{"cat": "531115", "prod": "53111502", "t": "Botas de mujer Calzado trekking mujer"}
+{"cat": "781019", "prod": "78101904", "t": "Transporte aéreo-carretera Servicio de distribución regional. Si el Ítem N°3 se ofrece sin costo adicional para el SBAP, el oferente deberá registrar un valor simbólico de $1, entendiéndose incluidos todos los costos de almacenaje, custodia y distribución regional en su oferta tota"}
+{"cat": "561121", "prod": "56112106", "t": "Banquetas Se requiere escaños anti-vandálicos, según bases técnicas adjuntas."}
+{"cat": "241121", "prod": "24112110", "t": "Contenedores intermedios a granel Se requiere basureros tipo capsular, según bases técnicas adjuntas."}
+{"cat": "601410", "prod": "60141002", "t": "Muñecas Set material didáctico e implementos de intervención terapéutica infantil PASMI. INGRESAR VALOR UNITARIO NETO DEL SET"}
+{"cat": "411030", "prod": "41103010", "t": "Refrigeradores de banco de sangre SERVICIO DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO DE REFRIGERADORES ANÁLOGOS Y VITRINAS CLÍNICAS DE LA DIRECCIÓN DE ATENCIÓN PRIMARIA"}
+{"cat": "461916", "prod": "46191601", "t": "Extintores SERVICIO DE INSPECCIÓN, MANTENCIÓN, RECARGA Y CERTIFICACIÓN DE EXTINTORES PORTÁTILES HOSPITAL SAN PEDRO DE LOS VILOS, HOSPITAL ANTIGUO Y CENTRO DE DIÁLISIS."}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios CONTRATACIÓN DEL SERVICIO DE ASEO EN LAS DEPENDENCIAS DE LA ESCUELA DE AVIACIÓN, DE CONFORMIDAD A LO ESTIP. EN LAS BASES ADMINISTRATIVAS Y TÉCNICAS, ADJUNTA EN LA FICHA DE LA LICITACIÓN (CON VISITA A TERRENO OBLIGATORIO)."}
+{"cat": "801117", "prod": "80111703", "t": "Servicios de evaluación de currículum vitae Servicio de evaluaciones psicolaborales de jefaturas de tercer y cuarto nivel"}
+{"cat": "422318", "prod": "42231806", "t": "Alimento nutritivo médico o espesadores de líquido Nº1 Módulo lipídico líquido, triglicéridos de cadena media (MCT) ≥95% del contenido graso, de aceite de coco y palma fraccionada. En 100 ml: 855 kcal; lípidos 95 g. Ver Formulario T-1."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº2 Suplemento antidiarreico en polvo, hojuelas de plátano deshidratadas con pectina y prebióticos. Sin gluten ni sacarosa, bajo en lactosa y grasa. Sobre 10,75 g: 40 kcal; carbohidratos 7 g. Ver Formulario T-1."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº3 Suplemento oral sabor vainilla con HMB, tratamiento dietético de malnutrición o riesgo de desnutrición. Sin lactosa ni gluten. Tarro 850 g. En 100 g: 435 kcal; proteínas 16,2 g; lípidos 14,2 g; carbohidratos 57,3 g; HMB 2,2 g."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº4 Suplemento oral sabor frutilla con HMB, tratamiento dietético de malnutrición o riesgo de desnutrición. Sin lactosa ni gluten. Tarro 850 g. En 100 g: 435 kcal; proteínas 16,2 g; lípidos 14,2 g; carbohidratos 57,3 g; HMB 2,2 g."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general N°5 Suplemento oral sabor frutilla-plátano con HMB, tratamiento dietético de malnutrición o riesgo de desnutrición. Sin lactosa ni gluten. Tarro 850 g. En 100 g: 435 kcal; proteínas 16,2 g; lípidos 14,2 g; carbohidratos 57,3 g; HMB 2,2 g."}
+{"cat": "422318", "prod": "42231806", "t": "Alimento nutritivo médico o espesadores de líquido Nº6 Módulo proteico para regímenes especiales, pacientes con necesidades proteicas incrementadas. Tarro 275 g. En 100 g: 357 kcal; proteínas 89,3 g (100% caseinato de calcio). Ver Formulario T-1."}
+{"cat": "422318", "prod": "42231804", "t": "Fórmulas suplementarias para enfermedades pediátricas específicas Nº7 Fórmula infantil sin lactosa, para lactantes con intolerancia a la lactosa y episodios de diarrea, desde el nacimiento. Tarro 400 g. En 100 g: 509 kcal; proteínas 10,9 g; lípidos 25,4 g; carbohidratos 59 g; hierro 5,6 mg; DHA 45 mg."}
+{"cat": "501930", "prod": "50193001", "t": "Comida para bebés Nº8 Fórmula láctea de inicio para lactantes sanos de 0 a 6 meses, con prebióticos y LC-PUFAs (DHA-ARA). Tarro 800 g. En 100 g: 522 kcal; proteínas 9,5 g; lípidos 27,7 g; carbohidratos 58,7 g; hierro 5,3 mg; DHA 31 mg."}
+{"cat": "422318", "prod": "42231806", "t": "Alimento nutritivo médico o espesadores de líquido Nº9 Módulo calórico instantáneo a base de maltodextrina, sin gluten ni lactosa, para aumentar el aporte energético diario. Tarro 500 g. En 100 g: 384 kcal; carbohidratos 96 g. Ver Formulario T-1."}
+{"cat": "501930", "prod": "50193001", "t": "Comida para bebés Nº10 Fórmula láctea de continuación con hierro, para lactantes mayores de 6 meses. Tarro 800 g. En 100 g: 482 kcal; proteínas 15 g; lípidos 21,2 g; carbohidratos 57,8 g; hierro 7,2 mg; sodio 280 mg. Ver Formulario T-1."}
+{"cat": "422318", "prod": "42231804", "t": "Fórmulas suplementarias para enfermedades pediátricas específicas Nº11 Fórmula láctea para prematuros de bajo peso, con proteína parcialmente hidrolizada, LC-PUFAs (DHA-ARA), relación Ca/P optimizada, nucleótidos y probiótico. Tarro 400 g. En 100 g: 495 kcal; proteínas 16,6 g; carbohidratos 51,8 g."}
+{"cat": "422318", "prod": "42231804", "t": "Fórmulas suplementarias para enfermedades pediátricas específicas Nº12 Fórmula infantil hipoalergénica con proteínas altamente hidrolizadas, nutricionalmente completa, para alergia a proteína de leche de vaca y/o soya. Tarro 400 g. En 100 g: 503 kcal; proteínas 11,2 g; lípidos 26 g; carbohidratos 55,8 g."}
+{"cat": "422318", "prod": "42231802", "t": "Fórmulas suplementarias pediátricas Nº13 Complemento nutricional en polvo sabor vainilla, niños de 1 a 10 años con crecimiento o ingesta disminuida. Con prebióticos y probióticos. Tarro 850 g. En 100 g: 464 kcal; proteínas 13,9 g; lípidos 18,1 g; carbohidratos 60,7 g; fibra 2,1 g."}
+{"cat": "422318", "prod": "42231802", "t": "Fórmulas suplementarias pediátricas Nº14 Complemento nutricional en polvo sabor frutilla, niños de 1 a 10 años con crecimiento o ingesta disminuida. Con prebióticos y probióticos. Tarro 850 g. En 100 g: 464 kcal; proteínas 13,9 g; lípidos 18,1 g; carbohidratos 60,7 g; fibra 2,1 g."}
+{"cat": "422318", "prod": "42231806", "t": "Alimento nutritivo médico o espesadores de líquido Nº15 Espesante instantáneo de alimentos y bebidas, para disfagia o dificultad de deglución. Sin sabor, sin lactosa, sin gluten. Tarro 227 g. En 100 g: 333 kcal; carbohidratos 88,9 g; proteínas 0 g; lípidos 0 g. Ver Formulario T-1."}
+{"cat": "422318", "prod": "42231805", "t": "Barras nutritivas, pudín u otros suplementos Nº16 Suplemento oral tipo pudín sabor capuchino, para disfagia, desnutrición, sarcopenia y usuarios geriátricos. Hipercalórico e hiperproteico, sin gluten ni lactosa, con omega 3 y 6. Envase 125 g: 250 kcal; proteínas 12,5 g; lípidos 9,75 g."}
+{"cat": "422318", "prod": "42231805", "t": "Barras nutritivas, pudín u otros suplementos Nº17 Suplemento oral tipo pudín sabor praliné, para disfagia, desnutrición, sarcopenia y usuarios geriátricos. Hipercalórico e hiperproteico, sin gluten ni lactosa, con omega 3 y 6. Envase 125 g: 250 kcal; proteínas 12,5 g; lípidos 9,75 g."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº18 Nutrición oral completa en polvo para diabéticos y prediabéticos, con carbohidratos de lenta absorción. Sabor vainilla. Osmolaridad 506 mOsm/L. Tarro 850 g. En 100 g: 424 kcal; proteínas 19,5 g; carbohidratos 57,6 g; fibra 14,1 g."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº19 Suplemento nutricional oral completo sabor vainilla, alto en energía y proteína, con fibra FOS, vitamina D y CaHMB. Sin lactosa ni gluten. Botella 220 ml: 237 kcal; proteínas 12,1 g; lípidos 7,4 g; carbohidratos 29,7 g; HMB 1,2 g."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº20 Suplemento nutricional oral completo sabor café, alto en energía y proteína, con fibra FOS, vitamina D y CaHMB. Sin lactosa ni gluten. Botella 220 ml: 237 kcal; proteínas 12,1 g; lípidos 7,4 g; carbohidratos 29,7 g; HMB 1,2 g."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº21 Fórmula nutricional oral completa para diabéticos, sabor vainilla, con carbohidratos de digestión lenta y bajo índice glicémico, MUFA, omega 3 y FOS. Sin lactosa ni gluten. Botella 237 ml: 205 kcal; proteínas 11 g; carbohidratos 24 g. "}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº22 Suplemento oral hipercalórico para enfermedad renal crónica, con electrolitos controlados (K, P, Na), proteína de alto valor biológico y omega 3. Sabor vainilla. Caja 237 ml: 400 kcal; proteínas 6 g; lípidos 17,8 g; carbohidratos 52,8 g."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº23 Suplemento oral hipercalórico para enfermedad renal crónica, con electrolitos controlados (K, P, Na), proteína de alto valor biológico y omega 3. Sabor capuchino. Caja 237 ml: 400 kcal; proteínas 6 g; lípidos 17,8 g; carbohidratos 52,8 g."}
+{"cat": "422318", "prod": "42231806", "t": "Alimento nutritivo médico o espesadores de líquido Nº24 Fibra soluble líquida con FOS para alivio de constipación y heces duras. Sin color ni olor, sin lactosa, sin gluten, sin azúcar, baja en residuos. Botella 946 ml. En 100 ml: 67 kcal; carbohidratos 46,7 g; fibra total 40 g."}
+{"cat": "422318", "prod": "42231806", "t": "Alimento nutritivo médico o espesadores de líquido Nº25 Módulo en polvo con glutamina y probiótico, para trastornos gastrointestinales y disbiosis: diarreas, colitis, intestino irritable, malabsorción. Vía oral o enteral por sonda. Sobre 15 g: 60 kcal; proteínas 10 g; carbohidratos 5 g."}
+{"cat": "422318", "prod": "42231806", "t": "Alimento nutritivo médico o espesadores de líquido Nº26 Módulo en polvo con arginina, glutamina y antioxidantes para reparación de tejidos y cicatrización: heridas, úlceras por presión, pie diabético, quemaduras. Sobre 27 g: 84 kcal; proteínas 19 g; arginina 7 g; glutamina 7 g."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº27 Fórmula enteral RTH hipercalórica e hiperproteica, para altos requerimientos energéticos y proteicos. Sin fibra, lactosa ni gluten. Matraz 1 L: 1.500 kcal; proteínas 75 g; lípidos 58 g; carbohidratos 170 g; osmolaridad 360 mOsm/L."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº28 Nutrición enteral RTH por sonda, completa, hipercalórica 2 kcal/ml e hiperproteica, sin fibra, rica en MCT y con EPA-DHA. Matraz 500 ml: 1.000 kcal; proteínas 50 g; lípidos 50 g; carbohidratos 90 g; osmolaridad 420 mOsm/L."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº29 Fórmula enteral RTH polimérica estándar isotónica, envase hermético, sabor neutro, sin fibra. Osmolaridad 220 mOsm/L. Matraz 1 L: 1.000 kcal; proteínas 38 g; lípidos 33 g; carbohidratos 140 g; sodio 750 mg; EPA 0,17 g; DHA 0,13 g."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº30 Fórmula enteral RTH polimérica estándar isotónica, envase hermético, sabor neutro, sin fibra. Osmolaridad 220 mOsm/L. Matraz 500 ml: 500 kcal; proteínas 19 g; lípidos 16,5 g; carbohidratos 70 g; sodio 375 mg. Ver Formulario T-1."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº31 Fórmula enteral RTH para intolerancia al metabolismo de la glucosa, normocalórica y normoproteica, baja en carbohidratos, con fibra. Osmolaridad 345 mOsm/L. Matraz 1.000 ml: 1.000 kcal; proteínas 46,5 g; carbohidratos 92,5 g; fibra 15 g."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº32 Fórmula enteral RTH para intolerancia al metabolismo de la glucosa, normocalórica y normoproteica, baja en carbohidratos, con fibra. Osmolaridad 270 mOsm/L. Matraz 500 ml: 525 kcal; proteínas 22,5 g; carbohidratos 46,2 g; fibra 12 g."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº33 Fórmula enteral RTH completa, hipercalórica e hiperproteica con fibra, para diabéticos. Sin lactosa ni gluten. Osmolaridad 450 mOsm/L. Matraz 500 ml: 750 kcal; proteínas 37,5 g; lípidos 35 g; carbohidratos 65,5 g; fibra 11,5 g."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº34 Fórmula enteral RTH completa, hipercalórica e hiperproteica con fibra, para diabéticos. Sin lactosa ni gluten. Osmolaridad 450 mOsm/L. Matraz 1.000 ml: 1.500 kcal; proteínas 75 g; lípidos 70 g; carbohidratos 131 g; fibra 23 g."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº35 Fórmula enteral RTH isotónica, baja en residuos, estéril, para pacientes con o en riesgo de malnutrición. Osmolaridad 249 mOsm/L. Botella 1 L. En 100 ml: 100 kcal; proteínas 4,4 g; lípidos 3,5 g; carbohidratos 14,4 g; sodio 93 mg."}
+{"cat": "422318", "prod": "42231801", "t": "Fórmulas suplementarias de adulto para uso general Nº36 Fórmula enteral RTH isotónica, baja en residuos, estéril, para pacientes con o en riesgo de malnutrición. Osmolaridad 249 mOsm/L. Botella 500 ml. En 100 ml: 100 kcal; proteínas 4,4 g; lípidos 3,5 g; carbohidratos 14,4 g; sodio 93 mg."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº37 Fórmula enteral RTH de alta densidad calórica e hiperproteica para diabéticos, con carbohidratos complejos de absorción lenta. Osmolaridad 686 mOsm/L. Botella 1.000 ml. En 100 ml: 150 kcal; proteínas 8,3 g; lípidos 7,5 g; fibra 1,6 g."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº38 Fórmula enteral RTH de alta densidad calórica e hiperproteica para diabéticos, con carbohidratos complejos de absorción lenta. Osmolaridad 671 mOsm/L. Botella 500 ml. En 100 ml: 150 kcal; proteínas 7,5 g; lípidos 7,5 g; fibra 1,5 g."}
+{"cat": "422318", "prod": "42231803", "t": "Fórmulas suplementarias para enfermedades específicas de adulto Nº39 Fórmula enteral RTH completa y balanceada para adultos, con proteína de alto valor biológico y fibra, isotónica, sin lactosa ni gluten. Botella 1.000 ml. En 100 ml: 100 kcal; proteínas 4,2 g; lípidos 5,4 g; carbohidratos 9,6 g; fibra 1,4 g."}
+{"cat": "422318", "prod": "42231802", "t": "Fórmulas suplementarias pediátricas Nº40 Nutrición enteral RTH pediátrica por sonda, 1 a 12 años, normocalórica y sin fibra, con aceite de pescado. Osmolaridad 220 mOsm/L. Matraz 500 ml: 500 kcal; proteínas 12,5 g; lípidos 22 g; carbohidratos 62,5 g; EPA 0,25 g; DHA 0,2 g."}
+{"cat": "422318", "prod": "42231805", "t": "Barras nutritivas, pudín u otros suplementos Nº41 Módulo proteico listo para servir, tipo postre de gelatina sabor frutos rojos, con colágeno hidrolizado y menos de 1 g de carbohidratos. Para disfagia y dietas restringidas de líquidos. Envase 118 ml: 68 kcal; proteínas 17 g; lípidos 0 g."}
+{"cat": "422318", "prod": "42231805", "t": "Barras nutritivas, pudín u otros suplementos Nº42 Módulo proteico listo para servir, tipo postre de gelatina sabor lima, con colágeno hidrolizado y menos de 1 g de carbohidratos. Para disfagia y dietas restringidas de líquidos. Envase 118 ml: 68 kcal; proteínas 17 g; lípidos 0 g."}
+{"cat": "422315", "prod": "42231504", "t": "Contenedores o bolsas de nutrición enteral Nº43 Contenedor vacío de etileno-vinil acetato de 1,5 L, compatible con sistemas universales de administración enteral por gravedad o bomba de infusión. Graduación de 100 ml. Estéril, con clamp de seguridad. Compatible con sistema ENFit."}
+{"cat": "422315", "prod": "42231505", "t": "Adaptadores, conectores o extensiones de los equipos de alimentación enteral Nº44 Dispositivo médico de conexión ENFit de 60 ml para hidratación y/o alimentación por bolos."}
+{"cat": "422315", "prod": "42231505", "t": "Adaptadores, conectores o extensiones de los equipos de alimentación enteral Nº45 Adaptador para conexión de bajadas de alimentación con sistema ENFit a sonda de alimentación con entrada de embudo."}
+{"cat": "422315", "prod": "42231505", "t": "Adaptadores, conectores o extensiones de los equipos de alimentación enteral Nº46 Adaptador en cono para conectar dispositivos con sistema ENLock a sistema ENFit."}
+{"cat": "422315", "prod": "42231501", "t": "Bombas de infusión de alimentación enteral Nº47 Bomba de infusión enteral en COMODATO. Peristáltica, portátil, ≤700 g. Batería ≥20 h a 125 ml/h. Flujo 1 a 400 ml/h, exactitud ±10%. Pantalla LCD, IP22, bloqueo de panel y alarmas. Sublote A: se oferta junto con la línea N°49. Ver Form. T-1."}
+{"cat": "422315", "prod": "42231501", "t": "Bombas de infusión de alimentación enteral Nº48 Bomba de infusión enteral en COMODATO. Peristáltica, portátil, ≤700 g. Batería ≥20 h a 125 ml/h. Flujo 1 a 400 ml/h, exactitud ±10%. Pantalla LCD, IP22, bloqueo de panel y alarmas. Sublote B: se oferta junto con la línea N°50. Ver Form. T-1."}
+{"cat": "422315", "prod": "42231505", "t": "Adaptadores, conectores o extensiones de los equipos de alimentación enteral Nº49 Set de administración enteral sin DEHP, látex ni bisfenol A, con clamp antiderrame, llave de 3 pasos, cámara de goteo y filtro. Rosca-punzón y ENFit (ISO 80369-3), 12 a 24 French, 190 a 250 cm. Sublote A: se oferta junto con la línea N°47."}
+{"cat": "422315", "prod": "42231505", "t": "Adaptadores, conectores o extensiones de los equipos de alimentación enteral Nº50 Bajada de alimentación mixta, tapa rosca 40 mm y punzón, peristáltica, con llave de 3 pasos, conector y adaptador ENFit (ISO 80369-3), 12 a 24 French, 190 a 250 cm. Sublote B: se oferta junto con la línea N°48. Ver Formulario T-1."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 1: 1 CURSO DE PELUQUERIA, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 2: 2 CURSOS DE COMERCIO ELECTRÓNICO Y MARKETING DIGITAL, PARA LA COMUNA DE PUNTA ARENAS, PARA 20 PARTICIPANTES CADA UNO."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 3: 1 CURSO DE COCINA NACIONAL, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 4: 1 CURSO DE MANTENIMIENTO, REPARACIÓN Y DIAGNOSTICO DE VEHÍCULOS ELÉCTRICOS, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 5: 1 CURSO DE INGLÉS BÁSICO, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 6: 1 CURSO DE INGLÉS BÁSICO, PARA LA COMUNA DE LAGUNA BLANCA, PARA 10 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 7: 1 CURSO DE INSTALACIÓN Y MANTENIMIENTO DE SISTEMAS SOLARES FOTOVOLTAICOS, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 8: 1 CURSO DE DISEÑO Y ELABORACIÓN DE JOYAS DE PLATA MAPUCHE, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 9: 1 CURSO DE GESTIÓN DEL PROCESO DE INCLUSIÓN LABORAL DE PERSONAS CON DISCAPACIDAD, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 10: 1 CURSO CONVENCIONAL CONDUCENTE A LICENCIA DE CONDUCIR CLASE B, PARA LA COMUNA DE PRIMAVERA, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 11: 1 CURSO DE SERVICIOS DE MASAJES INTEGRALES, PARA LA COMUNA DE NATALES, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 12: 1 CURSO DE SERVICIOS DE PELUQUERÍA CANINA, PARA LA COMUNA DE NATALES, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 13: 1 CURSO DE SERVICIOS DE MANICURE Y PEDICURE, PARA LA COMUNA DE NATALES, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 14: 1 CURSO DE RECICLAJE BASE DE RESIDUOS INORGÁNICOS NO PELIGROSOS, PARA LA COMUNA DE CABO DE HORNOS, PARA 12 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 15: 1 CURSO DE COCINA NACIONAL E INTERNACIONAL, PARA LA COMUNA DE PORVENIR, PARA 12 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 16: 1 CURSO DE TÉCNICAS DE SOLDADURA POR MIG, PARA LA COMUNA DE PORVENIR, PARA 12 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 17: 1 CURSO DE PROGRAMACIÓN WEB, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 18: 1 CURSO DE GESTIÓN DE CONTROL DE CALIDAD DE SOFTWARE, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "861116", "prod": "86111604", "t": "Capacitación a empleados LINEA DE PRODUCTO 19: 1 CURSO DE DISEÑO DE BASE DE DATOS, PARA LA COMUNA DE PUNTA ARENAS, PARA 15 PARTICIPANTES."}
+{"cat": "721023", "prod": "72102305", "t": "Servicios de reparación, mantenimiento o reparación de aire acondicionado "}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles El objeto es la contratación de ejecución de obra de tres edificaciones destinadas a equipamiento municipal, emplazada dentro de área verde publica \"gran bajada de Esqui\""}
+{"cat": "721018", "prod": "72101801", "t": "Limpieza con chorro de arena Adquisición De Equipo Hidrolavadora Autónomo Sobre Remolque Para La Municipalidad De Frutillar"}
+{"cat": "312422", "prod": "31242206", "t": "Vidrios ópticamente planos ADQUISICION  Y REPOSICION DE  CRISTALES  TERMOPANEL  DEL EDIFICIO CONSISTORIAL  SEGUN BASES DE LICITACION"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles AGL Seguridad Posta de Atención Primaria Puerto Edén, Comuna de Natales"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE PRE-PRODUCCIÓN Y PRODUCCIÓN INTEGRAL PARA LA PARTICIPACIÓN DE CHILE EN LA 64ª FERIA DEL LIBRO INFANTIL Y JUVENIL DE BOLONIA 2027"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE PRODUCCIÓN INTEGRAL PARA EXPERIENCIA ESCÉNICA DE FOMENTO LEO \"TIERRA DE BRUJOS\" A REALIZARSE EN LA COMUNA DE PUNTA ARENAS."}
+{"cat": "801116", "prod": "80111603", "t": "Personal temporal de producción Contratación de servicios para realizar intervenciones quirúrgicas de Endoprótesis Total de Rodilla. Según lo indicado en las bases administrativas."}
+{"cat": "421823", "prod": "42182304", "t": "Sets o kits de pruebas psicodiagnósticas “INSTRUMENTOS DE EVALUACIÓN DIAGNÓSTICA SEP”, SEGÚN BASES TÉCNICAS ADJUNTAS."}
+{"cat": "781118", "prod": "78111808", "t": "Arriendo de vehículos Contratación de servicio de transporte para traslado de funcionarios del Programa RED LOCAL DE APOYOS Y CUIDADOS (PRLAC). Revisar Términos de Referencia. "}
+{"cat": "781118", "prod": "78111808", "t": "Arriendo de vehículos Contratación de servicio de movilización para el traslado del equipo ejecutor del PROGRAMA VÍNCULOS, CONVOCATORIA 2024-B, mediante camioneta 4x4, para el cumplimiento de 32 visitas domiciliarias programadas entre el 01 y el 22 de diciembre de 2026. Revisa"}
+{"cat": "781118", "prod": "78111808", "t": "Arriendo de vehículos Contratación de servicio de movilización para el traslado del equipo ejecutor del PROGRAMA VÍNCULOS, CONVOCATORIA 2025-B, mediante camioneta 4x4, para el cumplimiento de 35 visitas domiciliarias programadas entre el 07 y el 28 de diciembre de 2026. Revisa"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Cámara IP bullet 8 MP (exterior)\r\nCámara DH-IPC-HFW2841T-ZS, IP BULLET 8MP, VER ESPECIFICACIONES TECNICAS "}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Cámara IP domo 8 MP\r\nDomo IP / 8Mp / IR40m soporta IVS protección IP67 / lente varifocal motorizado / DH-IPC-HDBW2841R-ZS / DAHUA\r\n> Sensor de imagen CMOS de 8 MP, VER ESPECIFICACIONES TECNICAS"}
+{"cat": "901316", "prod": "90131602", "t": "Videos Grabador de video en red (NVR) de 16 canales con 16 puertos PoE\r\nNVR Dahua 16 Canales 8MP NVR4216-16P-4KS2/L o equivalente técnico, VER ESPECIFICACIONES TECNICAS."}
+{"cat": "432018", "prod": "43201803", "t": "Discos duros Disco duro de videovigilancia 10 TB\r\nDisco duro Seagate SkyHawk Surveillance 10 TB o equivalente técnico (WD Purple)\r\nCapacidad 10 TB, VER ESPECIFICACIONES TECNICAS"}
+{"cat": "391210", "prod": "39121011", "t": "Fuentes de alimentación continua UPS (respaldo eléctrico)\r\n•\tCapacidad de 1000 VA / 600 W o superior, line-interactive u online. VER ESPECIFICACIONES TECNICAS\r\n"}
+{"cat": "432016", "prod": "43201602", "t": "Gabinete, rack, chasis o bastidores para equipos de red Gabinete rack mural 9U\r\nGabinete Rack Mural Armable 9U x 600 x 600 Trimerx o equivalente técnico\r\nColor: Negro. Dimensiones: 9U x 600 x 600 mm\r\nEntradas de cable: 3 (superior e inferior), VER ESPECIFICACIONES TECNICAS"}
+{"cat": "432016", "prod": "43201602", "t": "Gabinete, rack, chasis o bastidores para equipos de red Accesorios de gabinete\r\n•\t1 regleta o PDU de 19\" con al menos 6 tomas, 1 organizador horizontal de cables y 1 bandeja fija para el NVR."}
+{"cat": "461716", "prod": "46171612", "t": "Monitores de vídeo Monitor Smart TV 50\" o 55\"\r\nSmart TV Caixun 50\" o 55\" UHD 4K o equivalente técnico\r\n- Conectividad/conexión HDMI, USB\r\n- 4K, LED\r\n- Velocidad de imagen 60 Hz – 24/7\r\nVER ESPECIFICACIONES TECNICAS"}
+{"cat": "311625", "prod": "31162506", "t": "Soporte de pared Soporte mural para monitor\r\n•\tSoporte de pared fijo o inclinable para pantallas de 50\" o 55\", instalado en el lugar que defina el establecimiento."}
+{"cat": "261216", "prod": "26121609", "t": "Cable de redes Cableado y canalización\r\nCable UTP CAT6A 100% Cobre exterior con sus conectores RJ45 Estándar Keystone\r\nVER ESPECIFICACIONES TECNICAS"}
+{"cat": "561015", "prod": "56101501", "t": "Soportes Soportes de montaje\r\nSoporte de mástil, soporte universal para cámara de vigilancia con 3 o 2 abrazaderas\r\nIncluir soportes para todas las cámaras (mástil, pared o caja de conexión), según levantamiento en terreno."}
+{"cat": "811118", "prod": "81111809", "t": "Instalación de sistemas Instalación, configuración y puesta en marcha\r\nInstalación, configuración y puesta en marcha de nuevos puntos de cámaras de seguridad, de acuerdo con las especificaciones técnicas de la presente SEGUN ESEPCIFICACIONES TECNICAS"}
+{"cat": "831122", "prod": "83112204", "t": "Servicio de redes basado en protocolo X.75 Mantenciones\r\nMantenciones preventivas y correctivas durante 2 años, considerando la urgencia del demandante.\r\nUna mantención preventiva por año (2 en total), la primera antes de cumplirse 12 meses desde la instalación."}
+{"cat": "391217", "prod": "39121719", "t": "Protectores Protector de sobretensión PoE\r\n•\tUn protector por cada cámara exterior, instalado en la línea de datos y alimentación."}
+{"cat": "921217", "prod": "92121703", "t": "Alarmas servicio de instalación de alarmas comunitarias inteligentes en el centro de colina"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos “SERVICIO INTEGRAL DE PRODUCCIÓN Y DESARROLLO DE LA ACTIVIDAD SEGUNDA GALA 2026 DEL CENTRO DE DÍA, COMUNA DE COLINA”"}
+{"cat": "821018", "prod": "82101801", "t": "Campañas publicitarias “ADQUISICIÓN DE OBSEQUIOS PARA LOS PARTICIPANTES DE LAS COLONIAS DE VERANO 2027, COMUNA DE COLINA”."}
+{"cat": "801417", "prod": "80141705", "t": "Subasta “SERVICIO MARTILLERO PARA VEHÍCULOS RETIRADOS DE CIRCULACIÓN Y ENVIADOS AL APARCADERO”."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Servicio de Producción, Desarrollo y Difusión del Encuentro Deportivo – Campeonato Nacional de Rayuela VER bases de licitación adjuntas"}
+{"cat": "901016", "prod": "90101603", "t": "Servicios de catering La Municipalidad de Aysén –en adelante Municipalidad - llama a presentar ofertas para adquirir Servicio de Alimentación para Encuentro Deportivo – Campeonato Nacional de Rayuela para los días 18,19 y 20 de diciembre del 2026 en el Polideportivo 21 de Abri"}
+{"cat": "931316", "prod": "93131607", "t": "Servicios de distribución de alimentos COMPRA DE CAJAS NAVIDEÑAS, PARA AFILIADOS AL SERVICIO DE BIENESTAR"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Suministro, fabricación e instalación de ventanilla de protección en acrílico transparente con marco de aluminio, sobre mesón de atención SOME."}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Construcción de tabique de volcanita con terminación lavable en sala de terapia física."}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Construcción de radier de hormigón de 5,0 m² (2,50 x 2,00 m), de 10 cm de espesor, en la parte posterior del establecimiento."}
+{"cat": "551216", "prod": "55121606", "t": "Etiquetas autoadhesivas SUMINISTRO DE ROLLOS TÉRMICOS AUTOADHESIVOS PARA EL ETIQUETADO DE LOS MEDICAMENTOS FRACCIONADOS PARA LA RED DE SALUD MUNICIPAL."}
+{"cat": "831018", "prod": "83101803", "t": "Suministro de electricidad trifásica Servicios para el mantenimiento de semáforos en la comuna, así como el pintado y mantención de líneas de demarcación y flechas de virajes en cruces regulados por semáforos y la mantención de señales verticales en los mismos cruces y otros indicados en los"}
+{"cat": "781018", "prod": "78101801", "t": "Servicios de transporte local en camión SUMINISTRO, TRANSPORTE, COLOCACIÓN Y COMPACTACIÓN DE 500 M2 CON UN ESPESOR DE 5CM TERMINADO DE MEZCLA ASFÁLTICA EN CALIENTE"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles “CONTRATACION DEL SERVICIO REPOSICIÓN DE PISO Y HABILITACIÓN DE SERVICIOS HIGIÉNICOS DE SECRETARIA DE ESTUDIOS DE LA UNIVERSIDAD DE ATACAMA”"}
+{"cat": "421828", "prod": "42182805", "t": "Básculas de piso de paciente Sistema de dispositivos biométricos: toma de presión + balanza digital + pulsera smartband + cinta métrica"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto "}
+{"cat": "721317", "prod": "72131701", "t": "Pavimentación de carreteras o caminos REPARACION DE BACHES FRANJAS 4-5 Y 6 COMUNA DE LA GRANJA"}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación “SERVICIO DE ARRIENDO, MANTENCIÓN Y SOPORTE DE GABINETES PSICOTÉCNICOS”, POR EL PERIODO DE 24 MESES "}
+{"cat": "811118", "prod": "81111812", "t": "Mantenimiento y soporte de hardware Servidor DELL Power Edge R760XS Intel Xeon Gold 6438Y+. De acuerdo con Bases de Licitación adjuntas."}
+{"cat": "721022", "prod": "72102201", "t": "Instalación o servicio de sistemas de energía eléctrica NORMALIZACIÓN ELÉCTRICA"}
+{"cat": "721315", "prod": "72131502", "t": "Construcción de casas SERVICIO DE CAMBIO DE TECHUMBRE, REVESTIMIENTO EXTERIOR Y VENTANAS SEGUNDO PISO EN VIVIENDA FISCAL UBICADA EN HUALAIHUE N° 3051, VILLA PEDRO MONTT, VALDIVIA"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE PRODUCCION ACTIVIDAD DEPORTIVA RECREATIVA, EN EL MARCO DEL CIERRE DEL PROGRAMA DEPORTVO - SC 84984 SEGÚN REQUERIMIENTOS, ESPECIFICACIONES Y CONDICIONES ESTABLECIDAS EN LAS BASES DE LICITACIÓN."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos PRODUCCION MERCADO DE NAVIDAD ARTE Y CREACIÓN LOCAL 2026 – SC\r\n84980 SEGÚN REQUERIMIENTOS, ESPECIFICACIONES Y CONDICIONES ESTABLECIDAS EN LAS BASES DE LICITACIÓN."}
+{"cat": "831216", "prod": "83121602", "t": "Servicios y asociaciones de turismo CONTRATACIÓN SERVICIOS DE TURISMO CON FINES PEDAGÓGICOS PARA ESCUELA VEGA REDONDA SEGÚN BASES TÉCNICAS Y ADMININISTRATIVAS DE LA SOLICITUD N°14286.-"}
+{"cat": "432315", "prod": "43231512", "t": "Software de gestión de licencias Las presentes Bases Administrativas regulan el llamado a propuesta pública, por parte de la División de Ingenieros, en adelante “entidad licitante” o “DIVINGE”, para la “Adquisición de licencias computacionales, para la División de Ingenieros”, ubicada en"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE PRODUCCIÓN Y DESARROLLO DE EVENTOS: \"ACTIVIDADES NAVIDEÑAS QUILLECO 2026\", SEGÚN DETALLE ADJUNTO(BASES ADMINISTRATIVAS, TÉRMINOS DE REFERENCIA, ANEXOS)"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salamanca Urbano a Escuela Diaguitas de Chalinga"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Peladero (Camisa) Arrayan – El Palquial- Colliguay – Tahuinco y El Tambo a Escuela Matilde Salamanca y Escuela Especial Holanda"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Colliguay – El Arrayan-Peladero y El Palquial a Colliguay – El Arrayan-Peladero y El Palquial a Liceo Bicentenario.- "}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Tambo - Tahuinco a Liceo Bicentenario"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados EL Tambo a Escuela Diaguita de Chalinga "}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Panguesillo- La Higuerilla y El Queñe a Liceo Bicentenario"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Chuchiñi- Cancha Brava -Chalinga y Arboleda Grande a Escuela Especial Holanda.-"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados El Consuelo -Santa Rosa -Salamanca Centro – El tambo y Llimpo a Escuela Especial Holanda "}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Chuchiñi a Escuela Julio Echavarría de Chuchiñi"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salidas Pedagógicas a Santiago (Bus).-"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salidas Pedagógicas a Viña de Mar (Bus).-"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salidas Pedagógicas a la Serena (Bus).-"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salidas Pedagógicas a Santiago.- (Taxi -Bus)"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salidas Pedagógicas a Viña del Mar. (Taxi-Bus)"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salidas Pedagógicas a La Serena (Taxi- Bus)."}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salidas Pedagógicas a los Vilos (Taxi-Bus) "}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salida Pedagógica Santiago Bus capacidad de 64 asientos "}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salida Pedagógica a Viña del Mar capacidad 64 asientos"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Salida Pedagógica La Serena Bus capacidad de 64 asientos"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Villa Sana Rosa y El Consuelo a Matilde Salamanca"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados El Señor -De La Tierra- Las Lajas- Arboleda Grande -El Tebal -Cunlagua-Manquehua -Las Jarillas a Liceo Bicentenario\r\nEscuela Matilde Salamanca y Escuela Diaguitas de Chalinga\r\n"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados San Agustín, Huanque, Cancha Brava y Chalinga a Liceo Bicentenario\r\nEscuela Matilde Salamanca y Escuela Diaguitas de Chalinga\r\n"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Coirón-Punta Nueva – Llimpo, Jorquera y Villa Santa Rosa a Liceo Bicentenario y Escuela Matilde Salamanca.-"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados Quelen Alto -Quelen Bajo y El Queñe a Liceo Bicentenario\r\nEscuela Matilde Salamanca y Escuela Diaguitas de Chalinga\r\n\r\n"}
+{"cat": "701116", "prod": "70111602", "t": "Servicios de invernadero ADQUISICION DE INVERNADEROS  DE EMERGENCIA, COMUNA DE LOS SAUCES"}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación Mantenimiento Preventivo Semestral considera:\r\n5 Sillones dentales Zurik\r\n1 Unidad Dental Portátil DU 893 Dynamic (tipo maleta)\r\n2 Compresores dentales Zurik 2 HP\r\n3 Compresores dentales Zurik 1 HP\r\nTraslado entre establecimientos para realizar los servic"}
+{"cat": "811121", "prod": "81112101", "t": "Proveedores de servicio de Internet (ISP) CONTRATACIÓN DEL SERVICIO DE INTERNET, TELEFONÍA IP, SEGURIDAD PERIMETRAL Y RED DE DATOS"}
+{"cat": "721028", "prod": "72102801", "t": "Renovación de edificios, casas, señales y monumentos INSTALACION PLACA PUENTE MAULE INGRESO DIAGONAL SAMORE. SEGUN BASES, ESPECIFICACIONES TECNICAS Y OTROS ADJUNTOS.-"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos ADQUISICION DE 9000 BOLSAS DE GOLOSINAS NAVIDAD 2026, DIDECO SEGUN BASES Y ARCHIVOS ADJUNTOS."}
+{"cat": "271120", "prod": "27112004", "t": "Palas LINEA FERRETERIA, SEGUN BASES Y OTROS ADJUNTOS.-"}
+{"cat": "721029", "prod": "72102902", "t": "Servicios de paisajismo, arquitectura paisajista LINEA PAISAJISMO, SEGUN BASES Y OTROS ADJUNTOS.-"}
+{"cat": "301615", "prod": "30161509", "t": "Tablero de yeso Según el detalle del punto 3.1 y 10. de las Especificaciones Técnicas."}
+{"cat": "401515", "prod": "40151511", "t": "Bombas de pozo Mantención preventiva + diagnóstico técnico individual + eventuales trabajos correctivos/reparaciones autorizadas PARA EL EQUIPO Bomba sumergible ORCO Meduy 150B437, SEGÚN LO DETALLADO EN LAS BASES Y ESPECIFICAICONES TÉCNICAS"}
+{"cat": "401515", "prod": "40151513", "t": "Bombas sumergibles Mantención preventiva + diagnóstico técnico individual + eventuales \r\ntrabajos correctivos/reparaciones autorizadas PARA EL EQUIPO Motobombas sumergibles KSB Amarex KRT E 100-315/294UG-S, SEGÚN LO DETALLADO EN LAS BASES Y ESPECIFICACIONES TÉCNICAS"}
+{"cat": "221016", "prod": "22101602", "t": "Equipo de apisonamiento Una (1) máquina compactadora vertical/enfardadora. \r\nNuevo y sin uso. No se admitirán equipos usados, \r\nreacondicionados, remanufacturados ni de exhibición. \r\nCartón, papel, plástico y otros materiales reciclables de \r\ncaracterísticas similares, conforme "}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados Se requiere contratar SUMINISTRO DE NEUMÁTICOS Y SERVICIOS AFINES, conforme a Bases Administrativas, tecnicas y anexos adjuntos. Adjudicación por el global requerido."}
+{"cat": "391117", "prod": "39111704", "t": "Luces proyectantes Luces y Adornos Navideños para Plazas de Peralillo, Población y Recintos Municipales"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles El proyecto contempla la construcción de un cierre perimetral de 80 metros de longitud construido con estructura metálica en perfil tubular 75x75x3mm como pilar unidos por una piola cable acero forrado pvc de 6mm, además de la readecuación del cierre exis"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles El proyecto denominado “Mejoramiento Baños Alumnos del Liceo Técnico Profesional de Camiña” contempla el mejoramiento integral de los recintos sanitarios destinados a los alumnos del establecimiento educacional, mediante la reposición de artefactos sanita"}
+{"cat": "721022", "prod": "72102201", "t": "Instalación o servicio de sistemas de energía eléctrica INSTALACIÓN DE LUMINARIAS DE EMERGENCIA HGGB"}
+{"cat": "201023", "prod": "20102301", "t": "Transportes de personal SERVICIO DE SUMINISTRO DE TRANSPORTE DE PASAJEROS, SEGUN ESPECIFICACIONES TECNICAS Y BASES ADMINISTRATIVAS ESPECIALES."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos La presente propuesta consiste en la contratación por 24 meses por el convenio de servicio de CONVENIO DE SUMINISTRO CUENTAS DE CORREO INSTITUCIONAL conforme a la descripción detallada que se encuentra en los antecedentes adjuntos a la presente licitación"}
+{"cat": "921215", "prod": "92121504", "t": "Guardias de seguridad CONTRATACION GUARDIAS PARA FERIA NAVIDEÑA, COMUNA DE LIMACHE."}
+{"cat": "801117", "prod": "80111715", "t": "Profesionales ENSAYES DE LABORATORIO PARA EXPLORACION DE SUELOS ESTUDIOS GEOTECNICO, ESTUDIO GEOFISICO ReMi DE PROYECTO: LOTEO 80 VIVIENDAS SOCIALES VICUÑA MACKENNA ALTO ORIENTE COMUNA DE FREIRINA"}
+{"cat": "111117", "prod": "11111701", "t": "Arena silícea ADQUISICIÓN DE ARIDOS Y MAICILLO PARA LA DIRECCION DE GESTIÓN DEL RIESGO DE DESASTRES."}
+{"cat": "241115", "prod": "24111502", "t": "Bolsas de papel 10-200-225-080-00\tBOLSA O SAQUITOS DE PAPEL DE 7 X 10 CMS SIN FUELLE, CON PESTAÑA DE CIERRE DENTADA"}
+{"cat": "241115", "prod": "24111502", "t": "Bolsas de papel 10-200-225-083-00\tBOLSA O SAQUITO DE PAPEL 1/4 KL (DE 8 CMS DE ANCHO MAS FUELLE DE 1,2 CMS. POR LADO X 16,5 CMS MAS PESTAÑA DE CIERRE DENTADA."}
+{"cat": "241115", "prod": "24111502", "t": "Bolsas de papel 10-200-225-084-00\tBOLSA O SAQUITO DE PAPEL 1/2 KL (DE 9 CMS DE ANCHO MAS FUELLE DE 2 CMS. POR LADO X 23,5 CMS MAS PESTAÑA DE CIERRE DENTADA"}
+{"cat": "241115", "prod": "24111502", "t": "Bolsas de papel 10-200-225-086-00\tBOLSA O SAQUITO DE PAPEL 2 KL (DE 16 CMS DE ANCHO MAS FUELLE DE 3 CMS POR LADO X 28 CMS MAS PESTAÑA DE CIERRE DENTADA"}
+{"cat": "241115", "prod": "24111502", "t": "Bolsas de papel 10-200-225-087-00\tBOLSA O SAQUITO DE PAPEL 1/8 KG (DE 6 CMS, DE ANCHO MAS FUELLE DE 1 CMS POR LADO, X 13,5 CMS MAS PESTAÑA DE CIERRE DENTADA"}
+{"cat": "241115", "prod": "24111502", "t": "Bolsas de papel 10-200-225-161-00\tBOLSA O SAQUITO DE PAPEL DE 5 X 9 CMS.SIN FUELLE"}
+{"cat": "423115", "prod": "42311511", "t": "Vendas de gasa 10-200-225-104-09\tAPOSITO ESTERIL 7 X 7 CM X 2 UD OCULAR"}
+{"cat": "423115", "prod": "42311511", "t": "Vendas de gasa 10-200-225-427-02\tGASA ESTERIL 5 M X 5 CM DRENAJE"}
+{"cat": "401016", "prod": "40101605", "t": "Protectores de ventilador o accesorios 10-200-222-1373-00\tMANGA DE POLIETILENO ESTERIL 15 CM X 0,07 MM DE ESPESOR DE 2,50 METROS SIN ADHESIVO"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad La contratación comprenderá mantención preventiva y correctiva, incluyendo mano de obra especializada, herramientas, instrumentos de medición, medios de acceso y elevación cuando corresponda, configuración, pruebas, materiales menores y demás elementos."}
+{"cat": "451117", "prod": "45111704", "t": "Consolas de mezcla de sonidos Servicio de Producción Técnica de Audio, graderías, pantalla Led, logística y otros para acto cívico y desfile masivo por aniversario ciudad de arauco"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cosas pequeñas como esas\tClaire Keegan\t9789877122404"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Ese espacio, ese jardín\tCoral Bracho\t9789562826853"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Me llamo Goa\tMiriam Tirado \t9789566355380"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Neuro hábitos.\tNicole Vignola\t9789566122906"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Oro triste. Diarios feministas de obreras chilenas 1905-1908.\tMaría José Cumplido\t9789569984341"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Si lo crees, lo creas.\tBrian Tracy\t9789585549319"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Vivir con Tdah. Consejos útiles para llevarse bien con el cerebro.\tJessica Mccabe\t9788411780605"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Alimentos Antiinflamatorios\tLizzie Streit\r\n 9789562573740\r\n"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cose, zurce y borda\tAitor Saraiba\r\n9788425235474\r\n"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Espíritu vegetal. La alegría de tener plantas en tu casa\tVANHOORNE, CANDICE\t9789562576052"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Te conozco de otra vida \tNelson Gonzalez Vallejos \t9789564151281"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Arderá el viento\tSaccomanno, Guillermo\t9786313011643"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cuánto pesa tu mochila?\tAlicia Álvarez\t9788410313255"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Mi almohada de hierbas\tSoseki, Natsume\t9789569673528"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Mis tardes en el pequeño café de Tokio\tAoyama, Michiko\t9789564087740"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La ciencia de la felicidad \tBruce Hood\t9786075698977"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Lo que verdaderamente importa\tJoshua Becker \t9788418714481"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Convénceme de Vivir\tGaby Pérez \t9786070758683"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El Método Takimira. Apende a envejecer con energía con la entrenadora más longeva de Japón\tMika Takishima\t9788418524646"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El Niño que se enfadó con la Muerte\tEnric Benito\t9788410021877"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Emociones en el Envejecimiento: Teoría y Practica\tFrancisco Javier Balea \t9788417979355\r\n"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Sanatorio\tRebeca Khamlichi\t9788408282631"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Envejecimiento Saludable\tInés María Comino Sanz, Clara Sánchez\t   9788490974278"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Abraza tus partes rotas\tMaría Ros\t9788425364235"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Las olas. Conceptos y herramientas terapéuticas de salud mental\tAngel Gargiulo\t 9789874808080"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La salud mental en tiempos de crisis\tediciones UAH\t9789563575323"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El nervio vago. Su poder sanador \tStanley Rosenberg\t9788417399092"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El don de la terapia  \tIrwin D. Yalom\t9786070756856"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Saludable MENTE\tMarcos Vázquez\t9788425359477"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Sabiamente \tMarcos Vázquez\t9791387936037"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Heaven \tMieko Kawakami\t9786073914086"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Ansiedad \tAlberto Montt\t9786070773341"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Durante la tormenta \tPablo R. Coca \t9788402427816"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Ansiedad a mí también me pasa\tIris Pérez Bonaventura \t9788418688768"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Abraza a la niña que fuiste\tMarta Segrelles\t9786289679731"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Mamá me he parado por dentro \tMarina Escalona del Olmo\t9788433032034"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Prevenir el suicidio \tDaniela Ibacache/Felipe Lecannelier\t9789566433354"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención cartas de amor a los muertos \tAva Dellaira \t9786313005468"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención como abrazar a un puercoespín\tSean Smith\t9781961293939"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención No te creas todo lo que piensas\tJoseph Nguyen \t9786287794146"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El poder de tu mente subconsciente Programa subliminal \tJoseph Murphy\t9788419510013"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El Kybalion\tHermes Trismegisto \t9791399209051"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Deja de ser tu\tJoe Dispenza\t9789562587310"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Sobrenatural\tJoe Dispenza\t9789566196761"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención criar con salud mental \tDra Maria Velasco Gonzalez\t9788408304395"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Abrirse a canalizar \tSanaya Román \t9788491117780"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La ciencia de la canalización \tHelané Wahbeh\t9788417851644"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Ellos dicen. El libro de las canalizaciones que transformaran tu vida\tTeresa Borotau Castro \t9788418129926"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Aprender a canalizar \tAlicia Sanchez Montalbán \t9781497554719"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Quemar después de escribir \tSharon Jones Marta de Bru de Sala i Marti\t9791388163012"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Ansiedad déjame en paz\tAlejandro Martínez Rico\t9788419809834"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Neurociencia para vencer la depresión \tAlex Korb\t9788417399580"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Ahora Todo Tiene Sentido: Cómo un Diagnóstico de Tdah Trajo Claridad a mi Vida\tAlex Partridge\t9788410335783"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Psicología Infantil\tAlexa Murphy \t9798227664495"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Psicología Positiva\tAlexa Murphy \t9798227858405"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Neurociencia para la vida real\tAna Ibáñez \t9789564089300"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Sorprende a tu Mente\tAna Ibáñez \t9789564085319"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Protocolos\tAndrew Huberman\t9789564290737"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Sé Un Adolescente Feliz \tAndy Matthews \t9786073194464"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Generación dopamina\tAnna Lembke\t9788419130334"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Vida nootrópica\tAntonio Valenzuela\t9789566223115"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Mi Cerebro con Tdah\tAroa Borrás Barrachina; Rafael Benito Moraga\t9788436851182"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El Cerebro Atómico\tBeatriz Larrea \t9788410940918"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Tu mente, tu refugio\tBelén Colomina\t9788425372124"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El cuerpo lleva la cuenta: Cerebro, mente y cuerpo en la superación del trauma\tBessel Van Der Kolk \t9798890981967"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Ehlers-Danlos Hipermovible, Disautonomía y Fibromialgia\tBravo Silva, Jaime Florencio\t9789564141244"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Es el momento de sanar. Cómo curar tus heridas emocionales\tBrianna Wiest;Estela Peña\t9788408316817"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Depresión en Adolescentes\tBriceño, Ana Maria\t9789569986888"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Sin respeto\tByung-Chul Han \t9789566518068"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La Crisis de la Narración\tByung-Chul Han \t9788425450433"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Vida contemplativa\tByung-Chul Han \t9789585165373"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La sociedad del cansancio\tByung-Chul Han \t9788425451447"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El duelo, duele\tCamila Bascou Bentjerodt \t9789562587372"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cuidar con sentido a las personas mayores con demencia - Manual de salud mental\tClaudia Ríos \t9789560971524"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Escritura y meditación\tCristina Cerrada, Vikrampal \t9788490659434"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Algo me pasa y no sé qué es\tDra. Judith Joseph\t9789566017318"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Activa tus mitocondrias\tDra. Sari Arponen ; Antonio Valenzuela\t9788413442747"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cuando nada es suficiente\tEllen Hendriksen\t9789566433309"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cómo superar la depresión (Relanzamiento)\tEnrique Rojas \t9789569973727"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Nuestra humanidad invisible\tFelipe Lecannelier \t9789566433071"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La organización temporal del sufrimiento traumático\tFelipe Lecannelier \t9789566366942"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención 150 Conceptos Clave de Psicología\tFiona Starr \t9789464990218"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El duelo\tGabriel Rolón\t9789878223766"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Autoayuda\tGabrielle Bernstein\t9788449461446"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Los guardianes del océano sereno. Cuentos infantiles sobre emociones y naturaleza\tGreenie Lab \t9798254186304"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Comer bien para no deprimirse\tGuillaume Fond\t9788411191500"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Nutre tu cerebro. Psiconutrición: la revolución en salud mental\tGuillaume Fond;Jordi Trilla Segura \t9791387520786"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La Neurona Exploradora. Hay Fuego en mí\tIsabel Rojas Estapé\t9788408300687"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La Neurona exploradora. Tengo un nudo en la tripa\tIsabel Rojas Estapé\t9786073936484"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La neurona exploradora. Necesito un abrazo\tIsabel Rojas Estapé\t9786287722231"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La Neurona Exploradora. Me Baila el Corazón\tIsabel Rojas Estapé\t9788408295235"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Detén el estrés\tJaime Silva \t9789566434238"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Bailando con elefantes. Entrenamiento en mindfulness para quienes viven con una enfermedad crónica\tJarem Sawatsky \t9788418000263"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Fibromialgia\tJavier Furman \t9789500215794"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Rehabilítate del desorden\tJaviera Castro\t9789564089256"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Los Perversos Narcisistas\tJean-Charles Bouchoux\t9788419662057"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La Violencia Invisible\tJean-Charles Bouchoux\t9788418741326"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La hipótesis de la felicidad\tJonathan Haidt\t9789566065364"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La salud mental no existe. La salud, sí. \tJosé Luis Marín\t9791387598587"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Guía práctica para entender los comportamientos de los enfermos de Alzheimer\tJosep Vila i Miravent \t9788499211787"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Pero ¿Qué te Pasa? Diez Claves Para Entender la Adolescencia en Positivo (no Ficción)\tLola Álvarez \t9788408237235"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Adolescencia\tLucía Galán Bertrand\t9789564290614"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Invicto. Logra más, sufre menos\tMarcos Vázquez \t9791387936006"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Sabiamente\tMarcos Vázquez \t9791387936037    NO OFERTAR titulo repetido "}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Crisis, no ruptura\tMaría Álvarez de las Asturias; Mercedes Honrubia\t9788413685021"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Crisis, no ruptura\tMaría Álvarez de las Asturias; Mercedes Honrubia\t9788413685021"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Las aventuras de SuperPsico\tMaria Isabel Herrero De La Torre \t9791387525019"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Terapias no Farmacológicas Contra el Alzheimer\tMaria Isabel Herrero De La Torre \t9788417049287"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Adicciones silenciosas\tMarian Alexandru Petrache \t9791370128067"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Recupera tu Mente, Reconquista tu Vida\tMarian Rojas Estapé \t9789569973581"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Este dolor no es mío \tMark Wolynn\t9788411082778"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Abraza a la niña que fuiste\tMarta Segrelles \t9786289679731"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Querida mamá me dueles\tMarta Segrelles \t9789505612284"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cómo ser un estoico\tMassimo Pigliucci \t9789566293972"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Guía práctica del estoicismo\tMassimo Pigliucci \t9789569948855"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención ¿Te pasa algo conmigo?\tMeg Josephson\t9789566433248"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La teoría Let Them. La clave está en soltar\tMel Robbins \t9786287596528"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Dopamina bajo control\tMichael E. Long\t9789566215301"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Niños dopamina\tMichaeleen Doucleff \t9789566433316"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cuerpo y mente TDAH\tMiguel Toribio-Mateas \t9788413444741"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Entiende tu Mente\tMolo Cebrián \t9788403523432"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Activar El Nervio Vago\tNavaz Habib \t9788418714511"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La mujer relajada\tNicola Jane Hobbs \t9789566433101"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Mereces la calma\tNicola Jane Hobbs \t9786073941228"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Salud mental para tiempos difíciles\tNicolás Fernández \t9789566402541"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Neurohábitos \tNicole Vignola \t9789566122906"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El Cerebro en Duelo\tO Connor Mary-Fances \t9788411720632"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención ¿Qué le pasa a mi madre?: Guía estratégica para cuidadores de personas con demencia\tPatricia Gracia García \t9788410173514"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El TDAH es genial\tPenn y Kim Holderness \t9789566433033"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Cuando Llega el Alzheimer\tPintos. Natalí \t9788413443218"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Dime dónde te duele\tRachel Zoffness\t9789569975974"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Gestiona Tu Dolor. Manual Práctico\tRachel Zoffness\t9788419685643"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Las Creencias Limitantes\tSara Aranda\t9789502817835"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Dile Adiós al Narcisista, por tu Bien\tSarah Davies \t9788418714634"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El cielo que olvida sus estrellas\tSaul Martinez Horta\t9789566217046"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención ¿Dónde están las llaves?\tSaul Martinez Horta\t9788408280828"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Terapia Cognitivo Conductual en 7 Semanas\tSeth J. Gillihan \t9788419685230"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención A mi propio ritmo\tStefany Ramírez\t9789564087023"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Crecer sin Envejecer (o Casi)\tTamara Pazos \t9788449344077"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Rodeados de Narcisistas\tThomas Erikson \t9789564086194"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Kit de Herramientas Para la Depresión. \tVarios autores\t9788433032720"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención TDAH En la Adolescencia\tVarios autores\t9788466245494"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención Terapia para uno mismo\tVikrampal\t9789569998270"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El hombre en busca de sentido \tViktor E. Frankl \t9789566366904"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La Psicoterapia al Alcance de Todos (7ª Ed. )\tViktor E. Frankl \t9788425412912"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La presencia ignorada de Dios\tViktor E. Frankl \t9788425454745"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La riqueza que el dinero no pude comprar\tRobin Sharma \t9789562586573"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El club de las 5 de la mañana\tRobin Sharma \t9788466390958"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La hora antes del alba \tIsabel Allende \t9789564291093"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención La costurera de la calle Lamar \tIrene  Padilla\t9789564290232"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención cartas al mar\tIrene  Padilla\t9789564081243"}
+{"cat": "551015", "prod": "55101510", "t": "Libros de lectura de entretención El canto invisible \tClaudia Piñeiro 9789563846201"}
+{"cat": "721017", "prod": "72101703", "t": "Construcción de aceras, veredas, cunetas El presente proyecto tiene por objeto ejecutar obras de mantención y reparación de calzadas y aceras en diversos Bienes Nacionales de Uso Público (BNUP) en la comuna de Penco.\r\nLas obras contemplan la intervención y recuperación de sectores que presentan "}
+{"cat": "721021", "prod": "72102103", "t": "Servicios de exterminación o fumigación La presente licitación tiene por objeto implementar un sistema de control de roedores mediante la instalación de aproximadamente 6.000 cebaderas con rodenticida, distribuidas estratégicamente en el perímetro definido, junto con su identificación, numeraci"}
+{"cat": "261116", "prod": "26111601", "t": "Generadores diesel ADQUISICIÓN E INSTALACIÓN DE NUEVO GRUPO ELECTRÓGENO PARA LA DIRECCIÓN DE SEGURIDAD Y PREVENCIÓN DEL DELITO"}
+{"cat": "811416", "prod": "81141605", "t": "Infraestructura de transporte Las presentes Bases Administrativas y Términos de Referencia reglamentan la contratación por parte de la Municipalidad de Chile Chico, del llamado a licitación para la contratación del Estudio “Diseño de un Parador de Buses en Puerto Guadal\""}
+{"cat": "251615", "prod": "25161507", "t": "Bicicletas Según términos de referencia linea 1"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Según términos de referencia linea 2"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos Bolsas de dulces, 430grs. Detalle y condiciones en Bases administrativas y técnicas adjuntas"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos 5500 unidades de cada uno de los siguientes productos; galletas mini, jugo nectar individual, barra de cereal, papas fritas tarro pequeño, barra de chocolate. Detalle y condiciones en Bases administrativas y técnicas adjuntas"}
+{"cat": "901018", "prod": "90101802", "t": "Reparto de comidas a domicilio Colaciones consistentes en; sandwich, jugo, barra de cereal y agua mineral. Detalle y condiciones en Bases administrativas y técnicas adjuntas."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Producción integral para la organización y ejecución de actividades comunitarias navideñas. Detalle y condiciones en Bases administrativas y técnicas adjuntas"}
+{"cat": "811015", "prod": "81101513", "t": "Servicios de gestión de la construcción Servicio de consultoría de diseño del proyecto Mejoramiento Espacio Público Los Raulíes comuna El Bosque"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores SSD M.2 (2280) – 500 GB – Kingston NV3 – PCIe 4.0 x4 (SNV3S/500G) o EQUIVALENTE"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores SSD Kingston SSDNow A400 480GB 2.5” 7mm SATA 3 Lect500MB/s Escr450MB/s o EQUIVALENTE"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Disco Externo HDD 1 TB – Adata HD650 – 2.5” – USB 3.2 Gen 1 – Negro o EQUIVALENTE "}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Escáner de Escritorio Epson DS-C330, 600ppp 30ppm Dúplex USB 2.0 o EQUIVALENTE"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores KIT TECLADO ALAMBRICO LOGITECH MK 120  o EQUIVALENTE"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores KIT TECLADO INALAMBRICO KENSINGTON o EQUIVALENTE"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Audífonos Hi-Fi Kensington con Micrófono USB-A, Safe Listening, Ajustable o EQUIVALENTE  "}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores ADAPTADOR DISPLAYPORT A VGA  "}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores ADAPTADOR DISPLAYPORT A HDMI"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Memoria Ram Crucial 8gb Ddr4 2666mhz Udimm Pc4-21300 Oem o EQUIVALENTE  "}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Memoria RAM Notebook DDR4 8GB 3200MHz SoDimm o EQUIVALENTE  "}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Cable Patch UTP Cat 6 305m 4 Pares 24 AWG LSZH Multifilar Gris"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Conector Hembra RJ 45 de 180°, Alta Densidad Categoría 6 Negro"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Roseta telefónica RJ-11"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Deschaquetador UTP / Coaxial "}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Jumper Azul/Blanco 24-26AWG 100mt Aleación CCA UTP 1-par"}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Pendrive Kingston DataTraveler Exodia M, 64GB, USB 3.2 Gen 1, Negro/Azul o EQUIVALENTE  "}
+{"cat": "271132", "prod": "27113203", "t": "Kit de herramienta para computadores Escáner Lector de Códigos de barras omnidireccional USB 1D 2D QR POS NETUM NT-A5 o EQUIVALENTE  "}
+{"cat": "701718", "prod": "70171802", "t": "Drenaje de aguas fluviales Sistemas de conducción estructural y drenaje"}
+{"cat": "221019", "prod": "22101905", "t": "Distribuidoras de hormigón Prefabricado de hormigón/cemento para infraestructura y alcantarillado"}
+{"cat": "701315", "prod": "70131504", "t": "Fijación de dunas de arena Elementos de fijación"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Asfalto en frío"}
+{"cat": "801116", "prod": "80111618", "t": "Servicios temporales de construcción Material obra gruesa y ferretería"}
+{"cat": "721317", "prod": "72131701", "t": "Pavimentación de carreteras o caminos Elementos de pavimentación y saneamiento"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos CONTRATACIÓN DE SERVICIOS DE PRODUCCION Y DESARROLLO DE EVENTO RALLY TIMAUKEL, 2026"}
+{"cat": "811118", "prod": "81111812", "t": "Mantenimiento y soporte de hardware LÍNEA DE PRODUCTOS 1 (para garantía extendida servidor DELL VxRail)"}
+{"cat": "811118", "prod": "81111812", "t": "Mantenimiento y soporte de hardware LÍNEA DE PRODUCTOS 2 (para garantía extendida servidor HP) HPE DL380"}
+{"cat": "811118", "prod": "81111812", "t": "Mantenimiento y soporte de hardware LÍNEA DE PRODUCTOS 3 (para garantía extendida servidor HP) HPE MSA 2040"}
+{"cat": "811118", "prod": "81111812", "t": "Mantenimiento y soporte de hardware LÍNEA DE PRODUCTOS 4 Plataforma Respaldo Servel DataDomain "}
+{"cat": "811118", "prod": "81111812", "t": "Mantenimiento y soporte de hardware LÍNEA DE PRODUCTOS 5 (para garantía extendida servidor Dell ISILON) "}
+{"cat": "811118", "prod": "81111812", "t": "Mantenimiento y soporte de hardware LÍNEA DE PRODUCTOS 6 Garantía Extendida para Plataforma Dell POWEREDGE "}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación SERVICIO DE MANTENCIÓN PREVENTIVA AMBULANCIA, SEGUN ESPECIFICACIONES TÉCNICAS Y ANEXOS "}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación SERVICIO DE MANTENCIÓN PREVENTIVA MINIBÚS, SEGUN ESPECIFICACIONES TÉCNICAS Y ANEXOS "}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación SERVICIO DE MANTENCIÓN PREVENTIVA CAMIONETA, SEGUN ESPECIFICACIONES TÉCNICAS Y ANEXOS "}
+{"cat": "201229", "prod": "20122903", "t": "Unidades de registrar datos de superficie LINEA GLOBAL 1: (SOLICITUD N°158586): DATAS (debe ofertar por los dos ítems/ (ingresare valor neto)"}
+{"cat": "411158", "prod": "41115808", "t": "Accesorios o suministros de analizadores químicos LINEA GLOBAL 2 (SOLICITUD N°158587): DILUIDOR GRAVIMÉTRICO AUTOMÁTICO DE DOS BOMBAS (IGUAL, EQUIVALENTE O SUPERIOR)/(ingresar valor neto)"}
+{"cat": "261215", "prod": "26121539", "t": "Hilos de cableado La Municipalidad de San Miguel, a través de la Dirección a través de la Dirección de Desarrollo Comunitario, requiere contratar el servicio de instalación de cableado eléctrico para puestos de toldos y abastecimiento de energía eléctrica, según normativa "}
+{"cat": "411030", "prod": "41103011", "t": "Refrigeradores o congeladores de uso general LÍNEA N° 1: Adquisición de 13 equipos de frío, incluyendo congeladores, refrigeradores y visicoolers, conforme a las cantidades y especificaciones de las bases técnicas. Se deberá ofertar la totalidad de la línea."}
+{"cat": "521415", "prod": "52141514", "t": "Máquinas procesadoras de alimentos LÍNEA N° 2: Adquisición de 10 equipos: selladoras de té, escarificadora y molino de quinoa, olla revolvedora, extractor, triturador de verduras y licuadora profesional, conforme a bases técnicas. Ofertar la totalidad de la línea."}
+{"cat": "561015", "prod": "56101532", "t": "Mobiliario LÍNEA N° 3: Adquisición de 49 unidades de mobiliario de acero inoxidable de grado sanitario, conforme a las cantidades, dimensiones y especificaciones establecidas en las bases técnicas. Ofertar la totalidad de la línea."}
+{"cat": "411042", "prod": "41104208", "t": "Deshidratadores LÍNEA N° 4: Adquisición e instalación de deshidratador solar tipo túnel de 6 x 3 m y 2 m de altura, con extractor eólico y cubierta de policarbonato, apto para deshidratación de alimentos y charqui, conforme a bases técnicas."}
+{"cat": "721016", "prod": "72101601", "t": "Instalación o reparación de techos Contratación de obras de construcción, reparación y mejoramiento de viviendas de familias beneficiarias del Programa Habitabilidad, Convocatoria 2025, comuna de Peumo, conforme a las Bases Administrativas y Especificaciones Técnicas."}
+{"cat": "432117", "prod": "43211706", "t": "Teclados KIT MOUSE TECLADO INALÁMBRICO ÓPTICO - ESPAÑOL XT 102 TECLAS"}
+{"cat": "432117", "prod": "43211706", "t": "Teclados Estación de acoplamiento (docking) USB-C"}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Recipiente para Tóner Residual"}
+{"cat": "432018", "prod": "43201803", "t": "Discos duros Disco Duro Externo"}
+{"cat": "432117", "prod": "43211706", "t": "Teclados Teclado USB-C"}
+{"cat": "432117", "prod": "43211708", "t": "Trackballs y mouse de computador Ratón (mouse) para computador, compatible con los sistemas operativos Mac"}
+{"cat": "601049", "prod": "60104912", "t": "Cables o electrodos eléctricos Cable Hdmi a Hdmi (ambas salidas/entradas de tipo hdmi),\nlargo mínimo 1 metro \n"}
+{"cat": "601049", "prod": "60104912", "t": "Cables o electrodos eléctricos Cable de seguridad para computadores y notebook (para\nranuras estándares)"}
+{"cat": "391213", "prod": "39121304", "t": "Cubiertas de cajas eléctricas Caja de seguridad para MacMini M4"}
+{"cat": "461716", "prod": "46171612", "t": "Monitores de vídeo Monitor Escritorio"}
+{"cat": "432115", "prod": "43211509", "t": "Computadores portátiles tipo Tablet PC Lápiz digital activo para Tablet (primera generación)"}
+{"cat": "432121", "prod": "43212114", "t": "Impresoras de imágenes digitales Impresora 3D."}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos Sistema de filtración Acetato de celulosa, 1L."}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos All-In-One 5X RTMaster mix."}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos L-glutamina solution 200 mM."}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos Tripsina EDTA 1X."}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos Medio LEIBOVITZ L-15."}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos RNA-SOLV Reagent con fenol"}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio Placa 6 pocillos cultivo celular"}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio Placas 24 pocillos cultivo celular"}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio Tubos cónicos de 15 mL"}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio Tubos cónicos de 50 mL, PP estériles"}
+{"cat": "411215", "prod": "41121513", "t": "Pipetas de goteo Pipetas serológicas desechables, 5 mL"}
+{"cat": "411215", "prod": "41121511", "t": "Pipetas serológicas Pipetas serológicas desechables, 10 mL"}
+{"cat": "411215", "prod": "41121513", "t": "Pipetas de goteo Puntas amarillas premium p200, esteril"}
+{"cat": "411215", "prod": "41121513", "t": "Pipetas de goteo Mic tubes and caps 1 box 20 racs of 48\ntubes/rack\n"}
+{"cat": "432115", "prod": "43211509", "t": "Computadores portátiles tipo Tablet PC Adquisición de 50 Tablets con ESIM para TGR."}
+{"cat": "401018", "prod": "40101825", "t": "Calentadores de agua de uso doméstico TERMO ELECTRICO 120 LITROS"}
+{"cat": "401018", "prod": "40101819", "t": "Calentadores de espacio ESTUFA MURAL GAS LICUADO, TIRO BALENCEADO"}
+{"cat": "401018", "prod": "40101825", "t": "Calentadores de agua de uso doméstico CALEFONT TIRO NATURAL 11 LITROS GAS LICUADO "}
+{"cat": "401018", "prod": "40101825", "t": "Calentadores de agua de uso doméstico CALEFONT TIRO NATURAL 13 LITROS GAS LICUADO "}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 1, A.- Radar de Seguridad: \r\n\r\nRadar de seguridad para la detección, localización y seguimiento de objetivos, conforme a las especificaciones técnicas y funcionales establecidas en las presentes bases técnicas, de referencia STS-BG24X-L3/P o equivale"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 1, B.- Licencia: Licenciamiento para la integración, administración y operación de los radares de seguridad en el sistema de gestión de video (VMS), teniendo como referencia HikCentral-P-Radar-1Unit o equivalente de otras marcas o fabricantes que per"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad ítem 2: Servidor de gestión de video."}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 3, A.- Cámara de videovigilancia: Cámara IP con funcionalidad de reconocimiento automático de placas patentes (ANPR)teniendo como referencia iDS-TCM403-B(G)/POE/2812 o equivalente de otras marcas o fabricantes que cumplan íntegramente las especificac"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 3, B.- Licencia: Licenciamiento para habilitar la integración, gestión y operación de las cámaras con funcionalidad ANPR en el sistema de gestión de video (VMS), , teniendo como referencia  HikCentral-P-VSS-1Ch/ANPR o equivalente de otras marcas o fa"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 4, A.- Cámara de videovigilancia: Cámara IP con capacidad de reconocimiento facial, teniendo como referencia iDS-2CD7A46G2-IZHS o equivalente de otras marcas o fabricantes que cumplan íntegramente las especificaciones técnicas y funcionales estableci"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 4, B.- Licencia: Licenciamiento para habilitar la funcionalidad de reconocimiento facial de las 6 cámaras a instalar en el sistema de gestión de video (VMS),, teniendo como referencia HikCentral P-AcuSeek-1Ch/RealTime&Search o equivalente de otras ma"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 5, A.-Grabador de video: Grabador de vídeo en red (NVR), destinado a la grabación, almacenamiento, gestión y reproducción de las señales de video de la solución, teniendo como modelo de referencia iDS-9664NXI-M16/X o equivalente de otras marcas o fab"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 5, B.- Disco duro: B.- De 10 TB, 7200 RPM, 3.5”, SATA, apto para sistemas de videovigilancia y operación continua 24/7, teniendo como modelo de referencia  WUS721010ALE6L4, o equivalente de otras marcas o fabricantes que cumplan íntegramente las espe"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 6, A.-Videowall Licencia: A.- Licencia necesaria para habilitar la gestión, configuración y operación del módulo de videowall para VMS, teniendo como referencia HikCentral-P-SmartWall/Module o equivalente de otras marcas o fabricantes que permitan cu"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 6, B.-Videowall Licencia: Licencia para VMS, que permita habilitar y mantener operativo los canales requeridos y demás funcionalidades señaladas en las presentes bases, teniendo como referencia  HikCentral-P-Maintenance-16 Ch/Base /Promo) o equivalen"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 6, C.- Videowall: C.- Pantalla LCD 46”, teniendo como modelo de referencia DS-D2046TL-2B o equivalente de otras marcas o fabricantes que cumpla íntegramente las especificaciones técnicas y funcionales establecidas en las presentes bases técnicas."}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 6, D.- Videowall: Sistema de soporte y anclaje para monitor 46” compatible con la pantalla ofertada y adecuado a las condiciones del lugar de instalación, teniendo como modelo de referencia  DP-D2X46XXX-1X1 o equivalente de otras marcas o fabricantes"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 6, E.- Videowall: Decodificador 4K,teniendo como modelo de referencia DS-6908UDI o equivalente de otras marcas o fabricantes que cumpla íntegramente las especificaciones técnicas y funcionales establecidas en las presentes Bases Técnicas."}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 6, F.-Videowall:  F.- Control IP PTZ Joystick  para la gestión y operación de las cámaras de videovigilancia, compatible con el VMS HikCentral de propiedad de la DGAC, teniendo como modelo de referencia  DS-1600KI o equivalente de otras marcas o fabr"}
+{"cat": "461716", "prod": "46171610", "t": "Cámaras de seguridad Ítem 7, Licencia Gestión de video: Licencia Unificación de VMS que permita integrar y administrar centralizadamente la solución de videovigilancia requerida y su interoperabilidad con los sistemas existentes, teniendo como referencia HikCentral-P-RSM-2Sit"}
+{"cat": "801116", "prod": "80111614", "t": "Servicios temporales de ingeniería ASESORIA A LA INSPECCION TECNICA DE OBRAS: CONSERVACION GIMNASIO FISCAL DE ANCUD"}
+{"cat": "761215", "prod": "76121501", "t": "Recolección, destrucción, transformación o eliminación de basuras SERVICIO DE RECOLECCIÓN, TRANSPORTE A DISPOSICION FINAL DE LOS RESIDUOS DOMICILIARIOS Y ASIMILABLES, VOLUMINOSOS DE LA COMUNA DE OLMUÉ"}
+{"cat": "102000", "prod": "102101001", "t": "Licitación Pública de Consultoria Licitación Pública de Consultoria"}
+{"cat": "801117", "prod": "80111710", "t": "Personal jurídico SERVICIO DE ASESORIA JURIDICA PARA EL DEPARTAMENTO DE SALUD MUNICIPAL"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Producción de eventos - Actividad Municipal Encuentro Campesino 2026 - DIDEL, de acuerdo a especificaciones técnicas adjuntas."}
+{"cat": "432315", "prod": "43231508", "t": "Programas de gestión de inventario Software Gestión de inventarios: Liceo Bicentenario Polivalente de Queilen"}
+{"cat": "432326", "prod": "43232603", "t": "Software de gestión de instalaciones Software Apoyo a la gestión y simulación de procesos productivos agropecuarios: Liceo Polivalente de Ancud"}
+{"cat": "432321", "prod": "43232101", "t": "Software de diseño de patrones Software Administración y supervisión de aulas informáticas: Liceo Aytue"}
+{"cat": "432326", "prod": "43232611", "t": "Software de punto de venta (POS) Software Gestión de operaciones gastronómicas y atención de clientes: Liceo Bicentenario Quemchi"}
+{"cat": "432315", "prod": "43231503", "t": "Software de gestión de adquisiciones Software Control de inventarios e insumos para operaciones gastronómicas: Liceo Bicentenario Quemchi"}
+{"cat": "432323", "prod": "43232309", "t": "Software de búsqueda o recuperación de información Software Simulación de sistemas automatizados, eléctricos y de control: Liceo Politécnico de Quellón"}
+{"cat": "432323", "prod": "43232309", "t": "Software de búsqueda o recuperación de información Software Simulación técnica para prácticas de sistemas mecánicos, eléctricos o de automatización: Liceo Politécnico de Quellón"}
+{"cat": "432321", "prod": "43232101", "t": "Software de diseño de patrones Software Automatización y supervisión de aulas informáticas: Liceo Alfredo del Carmen Barría Oyarzún"}
+{"cat": "432328", "prod": "43232804", "t": "Software de administración Software Entornos de aprendizaje técnico y simulación para servicios hoteleros: Liceo Politécnico de Castro "}
+{"cat": "432324", "prod": "43232405", "t": "Software de desarrollo orientado a objetos o componentes Software Diseño asistido por computador destinada a Mecánica Industrial: Liceo Politécnico de Castro"}
+{"cat": "432323", "prod": "43232309", "t": "Software de búsqueda o recuperación de información Software Simulación de sistemas automatizados, eléctricos y de control destinado a Mecánica Industrial: Liceo Politécnico de Castro"}
+{"cat": "421823", "prod": "42182308", "t": "Electroencefalógrafos o accesorios ADQUISICIÓN DE EQUIPO DE ELECTROENCEFALOGRAFÍA PORTÁTIL DE 32 CANALES"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico FRESAS PARTES BLANDAS 2,7 MM, 4,2 DESDE 2500 A 8000 MM (110 UNIDADES ANUALES)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico BOMBA IRRIGACION - ASPIRACION (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico TORNILLOS PARA FIJACION DE DISTINTOS TAMAÑOS Y MATERIALES (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico SISTEMA PARA FIJACION CORTICAL (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico RETROREAMER O SU EQUIVALENTE TECNICO (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico KIT ACCESO (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico DISPOSITIVO DE SUTURA MENISCAL TIPO \"ALL INSIDE\", 0 A 24 TODAS LAS MEDIDAS NECESARIAS (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico SUTURAS\tSUTURA DE ALTA RESISTENCIA #2 SIMILAR TECNICO TIPO ORTHOCORD"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico SUTURAS\tSUTURA DE ALTA RESISTENCIA TIPO CINTA (SIMILAR TECNICO PERMA TAPE)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico TORNILLO INTERREFERENCIAL DE TITANIO PARA HTH (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico ANCLAS\r\nANCLA DE TITANIO 3,5-5,5 MM \r\n(40 UNIDADES ANUALES)\r\nCANULA PARA PORTAL DE 7 Y 8 MM \r\n(5 UNIDADES ANUALES)\r\nANCLAS PARA TENODESISI SIMILAR KNOTLESS (2 UNIDADES ANUALES)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico SISTEMA OSTEOCONDRAL (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "422942", "prod": "42294209", "t": "Sistemas de instrumentos de fijación de trauma ortopédico PINZAS PARA REINSERCION DE RAIZ MENISCAL KIT DESCARTABLES (VER ESPECIFICACIONES TÉCNICAS)"}
+{"cat": "411041", "prod": "41104120", "t": "Tubos de tasa de sedimentación Velocidad de eritrosedimentación (VHS) [DETERMINACION] "}
+{"cat": "432215", "prod": "43221521", "t": "Unidad de acceso remoto de telecomunicaciones SERVICIO DE TELEASISTENCIA DOMICILIARIA EN LA COMUNA DE ÑUÑOA (DE ACUERDO A BASES, ANEXO DE POSTULACIÓN,Y ANEXO ECONÓMICO)"}
+{"cat": "781118", "prod": "78111808", "t": "Arriendo de vehículos SERVICIO DE LEASING DE CAMIONETAS PARA EL INSTITUTO\r\nDE FOMENTO PESQUERO AÑO 2026-2030."}
+{"cat": "461716", "prod": "46171604", "t": "Sistemas de alarma SERVIDOR SISTEMA DE ALARMAS L63\r\nServidor para Sistema de recepción de alarmas Datacenter principal"}
+{"cat": "461716", "prod": "46171604", "t": "Sistemas de alarma SERVIDOR SISTEMA DE ALARMAS L63\r\nServidor para Sistema de recepción de alarmas Datacenter Secundario"}
+{"cat": "771015", "prod": "77101505", "t": "Control medioambiental Servicio Ambiental de Monitoreo de Variables Limnológicas, Embalse Empedrado Periodo 2027-2028 ID 1506-47-LP26"}
+{"cat": "721021", "prod": "72102103", "t": "Servicios de exterminación o fumigación Licitación Pública para contratar el servicio preventivo y correctivo de fumigación, desratización y control integral de plagas en las oficinas del Servicio de Registro Civil e Identificación de la Región de Los Lagos."}
+{"cat": "302018", "prod": "30201803", "t": "Unidades para contenedores Unidades modulares tipo conteiner, ensambladas en fábrica y listas para\r\ninstalación en emplazamiento, según especificaciones técnicas adjuntas\r\nen TDR. Se debe incluir flete a Centro de Prácticas Ambientales, ubicado\r\nen Av. Industrial S/N, Belloto Nrt"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión AIR DATA SENSOR, P/N 622-5797-001. \r\nServible-Overhaul/Outright-Exchange\r\n"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión Reflector floodlight. P/N 3366 Alternativo 6619127. \r\nNew/Outright\r\n"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión Bulb. P/N A-4174-24. New/Outright"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión Bulb. P/N 1986. New/Outright"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión Bulb. P/N SW8FL. New/Outright"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión Lamp. P/N A-510-28. New/Outright"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión Lamp. P/N 34-0226010-91. New/Outright"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión Rotating beacon. P/N 758 402 Alternativo WRM1940. New/Outright"}
+{"cat": "252017", "prod": "25201709", "t": "Sondas o sensores de avión Tube assembly. P/N 761 156 Alternativo A610. New/Outright"}
+{"cat": "781216", "prod": "78121601", "t": "Servicios de flete Flete aéreo estimado desde el aeropuerto de embarque en origen de los bienes hasta las bodegas de aduanas ubicadas al interior del aeropuerto Arturo Merino Benítez."}
+{"cat": "841315", "prod": "84131504", "t": "Seguros de carga Seguro todo riesgo estimado desde la salida de los bienes desde la bodega del vendedor hasta su llegada a la bodega de Aduana en el aeropuerto Arturo Merino Benítez en la ciudad de Santiago de Chile. "}
+{"cat": "432115", "prod": "43211503", "t": "Notebook, laptop o computador portátil excepto Tablet PC Adquisición de Computadores y Accesorios Computacionales, Según lo indicado en el punto 2 de las bases técnicas"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Suministro e Instalación de Redes de Gases Medicinales en Salas de Procedimientos, Hospital Dr. Gustavo Fricke"}
+{"cat": "411118", "prod": "41111808", "t": "Equipo de examen por rayos X EQUIPO DE RAYOS OSTEOPULMONAR"}
+{"cat": "781019", "prod": "78101901", "t": "Transporte aéreo-marítimo CONTRATACIÓN DE TRANSPORTE INTERNACIONAL DE BIENES DEL PERSONAL DE CARABINEROS DE CHILE PARA EL TRAMO BUENOS AIRES (ARGENTINA) - RANCAGUA, REGIÓN DE O'HIGGINS(CHILE)."}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Construcción Paseo Mirador, Barrio Las Quintas, Nacimiento: pavimentos, pasarelas de acero, aguas lluvias, riego, iluminación pública, mobiliario y paisajismo, conforme a bases, EETT, planos y demás antecedentes de la licitación."}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles CONSTRUCCIÓN COMPLEJO DEPORTIVO COMUNAL, REQUÍNOA, CÓDIGO BIP: 3048522-0"}
+{"cat": "721315", "prod": "72131501", "t": "Construcción de edificios y departamentos "}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles “Adquisición e Instalación de Equipos de Seguridad Municipal\""}
+{"cat": "101000", "prod": "101101001", "t": "Licitación Pública de Obra Licitación Pública de Obra"}

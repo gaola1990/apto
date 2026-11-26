@@ -3208,3 +3208,6 @@
 {"codigo": "4906-44-LE26", "fecha": "2026-11-24", "oferentes": 3, "tipo": "LE", "clases": ["801117"], "organismo": "SERVICIO SALUD DEL RELONCAVI", "region": "Región de los Lagos"}
 {"codigo": "2408-180-LP26", "fecha": "2026-11-16", "oferentes": 7, "tipo": "LP", "clases": ["721317"], "organismo": "I MUNICIPALIDAD DE LOS ANGELES", "region": "Región del Biobío"}
 {"codigo": "691944-29-L126", "fecha": "2026-11-23", "oferentes": 7, "tipo": "L1", "clases": ["301315"], "organismo": "I MUNICIPALIDAD DE CURANILAHUE", "region": "Región del Biobío"}
+{"codigo": "3933-79-L126", "fecha": "2026-11-19", "oferentes": 8, "tipo": "L1", "clases": ["441219"], "organismo": "I MUNICIPALIDAD DE FREIRE", "region": "Región de la Araucanía"}
+{"codigo": "691-8-LP26", "fecha": "2026-11-24", "oferentes": 4, "tipo": "LP", "clases": ["931420"], "organismo": "SUBSECRETARIA DEL MINISTERIO DE LA VIVIENDA Y URBANISMO", "region": "Región del Maule"}
+{"codigo": "1059082-24-LP26", "fecha": "2026-11-24", "oferentes": 7, "tipo": "LP", "clases": ["721016"], "organismo": "JUNTA NACIONAL DE JARDINES         INFANTILES", "region": "Región del Ñuble"}

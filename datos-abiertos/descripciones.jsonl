@@ -37554,3 +37554,938 @@
 {"cat": "801015", "prod": "80101505", "t": "Asesorías en gestión estratégica CONSULTORÍA “ELABORACIÓN DE ESTRATEGIA PARA EL FORTALECIMIENTO DE LAS UNIDADES REGIONALES DE ASUNTOS INTERNACIONALES (URAI) EN RELACIONES INTERNACIONALES” (E11056/2026)"}
 {"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles CONSTRUCCION ESPACIO PUBLICO DEL COMPLEJO DEPORTIVO ANTENA – DIEGO DE ALMAGRO. CODIGO BIP 40060962-0, SEGUN BASES ADMINISTRATIVAS Y ANTECEDENTES ADJUNTOS"}
 {"cat": "851216", "prod": "85121610", "t": "Servicios oftalmológicos SERVICIO OFTALMOLÓGICO PARA USUARIOS DE LOS CENTROS DE SALUD DE PROVIDENCIA"}
+{"cat": "721023", "prod": "72102303", "t": "Construcción de sistemas de fontanería o gasfitería ERVICIO REPARACIÓN INTEGRAL DE BAÑO Y RECUPERACION DE RECINTOS AFECTADOS EN VIVIENDA FISCAL N°46, VILLA OFICIALES, SE ADJUNTA BASES TÉCNICAS."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Dos jornadas de \"Navidad en tu barrio\", según bases técnicas."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Dos jornadas de \"Inauguración Árboles de navidad\", según bases técnicas."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Cuatro jornadas de \"Cine navideño bajo las estrellas\", según bases técnicas."}
+{"cat": "601410", "prod": "60141011", "t": "Trenes de juguete ADQUISICIÓN DE JUGUETES DE NAVIDAD PARA NIÑOS DE TENO 2026"}
+{"cat": "251740", "prod": "25174001", "t": "Ventilador Ventilador Industrial de Muro de 30 pulgadas. Características Técnicas: Ventilador Industrial de montaje mural, nuevo y apto para uso intensivo en interiores. Diámetro nominal: 30 pulgadas, aproximadamente 76 cm. "}
+{"cat": "401017", "prod": "40101703", "t": "Enfriadores por evaporación Enfriadores de Aire Evaporativos Industriales . Sistema de enfriamiento evaporativo mediante paneles húmedos, caudal de aire igual o superior a 20.000 m3/h, potencia eléctrica nominal igual o inferior a 1500 W, alimentación eléctrica 220V monofásico."}
+{"cat": "701115", "prod": "70111501", "t": "Servicios de sembradío de plantas, arbustos y árboles ornamentales El Centro de Semillas, Genética y Entomología requiere contratar el \"Servicio de siembra de Eucalyptus nitens en vivero del Centro de Semillas de CONAF Chillán\". El objetivo es producir 180.000 plantas (mediante siembra directa)"}
+{"cat": "461615", "prod": "46161504", "t": "Señales de tránsito ADQUISICIÓN DE SEÑALES DE TRÁNSITO Y OTROS INSUMOS PARA SEÑALIZACIÓN VIAL DE LA COMUNA PANGUIPULLI, SEGÚN PUNTO N° 2 DE LOS TÉRMINOS DE REFERENCIA."}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Mezcla asfáltica preparada Provincia Valparaíso (600 sacos 20 kg c/u)"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Mezcla asfáltica preparada Provincia Los Andes (100 sacos 20 kg c/u)"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Mezcla asfáltica preparada Provincia San Felipe (1000 sacos 20 kg c/u)"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Mezcla asfáltica preparada Provincia Quillota (1000 sacos 20 kg c/u)"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Mezcla asfáltica preparada Provincia San Antonio (1000 sacos 20 kg c/u)"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Mezcla asfáltica preparada Provincia Marga- Marga (600 sacos 20 kg c/u)"}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE PRODUCCIÓN Y ORGANIZACIÓN DEL ENCUENTRO EMPRESARIAL: CONECTA TARAPACÁ”"}
+{"cat": "781118", "prod": "78111803", "t": "Servicios de autobuses contratados SERVICIO DE TRASLADO DE PASAJEROS PARA EVENTO PASEO DE CLUBES DE PERSONAS MAYORES AÑO 2026"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto Asfalto CSS-1H a granel"}
+{"cat": "511023", "prod": "51102301", "t": "Aciclovir ACICLOVIR 400 MG. COMP."}
+{"cat": "511015", "prod": "51101511", "t": "Amoxicilina AMOXICILINA - AC. CLAVULANICO 500-125- MG. COMP."}
+{"cat": "511015", "prod": "51101542", "t": "Ciprofloxacina CIPROFLOXACINO 500 MG. COMP."}
+{"cat": "511015", "prod": "51101522", "t": "Claritromicina CLARITROMICINA 500 MG. COMP."}
+{"cat": "511015", "prod": "51101530", "t": "Trimetroprim COTRIMOXAZOL 800/160 MG. COMP."}
+{"cat": "511015", "prod": "51101557", "t": "Doxiciclina DOXICICLINA 100 MG. COMP. O CÁPSULAS."}
+{"cat": "511018", "prod": "51101807", "t": "Fluconazol FLUCONAZOL 150 MG. CÁPSULAS."}
+{"cat": "511018", "prod": "51101810", "t": "Itraconazol ITRACONAZOL 100 MG. CÁPSULAS."}
+{"cat": "511015", "prod": "51101538", "t": "Levofloxacina LEVOFLOXACINO 500 MG. COMP."}
+{"cat": "511016", "prod": "51101603", "t": "Metronidazol METRONIDAZOL 500 MG.COMP."}
+{"cat": "521615", "prod": "52161518", "t": "Receptores GPS Adquisición de Servicio de Monitoreo GPS para 40 vehículos y Maquinaria de Flota Municipal\nMonto máximo: $4.800.000.- impuestos incluidos\n"}
+{"cat": "251725", "prod": "25172503", "t": "Neumáticos para camiones pesados NEUMATICOS VEHÍCULOS PESADOS"}
+{"cat": "251725", "prod": "25172504", "t": "Neumáticos para camionetas o automóviles NEUMATICOS VEHÍCULOS LIVIANOS"}
+{"cat": "421433", "prod": "42143301", "t": "Sets o kits de administración de quimioterapia Catéter quimioterapia 6, 5 fr con reservorio de 27mm de altura Segun especificaciones tecnicas pag 39"}
+{"cat": "421433", "prod": "42143301", "t": "Sets o kits de administración de quimioterapia Aguja gripper (huber non-coring) \r\nMedidas: 0.9 mm (20G) x 19mm (3/4in)\r\nSegun especificaciones tecnicas pag 39"}
+{"cat": "421433", "prod": "42143301", "t": "Sets o kits de administración de quimioterapia Aguja gripper (huber non-coring) \r\nMedidas: 0.9 mm (20G) x 32mm (1-1/4in)\r\nSegun especificaciones tecnicas pag 39"}
+{"cat": "432115", "prod": "43211509", "t": "Computadores portátiles tipo Tablet PC BIBLIOTECA TECNOLÓGICA MÓVIL, TOTAL OFERTA IMPUESTOS INCLUIDOS "}
+{"cat": "432115", "prod": "43211509", "t": "Computadores portátiles tipo Tablet PC ADQUISICIÓN DE TABLETS PARA LOS ESTABLECIMIENTOS EDUCACIONALES. TOTAL OFERTA, IMPUESTOS INCLUIDOS "}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Tóner Brother HL-1202/1212/DCP-1602/1610NW TN-1060 Tóner"}
+{"cat": "441031", "prod": "44103109", "t": "Tambores para impresora, fax o fotocopiadora Tambor Brother HL-1202/1212/DCP-1602/1610NW DR-1060 Tambor"}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Tóner Brother HL-L2360DW/L2320D/MFC-L2700DW TN-2370 Tóner"}
+{"cat": "441031", "prod": "44103109", "t": "Tambores para impresora, fax o fotocopiadora Tambor Brother HL-L2360DW/L2320D/MFC-L2700DW DR-2340 Tambor"}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Tóner HP LaserJet Pro M12w HP 79A (CF279A) Tóner"}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Tóner HP LaserJet M15w HP 48A (CF248A) Tóner"}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Tóner HP Laser 107a HP 105A (W1105A) Tóner"}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Tóner HP LaserJet M402dn HP 26X (CF226X) Tóner"}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Tóner HP LaserJet P1102w HP 85A (CE285A) Tóner"}
+{"cat": "121717", "prod": "12171703", "t": "Tintas Botella de tinta HP GT53 Negro 90 ml GT53 Tinta"}
+{"cat": "121717", "prod": "12171703", "t": "Tintas Botella de tinta HP GT52 Cian 70 ml GT52 Tinta"}
+{"cat": "121717", "prod": "12171703", "t": "Tintas Botella de tinta HP GT52 Magenta 70 ml GT52 Tinta"}
+{"cat": "121717", "prod": "12171703", "t": "Tintas Botella de tinta HP GT52 Amarillo 70 ml GT52 Tinta"}
+{"cat": "441031", "prod": "44103105", "t": "Cartuchos de tinta Cartucho de tinta HP 711 Negro 38 ml Original (DesignJet T520) CZ133A Tinta"}
+{"cat": "441031", "prod": "44103105", "t": "Cartuchos de tinta Cartucho de tinta HP 711 Cian 29 ml Original (DesignJet T520) CZ130A Tinta"}
+{"cat": "441031", "prod": "44103105", "t": "Cartuchos de tinta Cartucho de tinta HP 711 Magenta 29 ml Original (DesignJet T520) CZ131A Tinta"}
+{"cat": "441031", "prod": "44103105", "t": "Cartuchos de tinta Cartucho de tinta HP 711 Amarillo 29 ml Original (DesignJet T520) CZ132A Tinta"}
+{"cat": "441031", "prod": "44103105", "t": "Cartuchos de tinta Cabezal de impresión HP 711 Original (DesignJet T520) C1Q10A Cabezal"}
+{"cat": "901016", "prod": "90101601", "t": "Banquetes Coctel Licenciatura Liceo Bicentenario Paul Harris para 250 personas "}
+{"cat": "901016", "prod": "90101601", "t": "Banquetes Coctel Licenciatura Escuela República Argentina para 100 personas "}
+{"cat": "901016", "prod": "90101601", "t": "Banquetes Coctel Licenciatura Escuela Cristal Chile para 150 personas "}
+{"cat": "901016", "prod": "90101601", "t": "Banquetes Coctel Licenciatura Escuela La Esperanza para 150 personas "}
+{"cat": "731218", "prod": "73121805", "t": "Servicios de fabricación de productos de hormigón, aglomerado o piedra CAJON PREFABRICADO HORMIGON ARMADO 2,0 X 1,5 X 2,0 M (ESPESOR 0.2 M) - H40"}
+{"cat": "731218", "prod": "73121805", "t": "Servicios de fabricación de productos de hormigón, aglomerado o piedra CAJON PREFABRICADO HORMIGON ARMADO 1,5 X 1,5 X 2,0 M"}
+{"cat": "731218", "prod": "73121805", "t": "Servicios de fabricación de productos de hormigón, aglomerado o piedra CAJON PREFABRICADO HORMIGON ARMADO 1,5 X 1,5 X 2,0 M"}
+{"cat": "311615", "prod": "31161503", "t": "Clavo-tornillo CLAVICOTE FE ESTRIADO 10 MM X 7\" – (clavos estriados galvanizados hechos en máquina, de 10mm de diámetro x 7” de largo, dibujo estriado, diámetro cabeza de 20 mm)"}
+{"cat": "821016", "prod": "82101603", "t": "Publicidad en Internet Servicio de difusión digital regional para promover el Plan Nacional de Erradicación de la Silicosis (PLANESI)"}
+{"cat": "511716", "prod": "51171631", "t": "Preparado laxante de polietilenglicol SUMINISTRO PRUCALOPRIDA 2MG COMP."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos Logística vehicular, producción escénica, sonido, elenco artístico, show interactivo, dulces, montaje/traslado de árbol, efectos de encendido y servicio fotográfico."}
+{"cat": "391115", "prod": "39111514", "t": "Luces de árboles Suministro de cintas LED exterior , estrella cúspide LED, adornos de exterior y alegorías temáticas LED para camión"}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias FENOFIBRATO/PRAVASTATINA 160/40 MG, Envase de 30 cápsulas\r\nMAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias THEALOZ DUO\tEnvase de 10 ml\r\nMAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO. "}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias COLCHICINA 0,5 MG\tEnvase de 40 comprimidos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias ENALAPRIL/HIDROCLOROTIAZIDA 10/25 MG\tEnvase de 30 comprimidos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias OXOLAMINA 50MG/5ML JARABE\tEnvase de 100 ml, \r\nMAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511217", "prod": "51121733", "t": "Valsartan VALSARTAN/HIDROCLOROTIAZIDA 160/12,5 MG\tEnvase de 30 comprimidos, similar a Valaplex D, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511217", "prod": "51121733", "t": "Valsartan VALSARTAN/HIDROCLOROTIAZIDA 80/12,5 MG\tEnvase de 30 comprimidos, similar a Valaplex D, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511517", "prod": "51151702", "t": "Tartrato de brimonidina BRIMONIDINA TARTRATO 0,2% SOL OFT\tEnvase de 5 ml, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511217", "prod": "51121715", "t": "Enalapril ENALAPRIL 10 MG\tEnvase de 20 comprimidos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "121622", "prod": "12162201", "t": "Ácido ascórbico VITAMINA C 1000 MG\tEnvase de 30 comprimidos masticables, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias AEROGASTROL\tEnvase de 20 cápsulas, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias SITAGLIPTINA 100 MG\tEnvase de 28 comprimidos recubiertos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511421", "prod": "51142108", "t": "Ketoprofeno KETOPROFENO 200 MG\tEnvase de 10 comprimidos con recubrimiento entérico de liberación prolongada, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias NICOTEARS SOL OFT\tEnvase de 20 ml, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511015", "prod": "51101511", "t": "Amoxicilina AMOXICILINA /ACIDO CLAVULANICO 875/125 MG\tEnvase de 14 comprimidos recubiertos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511618", "prod": "51161812", "t": "Combinación clorfeniramina-acetaminofeno PARACETAMOL 160 MG\tEnvase de 16 comprimidos masticables, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511815", "prod": "51181516", "t": "Glibenclamida o gliburida METFORMINA CLORHIDRATO/SITAGLIPTINA FOSFATO MONOHIDRATO 500/50 MG\tEnvase de 56 comprimidos, similar a Janumet 50/500 mg,  MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511015", "prod": "51101512", "t": "Cloxacilina CLOXACILINA 500 MG\tEnvase de 12 Cápsulas, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511815", "prod": "51181516", "t": "Glibenclamida o gliburida METFORMINA CLORHIDRATO750 MG LP\tEnvase de 60 comprimidos de liberación,  MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511217", "prod": "51121733", "t": "Valsartan VALSARTAN/AMLODIPINO/HIDROCLOROTIAZIDA 160/5/12,5 MG\tEnvase de 30 comprimidos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511217", "prod": "51121759", "t": "Olmesartán medoxomilo OLMESARTAN MEDOXOMILO/HIDROCLOROTIAZIDA 40/12,5 MG\tEnvase de 30 comprimidos recubiertos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511217", "prod": "51121759", "t": "Olmesartán medoxomilo OLMESARTAN/AMLODIPINO 40/10 MG\tEnvase de 30 comprimidos,  MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias BIOZEN\tEnvase de 50 comprimidos sublinguales, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina LINAGLIPTINA/METFORMINA CLORHIDRATO 2,5/1000 MG\tEnvase de 60 comprimidos, similar a Trayenta Duo, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina LINAGLIPTINA/METFORMINA CLORHIDRATO 2,5/850 MG\tEnvase de 60 comprimidos, similar a Trayenta Duo, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias CLOTIAZEPAM 5 MG\tEnvase de 30 comprimidos recubiertos, similar a Rize, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511018", "prod": "51101805", "t": "Cotrimazol CLOTRIMAZOL/BETAMETASONA 1/0,05 MG\tEnvase de 15 gr, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias TRIMETAZIDINA DICLORHIDRATO 35 MG\tEnvase de 30 comprimidos de liberación prolongada, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511421", "prod": "51142121", "t": "Diclofenaco DICLOFENACO 100 MG\tEnvase de 8 cápsulas, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511217", "prod": "51121753", "t": "Irbesartán IRBESARTAN 300 MG\tEnvase de 28 comprimidos recubiertos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias ETORICOXIB 90 MG\tEnvase de 14 comprimidos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511618", "prod": "51161811", "t": "Bromhexina BROMHEXINA 8MG/5ML\tEnvase de 100 ml, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511015", "prod": "51101580", "t": "Cefadroxilo CEFADROXILO 500 MG\tEnvase de 8 cápsulas, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias AMBROXOL 30MG/5ML\tEnvase de 100 ml, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "511421", "prod": "51142106", "t": "Ibuprofeno IBUPROFENO 600 MG\tEnvase de 20 comprimidos recubiertos, MAS DETALLES EN BASES TÉCNICO ADMINISTRATIVAS QUE RIGEN ESTE PROCESO."}
+{"cat": "721022", "prod": "72102201", "t": "Instalación o servicio de sistemas de energía eléctrica SE REQUIERE LA ADQUISICION DE UN  TRANSFORMADOR ELECTRICO TRIFASICO DE 45 KVA. ADEMAS DE LA INSTALACION Y CONEXION EN POSTE. QUE INCLUYA TRASLADO Y MONTAJE"}
+{"cat": "731615", "prod": "73161517", "t": "Servicios de fabricación de equipo de aire acondicionado, ventilación o refrigeración La Secretaría y Administración General del Ministerio de Hacienda (en adelante, e indistintamente el “Ministerio” o la “Subsecretaría”) requiere la “Adquisición e Instalación de Equipos de Aire Acondicionado”, para la Subsecretaría, según se especifica en"}
+{"cat": "421418", "prod": "42141802", "t": "Electrodos de electroterapia o accesorios 924-1415 ELECTRODO DE ESTIMULACIÓN FISIOLÓGICA EN HIS"}
+{"cat": "391214", "prod": "39121436", "t": "Electrodos 924-8128 VAINA DE CANULACIÓN PARA ELECTRODO DE ESTIMULACIÓN HISIANO (HIS)"}
+{"cat": "391214", "prod": "39121436", "t": "Electrodos 224-0172 CORTADOR DE VAINA DE HIS"}
+{"cat": "391214", "prod": "39121436", "t": "Electrodos 345-0095 VAINA DEFLEXION ENDOANCHORS ABDOMINAL\r\n"}
+{"cat": "391214", "prod": "39121436", "t": "Electrodos 345-0094 SISTEMA APLICADOR ENDO-ANCHORS\r\n"}
+{"cat": "422034", "prod": "42203402", "t": "Catéteres o juegos vasculares intervencional o diagnósticos 345-0117 PLUG OCLUSIÓN VASCULAR TIPO BARRIL"}
+{"cat": "491215", "prod": "49121502", "t": "Colchones de espuma COLCHONES, CAMAS, FRAZADAS Y OTROS SEGUN DETALLE ADJUNTO"}
+{"cat": "422039", "prod": "42203901", "t": "Dosímetros de radiación médica CONVENIO DE CONTROLES DOSIMETRICO PARA PERSONAL OCUPACIONALMENTE EXPUESTO A RADIACION IONIZANTE POR 36 MESES."}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 1 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 2 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 3 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 4 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 5 (ANEXO 3)"}
+{"cat": "901016", "prod": "90101604", "t": "Concesionarios de casino de comida LINEA 6 (ANEXO 3)"}
+{"cat": "421721", "prod": "42172101", "t": "Desfibriladores externos automatizados (AED) o paletas rígidas MANTENIMIENTO PREVENTIVO DE EQUIPOS BIOMÉDICOS Y TÉCNICOS, SEGÚN TTR ADJUNTAS."}
+{"cat": "301017", "prod": "30101704", "t": "Vigas de acero ADQUISICIÓN DE MATERIALES DE CONSTRUCCIÓN SEGÚN LISTADO ADJUNTO, BASES Y ANEXOS"}
+{"cat": "491616", "prod": "49161608", "t": "Pelotas de voleibol PELOTA DE VOLEIBOL SOFT TOUCH"}
+{"cat": "601410", "prod": "60141001", "t": "Balones o pelotas de juguete PELOTA DE FUTBOL TALLA 5 MARCA ADIDAS, SIMILAR O SUPERIOR"}
+{"cat": "491616", "prod": "49161603", "t": "Pelotas de baloncesto PELOTA DE BASQUETBOL TALLA 5 MARCA KIPSTA, SIMILAR O SUPERIOR"}
+{"cat": "491815", "prod": "49181509", "t": "Pelotas de ping-pong SET DE 18 PELOTA PING PONG MARCA LOKI, SIMILAR O SUPERIOR"}
+{"cat": "491815", "prod": "49181508", "t": "Paletas de ping-pong SET DE 4 PALETAS DE PING PONG."}
+{"cat": "491616", "prod": "49161604", "t": "Pelotas de tenis SET DE 3 UNIDADES DE PELOTAS DE TENIS MARCA WILSON CHAMPION CHIP. SIMILAR O SUPERIOR"}
+{"cat": "111621", "prod": "11162111", "t": "Malla MALLA DE VOLEIBOL 9,5 METROS X 1 METRO"}
+{"cat": "311515", "prod": "31151502", "t": "Cuerda de poliéster CUERDA PARA SALTAR DE 7 METROS DE ALTA RESISTENCIA.\r\n"}
+{"cat": "311515", "prod": "31151502", "t": "Cuerda de poliéster CUERDA PARA SALTAR CON CONTADOR INDIVIDUAL."}
+{"cat": "601027", "prod": "60102713", "t": "Sets de actividades de rompecabezas tangram PUZZLE MAPA DE CHILE PUEBLOS ORIGINARIOS 200 PIEZAS."}
+{"cat": "311624", "prod": "31162406", "t": "Argollas de zunchamiento o de cercado SET DE 10 UNIDADES DE ARGOLLA DE AGILIDAD.\r\n"}
+{"cat": "502210", "prod": "50221001", "t": "Granos de Legumbres SET DE 20 UNIDADES LENTEJAS DEPORTIVAS"}
+{"cat": "491716", "prod": "49171601", "t": "Rings de boxeo MAQUINA DE BOXEO ENTRENAMIENTO MUSICAL INTELIGENTE BLUETOOTH."}
+{"cat": "601312", "prod": "60131203", "t": "Flautas musicales SILVATO DEPORTIVO PROFESIONAL CON CORDON."}
+{"cat": "491615", "prod": "49161506", "t": "Bates de béisbol BATE DE BEISBOL ACOLCHADO"}
+{"cat": "491615", "prod": "49161503", "t": "Pelotas de béisbol PELOTA DE BEISBOL ACOLCHADA"}
+{"cat": "461015", "prod": "46101504", "t": "Pistolas PISTOLA LANZA AGUA 500 ML 45CM"}
+{"cat": "601027", "prod": "60102713", "t": "Sets de actividades de rompecabezas tangram PUZZLE DE 100 PIEZAS DISNEY"}
+{"cat": "531316", "prod": "53131609", "t": "Protector solar BLOQUEADOR 1000 ML MARCA LEBLON"}
+{"cat": "211015", "prod": "21101513", "t": "Discos DISCOS DE LANZAMIENTOS DE ATLETISMO"}
+{"cat": "241124", "prod": "24112404", "t": "Caja CAJA ORGANIZADORA TIPO BAÚL CON RUEDAS, 123 LITROS\r\n"}
+{"cat": "411224", "prod": "41122411", "t": "Cronómetros o relojes de laboratorio CRONOMETRO"}
+{"cat": "241022", "prod": "24102208", "t": "Infladores de aire INFLADOR O BOMBIN PARA PELOTA CON AGUJAS"}
+{"cat": "531215", "prod": "53121501", "t": "Bolsos BOLSO PARA TRANSPORTAR PELOTAS"}
+{"cat": "141116", "prod": "14111615", "t": "Papeles para carteles MATERIALES DE OFICINA PROGRAMA OLN $1.000.000 PPTO. DISPONIBLE"}
+{"cat": "141116", "prod": "14111615", "t": "Papeles para carteles MATERIALES DE OFICINA PROGRAMA VIVIENDA $322.500 PPTO. DISPONIBLE"}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos Lipasa"}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos Sodium potassium tartrate 500 g"}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos Bovine serum albumin 10 g"}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos p-Toluene-sulfonyl-L-arginine methyl ester (TAME)"}
+{"cat": "411160", "prod": "41116004", "t": "Reactivos de analizadores químicos Maltose standard "}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio PLACA 6 POCILLOS CON TAPA cultivo celular"}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio PLACA 12 POCILLOS CON TAPA cultivo celular"}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio PLACA 96 POCILLOS CON TAPA cultivo celular"}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio PLACA CULTIVO CELULAR 100 X 20 MM - 20 unidades x bolsa"}
+{"cat": "411215", "prod": "41121513", "t": "Pipetas de goteo Puntas de pipeta Gilson-Fit de 10 L (Bolsa x 1000)"}
+{"cat": "411215", "prod": "41121513", "t": "Pipetas de goteo Puntas P200 universal en bolsa (Bolsa x 1000)"}
+{"cat": "411215", "prod": "41121513", "t": "Pipetas de goteo PUNTA DE PIPETA 1250 UL SIN FILTRO\n(Bolsa x 500)\n"}
+{"cat": "411217", "prod": "41121702", "t": "Tubos microcentrífugos TUBO CENTRÍFUGA CÓNICO 15 ML (50 u x bolsa)"}
+{"cat": "411217", "prod": "41121702", "t": "Tubos microcentrífugos TUBO CENTRÍFUGA CÓNICO 50 ML (25 u x bolsa)"}
+{"cat": "411217", "prod": "41121702", "t": "Tubos microcentrífugos 2.0 ML MICROCENTRIFUGE TUBES, CLEAR (400 u)"}
+{"cat": "411217", "prod": "41121702", "t": "Tubos microcentrífugos Transwell 0,4 poro, 12 insertos y 24 pocillos\n(CAJA X 48)\n"}
+{"cat": "411217", "prod": "41121702", "t": "Tubos microcentrífugos 1.6 ML MICROCENTRIFUGE TUBES,\nCLEAR (500 x bolsa)\n"}
+{"cat": "411049", "prod": "41104901", "t": "Filtros de línea para laboratorio Vacuum bottle filter 0,22 m"}
+{"cat": "411221", "prod": "41122105", "t": "Frascos rotativos Frasco de cultivo tratado (25 mL) - 10 u x bag"}
+{"cat": "411221", "prod": "41122105", "t": "Frascos rotativos Frasco de cultivo tratado (250 mL) - 5 u x bag"}
+{"cat": "721023", "prod": "72102301", "t": "Supervisión de instalación, ajuste o mantenimiento de calderas CONTRATAR EL SERVICIO DE  RENOVACIÓN DE SELLOS VERDES PARA JARDINES  INFANTILES Y SALAS CUNA DE FUNDACIÓN  INTEGRA, REGIÓN DE AYSÉN."}
+{"cat": "251116", "prod": "25111601", "t": "Botes y balsas salvavidas TUBO DE RESCATE ACUATICO"}
+{"cat": "261117", "prod": "26111702", "t": "Pilas alcalinas DISPLAY DE PILAS D, 24 UNIDADES"}
+{"cat": "311515", "prod": "31151502", "t": "Cuerda de poliéster CUERDA DE 12MM, 500 M"}
+{"cat": "531316", "prod": "53131609", "t": "Protector solar RAY FILTER FACTOR 30 6MG"}
+{"cat": "531316", "prod": "53131609", "t": "Protector solar BLOQUEADOR F50 1L"}
+{"cat": "601311", "prod": "60131105", "t": "Silbato SILBATO MARINO FOX40"}
+{"cat": "521615", "prod": "52161533", "t": "Megáfono MEGÁFONO RECARGABLE"}
+{"cat": "321116", "prod": "32111607", "t": "Transistores bipolares de radiofrecuencia (RF) o darlington RADIO PORTATIL VHF BOMBEROS BANDA MARINA"}
+{"cat": "251116", "prod": "25111601", "t": "Botes y balsas salvavidas KAYAK PERSONAL COLOR ROJO, CON REMOS"}
+{"cat": "461615", "prod": "46161508", "t": "Delimitadores o conos de tráfico CONOS DE SEGURIDAD VIAL NARANJO TAMAÑO MEDIO"}
+{"cat": "491416", "prod": "49141605", "t": "Tablas de windsurf TABLA DE NATACIÓN FLOTADOR FORMA U "}
+{"cat": "461616", "prod": "46161601", "t": "Líneas de cable flotador FIDEOS FLOTADORES"}
+{"cat": "721022", "prod": "72102204", "t": "Instalación de sistemas de seguridad LINEA 1: Servicio de 28 cámaras de seguridad IP"}
+{"cat": "721022", "prod": "72102204", "t": "Instalación de sistemas de seguridad LINEA 2: Sistema de voceo y comunicación interna"}
+{"cat": "721022", "prod": "72102204", "t": "Instalación de sistemas de seguridad LINEA 3: Ampliación de botones de pánico y alerta"}
+{"cat": "421524", "prod": "42152434", "t": "Amalgamadores odontológicos AGUJAS PARA CARPULE EXTRA CORTAS"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales REPUESTO LÁMINAS FEP IMPRESORA: COMPATIBLE CON ANYCUBIC MONO 4K"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales REPUESTO LÁMINAS FEP IMPRESORA: COMPATIBLE CON ANYCUBIC MONO 2"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales REPUESTO LÁMINAS FEP IMPRESORA: COMPATIBLE CON PHROZEN MIGHTY 12"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales REPUESTO LÁMINAS FEP IMPRESORA: COMPATIBLE CON ACKURETTA SOL"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales VAT PARA IMPRESORA: COMPATIBLE CON ANYCUBIC MONO 4K"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales VAT PARA IMPRESORA: COMPATIBLE CON ANYCUBIC MONO 2"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales VAT PARA IMPRESORA: COMPATIBLE CON  PHROZEN MIGHTY 12"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales VAT PARA IMPRESORA: COMPATIBLE CON ACKURETTA SOL"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales GLASEADOR DE RESINAS: COMPATIBLE CON GLAZE N2 FREE RODIN "}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales SET DE PUNTAS DE ESCANEO COMPATIBLE CON MEDIT I700 "}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales SET DE PUNTAS DE ESCANEO COMPATIBLE CONSHINING AORAL SCAN 3 "}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales PUNTA PARA ULTRASONIDO G4 COMPATIBLE CON NSK"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales PUNTA PARA ULTRASONIDO G6 COMPATIBLE CON EQUIPO NSK"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales PUNTA PARA ULTRASONIDO G8 COMPATIBLE CON EQUIPO NSK"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales LLAVE DE TORQUE COMPATIBLE CON EQUIPO ULTRASONIDO NSK"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales MUESTRARIO PORCELANA COMPATIBLE CON VITA CLASSICAL"}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales MUESTRARIO PORCELANA COMPATIBLE CON VITA 3D MASTER"}
+{"cat": "421527", "prod": "42152703", "t": "Pernos o puntales dentales o suministros relacionados PERNOS DE FIBRA DE VIDRIO N° 0.5"}
+{"cat": "411224", "prod": "41122409", "t": "Herramientas de laboratorio Espátula raspadora de cuello de útero, material madera, medida 6,8 \" (17,5 cm), esterilizada, envase individual.\r\n"}
+{"cat": "411122", "prod": "41112207", "t": "Termógrafos Termógrafos, según especificaciones en formatos adjuntos. "}
+{"cat": "421817", "prod": "42181702", "t": "Adaptadores, cables o electrodos de electrocardiografía (ECG) Set de 4 pinzas para extremidades adulto, con placas de cloruro de plata aleación de Ag&AgCl para una alta calidad de señal, con conexión para derivaciones tipo Banana, nomenclatura IEC para ECG electrocardiógrafos. \r\n"}
+{"cat": "801116", "prod": "80111613", "t": "Mano de obra temporal DISPONE LLAMADO A LICITACIÓN PÚBLICA Y\r\nAPRUEBA LAS BASES ADMINISTRATIVAS ESPECIALES,\r\nTÉCNICAS Y ANEXOS QUE INDICA, PARA PROYECTO\r\n“IMPLEMENTACION SALA SENSORIAL ESCUELA BASICA\r\nAMELIA GODOY PEÑA, DE LAUTARO”"}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias SELEXIPAG 800 MCG CM RECUBIERTO"}
+{"cat": "471318", "prod": "47131805", "t": "Limpiadores de uso general Línea 1: Limpiadores, líquidos y desinfectantes.\r\n\r\n“SUMINISTRO DE INSUMOS PARA ASEO CLÍNICO EN SALUD DE LA CORPORACIÓN DE EDUCACIÓN, SALUD Y ATENCIÓN DE MENORES DE PUENTE ALTO – LÍNEAS DESIERTAS”."}
+{"cat": "461515", "prod": "46151504", "t": "Equipo de protección corporal Línea 2: Equipo de Protección Personal\r\n\r\n“SUMINISTRO DE INSUMOS PARA ASEO CLÍNICO EN SALUD DE LA CORPORACIÓN DE EDUCACIÓN, SALUD Y ATENCIÓN DE MENORES DE PUENTE ALTO – LÍNEAS DESIERTAS”."}
+{"cat": "441220", "prod": "44122011", "t": "Carpetas para archivos Carpeta ecológica, según Res. Ex. N°3163"}
+{"cat": "432118", "prod": "43211802", "t": "Almohadillas de ratón o mousepad Mouse Pad, según Res. Ex. N°3163"}
+{"cat": "141115", "prod": "14111531", "t": "Libros o cuadernos de registro Cuadernos corporativos, según Res. Ex. N°3163"}
+{"cat": "441216", "prod": "44121627", "t": "Marcadores de libro Marcapáginas, según Res. Ex. N°3163"}
+{"cat": "441120", "prod": "44112002", "t": "Calendarios Calendarios Corporativos, según Res. Ex. N°3163"}
+{"cat": "432121", "prod": "43212110", "t": "Impresoras multifunción o multifuncionales SERVICIO DE ARRIENDO DE IMPRESORAS POR UN PERIODO DE 12 MESES VER BASES ADJUNTAS."}
+{"cat": "432121", "prod": "43212108", "t": "Impresoras de cinta térmica El INGER y el HDS requieren contar con un contrato de arriendo de impresoras térmicas y de brazaletes, con insumos de consumo variable por un periodo de 36 meses para el Instituto Nacional de Geriatría y el Hospital del Salvador, los cuales serán utilizad"}
+{"cat": "432115", "prod": "43211507", "t": "Computadores de escritorio SERVICIO DE ARRIENDO DE EQUIPOS\r\nCOMPUTACIONALES, IMPRESORAS, MODEM Y\r\nTÓTEM, PARA PROCESO DE RENOVACIÓN\r\nPERMISOS DE CIRCULACIÓN 2027 DE LA I.\r\nMUNICIPALIDAD DE MACUL, SEGÚN BASES\r\nTECNICAS."}
+{"cat": "421520", "prod": "42152008", "t": "Unidades de Rayos X dentales ORTOPANTOMÓGRAFO DIGITAL Y CBCT 3D, INCLUYE ACCESORIOS. SEGÚN BASES TÉCNICAS ADJUNTAS. "}
+{"cat": "432115", "prod": "43211507", "t": "Computadores de escritorio PC. SEGÚN BASES TÉCNICAS ADJUNTAS. "}
+{"cat": "391210", "prod": "39121011", "t": "Fuentes de alimentación continua UPS. SEGÚN BASES TÉCNICAS ADJUNTAS."}
+{"cat": "441031", "prod": "44103103", "t": "Tóner Según lo establecido en las especificaciones técnicas y demás antecedentes que formen parte de la propuesta."}
+{"cat": "432315", "prod": "43231512", "t": "Software de gestión de licencias ADQUISICIÓN DE 265 LICENCIAS MICROSOFT OFFICE HOME AND BUSINESS 2024 PERPETUA"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario CAMISA OXFORD SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario PANTALON REGULAR FIT SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario TERNO SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario CAMISA DE VESTUR SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario BLAZER ESTAMPADO SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario BLAZER NEGRO Y/O AZUL SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario BLUSA BLANCA MANGA 3/4 SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario PANTALON NEGRO Y/O AZUL SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario FALDA TUBO NEGRA Y/O AZUL SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario JUMPER NEGRO Y/O AZUL SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario JEANS NEGRO Y/O AZUL SEGÚN REQUERIMIENTO TÉCNICO"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles HABILITACIÓN DE SEDE BOSQUES DE SAN FRANCISCO PARA CESFAM 1, RANCAGUA"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles CONSERVACIÓN DE ESTACIONES PIEZOMÉTRICAS, REGIÓN DE LOS LAGOS, SEGUN BASES ADMINISTRATIVAS, TECNICAS ESPECIALES Y ANEXOS EN ARCHIVOS ADJUNTOS.  "}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios Servicio de auxiliar y aseo para oficina sectorial Victoria, ubicada en calle Lagos N°270, comuna de Victoria"}
+{"cat": "201023", "prod": "20102305", "t": "Vehículos de servicio Suministro de 10.920 m³ de Base Estabilizada para la Operación 7.306.04F02 en Ruta B-21 del Km. 0 Km.7 de la Provincial Tocopilla, según bases administrativas adjuntas."}
+{"cat": "781801", "prod": "78180101", "t": "Reparación y pintura carrocerías Servicio de Mantención Preventiva y Correctiva de Vehículos de la Dirección del Servicio de Salud Metropolitano Central"}
+{"cat": "721016", "prod": "72101601", "t": "Instalación o reparación de techos \"SERVICIO DE REPARACIÓN DE TECHUMBRE: CAMBIO DE CANAL Y BAJADAS DE AGUAS LLUVIAS DEL EDIFICIO SOME-FARMACIA AMBULATORIO”, SEGÚN BASES TÉCNICAS"}
+{"cat": "441016", "prod": "44101602", "t": "Máquina encuadernadora Anilladora: Capacidad aproximada de 8 a 12 hojas por operación, Formato: Compatible con documentos tamaño carta y oficio, o formatos equivalentes según el modelo ofertado.\r\nSegún especificaciones técnicas en bases administrativas."}
+{"cat": "492215", "prod": "49221502", "t": "Arcos de fútbol Arco de fútbol pleglable: Material: Estructura fabricada en plástico resistente, fibra de vidrio o metal liviano, con componentes adecuados para uso frecuente.\r\nDimensiones: Medidas aproximadas de 120 x 90 cm o equivalentes, según disponibilidad comercial"}
+{"cat": "521615", "prod": "52161514", "t": "Audífonos Audifono con Microfono: Tipo: audífono con micrófono incorporado, para uso en equipos computacionales y dispositivos compatibles.\r\nConectividad: conexión mediante cable, compatible con computador, notebook u otros dispositivos con entrada correspondiente."}
+{"cat": "422117", "prod": "42211705", "t": "Audífonos para personas con discapacidad física Audifono Sensorial Protección Antiruidos: Tipo: protector auditivo tipo orejera, diseñado para atenuación de ruido ambiental.\r\nUso: niños y adolescentes; ajuste adaptable.\r\nCaracterísticas: copas acolchadas y diadema regulable para favorecer comodidad dur"}
+{"cat": "601410", "prod": "60141010", "t": "Vehículos de juguete Autopista de Juguete Eléctrica: Tipo: circuito/autopista de juguete con vehículos y funcionamiento eléctrico.\r\nContenido mínimo: circuito armable, vehículos y sistema de accionamiento /control. Según bases administrativas.\r\nAlimentación: mediante pilas."}
+{"cat": "491615", "prod": "49161505", "t": "Balones de fútbol Balón de fútbol: Tipo: Balón de fútbol, destinado a actividades deportivas, recreativas y educativas.\r\nMaterial: Cubierta exterior de cuero sintético, PVC u otro material resistente, adecuado para la práctica de fútbol.\r\nTamaño: Número 5, de tamaño o simi"}
+{"cat": "491616", "prod": "49161608", "t": "Pelotas de voleibol Balón de Voleibol: Tipo: Balón de voleibol, destinado a actividades deportivas, recreativas y educativas.\r\nMaterial: Cubierta exterior de cuero sintético, PVC u otro material resistente, adecuado para la práctica de voleibol.\r\nTamaño: Número 5, de tamaño "}
+{"cat": "481019", "prod": "48101915", "t": "Bandejas de servicio Bandejas de Madera: Dimensiones: aproximadamente 20 x 30 cm.\r\nCaracterísticas: superficie plana y firme, adecuada para realizar actividades de pintura. Ficha técnica en bases administrativas.\r\n "}
+{"cat": "531216", "prod": "53121608", "t": "Bolsas para compras Bolsas reutilizables: Según especificaciones técnicas adjuntas.\r\nTipo: Bolsa reutilizable de género o material textil similar, destinada al transporte y almacenamiento de diversos elementos.\r\nMaterial: Tela resistente, género o material textil similar, du"}
+{"cat": "241022", "prod": "24102208", "t": "Infladores de aire Bombín para inflar pelotas: Bombín manual para inflado de pelotas y balones deportivos, destinado a actividades deportivas, recreativas y educativas.\r\nMaterial: Cuerpo fabricado en plástico resistente o metal liviano, con componentes adecuados para uso fr"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juego Butter Squishy: Medidas: Disponible en formato compacto de 14×4×4 cm y tamaño gigante de hasta 23 cm de largo, juguete manipulable antiestrés de textura blanda y deformable. Material: espuma, silicona u otro material flexible, resistente y apto para"}
+{"cat": "312615", "prod": "31261501", "t": "Cubiertas y cajas de plástico Caja plástica (1-20 litros): Material: plástico resistente y durable, adecuado para uso frecuente.\r\nCapacidad: 20 litros"}
+{"cat": "312615", "prod": "31261501", "t": "Cubiertas y cajas de plástico Caja plástica 40x30: Material: plástico rígido de alta resistencia, lavable y de fácil limpieza.\r\nDimensiones aproximadas: 40 x 30 cm; se aceptará una variación de hasta ±5 cm por dimensión. "}
+{"cat": "422515", "prod": "42251502", "t": "Productos de evaluación, ensayos sensoriales, perceptuales, de desteridad y cognitivos Caja sensorial calma: set/caja de apoyo para regulación sensorial de hipo e hiper respuesta, y emocional.\r\nContenido mínimo: caja o contenedor reutilizable más una selección de elementos sensoriales manipulables, tales como objetos táctiles, antiestrés, d"}
+{"cat": "261117", "prod": "26111704", "t": "Cargadores de baterías Cargador de pilas recargables: Compatibilidad: debe permitir cargar pilas recargables tamaño AA y AAA. Capacidad: debe permitir la carga simultánea de al menos 2 pilas. Alimentación: compatible con suministro eléctrico de 220 V, 50 Hz."}
+{"cat": "601211", "prod": "60121118", "t": "Papel corrugado Carpeta papel corrugado: Carpeta de papel corrugado, destinada a actividades de manualidades, decoración, trabajos educativos y elaboración de material didáctico. Según bases administrativas."}
+{"cat": "601017", "prod": "60101703", "t": "Materiales educativos individuales Cartas crianza (SOS), 36 unidades ilustradas. Set de cartas educativas e ilustradas, destinado a apoyar actividades de crianza, comunicación, reflexión y orientación familiar.\r\nContenido: Pack compuesto por 36 cartas ilustradas.\r\nMaterial: Cartulina o pap"}
+{"cat": "601059", "prod": "60105917", "t": "Materiales educativos de comprensión del trastorno de hiperactividad con déficit atencional Chaleco compresor sensorial tela: Chaleco compresor sensorial de tela, destinado a actividades de regulación sensorial y apoyo en intervenciones terapéuticas y educativas.\r\nMaterial: Tela suave, flexible, transpirable y resistente, adecuada para el contac"}
+{"cat": "801416", "prod": "80141605", "t": "Regalos publicitarios Chapitas metálicas para personalizar de 37 MM: destinadas a actividades de manualidades, expresión artística, talleres educativos y elaboración de identificadores decorativos.\r\nMaterial: Cubierta frontal metálica, con respaldo y sistema de sujeción adecua"}
+{"cat": "801416", "prod": "80141605", "t": "Regalos publicitarios Chapitas metálicas personalizadas 58mm: Chapitas metálicas personalizables, destinadas a actividades de manualidades, expresión artística, talleres educativos y elaboración de identificadores decorativos.\r\nMaterial: Cubierta frontal metálica, con respaldo"}
+{"cat": "601059", "prod": "60105918", "t": "Materiales educativos para personas al cuidado de niños Colchoneta para yoga: Colchoneta para yoga y ejercicios de acondicionamiento físico, destinada a actividades de relajación, estiramiento, equilibrio y psicomotricidad.\r\nMaterial: Espuma de PVC, TPE u otro material sintético flexible, resistente y adecuado"}
+{"cat": "422515", "prod": "42251503", "t": "Juegos terapéuticos Columpio de tela sensorial: columpio de tela tipo hamaca/sensorial para estimulación vestibular y propioceptiva.\r\nMaterial: tela resistente, flexible y de fácil limpieza. Tela oscilante (nylon) no áspera\r\nColor: variados\r\nSuspensión: puntos de anclaje ref"}
+{"cat": "422516", "prod": "42251611", "t": "Dispositivos de movimiento vestibular para rehabilitación o terapia Columpio redondo disco grande Touch of Sand: 1 metro de diámetro. Capacidad de carga: mínimo 100 kg. columpio terapéutico/sensorial circular tipo disco.\r\nDiámetro: aproximadamente 1 metro.\r\nSuperficie: resistente, estable y apta para uso terapéutico y rec"}
+{"cat": "422515", "prod": "42251503", "t": "Juegos terapéuticos Cubos sensoriales: Medidas: Entre 5 y 10 cm. Características: diferentes niveles de dureza/resistencia a la presión, permitiendo actividades de exploración y discriminación táctil.\r\n"}
+{"cat": "401015", "prod": "40101505", "t": "Difusores de aire Difusor de aromaterapia: Difusor ultrasónico de aromas/aceites esenciales mediante niebla fría.\r\nCapacidad de estanque: mínimo 200 ml.\r\nFuncionamiento: eléctrico, 220 V, 50 Hz."}
+{"cat": "422517", "prod": "42251703", "t": "Escaleras de entrenamiento para rehabilitación o terapia Escaleras de psicomotricidad de 10 peldaños: Largo aproximado de 4 a 5 metros, con 10 peldaños distribuidos uniformemente aproximadamente.\r\nCaracterísticas: Escalera liviana, portátil y flexible, diseñada para realizar ejercicios de coordinación, desplaza"}
+{"cat": "601411", "prod": "60141101", "t": "Juegos educativos Hablemos jugando: Actividad lúdica que facilite la conversación, expresión de ideas, participación y desarrollo de habilidades sociales mediante dinámicas de juego. Juego compuesto por tarjetas, fichas, tablero, instrucciones u otros elementos necesarios "}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juego didáctico lego: Bloques para construcción gigantes.\r\nContenido: 40 piezas por set, como mínimo.\r\nMaterial: Resistente y de fácil limpieza. Blandos tipo espuma (no plásticos)\r\nFormas: variedad de piezas geométricas y/o de construcción. De 15 a 30 cm "}
+{"cat": "601411", "prod": "60141102", "t": "Juegos de mesa juego Dobble clásico: Juego de cartas de observación y rapidez visual, destinado a actividades recreativas, educativas y de estimulación cognitiva.\r\nMaterial: Cartas fabricadas en cartón resistente, con impresión de alta calidad y adecuada para uso frecue"}
+{"cat": "601410", "prod": "60141006", "t": "Juguetes didácticos Juego Imanix: De construcción mediante piezas magnéticas.\r\nContenido: mínimo 30 piezas de distintas formas geométricas, incluyendo piezas cuadradas/rectangulares y triangulares."}
+{"cat": "441217", "prod": "44121707", "t": "Lápices de colores Lápices de colores Jumbo caja: Contenido: Caja con 12 lápices de colores surtidos.\r\nCaracterísticas: Mina de buena pigmentación, que permita realizar trazos definidos y colorear de manera uniforme."}
+{"cat": "441217", "prod": "44121707", "t": "Lápices de colores Lápices marcadores jumbo 12 colores set: Tipo: lápices marcadores de formato Jumbo, adecuados para actividades gráficas, de dibujo y coloreado.\r\nPresentación: cada set debe contener 12 lápices marcadores de diferentes colores.\r\nCaracterísticas: formato Ju"}
+{"cat": "601017", "prod": "60101703", "t": "Materiales educativos individuales Manta con Peso 1.20x1.80: Manta con peso, destinada a actividades de relajación, confort sensorial y apoyo en espacios de regulación y bienestar.\r\nMaterial: Cubierta exterior de tela suave, resistente y agradable al tacto, con relleno interno de distribuc"}
+{"cat": "231215", "prod": "23121508", "t": "Máquinas de acabados Máquina estampadora sublimación térmica manual: Características: equipo destinado a realizar estampados mediante transferencia térmica de diseños sobre materiales compatibles con sublimación.\r\nSistema de calentamiento: resistencia eléctrica con control de"}
+{"cat": "231615", "prod": "23161509", "t": "Máquinas de estampación de forjado Máquina para fabricar chapitas:compatible con chapitas de aproximadamente 37 Y 58 mm de diámetro.\r\nMaterial: estructura metálica o material resistente, adecuada para uso frecuente.  Según bases administrativas adjuntas."}
+{"cat": "601243", "prod": "60124317", "t": "Masa de modelado Masa Das bolsa de 1 kilo: Tipo: Pasta para modelar de secado al aire, adecuada para actividades de expresión artística, modelado y desarrollo de la creatividad.\r\nPresentación: Envase individual de 1 kilogramo.\r\nCaracterísticas: Masa moldeable, suave y fle"}
+{"cat": "531216", "prod": "53121603", "t": "Mochilas Mochila morral color azul, poliéster, unidad (34.5cm x 45cm): Dimensiones aproximadas: 34,5 cm de ancho x 45 cm de alto.\r\nDensidad del material: aproximadamente 210 D (denier), o equivalente que proporcione resistencia similar.\r\nPeso: aproximadamente 50 g"}
+{"cat": "601241", "prod": "60124102", "t": "Productos de artesanía multicultural Palos bocheas de 20 cm.: Palos de brocheta de madera, destinados a actividades de manualidades, decoración y trabajos educativos.\r\nMaterial: Madera natural, resistente y adecuada para trabajos manuales.\r\nDimensiones: Largo aproximado de 20 cm.\r\nCaracterís"}
+{"cat": "141115", "prod": "14111528", "t": "Papel magnético Papel Imantado: Material: Lámina flexible con base magnética, apta para adherirse a superficies metálicas.\r\nFormato: Tamaño aproximado carta o A4"}
+{"cat": "261117", "prod": "26111701", "t": "Baterías recargables Pilas recargables tamaño AA: Tecnología: Ni-MH (níquel-metal hidruro) o equivalente recargable.\r\nVoltaje nominal: aproximadamente 1,2 V por unidad.\r\nCompatibilidad: debe ser compatible con el cargador de pilas AA y AAA especificado en el ítem correspondie"}
+{"cat": "261117", "prod": "26111701", "t": "Baterías recargables Tecnología: Ni-MH (níquel-metal hidruro) o equivalente recargable.\r\nVoltaje nominal: aproximadamente 1,2 V por unidad.\r\nCompatibilidad: debe ser compatible con el cargador de pilas AA y AAA especificado en el ítem correspondiente."}
+{"cat": "601245", "prod": "60124515", "t": "Juguetes cognitivos Piscina pelotas estimulación: piscina/corral de estimulación sensorial para uso con pelotas.\r\nEstructura: estable, acolchada o con paredes de material flexible.\r\nDimensiones: 120x120x30 o similar. Según bases administrativas adjuntas."}
+{"cat": "601410", "prod": "60141018", "t": "Pompones Pomponera plástica, destinada a actividades de manualidades, decoración, expresión artística y trabajos escolares.\r\nMaterial: Plástico resistente y liviano, adecuado para uso frecuente en actividades manuales.\r\nDimensiones: Distintos tamaños en set. Tamañ"}
+{"cat": "492215", "prod": "49221505", "t": "Redes o mallas deportivas Red de voleibol: Largo aproximado de 9 a 10 metros y ancho de 1 metro, según formato comercial.Hilo de nylon, polietileno u otro material sintético de alta resistencia, adecuado para uso deportivo frecuente."}
+{"cat": "121645", "prod": "12164502", "t": "Esencias o extractos Set aromaterapia 12 unidades:\r\n20 set set de aceites esenciales o esencias aromáticas para uso en difusores de aromas.\r\nContenido: 12 unidades por set, correspondientes a diferentes aromas o fragancias.\r\nCompatibilidad: aptos para ser utilizados en difuso"}
+{"cat": "601220", "prod": "60122005", "t": "Telares manuales Telar cuadrado estandar: Dimensiones: Tamaño estándar, aproximadamente 20 x 20 cm, según disponibilidad comercial.\r\nCaracterísticas: Estructura cuadrada firme, diseñada para facilitar la elaboración de tejidos mediante el entrelazado de lana, hilo u otros"}
+{"cat": "521415", "prod": "52141523", "t": "Hervidores y teteras termo Hervidor Electrico:Capacidad: aproximadamente 3 litros.\r\nAlimentación: 220 V, 50 Hz, apta para uso en Chile.\r\nPotencia: suficiente para hervir agua de manera eficiente.\r\nSistema de seguridad: apagado automático al alcanzar la ebullición y protección"}
+{"cat": "441028", "prod": "44102801", "t": "Plastificadoras Temolaminadora: Termolaminadora eléctrica, destinada a la protección y conservación de documentos, imágenes, material educativo, tarjetas y trabajos de manualidades. Alimentación: Funcionamiento mediante conexión eléctrica compatible con la red eléctrica "}
+{"cat": "111115", "prod": "11111503", "t": "Tierra de hoja Tierra de hoja: Presentación: Bolsas selladas de aproximadamente 20 a 40 litros cada una, según disponibilidad comercial"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Contratación de servicios para mantenimiento y paisajismo acceso SAR Barrios Bajos"}
+{"cat": "531030", "prod": "53103001", "t": "Camisetas de caballero POLERA PIQUÉ HOMBRE MANGA LARGA COLOR AZUL MARINO CON LOGO BORDADO COMO SE INDICA EN IMAGEN\r\nPolera polo manga larga de hombre, diseñada con tecnología \"híbrida\". Esta confección permite que el cuerpo pueda liberar la transpiración, evitando la sensación "}
+{"cat": "531016", "prod": "53101604", "t": "Camisas o blusas de mujer \r\nPOLERA PIQUÉ MUJER MANGA LARGA COLOR AZUL MARINO CON LOGO BORDADO COMO SE INDICA EN IMAGEN\r\nPolera polo manga larga de mujer, diseñada con tecnología \"híbrida\". Esta confección permite que el cuerpo pueda liberar la transpiración, evitando la sensación "}
+{"cat": "531316", "prod": "53131609", "t": "Protector solar PROTECTOR SOLAR FACTOR 50 O SUPERIOR, 340 ml.\r\nProtector Solar FPS 50+ 340 ml. Crema diseñada para apoyar el \r\nBienestar y cuidado diario. \r\nCaracterísticas:\r\n•\tHumectante. (obligatorio)\r\n•\tSin perfume. (obligatorio)\r\n•\tNo graso. (obligatorio)\r\n•\tHipoaler"}
+{"cat": "141116", "prod": "14111608", "t": "Cupón de regalo Gift Card Navideño 2026"}
+{"cat": "432119", "prod": "43211903", "t": "Monitores de pantalla táctil PANTALLA WALL 32 METROS (6M2) P4 (KIT CABLES PODER Y RED (6) KIT REPUESTOS, PROCESADOR NOVASTAR. (INCLUYE SOPORTE)"}
+{"cat": "261216", "prod": "26121609", "t": "Cable de redes CABLE UTP CAT 6 EXTERIOR 305 METROS"}
+{"cat": "391214", "prod": "39121429", "t": "Conector de fibra óptica CONECTORES TERMINALES FIBRA OPTICA "}
+{"cat": "231716", "prod": "23171604", "t": "Cortadores de alambres o cables CORTADORA DE FIBRA OPTICA"}
+{"cat": "411153", "prod": "41115307", "t": "Láser LASER LOCALIZADOR VISUAL FIBRA OPTICA "}
+{"cat": "391210", "prod": "39121008", "t": "Conversores de señales CONVERSORES DE FIBRA OPTICA "}
+{"cat": "391214", "prod": "39121409", "t": "Conectores de cables eléctricos CONECTORES RJ45"}
+{"cat": "521615", "prod": "52161525", "t": "Control remoto CONTROL REMOTO ANWO CON WIFI PARA AIRE ACONDICIONADO"}
+{"cat": "271117", "prod": "27111704", "t": "Enchufes ENCHUFES TOMA CORRIENTE HEMBRA TRIPLE PARA MANTECIÓN CORRECTIVA Y PREVENTIVA CENTRAL DE MONITOREO"}
+{"cat": "261216", "prod": "26121607", "t": "Cable de fibra óptica ROLLO DE FIBRA OPTICA 1 KM "}
+{"cat": "111216", "prod": "11121603", "t": "Troncos PALOS DE 2X3\""}
+{"cat": "311615", "prod": "31161502", "t": "Tornillos de anclaje 200 TORNILLOS 4\" PARA MADERA"}
+{"cat": "111216", "prod": "11121611", "t": "Tablero de partículas TABLERO ESTRUCTURAL DE 12MM 1,22 X 2,44 MTS"}
+{"cat": "301715", "prod": "30171504", "t": "Puertas de madera JUEGO DE MARCO DE PUERTA"}
+{"cat": "301715", "prod": "30171504", "t": "Puertas de madera PUERTA INTERIOR 80X200CM"}
+{"cat": "422417", "prod": "42241703", "t": "Soportes de rodilla con goznes, bisagras o refuerzos para rodilla BISAGRAS 3 1/2 X 3 1/2\""}
+{"cat": "301025", "prod": "30102504", "t": "Chapa de acero CHAPA TUBULAR PARA OFICINA"}
+{"cat": "311615", "prod": "31161502", "t": "Tornillos de anclaje 500 TORNILLOS VULCANITA 2\""}
+{"cat": "111216", "prod": "11121611", "t": "Tablero de partículas TABLERO ESTRUCTURAL DE 20MM 1,22 X 2,44 MTS"}
+{"cat": "111216", "prod": "11121603", "t": "Troncos 7 GUARDAPOLVO "}
+{"cat": "111216", "prod": "11121603", "t": "Troncos 10 CUARTO RODON"}
+{"cat": "311620", "prod": "31162002", "t": "Clavos de sombrerete PUNTILLAS 2\" 1/2 KILO"}
+{"cat": "311620", "prod": "31162002", "t": "Clavos de sombrerete CLAVOS 4\""}
+{"cat": "261117", "prod": "26111701", "t": "Baterías recargables BATERÍAS TB100"}
+{"cat": "261117", "prod": "26111704", "t": "Cargadores de baterías ESTACIÓN DE CARGA BS100"}
+{"cat": "261117", "prod": "26111701", "t": "Baterías recargables BATERÍAS TB65"}
+{"cat": "251317", "prod": "25131707", "t": "Aeronave de reconocimiento o vigilancia PLATAFORMA DE CAPTURA PARA FOTOGRAMETRÍA MULTISENSOR,DE ACUERDO A BASES TÉCNICAS."}
+{"cat": "251317", "prod": "25131707", "t": "Aeronave de reconocimiento o vigilancia SENSOR LIDAR, DE ACUERDO A BASES TÉCNICAS."}
+{"cat": "251317", "prod": "25131707", "t": "Aeronave de reconocimiento o vigilancia SENSOR HÍBRIDO, DE ACUERDO A BASES TÉCNICAS."}
+{"cat": "251317", "prod": "25131707", "t": "Aeronave de reconocimiento o vigilancia SENSOR RGB, DE ACUERDO A BASES TÉCNICAS."}
+{"cat": "251317", "prod": "25131707", "t": "Aeronave de reconocimiento o vigilancia PLATAFORMA RPAS PARA FOTOGRAMETRÍA CON SENSOR INTEGRADO, DE ACUERDO A BASES TÉCNICAS."}
+{"cat": "251317", "prod": "25131707", "t": "Aeronave de reconocimiento o vigilancia SISTEMA DE SEGURIDAD EN CASO DE EMERGENCIAS RPAS, DE ACUERDO A BASES TÉCNICAS."}
+{"cat": "561015", "prod": "56101504", "t": "Sillas SE REQUIERE ADQUIRIR MOBILIARIO Y EQUIPAMIENTO PARA LA OFICINA PRLAC DE LA DIDECO Y OTRAS UNIDADES DE LA MUNICIPALIDAD, DE ACUERDO A LO DETALLADO EN CLÁUSULA 14."}
+{"cat": "721016", "prod": "72101605", "t": "Levantamiento o reparación de techos Que la presente licitación tiene por objeto resolver deficiencias constructivas y de infraestructura en dependencias de SERVIU Valparaíso para restablecer la seguridad, habitabilidad y continuidad operacional."}
+{"cat": "432121", "prod": "43212110", "t": "Impresoras multifunción o multifuncionales Suministro de impresión"}
+{"cat": "781801", "prod": "78180103", "t": "Servicios de cambio de fluidos de aceite o de la transmisión Mantención preventiva básica de los vehiculos informados"}
+{"cat": "781119", "prod": "78111901", "t": "Misiones experimentales o educativas JORNADA DE BIENESTAR, AUTOCIODADO Y REFLEXIÓN PARA LOS ESTABLECIMIENTOS MUNICIPALES DE HUECHURABA"}
+{"cat": "432232", "prod": "43223207", "t": "Sistema de transmisión por secuencias de video “SERVICIO DE TRANSMISIÓN VIA STREAMING DEL CONCEJO MUNICIPAL CASABLANCA”"}
+{"cat": "831015", "prod": "83101501", "t": "Abastecimiento de agua LINEA 1: COMUNA DE OSORNO: CONTRATACION DE 1 CAMIÓN ALJIBE PARA ENTREGA Y DISTRIBUCIÓN DE AGUA POTABLE POR UN PERÍODO DE 3 MESES (ENERO-FEBRERO-MARZO 2027)"}
+{"cat": "831015", "prod": "83101501", "t": "Abastecimiento de agua LINEA 4: COMUNA DE RIO NEGRO: CONTRATACION DE 4 CAMIONES ALJIBE PARA ENTREGA Y DISTRIBUCIÓN DE AGUA POTABLE POR UN PERÍODO DE 3 MESES (ENERO-FEBRERO-MARZO 2027)"}
+{"cat": "831015", "prod": "83101501", "t": "Abastecimiento de agua LINEA 5: COMUNA DE SAN JUAN DE LA COSTA: CONTRATACION DE 7 CAMIONES ALJIBE PARA ENTREGA Y DISTRIBUCIÓN DE AGUA POTABLE POR UN PERÍODO DE 3 MESES (ENERO-FEBRERO-MARZO 2027)"}
+{"cat": "831015", "prod": "83101501", "t": "Abastecimiento de agua LINEA 6: COMUNA DE SAN PABLO: CONTRATACION DE 2 CAMIONES ALJIBE PARA ENTREGA Y DISTRIBUCIÓN DE AGUA POTABLE POR UN PERÍODO DE 3 MESES(ENERO-FEBRERO-MARZO 2027)"}
+{"cat": "831015", "prod": "83101501", "t": "Abastecimiento de agua LINEA 3: COMUNA DE PUYEHUE: CONTRATACION DE 1 CAMIÓN ALJIBE PARA ENTREGA Y DISTRIBUCIÓN DE AGUA POTABLE POR UN PERÍODO DE 3 MESES (ENERO-FEBRERO-MARZO 2027)"}
+{"cat": "831015", "prod": "83101501", "t": "Abastecimiento de agua LINEA 2. COMUNA DE PURRANQUE. CONTRATACION DE 2 CAMIONES ALJIBE PARA ENTREGA Y DISTRIBUCIÓN DE AGUA POTABLE POR UN PERÍODO DE 3 MESES (ENERO-FEBRERO-MARZO 2027)"}
+{"cat": "841316", "prod": "84131607", "t": "Seguro por responsabilidad civil Seguros de responsabilidad civil para los Equipos dron (RPAS Remotely Piloted Aircraft System) del Ministerio de Bienes Nacionales"}
+{"cat": "421921", "prod": "42192102", "t": "Sillones reclinables de hospital o accesorios ADQUISICION E INSTALACIÓN DE 03 UNIDADES DENTALES PARA CESFAM DR. EDUARDO RAGGIO LANATA"}
+{"cat": "911117", "prod": "91111703", "t": "Vestuario ADQUISICIÓN DE INDUMENTARIA PARA FUNCIONARIOS Y FUNCIONARIAS DE LA ILUSTRE MUNICIPALIDAD DE SAN ROSENDO"}
+{"cat": "531027", "prod": "53102710", "t": "Uniformes corporativos Estolas Institucionales"}
+{"cat": "421516", "prod": "42151627", "t": "Espejos o mangos de espejos dentales Mango de espejo hexagonal, acero inoxidable, uso odontológico."}
+{"cat": "421516", "prod": "42151631", "t": "Sondas dentales Sonda de caries curvas, acero inoxidable."}
+{"cat": "421516", "prod": "42151623", "t": "Fórceps de dentista Pinzas Meriam bianguladas, uso odontológico, acero inoxidable."}
+{"cat": "421525", "prod": "42152508", "t": "Jeringas dentales, agujas o jeringas con agujas Bandejas de examen acanalada uso odontológico, acero inoxidable. Tamaño referencial 20 x10 x2 cm."}
+{"cat": "421525", "prod": "42152508", "t": "Jeringas dentales, agujas o jeringas con agujas Jeringa carpule de carga posterior, mango en T, sin hemoaspirador. "}
+{"cat": "421516", "prod": "42151601", "t": "Accesorios o piezas de repuesto para instrumentos dentales Turbina dental midwest, 30W potencia, sistema cabezal limpio, válvula anti-retorno, cuatro salidas de spray, autoclavable a 135°C, sistema push o ultra push, válvula reguladora de presión integrada, cuerpo de acero  inoxidable, rodamientos de cerámica, ve"}
+{"cat": "421522", "prod": "42152208", "t": "Motores de laboratorio dental o accesorios Micromotor dental, conexión midwest, velocidad maxima 22.000 - 25.000, autoclavable a 135°C, presión de trabajo 50 libras, debe teener posibilidad de irrigación externa. ADJUNTAR FICHA TÉCNICA "}
+{"cat": "421516", "prod": "42151624", "t": "Piezas de mano dentales o accesorios Contraangulo, velocidad 1:1, velocidad máxima 30.000 RPM, sistema push o ultra push, montado en bujes, sistema cabezal limpio, cabeza acero inoxidable, autoclavable a 135°C. ADJUNTAR FICHA TÉCNICA "}
+{"cat": "421826", "prod": "42182602", "t": "Lámparas o luces instaladas de examen médico Lámpara de fotocurado, con batería integrada de ion litio, 120 minutos de funcionamiento continuo, carcasa de plástico resistente, guía de luz de 10 mm con revestimiento oscuro, que permita giro de 360°, rango longitud de onda 430 - 480 nm. Tiempos de fot"}
+{"cat": "921215", "prod": "92121504", "t": "Guardias de seguridad SERVICIO DE SEGURIDAD PRIVADA FERIA NAVIDEÑA Y AÑO NUEVO, SEGUN BASES TECNICAS ADJUNTAS"}
+{"cat": "261417", "prod": "26141702", "t": "Dosímetros Dosímetro Cuerpo Completo (valor trimestral)"}
+{"cat": "861017", "prod": "86101710", "t": "Servicios de formación en educación Curso de actualización de cirugía maxilofacial para 67 cirujanos dentistas en Etapa de Destinación y Formación (EDF), modalidad online, conforme a las especificaciones técnicas establecidas en las bases de licitación."}
+{"cat": "231818", "prod": "23181801", "t": "Equipo y suministros para elaboración de café GABSRA. Servicio de arriendo de 1 máquina de café e insumos para ser instalada en el Gabinete del Sr. Subsecretario de Redes Asistenciales."}
+{"cat": "721317", "prod": "72131701", "t": "Pavimentación de carreteras o caminos Ejecución de obra \"Bacheo de calzada y veredas en diversas calles, comuna de Doñihue\": bacheo de calzada de hormigón y asfalto y de veredas, a suma alzada, según Bases, EETT y planos aprobados por D.A. N° 02168/2026."}
+{"cat": "422039", "prod": "42203901", "t": "Dosímetros de radiación médica SERVICIO TRIMESTRAL DE DOSIMETRÍA PERSONAL, POR 36 MESES"}
+{"cat": "601312", "prod": "60131202", "t": "Oboes INSUMOS PARA MADERAS"}
+{"cat": "601312", "prod": "60131201", "t": "Clarinetes INSUMOS PARA CLARINETES"}
+{"cat": "601311", "prod": "60131101", "t": "Trompetas INSUMOS PARA BRONCES"}
+{"cat": "601315", "prod": "60131506", "t": "Accesorios para instrumentos de cuerdas INSUMOS PARA CUERDAS"}
+{"cat": "601315", "prod": "60131503", "t": "Cuerdas o uñetas para instrumentos CUERDAS PARA ARPA"}
+{"cat": "781118", "prod": "78111804", "t": "Servicios de taxi El Departamento de Pregrado, dependiente de la Vicerrectoría de Asuntos Académicos, solicita la contratación del servicio de transporte en Taxi Ejecutivo (radiotaxi), Van y Minibús."}
+{"cat": "761218", "prod": "76121801", "t": "Servicios de reciclaje Servicio de retiro de residuos reciclables por 12 meses."}
+{"cat": "511817", "prod": "51181706", "t": "Hidrocortisona Tribenósido 5g/100g + Lidocaína 2g/100g. Crema x 30g. igual o Similar a Gesiproct. . ... ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Linagliptina 5 mg. Caja x 30 comp. iogual o Similar a Trayenta. . . ... ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Linagliptina 2.5 mg + Metformina 1000 mg. Caja x 60 comp. igual o Similar a Trayenta Duo. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511419", "prod": "51141903", "t": "Carbonato de litio Litio carbonato 300mg. Caja x 50 comp. Rec. igual o Similar a Kalitium. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511719", "prod": "51171911", "t": "Sucralfato Mesalazina 500 mg. Caja x 10 supositorios. igual o Similar a LETYN CD. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511719", "prod": "51171911", "t": "Sucralfato Mesalazina 500 mg. Caja x 100 comp.rec. Entérico. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511420", "prod": "51142009", "t": "Metamizol sódico Metamizol sódico 250 mg. Caja x 5 supositorios.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Metformina 850 mg + Sitagliptina 50 mg. Caja x (56-60) comp. Rec. igual o Similar a Sitareddys M. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Metformina 1000 mg + Sitagliptina 50 mg. Caja x 56 comp. Similar a Janumet.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Metformina 500 mg + Sitagliptina 50mg. Caja x 28 comp. igual o Similar a Janumett.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Metformina 500 mg + Vildagliptina 50mg. Caja x (56-60) comp. Rec. igual o Similar a GALVUS MET.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511116", "prod": "51111610", "t": "Metotrexato Metotrexato 2.5 mg. Caja x 100 comp... . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511016", "prod": "51101603", "t": "Metronidazol Metronidazol 0,75g/100g. Gel tópico x 30 g, por unidad... . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511016", "prod": "51101603", "t": "Metronidazol Metronidazol 500 mg. Caja x 20 comp. igual o similar a Metropast.... . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "512015", "prod": "51201503", "t": "Mofetil micofenolato Micofenolato mofetilo 500 mg. Caja x 50 comp. rec. Similar a Inmufen. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511426", "prod": "51142618", "t": "Clorhidrato de metilfenidato Modafinilo 200 mg. Caja x 30 comp. igual o similar a MODAVITAE. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511616", "prod": "51161639", "t": "Clorhidrato de olopatadina Olopatadina 0.2g/100ml. Solución oftálmica x 5 ml. Similar a ALERGIOL FORTE... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos Omega 3,6,9. caja x 60 cápsulas. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511619", "prod": "51161901", "t": "Hidrocloruro de oximetazolina Oximetazolina 0.05%. Solución nasal x 15 ml. igual o Similar a Oxilin. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511618", "prod": "51161812", "t": "Combinación clorfeniramina-acetaminofeno Paracetamol 80 mg. Caja x 20 comp. Mast. .. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511320", "prod": "51132001", "t": "Pentoxifilina Pentoxifilina 400 mg. Caja x 30 comp. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511421", "prod": "51142128", "t": "Piroxicam Piroxicam 20 mg. Caja x 10 comp. .. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas"}
+{"cat": "511716", "prod": "51171631", "t": "Preparado laxante de polietilenglicol Polietilenglicol 4 mg/ml + Propilenglicol 3mg/ml. Solución oftálmica x 10 ml. igual o Similar a Systane ultra. .. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas"}
+{"cat": "511425", "prod": "51142508", "t": "Diclorhidrato de pramipexol Pramipexol 0.25 mg. Caja x 30 comp. igual o similar a Biopsol. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511415", "prod": "51141526", "t": "Primidona Primidona 250 mg. Caja x 50 comp. . . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511717", "prod": "51171702", "t": "Hidrocloruro de loperamida Lactobacillus case+ lactobacillus rhamnosus+ streptococcus thermophilus+ bifidobacterium lactobacillus acidophilus+ bifidobacterium longum+ lactobacillus bulgaricus,  1x 108 UFC. Caja x 30 cápsulas. igual o Similar a Multiflora plus"}
+{"cat": "511717", "prod": "51171709", "t": "Levadura Saccharomyces boulardii Saccharomyces Boular 250 mg. Caja x 10 cápsulas. igual o Similar a ENTEROL S. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511919", "prod": "51191906", "t": "Solución de rehidratación oral Sales rehidratantes sodio 60 meq/L. Polvo solucion oral x 10 sobres. igual o Similar a T.R.O.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511716", "prod": "51171622", "t": "Fosfato sódico Bifosfato de sodio 48 g/100 ml+ fosfato de sodio 18g/100ml. Solución oral x 45 ml. igual o Similar a Fleet Fosfosoda... . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511716", "prod": "51171622", "t": "Fosfato sódico Fosfato de sodio Monobasico 19 g+ Fosfato de sodio dibásico 7g+ sodio 4.4g x  dosis. Solución x 133 ml. Similar a CASEN enema adulto. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511719", "prod": "51171911", "t": "Sucralfato Sulfasalazina 500 mg. Caja x 100 comp. Rec. Enterico.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "512015", "prod": "51201504", "t": "Tacrolimo Tacrolimus 0.5 mg. Caja x 50 cápsulas. igual o Similar a CROLIM... . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511118", "prod": "51111809", "t": "Tamoxifeno Tamoxifeno 20 mg. Caja x 30 comp. igual o Similar a Nolvadex D. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511915", "prod": "51191510", "t": "Furosemida Furosemida 40 mg+ amiloride 5 mg. Caja x 20 comp. renurados. igual o Similar a Hidrium. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511018", "prod": "51101818", "t": "Hidrocloruro de terbinafina Terbinafina 1g/100g. Crema x 20 g, por unidad. . . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511015", "prod": "51101582", "t": "Tobramicina Tobramicina 0.3g/100ml. Solución oftálmica gotas x 5ml. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511415", "prod": "51141528", "t": "Topiramato Topiramato 100 mg. Caja x 28 comp. rec.  igual o similar a TOPIVITAE. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511817", "prod": "51181722", "t": "Fluticasona Umeclidinio 55 mcg + Vilanterol 22 mcg. Polvo para inhalación x 30 dosis, por unidad. igual o Similar a Anoro.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511316", "prod": "51131604", "t": "Warfarina sódica Warfarina 5 mg. Caja x 30 comp. igual o Similar a CAVAMED. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511016", "prod": "51101603", "t": "Metronidazol Zinc 10 mg. Caja x 40 comp.  igual o Similar a Altazinc.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511016", "prod": "51101603", "t": "Metronidazol Zinc 15 mg. Caja x 30  comp. igual o Similar a NUMZIT. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511416", "prod": "51141604", "t": "Mirtazapina Agomelatina 25 mg. Caja x 25 comp. Rec. igual o Similar  a Valdoxan.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511426", "prod": "51142618", "t": "Clorhidrato de metilfenidato Armodafinilo 150 mg. Caja x 30 comp. igual o Similar a NUVIGIL.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511425", "prod": "51142508", "t": "Diclorhidrato de pramipexol Pramipexol 0.375 mg. Caja x 30 comp. Lib. Prol. iogual o Similar a INTAXEL ER. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos Vitamina A 3300U.I+Vit. C 200 mg+Vitamina E 75 U.I + Vit. B2 5 mg+ Zinc 30 mg+ Selenio 0.02 mg+Cobre 2 mg+ Manganeso 5 mg+Luteína Zeaxantina 2 mg. Caja x 30 comp. Rec. igual o Similar a  VISION."}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos Aceite de pescado 0.5 g+ Gelatina+ Glicerina+ cera de abejas+ hierro 100mg+ Zinc 67 mg. Caja x 30 cápsulas blandas. igual o Similar a regenesis."}
+{"cat": "512015", "prod": "51201504", "t": "Tacrolimo Tacrolimus 1 mg. Caja x 100 cápsulas. igual o Similar a CROLIM. .. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Empaglifozina 10 mg. Caja x 30 comp. Rec. igual o Similar a Jardiance. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511016", "prod": "51101603", "t": "Metronidazol Rifaximina 200 mg. Caja x 12 comp. Rec. igualo Similar a NORMIX.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511417", "prod": "51141722", "t": "Fumarato de quetiapina Aripiprazol 5 mg. Caja x 28 comp. igual o Similar a ARIVITAE. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511416", "prod": "51141606", "t": "Hidrocloruro de trazodona Trazodone 25 mg. Caja x 30 comp. igual o Similar a TRONSALAN.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511415", "prod": "51141528", "t": "Topiramato Topiramato 50 mg. Caja x (28-30) comp. Rec. igualo Similar a TOPIVITAE. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511818", "prod": "51181813", "t": "Estradiol Estradiol 1.5 mg + Acetato Nomegestrol 2.5 mg. Caja x 28 comp. igual o Similar a Marilow.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "512411", "prod": "51241120", "t": "Lágrimas artificiales Carbomer 3 mg/g + Sorbitol 50 mg/g. Gel oftálmico x 10 g. igual o Similar a Lacryvisc.... . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511217", "prod": "51121733", "t": "Valsartan Valsartán 50 mg. Caja x 28 comp. Rec. igualo Similar a Entresto.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511217", "prod": "51121765", "t": "Metoprolol Metoprolol 25 mg. Caja x 30 comp. Lib. Prol. igual o Similar a Betaloc.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511217", "prod": "51121733", "t": "Valsartan Valsartán 100 mg. Caja x 56 comp. Rec. igual o Similar a Entresto.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Dapaglifozina 10 mg+ Metformina 1000 mg. Caja x 28 comp. rec. Lib. Prol. igual o Similar a Xigduo XR.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511015", "prod": "51101536", "t": "Clorhidrato de moxifloxacina Moxifloxacina 400 mg. Caja x (7-10) comp. rec. .. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511817", "prod": "51181722", "t": "Fluticasona Fluticasona 92 mcg+ Umcledinio 55 mcg+ Vilanterol mcg.  Polvo para inhalación x 30 dosis, por unidad. igual o Similar a Trelegy."}
+{"cat": "511015", "prod": "51101597", "t": "Mupirocina Mupirocina 2 %. Crema x 15 g, por unidad. igual o Similar a MUPAX.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511417", "prod": "51141706", "t": "Citicolina Citicolina 1000 mg. Solución oral x 10 ml sobre. Caja x 10 sobres. igual o Similar a CITIVITAE. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511217", "prod": "51121733", "t": "Valsartan Valsartán 200 mg. Caja x 56 comp. Rec. igual o Similar a Entresto.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511118", "prod": "51111802", "t": "Bicalutamida Bicalutamida 50 mg. Caja x 30 comp. Rec. . . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511817", "prod": "51181722", "t": "Fluticasona Fluticasona 184 mcg+ Vilanterol 22 mcg. Polvo Inhalación x 30 dosis, por unidad. igual o Similar a Relvar.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511517", "prod": "51151702", "t": "Tartrato de brimonidina Brimonidina 0.2%.  Solución oftálmica x 5 ml. igual o Similar a ALPHAGAN.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511118", "prod": "51111820", "t": "Letrozol Letrozol 2.5 mg. Caja x 30 comp, rec. . . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511216", "prod": "51121611", "t": "Trimetazidina Trimetazidina Diclorhidrato 35 mg. Caja x 30 comp. Lib. Prol. igual o Similar a Vastarel MR. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511718", "prod": "51171806", "t": "Metoclopramida Levosulpirida 25 mg. Caja x 20 comp. igual o Similar a Dislep.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511218", "prod": "51121819", "t": "Ezetimiba Ezetimiba 10 mg + rosuvastatina 10 mg. Caja x 30 comprimidos. igual o Similar a ROSUVITAE PLUS.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511218", "prod": "51121819", "t": "Ezetimiba Ezetimiba 10 mg + rosuvastatina 20 mg. Caja x 30 comprimidos. igual o Similar a ROSUVITAE PLUS .. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511616", "prod": "51161630", "t": "Maleato de clorfeniramina Clorfenamina 2mg/5ml+ paracetamol 125mg/5ml+Pseudoefedrina 30mg/5ml. Jarabe x 100 ml igual o Similar a NASTUL Compuesto. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511915", "prod": "51191507", "t": "Espironolactona Isotretinoina 20 mg. Caja x 30 capsulas blandas. .. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos Colecalciferol 50.000 UI. Caja x 4 cápsulas blandas. igual o Similar a VIDYN. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "511618", "prod": "51161812", "t": "Combinación clorfeniramina-acetaminofeno PARACETAMOL 400 MG + NOSCAPINA 10 MG + CAFEINA 33 MG + VITAMINA C 50 MG. POLVO SOLUCION ORAL X SOBRE 5G CAJA X 60 SOBRES. igual o SIMILAR A TAPSIN COMPUESTO LIMONADA DIA."}
+{"cat": "511618", "prod": "51161812", "t": "Combinación clorfeniramina-acetaminofeno PARACETAMOL 400 MG + NOSCAPINA 10 MG + CAFEINA 30 MG + VITAMINA C 50 MG. + CLORFENAMINA 4 MG. POLVO SOLUCION ORAL X SOBRE 5G CAJA X 60 SOBRE. SIMILAR A TAPSIN COMPUESTO LIMONADA NOCHE."}
+{"cat": "511817", "prod": "51181722", "t": "Fluticasona Fluticasona 184 mcg+ Umcledinio 55 mcg+ Vilanterol 22mcg.  Polvo para inhalaciónx30 dosis por unidad. igual o Similar a Trelegy.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511518", "prod": "51151817", "t": "Clorhidrato de tamsulosina Solifenacina 6 mg  + Tamsulosina 0.4 mg. Caja x 30 comp. Rec. Bicapa lib mod. igual o Similar a SULIX PLUS.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511815", "prod": "51181517", "t": "Clorhidrato de metformina Empagliflozina 25 mg+ Linagliptina 5 mg. Caja x 30 comp.Rec. igual o Similar a GLYXAMBI... . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\")"}
+{"cat": "511915", "prod": "51191507", "t": "Espironolactona Eplerenona 50 mg. Caja x 30 comp. Rec. igual o Similar a Inspra.. . . ... . . . . ... .. . ... (Se adjuntan bases administrativas y técnicas \"leerlas p/ofertar\") "}
+{"cat": "432115", "prod": "43211508", "t": "Computadores personales COMPUTADOR (TORRE PC ENSAMBLADA)"}
+{"cat": "432315", "prod": "43231505", "t": "Software de gestión de recursos humanos Software de gestión laboral de250 funcionarios de Jefatura Nacional de Bienestar (remuneraciones, asistencia, firma electrónica y desempeño) por 24 meses, según especificaciones en cuadro de postulación adjunto obligatorio"}
+{"cat": "432115", "prod": "43211507", "t": "Computadores de escritorio ARRIENDO DE EQUIPAMIENTO CON OPCIÓN DE COMPRA PARA SALA DE MONITOREO"}
+{"cat": "781118", "prod": "78111808", "t": "Arriendo de vehículos ARRIENDO DE CAMIONETA CON CONDUCTOR"}
+{"cat": "423119", "prod": "42311903", "t": "Drenaje médico de incisión SISTEMA DE DRENAJE LUMBAR, longitud mínima 40 mm, diámetro interno de catéter lumbar 0.76 mm(2.28Fr) y externo 1, 6 mm (4.8Fr).Segun especificaciones tecnicas pag 45"}
+{"cat": "423119", "prod": "42311903", "t": "Drenaje médico de incisión SISTEMA DE DERIVATIVA VENTRICULO -PERITONEAL Segun especificaciones tecnicas pag 45-46"}
+{"cat": "423119", "prod": "42311903", "t": "Drenaje médico de incisión SISTEMA DE PASADORES DE VÁLVULAS, Segun especificaciones tecnicas pag 46"}
+{"cat": "423119", "prod": "42311903", "t": "Drenaje médico de incisión (34020722) SISTEMA DE DERIVACION LUMBOPERITONEAL Segun especificaciones tecnicas pag 46-47"}
+{"cat": "401017", "prod": "40101701", "t": "Aires acondicionados PROVISIÓN E INSTALACIÓN DE TRES EQUIPOS SPLIT INVERTER PARA HOSPITAL COMUNITARIO CRISTINA CALDERÓN DE PUERTO WILLIAMS"}
+{"cat": "911115", "prod": "91111502", "t": "Servicios de lavandería servicio de lavado de ropa de trabajo para los funcionarios que desempeña funciones en el laboratorio de Punta arenas. El proveedor podrá ingresar el VALOR $1 en la línea de oferta de Mercado publico y completar y adjuntar Anexo N° 2 ECONOMICO\n"}
+{"cat": "102000", "prod": "102101001", "t": "Licitación Pública de Consultoria Licitación Pública de Consultoria"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles CONTRATACIÓN DEL SERVICIO DE OBRAS MENORES: SUMINISTRO E INSTALACIÓN DE VENTANAS DE PVC CON TERMOPANEL Y PERSIANAS ROLLER PARA LA DELEGACIÓN PRESIDENCIAL PROVINCIAL DE AYSÉN"}
+{"cat": "551015", "prod": "55101509", "t": "Libros de texto educativos o vocacionales Adquisición de textos escolares y de lectura para los establecimientos educacionales, Según resolución N.°428-26 Y SU ANEXO ECONOMICO."}
+{"cat": "211017", "prod": "21101702", "t": "Segadoras de heno ADQUISICION DE MAQUINARIAS PARA EL DEPARTAMENTO DE PARQUES Y JARDINES. LO ANTERIOR, CONFORME A LISTADO DE PRODUCTOS CONTENIDO EN EL PUNTO N°2 DE LAS BASES ADMINSTRATIVAS Y TECNICAS, LINEA N°1, PRESUPUESTO MAX. $ 34.100.000.- impuestos incluidos"}
+{"cat": "211015", "prod": "21101505", "t": "Máquinas sachadoras ADQUISICION DE MAQUINARIAS PARA EL DEPARTAMENTO DE PARQUES Y JARDINES. LO ANTERIOR, CONFORME A LISTADO DE PRODUCTOS CONTENIDO EN EL PUNTO N°2 DE LAS BASES ADMINSTRATIVAS Y TECNICAS, LINEA N°2, PRESUPUESTO MAX. $ $ 12.200.000.- impuestos incluidos."}
+{"cat": "701220", "prod": "70122009", "t": "Servicios hospitalarios para animales EXTERNALIZACIÓN DEL SERVICIO DE ESTERILIZACIÓN VETERINARIA COMUNAL CON IMPLANTACIÓN DE MICROCHIP"}
+{"cat": "432121", "prod": "43212110", "t": "Impresoras multifunción o multifuncionales LINEA 1: 2 equipos multifuncionales (impresion, copia y escaner), uno para el SOME del Cesafm Ercilla y uno para el Cecosf."}
+{"cat": "432121", "prod": "43212110", "t": "Impresoras multifunción o multifuncionales LINEA 2: 4 impresoras para los box medicos y el ervicio de Urgencia de ambos establecimientos."}
+{"cat": "811015", "prod": "81101513", "t": "Servicios de gestión de la construcción Servicio de Mantencion, Reparacion Inmueble,Infraestructura, Maquinaria y Equipos"}
+{"cat": "251915", "prod": "25191513", "t": "Kit de mantenimiento de vehículo de soporte en tierra SERVICIO DE MANTENCIÓN Y REPARACIONES DE CAMIONES Y MAQUINARIA MUNICIPAL"}
+{"cat": "211022", "prod": "21102202", "t": "Equipo de explotación forestal Servicio de arriendo de equipos mecanizados (skidder montado sobre camión),destinados a apoyar las labores de prevención y combate de incendios forestales, junto con otras actividades operativas del DEPRIF Región del Maule"}
+{"cat": "211022", "prod": "21102202", "t": "Equipo de explotación forestal Servicio de arriendo de equipos mecanizados (skidder montado sobre camión),destinados a apoyar las labores de prevención y combate de incendios forestales, junto con otras actividades operativas del DEPRIF Región del Maule"}
+{"cat": "841316", "prod": "84131602", "t": "Seguros de enfermedades y hospitalización SISTEMA DE REEMBOLSO DE GASTOS EN SALUD PARA SOCIOS DE BIENESTAR”."}
+{"cat": "432315", "prod": "43231513", "t": "Paquetes de software para oficinas Renovación de Licencias Adobe"}
+{"cat": "432315", "prod": "43231513", "t": "Paquetes de software para oficinas Renovación Licencias Varias"}
+{"cat": "432315", "prod": "43231513", "t": "Paquetes de software para oficinas Renovación Licencia Preps"}
+{"cat": "131020", "prod": "13102030", "t": "Cloruro de polivinilo (PVC) LÁMINAS PAI DE 700 MICRONES, CIRCULAR, CON MANGO PLÁSTICO."}
+{"cat": "432115", "prod": "43211503", "t": "Notebook, laptop o computador portátil excepto Tablet PC NOTEBOOK"}
+{"cat": "461815", "prod": "46181525", "t": "Ropa impermeable protectora o ropa para ambiente húmedo INDUMENTARIA"}
+{"cat": "561017", "prod": "56101703", "t": "Escritorios ESCRITORIO"}
+{"cat": "141115", "prod": "14111509", "t": "Artículos de papelería MATERIAL DE OFICINA"}
+{"cat": "111416", "prod": "11141608", "t": "Residuos o desperdicios peligrosos CONVENIO SERVICIO DE RETIRO, TRANSPORTE Y DISPOSICION FINAL DE RESIDUOS DE ATENCION DE SALUD (REAS) DEL HOSPITAL DE SALAMANCA 2027"}
+{"cat": "421916", "prod": "42191601", "t": "Alumbrado de la sala de paciente o accesorios HABILITACION SALAS TEA"}
+{"cat": "721016", "prod": "72101607", "t": "Instalación o reparación de paredes Mejoramiento y Habilitación de Cierres Perimetrales, Iluminación y Limpieza de Campamento Operativo del Recinto Fiscal de Pomaire, Provincia de Melipilla"}
+{"cat": "241016", "prod": "24101605", "t": "Equipo de carga TRASPALETA ELÉCTRICA DE BASE ANCHA (TIPO STRADDLE), ESPECIFICACIONES TÉCNICAS ADJUNTAS."}
+{"cat": "241016", "prod": "24101615", "t": "Rampas de carga APILADOR ELÉCTRICO DE BASE ANCHA (TIPO STRADDLE), ESPECIFICACIONES TÉCNICAS ADJUNTAS."}
+{"cat": "801416", "prod": "80141607", "t": "Producción de eventos SERVICIO DE GESTIÓN PARA LA REALIZACIÓN DE UNA ACTIVIDAD CULTURAL “NOCHE CNAC” EN EL CENTRO NACIONAL DE ARTE CONTEMPORÁNEO."}
+{"cat": "731521", "prod": "73152101", "t": "Servicio de mantenimiento de equipo de fabricación Servicio de mantención correctiva para equipo ICP Masa TAG 8138, pertenecientes a la Sección Química Ambiental del Instituto de Salud Pública de Chile."}
+{"cat": "432315", "prod": "43231512", "t": "Software de gestión de licencias ARRIENDO DE LICENCIAS DIGITALES"}
+{"cat": "422953", "prod": "42295305", "t": "Torniquetes quirúrgicos o ocluderes vasculares o ligadores o accesorios 340-1317 SENSOR VENOSO DE LINEA 1/2 P/MAQ SISTEMA MONITOR CDI ONE VIEW O SU EQUIVALENCIA"}
+{"cat": "422953", "prod": "42295305", "t": "Torniquetes quirúrgicos o ocluderes vasculares o ligadores o accesorios 340-1318 CARTUCHO MEDICION ELECTROLITO LINEA P/SISTE MONIT ONEVIEW O SU EQUIVALENTE"}
+{"cat": "721016", "prod": "72101607", "t": "Instalación o reparación de paredes “Adecuaciones Dependencias Juzgado Policía Local”, ubicada en Av. Ignacio Carrera Pinto, comuna de Hualañé, con el objeto de acondicionar los espacios de atención y mejorar las condiciones de\r\nfuncionamiento del recinto"}
+{"cat": "121419", "prod": "12141904", "t": "Oxígeno O SERVICIO DE SUMINISTRO Y ARRIENDO DE CILINDROS DE O2\r\nPARA EL HOSPITAL JUANA ROSS DE\r\nEDWARDS DE PEÑABLANCA"}
+{"cat": "721029", "prod": "72102905", "t": "Mantenimiento de armazón de un revestimiento "}
+{"cat": "821415", "prod": "82141502", "t": "Diseño gráfico Remitase al numeral 1.2 de las bases administrativas especiales.\r\n\"Equipamiento Tecnológico\""}
+{"cat": "251118", "prod": "25111807", "t": "Botes de goma (Dinguis) ADQUISICIÓN DE UN BOTE SEMIRIGIDO SEGUN ESPECIFICACIONES QUE SE INDICAN"}
+{"cat": "301216", "prod": "30121601", "t": "Asfalto SERVICIO DE REPARACIÓN ESTRUCTURAL DE PAVIMENTO ASFÁLTICO EN MULTICANCHA, SEGÚN ESPECIFICACIONES EN BASES TÉCNICAS"}
+{"cat": "432315", "prod": "43231512", "t": "Software de gestión de licencias ADQUISICIÓN Y RENOVACIÓN DE LICENCIAS ADOBE ACROBAT PRO PARA EQUIPOS "}
+{"cat": "721023", "prod": "72102305", "t": "Servicios de reparación, mantenimiento o reparación de aire acondicionado Servicio de Mantención y Reparación de Equipos de Aire Acondicionado"}
+{"cat": "422018", "prod": "42201811", "t": "Dispositivos de control de calidad o calibración para equipo radiográfico médico ARRIENDO DE COMPROBADOR DE SISTEMAS RADIOGRÁFICOS, DE ACUERDO A BASES ADMINISTRATIVAS Y TÉCNICAS DE LA LICITACIÓN."}
+{"cat": "422951", "prod": "42295104", "t": "Equipo electro quirúrgico o electro cauterio o accesorios o productos relacionados ARRIENDO DE COMPROBADOR UNIDADES ELECTROQUIRÚRGICAS, DE ACUERDO A BASES ADMINISTRATIVAS Y TÉCNICAS DE LA LICITACIÓN."}
+{"cat": "421817", "prod": "42181706", "t": "Pantallas de monitorización de electrocardiografía (ECG) ARRIENDO SIMULADOR MULTIPARÁMETROS CON SONDA DE SIMULACIÓN SpO2, DE ACUERDO A BASES ADMINISTRATIVAS Y TÉCNICAS DE LA LICITACIÓN."}
+{"cat": "721023", "prod": "72102304", "t": "Mantenimiento o reparación de sistemas de fontanería, gasfitería Se requiere Servicio de Reparación de Fuga en Estadio Sausalito. Con visita a terreno de carácter voluntario. Especificaciones técnicas en adjuntos."}
+{"cat": "451215", "prod": "45121506", "t": "Cámaras fotográficas de videoconferencia Contratación del servicio arriendo cámaras inteligentes"}
+{"cat": "831115", "prod": "83111511", "t": "Servicio de comunicación IP SERVICIO DE TELEFONIA IP, PARA EL CENTRO DE DETENCION PREVENTIVA DE YUNGAY,GENDARMERIA DE CHILE."}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) NTP MAGISTRAL P1-250 ML CON BAJADA FOTOSENSIBLE INSTALADA"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) NTP MAGISTRAL P251-500 ML CON BAJADA FOTOSENSIBLE INSTALADA\r\nPARA LA ADMINISTRACIÓN.\r\n"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) NTP MAGISTRAL PED 501 - 1000 ML CON BAJADA FOTOSENSIBLE INSTALADA PARA LA ADMINISTRACIÓN.\r\n"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) NTP MAGISTRAL P-1001-2000 ML CON BAJADA FOTOSENSIBLE INSTALADA"}
+{"cat": "511916", "prod": "51191603", "t": "Soluciones de nutrición o de nutrición parenteral total (NPT) NTP MAGISTRAL P-2001-3000 ML CON BAJADA FOTOSENSIBLE INSTALADA "}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias EMULSIÓN LIPÍDICA DE ACEITE DE PESCADO ALTAMENTE REFINADO AL 10%, PARA ADMINISTRACIÓN INTRAVENOSA."}
+{"cat": "851219", "prod": "85121902", "t": "Farmacias DIPÉPTIDO N (2)-L-ALANIL-L-GLUTAMINA AL 20%, SOLUCIÓN CONCENTRADA PARA PERFUSIÓN INTRAVENOSA."}
+{"cat": "432315", "prod": "43231512", "t": "Software de gestión de licencias Licencias Adobe, en modalidad SAAS, y los servicios de soporte y manteción de dichas licencias. (Segundo llamado)"}
+{"cat": "104000", "prod": "104101001", "t": "Licitación Pública de Obra MINVU Licitación Pública de Obra MINVU"}
+{"cat": "861417", "prod": "86141702", "t": "Tecnología audiovisual EQUIPAMIENTO AUDIOVISUAL PARA UNIDAD DE COMUNICACIONES (SOLPED 10033012)"}
+{"cat": "511416", "prod": "51141601", "t": "Hidrocloruro de amitriptilina AMITRIPTILINA 12,5 MG/ CLORDIAZEPOXIDO 5 MG"}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos LACTASA MASTICABLE"}
+{"cat": "421719", "prod": "42171903", "t": "Cajas de medicamentos de servicios médicos de urgencia DOMPERIDONA 10 MG"}
+{"cat": "511715", "prod": "51171505", "t": "Simeticona SIMETICONA 60 MG"}
+{"cat": "511718", "prod": "51171806", "t": "Metoclopramida METOCLOPRAMIDA 5MG, SIMETICONA 104 MG, CLORODIAZEPOXIDO 5 MG"}
+{"cat": "511719", "prod": "51171909", "t": "Omeprazol OMEPRAZOL 20 MG"}
+{"cat": "511719", "prod": "51171911", "t": "Sucralfato SUCRALFATO 10%"}
+{"cat": "511518", "prod": "51151817", "t": "Clorhidrato de tamsulosina SOLIFENACINA 5 MG"}
+{"cat": "511618", "prod": "51161811", "t": "Bromhexina AMBROXOL  30 MG / 5 ML"}
+{"cat": "511027", "prod": "51102707", "t": "Gluconato de clorhexidina CLORHEXIDINA CLORHIDRATO 5 MG + NOSCAPINA 10 MG"}
+{"cat": "511817", "prod": "51181701", "t": "Betametasona DEXCLORFENAMINA 2 MG, BETAMETASONA 0,25 MG"}
+{"cat": "511919", "prod": "51191905", "t": "Suplementos vitamínicos HEDERA HELIX 35 MG / 5 ML"}
+{"cat": "511618", "prod": "51161801", "t": "Benzonatato MIEL/PALTO/EUCALIPTUS /ANÍS JARABE ADULTO"}
+{"cat": "511619", "prod": "51161901", "t": "Hidrocloruro de oximetazolina OXIMETAZOLINA 0,05%"}
+{"cat": "511618", "prod": "51161809", "t": "Citrato de oxolamina OXOLAMINA 50 MG / 5 ML"}
+{"cat": "511817", "prod": "51181713", "t": "Prednisona PREDNISONA 20 MG"}
+{"cat": "511817", "prod": "51181713", "t": "Prednisona PREDNISONA 5 MG"}
+{"cat": "511618", "prod": "51161801", "t": "Benzonatato PROPÓLEO/TOMILLO/EUCALIPTUS JBE 0% AZÚCAR"}
+{"cat": "511018", "prod": "51101811", "t": "Ketoconazol KETOCONAZOL 2%"}
+{"cat": "511823", "prod": "51182302", "t": "Somatropina SOMATOTROPINA 30 UI (10 MG) CARTRIDGE"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles CONEXIÓN DE INSTALACIONES SANITARIAS (AGUA POTABLE Y ALCANTARILLADO) EN SEDES MUNICIPALES."}
+{"cat": "721024", "prod": "72102402", "t": "Servicios de pintura de interiores PINTADO Y MANTENIMIENTO DE VV.FF. 2026-2027 GRUPO 3"}
+{"cat": "721024", "prod": "72102402", "t": "Servicios de pintura de interiores PINTADO Y MANTENIMIENTO DE VV.FF. 2026-2027 GRUPO 2"}
+{"cat": "921215", "prod": "92121504", "t": "Guardias de seguridad Servicios de guardias para el COSAM de Ovalle"}
+{"cat": "561015", "prod": "56101532", "t": "Mobiliario MOBILIARIO DE TRABAJO LIMPIO Y SUCIO CON ARTEFACTOS DE ACERO INOXIDABLE, GRIFERÍAS Y CONEXIÓN PARA CESFAM IGNACIO DOMEYKO"}
+{"cat": "721016", "prod": "72101601", "t": "Instalación o reparación de techos CONTRATACIÓN DEL SERVICIO RECUPERATIVO DEL SISTEMA DE CLIMATIZACIÓN Y TECHUMBRE DE LA CENTRAL ODONTOLÓGICA DE LA FUERZA AÉREA DE CHILE"}
+{"cat": "701416", "prod": "70141605", "t": "Servicios integrados de gestión de plagas CONVENIO CONTROL PREVENTIVO Y CORRECTIVO DE PLAGAS QUE PUEDAN DESARROLLARSE EN EL ESTABLECIMIENTO QUE INCLUYE SANITIZACION, DESRATIZACION Y DESINSECTACION"}
+{"cat": "721024", "prod": "72102405", "t": "Servicios de marcado de pavimentos SERVICIO DE DEMARCACIONES HORIZONTALES EN LA COMUNA DE TALCAHUANO"}
+{"cat": "721023", "prod": "72102301", "t": "Supervisión de instalación, ajuste o mantenimiento de calderas SERVICIO DE MANTENCIÓN PREVENTIVA Y CORRECTIVA DE EQUIPOS Y SISTEMAS DE PISCINA TEMPERADA DE LA MUNICIPALIDAD DE HUECHURABA"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles El proyecto considera el mejoramiento de la plaza Los Maitenes, ubicada en calle Reumen, entre Pasaje Cinco y Pasaje Uno, perteneciente a la Unidad Vecinal N°14 de la comuna de Pedro Aguirre Cerda."}
+{"cat": "801117", "prod": "80111707", "t": "Personal técnico Servicios de Técnicos en Enfermería Nivel Superior (TENS), jornada Diurna  según descripción Bases Administrativas Punto 4, Requerimientos"}
+{"cat": "801117", "prod": "80111707", "t": "Personal técnico Servicios de Técnicos en Enfermería Nivel Superior (TENS), turno, según descripción Bases Administrativas Punto 4, Requerimientos"}
+{"cat": "801116", "prod": "80111601", "t": "Personal administrativo temporal Servicios de  Administrativos, egún descripción Bases Administrativas Punto 4, Requerimientos"}
+{"cat": "801117", "prod": "80111707", "t": "Personal técnico Servicios de Técnico en Parvulario, según descripción Bases Administrativas Punto 4, Requerimientos"}
+{"cat": "801117", "prod": "80111707", "t": "Personal técnico Servicios de Técnico en Odontología, según descripción Bases Administrativas Punto 4, Requerimientos"}
+{"cat": "801117", "prod": "80111707", "t": "Personal técnico Técnicos en Alimentación, según descripción Bases Administrativas Punto 4, Requerimientos\r\n "}
+{"cat": "432315", "prod": "43231505", "t": "Software de gestión de recursos humanos Convenio para la Implementación de un Sistema de Control de Asistencia y Gestión de Turnos SICA, provisión e instalación de equipos biométricos, integración con la red biométrica existente e interoperabilidad con SIRH, Según Bases Adjuntas."}
+{"cat": "811416", "prod": "81141604", "t": "Servicios de transporte SE REQUIERE REALIZAR:\r\nCONVENIO DE ENTREGA DE PASAJES PARA TRASLADO DE PACIENTES Y COMETIDOS FUNCIONARIOS DEL HOSPITAL DE SALAMANCA,desde 01 de Enero 2027 al 31 de Diciembre 2027.\r\nRequirente:Subdirección Administrativa."}
+{"cat": "421425", "prod": "42142523", "t": "Agujas hipodérmicas 305080004 AGUJA HIPODÉRMICA DESECHABLE 19 G X 1 1/2\""}
+{"cat": "421426", "prod": "42142611", "t": "Jeringas tuberculinas 339060014 JERINGA TUBERCULINA CON AGUJA INTERCAMBIABLE 25 G X 0.625\" (APROX)"}
+{"cat": "422615", "prod": "42261505", "t": "Cuchillas y cuchillos para autopsia 308050035 HOJA BISTURI N.º 10"}
+{"cat": "422615", "prod": "42261505", "t": "Cuchillas y cuchillos para autopsia 308050036 HOJA BISTURI N.º 11"}
+{"cat": "422615", "prod": "42261505", "t": "Cuchillas y cuchillos para autopsia 308050157 HOJA BISTURI N.º 15"}
+{"cat": "422615", "prod": "42261505", "t": "Cuchillas y cuchillos para autopsia 308050160 HOJA BISTURI N°20"}
+{"cat": "422615", "prod": "42261505", "t": "Cuchillas y cuchillos para autopsia 308050158 HOJA BISTURI N.º 22"}
+{"cat": "422615", "prod": "42261505", "t": "Cuchillas y cuchillos para autopsia 308050037 HOJA BISTURI N°23"}
+{"cat": "422615", "prod": "42261505", "t": "Cuchillas y cuchillos para autopsia 308050159 HOJA BISTURI N.º 24"}
+{"cat": "421616", "prod": "42161608", "t": "Soluciones ‘dialsate’ de hemodiálisis CONVENIO SUMINISTRO SOLUCIONES HEMODIÁLISIS, LINEA N°1 DE LAS BASES TÉCNICAS, DEBE OFERTAR SEGÚN LO INDICADO EN ANEXO N°7"}
+{"cat": "801117", "prod": "80111715", "t": "Profesionales SERVICIOS PROFESIONALES DE\r\nAPOYO A LA GESTIÓN INFORMÁTICA PARA EL SERVICIO DE SALUD METROPOLITANO\r\nNORTE"}
+{"cat": "921015", "prod": "92101501", "t": "Servicios de vigilancia SERVICIO DE SEGURIDAD Y VIGILANCIA PARA EL HOSPITAL SAN LUIS DE BUIN-PAINE"}
+{"cat": "831217", "prod": "83121703", "t": "Servicios relacionados con Internet SERVICIO DE INTERNET URBANO PARA LOS DIVERSOS ESTABLECIMIENTOS EDUCACIONALES DE CALAMA Y TOC0PILLA DEPENDIENTES DEL SERVICIO LOCAL DE EDUCACIÓN PÚBLICA LICANCABUR POR UN PERIODO DE 36 MESES"}
+{"cat": "302018", "prod": "30201803", "t": "Unidades para contenedores Arriendo de 20 soluciones modulares habilitadas para oficinas y áreas clínicas del Hospital Santa Isabel de Lebu, por 36 meses, conforme a las especificaciones técnicas y demás antecedentes de la licitación."}
+{"cat": "851216", "prod": "85121609", "t": "Servicios quirúrgicos SERVICIO DE INTERVENCIONES QUIRÚRGICAS DE LA ESPECIALIDAD DE TÓRAX"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Según Especificaciones Técnicas.-"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Piña en rodajas tarro 565 grs."}
+{"cat": "501516", "prod": "50151604", "t": "Aceites comestibles de animal Aceite de maravilla envase litro"}
+{"cat": "501515", "prod": "50151513", "t": "Aceites de plantas y verduras comestibles Aceite de oliva envase litro"}
+{"cat": "501515", "prod": "50151513", "t": "Aceites de plantas y verduras comestibles Aceite vegetal envase litro"}
+{"cat": "501719", "prod": "50171903", "t": "Aceitunas Aceituna negra en conserva envase kgr"}
+{"cat": "501719", "prod": "50171903", "t": "Aceitunas Aceituna verde en conserva envase kgr"}
+{"cat": "502023", "prod": "50202310", "t": "Agua mineral Agua mineral con gas 1,5 lts "}
+{"cat": "502023", "prod": "50202310", "t": "Agua mineral Agua mineral similar Cachantun Strong botella 1,6 lts"}
+{"cat": "502023", "prod": "50202310", "t": "Agua mineral Agua mineral sin gas 1,5 lts"}
+{"cat": "502023", "prod": "50202310", "t": "Agua mineral Agua tónica similar Canadá Dry botella 1,5 lts"}
+{"cat": "501719", "prod": "50171904", "t": "Salsas picantes Ají chileno crema similar Don Juan envase 900 grs"}
+{"cat": "501719", "prod": "50171904", "t": "Salsas picantes Ají color envase 100 grs"}
+{"cat": "501715", "prod": "50171549", "t": "Hierbas secas Albahaca deshidratada envase 150 grs"}
+{"cat": "851416", "prod": "85141602", "t": "Medicina alternativa Alga NORI para Sushi 10 hojas"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Aliño completo molido envase 100 grs"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Anís estrella envase 100 grs"}
+{"cat": "502211", "prod": "50221101", "t": "Granos de Cereales Arroz grado 2 envase kgr"}
+{"cat": "501819", "prod": "50181905", "t": "Galletas dulces o pastelitos Avena instantánea similar Vivo 800 grs\r\n\r\n"}
+{"cat": "501615", "prod": "50161509", "t": "Productos de edulcorantes o azúcares naturales Azúcar flor envase kgr"}
+{"cat": "501615", "prod": "50161509", "t": "Productos de edulcorantes o azúcares naturales Azúcar granulada blanca envase kgr"}
+{"cat": "501615", "prod": "50161509", "t": "Productos de edulcorantes o azúcares naturales Azúcar rubia envase kgr"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Barra de chocolate similar a Prestigio 35 grs"}
+{"cat": "501618", "prod": "50161813", "t": "Dulces de chocolate o sustitutos Barra de chocolate similar a Sahne Nuss 30 grs"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Barra de chocolate similar a Snickers 53 grs"}
+{"cat": "502212", "prod": "50221202", "t": "Cereales en barra Barra proteínas similar a WIILD PROTEIN Berries 15 grs "}
+{"cat": "502212", "prod": "50221202", "t": "Cereales en barra Barra proteínas similar a WIILD PROTEIN Caramelo 15 grs "}
+{"cat": "502212", "prod": "50221202", "t": "Cereales en barra Barra proteínas similar a WIILD PROTEIN Chocolate 15 grs "}
+{"cat": "502212", "prod": "50221202", "t": "Cereales en barra Barra proteínas similar  WIILD PROTEIN Chocolate maní 15 grs "}
+{"cat": "502212", "prod": "50221202", "t": "Cereales en barra Barra proteínas similar a WIILD PROTEIN Lemon Pie 15 grs "}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida Bilz Zero envase 3 lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida Coca Cola Zero envase 3 lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida Fanta Zero envase 3 lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida Kem Piña Zero envase 3 lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida láctea similar Soprole Kéfir Berries envase lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida láctea similar Soprole Kéfir Natural envase lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida láctea similar Soprole Kéfir Tropical envase lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida Limón Soda Zero envase 3 lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida Pap Zero envase 3 lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida similar Canada Dry Ginger Ale botella 1,5 lts"}
+{"cat": "502023", "prod": "50202311", "t": "Bebidas Bebida Sprite Zero envase 3 lts"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos Bolsa de caramelos similar a Ambrosoli 100 und 430 grs"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Cacao amargo en polvo envase 150 grs"}
+{"cat": "502017", "prod": "50201706", "t": "Café Café liofilizado similar Juan Valdés chocolate 95 grs"}
+{"cat": "502017", "prod": "50201706", "t": "Café Café liofilizado similar Juan Valdés Dulce de leche 95 grs"}
+{"cat": "502017", "prod": "50201706", "t": "Café Café liofilizado similar Juan Valdés Tradicional 95 grs"}
+{"cat": "502017", "prod": "50201706", "t": "Café Café liofilizado similar Juan Valdés Avellana 95 grs"}
+{"cat": "502017", "prod": "50201706", "t": "Café Café liofilizado similar Juan Valdés Micro molido 150 grs"}
+{"cat": "502017", "prod": "50201706", "t": "Café Café liofilizado similar Juan Valdés Vanicanela 95 grs"}
+{"cat": "501618", "prod": "50161815", "t": "Chicle Caja de chicle similar a Big Time menta 20 und."}
+{"cat": "501618", "prod": "50161815", "t": "Chicle Caja de chicle similar a Big Time menta refrescante 20 und."}
+{"cat": "501618", "prod": "50161815", "t": "Chicle Caja de chicle similar a Big Time sandia 20 und."}
+{"cat": "501931", "prod": "50193104", "t": "Bases de sopa Caldo deshidratado carne similar Maggi 12 tabletas 120 grs"}
+{"cat": "501931", "prod": "50193104", "t": "Bases de sopa Caldo deshidratado costilla similar Maggi 12 tabletas 120 grs"}
+{"cat": "501931", "prod": "50193104", "t": "Bases de sopa Caldo deshidratado gallina similar Maggi 12 tabletas 132 grs"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos Calugas similar a Ambrosoli Old England Toffee 450 grs"}
+{"cat": "501618", "prod": "50161814", "t": "Dulces con azúcar o sustitutos Calugas similar a Ambrosoli Suny 360grs"}
+{"cat": "101018", "prod": "10101801", "t": "Camarones Camarón cocido congelado envase kgr"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Canela en polvo envase 250 grs"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Canela entera en rama envase 100 grs"}
+{"cat": "501120", "prod": "50112002", "t": "Carnes congeladas procesadas y preparadas Carne Cerdo chuleta congelado"}
+{"cat": "501120", "prod": "50112002", "t": "Carnes congeladas procesadas y preparadas Carne Cerdo costillar congelado "}
+{"cat": "501120", "prod": "50112002", "t": "Carnes congeladas procesadas y preparadas Carne Cerdo lomo congelado"}
+{"cat": "501120", "prod": "50112002", "t": "Carnes congeladas procesadas y preparadas Carne Cerdo pulpa congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Pollo pechuga deshuesada congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Pollo trutro corto congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Pollo Trutro entero congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno asiento congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno choclillo congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno lomo liso congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno lomo vetado congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne vacuno molida 6% congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno osobuco congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno plateada congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno pollo ganso congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno posta negra congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno posta rosada congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno sobrecostilla congelado"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Carne Vacuno tapa pecho congelado"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Cebolla en polvo envase 15 grs"}
+{"cat": "502211", "prod": "50221101", "t": "Granos de Cereales Cereal similar Zucaritas de Kelloggs envase 350 grs"}
+{"cat": "501931", "prod": "50193102", "t": "Preparado para postres Chancaca 400 grs"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Chips de chocolate semi amargo envase kgr"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Chocolate Blanco similar a Milka 90 grs"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Chocolate en polvo amargo envase 150 grs"}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Chorizo parrillero similar Llanquihue envase kgr"}
+{"cat": "501715", "prod": "50171548", "t": "Hierbas frescas Ciboulette deshidratado envase 2 grs"}
+{"cat": "501715", "prod": "50171548", "t": "Hierbas frescas Cilantro deshidratado similar a Badia envase 99 grs"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Cobertura de chocolate blanco envase de kgr"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Cobertura de chocolate negro semi amargo envase de kgr "}
+{"cat": "501016", "prod": "50101636", "t": "Fruta estable sin refrigerar Coco rallado envase 250 grs "}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Comino molido envase 100 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva  piñas en rodajas tarro 565 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva atún al agua tarro 140 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva atún en aceite tarro 140 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva champiñones laminados tarro 400 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva Choritos en agua tarro 425 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva chucrut en vinagre bolsa kgr"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva cocktail de frutas tarro 3 kgr"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva concentrado de tomate  lata 170 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva corazones de alcachofa enteros tarro 400 grs."}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva duraznos en mitades tarro 3 kgr"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva duraznos en mitades tarro 820 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva espárragos verdes enteros tarro 425 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva frijoles negros tarro 430 grs similar Pancho Villa"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva frutillas enteras en almíbar tarro 580 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva jurel tarro 425 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva nachos de jalapeños tarro 220 grs similar La Costeña"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva palmitos en rodajas tarro 400 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva palmitos enteros tarro 400 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva pepinillos en vinagre envase kgr"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva Pickles en vinagre envase kgr "}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva pimiento morrón tarro 185 grs "}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva salsa americana en vinagre bolsa kgr"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva surtido de mariscos tarro 425 grs"}
+{"cat": "501719", "prod": "50171901", "t": "Conservas Conserva tomate entero pelado tarro 3 kgr"}
+{"cat": "501929", "prod": "50192901", "t": "Pasta o tallarines naturales frescos Corbatas similar Carozzi envase kgr"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Cordero entero congelado"}
+{"cat": "501915", "prod": "50191507", "t": "Sopas preparadas estable sin refrigerar Crema de champiñones envase kgr"}
+{"cat": "501915", "prod": "50191507", "t": "Sopas preparadas estable sin refrigerar Crema de choclo envase kgr"}
+{"cat": "501915", "prod": "50191507", "t": "Sopas preparadas estable sin refrigerar Crema de espárragos envase kgr"}
+{"cat": "501915", "prod": "50191507", "t": "Sopas preparadas estable sin refrigerar Crema de pollo envase kgr"}
+{"cat": "501915", "prod": "50191507", "t": "Sopas preparadas estable sin refrigerar Crema de tomates envase kgr"}
+{"cat": "501317", "prod": "50131701", "t": "Leche o productos de mantequilla Crema para batir envase lts"}
+{"cat": "512120", "prod": "51212028", "t": "Curcuma canadiense Cúrcuma molida envase 100 grs"}
+{"cat": "501715", "prod": "50171549", "t": "Hierbas secas Curry en polvo envase 15 grs"}
+{"cat": "501924", "prod": "50192401", "t": "Mermeladas, gelatinas, conservas de fruta Dulce de membrillo envase kgr"}
+{"cat": "501615", "prod": "50161509", "t": "Productos de edulcorantes o azúcares naturales Endulzante Stevia similar a Daily 400 ml "}
+{"cat": "501715", "prod": "50171549", "t": "Hierbas secas Eneldo deshidratado envase 8 grs"}
+{"cat": "501929", "prod": "50192902", "t": "Pasta o tallarines naturales estables sin refrigerar Espirales similar a Carozzi envase kgr"}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Fiambre de jamón sándwich pieza 3,2 kgr"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Filete de pollo apanado similar Sadia Chicken Fingers envase 3 kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Fruto seco ciruelas deshidratadas sin cuesco envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Fruto seco deshidratado Goji envase de kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Fruto seco huesillos deshidratados grandes envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Fruto seco maní confitado rojo envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Frutos secos Almendras enteras envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Frutos secos Almendras enteras envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Frutos secos castañas de Caju envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Frutos secos maní japonés envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Frutos secos nueces enteras envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Frutos secos pasas morenas envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Frutos secos pasas rubias envase kgr"}
+{"cat": "501017", "prod": "50101717", "t": "Semillas o frutos secos pelados Frutos secos pistachos natural envase kgr"}
+{"cat": "501819", "prod": "50181905", "t": "Galletas dulces o pastelitos Galleta similar a Costa chocolate 140 grs"}
+{"cat": "501819", "prod": "50181905", "t": "Galletas dulces o pastelitos Galleta similar a Costa limón 140 grs"}
+{"cat": "501819", "prod": "50181905", "t": "Galletas dulces o pastelitos Galleta similar a Costa mantequilla 140 grs"}
+{"cat": "501819", "prod": "50181905", "t": "Galletas dulces o pastelitos Galletas Alteza bocado envase 140 grs"}
+{"cat": "501819", "prod": "50181905", "t": "Galletas dulces o pastelitos Galletas Alteza chirimoya envase 140 grs"}
+{"cat": "501819", "prod": "50181905", "t": "Galletas dulces o pastelitos Galletas Alteza frutilla envase 140 grs"}
+{"cat": "501819", "prod": "50181905", "t": "Galletas dulces o pastelitos Galletas Crackelet similar tripack 255 grs"}
+{"cat": "501819", "prod": "50181909", "t": "Galletas saladas Galletas de salvado similar a Bagley tripack 600 grs"}
+{"cat": "502210", "prod": "50221001", "t": "Granos de Legumbres Garbanzos sin piel envase kgr "}
+{"cat": "501924", "prod": "50192404", "t": "Cubos de gelatina Gelatina sin sabor en polvo envase 30 grs"}
+{"cat": "502211", "prod": "50221101", "t": "Granos de Cereales Granola envase 500 grs"}
+{"cat": "501120", "prod": "50112002", "t": "Carnes congeladas procesadas y preparadas Hamburguesa de pollo 100 grs similar a la crianza"}
+{"cat": "501120", "prod": "50112002", "t": "Carnes congeladas procesadas y preparadas Hamburguesa de vacuno similar a La Crianza 100 grs"}
+{"cat": "501120", "prod": "50112002", "t": "Carnes congeladas procesadas y preparadas Hamburguesa Mastodonte 185 grs"}
+{"cat": "502211", "prod": "50221102", "t": "Harina de trigo Harina integral bolsa kgr"}
+{"cat": "502211", "prod": "50221102", "t": "Harina de trigo Harina sin polvos de hornear similar Mont Blanc bolsa 5 kgr"}
+{"cat": "502211", "prod": "50221102", "t": "Harina de trigo Harina tostada bolsa kgr"}
+{"cat": "501316", "prod": "50131606", "t": "Huevos frescos Huevo fresco extra color caja 180 unidades"}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Jamón de pavo acaramelado pieza 4 kgr"}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Jamón de pierna artesanal pieza 3 kgr"}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Jamón de pierna de cerdo acaramelado pieza 3,6 kgr"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Jengibre molido envase 15 grs"}
+{"cat": "501615", "prod": "50161512", "t": "Jarabes Jugo en polvo isotónico similar Zuko Go Blue envase 8 grs"}
+{"cat": "501615", "prod": "50161512", "t": "Jarabes Jugo en polvo isotónico similar Zuko Go Frutos tropicales envase 8 grs"}
+{"cat": "501615", "prod": "50161512", "t": "Jarabes Jugo en polvo isotónico similar Zuko Go Frutos tropicales envase 8 grs"}
+{"cat": "501615", "prod": "50161512", "t": "Jarabes Jugo en polvo isotónico similar Zuko Go Naranja envase 8 grs"}
+{"cat": "502023", "prod": "50202304", "t": "Jugos y néctar envasados Jugo néctar damasco envase litro"}
+{"cat": "502023", "prod": "50202304", "t": "Jugos y néctar envasados Jugo néctar naranja envase litro"}
+{"cat": "502023", "prod": "50202304", "t": "Jugos y néctar envasados Jugo néctar piña envase litro"}
+{"cat": "502023", "prod": "50202304", "t": "Jugos y néctar envasados Jugo néctar tutifrutilla envase 1,5 lts"}
+{"cat": "502023", "prod": "50202304", "t": "Jugos y néctar envasados Jugo néctar tuttikiwi envase 1,5 lts"}
+{"cat": "501216", "prod": "50121612", "t": "Mariscos congelados Kanikama envase 300 grs"}
+{"cat": "501719", "prod": "50171902", "t": "Salsa Kétchup similar Heinz envase 900 grs"}
+{"cat": "501929", "prod": "50192902", "t": "Pasta o tallarines naturales estables sin refrigerar Lasaña pre cocida 360 grs similar Carozzi"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Laurel hojas secas envase 100 grs"}
+{"cat": "501317", "prod": "50131702", "t": "Productos de mantequilla o leche en conserva Leche condensada tarro 397 grs"}
+{"cat": "501317", "prod": "50131702", "t": "Productos de mantequilla o leche en conserva Leche evaporada tarro 390 grs"}
+{"cat": "501317", "prod": "50131701", "t": "Leche o productos de mantequilla Leche semidescremada similar Colun envase litro"}
+{"cat": "502210", "prod": "50221001", "t": "Granos de Legumbres Lentejas 5 mm envase kgr."}
+{"cat": "501817", "prod": "50181709", "t": "Suministros para el horno Levadura seca instantánea envase 500 grs"}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Longaniza similar a Schwencke envase kgr."}
+{"cat": "502212", "prod": "50221201", "t": "Cereales precocidos y listos para comer Maicena envase kgr"}
+{"cat": "501317", "prod": "50131701", "t": "Leche o productos de mantequilla Manjar envase kgr"}
+{"cat": "501516", "prod": "50151605", "t": "Grasas comestibles de animal Manteca panadera envase kgr"}
+{"cat": "501317", "prod": "50131703", "t": "Productos de mantequilla o leche congelados Mantequilla con sal 250 grs similar Colun"}
+{"cat": "501317", "prod": "50131701", "t": "Leche o productos de mantequilla Margarina similar Qualy envase kgr "}
+{"cat": "501316", "prod": "50131609", "t": "Mayonesa Mayonesa similar Kraft envase 1,26 kgr"}
+{"cat": "501924", "prod": "50192401", "t": "Mermeladas, gelatinas, conservas de fruta Mermelada damasco envase kgr"}
+{"cat": "501924", "prod": "50192401", "t": "Mermeladas, gelatinas, conservas de fruta Mermelada durazno envase kgr"}
+{"cat": "501924", "prod": "50192401", "t": "Mermeladas, gelatinas, conservas de fruta Mermelada frambuesa envase kgr"}
+{"cat": "501924", "prod": "50192401", "t": "Mermeladas, gelatinas, conservas de fruta Mermelada frutilla envase kgr"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Merquén envase kgr"}
+{"cat": "501924", "prod": "50192403", "t": "Miel Miel de abeja envase 500 grs"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Mostaza similar Heinz envase 800 grs"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Orégano entero envase 100 grs"}
+{"cat": "501931", "prod": "50193105", "t": "Mezclas para rebozar o apanar Panko envase kgr"}
+{"cat": "501926", "prod": "50192602", "t": "Papas, arroz, pastas u otros acompañamientos preparados congelados Papas duquesas congeladas 2,5 kgr"}
+{"cat": "501926", "prod": "50192602", "t": "Papas, arroz, pastas u otros acompañamientos preparados congelados Papas pre fritas congeladas 2,5 kgr"}
+{"cat": "501921", "prod": "50192109", "t": "Papas fritas o galletas tostadas Papas fritas corte americano XL envase 300 grs"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Pasta de choclo envase kgr"}
+{"cat": "501718", "prod": "50171833", "t": "Paté u otras pastas para untar Pasta de jamón 125 grs similar Receta del Abuelo"}
+{"cat": "501718", "prod": "50171833", "t": "Paté u otras pastas para untar Pasta de salame 125 grs similar Receta del Abuelo"}
+{"cat": "501718", "prod": "50171833", "t": "Paté u otras pastas para untar Paté de ternera 160 grs similar La Preferida"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Perejil deshidratado envase 12 grs"}
+{"cat": "501215", "prod": "50121537", "t": "Pescado congelado Pescado Merluza congelada"}
+{"cat": "501215", "prod": "50121537", "t": "Pescado congelado Pescado Reineta congelada"}
+{"cat": "501215", "prod": "50121537", "t": "Pescado congelado Pescado Salmón congelado"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Pimentón Paprika envase de 100 grs"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Pimienta blanca molida envase 100 grs"}
+{"cat": "501715", "prod": "50171550", "t": "Especias o extractos Pimienta negra molida envase 100 grs"}
+{"cat": "501817", "prod": "50181709", "t": "Suministros para el horno Polvos de hornear lata 200 grs"}
+{"cat": "502210", "prod": "50221001", "t": "Granos de Legumbres Poroto blanco envase kgr"}
+{"cat": "502023", "prod": "50202303", "t": "Jugos y néctar concentrados Pulpa congelada chirimoya envase kgr"}
+{"cat": "502023", "prod": "50202303", "t": "Jugos y néctar concentrados Pulpa congelada frambuesa envase kgr"}
+{"cat": "502023", "prod": "50202303", "t": "Jugos y néctar concentrados Pulpa congelada frutilla envase kgr"}
+{"cat": "502023", "prod": "50202303", "t": "Jugos y néctar concentrados Pulpa congelada mango envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Pulpa de palta congelada envase kgr"}
+{"cat": "501015", "prod": "50101545", "t": "Verduras deshidratadas Puré de papas instantáneo similar Maggi envase kgr"}
+{"cat": "501318", "prod": "50131801", "t": "Queso natural Quesillo blanco envase 320 grs."}
+{"cat": "501318", "prod": "50131803", "t": "Sucedáneo de Queso Queso crema envasado 200 grs similar Colun"}
+{"cat": "501318", "prod": "50131803", "t": "Sucedáneo de Queso Queso crema similar Philadelphia 226 grs"}
+{"cat": "501318", "prod": "50131802", "t": "Queso rallado Queso granulado mantecoso kgr"}
+{"cat": "501318", "prod": "50131801", "t": "Queso natural Queso laminado gauda kgr"}
+{"cat": "501318", "prod": "50131801", "t": "Queso natural Queso mantecoso pieza 4 kgr similar Quilque"}
+{"cat": "501318", "prod": "50131802", "t": "Queso rallado Queso rallado Parmesano envase 80 grs"}
+{"cat": "501921", "prod": "50192109", "t": "Papas fritas o galletas tostadas Ramitas sabor queso envase 230 grs"}
+{"cat": "501921", "prod": "50192109", "t": "Papas fritas o galletas tostadas Ramitas saladas envase 230 grs"}
+{"cat": "501615", "prod": "50161512", "t": "Jarabes Refresco en polvo damasco envase kgr"}
+{"cat": "501615", "prod": "50161512", "t": "Jarabes Refresco en polvo durazno envase kgr"}
+{"cat": "501615", "prod": "50161512", "t": "Jarabes Refresco en polvo frutilla envase kgr"}
+{"cat": "501615", "prod": "50161512", "t": "Jarabes Refresco en polvo piña envase kgr"}
+{"cat": "501715", "prod": "50171549", "t": "Hierbas secas Romero deshidratado envase 20 grs"}
+{"cat": "501615", "prod": "50161511", "t": "Chocolate o sucedáneo de chocolate Saborizante de leche MILO tarro 400 grs"}
+{"cat": "501715", "prod": "50171551", "t": "Sal de cocina o de mesa Sal parrillera similar a Lobos envase 750 grs"}
+{"cat": "501120", "prod": "50112003", "t": "Carnes estables sin refrigerar procesadas y preparadas Salame italiano laminado envase 1,45 kgr"}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Salchicha similar Vienesa Tradicional Llanquihue envase kgr"}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Salchichas sureñas envase kgr"}
+{"cat": "501718", "prod": "50171831", "t": "Salsas para cocinar Salsa Barbecue envase kgr"}
+{"cat": "501719", "prod": "50171902", "t": "Salsa Salsa blanca envase kgr"}
+{"cat": "501719", "prod": "50171902", "t": "Salsa Salsa de pepinillos dulce similar Heinz envase 396 grs"}
+{"cat": "501718", "prod": "50171831", "t": "Salsas para cocinar Salsa de soya envase litro"}
+{"cat": "501718", "prod": "50171831", "t": "Salsas para cocinar Salsa de tomate envase kgr"}
+{"cat": "501719", "prod": "50171902", "t": "Salsa Salsa española bolsa kgr"}
+{"cat": "502212", "prod": "50221201", "t": "Cereales precocidos y listos para comer Semolina envase kgr"}
+{"cat": "101516", "prod": "10151606", "t": "Semillas de sésamo Sésamo tostado envase 100 grs"}
+{"cat": "501915", "prod": "50191505", "t": "Sopas preparadas frescas Sopa carne con caracolitos envase kgr"}
+{"cat": "501915", "prod": "50191505", "t": "Sopas preparadas frescas Sopa carne con sémola envase kgr"}
+{"cat": "501915", "prod": "50191505", "t": "Sopas preparadas frescas Sopa carne con verduras envase kgr"}
+{"cat": "501915", "prod": "50191505", "t": "Sopas preparadas frescas Sopa de verduras envase kgr"}
+{"cat": "501915", "prod": "50191505", "t": "Sopas preparadas frescas Sopa Pollo con fideos envase kgr"}
+{"cat": "501929", "prod": "50192902", "t": "Pasta o tallarines naturales estables sin refrigerar Spaghetti N° 5 similar Carozzi envase kgr"}
+{"cat": "501718", "prod": "50171832", "t": "Aliño de ensaladas Sucedáneo de limón envase litro"}
+{"cat": "501115", "prod": "50111511", "t": "Carne de ave o carne congelada Suprema de pollo káiser 120 grs similar a Receta del Abuelo"}
+{"cat": "501216", "prod": "50121612", "t": "Mariscos congelados Surtido de mariscos congelados envase kgr"}
+{"cat": "502017", "prod": "50201711", "t": "Té instantáneo Té similar Dilmah English Breakfast 50 bolsitas"}
+{"cat": "502017", "prod": "50201711", "t": "Té instantáneo Té similar Supremo hierbas surtidas caja 100 und"}
+{"cat": "502017", "prod": "50201711", "t": "Té instantáneo Té similar Twinings Earl Grey Tea 50 bolsitas "}
+{"cat": "502017", "prod": "50201711", "t": "Té instantáneo Té similar Twinings English Breakfast Tea 50 bolsitas "}
+{"cat": "501120", "prod": "50112001", "t": "Carnes frescas procesadas y preparadas Tocino envase kgr"}
+{"cat": "501715", "prod": "50171549", "t": "Hierbas secas Tomillo deshidratado envase 7 grs"}
+{"cat": "501926", "prod": "50192601", "t": "Papas, arroz, pastas u otros acompañamientos preparados frescos Tortilla mejicana XL envase 8 und 350 grs"}
+{"cat": "501615", "prod": "50161509", "t": "Productos de edulcorantes o azúcares naturales Vainilla esencia liquida botella 500 ml"}
+{"cat": "501015", "prod": "50101538", "t": "Verduras frescas Verdura congelada ajo picado envase 500 grs"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada arvejas envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada betarraga envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada brócoli envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada cebolla en cubo envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada Chapsui envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada choclo grano envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada choclo trozo envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada coliflor envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada espárragos envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada espinaca envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada habas envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada pimiento morrón envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada poroto granado envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada porotos verdes corte americano envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada porotos verdes corte francés envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada primavera envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada sofrito envase 150 grs"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada zanahoria cubo envase kgr"}
+{"cat": "501015", "prod": "50101539", "t": "Verduras congeladas Verdura congelada zapallo en cubo envase kgr"}
+{"cat": "501717", "prod": "50171707", "t": "Vinagres Vinagre de vino blanco similar a Traverso envase litro"}
+{"cat": "501717", "prod": "50171707", "t": "Vinagres Vinagre de vino rosado similar a Traverso envase litro"}
+{"cat": "502017", "prod": "50201710", "t": "Té de hierbas Yerba mate similar Pipore despalada envase azul 500 grs"}
+{"cat": "501923", "prod": "50192303", "t": "Postres, helados o yogurt congelado Yogurt de damasco envase kgr"}
+{"cat": "501923", "prod": "50192303", "t": "Postres, helados o yogurt congelado Yogurt de frambuesa envase kgr"}
+{"cat": "501923", "prod": "50192303", "t": "Postres, helados o yogurt congelado Yogurt de mora envase kgr"}
+{"cat": "501923", "prod": "50192303", "t": "Postres, helados o yogurt congelado Yogurt de piña envase kgr"}
+{"cat": "501923", "prod": "50192303", "t": "Postres, helados o yogurt congelado Yogurt de vainilla envase kgr"}
+{"cat": "841316", "prod": "84131601", "t": "Seguros de vida SEGURO DE SALUD, DENTAL, CATASTRÓFICO Y VIDA, PARA LOS AFILIADOS DEL SERVICIO DE BIENESTAR DEL SERVICIO NACIONAL por 24 MESES"}
+{"cat": "101616", "prod": "10161601", "t": "Rosales Contrato de suministro para adquisición de árboles arbustos plantas ornamentales de estación de corte y bulbos florales comuna de Pucón."}
+{"cat": "391116", "prod": "39111603", "t": "Alumbrado público Servicio de Mantención Correctiva del Alumbrado Publico Comunal, Peñaflor."}
+{"cat": "801117", "prod": "80111701", "t": "Servicios de contratación de personal Licitación 84/26“SERVICIO INTEGRAL DE APOYO AL FORTALECIMIENTO Y CONTINUIDAD DE LAS PRESTACIONES DE LOS HOSPITALES FAMILIARES Y COMUNITARIOS DE GORBEA Y NUEVA TOLTÉN”"}
+{"cat": "512015", "prod": "51201509", "t": "Daclizumab 230020007 BEVACIZUMAV JER PRELLENADA 1,25 MG/0,05 ML"}
+{"cat": "512015", "prod": "51201509", "t": "Daclizumab 10009601 BEVACIZUMAB 2.5 MG /0.1 ML"}
+{"cat": "512412", "prod": "51241215", "t": "Resina de podofilo 280000203 MITOMICINA JER PRELLENADA 0,02 MG/1 ML"}
+{"cat": "512412", "prod": "51241215", "t": "Resina de podofilo 280000204 MITOMICINA JER PRELLENADA 0,04 MG/1 ML"}
+{"cat": "781018", "prod": "78101802", "t": "Servicios de transporte regional o nacional en camión Que, la Dirección de Vialidad, dentro de su plan de trabajo de mantención de caminos que afectan positivamente al ámbito social y productivo de la Región de Atacama, requiere contratar el servicio de Transporte de 3.500 toneladas de cloruro de magnesio he"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales \"342020020\t\"\tCateter ureteral doble J, Kit urológico de 4.8 a 5.0 fr x 24cm, que incluya guia 0.035 x 145cm con cuerpo y alma de nitinol, empujador con marcador radiopaco, cateter pigtail graduado con hilos de extracción"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 342020021\tCateter ureteral doble J, Kit urológico de 6.0 fr x 24cm, que incluya guia 0.035 x 145cm con cuerpo y alma de nitinol, empujador con marcador radiopaco, cateter pigtail graduado con hilos de extracción"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 342020022\tCateter ureteral para pielografia retrógrada endoscópica de 4 a 6 fr x 60 a 80 cm, punta abierta aguzada curva, con sistema luer lock, en empaque individual esteril."}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 342020018\tCateter monoJ 6Fr, largo mínimo 70cm, par de 2 colores, ambos extremos abiertos"}
+{"cat": "422720", "prod": "42272006", "t": "Introductores 342020023\tTorque para guia hidrofilica"}
+{"cat": "422720", "prod": "42272006", "t": "Introductores 342050013\tVaina de acceso percutáneo tipo Amplatz 26Fr longitud 20cm radioopaca"}
+{"cat": "302019", "prod": "30201901", "t": "Unidades médicas 342080062\tSonda punta Tiemann de 2 lumenes, 14Fr, 100% Silicona, cuff 10-30ml"}
+{"cat": "302019", "prod": "30201901", "t": "Unidades médicas 342080063\tSonda punta Tiemann  de 2 lumenes, 16Fr, 100% Silicona, cuff 10-30ml"}
+{"cat": "302019", "prod": "30201901", "t": "Unidades médicas 342080064\tSonda punta Tiemann de 2 lumenes, 12Fr, 100% Silicona, cuff 10-30ml"}
+{"cat": "421431", "prod": "42143102", "t": "Dispositivos uterinos o accesorios 342030015\tMalla para incontinencia urinaria sin nudos compatible para TVT/TOT"}
+{"cat": "421427", "prod": "42142706", "t": "Equipos o compresas o bandejas para el procedimiento urológico 342050014\tSet de dilatadores uretrales plásticos en S con canal para montar sobre guía"}
+{"cat": "421830", "prod": "42183040", "t": "Herramientas o accesorios de óptica 308060048\tManga plástica estéril para cobertura de cámara con conector para cambio de óptica tipo Qwikcover o su E.T"}
+{"cat": "421830", "prod": "42183040", "t": "Herramientas o accesorios de óptica 342010019\tElectrodo de coagulación (bolita) bipolar compatible con equipo Storz estéril, en empaque individual"}
+{"cat": "421427", "prod": "42142702", "t": "Catéteres urinarios uretrales 342040011\tEvacuador tipo granada plástico reutilizable"}
+{"cat": "422935", "prod": "42293509", "t": "Sets de irrigación quirúrgica o accesorios 342040010\tSet de irrigacion en Y de alto flujo para RTU"}
+{"cat": "851222", "prod": "85122201", "t": "Exámenes médicos TOMA E INFORME DE HOLTER CON MEDICO PRESENCIAL"}
+{"cat": "391211", "prod": "39121108", "t": "Accesorios del panel de control o distribución CRTC SUMINISTRO E ISNTALACION DE ESTACIONAMIENTO FOTOVOLTAICO"}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios SERVICIO DE ASEO DE OFICINAS, LABORATORIO Y DVI DE LA DELEGACION BIOBÍO DE LA SEREMI DE SALUD REGIÓN DEL BIOBÍO 12 MESES A CONTAR DEL 01 DE ENERO 2027 AL 31 DE DICIEMBRE 2027"}
+{"cat": "251015", "prod": "25101507", "t": "Camiones ligeros o vehículos de deporte de utilidad CAMIONETA 4X4 DE EMERGENCIA, PRESUPUESTO $55.590.850"}
+{"cat": "261116", "prod": "26111601", "t": "Generadores diesel GRUPOS ELECTRÓGENOS PARA SISTEMAS APR, COMUNA DE SAAVEDRA. PRESUPUESTO $113.645.000"}
+{"cat": "931715", "prod": "93171502", "t": "Negociaciones comerciales Tramo 1 Valor CIF Embarque hasta US$50.000 Ingresar en el PORTAL la cantidad $1 (un peso) en señal\r\nde participación. Deberá adjuntar el FORMULARIO N°1 en el que se solicita el % de honorario aplicable\r\nal tramo, incluyendo todo tipo de impuestos y gastos"}
+{"cat": "931715", "prod": "93171502", "t": "Negociaciones comerciales Tramo 2 Valor CIF Embarque más de US$50.000 y hasta US$100.000 Ingresar en el PORTAL la cantidad $1 (un peso) en señal\r\nde participación. Deberá adjuntar el FORMULARIO N°1 en el que se solicita el % de honorario aplicable\r\nal tramo, incluyendo todo tipo d"}
+{"cat": "931715", "prod": "93171502", "t": "Negociaciones comerciales Tramo 3 Valor CIF Embarque más de US$100.000 y hasta US$300.000 Ingresar en el PORTAL la cantidad $1 (un peso) en señal\r\nde participación. Deberá adjuntar el FORMULARIO N°1 en el que se solicita el % de honorario aplicable\r\nal tramo, incluyendo todo tipo "}
+{"cat": "931715", "prod": "93171502", "t": "Negociaciones comerciales Tramo 4 Valor CIF Embarque más de US$300.000 y hasta US$500.000 Ingresar en el PORTAL la cantidad $1 (un peso) en señal de participación. Deberá adjuntar el FORMULARIO N°1 en el que se solicita el % de honorario aplicable al tramo, incluyendo todo tipo d"}
+{"cat": "931715", "prod": "93171502", "t": "Negociaciones comerciales Tramo 5 Valor CIF Embarque más de US$500.000 y hasta US$1.000.000 Ingresar en el PORTAL la cantidad $1 (un peso) en\r\nseñal de participación. Deberá adjuntar el FORMULARIO N°1 en el que se solicita el % de honorario"}
+{"cat": "931715", "prod": "93171502", "t": "Negociaciones comerciales Tramo 6 Valor CIF Embarque más de US$1.000.000  y hasta US$1.500.000 Ingresar en el PORTAL la cantidad $1 (un peso) en\r\nseñal de participación. Deberá adjuntar el FORMULARIO N°1 en el que se solicita el % de honorario\r\naplicable al tramo, incluyendo todo"}
+{"cat": "931715", "prod": "93171502", "t": "Negociaciones comerciales Tramo 7 Valor CIF Embarque sobre US$1.500.000 Ingresar en el PORTAL la cantidad $1 (un peso) en\r\nseñal de participación. Deberá adjuntar el FORMULARIO N°1 en el que se solicita el % de honorario\r\naplicable al tramo, incluyendo todo tipo de impuestos y gas"}
+{"cat": "851219", "prod": "85121901", "t": "Recetarios magistrales 999-0034 - NP AU cíclica 0–250 mL, nutrición parenteral hospitalizados 0–250 mL. Preparación magistral, despacho hospitalizados, soporte de administración y trazabilidad."}
+{"cat": "851219", "prod": "85121901", "t": "Recetarios magistrales 999-0035- NP AU cíclica 251–500 mL, nutrición parenteral hospitalizados   251–500 mL. Preparación magistral, despacho hospitalizados, soporte de administración y trazabilidad."}
+{"cat": "851219", "prod": "85121901", "t": "Recetarios magistrales 999-0036 - NP AU cíclica 501–1.000 mL. Nutrición parenteral hospitalizados 501–1000 mL. Preparación magistral, despacho hospitalizados, soporte de administración y trazabilidad999-0036 "}
+{"cat": "851219", "prod": "85121901", "t": "Recetarios magistrales 999-0037- NP AU cíclica 1.001–2.000 mL, Nutrición parenteral hospitalizados 1001–2000 mL, Preparación magistral, despacho hospitalizados, soporte de administración y trazabilidad."}
+{"cat": "851219", "prod": "85121901", "t": "Recetarios magistrales 999-0038- NP AU cíclica 2.001–3.000 mL, Nutrición parenteral hospitalizados 2001–3000 mL, Preparación magistral, despacho hospitalizados, soporte de administración y trazabilidad."}
+{"cat": "851219", "prod": "85121901", "t": "Recetarios magistrales 116-0113 Denominación genérica (DCI): Emulsión lipídica intravenosa de aceite de pescado altamente refinado.\r\nPresentación referencial: Frasco ampolla o frasco de vidrio de 100 mL (o dosificación fraccionada incorporada en bolsa magistral de nutrición par"}
+{"cat": "801117", "prod": "80111715", "t": "Profesionales COMPRA SERVICIO PROFESIONAL MATRON(A) PARA SECTOR ROJO CESFAM PUERTO AYSEN POR DOCE MESES ENTRE EL 01 ENERO 2027 AL 31 DICIEMBRE 2027 INCLUSIVE"}
+{"cat": "701515", "prod": "70151505", "t": "Inventario forestal Valor Total Neto del CONTRATO, por el servicio  \"CATASTRO ARBÓREO BASE Y BASE DE DATOS GEOESPACIAL\", en concordancia con lo reportado en el Formulario N°3."}
+{"cat": "811516", "prod": "81151604", "t": "Topografía Valor Total Neto en pesos $ por el Servicio de Levantamiento topográfico superficial, ortofoto, auscultación mediante Georradar y localización electromagnética complementaria, entre Acceso El Mercurio y Rotonda Lo Curro (2,5 km aproximadamente). "}
+{"cat": "721016", "prod": "72101607", "t": "Instalación o reparación de paredes Programa PMU IRAL: \"Mejoramiento y habilitación casa acogida Villa Cameron, Comuna de Timaukel\","}
+{"cat": "721023", "prod": "72102305", "t": "Servicios de reparación, mantenimiento o reparación de aire acondicionado MANTENCIÓN PREVENTIVA Y CORRECTIVA DEL SISTEMA DE CLIMATIZACIÓN, INYECCIÓN Y EXTRACCIÓN DE AIRE DEL EDIFICIO UBICADO EN COMPAÑÍA DE JESÚS N°1.048, COMUNA DE SANTIAGO."}
+{"cat": "721022", "prod": "72102201", "t": "Instalación o servicio de sistemas de energía eléctrica MANTENCIÓN DE GASFITERÍA PARA ESTABLECIMIENTOS EDUCACIONALES"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles La obra materia de la licitación se denomina “SOLUCIÓN AGUAS LLUVIAS SCHNEIDER CON LONCOCHE”"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles NORMALIZACIÓN SALA CUNA LORENZO ARENAS OLIVO, CONCEPCIÓN"}
+{"cat": "432115", "prod": "43211507", "t": "Computadores de escritorio ARRIENDO DE COMPUTADORES X 36 MESES"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles mejoramiento a realizar en equipamientos comunitarios de sedes sociales (según el listado adjunto), que se realizarán en la Comuna de Tocopilla, indicando el proceso de ejecución, calidad de los materiales a emplear y metodologías a utilizar, correspondie"}
+{"cat": "423115", "prod": "42311506", "t": "Vendas o apósitos compresores KIT CALCETIN TOBILLO 24 A 26 CM 40 MMHG;100004016 "}
+{"cat": "831015", "prod": "83101504", "t": "Distribución de agua SERVICIO DE DISTRIBUCIÓN DE AGUA POTABLE MEDIANTE CAMIONES ALJIBES PARA LAS COMUNAS DE LA PROVINCIA DE VALDIVIA PRIMER SEMESTRE 2027"}
+{"cat": "801117", "prod": "80111715", "t": "Profesionales PPTA 356-26 | DFL 36, COMPRA DE SERVICIO DE HORAS PARA GESTIÓN DEL CUIDADO DEL CCRR MÉDICO ADULTO, PARA EL SERVICIO DE MEDICINA INTERNA"}
+{"cat": "221015", "prod": "22101524", "t": "Excavadoras móviles Las presentes Bases tienen por objeto regular el llamado a propuesta pública para contratar la ejecución del proyecto denominado “Adquisición Excavadora, Remolque Cama Baja y Minicargador Frontal con Equipamiento, Municipalidad de Quillota”, Código BIP 40"}
+{"cat": "761115", "prod": "76111501", "t": "Servicios de limpieza de edificios SERVICIO \"DE ASEO PARA LAS INSTALACIONES DE LA DIRECCIÓN DEL SERVICIO, CESFAM ANDES, EX HOSPITAL FÉLIX BULNES, JARDÍN INFANTIL Y SEDE CUMMING\"."}
+{"cat": "421830", "prod": "42183025", "t": "Lentes de vitrectomía 227-9050\tMICROESPONJA OFTALMOLOGIA (SOBRE X 10 UD) "}
+{"cat": "421830", "prod": "42183025", "t": "Lentes de vitrectomía 265-1140 CAPUCHONES P/ PROCEDIMIENTO CATARATAS (COLOR) "}
+{"cat": "421424", "prod": "42142402", "t": "Cánulas o tubos de succión médicos o accesorios 925-1270 SISTEMA VISCOELASTICO"}
+{"cat": "421830", "prod": "42183025", "t": "Lentes de vitrectomía 927-7100 CASSETTE DE FACOEMULSIFICACION (CATARATAS)"}
+{"cat": "421830", "prod": "42183025", "t": "Lentes de vitrectomía 927-7120 FLARED "}
+{"cat": "421830", "prod": "42183025", "t": "Lentes de vitrectomía 927-7125 MINIFLARED "}
+{"cat": "422945", "prod": "42294513", "t": "Kits de vitrectomía oftalmológica 244-0000 SOLUCIÓN SALINA BALANCEADA 500 ML"}
+{"cat": "422945", "prod": "42294513", "t": "Kits de vitrectomía oftalmológica 927-0036 SONDA DE VITRECTOMIA 23G (2.2 mm) "}
+{"cat": "421830", "prod": "42183025", "t": "Lentes de vitrectomía 265-1699 LENTE INTRAOCULAR MONOFOCAL ASFERICO LIO "}
+{"cat": "421830", "prod": "42183025", "t": "Lentes de vitrectomía 266-0100 LENTE DE BAJAS DIOPTRIAS LIO / LENTE DE ALTAS DIOPTRIAS / LENTE DE RESPALDO O TRES PIEZAS"}
+{"cat": "422945", "prod": "42294525", "t": "Sets de instrumentos médicos oftalmológicos 265-1694 LIO LENTE TÓRICO DIFERENTES MEDIDAS"}
+{"cat": "391116", "prod": "39111603", "t": "Alumbrado público Línea 1 – Reposición del sistema de alumbrado público de Llico: recambio de luminarias por tecnología LED, renovación de conductores y ferretería, normalización de empalmes e instalación de tableros, protecciones, fotoceldas y puesta a tierra."}
+{"cat": "391116", "prod": "39111603", "t": "Alumbrado público Línea 2 – Reposición del sistema de alumbrado público de Vichuquén: recambio de luminarias por tecnología LED, renovación de conductores y ferretería, normalización de empalmes e instalación de tableros, protecciones, fotoceldas y puesta a tierra."}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles A.T. MEJORAMIENTO BANDEJÓN AV. JUAN MARTÍNEZ, ENTRE CALLE MANUEL MONTT Y CALLE TENIENTE MERINO, COMUNA DE DIEGO DE ALMAGRO, SEGUN BASES ADMINISTRATIVAS Y ANTECEDENTES ADJUNTOS"}
+{"cat": "511820", "prod": "51182014", "t": "Dutasterida DUTASTERIDA 0,5 MG CM/CP; 100003412"}
+{"cat": "511422", "prod": "51142235", "t": "Clorhidrato de tramadol TRAMADOL 50MG CM REC/CP LIBERAC PROLONG; 100003961"}
+{"cat": "511421", "prod": "51142145", "t": "Adalimumab ADALIMUMAB 40MG SOL.INY.JRP/AUTOIN; 100001592"}
+{"cat": "721315", "prod": "72131501", "t": "Construcción de edificios y departamentos La Universidad de Talca requiere la remodelación de la Clínica 2 de la\r\nFacultad de Odontología, considerando el reemplazo e instalación de\r\nnuevo mobiliario clínico odontológico, la adecuación de instalaciones\r\nasociadas para nuevas unidades dentales, la"}
+{"cat": "391116", "prod": "39111603", "t": "Alumbrado público Provisión e instalación de 292 proyectores solares tipo Ferrara All In One Ds 43 de 60 watts, con un flujo luminoso de 160 lúmenes por watt o superior, distribuidos en 21 localidades rurales."}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles se considera la ejecuión de obras asociadas a los proyectos Club Unión San Ramón y Club Unión Orilla. cierro perimetrales, torres de iluminación, graderías, camarines, entre otras"}
+{"cat": "781415", "prod": "78141502", "t": "Servicios de agencia aduanera SERVICIOS DE EMBARCADOR GLOBAL PARA EMBARQUES INTERNACIONALES DE CARGA GENERAL DE PROPIEDAD DE LA FUERZA AÉREA DE CHILE, DE CONFORMIDAD AL ANEXO \"B\" FORMULARIO DE OFERTA ECONÓMICA DE LA RESOLUCIÓN AFECTA N° 0517, ADJUNTA.-"}
+{"cat": "531027", "prod": "53102706", "t": "Uniformes de seguridad Uniformes forestales para Bomberos"}
+{"cat": "312119", "prod": "31211903", "t": "Equipo para protección Cascos forestales para Bomberos"}
+{"cat": "721317", "prod": "72131702", "t": "Construcción de obras civiles Mejoramiento Platabandas Calle Arturo Prat, Comuna de Quilleco. Según bases administrativas, especificaciones técnicas y anexos adjuntos. "}
+{"cat": "391116", "prod": "39111603", "t": "Alumbrado público INSTALACIÓN DE LUMINARIAS LED ORNAMENTALES VILLA ESPERANZA, COLLIPULLI"}

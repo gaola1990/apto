@@ -3053,3 +3053,101 @@
 {"codigo": "980313-46-LE26", "fecha": "2026-11-25", "oferentes": 2, "tipo": "LE", "clases": ["601055", "801416"], "organismo": "I MUNICIPALIDAD DE ANTUCO", "region": "Región del Biobío"}
 {"codigo": "1514-143-LE26", "fecha": "2026-11-25", "oferentes": 5, "tipo": "LE", "clases": ["511417", "511817", "512018"], "organismo": "SERVICIO DE SALUD CHILOE", "region": "Región de los Lagos"}
 {"codigo": "598-25-LE26", "fecha": "2026-11-25", "oferentes": 2, "tipo": "LE", "clases": ["761115"], "organismo": "DIRECCION PREVISION DE CARABINEROS DE CHILE", "region": "Región de Atacama"}
+{"codigo": "1108734-17-LP26", "fecha": "2026-11-25", "oferentes": 8, "tipo": "LP", "clases": ["801416"], "organismo": "SERVICIO NACIONAL DEL PATRIMONIO CULTURAL", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2263-98-LE26", "fecha": "2026-11-23", "oferentes": 11, "tipo": "LE", "clases": ["551217"], "organismo": "MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF", "region": "Región de la Araucanía"}
+{"codigo": "1291-31-LP26", "fecha": "2026-11-25", "oferentes": 3, "tipo": "LP", "clases": ["111017"], "organismo": "MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF", "region": "Región del Maule"}
+{"codigo": "852-36-LE26", "fecha": "2026-11-25", "oferentes": 10, "tipo": "LE", "clases": ["561018"], "organismo": "JUNTA NACIONAL DE JARDINES         INFANTILES", "region": "Región de la Araucanía"}
+{"codigo": "3319-12-LE26", "fecha": "2026-11-25", "oferentes": 7, "tipo": "LE", "clases": ["432315"], "organismo": "POLICIA DE INVESTIGACIONES DE CHILE", "region": "Región del Biobío"}
+{"codigo": "2318-79-LE26", "fecha": "2026-11-25", "oferentes": 6, "tipo": "LE", "clases": ["432315"], "organismo": "I MUNICIPALIDAD DE SAN JAVIER", "region": "Región del Maule"}
+{"codigo": "3612-23-LP26", "fecha": "2026-11-25", "oferentes": 7, "tipo": "LP", "clases": ["721017"], "organismo": "I MUNICIPALIDAD DE SAAVEDRA", "region": "Región de la Araucanía"}
+{"codigo": "1643-107-L126", "fecha": "2026-11-24", "oferentes": 7, "tipo": "L1", "clases": ["491017"], "organismo": "SERVICIO NACIONAL DE SALUD HOSPITAL DE T", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2736-51-LE26", "fecha": "2026-11-25", "oferentes": 4, "tipo": "LE", "clases": ["801115", "801416", "901116", "931419"], "organismo": "I MUNICIPALIDAD DE ANGOL", "region": "Región de la Araucanía"}
+{"codigo": "1515304-229-LP26", "fecha": "2026-11-24", "oferentes": 4, "tipo": "LP", "clases": ["461817"], "organismo": "DIRECCION DE LOGISTICA DE CARABINEROS", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2282-108-LP26", "fecha": "2026-11-24", "oferentes": 5, "tipo": "LP", "clases": ["801116"], "organismo": "I MUNICIPALIDAD VALDIVIA", "region": "Región de Los Ríos"}
+{"codigo": "3708-47-L126", "fecha": "2026-11-09", "oferentes": 4, "tipo": "L1", "clases": ["141116", "241124", "301519", "491017", "561015", "561117", "821215"], "organismo": "I MUNICIPALIDAD DE PITRUFQUEN", "region": "Región de la Araucanía"}
+{"codigo": "610-21-LE26", "fecha": "2026-11-25", "oferentes": 7, "tipo": "LE", "clases": ["432225"], "organismo": "Comisión Nacional de Energía", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2408-77-LE26", "fecha": "2026-11-24", "oferentes": 2, "tipo": "LE", "clases": ["801416"], "organismo": "I MUNICIPALIDAD DE LOS ANGELES", "region": "Región del Biobío"}
+{"codigo": "4031-21-LE26", "fecha": "2026-11-19", "oferentes": 5, "tipo": "LE", "clases": ["261116"], "organismo": "ILUSTRE MUNICIPALIDAD DE CAMINA", "region": "Región de Tarapacá"}
+{"codigo": "2783-6-LP26", "fecha": "2026-11-19", "oferentes": 6, "tipo": "LP", "clases": ["551217"], "organismo": "I MUNICIPALIDAD DE LA LIGUA", "region": "Región de Valparaíso"}
+{"codigo": "1457282-8-LE26", "fecha": "2026-11-25", "oferentes": 1, "tipo": "LE", "clases": ["901016"], "organismo": "CORPORACION CENTRO CULTURAL GABRIELA MISTRAL", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1457282-6-LE26", "fecha": "2026-11-25", "oferentes": 5, "tipo": "LE", "clases": ["432117"], "organismo": "CORPORACION CENTRO CULTURAL GABRIELA MISTRAL", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1375761-69-L126", "fecha": "2026-11-25", "oferentes": 2, "tipo": "L1", "clases": ["901016"], "organismo": "SERVICIO LOCAL DE EDUCACIÓN PÚBLICA VALLE DIGUILLÍN", "region": "Región del Ñuble"}
+{"codigo": "4130-7-L126", "fecha": "2026-11-25", "oferentes": 2, "tipo": "L1", "clases": ["301519", "901016"], "organismo": "DIVISION LOGISTICA DEL EJERCITO", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1271178-45-LP26", "fecha": "2026-11-24", "oferentes": 7, "tipo": "LP", "clases": ["421524"], "organismo": "CORPORACION MUNICIPAL DE DESARROLLO SOCIAL DE MACUL", "region": "Región Metropolitana de Santiago"}
+{"codigo": "3320-38-LE26", "fecha": "2026-11-25", "oferentes": 6, "tipo": "LE", "clases": ["521315"], "organismo": "FUERZA AEREA DE CHILE COMANDO LOGISTICO", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1044-24-LE26", "fecha": "2026-11-24", "oferentes": 1, "tipo": "LE", "clases": ["301216"], "organismo": "MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2188-16-L126", "fecha": "2026-11-20", "oferentes": 3, "tipo": "L1", "clases": ["421522"], "organismo": "SERVICIO DE SALUD HOSPITAL COINCO", "region": "Región Metropolitana de Santiago"}
+{"codigo": "4457-77-LE26", "fecha": "2026-11-25", "oferentes": 3, "tipo": "LE", "clases": ["411160"], "organismo": "I MUNICIPALIDAD DE HUALQUI", "region": "Región del Biobío"}
+{"codigo": "3191-114-LE26", "fecha": "2026-11-25", "oferentes": 2, "tipo": "LE", "clases": ["511117", "851219"], "organismo": "DIRECCION DE ABASTECIMIENTO DE LA ARMADA", "region": "Región de Valparaíso"}
+{"codigo": "1057432-80-R126", "fecha": "2026-11-20", "oferentes": 4, "tipo": "LE", "clases": ["271132", "422515", "601410", "601411"], "organismo": "SERVICIO DE SALUD CONCEPCION", "region": "Región del Biobío"}
+{"codigo": "2324-100-LP26", "fecha": "2026-11-20", "oferentes": 1, "tipo": "LP", "clases": ["801016"], "organismo": "I MUNICIPALIDAD DE PUERTO MONTT", "region": "Región de los Lagos"}
+{"codigo": "359-121-LE26", "fecha": "2026-11-25", "oferentes": 5, "tipo": "LE", "clases": ["721029"], "organismo": "Instituto Nacional del Cancer", "region": "Región Metropolitana de Santiago"}
+{"codigo": "3241-29-L126", "fecha": "2026-11-25", "oferentes": 8, "tipo": "L1", "clases": ["521315"], "organismo": "DIRECCION DE ABASTECIMIENTO DE LA ARMADA", "region": "Región de Magallanes y de la Antártica"}
+{"codigo": "3682-14-LE26", "fecha": "2026-11-25", "oferentes": 2, "tipo": "LE", "clases": ["801416"], "organismo": "I MUNICIPALIDAD DE SALAMANCA", "region": "Región de Coquimbo"}
+{"codigo": "1057421-42-LE26", "fecha": "2026-11-25", "oferentes": 3, "tipo": "LE", "clases": ["561015"], "organismo": "SERVICIO DE SALUD BIO BIO HOSPITAL DE LAJA", "region": "Región del Biobío"}
+{"codigo": "4236-34-L126", "fecha": "2026-11-23", "oferentes": 12, "tipo": "L1", "clases": ["121717"], "organismo": "I MUNICIPALIDAD DE CURANILAHUE", "region": "Región del Biobío"}
+{"codigo": "3736-32-L126", "fecha": "2026-11-24", "oferentes": 9, "tipo": "L1", "clases": ["241415", "261216", "312016", "321016", "391214", "432020", "432226", "432329", "441018", "441031", "521615", "601049"], "organismo": "I MUNICIPALIDAD DE LAJA", "region": "Región del Biobío"}
+{"codigo": "817-64-LE26", "fecha": "2026-11-24", "oferentes": 4, "tipo": "LE", "clases": ["221015", "241015"], "organismo": "MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF", "region": "Región de los Lagos"}
+{"codigo": "584146-15-LE26", "fecha": "2026-11-24", "oferentes": 8, "tipo": "LE", "clases": ["861116"], "organismo": "I MUNICIPALIDAD DE PURRANQUE", "region": "Región de los Lagos"}
+{"codigo": "948355-79-LE26", "fecha": "2026-11-24", "oferentes": 4, "tipo": "LE", "clases": ["422215"], "organismo": "FONDO HOSPITAL DE LA DIRECCION DE PREVISION DE CARABINEROS DE CHILE", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1180730-52-LP26", "fecha": "2026-11-25", "oferentes": 3, "tipo": "LP", "clases": ["422017"], "organismo": "SERVICIO DE SALUD MAGALLANES", "region": "Región de Magallanes y de la Antártica"}
+{"codigo": "3634-30-LE26", "fecha": "2026-11-12", "oferentes": 3, "tipo": "LE", "clases": ["801116"], "organismo": "I MUNICIPALIDAD DE MALLOA", "region": "Región del Libertador General Bernardo O´Higgins"}
+{"codigo": "1216094-1-LE26", "fecha": "2026-11-25", "oferentes": 6, "tipo": "LE", "clases": ["801416"], "organismo": "SUBSECRETARIA DEL MINISTERIO DE HACIENDA", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1658-256-L126", "fecha": "2026-11-19", "oferentes": 6, "tipo": "L1", "clases": ["561015"], "organismo": "I MUNICIPALIDAD DE TEMUCO", "region": "Región de la Araucanía"}
+{"codigo": "4121-28-LE26", "fecha": "2026-11-24", "oferentes": 1, "tipo": "LE", "clases": ["801016"], "organismo": "I MUNICIPALIDAD DE NINHUE", "region": "Región del Ñuble"}
+{"codigo": "5293-32-LE26", "fecha": "2026-11-25", "oferentes": 5, "tipo": "LE", "clases": ["761016"], "organismo": "I MUNICIPALIDAD DE LICANTEN", "region": "Región del Maule"}
+{"codigo": "2780-57-LE26", "fecha": "2026-11-25", "oferentes": 2, "tipo": "LE", "clases": ["302210"], "organismo": "I MUNICIPALIDAD DE LA LIGUA", "region": "Región de Valparaíso"}
+{"codigo": "2408-257-LE26", "fecha": "2026-11-23", "oferentes": 8, "tipo": "LE", "clases": ["801416"], "organismo": "I MUNICIPALIDAD DE LOS ANGELES", "region": "Región del Biobío"}
+{"codigo": "1057503-127-LR26", "fecha": "2026-11-25", "oferentes": 4, "tipo": "LR", "clases": ["121419", "422717"], "organismo": "HOSPITAL PADRE ALBERTO HURTADO", "region": "Región Metropolitana de Santiago"}
+{"codigo": "3841-37-LE26", "fecha": "2026-11-20", "oferentes": 1, "tipo": "LE", "clases": ["501115"], "organismo": "I MUNICIPALIDAD DE PEMUCO", "region": "Región del Ñuble"}
+{"codigo": "2784-43-LR26", "fecha": "2026-11-16", "oferentes": 5, "tipo": "LR", "clases": ["721315"], "organismo": "I MUNICIPALIDAD DE LA LIGUA", "region": "Región de Valparaíso"}
+{"codigo": "3634-31-LE26", "fecha": "2026-11-12", "oferentes": 1, "tipo": "LE", "clases": ["811022"], "organismo": "I MUNICIPALIDAD DE MALLOA", "region": "Región del Libertador General Bernardo O´Higgins"}
+{"codigo": "1057492-133-LE26", "fecha": "2026-11-24", "oferentes": 3, "tipo": "LE", "clases": ["423116"], "organismo": "HOSPITAL ORIENTE DR LUIS TISNE BROUSSE", "region": "Región Metropolitana de Santiago"}
+{"codigo": "548874-76-LE26", "fecha": "2026-11-24", "oferentes": 25, "tipo": "LE", "clases": ["801115"], "organismo": "INSTITUTO DE PREVISION SOCIAL", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2490-87-LP26", "fecha": "2026-11-24", "oferentes": 5, "tipo": "LP", "clases": ["701115"], "organismo": "I MUNICIPALIDAD DE PROVIDENCIA", "region": "Región Metropolitana de Santiago"}
+{"codigo": "5586-167-LE26", "fecha": "2026-11-24", "oferentes": 9, "tipo": "LE", "clases": ["231015", "301020", "401618", "411038", "411049", "411053", "411154", "411160", "411215", "411218"], "organismo": "UNIVERSIDAD DE LA FRONTERA", "region": "Región de la Araucanía"}
+{"codigo": "1175-82-LR26", "fecha": "2026-11-24", "oferentes": 7, "tipo": "LR", "clases": ["422951"], "organismo": "SERVICIO DE SALUD ARAUCANIA SUR", "region": "Región de la Araucanía"}
+{"codigo": "2770-125-LE26", "fecha": "2026-11-24", "oferentes": 5, "tipo": "LE", "clases": ["721317"], "organismo": "I MUNICIPALIDAD DE MAIPU", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2343-31-LE26", "fecha": "2026-11-19", "oferentes": 13, "tipo": "LE", "clases": ["721016"], "organismo": "I MUNICIPALIDAD DE SANTIAGO", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2427-103-LE26", "fecha": "2026-11-25", "oferentes": 2, "tipo": "LE", "clases": ["801416"], "organismo": "I MUNICIPALIDAD DE VALPARAISO", "region": "Región de Valparaíso"}
+{"codigo": "1506-45-LP26", "fecha": "2026-11-24", "oferentes": 5, "tipo": "LP", "clases": ["921015"], "organismo": "MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF", "region": "Región del Maule"}
+{"codigo": "2770-137-LR26", "fecha": "2026-11-24", "oferentes": 3, "tipo": "LR", "clases": ["761217"], "organismo": "I MUNICIPALIDAD DE MAIPU", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1723-46-LE26", "fecha": "2026-11-24", "oferentes": 1, "tipo": "LE", "clases": ["801416"], "organismo": "I MUNICIPALIDAD DE LOS LAGOS", "region": "Región de Los Ríos"}
+{"codigo": "1057492-137-LE26", "fecha": "2026-11-24", "oferentes": 2, "tipo": "LE", "clases": ["251727"], "organismo": "HOSPITAL ORIENTE DR LUIS TISNE BROUSSE", "region": "Región Metropolitana de Santiago"}
+{"codigo": "860729-7-LE26", "fecha": "2026-11-25", "oferentes": 1, "tipo": "LE", "clases": ["911116"], "organismo": "SERVICIO DE SALUD ARAUCO", "region": "Región del Biobío"}
+{"codigo": "3806-5-LE26", "fecha": "2026-11-23", "oferentes": 1, "tipo": "LE", "clases": ["422815"], "organismo": "I MUNICIPALIDAD DE EMPEDRADO", "region": "Región del Maule"}
+{"codigo": "2852-50-LE26", "fecha": "2026-11-17", "oferentes": 2, "tipo": "LE", "clases": ["831116"], "organismo": "I MUNICIPALIDAD DE PUERTO VARAS", "region": "Región de los Lagos"}
+{"codigo": "3853-17-LE26", "fecha": "2026-11-19", "oferentes": 2, "tipo": "LE", "clases": ["422117"], "organismo": "I MUNICIPALIDAD DE RIO BUENO", "region": "Región de Los Ríos"}
+{"codigo": "2446-312-LE26", "fecha": "2026-11-24", "oferentes": 6, "tipo": "LE", "clases": ["531015", "531018", "531025", "531028", "531029"], "organismo": "I MUNICIPALIDAD DE COQUIMBO", "region": "Región de Coquimbo"}
+{"codigo": "4511-65-LE26", "fecha": "2026-11-24", "oferentes": 3, "tipo": "LE", "clases": ["801416"], "organismo": "ILUSTRE MUNICIPALIDAD DE RETIRO", "region": "Región del Maule"}
+{"codigo": "3729-105-LE26", "fecha": "2026-11-19", "oferentes": 2, "tipo": "LE", "clases": ["601410"], "organismo": "I MUNICIPALIDAD DE CHIMBARONGO", "region": "Región del Libertador General Bernardo O´Higgins"}
+{"codigo": "3729-99-LE26", "fecha": "2026-11-18", "oferentes": 7, "tipo": "LE", "clases": ["251015"], "organismo": "I MUNICIPALIDAD DE CHIMBARONGO", "region": "Región del Libertador General Bernardo O´Higgins"}
+{"codigo": "3890-244-L126", "fecha": "2026-11-20", "oferentes": 2, "tipo": "L1", "clases": ["801416"], "organismo": "I MUNICIPALIDAD DE FREIRE", "region": "Región de la Araucanía"}
+{"codigo": "2770-102-LR26", "fecha": "2026-11-24", "oferentes": 9, "tipo": "LR", "clases": ["261116", "312313"], "organismo": "I MUNICIPALIDAD DE MAIPU", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1515304-220-LP26", "fecha": "2026-11-24", "oferentes": 3, "tipo": "LP", "clases": ["251319"], "organismo": "DIRECCION DE LOGISTICA DE CARABINEROS", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2770-145-LR26", "fecha": "2026-11-24", "oferentes": 3, "tipo": "LR", "clases": ["761215"], "organismo": "I MUNICIPALIDAD DE MAIPU", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2905-30-LE26", "fecha": "2026-11-19", "oferentes": 10, "tipo": "LE", "clases": ["241315", "432115", "432119", "432121", "451116", "521415", "721018"], "organismo": "I MUNICIPALIDAD DE LANCO", "region": "Región de Los Ríos"}
+{"codigo": "2271-82-LP26", "fecha": "2026-11-24", "oferentes": 2, "tipo": "LP", "clases": ["302018"], "organismo": "DIRECCION GENERAL DE AERONAUTICA CIVIL", "region": "Región de Coquimbo"}
+{"codigo": "3092-27-L126", "fecha": "2026-11-24", "oferentes": 11, "tipo": "L1", "clases": ["411115", "411124", "421720", "421826", "421920", "422018"], "organismo": "I MUNICIPALIDAD DE CASABLANCA", "region": "Región de Valparaíso"}
+{"codigo": "652-68-LE26", "fecha": "2026-11-25", "oferentes": 3, "tipo": "LE", "clases": ["801115"], "organismo": "SERVICIO DE SALUD ARAUCO", "region": "Región del Biobío"}
+{"codigo": "1057494-44-LP26", "fecha": "2026-11-24", "oferentes": 7, "tipo": "LP", "clases": ["231518", "411215", "601244"], "organismo": "SERVICIO DE SALUD SUR HOSPITAL EXEQUIEL", "region": "Región Metropolitana de Santiago"}
+{"codigo": "3089-14-LE26", "fecha": "2026-11-25", "oferentes": 4, "tipo": "LE", "clases": ["721028"], "organismo": "DIRECCION DE ABASTECIMIENTO DE LA ARMADA", "region": "Región Metropolitana de Santiago"}
+{"codigo": "757818-18-L126", "fecha": "2026-11-10", "oferentes": 5, "tipo": "L1", "clases": ["801115"], "organismo": "I MUNICIPALIDAD DE PALMILLA", "region": "Región del Libertador General Bernardo O´Higgins"}
+{"codigo": "2775-130-LE26", "fecha": "2026-11-24", "oferentes": 2, "tipo": "LE", "clases": ["601410"], "organismo": "I MUNICIPALIDAD DE RENGO", "region": "Región del Libertador General Bernardo O´Higgins"}
+{"codigo": "5586-172-LE26", "fecha": "2026-11-17", "oferentes": 2, "tipo": "LE", "clases": ["432115"], "organismo": "UNIVERSIDAD DE LA FRONTERA", "region": "Región de la Araucanía"}
+{"codigo": "4777-29-LE26", "fecha": "2026-11-25", "oferentes": 1, "tipo": "LE", "clases": ["111016"], "organismo": "I MUNICIPALIDAD DE LA UNION", "region": "Región de Los Ríos"}
+{"codigo": "678-11-LE26", "fecha": "2026-11-25", "oferentes": 1, "tipo": "LE", "clases": ["721026"], "organismo": "MINISTERIO DE BIENES NACIONALES", "region": "Región de la Araucanía"}
+{"codigo": "4055-94-LE26", "fecha": "2026-11-24", "oferentes": 2, "tipo": "LE", "clases": ["101520"], "organismo": "I MUNICIPALIDAD DE YUMBEL", "region": "Región del Biobío"}
+{"codigo": "1057539-160-LE26", "fecha": "2026-11-25", "oferentes": 1, "tipo": "LE", "clases": ["431915"], "organismo": "HOSPITAL PUERTO MONTT SERVICIO DE SALUD DEL RELONCAVI", "region": "Región de los Lagos"}
+{"codigo": "1057494-58-LP26", "fecha": "2026-11-24", "oferentes": 2, "tipo": "LP", "clases": ["121421"], "organismo": "SERVICIO DE SALUD SUR HOSPITAL EXEQUIEL", "region": "Región Metropolitana de Santiago"}
+{"codigo": "2464-24-LE26", "fecha": "2026-11-24", "oferentes": 2, "tipo": "LE", "clases": ["251317"], "organismo": "I MUNICIPALIDAD DE QUILLOTA", "region": "Región de Valparaíso"}
+{"codigo": "1514-140-LE26", "fecha": "2026-11-25", "oferentes": 20, "tipo": "LE", "clases": ["511018", "511027", "511217", "511415", "511429", "511515", "511518", "511618", "511716", "511818", "511915", "511919", "512015", "512115"], "organismo": "SERVICIO DE SALUD CHILOE", "region": "Región de los Lagos"}
+{"codigo": "3567-43-LE26", "fecha": "2026-11-23", "oferentes": 7, "tipo": "LE", "clases": ["221015"], "organismo": "I MUNICIPALIDAD DE FLORIDA", "region": "Región del Biobío"}
+{"codigo": "1057421-41-LE26", "fecha": "2026-11-25", "oferentes": 1, "tipo": "LE", "clases": ["421922"], "organismo": "SERVICIO DE SALUD BIO BIO HOSPITAL DE LAJA", "region": "Región del Biobío"}
+{"codigo": "3603-40-LE26", "fecha": "2026-11-24", "oferentes": 1, "tipo": "LE", "clases": ["501819"], "organismo": "I MUNICIPALIDAD DE MULCHEN", "region": "Región del Biobío"}
+{"codigo": "1002588-105-LE26", "fecha": "2026-11-24", "oferentes": 8, "tipo": "LE", "clases": ["521615"], "organismo": "SERVICIO LOCAL DE EDUCACION DE PUERTO CORDILLERA", "region": "Región de Coquimbo"}
+{"codigo": "1057056-10-LE26", "fecha": "2026-11-24", "oferentes": 4, "tipo": "LE", "clases": ["411030"], "organismo": "SERV SALUD METROPOLITANO CENTRAL HOSPITAL CLINICO SAN BORJA ARRIARAN", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1057049-388-CO26", "fecha": "2026-11-24", "oferentes": 5, "tipo": "CO", "clases": ["411115", "421918", "422942", "422951", "851222"], "organismo": "SERV SALUD METROPOLITANO CENTRAL HOSPITAL CLINICO SAN BORJA ARRIARAN", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1057049-380-LE26", "fecha": "2026-11-24", "oferentes": 1, "tipo": "LE", "clases": ["731521"], "organismo": "SERV SALUD METROPOLITANO CENTRAL HOSPITAL CLINICO SAN BORJA ARRIARAN", "region": "Región Metropolitana de Santiago"}
+{"codigo": "3784-78-L126", "fecha": "2026-11-19", "oferentes": 7, "tipo": "L1", "clases": ["561015"], "organismo": "I MUNICIPALIDAD DE COELEMU", "region": "Región del Ñuble"}
+{"codigo": "1057492-128-LP26", "fecha": "2026-11-24", "oferentes": 2, "tipo": "LP", "clases": ["471115"], "organismo": "HOSPITAL ORIENTE DR LUIS TISNE BROUSSE", "region": "Región Metropolitana de Santiago"}

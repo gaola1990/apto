@@ -3591,3 +3591,12 @@
 {"codigo": "1557-38-LE26", "fecha": "2026-11-25", "oferentes": 3, "tipo": "LE", "clases": ["721028"], "organismo": "SERVICIO SALUD ATACAMA HOSPITAL DE HUASCO", "region": "Región de Atacama"}
 {"codigo": "1057509-377-LE26", "fecha": "2026-11-23", "oferentes": 1, "tipo": "LE", "clases": ["861016"], "organismo": "HOSPITAL CLINICO HERMINDA MARTIN", "region": "Región del Ñuble"}
 {"codigo": "4886-43-LE26", "fecha": "2026-11-25", "oferentes": 5, "tipo": "LE", "clases": ["801416"], "organismo": "SUBSECRETARÍA DE LAS CULTURAS Y LAS ARTES", "region": "Región del Biobío"}
+{"codigo": "1057545-111-L126", "fecha": "2026-11-19", "oferentes": 2, "tipo": "L1", "clases": ["801116"], "organismo": "SERVICIO DE SALUD LOS RIOS", "region": "Región de Los Ríos"}
+{"codigo": "1782-17-LE26", "fecha": "2026-11-20", "oferentes": 20, "tipo": "LE", "clases": ["801015"], "organismo": "GOBIERNO REGIONAL DE ANTOFAGASTA", "region": "Región de Antofagasta"}
+{"codigo": "3863-58-LP26", "fecha": "2026-11-19", "oferentes": 1, "tipo": "LP", "clases": ["821217"], "organismo": "I MUNICIPALIDAD DE SANTA CRUZ", "region": "Región del Libertador General Bernardo O´Higgins"}
+{"codigo": "3692-26-LE26", "fecha": "2026-11-25", "oferentes": 3, "tipo": "LE", "clases": ["421429"], "organismo": "I MUNICIPALIDAD DE EL QUISCO", "region": "Región de Valparaíso"}
+{"codigo": "552975-77-CO26", "fecha": "2026-11-23", "oferentes": 6, "tipo": "CO", "clases": ["481017"], "organismo": "CORP DE DESARROLLO SOCIAL DE PROVIDENCIA", "region": "Región Metropolitana de Santiago"}
+{"codigo": "1463-16-LP26", "fecha": "2026-11-25", "oferentes": 1, "tipo": "LP", "clases": ["411161"], "organismo": "SERVICIO DE SALUD DEL MAULE HOSPITAL DE LICANTEN", "region": "Región del Maule"}
+{"codigo": "1057439-127-LE26", "fecha": "2026-11-20", "oferentes": 1, "tipo": "LE", "clases": ["721317"], "organismo": "SERVICIO DE SALUD COQUIMBO HOSPITAL LA SERENA", "region": "Región de Coquimbo"}
+{"codigo": "1755-6-LP26", "fecha": "2026-11-24", "oferentes": 3, "tipo": "LP", "clases": ["921015"], "organismo": "SUBSECRETARIA DEL MINISTERIO DE EDUCACION PUBLICA", "region": "Región del Maule"}
+{"codigo": "3730-108-L126", "fecha": "2026-11-26", "oferentes": 2, "tipo": "L1", "clases": ["901516"], "organismo": "I MUNICIPALIDAD DE CHIMBARONGO", "region": "Región del Libertador General Bernardo O´Higgins"}

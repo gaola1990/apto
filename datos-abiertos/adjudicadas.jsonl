@@ -3998,3 +3998,6 @@
 {"codigo": "1341-10-L126", "fecha": "2026-11-26", "oferentes": 5, "tipo": "L1", "clases": ["821215"], "organismo": "FONDO DE SOLIDARIDAD E INVERSION SOCIAL", "region": "Región Metropolitana de Santiago"}
 {"codigo": "2775-126-LP26", "fecha": "2026-11-25", "oferentes": 2, "tipo": "LP", "clases": ["721317"], "organismo": "I MUNICIPALIDAD DE RENGO", "region": "Región del Libertador General Bernardo O´Higgins"}
 {"codigo": "2793-92-LR26", "fecha": "2026-11-04", "oferentes": 3, "tipo": "LR", "clases": ["432218"], "organismo": "Municipalidad de Huechuraba", "region": "Región Metropolitana de Santiago"}
+{"codigo": "4993-93-L126", "fecha": "2026-11-26", "oferentes": 2, "tipo": "L1", "clases": ["231216", "231815", "261116", "481015", "561015", "561017", "561116"], "organismo": "MUNICIPALIDAD DE CHOLCHOL", "region": "Región de la Araucanía"}
+{"codigo": "1057536-152-LP26", "fecha": "2026-11-24", "oferentes": 3, "tipo": "LP", "clases": ["251017"], "organismo": "SERVICIO SALUD DEL RELONCAVI", "region": "Región de los Lagos"}
+{"codigo": "1057539-117-LR26", "fecha": "2026-11-26", "oferentes": 1, "tipo": "LR", "clases": ["422949"], "organismo": "HOSPITAL PUERTO MONTT SERVICIO DE SALUD DEL RELONCAVI", "region": "Región de los Lagos"}
